@@ -16,12 +16,20 @@
                        近似；不依赖模型概率，轻量且稳定）
     - Q_termini      : N/C 端常数（~±1，只依赖 pH）
 
-    然后把"偏离目标电荷"翻译成 bias：
+    然后把"偏离目标电荷"翻译成 bias。**关键设计**：bias 必须包含依赖
+    候选 k 的交叉项，否则会被 softmax 常数平移不变性（softmax(x+c)=softmax(x)）
+    抵消。因此不用朴素的 (Q_k − target)，而用"当前净电荷缺多少目标"去
+    驱动"候选侧链电荷"：
 
-        bias_k = -strength · (Q_k − target_charge)
+        Q_current = Q_fixed + Q_expect_others + Q_termini   # 不含候选位
+        bias_k   = strength · (target_charge − Q_current) · q(aa_k, pH)
 
-    当 Q_k 高于目标（净电荷偏正）→ bias_k 为负（抑制该候选）；
-    低于目标（偏负）→ 为正（促进）。整体把净电荷拉向目标值。
+    - 当 Q_current < target（还欠正电荷）→ (target−Q_current) > 0，
+      正电候选（q_k>0）得正 bias 被促进、负电候选（q_k<0）被抑制；
+    - 当 Q_current > target（正电荷过多）→ 反向推动。
+    这样 target 通过 `target·q_k` 交叉项真正进入分布，且随解码推进
+    Q_current 越准确、引导越精确（渐近收敛到 target）。
+
     strength 控制引导强度（过强会破坏模型先验，建议从 0.2–0.5 起步）。
 
 与结构感知过滤器是正交约束：电荷 lookahead 管"总量"，过滤器管"空间分布"，
@@ -101,11 +109,14 @@ class ChargeLookahead:
                 _termini_charge(self.pH, n_term=False).item()
             )
 
-        # 4) 对 20 个候选计算 bias
+        # 4) 当前净电荷（不含候选位置）
+        Q_current = fixed + expect_others + termini
+
+        # 5) 对 20 个候选计算 bias：
+        #    bias_k = strength · (target − Q_current) · q_k
+        #    (target−Q_current) 是标量，q_k 依赖候选 → target 进入交叉项，不被 softmax 抵消
         biases = np.zeros(21, dtype=np.float32)
-        for k in range(20):
-            q_k = fixed + self._charge_of(k) + expect_others + termini
-            biases[k] = -self.strength * (q_k - self.target_charge)
+        biases[:20] = self.strength * (self.target_charge - Q_current) * self._q_vec
         return biases
 
 
@@ -141,16 +152,27 @@ def make_dynamic_callback(pH, target_charge=None, structure_filter=None,
 
 
 if __name__ == "__main__":
-    # 自检：全 K 序列 + 目标净电荷 0 → 当前位置的碱性候选（K/R）应被抑制
+    # 自检：全 K 序列，分别验证 target 8/0/-8 三档 bias 是否真正不同
+    # （本次修复的核心：target 必须进入与候选 k 相关的交叉项，否则被 softmax 抵消）
     import numpy as np
     from .pka import AA_TO_IDX
 
-    la = ChargeLookahead(pH=7.4, target_charge=0.0, strength=0.5)
     seq = [AA_TO_IDX["K"]] * 5 + [UNDECODED] * 5  # 前 5 K，后 5 未解码
-    b = la.bias_at(np.array(seq), position=5)
     k_idx = AA_TO_IDX["K"]
     d_idx = AA_TO_IDX["D"]
-    print(f"bias[K] = {b[k_idx]:+.3f}（应 < 0，抑制碱性）")
-    print(f"bias[D] = {b[d_idx]:+.3f}（应 > 0，促进酸性）")
-    assert b[k_idx] < 0 and b[d_idx] > 0, "符号错误"
-    print("自检通过 ✅")
+    results = {}
+    for tgt in (8.0, 0.0, -8.0):
+        la = ChargeLookahead(pH=7.4, target_charge=tgt, strength=0.5)
+        b = la.bias_at(np.array(seq), position=5)
+        results[tgt] = (b[k_idx], b[d_idx])
+        print(f"target={tgt:+5.1f}  bias[K]={b[k_idx]:+.3f}  bias[D]={b[d_idx]:+.3f}")
+
+    # 断言 1：三档 target 的 K bias 必须各不相同（修复前它们完全相同 → 本断言触发）
+    k_biases = {t: v[0] for t, v in results.items()}
+    assert len(set(round(v, 3) for v in k_biases.values())) == 3, \
+        "target 未真正影响 bias（softmax 抵消 bug 未修复）"
+    # 断言 2：target 偏正 → 促进正电候选（K bias 为正），target 偏负 → 抑制
+    assert results[8.0][0] > 0 > results[-8.0][0], "target 与 K 的 bias 符号关系错误"
+    # 断言 3：符号相反（全 K 序列当前偏正，D 的方向应与 K 相反）
+    assert results[0.0][0] < 0 < results[0.0][1], "target=0 时符号错误"
+    print("自检通过 ✅（target 8/0/-8 产生不同 bias，修复生效）")

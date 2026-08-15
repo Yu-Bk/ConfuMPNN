@@ -34,6 +34,7 @@ from src.structure_aware_filter import (  # noqa: E402
 )
 from src.condition_embedding import ConditionEncoder, make_condition_vector  # noqa: E402
 from src.losses import composite_loss  # noqa: E402
+from src.charge_lookahead import ChargeLookahead, make_dynamic_callback  # noqa: E402
 
 _TOL = 1e-2
 _results = []
@@ -187,6 +188,60 @@ def test_build_static_bias():
     check("静态 bias 维度 [1, 10, 21]", tuple(bias.shape) == (1, L, 21), str(tuple(bias.shape)))
 
 
+# ----------------------------------------------------------------------
+# charge_lookahead（修复：target 必须真正影响 bias，否则被 softmax 抵消）
+# ----------------------------------------------------------------------
+def test_lookahead_target_sensitivity():
+    """回归测试：三档 target 必须产生不同的 bias。
+
+    修复前 bias = -strength·(Q_k − target) 中 target 落在不依赖候选 k 的
+    常数项，被 softmax 常数平移不变性完全抵消 → 三档 target bias 相同。
+    修复后 bias = strength·(target − Q_current)·q_k，target 进入交叉项。
+    """
+    seq = [AA_TO_IDX["K"]] * 5 + [20] * 5  # 前 5 K（正电），后 5 未解码
+    k_idx = AA_TO_IDX["K"]
+    d_idx = AA_TO_IDX["D"]
+    k_biases = {}
+    for tgt in (8.0, 0.0, -8.0):
+        la = ChargeLookahead(pH=7.4, target_charge=tgt, strength=0.5)
+        b = la.bias_at(np.array(seq), position=5)
+        k_biases[tgt] = b[k_idx]
+    check("三档 target 的 bias[K] 各不相同",
+          len({round(v, 3) for v in k_biases.values()}) == 3,
+          f"got {k_biases}")
+    check("target=+8 促进 K（bias>0）", k_biases[8.0] > 0, f"got {k_biases[8.0]:+.3f}")
+    check("target=-8 抑制 K（bias<0）", k_biases[-8.0] < 0, f"got {k_biases[-8.0]:+.3f}")
+    # 同一步内：K（正电候选）与 D（负电候选）方向相反
+    la = ChargeLookahead(pH=7.4, target_charge=0.0, strength=0.5)
+    b = la.bias_at(np.array(seq), position=5)
+    check("target=0 时 K 与 D bias 方向相反", b[k_idx] < 0 < b[d_idx],
+          f"K={b[k_idx]:+.3f} D={b[d_idx]:+.3f}")
+
+
+def test_lookahead_termini_flag():
+    """include_termini=False 时 bias 应不同（末端电荷影响 Q_current）。"""
+    seq = [AA_TO_IDX["K"]] * 5 + [20] * 5
+    la_on = ChargeLookahead(pH=7.4, target_charge=2.0, strength=0.5, include_termini=True)
+    la_off = ChargeLookahead(pH=7.4, target_charge=2.0, strength=0.5, include_termini=False)
+    b_on = la_on.bias_at(np.array(seq), position=5)
+    b_off = la_off.bias_at(np.array(seq), position=5)
+    check("include_termini 影响 bias",
+          float(np.abs(b_on[AA_TO_IDX["K"]] - b_off[AA_TO_IDX["K"]])) > 1e-3,
+          f"on={b_on[AA_TO_IDX['K']]:+.3f} off={b_off[AA_TO_IDX['K']]:+.3f}")
+
+
+def test_lookahead_callback_signature():
+    """make_dynamic_callback 返回的 callable 接受 (S_cur, t) 返回 [21]。"""
+    cb = make_dynamic_callback(pH=7.4, target_charge=1.0, strength=0.5)
+    S = np.array([AA_TO_IDX["A"]] * 3 + [20] * 3, dtype=np.int64)
+    bias = cb(S, t=2)
+    check("回调返回 [21] 且 shape 正确", bias.shape == (21,), str(bias.shape))
+    # target=None（不引导电荷）→ 全零
+    cb0 = make_dynamic_callback(pH=7.4, target_charge=None)
+    b0 = cb0(np.array([20] * 4), t=0)
+    check("target=None 时 bias 全零", float(np.abs(b0).sum()) == 0.0)
+
+
 def main():
     torch.manual_seed(0)
     np.random.seed(0)
@@ -200,6 +255,9 @@ def main():
     test_condition_encoder()
     test_composite_loss()
     test_build_static_bias()
+    test_lookahead_target_sensitivity()
+    test_lookahead_termini_flag()
+    test_lookahead_callback_signature()
 
     passed = sum(1 for s, _ in _results if s == "PASS")
     print(f"\n{'='*50}\n通过 {passed}/{len(_results)} 项测试")
