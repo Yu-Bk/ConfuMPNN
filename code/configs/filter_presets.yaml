@@ -1,0 +1,41 @@
+# 结构感知过滤器场景预设
+# 用法：from structure_aware_filter import load_preset
+#       config = load_preset("default")
+#       filt = StructureAwareFilter(coords, config=config)
+#
+# 字段含义：
+#   radius          : 空间半径（Å），用于判定邻域
+#   threshold       : 触发抑制的阈值（数量）
+#   strength        : 抑制强度（加到 logits 上的负 bias）
+#   burial_threshold: 判定"埋在核心"的 burial 比例（10Å 内 Cα 数 / 最大）
+#   charge_count    : 8Å 内带电残基数阈值
+
+presets:
+  default:
+    desc: "通用默认预设（PROJECT_PLAN 4.1 默认阈值）"
+    charge_cluster:  {radius: 10.0, threshold: 6, strength: -1.0}
+    salt_bridge:     {radius: 10.0, threshold: 5, strength: -1.0}
+    core_charge:     {burial_radius: 10.0, charge_radius: 8.0, burial_threshold: 0.8, charge_count: 4, strength: -1.0}
+    same_sign_cluster: {radius: 8.0, threshold: 4, strength: -1.0}
+
+  nucleic_acid_binding:
+    desc: "核酸结合蛋白：表面正电残基中和核酸骨架负电是正常现象，正电聚集更宽容"
+    charge_cluster:  {radius: 10.0, threshold: 8, strength: -1.0}
+    salt_bridge:     {radius: 10.0, threshold: 6, strength: -1.0}
+    core_charge:     {burial_radius: 10.0, charge_radius: 8.0, burial_threshold: 0.8, charge_count: 4, strength: -1.0}
+    same_sign_cluster: {radius: 8.0, threshold: 5, strength: -1.0}
+
+  membrane:
+    desc: "膜蛋白：疏水核心严格禁止带电残基（核心规则收紧、惩罚加重）"
+    charge_cluster:  {radius: 10.0, threshold: 6, strength: -1.0}
+    salt_bridge:     {radius: 10.0, threshold: 5, strength: -1.0}
+    core_charge:     {burial_radius: 10.0, charge_radius: 8.0, burial_threshold: 0.8, charge_count: 2, strength: -2.0}
+    same_sign_cluster: {radius: 8.0, threshold: 4, strength: -1.0}
+
+  acidic:
+    desc: "酸性环境（如溶酶体 pH≈5）：His 更易带正电，核心禁带电规则保持"
+    ph_hint: 5.0
+    charge_cluster:  {radius: 10.0, threshold: 6, strength: -1.0}
+    salt_bridge:     {radius: 10.0, threshold: 5, strength: -1.0}
+    core_charge:     {burial_radius: 10.0, charge_radius: 8.0, burial_threshold: 0.8, charge_count: 4, strength: -1.0}
+    same_sign_cluster: {radius: 8.0, threshold: 4, strength: -1.0}

@@ -1,0 +1,26 @@
+# 条件向量默认配置（Phase 2 条件微调用，见 condition_embedding.py）
+# 条件向量 shape [7]：pH, has_charge, charge_val, has_pos, pos_val, has_neg, neg_val
+
+condition_defaults:
+  cond_dim: 7
+
+  # 训练/采样时的 pH 采样范围（PROJECT_PLAN 4.4 连续采样）
+  pH_min: 4.0
+  pH_max: 10.0
+
+  # 可选约束默认值（None = 不指定）
+  default_net_charge: null
+  default_local_pos_limit: 6    # 10Å 内正电荷数上限
+  default_local_neg_limit: 6    # 10Å 内负电荷数上限
+
+  # 标准化常量：训练前从训练集逐维度算 μ/σ 后填入（PROJECT_PLAN 4.5）
+  # 注意顺序与条件向量一致。null 表示尚未计算（Phase 2 训练前必须填）。
+  normalization:
+    mean: null   # 示例 [7.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    std:  null   # 示例 [2.0, 1.0, 10.0, 1.0, 4.0, 1.0, 4.0]
+
+  # 条件编码器架构
+  encoder:
+    hidden_dim: 64
+    token_dim: 128
+    n_tokens: 4

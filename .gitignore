@@ -1,0 +1,28 @@
+# ===== 克隆的开源源码（不提交） =====
+LigandMPNN/
+foundry/
+
+# ===== Python 缓存 / 构建 =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# ===== 虚拟环境 =====
+.venv/
+env/
+
+# ===== 模型权重 / 检查点 =====
+*.pt
+*.ckpt
+*.safetensors
+
+# ===== 输出结果 / 日志 =====
+code/output/
+code/log/
+results/
+
+# ===== 系统 / 编辑器 =====
+.DS_Store
+.idea/
+.vscode/
