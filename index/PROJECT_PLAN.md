@@ -8,6 +8,8 @@
 
 设计哲学：**用户指定工作环境的 pH，模型自动学习在该 pH 下应该选什么残基。** pI 不作为直接输入——它是生成序列的推导属性（给定序列的氨基酸组成，pI 由氨基酸侧链 pKa 表唯一确定），在验证阶段用作一致性检查。
 
+> **📎 两级计划：** 本文件是第一版（主线：pH 电荷条件生成）。**第二版拓展计划**（多目标可开发性微调——让生成序列更可设计/热稳定/可溶，并把微调模型放回本管线）见 **`index/PROJECT_EXTEND.md`**。条件嵌入 context 两版一致。
+
 ---
 
 ## 第一部分：文献调研与原创性评估
@@ -332,6 +334,8 @@ cond_tokens = ConditionEncoder(C_normalized)
 - **核心实验（Go/No-Go）**：同一 backbone，不同 pH 条件 → 生成不同序列 → property 按预期变化（pH↑ → 偏负电残基增多, pH↓ → 偏正电残基增多）
 - 如果没有明显的 pH 依赖响应 → 回到数据/架构调整
 
+> **📎 与第二版衔接：** Phase 2 产出的条件微调模型可直接作为第二版（`index/PROJECT_EXTEND.md`）的起点，在该模型上做多目标可开发性微调（可设计/热稳定/可溶）；第二版微调后的更优模型也会放回本 Phase 的管线中作为默认生成器。
+
 ### Phase 3：验证管线
 
 - 搭建 RF3/ESMFold + PypKa 验证管道
@@ -395,6 +399,8 @@ cond_tokens = ConditionEncoder(C_normalized)
 ---
 
 ## 第八部分：项目输出清单
+
+> 本清单对应第一版主线。**第二版拓展**（多目标可开发性微调，MoMPNN 接入/自微调/集成）的输出清单见 `index/PROJECT_EXTEND.md` 第四节 Stage E0–E5。
 
 - [ ] `confumpnn/` — 完整代码仓库（已创建于 GitHub: ConfuMPNN）
   - [ ] `src/differentiable_charge.py` — 可微 pH 感知净电荷计算器
