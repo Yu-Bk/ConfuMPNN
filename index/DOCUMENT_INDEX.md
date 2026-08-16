@@ -15,6 +15,7 @@
 | README | `README.md` | 对外简介（含文件结构） | 2026-08-15 |
 | MoMPNN 可用性调研 | `analysis/2026-08-16_mompnn_avail.md` | Stage E0 结论：权重=纯 backbone ProteinMPNN，`strict=True` 可加载 + 1BC8 前向跑通 | 2026-08-16 |
 | E1 pH 响应对比 | `analysis/report/2026-08-16_e1_pH_response.md` | MoMPNN 电荷命中偏差≤0.10 vs 原版 +0.2~0.7 | 2026-08-16 |
+| E1 三目标初步 | `analysis/report/2026-08-16_e1_three_targets.md` | pLDDT 持平(82.6/82.7)；GRAVY 代理差异需 Protein-Sol 核实 | 2026-08-16 |
 
 ## Phase 1 代码模块（`code/`）
 
