@@ -13,6 +13,7 @@
 | 文件管理规范 | `index/FILE_MANAGEMENT.md` | 文件分类存放的唯一规则 | 2026-08-15 |
 | 文档索引 | `index/DOCUMENT_INDEX.md` | 本文件 | 2026-08-15 |
 | README | `README.md` | 对外简介（含文件结构） | 2026-08-15 |
+| MoMPNN 可用性调研 | `analysis/2026-08-16_mompnn_avail.md` | Stage E0 结论：权重=纯 backbone ProteinMPNN，`strict=True` 可加载 + 1BC8 前向跑通 | 2026-08-16 |
 
 ## Phase 1 代码模块（`code/`）
 
@@ -31,13 +32,15 @@
 | 条件默认配置 | `code/configs/condition_defaults.yaml` | 条件向量/标准化/编码器参数（Phase 2） |
 | 单元测试 | `code/tests/test_all.py` | 36 项，全通过 |
 | 冒烟测试 | `code/tests/smoke_guided.py` | 真实 LigandMPNN + 1BC8.pdb，通过 |
+| MoMPNN 兼容性测试 | `code/tests/mompnn_compat_test.py` | 8 权重 × 2 模式 load_state_dict（protein_mpnn 全 PASS） |
+| MoMPNN 前向验证 | `code/tests/mompnn_forward_test.py` | MoMPNN 权重 + 1BC8.pdb 采样，seq_rec≈0.45 |
 
 ## 目录填充状态
 
 | 目录 | 用途 | 当前内容 | 状态 |
 |------|------|---------|------|
 | `code/` | 实验模块代码 | `src/`（7 模块）+ `configs/`（2 yaml）+ `tests/`（2 脚本）+ `input/`（1BC8.pdb）+ `output/`（smoke 结果）+ `log/`（测试日志） | ✅ Phase 1 模块就绪 |
-| `analysis/` | 实验结果分析 | （空） | ⬜ 待实验产生 |
+| `analysis/` | 实验结果分析 | `2026-08-16_mompnn_avail.md`（Stage E0 调研） | ✅ 已有首份报告 |
 | `literature/` | 论文笔记 | （空） | ⬜ 待论文笔记导入 |
 | `session/` | 会话记录 | （空） | ⬜ 待记录 |
 | `source/` | 论文源码/链接 | （空） | ⬜ 待填充 |
