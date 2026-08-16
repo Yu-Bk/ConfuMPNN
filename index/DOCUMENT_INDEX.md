@@ -24,6 +24,8 @@
 | 使用说明 | `docs/USAGE.md` | 上手 / 5 种场景 / 输出解读 / FAQ / 批处理参考 | 2026-08-16 |
 | E4 默认生成器 | `analysis/report/2026-08-16_e4_default_mompnn.md` | MoMPNN 设为 run_guided.py 默认生成器；实现/验证/文档同步 | 2026-08-16 |
 | Phase 2 训练启动 | `analysis/report/2026-08-16_phase2_training_start.md` | 微调目标三层 / 冻结 backbone+KL 锚定防失控 / 混合目标 / 启动与查询 | 2026-08-16 |
+| Phase 3 pH 响应 | `analysis/report/2026-08-16_phase3_pH_response.md` | 条件注入 Go/No-Go 4/4 PDB 通过（target 单调+跨 pH identity<100%）；校准增益 ~2.9× 机制 | 2026-08-16 |
+| Phase 3 防失控 | `analysis/report/2026-08-16_phase3_antidrift.md` | （打分进行中）条件注入 vs E1b 基线的 pLDDT/TM/%sol/Tm 对比 | 2026-08-16 |
 
 ## Phase 1 代码模块（`code/`）
 
@@ -55,6 +57,9 @@
 | 分段并行下载 | `code/tests/parallel_download.py` | Range 分段下载大文件（绕过单连接限速） |
 | 标签构建 | `code/tests/build_labels.py` | CATH S40 → 多 pH 条件标签（坐标+序列+pH+净电荷），算 μ/σ 写 condition_defaults.yaml |
 | Phase 2 微调训练 | `code/train_finetune.py` | 冻结 MoMPNN + ConditionEncoder（cross-attention 注入 h_V）+ 复合损失 CE+电荷+KL 锚定；混合目标；每 epoch checkpoint+进度 |
+| 条件注入采样 | `code/src/conditioned_sampler.py` | `inject_prompt`（cross-attention，训练/推理共用）+ `conditioned_sample` |
+| Phase 3 pH 响应实验 | `code/tests/phase3_pH_response.py` | 4 PDB × target 响应 + pH 响应 + 跨 pH identity（固定 seed 分离条件影响） |
+| Phase 3 防失控打分 | `code/tests/phase3_antidrift_score.sh` | 四指标打分管线（ESMFold/TM/%sol/TemBERTure）+ `phase3_score_status.sh` 进度查询 |
 
 ## 目录填充状态
 

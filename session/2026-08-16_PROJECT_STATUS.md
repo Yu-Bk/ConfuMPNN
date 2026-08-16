@@ -16,7 +16,10 @@
 | 文档交付 | `docs/TECH.md`、`CONFIG.md`、`USAGE.md` 三份详细文档 | `2bf144d` |
 | E4 集成 | MoMPNN 设为 `run_guided.py` 默认生成器 | `900eab7` |
 | README 重写 | 完整入门文档（从零搭建→上手→使用指南→FAQ） | `531bd92` |
-| 微调训练启动 | `train_finetune.py` 就绪+冒烟通过+后台启动（冻结 MoMPNN+ConditionEncoder+KL 锚定防失控） | 本轮 |
+| 微调训练启动 | `train_finetune.py` 就绪+冒烟通过+后台启动（冻结 MoMPNN+ConditionEncoder+KL 锚定防失控） | `1477a79` |
+| 微调训练完成 | 30 epoch×999 域=14.7min；charge 5.16→1.58、ce 稳定 1.86、kl 稳定 0.15 | — |
+| Phase 3 pH 响应 | 条件注入接入 run_guided.py + Go/No-Go 4/4 PDB 通过（target 单调 + 跨 pH identity<100%） | `4fccc1c` |
+| Phase 3 防失控 | 四指标打分进行中（ESMFold/TM/%sol/Tm vs E1b 基线） | 进行中 |
 
 **今日资产**：`data/cath/`（CATH S40 34,653 结构域坐标+序列，818MB，git 不跟踪）；打分工具链（ESMFold 回折+TM-score、Protein-Sol、TemBERTure）全通。
 
@@ -125,13 +128,20 @@ E1 对照实验**全部完成并 push**（提交 `c644a6b`，三目标结果：�
 - **后台启动**：`nohup setsid ... python code/train_finetune.py --device cuda:1 --epochs 30`；进度 `bash code/tests/train_status.sh`；每 epoch 存 checkpoint + `log/train_progress.json`
 - 报告：`analysis/report/2026-08-16_phase2_training_start.md`
 
+### 第九轮（2026-08-16）— Phase 3 条件注入验证进行中 ✅/⏳
+- **接入 `run_guided.py`**（提交 `4fccc1c`）：`--cond_encoder` 加载微调编码器，cross-attention 注入 h_V（与训练同机制）；`conditioned/baseline` 两模式。新模块 `src/conditioned_sampler.py`；`guided_sampler.guided_sample` 支持预编码 h_V
+- **pH 响应 Go/No-Go 通过（4/4 PDB）**，报告 `analysis/report/2026-08-16_phase3_pH_response.md`：
+  - target 响应严格单调（1BC8: 0→+0.9, 9→+26.6；2LZM: 0→+1.7, 13→+37.4 等）
+  - 跨 pH identity 0.68–0.92（<100%）——**Phase 1 诚实边界（同 seed 各 pH 序列相同）被打破**
+  - ⚠️ **校准发现**：target→电荷线性增益 ~2.9×（`实际≈2.9·target−1.1`）；机制=采样置信度放大（训练优化 softmax 期望电荷，推理测采样序列电荷；温度实验证实：temp 0.3→+13.0、1.0→+7.1、2.0→+3.7@target=+5）。实用缓解：温度 1.0–2.0 或线性校准
+- **防失控打分进行中**：`code/output/phase3_antidrift/{pdb}/`（条件注入 target=native，8条/PDB）四指标打分，对比 E1b MoMPNN 基线（1BC8 pLDDT82.8/TM0.915/sol81.4/Tm64.8；1CRN 89.1/0.905/84.1/59.1；1UBQ 89.4/0.962/86.0/68.6；2LZM 88.5/0.971/80.1/67.7）
+
 ### 下一步（按优先级）
-1. **训练完成后微调模型验证**（Phase 3 验证管线）：
-   - 重跑 E1b 打分管线（ESMFold pLDDT + TM-score + Protein-Sol %sol + TemBERTure Tm），**微调前后对比**——防失控最终判据
-   - pH 响应 Go/No-Go：同一 backbone，不同 pH 条件 → 生成不同序列 → 电荷按预期单调变化
-   - 把微调后 ConditionEncoder 接入 `run_guided.py`（E4 之后默认生成器再升级）
-2. 可选：`--fixed_residues` 位点固定对照臂
-3. 若 pH 响应弱 → 调 λ_c / λ_kl / perturb 参数，或逐层放开 backbone
+1. **防失控打分结果汇总**（进行中）：`bash code/tests/phase3_score_status.sh` 查进度；完成后对比 → `2026-08-16_phase3_antidrift.md`
+2. **校准落地**（若需要）：温度调优 或 target 线性校准系数写入 config
+3. 把微调后 ConditionEncoder 设为 `run_guided.py` 条件注入的默认路径（可选）
+4. 可选：`--fixed_residues` 位点固定对照臂
+5. 若 pH 响应幅度不够理想 → 调 λ_c / λ_kl / perturb 参数再训
 
 ---
 
