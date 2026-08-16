@@ -66,12 +66,14 @@
 
 ### 电荷校准（`charge_calibration`，Phase 3 新增）
 
-条件注入模型（`--cond_encoder`）的 **target→实际电荷** 有 ~2.57× 线性增益（机制：训练优化 softmax 期望电荷，推理测采样序列电荷，CE 自信放大 → 采样更极端）。若不做校准，`target=5` 会生成 ~+13 电荷的序列。
+条件注入模型（`--cond_encoder`）的 **target→实际电荷** 曾有 ~2.57× 线性增益（机制：训练优化 softmax 期望电荷，推理测采样序列电荷，CE 自信放大 → 采样更极端）。
 
-- **公式**：`实际 ≈ gain·target + offset`；推理时自动换算 `target_eff = (desired − offset) / gain`
-- **来源**：4 PDB × target 响应合并拟合（15 点，R²=0.946，2026-08-16）
-- **默认开启**：`run_guided.py --cond_encoder` 时自动应用；`--no_calibration` 关闭
-- 验证（1BC8）：target 8.9/5/−5 → 实际 +8.76/+5.62/−7.13（校准前 +25.6/+13.0/−15.6）
+**根治方案（推荐）**：训练时用温度化电荷损失（`train_finetune.py --charge_temp 0.5`），让训练优化的分布≈推理采样分布 → 增益从 2.57 收敛到 ~1.04（1BC8 实测 target 8.9/5/0/−5 → +9.75/+4.74/−0.14/−4.89）。**当前推荐编码器 `finetune_t05/` 校准默认关闭**（`enabled: false`）。
+
+- **公式**：`实际 ≈ gain·target + offset`；若开启，推理时自动换算 `target_eff = (desired − offset) / gain`
+- **系数**：新编码器 t05 gain=1.289/offset=0.74（合并拟合）；旧编码器 finetune gain=2.57/offset=0.16（R²=0.946，严重过冲，建议开启校准）
+- **⚠️ 注意**：per-PDB 增益有差异（1.04~1.7），全局校准会过校正部分 PDB——优先用温度化训练根治，而非推理侧校准
+- 旧编码器验证（校准开启）：target 8.9/5/−5 → 实际 +8.76/+5.62/−7.13（校准前 +25.6/+13.0/−15.6）
 
 ---
 

@@ -27,12 +27,16 @@ condition_defaults:
     n_tokens: 4
 
   # 电荷校准（Phase 3 发现：条件注入的 target→实际电荷 有线性增益）
-  # 来源：4 PDB target 响应合并拟合（15 点，R²=0.946，2026-08-16）
-  #   实际电荷 ≈ gain·target + offset（gain=2.57, offset=0.16）
+  # ⚠️ 默认关闭（enabled: false）：对应当前推荐编码器 code/output/finetune_t05/
+  #    （电荷损失温度化训练 charge_temp=0.5），其增益已收敛到 ~1（1BC8: 2.57→1.04），
+  #    不再需要推理侧校准；全局校准反而会过校正（per-PDB 增益 1.04~1.7 差异）
+  # 系数保留供参考（4 PDB 合并拟合，15 点）：
+  #   新编码器 t05: gain=1.289, offset=0.740（R²=0.905）——校准会过校正，不推荐开
+  #   旧编码器 finetune: gain=2.570, offset=0.160（R²=0.946）——严重过冲，建议开
   # 机制：训练优化 softmax 期望电荷，推理测采样序列电荷，CE 自信放大 → 采样更极端
-  # 用法：run_guided.py --cond_encoder 条件注入时默认应用
+  # 用法：run_guided.py --cond_encoder 条件注入时按此应用
   #      target_eff = (desired - offset) / gain；--no_calibration 可关闭
   charge_calibration:
-    gain: 2.57
-    offset: 0.16
-    enabled: true
+    gain: 1.289
+    offset: 0.74
+    enabled: false
