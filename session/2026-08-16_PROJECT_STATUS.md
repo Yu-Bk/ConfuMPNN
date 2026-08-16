@@ -81,6 +81,7 @@ E1 对照实验**全部完成并 push**（提交 `c644a6b`，三目标结果：�
 3. **最初版本交付**：README 加使用说明 + `run_guided.py` 一键生成；`data/cath/`（S40 818MB 已下载，git 不跟踪）
 4. 报告：`analysis/report/2026-08-16_phase1_examples.md`
 5. ⚠️ 下载技巧：单连接被限速时用 `parallel_download.py` Range 8 段并行（818MB 从 ~30min+ 降到 ~10min）
+6. **详细文档交付**：`docs/TECH.md`（技术）、`docs/CONFIG.md`（配置）、`docs/USAGE.md`（使用），README 加文档导航，DOCUMENT_INDEX 登记
 
 ### 下一步（按优先级）
 1. **第二版 E4 集成**：MoMPNN 设为 `run_guided.py` 默认生成器 + 完整对照实验（E1b 已提供跨蛋白强依据）

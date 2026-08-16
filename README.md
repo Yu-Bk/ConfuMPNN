@@ -43,3 +43,8 @@ python run_guided.py --pdb input/2LZM.pdb --pH 5.5 --preset acidic --target_char
 - `data/` — 外部数据集（CATH S40 结构域，818MB，git 不跟踪）
 
 详细技术计划见 [index/PROJECT_PLAN.md](index/PROJECT_PLAN.md)。
+
+**文档导航**（`docs/`）：
+- [docs/TECH.md](docs/TECH.md) — 技术文档（架构 / 算法原理 / 设计决策）
+- [docs/CONFIG.md](docs/CONFIG.md) — 配置文档（YAML / 命令行参数 / 环境）
+- [docs/USAGE.md](docs/USAGE.md) — 使用说明（上手 / 场景 / 输出解读 / FAQ）

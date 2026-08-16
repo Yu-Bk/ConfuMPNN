@@ -19,6 +19,9 @@
 | E1 验证扩展设计 | `session/2026-08-16_e1_validation_design.md` | 4 PDB×3pH×3target 混合设计；TM-score 主证据；位点固定；阈值防过拟合；CATH 4.2 数据 | 2026-08-16 |
 | E1 扩展验证结果 | `analysis/report/2026-08-16_e1_extended.md` | 电荷 24/24 单调；MoMPNN 16/16 全优（4 指标×4 PDB）；可用率互有胜负 | 2026-08-16 |
 | Phase 1 收尾 | `analysis/report/2026-08-16_phase1_examples.md` | 结构过滤器 99 分位阈值（CATH S40 统计）+ 示例蛋白对比；诚实边界：无引导时模型不感知 pH | 2026-08-16 |
+| 技术文档 | `docs/TECH.md` | 架构 / 算法原理（HH 电荷、电荷前瞻、softmax 教训）/ 设计决策 / 验证摘要 | 2026-08-16 |
+| 配置文档 | `docs/CONFIG.md` | filter_presets / condition_defaults / 命令行参数 / 环境 | 2026-08-16 |
+| 使用说明 | `docs/USAGE.md` | 上手 / 5 种场景 / 输出解读 / FAQ / 批处理参考 | 2026-08-16 |
 
 ## Phase 1 代码模块（`code/`）
 
