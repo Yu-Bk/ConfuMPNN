@@ -8,15 +8,26 @@ if [ -z "$PID" ]; then
   echo "训练进程：未运行"
 else
   echo "训练进程：PID=$PID  已运行 $(ps -o etime= -p $PID | tr -d ' ')"
-  echo "GPU 占用：$(nvidia-smi --query-gpu=utilization.gpu,memory.used --format=csv,noheader 2>/dev/null | head -1)"
+  # 从启动命令里解析 cuda:N，查询对应的 GPU（默认 cuda:1）
+  DEV=$(ps -o args= -p $PID | grep -oE 'cuda:[0-9]+' | head -1 | cut -d: -f2)
+  if [ -z "$DEV" ]; then DEV=1; fi
+  nvidia-smi --query-gpu=index,utilization.gpu,memory.used,memory.total \
+    --format=csv,noheader -i "$DEV" | awk -F',' -v g="$DEV" \
+    '{print "GPU " g "：占用 " $2 "，显存 " $3 "/" $4}'
 fi
 
-echo "--- 进度文件 (log/train_progress.json) ---"
-if [ -f log/train_progress.json ]; then
-  python3 -c "import json; d=json.load(open('log/train_progress.json')); print(f\"epoch {d.get('epoch')}/{d.get('total_epochs')}  loss={d.get('loss'):.4f}  时间={d.get('elapsed_min',0):.1f}min\")" 2>/dev/null || cat log/train_progress.json
+echo "--- 进度文件 (code/log/train_progress.json) ---"
+if [ -f code/log/train_progress.json ]; then
+  python3 -c '
+import json
+d = json.load(open("code/log/train_progress.json"))
+print("epoch {}/{}  loss={:.4f}  ce={:.4f}  charge={:.4f}  kl={:.4f}  已耗时 {:.1f} min".format(
+    d.get("epoch"), d.get("total_epochs"), d.get("loss", 0), d.get("ce", 0),
+    d.get("charge", 0), d.get("kl", 0), d.get("elapsed_min", 0)))
+' 2>/dev/null || cat code/log/train_progress.json
 else
-  echo "（尚无进度文件）"
+  echo "（尚无进度文件——训练仍在预解析阶段或刚启动）"
 fi
 
-echo "--- 日志尾部 (log/train.log) ---"
-tail -8 log/train.log 2>/dev/null || echo "（无日志）"
+echo "--- 日志尾部 (code/log/train.log) ---"
+tail -8 code/log/train.log 2>/dev/null || echo "（无日志）"
