@@ -14,10 +14,23 @@ import re
 import subprocess
 
 
+def _find_usalign():
+    """定位 USalign：优先 PATH，回退 confumpnn 环境 bin（直接调 env python 时 PATH 无它）。"""
+    import shutil
+    exe = shutil.which("USalign")
+    if exe:
+        return exe
+    cand = os.path.expanduser(
+        "~/miniconda3/envs/confumpnn/bin/USalign"
+    )
+    return cand if os.path.isfile(cand) else "USalign"
+
+
 def run_usalign(q, ref):
     """调用 USalign，返回 (tmscore, rmsd)。TM-score 取 normalized by reference(Structure_2)。"""
+    usalign = _find_usalign()
     p = subprocess.run(
-        ["USalign", q, ref], capture_output=True, text=True, timeout=120
+        [usalign, q, ref], capture_output=True, text=True, timeout=120
     )
     text = p.stdout
     tm = None

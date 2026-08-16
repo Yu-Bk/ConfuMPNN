@@ -1,14 +1,15 @@
 #!/bin/bash
 # Phase 3 防失控判据：条件注入生成序列的四指标打分（pLDDT/TM/%sol/Tm）
-# 前置：phase3 序列已生成（code/output/phase3_antidrift/{pdb}/seqs.fa）
-# 用法：bash code/tests/phase3_antidrift_score.sh > code/log/phase3_score.log 2>&1 &
+# 前置：phase3 序列已生成（{TARGET_DIR}/{pdb}/seqs.fa）
+# 用法：bash code/tests/phase3_antidrift_score.sh [TARGET_DIR]
+#       # 默认 code/output/phase3_antidrift；校准版用 code/output/phase3_antidrift_cal
 cd /data/nfs/IC/baokun_yu/ConfuMPNN
 mkdir -p code/log
 
 PY_CONF=/home/baokun_yu/miniconda3/envs/confumpnn/bin/python
 PY_ESM=/home/baokun_yu/miniconda3/envs/confumpnn-esmfold/bin/python
 PY_TEMP=/home/baokun_yu/miniconda3/envs/confumpnn-temberture/bin/python
-TARGET_DIR=code/output/phase3_antidrift
+TARGET_DIR=${1:-code/output/phase3_antidrift}
 
 declare -A REF
 REF[1BC8]=code/input/1BC8_chainC.pdb
