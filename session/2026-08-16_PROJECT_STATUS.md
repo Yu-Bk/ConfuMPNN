@@ -1,7 +1,23 @@
 # 项目进展快照 — ConfuMPNN
 
 > 汇总性进展记录（最后一次更新 2026-08-16）。明天继续时从本文件开始恢复上下文。
-> 细粒度会话记录：`session/2026-08-15_phase1_modules.md`、`session/2026-08-16_charge_lookahead_fix.md`
+> 细粒度会话记录：`session/2026-08-15_phase1_modules.md`、`session/2026-08-16_charge_lookahead_fix.md`、`session/2026-08-16_e1_validation_design.md`
+
+---
+
+## 今日总览（2026-08-16 一天成果）
+
+| 里程碑 | 内容 | 提交 |
+|--------|------|------|
+| E1 对照实验 | MoMPNN 三目标显著优：可溶+12.8、热稳+7.8°C、电荷更准、pLDDT 持平 | `c644a6b` |
+| E1 验证设计 | 混合实验设计 + TM-score 主证据 + CATH 数据选型（`e1_validation_design.md`） | `bfb785a` |
+| E1b 扩展验证 | 4 PDB×3pH×3target=336 样本：电荷 24/24 单调、**MoMPNN 16/16 全优** | `f38bec6` |
+| Phase 1 收尾 | 结构过滤器 99 分位阈值（CATH S40 统计）+ 示例蛋白对比 + 诚实边界 | `1df4b2f` |
+| 文档交付 | `docs/TECH.md`、`CONFIG.md`、`USAGE.md` 三份详细文档 | `2bf144d` |
+| E4 集成 | MoMPNN 设为 `run_guided.py` 默认生成器 | `900eab7` |
+| README 重写 | 完整入门文档（从零搭建→上手→使用指南→FAQ） | `531bd92` |
+
+**今日资产**：`data/cath/`（CATH S40 34,653 结构域坐标+序列，818MB，git 不跟踪）；打分工具链（ESMFold 回折+TM-score、Protein-Sol、TemBERTure）全通。
 
 ---
 
