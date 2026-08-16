@@ -65,11 +65,20 @@ E1 对照实验**全部完成并 push**（提交 `c644a6b`，三目标结果：�
 - **阈值防过拟合**：先验设定 + 留一蛋白检查，不做阈值搜索
 - **Phase 2 数据**：CATH 4.2 S40（ESM-IF 同源分离划分），条件标签自算
 
+### 第四轮（2026-08-16）— E1b 验证扩展执行完成 ✅
+按 `session/2026-08-16_e1_validation_design.md` 全量执行并产出报告 `analysis/report/2026-08-16_e1_extended.md`：
+- 采样 336 样本（4 PDB × 2 模型 × 10 条件目录）；打分四指标全齐（ESMFold 回折+TM-score、Protein-Sol、TemBERTure）
+- **电荷响应 24/24 单调**（4 PDB × 2 模型 × 3 pH，target 梯度全过）
+- **MoMPNN 16/16 全优**（pLDDT/TM/%sol/Tm × 4 PDB，留一蛋白符号一致）
+- 联合可用率互有胜负（卡点：电荷精确命中 ±0.3 + pH4 物理极限）
+- 工具链沉淀：`tm_score.py`（US-align）、`esmfold_score.py`（回折存结构+批量）、`temberture_score.py`（并行分组）、`e1_ext_*.{sh,py}`
+- ⚠️ 性能教训：TemBERTure 必须用**直接 env python + OMP_NUM_THREADS=4** 并行（16 进程×4 线程），`conda run` 并发会因 conda 锁卡死、无线程限制会因 CPU 争抢慢 5 倍
+- ⚠️ 1CRN 特例：crambin 二硫键蛋白 ESMFold 置信度低（native pLDDT 48.7），该 PDB 的 pLDDT/TM 解读需谨慎
+
 ### 下一步（按优先级）
-1. **E1b 验证扩展**：下载 1CRN/1UBQ/2LZM → `code/input/`；装 us-align；写 `e1_extended.sh`（4 PDB × 基线+条件组 × 2 模型）；打分 + TM-score → `analysis/report/2026-08-16_e1_extended.md`
-2. **第一版 Phase 1 收尾**：PDB 采样 1000 条确定结构过滤器 99 分位默认阈值（可与 E1b 数据共用）；3–5 个示例蛋白不同 pH/预设对比实验
+1. **第二版 E4 集成**：MoMPNN 设为 `run_guided.py` 默认生成器 + 完整对照实验（E1b 已提供强依据）
+2. **第一版 Phase 1 收尾**：PDB 采样 1000 条确定结构过滤器 99 分位默认阈值；可选补 `--fixed_residues` 位点固定对照臂
 3. **第一版 Phase 2 / 第二版 E2 数据准备**：验证 CATH 4.2 S40 本机可下载；计算条件向量标准化 μ/σ → `condition_defaults.yaml`；A100 微调
-4. **第二版 E4 集成**：微调模型设为 `run_guided.py` 默认生成器 + 对照实验
 
 ---
 

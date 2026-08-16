@@ -23,6 +23,7 @@ env/
 # ===== 输出结果 / 日志 =====
 code/output/
 code/log/
+log/
 results/
 
 # ===== 系统 / 编辑器 =====

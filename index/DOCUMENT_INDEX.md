@@ -17,6 +17,7 @@
 | E1 pH 响应对比 | `analysis/report/2026-08-16_e1_pH_response.md` | MoMPNN 电荷命中偏差≤0.10 vs 原版 +0.2~0.7 | 2026-08-16 |
 | E1 三目标 | `analysis/report/2026-08-16_e1_three_targets.md` | 完整对比：可溶+12.8、热稳+7.8°C、电荷更准、pLDDT 持平 | 2026-08-16 |
 | E1 验证扩展设计 | `session/2026-08-16_e1_validation_design.md` | 4 PDB×3pH×3target 混合设计；TM-score 主证据；位点固定；阈值防过拟合；CATH 4.2 数据 | 2026-08-16 |
+| E1 扩展验证结果 | `analysis/report/2026-08-16_e1_extended.md` | 电荷 24/24 单调；MoMPNN 16/16 全优（4 指标×4 PDB）；可用率互有胜负 | 2026-08-16 |
 
 ## Phase 1 代码模块（`code/`）
 
@@ -37,6 +38,12 @@
 | 冒烟测试 | `code/tests/smoke_guided.py` | 真实 LigandMPNN + 1BC8.pdb，通过 |
 | MoMPNN 兼容性测试 | `code/tests/mompnn_compat_test.py` | 8 权重 × 2 模式 load_state_dict（protein_mpnn 全 PASS） |
 | MoMPNN 前向验证 | `code/tests/mompnn_forward_test.py` | MoMPNN 权重 + 1BC8.pdb 采样，seq_rec≈0.45 |
+| E1b 扩展采样 | `code/tests/e1_extended.sh` | 4 PDB × (基线+9 条件) × 2 模型采样 |
+| E1b 扩展打分 | `code/tests/e1_ext_score.sh` | ESMFold/TM/Protein-Sol/TemBERTure 批量驱动 |
+| ESMFold 回折打分 | `code/tests/esmfold_score.py` | pLDDT + 回折存 PDB（--input-dir 批量） |
+| TM-score 自洽 | `code/tests/tm_score.py` | US-align 批量：回折结构 vs 原骨架 |
+| TemBERTure 打分 | `code/tests/temberture_score.py` | 3 replica 平均 Tm（--dirs-file 并行分组） |
+| E1b 汇总/分析 | `code/tests/e1_ext_{summarize,analyze}.py` | 336 样本汇总 + 电荷/对比/可用率/留一分析 |
 
 ## 目录填充状态
 
