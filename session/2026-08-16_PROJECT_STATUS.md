@@ -105,8 +105,14 @@ E1 对照实验**全部完成并 push**（提交 `c644a6b`，三目标结果：�
 - 文档同步（README/USAGE/CONFIG）；报告 `analysis/report/2026-08-16_e4_default_mompnn.md`
 - ⚠️ 使用影响：默认纯 backbone（无配体上下文），需配体任务显式指定原版权重
 
+### 第七轮（2026-08-16）— Phase 2 训练数据标签构建完成 ✅
+- CATH S40 999 结构域 × 8 pH = **7,992 样本**：`data/cath/labels.npz`（coords/seqs/pH/charge/pI）
+- 条件向量 μ/σ 已统计并写入 `condition_defaults.yaml`（μ=[6.97,1,−1.34,...], σ=[1.73,0,7.78,...]）；ConditionEncoder 带 μ/σ 前向验证通过
+- 标签构建方案（self-consistent）：条件电荷 = native 序列在该 pH 下的净电荷，使 CE 与 charge_deviation 损失一致不冲突；推理时给任意 (pH,target) 外推
+- 脚本 `code/tests/build_labels.py`；README 补"CATH 训练数据下载（git 不跟踪）+ 选装打分工具"节
+
 ### 下一步（按优先级）
-1. **第一版 Phase 2 / 第二版 E2 条件微调**：训练数据 CATH S40 已就绪（坐标+序列）；计算条件向量 μ/σ → `condition_defaults.yaml`；编写微调脚本（backbone + ConditionEncoder + 复合 loss）；GPU 训练 → **模型 pH 感知的正解**（Phase 1 诚实边界指出模型自身无 pH 先验）
+1. **第一版 Phase 2 / 第二版 E2 条件微调**：训练数据（坐标+序列+标签）**已就绪**；编写微调脚本（backbone + ConditionEncoder + 复合 loss）→ GPU 训练 → **模型 pH 感知的正解**（Phase 1 诚实边界指出模型自身无 pH 先验）
 2. 可选：`--fixed_residues` 位点固定对照臂
 
 ---

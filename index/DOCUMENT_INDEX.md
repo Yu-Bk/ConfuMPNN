@@ -52,6 +52,7 @@
 | 阈值统计 | `code/tests/threshold_stats.py` | CATH S40 采样统计 4 规则 99 分位阈值 |
 | 示例蛋白对比 | `code/tests/examples_{compare,summarize}.sh/.py` | 4 蛋白 × 4 预设 + 3 pH 生成对比 |
 | 分段并行下载 | `code/tests/parallel_download.py` | Range 分段下载大文件（绕过单连接限速） |
+| 标签构建 | `code/tests/build_labels.py` | CATH S40 → 多 pH 条件标签（坐标+序列+pH+净电荷），算 μ/σ 写 condition_defaults.yaml |
 
 ## 目录填充状态
 

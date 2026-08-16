@@ -79,6 +79,31 @@ python tests/test_all.py        # 36 项单元测试，应全部通过
 python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 --num_samples 3
 ```
 
+### 步骤 5：训练数据（仅 Phase 2 微调需要，可选）
+
+**Phase 1 生成不需要训练数据**。若做条件微调，需下载 CATH 4.4.0 非冗余 S40 结构域数据集（坐标+序列，818MB，**git 不跟踪，新机器需重新下载**）：
+
+```bash
+# 本机已下载于 data/cath/；新机器执行：
+mkdir -p data/cath && cd data/cath
+curl -O https://download.cathdb.info/cath/releases/latest-release/non-redundant-data-sets/cath-dataset-nonredundant-S40.list
+curl -O https://download.cathdb.info/cath/releases/latest-release/non-redundant-data-sets/cath-dataset-nonredundant-S40.fa
+# 818MB 结构坐标包（单连接慢时用分段并行下载脚本）
+python ../../code/tests/parallel_download.py \
+  https://download.cathdb.info/cath/releases/latest-release/non-redundant-data-sets/cath-dataset-nonredundant-S40.pdb.tgz \
+  cath-dataset-nonredundant-S40.pdb.tgz 8
+mkdir -p S40 && tar -xzf cath-dataset-nonredundant-S40.pdb.tgz -C S40
+```
+
+### 步骤 6（选装）：下游打分工具
+
+生成后的序列可再用三个工具打分（可设计性 / 可溶 / 热稳），均为**选装**（不影响生成）：
+- **ESMFold**（pLDDT + 回折 TM-score）——conda 环境 `confumpnn-esmfold`（torch 2.6.0 + fair-esm 2.0.0）
+- **Protein-Sol**（%sol）——Manchester Perl 管线（本机封装 `protein_sol_mcp/`）
+- **TemBERTure**（Tm）——protBERT-BFD，conda 环境 `confumpnn-temberture`
+
+环境细节与打分脚本见 `docs/CONFIG.md` 环境节、`docs/USAGE.md` 第五节。
+
 ---
 
 ## 三、快速上手（一键生成）
