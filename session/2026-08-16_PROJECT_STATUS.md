@@ -16,6 +16,7 @@
 | 文档交付 | `docs/TECH.md`、`CONFIG.md`、`USAGE.md` 三份详细文档 | `2bf144d` |
 | E4 集成 | MoMPNN 设为 `run_guided.py` 默认生成器 | `900eab7` |
 | README 重写 | 完整入门文档（从零搭建→上手→使用指南→FAQ） | `531bd92` |
+| 微调训练启动 | `train_finetune.py` 就绪+冒烟通过+后台启动（冻结 MoMPNN+ConditionEncoder+KL 锚定防失控） | 本轮 |
 
 **今日资产**：`data/cath/`（CATH S40 34,653 结构域坐标+序列，818MB，git 不跟踪）；打分工具链（ESMFold 回折+TM-score、Protein-Sol、TemBERTure）全通。
 
@@ -111,9 +112,26 @@ E1 对照实验**全部完成并 push**（提交 `c644a6b`，三目标结果：�
 - 标签构建方案（self-consistent）：条件电荷 = native 序列在该 pH 下的净电荷，使 CE 与 charge_deviation 损失一致不冲突；推理时给任意 (pH,target) 外推
 - 脚本 `code/tests/build_labels.py`；README 补"CATH 训练数据下载（git 不跟踪）+ 选装打分工具"节
 
+### 第八轮（2026-08-16）— Phase 2 条件微调训练启动 ✅
+- **微调目标（三层）**：架构=冻结 MoMPNN 只训 ConditionEncoder（~75K 参数）；直接=学会「(pH, target_charge)→氨基酸分布」映射（冒烟 charge 4.71→3.67 下降）；最终=推理外推到未见过的 (pH,target) 组合
+- **脚本 `code/train_finetune.py`**：冻结 MoMPNN backbone + ConditionEncoder（cross-attention 注入 h_V，等价 soft prompt 但无需改 E_idx/mask）+ teacher-forced 并行解码 + 复合损失
+- **损失 `CE + λ_c·charge_deviation + λ_kl·KL锚定`**：KL 锚定（新增）约束条件化输出不偏离 backbone 无条件分布太远 → **防失控**（防止破坏 MoMPNN 的可溶/Tm/可设计性）
+- **混合目标**：50% 自洽（target=native 电荷，锚定结构）+ 50% 扰动（±Uniform[1,4]，制造 CE 与电荷冲突 → 教模型电荷偏移；纯自洽的隐患：CE 与电荷同时被重建 native 满足，模型学不到偏移）
+- **⚠️ 关键教训/修正**：
+  - prody `parsePDB` 按文件名后缀判格式，CATH 无后缀文件被当 mmCIF → 用 `.pdb` 符号链接目录解决（`data/cath/S40/dompdb_pdb/`，git 不跟踪）
+  - 对计划 4.5「token 拼 decoder 前缀」的实现修正：前缀需重排 E_idx 易错，改用 cross-attention 注入 h_V
+  - 对计划「全量微调」的保守偏离：默认生成器已是 MoMPNN（多目标 DPO 权重），全量微调有破坏其价值的风险 → 先冻结 backbone 只训编码器，不够再逐层放开
+- 冒烟：3 域 1 epoch ✅、5 域 3 epoch ✅（ce 稳定 1.58，charge 4.71→3.67）
+- **后台启动**：`nohup setsid ... python code/train_finetune.py --device cuda:1 --epochs 30`；进度 `bash code/tests/train_status.sh`；每 epoch 存 checkpoint + `log/train_progress.json`
+- 报告：`analysis/report/2026-08-16_phase2_training_start.md`
+
 ### 下一步（按优先级）
-1. **第一版 Phase 2 / 第二版 E2 条件微调**：训练数据（坐标+序列+标签）**已就绪**；编写微调脚本（backbone + ConditionEncoder + 复合 loss）→ GPU 训练 → **模型 pH 感知的正解**（Phase 1 诚实边界指出模型自身无 pH 先验）
+1. **训练完成后微调模型验证**（Phase 3 验证管线）：
+   - 重跑 E1b 打分管线（ESMFold pLDDT + TM-score + Protein-Sol %sol + TemBERTure Tm），**微调前后对比**——防失控最终判据
+   - pH 响应 Go/No-Go：同一 backbone，不同 pH 条件 → 生成不同序列 → 电荷按预期单调变化
+   - 把微调后 ConditionEncoder 接入 `run_guided.py`（E4 之后默认生成器再升级）
 2. 可选：`--fixed_residues` 位点固定对照臂
+3. 若 pH 响应弱 → 调 λ_c / λ_kl / perturb 参数，或逐层放开 backbone
 
 ---
 
@@ -135,6 +153,6 @@ ESMFold 回折在 `confumpnn-esmfold` 环境（conda, Python 3.10, torch 2.6.0+c
 
 ## 五、Git 状态
 
-- 分支 `main`，远程 `origin` = git@github.com:Yu-Bk/ConfuMPNN.git（E1 对照已 push 至 `c644a6b`；**本次方法论归档待提交**）
-- 最近提交：`c644a6b`（E1 三目标对照完成）← `e08c4c0`（E0 调研）← 此前（E1 接入 / gitignore MoMPNN / Phase 1 快照）
-- `LigandMPNN/`、`foundry/`、`MoMPNN/` 为 clone 源码不跟踪；`code/output/`、`code/log/`、`*.pt` 已 gitignore
+- 分支 `main`，远程 `origin` = git@github.com:Yu-Bk/ConfuMPNN.git
+- 最近提交：`4b5bab4`（train_status.sh）← `930288d`（Phase 2 标签构建）← `42c64b0`（今日总览）← `531bd92`（README 重写）← `c0447e8` ← `900eab7`（E4 默认生成器）
+- `LigandMPNN/`、`foundry/`、`MoMPNN/` 为 clone 源码不跟踪；`data/`、`code/output/`、`code/log/`、`*.pt`、`*.ckpt` 已 gitignore
