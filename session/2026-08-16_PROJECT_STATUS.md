@@ -48,14 +48,16 @@
 
 ---
 
-## 三、待办（下一步）
+## 三、进展与待办
 
-按优先级：
+### 本轮已完成（2026-08-16 第二轮）
+1. **Stage E0 ✅**：clone MoMPNN（`ConfuMPNN/MoMPNN/`，仅权重无代码）。结论：权重 = **纯 backbone ProteinMPNN**，`load_state_dict(strict=True)` 8/8 通过，1BC8 前向跑通（seq_rec≈0.45）。报告：`analysis/2026-08-16_mompnn_avail.md`
+2. **Stage E1 接入 ✅**：`run_guided.py` 加 `--model_type auto`（按 ckpt 有无 `atom_context_num` 自动检测）。MoMPNN 权重跑通 pH 引导（target=0 → 平均 −0.01±0.80）；原版 LigandMPNN 回归通过
+3. **仓库清理 ✅**：`MoMPNN/` 已 gitignore；冗余 remote `new` 删除
 
-1. **第二版 Stage E0（建议最先做）**：clone MoMPNN 仓库（`https://github.com/Qivon7/MoMPNN`），检查权重与 LigandMPNN 兼容性（是否含配体上下文 / 能否 `load_state_dict` 进我们的 `ProteinMPNN` 类），输出可用性结论到 `analysis/`
-2. **第一版 Phase 1 收尾待办**（PROJECT_PLAN 中列出）：
-   - 阈值统计：PDB 采样 1000 条确定结构过滤器 99 分位默认阈值
-   - 3–5 个示例蛋白不同 pH/预设的对比实验
+### 下一步（按优先级）
+1. **E1 对照实验**：同一 PDB/pH 下 MoMPNN（多目标 DPO）vs 原版 LigandMPNN 的 pH 响应 + 三目标打分（ESMFold pLDDT / Protein-Sol / TemBERTure）
+2. **第一版 Phase 1 收尾**：PDB 采样 1000 条确定结构过滤器 99 分位默认阈值；3–5 个示例蛋白不同 pH/预设对比实验
 3. **第一版 Phase 2（条件编码器微调）**：从训练集计算条件向量标准化 μ/σ → 写入 `condition_defaults.yaml`；A100 微调
 4. **第二版 E4 集成**：微调模型设为 `run_guided.py` 默认生成器 + 对照实验
 
@@ -79,6 +81,6 @@ ESMFold 回折在 `confumpnn-esmfold` 环境（conda, Python 3.10, torch 2.6.0+c
 
 ## 五、Git 状态
 
-- 分支 `main`，远程 `origin` = git@github.com:Yu-Bk/ConfuMPNN.git（未推送，本地领先 origin 若干提交）
-- 最近提交：`6d76da4`（charge_lookahead 修复）← `cac283f`（第二版计划+代码）← `2d834a2`（Phase 1 核心）
-- `LigandMPNN/`、`foundry/` 为 clone 源码不跟踪；`code/output/`、`code/log/`、`*.pt` 已 gitignore
+- 分支 `main`，远程 `origin` = git@github.com:Yu-Bk/ConfuMPNN.git（本地领先 origin 3 提交未 push：`2b6c037` `4d47552` `091f052`）
+- 最近提交：`091f052`（E1 接入）← `4d47552`（Stage E0 调研）← `2b6c037`（gitignore MoMPNN）← `985599c`（Phase 1 快照）
+- `LigandMPNN/`、`foundry/`、`MoMPNN/` 为 clone 源码不跟踪；`code/output/`、`code/log/`、`*.pt` 已 gitignore
