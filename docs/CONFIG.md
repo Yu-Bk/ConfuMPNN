@@ -60,8 +60,18 @@
 | `default_local_pos_limit` / `default_local_neg_limit` | 10Å 内正/负电荷数上限 | 6 / 6 |
 | `normalization.mean` / `.std` | 每维标准化常量（训练前从训练集统计后填入） | **null（训练前必填）** |
 | `encoder.hidden_dim` / `token_dim` / `n_tokens` | 条件编码器结构 | 64 / 128 / 4 |
+| `charge_calibration.gain` / `.offset` / `.enabled` | 电荷校准系数（条件注入推理时线性换算 target） | 2.57 / 0.16 / true |
 
 ⚠️ **训练前必须完成**：从训练集逐维度算 μ/σ 填入 `normalization`（不同量纲的条件直接进 MLP 会梯度不稳，`docs/TECH.md` §3.2 讨论过 softmax 问题，这里是输入量纲问题）。
+
+### 电荷校准（`charge_calibration`，Phase 3 新增）
+
+条件注入模型（`--cond_encoder`）的 **target→实际电荷** 有 ~2.57× 线性增益（机制：训练优化 softmax 期望电荷，推理测采样序列电荷，CE 自信放大 → 采样更极端）。若不做校准，`target=5` 会生成 ~+13 电荷的序列。
+
+- **公式**：`实际 ≈ gain·target + offset`；推理时自动换算 `target_eff = (desired − offset) / gain`
+- **来源**：4 PDB × target 响应合并拟合（15 点，R²=0.946，2026-08-16）
+- **默认开启**：`run_guided.py --cond_encoder` 时自动应用；`--no_calibration` 关闭
+- 验证（1BC8）：target 8.9/5/−5 → 实际 +8.76/+5.62/−7.13（校准前 +25.6/+13.0/−15.6）
 
 ---
 

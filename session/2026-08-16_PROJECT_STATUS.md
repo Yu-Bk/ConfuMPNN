@@ -139,12 +139,17 @@ E1 对照实验**全部完成并 push**（提交 `c644a6b`，三目标结果：�
   - **%sol/Tm 在采样噪声内**（1BC8 %sol std=7.9、Tm std=6.2，差异 <1σ；2LZM 甚至 +2.4/+2.5）
   - **TM-score 结构保持**（0.84-0.98）；唯一待修=电荷校准过冲 ~2.9×（推理侧线性校准已验证有效，或训练侧改）
 
+### 第十轮（2026-08-16）— 电荷校准落地 ✅
+- `condition_defaults.yaml` 新增 `charge_calibration`（gain=2.57, offset=0.16；4 PDB 15 点合并拟合 R²=0.946，比单用 1BC8 的 2.9 更鲁棒）
+- `run_guided.py --cond_encoder` 默认线性校准 `target_eff=(desired-offset)/gain`；`--no_calibration` 关闭；summary 记录 `calibrated` 字段
+- 验证 1BC8：target 8.9/5/-5 → +8.76/+5.62/-7.13（校准前 +25.6/+13.0/-15.6，误差收敛 <1）；残余在采样噪声内
+- 提交 `0be534b`；`docs/CONFIG.md` 补电荷校准节
+
 ### 下一步（按优先级）
-1. **校准落地**：把电荷校准系数（gain≈2.9, offset≈-1.1）写入 `condition_defaults.yaml`，`run_guided.py` 推理时自动换算 target（已验证有效）
-2. **训练侧改进（可选，一劳永逸减小过冲）**：charge_deviation 损失对 logits 加温度（直接优化采样序列电荷而非期望电荷）；或缩小 perturb 范围、增大 λ_kl
-3. **扩大样本（可选）**：每 PDB n=20+，给 %sol/Tm 做统计检验
-4. 把微调后 ConditionEncoder 设为条件注入默认路径（可选）
-5. 可选：`--fixed_residues` 位点固定对照臂
+1. **训练侧改进（可选，一劳永逸减小过冲）**：charge_deviation 损失对 logits 加温度（直接优化采样序列电荷而非期望电荷）；或缩小 perturb 范围、增大 λ_kl
+2. **扩大样本（可选）**：每 PDB n=20+，给 %sol/Tm 做统计检验
+3. 把微调后 ConditionEncoder 设为条件注入默认路径（可选）
+4. 可选：`--fixed_residues` 位点固定对照臂
 
 ---
 
