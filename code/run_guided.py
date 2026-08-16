@@ -8,6 +8,9 @@
     conda activate confumpnn
     python run_guided.py --pdb input/1BC8.pdb --pH 7.4 [--target_charge -2.0]
                          [--preset default] [--num_samples 10]
+    # 用 MoMPNN 权重（纯 backbone，--model_type 会自动检测为 protein_mpnn）：
+    python run_guided.py --pdb input/1BC8.pdb --pH 7.4 \
+        --weights ../MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt
 
 日志建议重定向到 code/log/，输出写入 code/output/。
 """
@@ -51,14 +54,28 @@ def parse_args():
     p.add_argument("--strength", type=float, default=0.5, help="电荷引导强度")
     p.add_argument("--seed", type=int, default=111)
     p.add_argument("--weights", default=None,
-                   help="LigandMPNN 权重路径（默认用 ligandmpnn_v_32_010_25.pt）")
+                   help="权重路径（默认 ligandmpnn_v_32_010_25.pt；也可指定 MoMPNN 的 .ckpt）")
+    p.add_argument("--model_type", default="auto",
+                   choices=["auto", "protein_mpnn", "ligand_mpnn"],
+                   help="模型类型：auto=按权重自动检测（默认）；protein_mpnn=纯 backbone（如 MoMPNN）；"
+                        "ligand_mpnn=配体上下文（原版 LigandMPNN）")
     p.add_argument("--out_dir", default=None,
                    help="输出目录（默认 code/output/guided_<pdb>_pH<pH>）")
     return p.parse_args()
 
 
-def load_model(weights, device):
+def load_model(weights, device, model_type="auto"):
     checkpoint = torch.load(weights, map_location=device)
+    # 自动检测：权重里有 atom_context_num（且 >0）说明是 LigandMPNN 配体权重；
+    # 没有则是纯 backbone ProteinMPNN（如 MoMPNN）。
+    if model_type == "auto":
+        model_type = (
+            "ligand_mpnn" if checkpoint.get("atom_context_num", 0) > 0
+            else "protein_mpnn"
+        )
+    atom_context_num = (
+        0 if model_type == "protein_mpnn" else int(checkpoint.get("atom_context_num", 16))
+    )
     model = ProteinMPNN(
         node_features=128,
         edge_features=128,
@@ -67,8 +84,8 @@ def load_model(weights, device):
         num_decoder_layers=3,
         k_neighbors=int(checkpoint["num_edges"]),
         device=device,
-        atom_context_num=int(checkpoint["atom_context_num"]),
-        model_type="ligand_mpnn",
+        atom_context_num=atom_context_num,
+        model_type=model_type,
         ligand_mpnn_use_side_chain_context=0,
     )
     model.load_state_dict(checkpoint["model_state_dict"])
@@ -93,17 +110,22 @@ def main():
         _LIG_DIR / "model_params" / "ligandmpnn_v_32_010_25.pt"
     )
     print(f"[1] 加载模型: {weights.name}  (device={device})")
-    model = load_model(weights, device)
+    model = load_model(weights, device, model_type=args.model_type)
+    mt = model.model_type  # 解析后的实际模型类型
+    print(f"    解析 model_type = {mt}")
 
-    # 2. 读 PDB + featurize
+    # 2. 读 PDB + featurize（按模型类型决定是否用配体上下文）
     print(f"[2] 读取 PDB: {args.pdb}")
     protein_dict, _, _, _, _ = parse_PDB(args.pdb)
     protein_dict["chain_mask"] = torch.ones(
         protein_dict["X"].shape[0], dtype=torch.int32  # 默认设计全部残基
     )
+    use_atom_context = (mt == "ligand_mpnn")
     feature_dict = featurize(
-        protein_dict, cutoff_for_score=8.0, use_atom_context=True,
-        number_of_ligand_atoms=16, model_type="ligand_mpnn",
+        protein_dict, cutoff_for_score=8.0,
+        use_atom_context=use_atom_context,
+        number_of_ligand_atoms=(16 if use_atom_context else 0),
+        model_type=mt,
     )
     L = feature_dict["X"].shape[1]
     feature_dict["batch_size"] = 1

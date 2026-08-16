@@ -27,7 +27,7 @@
 | 复合损失 | `code/src/losses.py` | CE + 电荷偏差 + 结构惩罚 + DPO + margin（Phase 2） |
 | 引导采样器 | `code/src/guided_sampler.py` | 静态/动态 bias 解码，包装 LigandMPNN |
 | 动态电荷前瞻 | `code/src/charge_lookahead.py` | 每步电荷 lookahead → 逐候选 bias；修复 target 被 softmax 抵消 bug |
-| 一键运行入口 | `code/run_guided.py` | `--pdb --pH --target_charge --preset`，输出 fasta+json+统计 |
+| 一键运行入口 | `code/run_guided.py` | `--pdb --pH --target_charge --preset [--model_type]`，自动检测 LigandMPNN/MoMPNN 权重，输出 fasta+json+统计 |
 | 过滤器预设 | `code/configs/filter_presets.yaml` | default / nucleic_acid_binding / membrane / acidic |
 | 条件默认配置 | `code/configs/condition_defaults.yaml` | 条件向量/标准化/编码器参数（Phase 2） |
 | 单元测试 | `code/tests/test_all.py` | 36 项，全通过 |

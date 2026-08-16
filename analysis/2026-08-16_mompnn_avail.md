@@ -70,6 +70,23 @@
 2. 对照实验：同一 PDB/pH 下，MoMPNN（多目标 DPO）vs 原版 LigandMPNN 的 pH 响应与可设计性（ESMFold pLDDT）
 3. 三个目标（可设计/热稳/可溶）打分：ESMFold（`confumpnn-esmfold` 环境）+ Protein-Sol + TemBERTure
 
+## 7. E1 接入验证（2026-08-16 已完成）
+
+`run_guided.py` 已改造为支持两种模型类型（提交见 git log）：
+
+- `load_model()` 加 `model_type` 参数，默认 `auto` 自动检测：ckpt 有 `atom_context_num>0` → `ligand_mpnn`；无 → `protein_mpnn`
+- featurize 按解析出的类型决定 `use_atom_context` / `number_of_ligand_atoms`
+- 命令行加 `--model_type {auto,protein_mpnn,ligand_mpnn}`
+
+**验证结果**（1BC8.pdb，pH 7.4，target_charge=0，strength=0.5，3 条序列）：
+
+| 权重 | 解析类型 | 平均净电荷 | 结论 |
+|------|---------|-----------|------|
+| MoMPNN `mompnn_temberture_tm_esm_6_4_4_b01.ckpt` | protein_mpnn | **−0.01 ± 0.80**（命中 target=0） | ✅ pH 引导正常 |
+| 原版 `ligandmpnn_v_32_010_25.pt` | ligand_mpnn | +0.73 ± 0.47 | ✅ 回归无破坏 |
+
+MoMPNN 权重已可直接用于 pH 引导采样。
+
 ## 附：测试脚本（已归档）
 
 - 兼容性：`code/tests/mompnn_compat_test.py`（8 权重 × 2 模式 load_state_dict）
