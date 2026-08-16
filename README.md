@@ -28,7 +28,7 @@ python run_guided.py --pdb input/2LZM.pdb --pH 5.5 --preset acidic --target_char
 - **结构感知过滤器** `structure_aware_filter.py`：4 条空间规则（99 分位阈值），抑制电荷异常聚集
 - 两者通过 `guided_sampler.py` 在采样时逐步施加
 
-**验证报告**：`analysis/report/2026-08-16_phase1_examples.md`（阈值统计 + 示例蛋白）；`analysis/report/2026-08-16_e1_three_targets.md` 与 `2026-08-16_e1_extended.md`（MoMPNN 对比）。
+**验证报告**：`analysis/report/2026-08-16_phase1_examples.md`（阈值统计 + 示例蛋白）；`analysis/report/2026-08-16_e1_three_targets.md` 与 `2026-08-16_e1_extended.md`（MoMPNN 对比）；`analysis/report/2026-08-16_e4_default_mompnn.md`（默认生成器切换）。
 
 ## 文件结构
 
