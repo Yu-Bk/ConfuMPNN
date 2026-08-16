@@ -37,9 +37,14 @@ def cross_entropy_loss(logits, target_seq, mask):
     return (nll * mask.float()).sum() / denom
 
 
-def charge_deviation_loss(logits, pH, target_charge, mask=None):
-    """净电荷偏差：|期望净电荷 − 目标电荷|，可微。"""
-    charge = net_charge_from_logits(logits, pH=pH, mask=mask)
+def charge_deviation_loss(logits, pH, target_charge, mask=None, temperature=1.0):
+    """净电荷偏差：|期望净电荷 − 目标电荷|，可微。
+
+    参数:
+        temperature: softmax 温度（<1 锐化，让训练优化的分布≈推理采样分布，
+            减小 Phase 3 发现的 ~2.57× 电荷过冲；见 net_charge_from_logits）
+    """
+    charge = net_charge_from_logits(logits, pH=pH, mask=mask, temperature=temperature)
     return torch.abs(charge - target_charge).mean()
 
 

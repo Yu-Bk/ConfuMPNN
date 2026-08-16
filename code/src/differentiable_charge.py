@@ -99,7 +99,7 @@ def net_charge(seq, pH, include_termini=True):
     return total.item()
 
 
-def net_charge_from_logits(logits, pH, mask=None, include_termini=True):
+def net_charge_from_logits(logits, pH, mask=None, include_termini=True, temperature=1.0):
     """从解码器 logits 计算**期望净电荷**（可微，Phase 2 训练用）。
 
     用 softmax 概率对每个位置的 20 种氨基酸电荷加权平均，再对全长求和。
@@ -111,13 +111,16 @@ def net_charge_from_logits(logits, pH, mask=None, include_termini=True):
         pH: 工作环境 pH（标量）
         mask: [B, L] 有效残基掩码（1=有效，0=忽略），默认全有效
         include_termini: 是否计入主链末端电荷
+        temperature: softmax 温度（默认 1.0）。<1 时分布锐化，E[Q] 更接近
+            「argmax 序列的电荷」= 推理采样（temperature 0.3）的电荷，
+            使训练优化目标与推理一致 → 减小 Phase 3 发现的 ~2.57× 过冲。
 
     返回:
         [B] 张量：每个样本的期望净电荷
     """
     if logits.shape[-1] == 21:
         logits = logits[..., :20]
-    probs = torch.softmax(logits, dim=-1)          # [B, L, 20]
+    probs = torch.softmax(logits / temperature, dim=-1)          # [B, L, 20]
     B, L, _ = probs.shape
     if mask is None:
         mask = torch.ones(B, L, device=logits.device)

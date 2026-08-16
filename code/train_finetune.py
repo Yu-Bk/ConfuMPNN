@@ -114,6 +114,9 @@ def parse_args():
                    help="使用扰动电荷目标的概率（制造电荷偏移学习信号）")
     p.add_argument("--perturb_scale", type=float, default=4.0,
                    help="扰动电荷偏移幅度上限（±Uniform[1,scale]）")
+    p.add_argument("--charge_temp", type=float, default=0.5,
+                   help="电荷损失的 softmax 温度（<1 锐化：训练优化的分布≈推理采样分布，"
+                        "减小 ~2.57× 过冲；1.0=原版期望电荷）")
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--max_domains", type=int, default=0,
                    help="最多用前 N 个结构域（0=全部；冒烟测试用）")
@@ -234,7 +237,8 @@ def main():
     logln(f"=== ConfuMPNN Phase 2 条件微调启动 ===")
     logln(f"device={device}  epochs={args.epochs}  lr={args.lr}  "
           f"λ_c={args.lambda_c}  λ_kl={args.lambda_kl}  "
-          f"perturb_prob={args.perturb_prob}  perturb_scale={args.perturb_scale}")
+          f"perturb_prob={args.perturb_prob}  perturb_scale={args.perturb_scale}  "
+          f"charge_temp={args.charge_temp}")
 
     # ---- backbone + 条件编码器 ----
     backbone = load_backbone(args.weights, device)
@@ -360,12 +364,12 @@ def main():
             ce_mask = dom["ce_mask"].repeat(B, 1)
             ce = cross_entropy_loss(logits, S_true, ce_mask)
 
-            # 电荷偏差（逐样本，因 pH 每样本不同）
+            # 电荷偏差（逐样本，因 pH 每样本不同；温度化：优化采样分布电荷而非期望电荷）
             cd = torch.zeros(B, device=device)
             for i in range(B):
                 cd[i] = charge_deviation_loss(
                     logits[i:i+1], pH=pH_b[i], target_charge=charge_b[i],
-                    mask=ce_mask[i:i+1],
+                    mask=ce_mask[i:i+1], temperature=args.charge_temp,
                 )
             cd = cd.mean()
 
