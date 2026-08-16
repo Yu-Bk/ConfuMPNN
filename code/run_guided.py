@@ -16,9 +16,11 @@
 条件注入模式（Phase 3，用微调后的 ConditionEncoder，模型自身 pH 感知）：
     python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 \
         --cond_encoder output/finetune/condition_encoder_last.pt \
-        [--cond_mode conditioned|baseline]
+        [--cond_mode conditioned|baseline] [--no_calibration]
     # conditioned ：注入条件向量（默认），无 logit bias —— 测模型学到的 pH 感知
     # baseline   ：加载编码器但不注入（等价 Phase 1 诚实边界对照）
+    # 电荷校准默认开：按 config 的 gain/offset 线性换算 target_eff=(desired-offset)/gain，
+    #   抵消条件注入的 ~2.57× 电荷过冲（否则 target=0 可能生成 ±3 电荷）。--no_calibration 关闭。
 
 日志建议重定向到 code/log/，输出写入 code/output/。
 """
@@ -87,6 +89,9 @@ def parse_args():
                    choices=["conditioned", "baseline"],
                    help="条件注入模式：conditioned=注入条件向量（默认，测模型 pH 感知）；"
                         "baseline=加载编码器但不注入（等价 Phase 1 诚实边界对照）")
+    p.add_argument("--no_calibration", action="store_true",
+                   help="关闭电荷校准（默认开：按 condition_defaults.yaml 的 gain/offset 线性校准 "
+                        "target_eff=(desired-offset)/gain，抵消条件注入的 ~2.57× 电荷过冲）")
     p.add_argument("--out_dir", default=None,
                    help="输出目录（默认 code/output/guided_<pdb>_pH<pH>）")
     return p.parse_args()
@@ -210,9 +215,28 @@ def main():
     if args.cond_encoder:
         mode = "phase3_conditioned" if args.cond_mode == "conditioned" else "phase3_baseline"
         cond_encoder = load_condition_encoder(args.cond_encoder, device)
-        cond_vec = make_condition_vector(args.pH, net_charge=args.target_charge).to(device)
+
+        # 电荷校准（默认开）：target_eff = (desired - offset) / gain
+        # 抵消条件注入的 ~2.57× 电荷过冲（机制见 condition_defaults.yaml）
+        target_eff = args.target_charge
+        calib_note = "（未指定 target，无校准）"
+        if args.target_charge is not None and not args.no_calibration:
+            with open(_CODE_DIR / "configs" / "condition_defaults.yaml") as f:
+                cc = yaml.safe_load(f)["condition_defaults"].get("charge_calibration", {})
+            gain, offset = cc.get("gain", 2.57), cc.get("offset", 0.16)
+            if cc.get("enabled", True):
+                target_eff = (args.target_charge - offset) / gain
+                calib_note = (f"target {args.target_charge} → 校准后 target_eff "
+                              f"{target_eff:.2f}（gain={gain}, offset={offset}）")
+            else:
+                calib_note = "（config 中 charge_calibration.enabled=false，未校准）"
+        elif args.target_charge is not None:
+            calib_note = "（--no_calibration，未校准）"
+
+        cond_vec = make_condition_vector(args.pH, net_charge=target_eff).to(device)
         print(f"[3] 条件注入模式: cond_mode={args.cond_mode}, "
               f"cond_vec={[round(x, 2) for x in cond_vec.tolist()]}")
+        print(f"    电荷校准: {calib_note}")
         print(f"[4] 条件注入采样 {args.num_samples} 条候选序列...")
         sequences, charges, pIs = [], [], []
         for i in range(args.num_samples):
@@ -275,6 +299,7 @@ def main():
         "pdb": args.pdb, "pH": args.pH, "target_charge": args.target_charge,
         "mode": mode,
         "cond_encoder": str(args.cond_encoder) if args.cond_encoder else None,
+        "calibrated": bool(args.cond_encoder and not args.no_calibration),
         "preset": args.preset, "temperature": args.temperature,
         "strength": args.strength, "seed": args.seed, "num_samples": args.num_samples,
         "native_charge": native_charge, "native_pI": native_pI,
