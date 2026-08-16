@@ -26,6 +26,9 @@ code/log/
 log/
 results/
 
+# ===== 外部数据集（大文件不提交）=====
+data/
+
 # ===== 系统 / 编辑器 =====
 .DS_Store
 .idea/

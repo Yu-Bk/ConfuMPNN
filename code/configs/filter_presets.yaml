@@ -12,10 +12,10 @@
 
 presets:
   default:
-    desc: "通用默认预设（PROJECT_PLAN 4.1 默认阈值）"
+    desc: "通用默认预设（99 分位阈值，来自 CATH S40 1000 结构域统计 2026-08-16）"
     charge_cluster:  {radius: 10.0, threshold: 6, strength: -1.0}
-    salt_bridge:     {radius: 10.0, threshold: 5, strength: -1.0}
-    core_charge:     {burial_radius: 10.0, charge_radius: 8.0, burial_threshold: 0.8, charge_count: 4, strength: -1.0}
+    salt_bridge:     {radius: 10.0, threshold: 4, strength: -1.0}
+    core_charge:     {burial_radius: 10.0, charge_radius: 8.0, burial_threshold: 0.8, charge_count: 6, strength: -1.0}
     same_sign_cluster: {radius: 8.0, threshold: 4, strength: -1.0}
 
   nucleic_acid_binding:

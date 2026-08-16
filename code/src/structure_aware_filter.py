@@ -40,24 +40,24 @@ CHARGED_AA_IDX = POS_AA_IDX + NEG_AA_IDX
 
 
 def default_config():
-    """默认规则阈值（PROJECT_PLAN.md 4.1 中的设定值）。"""
+    """默认规则阈值（99 分位，来自 CATH S40 1000 结构域统计 2026-08-16）。"""
     return {
         "charge_cluster": {
             "radius": 10.0, "threshold": 6, "strength": -1.0,
-            "desc": "10Å 内同号电荷 ≥6 → 抑制继续放同号带电残基",
+            "desc": "10Å 内同号电荷 ≥6 → 抑制继续放同号带电残基（p99=6）",
         },
         "salt_bridge": {
-            "radius": 10.0, "threshold": 5, "strength": -1.0,
-            "desc": "10Å 内正负电荷对 ≥5 → 抑制继续放带电残基",
+            "radius": 10.0, "threshold": 4, "strength": -1.0,
+            "desc": "10Å 内正负电荷对 ≥4 → 抑制继续放带电残基（p99=4）",
         },
         "core_charge": {
             "burial_radius": 10.0, "charge_radius": 8.0,
-            "burial_threshold": 0.8, "charge_count": 4, "strength": -1.0,
-            "desc": "核心埋藏位置 8Å 内带电残基 ≥4 → 抑制放带电残基",
+            "burial_threshold": 0.8, "charge_count": 6, "strength": -1.0,
+            "desc": "核心埋藏位置 8Å 内带电残基 ≥6 → 抑制放带电残基（p99=6）",
         },
         "same_sign_cluster": {
             "radius": 8.0, "threshold": 4, "strength": -1.0,
-            "desc": "8Å 连通图同号电荷 ≥4 → 抑制该区域放同号带电残基",
+            "desc": "8Å 邻域同号电荷 ≥4 → 抑制放同号带电残基（p99=4，局部密度口径）",
         },
     }
 

@@ -18,6 +18,7 @@
 | E1 三目标 | `analysis/report/2026-08-16_e1_three_targets.md` | 完整对比：可溶+12.8、热稳+7.8°C、电荷更准、pLDDT 持平 | 2026-08-16 |
 | E1 验证扩展设计 | `session/2026-08-16_e1_validation_design.md` | 4 PDB×3pH×3target 混合设计；TM-score 主证据；位点固定；阈值防过拟合；CATH 4.2 数据 | 2026-08-16 |
 | E1 扩展验证结果 | `analysis/report/2026-08-16_e1_extended.md` | 电荷 24/24 单调；MoMPNN 16/16 全优（4 指标×4 PDB）；可用率互有胜负 | 2026-08-16 |
+| Phase 1 收尾 | `analysis/report/2026-08-16_phase1_examples.md` | 结构过滤器 99 分位阈值（CATH S40 统计）+ 示例蛋白对比；诚实边界：无引导时模型不感知 pH | 2026-08-16 |
 
 ## Phase 1 代码模块（`code/`）
 
@@ -44,6 +45,9 @@
 | TM-score 自洽 | `code/tests/tm_score.py` | US-align 批量：回折结构 vs 原骨架 |
 | TemBERTure 打分 | `code/tests/temberture_score.py` | 3 replica 平均 Tm（--dirs-file 并行分组） |
 | E1b 汇总/分析 | `code/tests/e1_ext_{summarize,analyze}.py` | 336 样本汇总 + 电荷/对比/可用率/留一分析 |
+| 阈值统计 | `code/tests/threshold_stats.py` | CATH S40 采样统计 4 规则 99 分位阈值 |
+| 示例蛋白对比 | `code/tests/examples_{compare,summarize}.sh/.py` | 4 蛋白 × 4 预设 + 3 pH 生成对比 |
+| 分段并行下载 | `code/tests/parallel_download.py` | Range 分段下载大文件（绕过单连接限速） |
 
 ## 目录填充状态
 
