@@ -2,6 +2,8 @@
 LigandMPNN/
 foundry/
 MoMPNN/
+protein_sol_mcp/
+TemBERTure/
 
 # ===== Python 缓存 / 构建 =====
 __pycache__/
