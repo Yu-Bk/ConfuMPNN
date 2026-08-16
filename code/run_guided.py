@@ -8,9 +8,10 @@
     conda activate confumpnn
     python run_guided.py --pdb input/1BC8.pdb --pH 7.4 [--target_charge -2.0]
                          [--preset default] [--num_samples 10]
-    # 用 MoMPNN 权重（纯 backbone，--model_type 会自动检测为 protein_mpnn）：
+    # 默认生成器 = MoMPNN（多目标 DPO 微调版，可溶/热稳更优，E1b 16/16 全优）
+    # 显式回退原版 LigandMPNN（含配体上下文）：
     python run_guided.py --pdb input/1BC8.pdb --pH 7.4 \
-        --weights ../MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt
+        --weights ../LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt
 
 日志建议重定向到 code/log/，输出写入 code/output/。
 """
@@ -30,6 +31,14 @@ _LIG_DIR = _CODE_DIR.parent / "LigandMPNN"
 for p in [str(_CODE_DIR), str(_LIG_DIR)]:
     if p not in sys.path:
         sys.path.insert(0, p)
+
+# 默认生成器 = MoMPNN（多目标 DPO 微调版，ProtAlign ICLR 2026）
+# E4 决策：E1b 验证 MoMPNN 在 pLDDT/TM/%sol/Tm 四指标 × 4 PDB 全部占优（16/16），
+# 设为默认；原版 LigandMPNN（含配体上下文）通过 --weights 显式回退。
+_DEFAULT_WEIGHTS = (
+    _CODE_DIR.parent / "MoMPNN" / "mompnn_paper_checkpoints"
+    / "mompnn_temberture_tm_esm_6_4_4_b01.ckpt"
+)
 
 from data_utils import featurize, parse_PDB, restype_int_to_str  # noqa: E402
 from model_utils import ProteinMPNN  # noqa: E402
@@ -54,7 +63,8 @@ def parse_args():
     p.add_argument("--strength", type=float, default=0.5, help="电荷引导强度")
     p.add_argument("--seed", type=int, default=111)
     p.add_argument("--weights", default=None,
-                   help="权重路径（默认 ligandmpnn_v_32_010_25.pt；也可指定 MoMPNN 的 .ckpt）")
+                   help="权重路径（默认 MoMPNN mompnn_temberture_tm_esm_6_4_4_b01.ckpt；"
+                        "回退原版 LigandMPNN 用 ligandmpnn_v_32_010_25.pt）")
     p.add_argument("--model_type", default="auto",
                    choices=["auto", "protein_mpnn", "ligand_mpnn"],
                    help="模型类型：auto=按权重自动检测（默认）；protein_mpnn=纯 backbone（如 MoMPNN）；"
@@ -105,10 +115,8 @@ def main():
     np.random.seed(args.seed)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # 1. 加载模型
-    weights = Path(args.weights) if args.weights else (
-        _LIG_DIR / "model_params" / "ligandmpnn_v_32_010_25.pt"
-    )
+    # 1. 加载模型（默认生成器 = MoMPNN；--weights 可覆盖）
+    weights = Path(args.weights) if args.weights else _DEFAULT_WEIGHTS
     print(f"[1] 加载模型: {weights.name}  (device={device})")
     model = load_model(weights, device, model_type=args.model_type)
     mt = model.model_type  # 解析后的实际模型类型

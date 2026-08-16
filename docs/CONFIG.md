@@ -77,13 +77,13 @@
 | `--temperature` | float | 0.3 | 采样温度（低=更保守） | 0.1–0.5 |
 | `--strength` | float | 0.5 | 电荷引导强度（大=更强但破坏模型先验） | 0.2–0.5 |
 | `--seed` | int | 111 | 随机种子（可复现） | 任意 |
-| `--weights` | 路径 | LigandMPNN 默认权重 | 模型权重：LigandMPNN 的 `.pt` 或 MoMPNN 的 `.ckpt` | 见下文 |
+| `--weights` | 路径 | **MoMPNN 默认权重** | 模型权重：MoMPNN 的 `.ckpt`（默认）；LigandMPNN 的 `.pt`（显式回退） | 见下文 |
 | `--model_type` | str | auto | auto=按权重自动检测；protein_mpnn=纯 backbone（MoMPNN）；ligand_mpnn=配体上下文（原版） | 一般用 auto |
 | `--out_dir` | 路径 | 自动 | 输出目录（默认 `output/guided_<pdb>_pH<pH>/`） | 建议显式指定 |
 
 **权重说明**：
-- 默认 LigandMPNN：`LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt`（含配体上下文）
-- MoMPNN（多目标 DPO 微调版，可溶/热稳更优）：`MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt`（纯 backbone，`--model_type auto` 自动识别）
+- **默认 MoMPNN**（E4 决策）：`MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt`（多目标 DPO 微调版，纯 backbone，`--model_type auto` 自动识别为 protein_mpnn）
+- 显式回退原版 LigandMPNN（含配体上下文）：`LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt`
 
 **自动检测逻辑**：权重 ckpt 里有 `atom_context_num`（>0）→ ligand_mpnn；没有 → protein_mpnn。
 

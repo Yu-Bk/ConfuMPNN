@@ -10,12 +10,12 @@
 
 ```bash
 cd code
-# 一键生成：指定 PDB + pH，可选目标净电荷与结构过滤器预设
+# 一键生成：默认生成器 = MoMPNN（多目标 DPO 微调版，可溶/热稳显著更优）
 python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 --num_samples 10
 
-# 用 MoMPNN 权重（多目标 DPO 微调版，可溶/热稳显著更优）
+# 回退原版 LigandMPNN（含配体上下文，需显式指定权重）
 python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 \
-  --weights ../MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt
+  --weights ../LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt
 
 # 不同结构过滤场景（default / nucleic_acid_binding / membrane / acidic）
 python run_guided.py --pdb input/2LZM.pdb --pH 5.5 --preset acidic --target_charge 0

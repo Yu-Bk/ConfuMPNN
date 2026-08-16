@@ -83,10 +83,15 @@ E1 对照实验**全部完成并 push**（提交 `c644a6b`，三目标结果：�
 5. ⚠️ 下载技巧：单连接被限速时用 `parallel_download.py` Range 8 段并行（818MB 从 ~30min+ 降到 ~10min）
 6. **详细文档交付**：`docs/TECH.md`（技术）、`docs/CONFIG.md`（配置）、`docs/USAGE.md`（使用），README 加文档导航，DOCUMENT_INDEX 登记
 
+### 第六轮（2026-08-16）— E4 完成 ✅（MoMPNN 设为默认生成器）
+- `run_guided.py` 默认权重改为 MoMPNN（`mompnn_temberture_tm_esm_6_4_4_b01.ckpt`），`--weights` 保留可覆盖（回退原版 LigandMPNN 含配体上下文）
+- 默认命令冒烟：target=0 → −0.01±0.80，序列确认 MoMPNN
+- 文档同步（README/USAGE/CONFIG）；报告 `analysis/report/2026-08-16_e4_default_mompnn.md`
+- ⚠️ 使用影响：默认纯 backbone（无配体上下文），需配体任务显式指定原版权重
+
 ### 下一步（按优先级）
-1. **第二版 E4 集成**：MoMPNN 设为 `run_guided.py` 默认生成器 + 完整对照实验（E1b 已提供跨蛋白强依据）
-2. **第一版 Phase 2 / 第二版 E2 条件微调**：训练数据 CATH S40 已就绪（坐标+序列）；计算条件向量 μ/σ → `condition_defaults.yaml`；编写微调脚本（backbone + ConditionEncoder + 复合 loss）；GPU 训练 → **模型 pH 感知的正解**（Phase 1 诚实边界指出模型自身无 pH 先验）
-3. 可选：`--fixed_residues` 位点固定对照臂
+1. **第一版 Phase 2 / 第二版 E2 条件微调**：训练数据 CATH S40 已就绪（坐标+序列）；计算条件向量 μ/σ → `condition_defaults.yaml`；编写微调脚本（backbone + ConditionEncoder + 复合 loss）；GPU 训练 → **模型 pH 感知的正解**（Phase 1 诚实边界指出模型自身无 pH 先验）
+2. 可选：`--fixed_residues` 位点固定对照臂
 
 ---
 

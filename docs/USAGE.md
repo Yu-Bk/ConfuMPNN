@@ -27,9 +27,11 @@ cd /data/nfs/IC/baokun_yu/ConfuMPNN/code
 python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 --num_samples 10
 ```
 
+> 默认生成器 = **MoMPNN**（`mompnn_temberture_tm_esm_6_4_4_b01.ckpt`，多目标 DPO 微调版，E1b 验证四指标×4 PDB 全优）。回退原版 LigandMPNN 见场景 4。
+
 输出（终端）：
 ```
-[1] 加载模型: ligandmpnn_v_32_010_25.pt  (device=cuda)
+[1] 加载模型: mompnn_temberture_tm_esm_6_4_4_b01.ckpt  (device=cuda)
 [2] 读取 PDB: input/1BC8.pdb
     蛋白长度 93，native: MDSAITLWQFLLQLLQKPQNKHMICWTSNDGQFKLLQAEEVARLWGIRKN...
 [3] 引导设置: pH=7.4, target_charge=0.0, preset=default, strength=0.5
@@ -81,13 +83,15 @@ python run_guided.py --pdb input/2LZM.pdb --pH 7.4 --preset membrane --target_ch
 python run_guided.py --pdb input/2LZM.pdb --pH 5.5 --preset acidic --target_charge 0
 ```
 
-### 场景 4：用 MoMPNN 权重（可溶/热稳更优的模型）
+### 场景 4：回退原版 LigandMPNN（含配体上下文）
+
+MoMPNN 是纯 backbone（无配体上下文）。若你的任务需要**配体/核酸结合位点上下文**（LigandMPNN 的招牌能力），显式指定原版权重：
 
 ```bash
 python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 \
-  --weights ../MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt
+  --weights ../LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt
 ```
-`--model_type auto` 会自动识别 MoMPNN 为纯 backbone（protein_mpnn）。
+`--model_type auto` 会自动识别该权重为 ligand_mpnn（配体上下文）。
 
 ### 场景 5：可复现实验（固定种子 + 指定输出目录）
 

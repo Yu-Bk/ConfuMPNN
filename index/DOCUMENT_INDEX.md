@@ -22,6 +22,7 @@
 | 技术文档 | `docs/TECH.md` | 架构 / 算法原理（HH 电荷、电荷前瞻、softmax 教训）/ 设计决策 / 验证摘要 | 2026-08-16 |
 | 配置文档 | `docs/CONFIG.md` | filter_presets / condition_defaults / 命令行参数 / 环境 | 2026-08-16 |
 | 使用说明 | `docs/USAGE.md` | 上手 / 5 种场景 / 输出解读 / FAQ / 批处理参考 | 2026-08-16 |
+| E4 默认生成器 | `analysis/report/2026-08-16_e4_default_mompnn.md` | MoMPNN 设为 run_guided.py 默认生成器；实现/验证/文档同步 | 2026-08-16 |
 
 ## Phase 1 代码模块（`code/`）
 
