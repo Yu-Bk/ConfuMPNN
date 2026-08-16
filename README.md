@@ -198,7 +198,7 @@ MDSAITLWQFLLQLLQKPQNKHMICWTSNDGQFKLLQAEEVARLWGIRKNKPNMNYDKLS...
 - [docs/CONFIG.md](docs/CONFIG.md) — 配置文档：YAML / 命令行参数 / 环境
 - [docs/USAGE.md](docs/USAGE.md) — 使用说明：完整场景 / 输出解读 / FAQ / 批处理
 
-**计划**：`index/PROJECT_PLAN.md`（第一版）与 `index/PROJECT_EXTEND.md`（第二版拓展）；文档索引 `index/DOCUMENT_INDEX.md`。
+**计划**：`index/PROJECT_PLAN.md`（第一版）与 `index/PROJECT_EXTEND.md`（第二版拓展）；**判断标准 `index/DESIGN_CRITERIA.md`**（条件设计的 PASS/FAIL 判据，先立标准再训练）；文档索引 `index/DOCUMENT_INDEX.md`。
 
 **实验报告**（`analysis/report/`）：
 - `2026-08-16_phase1_examples.md` — 结构过滤器阈值统计 + 示例蛋白对比

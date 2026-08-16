@@ -19,7 +19,10 @@
 | 微调训练启动 | `train_finetune.py` 就绪+冒烟通过+后台启动（冻结 MoMPNN+ConditionEncoder+KL 锚定防失控） | `1477a79` |
 | 微调训练完成 | 30 epoch×999 域=14.7min；charge 5.16→1.58、ce 稳定 1.86、kl 稳定 0.15 | — |
 | Phase 3 pH 响应 | 条件注入接入 run_guided.py + Go/No-Go 4/4 PDB 通过（target 单调 + 跨 pH identity<100%） | `4fccc1c` |
-| Phase 3 防失控 | 条件注入 vs E1b 基线四指标：pLDDT 掉是过冲所致（校准后恢复）；%sol/Tm 噪声内 → PASS | `待提交` |
+| Phase 3 防失控（n=5） | 条件注入 vs E1b 基线四指标：pLDDT 掉是过冲所致（校准后恢复）；%sol/Tm 噪声内 → PASS | `c2de909` |
+| 训练侧根治过冲 | 电荷损失温度化（charge_temp=0.5）：增益 2.57→1.04，新编码器默认关校准 | `b91ab93` |
+| **第十三轮 n=20 扩样本** | **推翻 n=5 假阴性**：32 组配对检验 23 组显著（%sol/Tm 真实下降）；机制=条件注入 >50% 位点非保守替换 | `待提交` |
+| **判断标准 v1** | `index/DESIGN_CRITERIA.md`（用户要求先立标准再训练）：H1 TM≥0.70 / H2 电荷±2 / H3 聚集合法；S1 注入选择性 / S2 可开发性权衡 | `待提交` |
 
 **今日资产**：`data/cath/`（CATH S40 34,653 结构域坐标+序列，818MB，git 不跟踪）；打分工具链（ESMFold 回折+TM-score、Protein-Sol、TemBERTure）全通。
 
@@ -152,10 +155,25 @@ E1 对照实验**全部完成并 push**（提交 `c644a6b`，三目标结果：�
 - **新编码器默认关校准**（`enabled: false`）——全局校准会过校正（per-PDB 增益 1.04~1.7，2LZM ~1.7 仍略过冲）
 - 教训：推理侧校准是补丁（对旧编码器有效），训练侧温度化才是根治（增益→1，且自动对齐推理采样分布）
 
-### 下一步（按优先级）
-1. **微调后编码器（finetune_t05）设为条件注入默认路径**（可选）
-2. **扩大样本（可选）**：每 PDB n=20+ 做 %sol/Tm 统计检验；2LZM 的 per-PDB 校准
-3. 可选：`--fixed_residues` 位点固定对照臂
+### 第十三轮（2026-08-16）— n=20 扩样本推翻 n=5 假阴性 + 判断标准 v1 ✅
+- **扩样本动机**：n=5 的"在噪声内"是**统计功效不足的假阴性**。防过拟合第一道防线=**泄漏检查**：1BC8/1CRN/1UBQ/2LZM 均不在训练域列表（labels.npz 999 域；dompdb 目录里的 1crnA00 已下载但未抽样进训练集）
+- **对称配对协议**（新脚本 `phase3_antidrift_extend.py`）：同一 seed → 同一 randn → 同一解码顺序；基线（MoMPNN 无注入）vs 条件（finetune_t05）唯一差异=条件；双场景（A 温和 pH7.4/target=原生；B 压力 pH4.0/target=原生+5）；n=20 × 4 臂 × 4 PDB = **320 条**
+- **四指标打分**（`phase3_antidrift_n20_score.sh`，递归扫描 16 个 arm）；**配对统计**（`phase3_antidrift_n20_stats.py`）：32 组配对 t + Wilcoxon，BH-FDR 校正
+- **🚨 发现**：条件注入显著降低 **%sol（-4~-24 分）**、**Tm（-2.5~-7.1°C）**、部分 pLDDT（1BC8 -5.2、2LZM -4.4）；TM-score 仅轻微下降（-0.007~-0.074）；32 组中 **23 组显著**——**n=5 防失控 PASS 是假阴性**
+- **机制**（序列级证据）：条件注入改变 **>50% 位点**，非保守替换（`R→I`、`K→P`、`E→T`、`D→N`）；电荷目标命中（增益≈1）但以牺牲可设计性为代价；A 场景（target=原生）identity 仅 0.45-0.59 = **无需求时也重写**（注入选择性失败）
+- **用户概念纠正**：逆折叠本质=**骨架固定、序列可重写**，序列大改是设计行为非破坏；"改了 pI 还要求序列相似"才不合理；%sol/Tm 下降是**设计权衡**非失控
+- **判断标准 v1**（`index/DESIGN_CRITERIA.md`，用户要求"先立标准再训练"）：
+  - 硬约束：H1 结构自洽（回折 TM 中位数≥0.70=整体骨架相似，失败率 TM<0.5 ≤10%）/ H2 电荷命中（|平均实际−target|≤2.0）/ H3 电荷聚集合法（结构过滤器违规率≤基线+5pp）
+  - 软判据：S1 注入选择性（A 场景 identity≥0.7）/ S2 可开发性（pLDDT/%sol/Tm 报告绝对值，不判 FAIL）
+  - 参照：R1 天然蛋白对（CATH 同 superfamily 找"骨架相似 pI 不同"蛋白对，验证目标可达）
+- **现有编码器按新标准**：H1 ✅（放宽后全 PDB 过）、H2 ⚠️（2LZM 过冲 target 8→+13.24）、**S1 ❌**
+- **明天训练修正方向**（见"下一步"）
+
+### 下一步（2026-08-17，从第十三轮继续）
+1. **训练修正（治 S1 注入选择性）**：`train_finetune.py` 原生标签比例 50%→70% + 加**序列保持正则**（条件输出 vs 无条件输出逐位差异惩罚）→ 重训 → n=20 复验按判断标准判定
+2. **复验工具链已就绪**：`phase3_antidrift_extend.py`（采样）+ `phase3_antidrift_n20_score.sh`（打分）+ `phase3_antidrift_n20_stats.py`（统计，含按新标准的 H1/H2/S1 判定）
+3. 可选：2LZM per-PDB 过冲（接受 ±2 容差或调 `--charge_temp`）；R1 天然蛋白对参照验证
+4. 可选：`--fixed_residues` 位点固定对照臂（与序列保持正则互补的思路）
 
 ---
 
@@ -178,5 +196,6 @@ ESMFold 回折在 `confumpnn-esmfold` 环境（conda, Python 3.10, torch 2.6.0+c
 ## 五、Git 状态
 
 - 分支 `main`，远程 `origin` = git@github.com:Yu-Bk/ConfuMPNN.git
-- 最近提交：`4b5bab4`（train_status.sh）← `930288d`（Phase 2 标签构建）← `42c64b0`（今日总览）← `531bd92`（README 重写）← `c0447e8` ← `900eab7`（E4 默认生成器）
+- 最近提交：`b91ab93`（温度化根治过冲）← `d9b67ff`（电荷损失温度化）← `212d392`（文档）← `0be534b`（校准落地）← `c2de909`（n=5 防失控 PASS）← `d75fb96`（打分工具修复）← `fcc9845`（pH 响应报告）← `4fccc1c`（Phase 3 注入）← `177d902`（train_status 修复）← `1477a79`（微调启动）
+- ⚠️ 本文件"第十三轮"与 `index/DESIGN_CRITERIA.md` 待提交（见 git status）
 - `LigandMPNN/`、`foundry/`、`MoMPNN/` 为 clone 源码不跟踪；`data/`、`code/output/`、`code/log/`、`*.pt`、`*.ckpt` 已 gitignore

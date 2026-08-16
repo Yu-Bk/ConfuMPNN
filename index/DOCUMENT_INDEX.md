@@ -27,6 +27,8 @@
 | Phase 3 pH 响应 | `analysis/report/2026-08-16_phase3_pH_response.md` | 条件注入 Go/No-Go 4/4 PDB 通过（target 单调+跨 pH identity<100%）；校准增益 ~2.9× 机制 | 2026-08-16 |
 | Phase 3 防失控 | `analysis/report/2026-08-16_phase3_antidrift.md` | 条件注入 vs E1b 基线四指标对比：pLDDT 掉是过冲所致（校准后 1BC8 82.3≈基线 82.8）；%sol/Tm 在噪声内，PASS | 2026-08-16 |
 | Phase 3 温度化根治 | `analysis/report/2026-08-16_phase3_charge_temp.md` | 电荷损失温度化（charge_temp=0.5）：增益 2.57→1.04，无需推理侧校准；pH 感知保留 | 2026-08-16 |
+| **判断标准 v1** | `index/DESIGN_CRITERIA.md` | 条件设计 PASS/FAIL 判据（先立标准再训练）：硬约束 H1 结构自洽（TM≥0.70）/H2 电荷命中（±2）/H3 聚集合法；软判据 S1 注入选择性/S2 可开发性权衡；R1 天然蛋白对参照；n=20 扩样本推翻 n=5 假阴性 | 2026-08-16 |
+| Phase 3 防失控 n=20 | `analysis/report/2026-08-16_phase3_n20_antidrift.md` | n=20 对称配对检验推翻 n=5 假阴性（23/32 显著）；机制=条件注入 >50% 位点非保守替换；按判断标准 v1：H1✅/H2⚠️/S1❌ | 2026-08-16 |
 
 ## Phase 1 代码模块（`code/`）
 
@@ -61,6 +63,9 @@
 | 条件注入采样 | `code/src/conditioned_sampler.py` | `inject_prompt`（cross-attention，训练/推理共用）+ `conditioned_sample` |
 | Phase 3 pH 响应实验 | `code/tests/phase3_pH_response.py` | 4 PDB × target 响应 + pH 响应 + 跨 pH identity（固定 seed 分离条件影响） |
 | Phase 3 防失控打分 | `code/tests/phase3_antidrift_score.sh` | 四指标打分管线（ESMFold/TM/%sol/TemBERTure）+ `phase3_score_status.sh` 进度查询 |
+| n=20 扩样本采样 | `code/tests/phase3_antidrift_extend.py` | 对称配对采样（基线 vs 条件注入，双场景 A/B，固定 seed 协议），320 条 |
+| n=20 四指标打分 | `code/tests/phase3_antidrift_n20_score.sh` | 递归扫描 16 臂的四指标打分管线 |
+| n=20 配对统计 | `code/tests/phase3_antidrift_n20_stats.py` | 配对 t+Wilcoxon+BH-FDR；按判断标准输出 H1/H2/S1 判定 |
 
 ## 目录填充状态
 
