@@ -55,10 +55,20 @@
 2. **Stage E1 接入 ✅**：`run_guided.py` 加 `--model_type auto`（按 ckpt 有无 `atom_context_num` 自动检测）。MoMPNN 权重跑通 pH 引导（target=0 → 平均 −0.01±0.80）；原版 LigandMPNN 回归通过
 3. **仓库清理 ✅**：`MoMPNN/` 已 gitignore；冗余 remote `new` 删除
 
+### 第三轮（2026-08-16）— E1 验证扩展设计（已归档）
+E1 对照实验**全部完成并 push**（提交 `c644a6b`，三目标结果：可溶 +12.8、热稳 +7.8°C、电荷更准、pLDDT 持平）。随后完成**验证扩展的方法论设计**，归档 `session/2026-08-16_e1_validation_design.md`，并写入 `PROJECT_EXTEND.md`（Stage E1b + 决策 6–8）。要点：
+- ⚠️ **1BC8 身份修正**：SAP-1 ETS 转录因子 DNA 结合域（93aa，winged HTH），非普通球状蛋白
+- **PDB 代表性矩阵**：1BC8（核酸结合）/ 1CRN（极小疏水）/ 1UBQ（典型可溶球状）/ 2LZM（全 α 较大）
+- **混合设计**：方案 A（同骨架变条件→机制）+ 方案 B（各蛋白生理条件 + 回折 TM-score 对比原结构→泛化）
+- **主证据升级**：回折 TM-score（ESMFold 存结构 → us-align）为主，pLDDT 仅辅助
+- **位点固定对照臂**：需给 `run_guided.py` 加 `--fixed_residues` + `pka.py` 电荷空间预检
+- **阈值防过拟合**：先验设定 + 留一蛋白检查，不做阈值搜索
+- **Phase 2 数据**：CATH 4.2 S40（ESM-IF 同源分离划分），条件标签自算
+
 ### 下一步（按优先级）
-1. **E1 对照实验**：同一 PDB/pH 下 MoMPNN（多目标 DPO）vs 原版 LigandMPNN 的 pH 响应 + 三目标打分（ESMFold pLDDT / Protein-Sol / TemBERTure）
-2. **第一版 Phase 1 收尾**：PDB 采样 1000 条确定结构过滤器 99 分位默认阈值；3–5 个示例蛋白不同 pH/预设对比实验
-3. **第一版 Phase 2（条件编码器微调）**：从训练集计算条件向量标准化 μ/σ → 写入 `condition_defaults.yaml`；A100 微调
+1. **E1b 验证扩展**：下载 1CRN/1UBQ/2LZM → `code/input/`；装 us-align；写 `e1_extended.sh`（4 PDB × 基线+条件组 × 2 模型）；打分 + TM-score → `analysis/report/2026-08-16_e1_extended.md`
+2. **第一版 Phase 1 收尾**：PDB 采样 1000 条确定结构过滤器 99 分位默认阈值（可与 E1b 数据共用）；3–5 个示例蛋白不同 pH/预设对比实验
+3. **第一版 Phase 2 / 第二版 E2 数据准备**：验证 CATH 4.2 S40 本机可下载；计算条件向量标准化 μ/σ → `condition_defaults.yaml`；A100 微调
 4. **第二版 E4 集成**：微调模型设为 `run_guided.py` 默认生成器 + 对照实验
 
 ---
@@ -81,6 +91,6 @@ ESMFold 回折在 `confumpnn-esmfold` 环境（conda, Python 3.10, torch 2.6.0+c
 
 ## 五、Git 状态
 
-- 分支 `main`，远程 `origin` = git@github.com:Yu-Bk/ConfuMPNN.git（本地领先 origin 3 提交未 push：`2b6c037` `4d47552` `091f052`）
-- 最近提交：`091f052`（E1 接入）← `4d47552`（Stage E0 调研）← `2b6c037`（gitignore MoMPNN）← `985599c`（Phase 1 快照）
+- 分支 `main`，远程 `origin` = git@github.com:Yu-Bk/ConfuMPNN.git（E1 对照已 push 至 `c644a6b`；**本次方法论归档待提交**）
+- 最近提交：`c644a6b`（E1 三目标对照完成）← `e08c4c0`（E0 调研）← 此前（E1 接入 / gitignore MoMPNN / Phase 1 快照）
 - `LigandMPNN/`、`foundry/`、`MoMPNN/` 为 clone 源码不跟踪；`code/output/`、`code/log/`、`*.pt` 已 gitignore

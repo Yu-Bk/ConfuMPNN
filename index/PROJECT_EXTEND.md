@@ -100,8 +100,24 @@
 - 跑通 `run_guided.py --weights <MoMPNN.pt>`，对比原版 LigandMPNN 的序列恢复率与 pH 响应；
 - 用 ESMFold pLDDT / Protein-Sol / TemBERTure 对生成序列打分，验证三目标是否优于原版。
 
+### Stage E1b：验证扩展 — 多 PDB × 多 pH × 多 target 混合设计（0.5–1 天）
+> E1 对照实验（1BC8，pH7.4，target=0）已验证三目标优势，但**单蛋白单条件**样本不足构成统计置信度。本阶段把验证扩展到 4 个 PDB × 3 pH × 3 target，并把主证据升级为 **TM-score 回折自洽性**。完整设计：`session/2026-08-16_e1_validation_design.md`。
+
+- **PDB 代表性矩阵**（已标注；⚠️ 1BC8 身份修正为 SAP-1 ETS 转录因子 DNA 结合域，非普通球状蛋白）：
+  | PDB | 蛋白 | 长度 | 折叠 | 代表性 |
+  |------|------|------|------|--------|
+  | 1BC8 | SAP-1 ETS 转录因子 DNA 结合域（人） | 93aa | winged HTH（α/β） | 核酸结合蛋白 |
+  | 1CRN | Crambin（种子） | 46aa | α+β，3 二硫键 | 极小/疏水/刚性 |
+  | 1UBQ | Ubiquitin（人） | 76aa | β-grasp（α+β） | 典型可溶球状 |
+  | 2LZM | T4 溶菌酶 | 164aa | 全 α 为主 | 较大/经典工程模型 |
+- **混合实验设计（机制 + 泛化分层）**：每个 PDB ① 基线组（生理 pH，target=自然净电荷）→ 回折 **TM-score** vs 原结构（客观结构保持）；② 条件组（pH 4/7.4/9 × target −5/0/+5）→ 电荷偏差/%sol/Tm 梯度。方案 A（同骨架变条件）答机制、方案 B（各蛋白各自条件+对比原结构）答泛化——两者分层互补，缺一归因不清、缺二无法外推。
+- **主证据用 TM-score**（ESMFold 回折存结构 → us-align 算 TM），pLDDT 仅作辅助（模型自我置信度，可能被先验欺骗）。
+- **位点固定对照臂**：新增 `run_guided.py --fixed_residues`；用 `pka.py` 预检「固定后剩余位点电荷可调区间」是否覆盖 target；作为功能约束再设计场景。
+- **阈值防过拟合**：先验设定（pLDDT>80 / |ΔQ|≤0.3 / %sol≥native）+ **留一蛋白（leave-one-protein-out）** 稳定性检查 + 报告原始分布。
+- 产出：`analysis/report/2026-08-16_e1_extended.md`；脚本 `code/tests/e1_extended.sh`。
+
 ### Stage E2：路线 B 自微调（若需，2–3 天）
-- 数据：复用 PROJECT_PLAN.md Phase 2 的多 pH 连续采样数据增强（`pH = uniform(4.0, 10.0)`）；
+- 数据：**骨架/划分用 CATH 4.2 S40（ESM-IF 同源剪枝划分，train/val/test 明确分离、同源分离防泄漏，自带序列/结构/二级结构/sasa）**；条件标签（pH/净电荷）用 `pka.py` + `differentiable_charge.py` 从结构现算；再叠加 PROJECT_PLAN.md Phase 2 的多 pH 连续采样数据增强（`pH = uniform(4.0, 10.0)`）；
 - 训练：多目标半在线 DPO（ProtAlign Algorithm 1 迁移）+ 自适应 margin；
 - 标注：可设计性 ESMFold pLDDT（`confumpnn-esmfold` 环境）+ Protein-Sol + TemBERTure（皆开源）；
 - 注入方式对比：Soft Prompt vs FiLM（沿用原计划 Phase 2 的消融设计）；
@@ -178,6 +194,9 @@
 3. **现成模型不可用时才自微调**（路线 B），且严格按 ProtAlign 方法（半在线 DPO + margin），不自行发明训练目标。
 4. **兜底路线 C**（自己训练参数）仅在模型未开源且无法复刻时启用。
 5. 微调产物放回原计划管线，作为后续所有生成的默认生成器。
+6. **E1 验证采用「机制 + 泛化」混合设计**：同骨架变条件答机制（方案 A）、各蛋白生理条件 + 回折 TM-score 对比原结构答泛化（方案 B）；**主证据用 TM-score 回折自洽性，pLDDT 仅辅助**（2026-08-16，见 `session/2026-08-16_e1_validation_design.md`）。
+7. **Phase 2 训练数据优先用 CATH 4.2 S40（ESM-IF 同源分离划分）**，条件标签（pH/电荷）用自有模块从结构现算，不手工整理（2026-08-16）。
+8. **阈值一律先验设定 + 留一蛋白检查，不做阈值搜索**（防过拟合，2026-08-16）。
 
 ---
 

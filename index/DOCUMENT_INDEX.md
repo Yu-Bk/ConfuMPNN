@@ -16,6 +16,7 @@
 | MoMPNN 可用性调研 | `analysis/2026-08-16_mompnn_avail.md` | Stage E0 结论：权重=纯 backbone ProteinMPNN，`strict=True` 可加载 + 1BC8 前向跑通 | 2026-08-16 |
 | E1 pH 响应对比 | `analysis/report/2026-08-16_e1_pH_response.md` | MoMPNN 电荷命中偏差≤0.10 vs 原版 +0.2~0.7 | 2026-08-16 |
 | E1 三目标 | `analysis/report/2026-08-16_e1_three_targets.md` | 完整对比：可溶+12.8、热稳+7.8°C、电荷更准、pLDDT 持平 | 2026-08-16 |
+| E1 验证扩展设计 | `session/2026-08-16_e1_validation_design.md` | 4 PDB×3pH×3target 混合设计；TM-score 主证据；位点固定；阈值防过拟合；CATH 4.2 数据 | 2026-08-16 |
 
 ## Phase 1 代码模块（`code/`）
 
@@ -43,8 +44,8 @@
 |------|------|---------|------|
 | `code/` | 实验模块代码 | `src/`（7 模块）+ `configs/`（2 yaml）+ `tests/`（2 脚本）+ `input/`（1BC8.pdb）+ `output/`（smoke 结果）+ `log/`（测试日志） | ✅ Phase 1 模块就绪 |
 | `analysis/` | 实验结果分析 | `2026-08-16_mompnn_avail.md`（Stage E0 调研） | ✅ 已有首份报告 |
-| `literature/` | 论文笔记 | （空） | ⬜ 待论文笔记导入 |
-| `session/` | 会话记录 | （空） | ⬜ 待记录 |
+| `literature/` | 论文笔记 | 5 子目录骨架（baseline/innovation/pattern/tools/phenomena），均空 | ⬜ 待论文笔记导入 |
+| `session/` | 会话记录 | `2026-08-15_phase1_modules.md`、`2026-08-16_charge_lookahead_fix.md`、`2026-08-16_PROJECT_STATUS.md`、`2026-08-16_e1_validation_design.md` | ✅ 快照已含 E1 完成 + 验证设计 |
 | `source/` | 论文源码/链接 | （空） | ⬜ 待填充 |
 
 ## 约定
