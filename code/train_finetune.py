@@ -83,6 +83,7 @@ from data_utils import featurize, parse_PDB  # noqa: E402
 from model_utils import ProteinMPNN, cat_neighbors_nodes  # noqa: E402
 
 from src.condition_embedding import ConditionEncoder, make_condition_vector  # noqa: E402
+from src.conditioned_sampler import inject_prompt  # noqa: E402  (训练/推理共用同一注入机制)
 from src.differentiable_charge import net_charge  # noqa: E402
 from src.losses import charge_deviation_loss, cross_entropy_loss  # noqa: E402
 
@@ -160,19 +161,6 @@ def build_domain(feature_dict, device, seed):
         "R_idx": fd["R_idx"], "chain_labels": fd["chain_labels"],
         "randn": randn,
     }
-
-
-def inject_prompt(h_V, prompt_tokens):
-    """soft prompt 注入：cross-attention（每节点按需读取 4 个条件 token）。
-
-    h_V: [B, L, 128] encoder 输出
-    prompt_tokens: [B, 4, 128] ConditionEncoder 输出
-    返回: h_V + softmax(h_V·prompt^T/√d)·prompt
-    """
-    B, L, D = h_V.shape
-    scale = math.sqrt(D)
-    attn = torch.softmax(h_V @ prompt_tokens.transpose(1, 2) / scale, dim=-1)  # [B,L,4]
-    return h_V + attn @ prompt_tokens  # [B,L,128]
 
 
 def decoder_forward(model, h_V, h_E, E_idx, dom, B, device):

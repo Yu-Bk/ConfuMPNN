@@ -71,7 +71,7 @@ def build_static_bias(feature_dict, structure_filter, seq_ref=None, base_bias=No
     return base_bias + fb.unsqueeze(0), info
 
 
-def guided_sample(model, feature_dict, bias_callback=None, device="cpu"):
+def guided_sample(model, feature_dict, bias_callback=None, device="cpu", encoded=None):
     """引导采样主函数（batch=1，非对称解码）。
 
     参数:
@@ -83,6 +83,8 @@ def guided_sample(model, feature_dict, bias_callback=None, device="cpu"):
             t: 当前解码位置
             返回该位置的 bias 增量（shape [21]，加到 logits）
         device: 计算设备
+        encoded: (h_V, h_E, E_idx) 预编码结果（可选）。给定则跳过 encode，
+            用于条件注入（Phase 3，h_V 已含 soft prompt 信号）。
 
     返回:
         dict {S, sampling_probs, log_probs, decoding_order}
@@ -98,7 +100,10 @@ def guided_sample(model, feature_dict, bias_callback=None, device="cpu"):
     B, L = S_true.shape
     assert B == 1, "guided_sample 目前只支持 batch_size=1"
 
-    h_V, h_E, E_idx = model.encode(feature_dict)
+    if encoded is not None:
+        h_V, h_E, E_idx = encoded
+    else:
+        h_V, h_E, E_idx = model.encode(feature_dict)
 
     chain_mask = mask * chain_mask
     decoding_order = torch.argsort((chain_mask + 0.0001) * torch.abs(randn))

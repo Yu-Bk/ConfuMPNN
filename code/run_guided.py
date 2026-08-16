@@ -13,6 +13,13 @@
     python run_guided.py --pdb input/1BC8.pdb --pH 7.4 \
         --weights ../LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt
 
+条件注入模式（Phase 3，用微调后的 ConditionEncoder，模型自身 pH 感知）：
+    python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 \
+        --cond_encoder output/finetune/condition_encoder_last.pt \
+        [--cond_mode conditioned|baseline]
+    # conditioned ：注入条件向量（默认），无 logit bias —— 测模型学到的 pH 感知
+    # baseline   ：加载编码器但不注入（等价 Phase 1 诚实边界对照）
+
 日志建议重定向到 code/log/，输出写入 code/output/。
 """
 
@@ -40,9 +47,13 @@ _DEFAULT_WEIGHTS = (
     / "mompnn_temberture_tm_esm_6_4_4_b01.ckpt"
 )
 
+import yaml  # noqa: E402
+
 from data_utils import featurize, parse_PDB, restype_int_to_str  # noqa: E402
 from model_utils import ProteinMPNN  # noqa: E402
 from src.charge_lookahead import make_dynamic_callback  # noqa: E402
+from src.condition_embedding import ConditionEncoder, make_condition_vector  # noqa: E402
+from src.conditioned_sampler import conditioned_sample  # noqa: E402
 from src.differentiable_charge import net_charge  # noqa: E402
 from src.guided_sampler import GuidedSampler, extract_calpha_coords  # noqa: E402
 from src.isoelectric_point import find_pI  # noqa: E402
@@ -69,6 +80,13 @@ def parse_args():
                    choices=["auto", "protein_mpnn", "ligand_mpnn"],
                    help="模型类型：auto=按权重自动检测（默认）；protein_mpnn=纯 backbone（如 MoMPNN）；"
                         "ligand_mpnn=配体上下文（原版 LigandMPNN）")
+    p.add_argument("--cond_encoder", default=None,
+                   help="微调后的 ConditionEncoder 权重路径（Phase 3 条件注入模式）。"
+                        "支持 condition_encoder_last.pt（state dict）或 finetune_epochNNN.pt（含配置）")
+    p.add_argument("--cond_mode", default="conditioned",
+                   choices=["conditioned", "baseline"],
+                   help="条件注入模式：conditioned=注入条件向量（默认，测模型 pH 感知）；"
+                        "baseline=加载编码器但不注入（等价 Phase 1 诚实边界对照）")
     p.add_argument("--out_dir", default=None,
                    help="输出目录（默认 code/output/guided_<pdb>_pH<pH>）")
     return p.parse_args()
@@ -102,6 +120,50 @@ def load_model(weights, device, model_type="auto"):
     model.to(device)
     model.eval()
     return model
+
+
+def load_condition_encoder(path, device):
+    """加载微调后的 ConditionEncoder。
+
+    支持两种 checkpoint 格式：
+        condition_encoder_last.pt : 纯 state dict（8 keys，含 mean/std buffer）
+        finetune_epochNNN.pt      : dict（含 condition_encoder_state + 配置）
+    架构参数（hidden_dim/n_tokens/token_dim/μ/σ）优先取 checkpoint，缺失时用
+    configs/condition_defaults.yaml。
+    """
+    with open(_CODE_DIR / "configs" / "condition_defaults.yaml") as f:
+        cfg = yaml.safe_load(f)["condition_defaults"]
+
+    ck = torch.load(path, map_location=device)
+    if "condition_encoder_state" in ck:
+        state = ck["condition_encoder_state"]
+        mean = ck.get("mean", cfg["normalization"]["mean"])
+        std = ck.get("std", cfg["normalization"]["std"])
+        n_tokens = ck.get("n_tokens", cfg["encoder"]["n_tokens"])
+        token_dim = ck.get("token_dim", cfg["encoder"]["token_dim"])
+        epoch = ck.get("epoch", None)
+    else:
+        state = ck
+        mean = cfg["normalization"]["mean"]
+        std = cfg["normalization"]["std"]
+        n_tokens = cfg["encoder"]["n_tokens"]
+        token_dim = cfg["encoder"]["token_dim"]
+        epoch = "last"
+
+    enc = ConditionEncoder(
+        cond_dim=cfg["cond_dim"],
+        hidden_dim=cfg["encoder"]["hidden_dim"],
+        token_dim=token_dim,
+        n_tokens=n_tokens,
+        mean=mean,
+        std=std,
+    )
+    enc.load_state_dict(state)
+    enc.to(device)
+    enc.eval()
+    print(f"    条件编码器已加载: {Path(path).name}  (epoch={epoch}, n_tokens={n_tokens}, "
+          f"token_dim={token_dim})")
+    return enc
 
 
 def seq_to_string(S):
@@ -142,28 +204,50 @@ def main():
     native_seq = seq_to_string(feature_dict["S"][0].cpu().numpy())
     print(f"    蛋白长度 {L}，native: {native_seq[:50]}...")
 
-    # 3. 结构感知过滤器 + 动态电荷前瞻回调
-    print(f"[3] 引导设置: pH={args.pH}, target_charge={args.target_charge}, "
-          f"preset={args.preset}, strength={args.strength}")
-    coords = extract_calpha_coords(protein_dict)
-    structure_filter = StructureAwareFilter(coords, config=load_preset(args.preset))
-    bias_callback = make_dynamic_callback(
-        pH=args.pH, target_charge=args.target_charge,
-        structure_filter=structure_filter, strength=args.strength,
-    )
-
-    # 4. 引导采样 N 条
-    print(f"[4] 引导采样 {args.num_samples} 条候选序列...")
-    sampler = GuidedSampler(model, device=device)
-    sequences, charges, pIs = [], [], []
-    for i in range(args.num_samples):
-        feature_dict["randn"] = torch.randn(1, L)
-        out = sampler.sample(feature_dict, bias_callback=bias_callback)
-        seq = seq_to_string(out["S"][0].cpu().numpy())
-        sequences.append(seq)
-        charges.append(net_charge(seq, args.pH))
-        pIs.append(find_pI(seq))
-        print(f"    [{i+1:2d}] charge={charges[-1]:+6.2f}  pI={pIs[-1]:5.2f}  {seq[:60]}")
+    # 3. 模式分支：条件注入（Phase 3） vs 引导采样（Phase 1）
+    mode = "phase1_guided"
+    cond_encoder = None
+    if args.cond_encoder:
+        mode = "phase3_conditioned" if args.cond_mode == "conditioned" else "phase3_baseline"
+        cond_encoder = load_condition_encoder(args.cond_encoder, device)
+        cond_vec = make_condition_vector(args.pH, net_charge=args.target_charge).to(device)
+        print(f"[3] 条件注入模式: cond_mode={args.cond_mode}, "
+              f"cond_vec={[round(x, 2) for x in cond_vec.tolist()]}")
+        print(f"[4] 条件注入采样 {args.num_samples} 条候选序列...")
+        sequences, charges, pIs = [], [], []
+        for i in range(args.num_samples):
+            feature_dict["randn"] = torch.randn(1, L)
+            # baseline 模式：加载编码器但不注入 → 等价 Phase 1「无引导不感知 pH」对照
+            enc_inject = None if args.cond_mode == "baseline" else cond_encoder
+            out = conditioned_sample(
+                model, enc_inject, feature_dict, cond_vec, device=device,
+            )
+            seq = seq_to_string(out["S"][0].cpu().numpy())
+            sequences.append(seq)
+            charges.append(net_charge(seq, args.pH))
+            pIs.append(find_pI(seq))
+            print(f"    [{i+1:2d}] charge={charges[-1]:+6.2f}  pI={pIs[-1]:5.2f}  {seq[:60]}")
+    else:
+        # Phase 1 引导采样（结构过滤器 + 动态电荷前瞻 logit bias）
+        print(f"[3] 引导设置: pH={args.pH}, target_charge={args.target_charge}, "
+              f"preset={args.preset}, strength={args.strength}")
+        coords = extract_calpha_coords(protein_dict)
+        structure_filter = StructureAwareFilter(coords, config=load_preset(args.preset))
+        bias_callback = make_dynamic_callback(
+            pH=args.pH, target_charge=args.target_charge,
+            structure_filter=structure_filter, strength=args.strength,
+        )
+        print(f"[4] 引导采样 {args.num_samples} 条候选序列...")
+        sampler = GuidedSampler(model, device=device)
+        sequences, charges, pIs = [], [], []
+        for i in range(args.num_samples):
+            feature_dict["randn"] = torch.randn(1, L)
+            out = sampler.sample(feature_dict, bias_callback=bias_callback)
+            seq = seq_to_string(out["S"][0].cpu().numpy())
+            sequences.append(seq)
+            charges.append(net_charge(seq, args.pH))
+            pIs.append(find_pI(seq))
+            print(f"    [{i+1:2d}] charge={charges[-1]:+6.2f}  pI={pIs[-1]:5.2f}  {seq[:60]}")
 
     # 5. native 对照
     native_charge = net_charge(native_seq, args.pH)
@@ -189,6 +273,8 @@ def main():
         f.write(native_seq + "\n")
     summary = {
         "pdb": args.pdb, "pH": args.pH, "target_charge": args.target_charge,
+        "mode": mode,
+        "cond_encoder": str(args.cond_encoder) if args.cond_encoder else None,
         "preset": args.preset, "temperature": args.temperature,
         "strength": args.strength, "seed": args.seed, "num_samples": args.num_samples,
         "native_charge": native_charge, "native_pI": native_pI,
