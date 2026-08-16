@@ -19,7 +19,7 @@
 | 微调训练启动 | `train_finetune.py` 就绪+冒烟通过+后台启动（冻结 MoMPNN+ConditionEncoder+KL 锚定防失控） | `1477a79` |
 | 微调训练完成 | 30 epoch×999 域=14.7min；charge 5.16→1.58、ce 稳定 1.86、kl 稳定 0.15 | — |
 | Phase 3 pH 响应 | 条件注入接入 run_guided.py + Go/No-Go 4/4 PDB 通过（target 单调 + 跨 pH identity<100%） | `4fccc1c` |
-| Phase 3 防失控 | 四指标打分进行中（ESMFold/TM/%sol/Tm vs E1b 基线） | 进行中 |
+| Phase 3 防失控 | 条件注入 vs E1b 基线四指标：pLDDT 掉是过冲所致（校准后恢复）；%sol/Tm 噪声内 → PASS | `待提交` |
 
 **今日资产**：`data/cath/`（CATH S40 34,653 结构域坐标+序列，818MB，git 不跟踪）；打分工具链（ESMFold 回折+TM-score、Protein-Sol、TemBERTure）全通。
 
@@ -134,14 +134,17 @@ E1 对照实验**全部完成并 push**（提交 `c644a6b`，三目标结果：�
   - target 响应严格单调（1BC8: 0→+0.9, 9→+26.6；2LZM: 0→+1.7, 13→+37.4 等）
   - 跨 pH identity 0.68–0.92（<100%）——**Phase 1 诚实边界（同 seed 各 pH 序列相同）被打破**
   - ⚠️ **校准发现**：target→电荷线性增益 ~2.9×（`实际≈2.9·target−1.1`）；机制=采样置信度放大（训练优化 softmax 期望电荷，推理测采样序列电荷；温度实验证实：temp 0.3→+13.0、1.0→+7.1、2.0→+3.7@target=+5）。实用缓解：温度 1.0–2.0 或线性校准
-- **防失控打分进行中**：`code/output/phase3_antidrift/{pdb}/`（条件注入 target=native，8条/PDB）四指标打分，对比 E1b MoMPNN 基线（1BC8 pLDDT82.8/TM0.915/sol81.4/Tm64.8；1CRN 89.1/0.905/84.1/59.1；1UBQ 89.4/0.962/86.0/68.6；2LZM 88.5/0.971/80.1/67.7）
+- **防失控判据 PASS**（报告 `analysis/report/2026-08-16_phase3_antidrift.md`）：
+  - **机制证实**：pLDDT 掉主因是电荷过冲，非条件化本身——1BC8 过冲版 77.4 → 校准版 82.3 → 基线 82.8（校准后恢复≈基线）
+  - **%sol/Tm 在采样噪声内**（1BC8 %sol std=7.9、Tm std=6.2，差异 <1σ；2LZM 甚至 +2.4/+2.5）
+  - **TM-score 结构保持**（0.84-0.98）；唯一待修=电荷校准过冲 ~2.9×（推理侧线性校准已验证有效，或训练侧改）
 
 ### 下一步（按优先级）
-1. **防失控打分结果汇总**（进行中）：`bash code/tests/phase3_score_status.sh` 查进度；完成后对比 → `2026-08-16_phase3_antidrift.md`
-2. **校准落地**（若需要）：温度调优 或 target 线性校准系数写入 config
-3. 把微调后 ConditionEncoder 设为 `run_guided.py` 条件注入的默认路径（可选）
-4. 可选：`--fixed_residues` 位点固定对照臂
-5. 若 pH 响应幅度不够理想 → 调 λ_c / λ_kl / perturb 参数再训
+1. **校准落地**：把电荷校准系数（gain≈2.9, offset≈-1.1）写入 `condition_defaults.yaml`，`run_guided.py` 推理时自动换算 target（已验证有效）
+2. **训练侧改进（可选，一劳永逸减小过冲）**：charge_deviation 损失对 logits 加温度（直接优化采样序列电荷而非期望电荷）；或缩小 perturb 范围、增大 λ_kl
+3. **扩大样本（可选）**：每 PDB n=20+，给 %sol/Tm 做统计检验
+4. 把微调后 ConditionEncoder 设为条件注入默认路径（可选）
+5. 可选：`--fixed_residues` 位点固定对照臂
 
 ---
 
