@@ -129,6 +129,11 @@ def parse_args():
                         "第十四轮 0.5→0.3 = 原生标签 70%，治 S1 注入选择性）")
     p.add_argument("--perturb_scale", type=float, default=4.0,
                    help="扰动电荷偏移幅度上限（±Uniform[1,scale]）")
+    p.add_argument("--placeholder_prob", type=float, default=0.15,
+                   help="占位符样本比例（从自洽样本中抽取）：把条件电荷置为「不控制」占位，"
+                        "让模型学会未指定电荷时的行为（目标 2 的占位符语义）。"
+                        "占位两种各半：① has_charge=0 + 值0；② has_charge=1 + 值=训练均值。"
+                        "此类样本跳过电荷损失（无 target）")
     p.add_argument("--charge_temp", type=float, default=0.5,
                    help="电荷损失的 softmax 温度（<1 锐化：训练优化的分布≈推理采样分布，"
                         "减小 ~2.57× 过冲；1.0=原版期望电荷）")
@@ -253,6 +258,7 @@ def main():
     logln(f"device={device}  epochs={args.epochs}  lr={args.lr}  "
           f"λ_c={args.lambda_c}  λ_kl={args.lambda_kl}  λ_keep={args.lambda_keep}  "
           f"perturb_prob={args.perturb_prob}  perturb_scale={args.perturb_scale}  "
+          f"placeholder_prob={args.placeholder_prob}  "
           f"charge_temp={args.charge_temp}")
 
     # ---- backbone + 条件编码器 ----
@@ -371,8 +377,18 @@ def main():
                     torch.zeros(B, device=device),
                 )
                 charge_b = charge_b + offset
+            # 占位符样本（目标 2：部分条件不控制）：从自洽样本中随机抽取，把电荷条件置为占位。
+            # 占位两种语义各半：① has_charge=0 + 值0（明确"不控制"）；② has_charge=1 + 值=训练均值
+            # （隐含"默认电荷"）。让模型在训练时就见过未指定电荷的情形，推理时占位符才不 OOD。
+            mask_ph = torch.zeros(B, dtype=torch.bool, device=device)
+            if args.placeholder_prob > 0:
+                mask_ph = (~mask_p) & (torch.rand(B, device=device) < args.placeholder_prob)
+            charge_mean = float(cfg["normalization"]["mean"][2])  # 电荷维度训练均值
             cond_b = torch.stack([
-                make_condition_vector(p, c) for p, c in zip(pH_b.tolist(), charge_b.tolist())
+                make_condition_vector(p, c) if not mask_ph[i] else
+                (make_condition_vector(p) if torch.rand(1).item() < 0.5
+                 else make_condition_vector(p, net_charge=charge_mean))
+                for i, (p, c) in enumerate(zip(pH_b.tolist(), charge_b.tolist()))
             ]).to(device)  # [8, 7]
 
             # 条件注入 + 解码
@@ -388,6 +404,8 @@ def main():
             # 电荷偏差（逐样本，因 pH 每样本不同；温度化：优化采样分布电荷而非期望电荷）
             cd = torch.zeros(B, device=device)
             for i in range(B):
+                if mask_ph[i]:
+                    continue  # 占位符样本无电荷 target，跳过电荷损失
                 cd[i] = charge_deviation_loss(
                     logits[i:i+1], pH=pH_b[i], target_charge=charge_b[i],
                     mask=ce_mask[i:i+1], temperature=args.charge_temp,
@@ -451,8 +469,10 @@ def main():
             "std": cfg["normalization"]["std"],
             "backbone_weights": args.weights,
             "loss_terms": prog,
-            # 追溯字段（第十四轮修正参数）
+            # 追溯字段（第十四轮修正参数 + 第十五轮占位符）
             "perturb_prob": args.perturb_prob,
+            "perturb_scale": args.perturb_scale,
+            "placeholder_prob": args.placeholder_prob,
             "lambda_keep": args.lambda_keep,
             "charge_temp": args.charge_temp,
         }, ckpt_path)

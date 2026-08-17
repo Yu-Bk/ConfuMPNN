@@ -92,6 +92,10 @@ def parse_args():
     p.add_argument("--no_calibration", action="store_true",
                    help="关闭电荷校准（默认开：按 condition_defaults.yaml 的 gain/offset 线性校准 "
                         "target_eff=(desired-offset)/gain，抵消条件注入的 ~2.57× 电荷过冲）")
+    p.add_argument("--fixed_residues", default=None,
+                   help="固定残基列表，空格分隔（链字母+残基号，如 'A12 C15'）。"
+                        "这些位置的氨基酸保持不变，其余位置由模型设计。"
+                        "复用 LigandMPNN 原生机制（chain_mask=0 位置在解码时强制保持原氨基酸）。")
     p.add_argument("--out_dir", default=None,
                    help="输出目录（默认 code/output/guided_<pdb>_pH<pH>）")
     return p.parse_args()
@@ -191,10 +195,26 @@ def main():
 
     # 2. 读 PDB + featurize（按模型类型决定是否用配体上下文）
     print(f"[2] 读取 PDB: {args.pdb}")
-    protein_dict, _, _, _, _ = parse_PDB(args.pdb)
+    protein_dict, _, _, icodes, _ = parse_PDB(args.pdb)
     protein_dict["chain_mask"] = torch.ones(
         protein_dict["X"].shape[0], dtype=torch.int32  # 默认设计全部残基
     )
+    # 位点固定（LigandMPNN 原生机制：chain_mask=0 的位置解码时强制保持原氨基酸，
+    # 见 guided_sampler.py 的 S_t = S_t·chain_mask_t + S_true·(1-chain_mask_t)）
+    fixed_positions = []
+    if args.fixed_residues:
+        R_idx = list(protein_dict["R_idx"].cpu().numpy())
+        chain_letters = list(protein_dict["chain_letters"])
+        encoded = [
+            str(chain_letters[i]) + str(R_idx[i]) + icodes[i]
+            for i in range(len(R_idx))
+        ]
+        fixed_set = set(args.fixed_residues.split())
+        for i, name in enumerate(encoded):
+            if name in fixed_set:
+                protein_dict["chain_mask"][i] = 0
+                fixed_positions.append(name)
+        print(f"    固定残基 {len(fixed_positions)} 个: {fixed_positions}")
     use_atom_context = (mt == "ligand_mpnn")
     feature_dict = featurize(
         protein_dict, cutoff_for_score=8.0,

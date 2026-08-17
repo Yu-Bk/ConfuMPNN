@@ -27,8 +27,11 @@
 | Phase 3 pH 响应 | `analysis/report/2026-08-16_phase3_pH_response.md` | 条件注入 Go/No-Go 4/4 PDB 通过（target 单调+跨 pH identity<100%）；校准增益 ~2.9× 机制 | 2026-08-16 |
 | Phase 3 防失控 | `analysis/report/2026-08-16_phase3_antidrift.md` | 条件注入 vs E1b 基线四指标对比：pLDDT 掉是过冲所致（校准后 1BC8 82.3≈基线 82.8）；%sol/Tm 在噪声内，PASS | 2026-08-16 |
 | Phase 3 温度化根治 | `analysis/report/2026-08-16_phase3_charge_temp.md` | 电荷损失温度化（charge_temp=0.5）：增益 2.57→1.04，无需推理侧校准；pH 感知保留 | 2026-08-16 |
-| **判断标准 v1** | `index/DESIGN_CRITERIA.md` | 条件设计 PASS/FAIL 判据（先立标准再训练）：硬约束 H1 结构自洽（TM≥0.70）/H2 电荷命中（±2）/H3 聚集合法；软判据 S1 注入选择性/S2 可开发性权衡；R1 天然蛋白对参照；n=20 扩样本推翻 n=5 假阴性 | 2026-08-16 |
+| **判断标准 v2** | `index/DESIGN_CRITERIA.md` | 条件设计 PASS/FAIL 判据（v1→v2：S1 硬判降级为相似性软区间 0.4–0.7+防坍塌；对齐两真实目标；新增占位符语义 S3/位点固定 S4）| 2026-08-17 |
+| **验证计划 v2** | `session/2026-08-17_validation_plan_v2.md` | 修正 S1/seq-keep 跑偏，对齐目标 1（天然骨架→全新序列+pI≈天然）与目标 2（人工骨架→全新序列+占位符）；identity 软约束三层方案（文献 P2 RCL/P3 坍塌）；扰动 ±1~8 + 占位符样本 | 2026-08-17 |
 | Phase 3 防失控 n=20 | `analysis/report/2026-08-16_phase3_n20_antidrift.md` | n=20 对称配对检验推翻 n=5 假阴性（23/32 显著）；机制=条件注入 >50% 位点非保守替换；按判断标准 v1：H1✅/H2⚠️/S1❌ | 2026-08-16 |
+| **Phase 3 S1 训练修正** | `analysis/report/2026-08-17_phase3_s1_fix.md` | 治 S1 部分成功：原生标签 70% + seq-keep 正则；H1 全达标优于上轮（折叠失败 0%、pLDDT 大幅修复）、H2 3/4 PDB、S1 0.45→0.67 未达 0.7、%sol 仍降（设计权衡） | 2026-08-17 |
+| **Phase 3 v2 复验（第十五轮）** | `analysis/report/2026-08-17_phase3_v2_validation.md` | 对齐两目标：目标1（天然骨架+位点固定+pI≈天然）基本成功（H1 12/12、S4 100%、无坍塌）；目标2 负电 target 4/4 精确命中+折叠良好、**正电过冲（1BC8/2LZM）**、**占位符臂折叠全失败（S3 根因=训练偏负+无条件负漂移）** | 2026-08-17 |
 
 ## Phase 1 代码模块（`code/`）
 
@@ -39,10 +42,10 @@
 | pI 查找器 | `code/src/isoelectric_point.py` | `find_pI` 二分搜索（验证用） |
 | 结构感知过滤器 | `code/src/structure_aware_filter.py` | 4 条规则 → [L,21] bias；`load_preset` 读 YAML |
 | 条件编码器 | `code/src/condition_embedding.py` | Soft Prompt MLP + mask-aware 条件向量（Phase 2） |
-| 复合损失 | `code/src/losses.py` | CE + 电荷偏差 + 结构惩罚 + DPO + margin（Phase 2） |
+| 复合损失 | `code/src/losses.py` | CE + 电荷偏差 + 结构惩罚 + DPO + margin + `sequence_keep_loss`（序列保持正则，治 S1，Phase 2/3） |
 | 引导采样器 | `code/src/guided_sampler.py` | 静态/动态 bias 解码，包装 LigandMPNN |
 | 动态电荷前瞻 | `code/src/charge_lookahead.py` | 每步电荷 lookahead → 逐候选 bias；修复 target 被 softmax 抵消 bug |
-| 一键运行入口 | `code/run_guided.py` | `--pdb --pH --target_charge --preset [--model_type]`，自动检测 LigandMPNN/MoMPNN 权重，输出 fasta+json+统计 |
+| 一键运行入口 | `code/run_guided.py` | `--pdb --pH --target_charge --preset [--model_type]`，自动检测 LigandMPNN/MoMPNN 权重，输出 fasta+json+统计；**`--fixed_residues`** 位点固定（第十五轮新增，复用 LigandMPNN chain_mask 原生机制） |
 | 过滤器预设 | `code/configs/filter_presets.yaml` | default / nucleic_acid_binding / membrane / acidic |
 | 条件默认配置 | `code/configs/condition_defaults.yaml` | 条件向量/标准化/编码器参数（Phase 2） |
 | 单元测试 | `code/tests/test_all.py` | 36 项，全通过 |
@@ -59,7 +62,7 @@
 | 示例蛋白对比 | `code/tests/examples_{compare,summarize}.sh/.py` | 4 蛋白 × 4 预设 + 3 pH 生成对比 |
 | 分段并行下载 | `code/tests/parallel_download.py` | Range 分段下载大文件（绕过单连接限速） |
 | 标签构建 | `code/tests/build_labels.py` | CATH S40 → 多 pH 条件标签（坐标+序列+pH+净电荷），算 μ/σ 写 condition_defaults.yaml |
-| Phase 2 微调训练 | `code/train_finetune.py` | 冻结 MoMPNN + ConditionEncoder（cross-attention 注入 h_V）+ 复合损失 CE+电荷+KL 锚定；混合目标；每 epoch checkpoint+进度 |
+| Phase 2 微调训练 | `code/train_finetune.py` | 冻结 MoMPNN + ConditionEncoder（cross-attention 注入 h_V）+ 复合损失 CE+电荷+KL 锚定+SeqKeep；混合目标（`--perturb_prob` 0.3=原生 70%，`--perturb_scale` 扰动幅度，第十五轮 4→8 治过冲）；**`--placeholder_prob`** 占位符样本（第十五轮新增，两种占位语义，目标 2）；每 epoch checkpoint+进度 |
 | 条件注入采样 | `code/src/conditioned_sampler.py` | `inject_prompt`（cross-attention，训练/推理共用）+ `conditioned_sample` |
 | Phase 3 pH 响应实验 | `code/tests/phase3_pH_response.py` | 4 PDB × target 响应 + pH 响应 + 跨 pH identity（固定 seed 分离条件影响） |
 | Phase 3 防失控打分 | `code/tests/phase3_antidrift_score.sh` | 四指标打分管线（ESMFold/TM/%sol/TemBERTure）+ `phase3_score_status.sh` 进度查询 |
@@ -74,7 +77,7 @@
 | `code/` | 实验模块代码 | `src/`（7 模块）+ `configs/`（2 yaml）+ `tests/`（2 脚本）+ `input/`（1BC8.pdb）+ `output/`（smoke 结果）+ `log/`（测试日志） | ✅ Phase 1 模块就绪 |
 | `analysis/` | 实验结果分析 | `2026-08-16_mompnn_avail.md`（Stage E0 调研） | ✅ 已有首份报告 |
 | `literature/` | 论文笔记 | 5 子目录骨架（baseline/innovation/pattern/tools/phenomena），均空 | ⬜ 待论文笔记导入 |
-| `session/` | 会话记录 | `2026-08-15_phase1_modules.md`、`2026-08-16_charge_lookahead_fix.md`、`2026-08-16_PROJECT_STATUS.md`、`2026-08-16_e1_validation_design.md` | ✅ 快照已含 E1 完成 + 验证设计 |
+| `session/` | 会话记录 | `2026-08-15_phase1_modules.md`、`2026-08-16_charge_lookahead_fix.md`、`2026-08-16_PROJECT_STATUS.md`、`2026-08-16_e1_validation_design.md`、`2026-08-17_s1_training_fix.md` | ✅ 快照已含 E1 完成 + 验证设计 + 第十四轮 S1 修正 |
 | `source/` | 论文源码/链接 | （空） | ⬜ 待填充 |
 
 ## 约定
