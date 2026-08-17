@@ -32,6 +32,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
+import yaml  # noqa: E402
 
 _CODE_DIR = Path(__file__).resolve().parents[1]
 if str(_CODE_DIR) not in sys.path:
@@ -53,6 +54,12 @@ PDBS = {
 }
 AA1 = "ACDEFGHIKLMNPQRSTVWY"
 HYDROPHOBIC = set("ILVFMYW")  # 疏水核心位点候选（保守位点代理）
+
+# 电荷维度训练均值（condition_defaults.yaml normalization.mean[2]）
+# 第十七轮：占位符统一用"均值占位"（has_charge=1 + 值=训练均值），符合目标 2"非 0 占位符"
+with open(_CODE_DIR / "configs" / "condition_defaults.yaml") as _f:
+    _CFG = yaml.safe_load(_f)["condition_defaults"]
+CHARGE_MEAN = float(_CFG["normalization"]["mean"][2])
 
 
 def pick_fixed_sites(seq, residue_names, k=4):
@@ -188,9 +195,9 @@ def main():
         scenarios = {
             "t1_cond": (args.pH, float(t_nat), fixed_ids),
             "t1_base": (args.pH, float(t_nat), None),
-            "t2_pos":  (args.pH, float(t_nat + 5), None),
+            "t2_pos":  (args.pH, float(t_nat + 3), None),   # 温和正电（用户建议 target 不设极端）
             "t2_neg":  (args.pH, float(t_nat - 5), None),
-            "t2_ph":   (args.pH, None, None),
+            "t2_ph":   (args.pH, float(CHARGE_MEAN), None),  # 均值占位（非 0 占位符：has_charge=1+值=训练均值）
         }
         print(f"\n=== {pdb} L={L} native@{args.pH}={native_charge:+.2f} "
               f"t_nat={t_nat} 固定位点={fixed_ids} ===", flush=True)
@@ -214,11 +221,12 @@ def main():
                 q = net_charge(seq, pH)
                 charges.append(q)
                 seqs.append(seq)
+                tgt_str = ('均值占位' if arm == 't2_ph' else
+                           ('占位' if tgt is None else f'{tgt:+.1f}'))
                 write_fasta(
                     fa,
                     f"seed_{seed} arm={arm} pH={pH} "
-                    f"target={'占位' if tgt is None else f'{tgt:+.1f}'} "
-                    f"charge={q:+.2f}",
+                    f"target={tgt_str} charge={q:+.2f}",
                     seq,
                 )
             mean_q, std_q = float(np.mean(charges)), float(np.std(charges))

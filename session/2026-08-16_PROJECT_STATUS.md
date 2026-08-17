@@ -26,6 +26,7 @@
 | **第十四轮 S1 训练修正** | **治 S1 部分成功**：原生标签 50%→70% + seq-keep 正则；H1 全达标优于上轮（折叠失败 0%、pLDDT 大幅修复）、H2 3/4 PDB、S1 0.45→0.67 未达 0.7、%sol 仍降（设计权衡） | `待提交` |
 | **第十五轮 对齐两真实目标** | **方向修正**：S1/seq-keep 跑偏作废（目标=全新序列）；2LZM 过冲根因=base 电荷漂移−6.32 超训练扰动范围 + 加电开关多；判断标准 v1→v2（S1 降级软区间+防坍塌）；实现 `--fixed_residues`（冒烟 100% 保持）+ `--placeholder_prob` 占位符样本 + 扰动 ±1~8；重训中 `output/finetune_v2/` | `待提交` |
 | **第十六轮 v2 复验（n=20）** | **目标1 基本成功**：H1 折叠 12/12、S4 位点固定 100%、无坍塌；**目标2 分叉**：负电 target 4/4 精确命中+折叠良好、**正电过冲（1BC8/2LZM）**、**占位符臂折叠全失败**（根因=训练偏负+无条件负漂移，D+E 占比 18–36%）| `待提交` |
+| **第十七轮 占位符修复（n=20）** | **占位符折叠完全修复**：均值占位（has_charge=1+值=训练均值）+占位样本施加电荷损失 → t2_ph TM 0.89–0.97、**全部 20 臂 H1 通过**；负电 4/4 保持、正电温和化后 1CRN/1UBQ 命中（1BC8/2LZM 仍过冲）、H3 正电违规 3/4→1/4 | `待提交` |
 
 **今日资产**：`data/cath/`（CATH S40 34,653 结构域坐标+序列，818MB，git 不跟踪）；打分工具链（ESMFold 回折+TM-score、Protein-Sol、TemBERTure）全通。
 
@@ -215,11 +216,23 @@ E1 对照实验**全部完成并 push**（提交 `c644a6b`，三目标结果：�
 - **H3 电荷聚集**：正电臂 3/4 违规（与过冲耦合）；负电臂 2/4 小幅违规
 - **代码**：`tests/phase3_v2_validation.py`（采样）、`tests/phase3_v2_score.sh`（打分）、`tests/phase3_v2_stats.py`（v2 判定）
 
-### 下一步（2026-08-18，从第十六轮复验继续）
-1. **修 S3 占位符折叠失败（最高优先）**：占位样本不跳过 seq-keep（保持可折叠）/ 占位语义改均值（has_charge=1+值=训练均值 −1.34）/ 推理侧占位符臂加结构过滤或降温度 → 重训 + 复验 t2_ph
-2. **修 H2 正电过冲**：训练扰动在高正电区补采样（target 超 native 更多）或训练域加入正电富集蛋白；推理侧正电 target 单独校准 → 重训 + 复验 t2_pos
-3. **R1 天然蛋白对参照**（可选）：CATH 同 superfamily 找"骨架相似 pI 不同"蛋白对
-4. **真实骨架泛化**：用户提供 RF3 relax/人工骨架后，复用同一流程跑通（考验泛化，无需重训）
+### 第十七轮（2026-08-17）— 占位符折叠修复（均值占位）✅ 完成
+- **训练修正**：占位符语义统一**均值占位**（has_charge=1 + 值=训练均值 −1.34）+ **占位样本施加电荷损失**（target=均值）
+  ——对应第十六轮占位符折叠失败根因（占位样本跳过电荷损失 + seq-keep 锚定无条件 argmax 负漂移基线）
+- **结果（n=20，报告 `analysis/report/2026-08-17_phase3_v3_placeholder_fix.md`）**：
+  - ✅ **占位符折叠完全修复**：t2_ph TM 0.89–0.97、失败率 0–5%（十六轮 0.21–0.34/100%）；电荷全部落均值附近
+    （−0.3~−1.6，十六轮 −8~−16）；多样性恢复（pairID 0.61–0.69，十六轮 0.13）
+  - ✅ **全部 20 臂 H1 通过**（TM 0.88–0.98，失败率 ≤5%）
+  - ✅ 负电 target 4/4 命中（dev≤1.82）；正电温和化（+3）后 1CRN/1UBQ 命中（0.48/0.41）
+  - ⚠️ **1BC8/2LZM（正电富集蛋白 native+8/+9）仍正电过冲**（dev 4.6/7.4）——训练分布偏负，高正电外推不足
+  - ✅ H3 正电违规 3/4→1/4；S4 位点固定 100%；S1\* 无坍塌
+- **结论**：目标 1 ✅ 成立；目标 2 核心能力 ✅（负电/中性 4/4 + 占位符可折叠），正电富集蛋白是唯一残余
+- **代码**：`train_finetune.py`（均值占位）、`phase3_v2_validation.py`（t2_pos+3/t2_ph 均值）、`phase3_v2_stats.py`（t2_ph 不判 H2）
+
+### 下一步（2026-08-18，从第十七轮继续）
+1. **正电过冲（1BC8/2LZM 正电富集蛋白）**（可选，若需根治）：训练域补正电富集蛋白 / 训练扰动偏向正电 / 推理侧正电 target 单独校准 → 重训 + 复验
+2. **R1 天然蛋白对参照**（可选）：CATH 同 superfamily 找"骨架相似 pI 不同"蛋白对
+3. **真实骨架泛化**：用户提供 RF3 relax/人工骨架后，复用同一流程跑通（考验泛化，无需重训）
 
 ---
 
@@ -243,5 +256,5 @@ ESMFold 回折在 `confumpnn-esmfold` 环境（conda, Python 3.10, torch 2.6.0+c
 
 - 分支 `main`，远程 `origin` = git@github.com:Yu-Bk/ConfuMPNN.git
 - 最近提交：`b51cdaa`（第十四轮：训练修正治 S1 部分成功）← `220ab3b`（第十三轮：n=20 扩样本推翻假阴性 + 判断标准 v1）← `b91ab93`（温度化根治过冲）← `d9b67ff`（电荷损失温度化）← `212d392`（文档）← `0be534b`（校准落地）← `c2de909`（n=5 防失控 PASS）← `d75fb96`（打分工具修复）← `fcc9845`（pH 响应报告）← `4fccc1c`（Phase 3 注入）← `177d902`（train_status 修复）← `1477a79`（微调启动）
-- ⚠️ 待提交（第十五+十六轮）：`code/run_guided.py`（--fixed_residues）、`code/train_finetune.py`（--placeholder_prob）、`index/DESIGN_CRITERIA.md`（v2）、`session/2026-08-17_validation_plan_v2.md`、`analysis/report/2026-08-17_phase3_v2_validation.md`（第十六轮复验报告）、`code/tests/phase3_v2_{validation,score,stats}.py`（复验工具）、本文件（第十五/十六轮）、`index/DOCUMENT_INDEX.md`
+- ⚠️ 待提交（第十五~十七轮）：`code/run_guided.py`（--fixed_residues）、`code/train_finetune.py`（--placeholder_prob + 均值占位）、`index/DESIGN_CRITERIA.md`（v2）、`session/2026-08-17_validation_plan_v2.md`（含第十七轮 §8）、`analysis/report/2026-08-17_phase3_v2_validation.md`（十六轮）、`analysis/report/2026-08-17_phase3_v3_placeholder_fix.md`（十七轮）、`code/tests/phase3_v2_{validation,score,stats}.py`（复验工具）、本文件（第十五~十七轮）、`index/DOCUMENT_INDEX.md`
 - `LigandMPNN/`、`foundry/`、`MoMPNN/` 为 clone 源码不跟踪；`data/`、`code/output/`、`code/log/`、`*.pt`、`*.ckpt` 已 gitignore

@@ -378,16 +378,17 @@ def main():
                 )
                 charge_b = charge_b + offset
             # 占位符样本（目标 2：部分条件不控制）：从自洽样本中随机抽取，把电荷条件置为占位。
-            # 占位两种语义各半：① has_charge=0 + 值0（明确"不控制"）；② has_charge=1 + 值=训练均值
-            # （隐含"默认电荷"）。让模型在训练时就见过未指定电荷的情形，推理时占位符才不 OOD。
+            # 第十七轮修正：统一用"均值占位"（has_charge=1 + 值=训练均值 −1.34），符合目标 2
+            # "部分条件不控制用非 0 占位符替代"；并施加电荷损失（目标=均值），让"占位"落在
+            # 温和可折叠默认。第十六轮实证：flag=0+值0 语义因无电荷监督 + seq-keep 锚定无条件
+            # argmax（负漂移基线）→ 推理占位时电荷极端负极化（−8~−16）→ 折叠全失败。
             mask_ph = torch.zeros(B, dtype=torch.bool, device=device)
             if args.placeholder_prob > 0:
                 mask_ph = (~mask_p) & (torch.rand(B, device=device) < args.placeholder_prob)
             charge_mean = float(cfg["normalization"]["mean"][2])  # 电荷维度训练均值
             cond_b = torch.stack([
                 make_condition_vector(p, c) if not mask_ph[i] else
-                (make_condition_vector(p) if torch.rand(1).item() < 0.5
-                 else make_condition_vector(p, net_charge=charge_mean))
+                make_condition_vector(p, net_charge=charge_mean)
                 for i, (p, c) in enumerate(zip(pH_b.tolist(), charge_b.tolist()))
             ]).to(device)  # [8, 7]
 
@@ -402,12 +403,13 @@ def main():
             ce = cross_entropy_loss(logits, S_true, ce_mask)
 
             # 电荷偏差（逐样本，因 pH 每样本不同；温度化：优化采样分布电荷而非期望电荷）
+            # 第十七轮：占位符样本也施加电荷损失（target=训练均值）——"占位"=温和默认电荷，
+            # 而非完全无监督（第十六轮实证无监督→负漂移→折叠失败）
             cd = torch.zeros(B, device=device)
             for i in range(B):
-                if mask_ph[i]:
-                    continue  # 占位符样本无电荷 target，跳过电荷损失
+                tgt_i = charge_mean if mask_ph[i] else charge_b[i]
                 cd[i] = charge_deviation_loss(
-                    logits[i:i+1], pH=pH_b[i], target_charge=charge_b[i],
+                    logits[i:i+1], pH=pH_b[i], target_charge=tgt_i,
                     mask=ce_mask[i:i+1], temperature=args.charge_temp,
                 )
             cd = cd.mean()

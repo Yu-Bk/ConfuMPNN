@@ -49,6 +49,7 @@ REF_PDB = {
     "2LZM": "input/2LZM.pdb",
 }
 ARMS = ["t1_cond", "t1_base", "t2_pos", "t2_neg", "t2_ph"]
+PLACEHOLDER_ARMS = {"t2_ph"}  # 占位臂（均值占位语义）：不判 H2，只看折叠
 AA1 = "ACDEFGHIKLMNPQRSTVWY"
 
 
@@ -264,12 +265,15 @@ def main():
             a = r["arms"][arm]
             tgt = a["charge"].get("target")
             dev = a["charge"].get("mean_abs_dev")
-            h2 = (dev is not None and tgt is not None and dev <= 2.0)
+            # 占位臂（t2_ph 均值占位）不判 H2——它语义是"温和默认电荷"，非精确控制
+            h2 = (dev is not None and tgt is not None
+                  and arm not in PLACEHOLDER_ARMS and dev <= 2.0)
             tm_med, fail = a["TM"]["median"], a["TM"]["fail_rate"]
             h1 = (tm_med is not None and tm_med >= 0.70 and fail is not None
                   and fail <= 0.10)
             mark_h1 = "✅" if h1 else ("❌" if tm_med is not None else "—")
-            mark_h2 = "✅" if h2 else ("❌" if dev is not None else "—")
+            mark_h2 = ("—" if arm in PLACEHOLDER_ARMS else
+                       ("✅" if h2 else ("❌" if dev is not None else "—")))
             print(f"  {arm:9s} | target={tgt if tgt is not None else '占位':>5} "
                   f"dev={dev if dev is not None else '—':>5} "
                   f"TM中位={tm_med} 失败率={fail} pLDDT={a['pLDDT']} "
