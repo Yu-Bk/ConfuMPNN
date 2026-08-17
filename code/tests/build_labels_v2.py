@@ -82,6 +82,42 @@ def stratify_sample(files, charge7, n_bins, per_bin, lo=-20.0, hi=20.0, seed=42)
     return sorted(selected)
 
 
+def class_balanced_sample(files, charge7, per_class, seed=42, basic_lo=5.0):
+    """三类等量采样（v6：分层 + 过采样稀有类）。
+
+    按 native 电荷@7.4 分三类：
+      acid    : charge < -basic_lo
+      neutral : -basic_lo <= charge <= +basic_lo
+      basic   : charge >  +basic_lo（稀有类，**全保留**不过采样）
+
+    酸性/中性各抽 per_class 个（不足全取），碱性全保留。
+    → 三类数量相近 + 保住中性骨架多样性 + 碱性多样性最大化。
+    返回选中域索引列表。
+    """
+    rng = random.Random(seed)
+    groups = {"acid": [], "neutral": [], "basic": []}
+    for i, c in enumerate(charge7):
+        if c < -basic_lo:
+            groups["acid"].append(i)
+        elif c > basic_lo:
+            groups["basic"].append(i)
+        else:
+            groups["neutral"].append(i)
+
+    selected = []
+    stat = []
+    for name, idx in groups.items():
+        rng.shuffle(idx)
+        take = idx[:per_class] if name != "basic" else idx  # basic 全保留
+        selected.extend(take)
+        stat.append((name, len(idx), len(take)))
+    print("\n三类等量抽样统计（[类]: 总数 → 抽取数）:")
+    for name, total, take in stat:
+        print(f"  {name:8s}: {total:6d} → {take:4d}")
+    print(f"  合计 {len(selected)} 域", flush=True)
+    return sorted(selected)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dompdb", default="/data/nfs/IC/baokun_yu/ConfuMPNN/data/cath/S40/dompdb")
@@ -92,15 +128,26 @@ def main():
     ap.add_argument("--stratify", action="store_true", help="分层等量抽样（第十八轮，默认开）")
     ap.add_argument("--n_bins", type=int, default=8, help="电荷分箱数")
     ap.add_argument("--per_bin", type=int, default=100, help="每箱抽取数")
+    ap.add_argument("--class_balance", action="store_true",
+                    help="三类等量采样（v6：acid/neutral 各抽 per_class、basic 全保留）")
+    ap.add_argument("--per_class", type=int, default=2500, help="三类等量采样每类抽取数")
+    ap.add_argument("--exclude", default="",
+                    help="逗号分隔的 PDB 前缀，从候选域排除（验证蛋白泄漏检查，如 1b24,1bc8）")
     args = ap.parse_args()
+    exclude_pfx = [s.strip().lower() for s in args.exclude.split(",") if s.strip()]
 
     files = [p for p in glob.glob(os.path.join(args.dompdb, "*")) if os.path.isfile(p)]
     print(f"候选域 {len(files)}", flush=True)
 
-    # 第一遍：解析全部域，算 native 电荷@7.4
+    # 第一遍：解析全部域，算 native 电荷@7.4（排除验证 PDB 域防泄漏）
     parsed = []  # (path, coords, seq, charge7)
     charge7s = []
+    excluded = 0
     for i, p in enumerate(files):
+        base = os.path.basename(p).lower()
+        if any(base.startswith(pfx) for pfx in exclude_pfx):
+            excluded += 1
+            continue
         coords, seq = parse_domain(p)
         if coords is None:
             continue
@@ -109,10 +156,14 @@ def main():
         charge7s.append(c7)
         if (i + 1) % 5000 == 0:
             print(f"  解析 {i+1}/{len(files)}", flush=True)
+    if excluded:
+        print(f"⚠️ 已排除验证 PDB 域 {excluded} 个（泄漏保护）", flush=True)
     print(f"有效域 {len(parsed)}, charge@7.4 mean={np.mean(charge7s):.2f}", flush=True)
 
-    # 分层抽样
-    if args.stratify:
+    # 分层抽样（三类等量 / 8 箱等量 / 随机）
+    if args.class_balance:
+        sel_idx = class_balanced_sample(files, charge7s, args.per_class, seed=args.seed)
+    elif args.stratify:
         sel_idx = stratify_sample(files, charge7s, args.n_bins, args.per_bin, seed=args.seed)
     else:
         random.seed(args.seed)

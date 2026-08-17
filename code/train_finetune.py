@@ -345,44 +345,52 @@ def main():
     abs_dompdb = os.path.abspath(args.dompdb)
 
     domains = []
+    n_ok, n_skip = 0, 0
     for i, did in enumerate(domain_ids[:n_dom]):
         link_path = dom_cache_dir / f"{did}.pdb"
         if not link_path.exists():
             os.symlink(os.path.join(abs_dompdb, str(did)), link_path)
         pdb_path = str(link_path)
-        protein_dict, *_ = parse_PDB(pdb_path, device="cpu", parse_all_atoms=False)
-        L = protein_dict["X"].shape[0]
-        # 单链 CATH 域：全部残基设计 → chain_mask = 全 1
-        protein_dict["chain_mask"] = torch.ones(L, dtype=torch.int32)
-        feature_dict = featurize(
-            protein_dict, use_atom_context=False, number_of_ligand_atoms=0,
-            model_type="protein_mpnn",
-        )
-        dom = build_domain(feature_dict, device, seed=args.seed + i)
-        # 冻结 backbone 上一次性 encode
-        h_V, h_E, E_idx = backbone.encode(dom)
-        dom["h_V"] = h_V
-        dom["h_E"] = h_E
-        dom["E_idx"] = E_idx
-        # 无条件 logits（无 prompt 注入）——KL 锚参考分布，每域一次
-        with torch.no_grad():
-            logits_uncond = decoder_forward(backbone, h_V, h_E, E_idx, dom, 1, device)
-        dom["logits_uncond"] = logits_uncond
-        # 无条件 argmax 序列（SeqKeep 锚，常数）：X 位置锚到 0，靠 ce_mask 排除。
-        # ⚠️ dom["S"] 带 batch 维 [1,L]，索引 [0] 取单链，避免广播成 [1,L]。
-        anchor = logits_uncond[0].argmax(-1)                          # [L]
-        anchor = torch.where(dom["S"][0] < 20, anchor, torch.zeros_like(anchor))  # [L]
-        dom["seq_anchor"] = anchor
-        # CE 有效性掩码：排除非标准残基（S==20 的 X）
-        valid = (dom["S"] < 20).float()
-        dom["ce_mask"] = dom["mask"] * dom["chain_mask"] * valid
-        # 该域 8 个 (pH, charge) 条件
-        idx0 = i * n_pH
-        dom["pH"] = pH_arr[idx0:idx0 + n_pH]
-        dom["charge_label"] = charge_arr[idx0:idx0 + n_pH]
-        domains.append(dom)
+        try:
+            protein_dict, *_ = parse_PDB(pdb_path, device="cpu", parse_all_atoms=False)
+            L = protein_dict["X"].shape[0]
+            # 单链 CATH 域：全部残基设计 → chain_mask = 全 1
+            protein_dict["chain_mask"] = torch.ones(L, dtype=torch.int32)
+            feature_dict = featurize(
+                protein_dict, use_atom_context=False, number_of_ligand_atoms=0,
+                model_type="protein_mpnn",
+            )
+            dom = build_domain(feature_dict, device, seed=args.seed + i)
+            # 冻结 backbone 上一次性 encode
+            h_V, h_E, E_idx = backbone.encode(dom)
+            dom["h_V"] = h_V
+            dom["h_E"] = h_E
+            dom["E_idx"] = E_idx
+            # 无条件 logits（无 prompt 注入）——KL 锚参考分布，每域一次
+            with torch.no_grad():
+                logits_uncond = decoder_forward(backbone, h_V, h_E, E_idx, dom, 1, device)
+            dom["logits_uncond"] = logits_uncond
+            # 无条件 argmax 序列（SeqKeep 锚，常数）：X 位置锚到 0，靠 ce_mask 排除。
+            # ⚠️ dom["S"] 带 batch 维 [1,L]，索引 [0] 取单链，避免广播成 [1,L]。
+            anchor = logits_uncond[0].argmax(-1)                          # [L]
+            anchor = torch.where(dom["S"][0] < 20, anchor, torch.zeros_like(anchor))  # [L]
+            dom["seq_anchor"] = anchor
+            # CE 有效性掩码：排除非标准残基（S==20 的 X）
+            valid = (dom["S"] < 20).float()
+            dom["ce_mask"] = dom["mask"] * dom["chain_mask"] * valid
+            # 该域 8 个 (pH, charge) 条件（按已接受域数索引，跳过坏域不错位）
+            idx0 = n_ok * n_pH
+            dom["pH"] = pH_arr[idx0:idx0 + n_pH]
+            dom["charge_label"] = charge_arr[idx0:idx0 + n_pH]
+            domains.append(dom)
+            n_ok += 1
+        except Exception as e:
+            n_skip += 1
+            logln(f"  ⚠️ 跳过坏域 {did}: {e}")
         if (i + 1) % 200 == 0:
-            logln(f"  预解析+encode {i+1}/{n_dom}")
+            logln(f"  预解析+encode {n_ok}/{n_dom}（跳过 {n_skip}）")
+    if n_skip:
+        logln(f"⚠️ 共跳过 {n_skip} 个坏域（prody 无法解析），实际训练 {n_ok} 域")
 
     # 记录每域梯度归零的分界（backbone 参数全 requires_grad=False，
     # 只传 enc.parameters() 给 optimizer，天然只更新编码器）
@@ -390,11 +398,12 @@ def main():
     logln(f"预解析完成，缓存 encode 特征 ~{total_cached:.2f}GB")
 
     # ---- 训练 ----
-    domain_idx = list(range(n_dom))
-    n_steps_total = args.epochs * n_dom
+    n_dom_eff = len(domains)  # 实际可训练域数（跳过坏域后可能 < n_dom）
+    domain_idx = list(range(n_dom_eff))
+    n_steps_total = args.epochs * n_dom_eff
     step = 0
     t_start = time.time()
-    logln(f"开始训练：{args.epochs} epochs × {n_dom} 域/epoch = {n_steps_total} steps")
+    logln(f"开始训练：{args.epochs} epochs × {n_dom_eff} 域/epoch = {n_steps_total} steps")
 
     for epoch in range(1, args.epochs + 1):
         random.shuffle(domain_idx)
