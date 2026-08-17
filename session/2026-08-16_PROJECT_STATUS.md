@@ -21,8 +21,9 @@
 | Phase 3 pH 响应 | 条件注入接入 run_guided.py + Go/No-Go 4/4 PDB 通过（target 单调 + 跨 pH identity<100%） | `4fccc1c` |
 | Phase 3 防失控（n=5） | 条件注入 vs E1b 基线四指标：pLDDT 掉是过冲所致（校准后恢复）；%sol/Tm 噪声内 → PASS | `c2de909` |
 | 训练侧根治过冲 | 电荷损失温度化（charge_temp=0.5）：增益 2.57→1.04，新编码器默认关校准 | `b91ab93` |
-| **第十三轮 n=20 扩样本** | **推翻 n=5 假阴性**：32 组配对检验 23 组显著（%sol/Tm 真实下降）；机制=条件注入 >50% 位点非保守替换 | `待提交` |
-| **判断标准 v1** | `index/DESIGN_CRITERIA.md`（用户要求先立标准再训练）：H1 TM≥0.70 / H2 电荷±2 / H3 聚集合法；S1 注入选择性 / S2 可开发性权衡 | `待提交` |
+| **第十三轮 n=20 扩样本** | **推翻 n=5 假阴性**：32 组配对检验 23 组显著（%sol/Tm 真实下降）；机制=条件注入 >50% 位点非保守替换 | `220ab3b` |
+| **判断标准 v1** | `index/DESIGN_CRITERIA.md`（用户要求先立标准再训练）：H1 TM≥0.70 / H2 电荷±2 / H3 聚集合法；S1 注入选择性 / S2 可开发性权衡 | `220ab3b` |
+| **第十四轮 S1 训练修正** | **治 S1 部分成功**：原生标签 50%→70% + seq-keep 正则；H1 全达标优于上轮（折叠失败 0%、pLDDT 大幅修复）、H2 3/4 PDB、S1 0.45→0.67 未达 0.7、%sol 仍降（设计权衡） | `待提交` |
 
 **今日资产**：`data/cath/`（CATH S40 34,653 结构域坐标+序列，818MB，git 不跟踪）；打分工具链（ESMFold 回折+TM-score、Protein-Sol、TemBERTure）全通。
 
@@ -169,11 +170,23 @@ E1 对照实验**全部完成并 push**（提交 `c644a6b`，三目标结果：�
 - **现有编码器按新标准**：H1 ✅（放宽后全 PDB 过）、H2 ⚠️（2LZM 过冲 target 8→+13.24）、**S1 ❌**
 - **明天训练修正方向**（见"下一步"）
 
-### 下一步（2026-08-17，从第十三轮继续）
-1. **训练修正（治 S1 注入选择性）**：`train_finetune.py` 原生标签比例 50%→70% + 加**序列保持正则**（条件输出 vs 无条件输出逐位差异惩罚）→ 重训 → n=20 复验按判断标准判定
-2. **复验工具链已就绪**：`phase3_antidrift_extend.py`（采样）+ `phase3_antidrift_n20_score.sh`（打分）+ `phase3_antidrift_n20_stats.py`（统计，含按新标准的 H1/H2/S1 判定）
-3. 可选：2LZM per-PDB 过冲（接受 ±2 容差或调 `--charge_temp`）；R1 天然蛋白对参照验证
-4. 可选：`--fixed_residues` 位点固定对照臂（与序列保持正则互补的思路）
+### 第十四轮（2026-08-17）— 训练修正治 S1 注入选择性 ⏳（部分成功）
+- **训练修正设计**（session `2026-08-17_s1_training_fix.md`）：原生标签比例 50%→70%（`--perturb_prob 0.3`）+ 新增**序列保持正则**（`--lambda_keep 0.5`，`losses.py` 新增 `sequence_keep_loss`）：以无条件 argmax 序列为锚，对**自洽样本**做 `CE(logits_cond, anchor)`——S1 判据（A 场景 identity≥0.7）的训练侧直接对应，比 KL 更直接（管住 argmax 翻盘）
+- **训练**（`output/finetune_s1/`，30 epoch 16.5min）：ce 1.856 稳定、charge 1.969、**keep 0.843 全程稳定**
+- **复验**（`output/phase3_antidrift_s1_n20/`，320 条；TemBERTure SSL 错误→`HF_HUB_OFFLINE=1` 离线重跑修复）：
+  - **H1 全达标且优于上轮**：条件臂 TM 中位 0.862-0.972 ≥0.70；**折叠失败率 0%**（上轮 2 条失败）；pLDDT 掉落大幅修复（2LZM −4.4→−1.1、1BC8 不再显著）
+  - **H2 6/8 达标**（1BC8/1CRN/1UBQ 全过；2LZM 仍过冲 A +11.09/B +19.45 vs target 8/13，略改善）
+  - **S1 提升未达标**：A 场景 identity 0.52-0.67（上轮 0.45-0.59；1CRN 0.668 逼近 0.7）
+  - **%sol 仍 8/8 显著降**（−3.8~−21.2，1CRN/1UBQ 最重）——A 场景残余重写代价 + B 场景电荷目标张力（设计权衡）
+  - Tm 半数恢复（1BC8/2LZM PASS）；显著组 23→18
+- 报告：`analysis/report/2026-08-17_phase3_s1_fix.md`
+
+### 下一步（2026-08-18，从第十四轮继续）
+1. **S1 再加压**：`--lambda_keep 0.5 → 1.5~2.0` 重训（seq-keep 只在自洽样本，扰动样本电荷能力应保留）→ n=20 复验冲 A 场景 identity≥0.7
+2. **2LZM per-PDB 过冲**：调 `--charge_temp` 或接受 ±2 容差（H2 老问题，已连续两轮）
+3. **H3 电荷聚集合法**：条件臂序列过 `structure_aware_filter`，比对基线违规率（≤+5pp）
+4. **R1 天然蛋白对参照**：CATH 同 superfamily 找"骨架相似 pI 不同"蛋白对，验证目标可达
+5. 可选：`--fixed_residues` 位点固定对照臂（与 seq-keep 互补）
 
 ---
 
@@ -196,6 +209,6 @@ ESMFold 回折在 `confumpnn-esmfold` 环境（conda, Python 3.10, torch 2.6.0+c
 ## 五、Git 状态
 
 - 分支 `main`，远程 `origin` = git@github.com:Yu-Bk/ConfuMPNN.git
-- 最近提交：`b91ab93`（温度化根治过冲）← `d9b67ff`（电荷损失温度化）← `212d392`（文档）← `0be534b`（校准落地）← `c2de909`（n=5 防失控 PASS）← `d75fb96`（打分工具修复）← `fcc9845`（pH 响应报告）← `4fccc1c`（Phase 3 注入）← `177d902`（train_status 修复）← `1477a79`（微调启动）
-- ⚠️ 本文件"第十三轮"与 `index/DESIGN_CRITERIA.md` 待提交（见 git status）
+- 最近提交：`220ab3b`（第十三轮：n=20 扩样本推翻假阴性 + 判断标准 v1）← `b91ab93`（温度化根治过冲）← `d9b67ff`（电荷损失温度化）← `212d392`（文档）← `0be534b`（校准落地）← `c2de909`（n=5 防失控 PASS）← `d75fb96`（打分工具修复）← `fcc9845`（pH 响应报告）← `4fccc1c`（Phase 3 注入）← `177d902`（train_status 修复）← `1477a79`（微调启动）
+- ⚠️ 本文件"第十四轮"、`code/train_finetune.py`、`code/src/losses.py`、报告 `2026-08-17_phase3_s1_fix.md`、会话 `2026-08-17_s1_training_fix.md` 待提交（见 git status）
 - `LigandMPNN/`、`foundry/`、`MoMPNN/` 为 clone 源码不跟踪；`data/`、`code/output/`、`code/log/`、`*.pt`、`*.ckpt` 已 gitignore

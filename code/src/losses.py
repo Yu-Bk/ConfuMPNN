@@ -48,6 +48,37 @@ def charge_deviation_loss(logits, pH, target_charge, mask=None, temperature=1.0)
     return torch.abs(charge - target_charge).mean()
 
 
+def sequence_keep_loss(logits, anchor_seq, mask):
+    """序列保持正则（治 S1 注入选择性，Phase 3 第十四轮新增）。
+
+    语义：条件化输出在每个位置应逼近「无条件 argmax 锚序列」——即冻结
+    backbone 在无注入下的最可能输出。这是判断标准 v1 里 S1 判据（A 场景
+    条件臂 vs 基线 identity ≥ 0.7）的**训练侧直接对应**：无改 pI 需求时
+    （target=native）不扰动，有需求时才改写。
+
+    为什么比 KL 锚（kl_anchor_loss）更直接：
+        KL 惩罚的是**分布距离**。softmax 分布概率小幅漂移（如 0.30→0.29）
+        时 KL 已很小，但 argmax 可能翻盘（K→R），序列级 identity 照样下降。
+        本损失直接以无条件 argmax 为目标序列做 CE，惩罚「无条件最可能
+        氨基酸在条件分布下失势」——直接对应序列级判据。
+
+    与 CE(native) 的区别：
+        CE 锚 native（结构匹配度锚），本损失锚无条件输出（行为保持）。
+        二者都施加在自洽样本上，语义互补。
+
+    施加时机：**只在 target=native 的自洽样本上**施加（扰动样本 target≠native
+    时电荷偏移是期望行为，不受本正则约束）。由调用方按 per-sample 判断。
+
+    参数:
+        logits: [B, L, 21] 条件化输出 logits
+        anchor_seq: [B, L] 无条件 argmax 序列（冻结 backbone 预计算，常数）
+        mask: [B, L] 参与位置掩码
+    返回:
+        标量（mask 位置的平均 NLL on anchor）
+    """
+    return cross_entropy_loss(logits, anchor_seq, mask)
+
+
 def structure_penalty_loss(logits, filter_bias, mask=None):
     """结构惩罚：抑制模型选择被过滤器压制的氨基酸。
 

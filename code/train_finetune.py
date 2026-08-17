@@ -19,7 +19,7 @@ soft prompt 注入（对 4.5 的实现修正）
 
 损失
 ----
-    L = CE + λ_c·charge_deviation + λ_kl·KL(条件化 ‖ 无条件)
+    L = CE + λ_c·charge_deviation + λ_kl·KL(条件化 ‖ 无条件) + λ_keep·SeqKeep
 
     CE                : 重建 native 序列（结构匹配度锚，PROJECT_PLAN 6.1 风险表）
     charge_deviation  : 期望净电荷 vs 目标电荷（可微，differentiable_charge.py）
@@ -28,6 +28,13 @@ soft prompt 注入（对 4.5 的实现修正）
                         可溶/Tm/可设计性（这些目标存在冻结的 backbone 权重里）。
                         （溶解性/Tm 属第二版多目标微调，不是本阶段损失；本阶段
                         防护 = 冻结 backbone + CE 锚 + KL 锚 + 事后 E1b 验证。）
+    SeqKeep（序列保持，治 S1 注入选择性，第十四轮新增）:
+                        以「无条件 argmax 序列」为锚，对**自洽样本**（target=native）
+                        做 CE——条件输出逐位逼近无条件输出。这是判断标准 v1 的 S1
+                        判据（A 场景条件臂 vs 基线 identity ≥ 0.7）的训练侧直接对应，
+                        比 KL 更直接（KL 管分布距离，管不住 argmax 翻盘）。
+                        **只在自洽样本施加**；扰动样本 target≠native 时电荷偏移是
+                        期望行为，不受此正则约束。
 
 数据 / 目标（自洽 + 扰动混合）
 ------------------------------
@@ -38,12 +45,14 @@ soft prompt 注入（对 4.5 的实现修正）
       若目标恒等于 native 电荷，CE 与电荷损失同时被「重建 native」满足，
       模型学不到电荷偏移能力（条件向量变成无效输入）。
       因此用 **混合目标**：
-        · 50%：自洽目标 = native 序列在该 pH 的净电荷（锚定结构，label 原值）
-        · 50%：扰动目标 = native 电荷 ± Uniform[1, perturb_scale]
+        · 70%：自洽目标 = native 序列在该 pH 的净电荷（锚定结构，label 原值）
+        · 30%：扰动目标 = native 电荷 ± Uniform[1, perturb_scale]
           ——制造 CE 与电荷损失的冲突，教模型「target 偏离 native 时如何偏移
             氨基酸分布」。这正是计划 Go/No-Go（pH↑→偏负电残基增多）的学习信号。
+      ⚠️ 第十四轮修正：扰动比例从 50% 降到 30%（原生标签 50%→70%），
+         让「target=原生时保持」成为主导训练信号；配合 SeqKeep 正则治 S1。
 
-    λ_c / λ_kl / perturb_prob / perturb_scale 均可命令行调节。
+    λ_c / λ_kl / λ_keep / perturb_prob / perturb_scale 均可命令行调节。
 
 用法
 ----
@@ -85,7 +94,9 @@ from model_utils import ProteinMPNN, cat_neighbors_nodes  # noqa: E402
 from src.condition_embedding import ConditionEncoder, make_condition_vector  # noqa: E402
 from src.conditioned_sampler import inject_prompt  # noqa: E402  (训练/推理共用同一注入机制)
 from src.differentiable_charge import net_charge  # noqa: E402
-from src.losses import charge_deviation_loss, cross_entropy_loss  # noqa: E402
+from src.losses import (  # noqa: E402
+    charge_deviation_loss, cross_entropy_loss, sequence_keep_loss,
+)
 
 # 默认生成器权重（与 run_guided.py E4 一致）
 _DEFAULT_WEIGHTS = (
@@ -110,8 +121,12 @@ def parse_args():
                    help="电荷偏差损失权重")
     p.add_argument("--lambda_kl", type=float, default=0.05,
                    help="KL 锚定正则权重（防失控：约束条件化输出不偏离 backbone）")
-    p.add_argument("--perturb_prob", type=float, default=0.5,
-                   help="使用扰动电荷目标的概率（制造电荷偏移学习信号）")
+    p.add_argument("--lambda_keep", type=float, default=0.5,
+                   help="序列保持正则权重（治 S1：自洽样本条件输出逼近无条件 argmax，"
+                        "比 KL 更直接地管住 argmax 翻盘）")
+    p.add_argument("--perturb_prob", type=float, default=0.3,
+                   help="使用扰动电荷目标的概率（制造电荷偏移学习信号；"
+                        "第十四轮 0.5→0.3 = 原生标签 70%，治 S1 注入选择性）")
     p.add_argument("--perturb_scale", type=float, default=4.0,
                    help="扰动电荷偏移幅度上限（±Uniform[1,scale]）")
     p.add_argument("--charge_temp", type=float, default=0.5,
@@ -236,7 +251,7 @@ def main():
 
     logln(f"=== ConfuMPNN Phase 2 条件微调启动 ===")
     logln(f"device={device}  epochs={args.epochs}  lr={args.lr}  "
-          f"λ_c={args.lambda_c}  λ_kl={args.lambda_kl}  "
+          f"λ_c={args.lambda_c}  λ_kl={args.lambda_kl}  λ_keep={args.lambda_keep}  "
           f"perturb_prob={args.perturb_prob}  perturb_scale={args.perturb_scale}  "
           f"charge_temp={args.charge_temp}")
 
@@ -308,6 +323,11 @@ def main():
         with torch.no_grad():
             logits_uncond = decoder_forward(backbone, h_V, h_E, E_idx, dom, 1, device)
         dom["logits_uncond"] = logits_uncond
+        # 无条件 argmax 序列（SeqKeep 锚，常数）：X 位置锚到 0，靠 ce_mask 排除。
+        # ⚠️ dom["S"] 带 batch 维 [1,L]，索引 [0] 取单链，避免广播成 [1,L]。
+        anchor = logits_uncond[0].argmax(-1)                          # [L]
+        anchor = torch.where(dom["S"][0] < 20, anchor, torch.zeros_like(anchor))  # [L]
+        dom["seq_anchor"] = anchor
         # CE 有效性掩码：排除非标准残基（S==20 的 X）
         valid = (dom["S"] < 20).float()
         dom["ce_mask"] = dom["mask"] * dom["chain_mask"] * valid
@@ -333,14 +353,15 @@ def main():
 
     for epoch in range(1, args.epochs + 1):
         random.shuffle(domain_idx)
-        epoch_loss, epoch_ce, epoch_cd, epoch_kl = [], [], [], []
+        epoch_loss, epoch_ce, epoch_cd, epoch_kl, epoch_keep = [], [], [], [], []
         for di in domain_idx:
             dom = domains[di]
             B = n_pH
             # 条件向量 [B, 7]
             pH_b = torch.from_numpy(dom["pH"]).to(device)              # [8]
             charge_b = torch.from_numpy(dom["charge_label"]).to(device)  # [8]
-            # 混合目标：50% 扰动电荷（制造偏移学习信号）
+            # 混合目标：70% 自洽（target=native）+ 30% 扰动电荷（制造偏移学习信号）
+            mask_p = torch.zeros(B, dtype=torch.bool, device=device)
             if args.perturb_prob > 0:
                 mask_p = (torch.rand(B, device=device) < args.perturb_prob)
                 offset = torch.where(
@@ -377,7 +398,18 @@ def main():
             ref = dom["logits_uncond"].repeat(B, 1, 1)
             kl = kl_anchor_loss(logits, ref, ce_mask) if args.lambda_kl > 0 else torch.zeros((), device=device)
 
-            total = ce + args.lambda_c * cd + args.lambda_kl * kl
+            # 序列保持正则（仅自洽样本：未扰动 → target=native → 条件输出逼近无条件 argmax；
+            # 扰动样本 target≠native，电荷偏移是期望行为，不受约束）
+            keep = torch.zeros(B, device=device)
+            if args.lambda_keep > 0:
+                anchor = dom["seq_anchor"].unsqueeze(0)  # [1, L]
+                for i in range(B):
+                    if not mask_p[i].item():
+                        keep[i] = sequence_keep_loss(
+                            logits[i:i+1], anchor, ce_mask[i:i+1])
+            keep = keep.mean()
+
+            total = ce + args.lambda_c * cd + args.lambda_kl * kl + args.lambda_keep * keep
 
             optimizer.zero_grad()
             total.backward()
@@ -386,18 +418,21 @@ def main():
 
             epoch_loss.append(total.item()); epoch_ce.append(ce.item())
             epoch_cd.append(cd.item()); epoch_kl.append(kl.item())
+            epoch_keep.append(keep.item())
             step += 1
 
         # ---- epoch 汇总 + 进度文件 ----
         avg = lambda x: float(np.mean(x))
         msg = (f"epoch {epoch}/{args.epochs}  total={avg(epoch_loss):.4f}  "
                f"ce={avg(epoch_ce):.4f}  charge={avg(epoch_cd):.4f}  "
-               f"kl={avg(epoch_kl):.4f}  elapsed={((time.time()-t_start)/60):.1f}min")
+               f"kl={avg(epoch_kl):.4f}  keep={avg(epoch_keep):.4f}  "
+               f"elapsed={((time.time()-t_start)/60):.1f}min")
         logln(msg)
         prog = {
             "epoch": epoch, "total_epochs": args.epochs,
             "loss": avg(epoch_loss), "ce": avg(epoch_ce),
             "charge": avg(epoch_cd), "kl": avg(epoch_kl),
+            "keep": avg(epoch_keep),
             "elapsed_min": round((time.time() - t_start) / 60, 1),
         }
         with open(args.log_progress, "w") as f:
@@ -416,6 +451,10 @@ def main():
             "std": cfg["normalization"]["std"],
             "backbone_weights": args.weights,
             "loss_terms": prog,
+            # 追溯字段（第十四轮修正参数）
+            "perturb_prob": args.perturb_prob,
+            "lambda_keep": args.lambda_keep,
+            "charge_temp": args.charge_temp,
         }, ckpt_path)
         # 保留最新一份 alias，方便推理时加载
         torch.save(enc.state_dict(), out_dir / "condition_encoder_last.pt")
