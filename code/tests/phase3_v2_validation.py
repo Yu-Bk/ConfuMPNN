@@ -51,6 +51,9 @@ PDBS = {
     "1CRN": "input/1CRN.pdb",
     "1UBQ": "input/1UBQ.pdb",
     "2LZM": "input/2LZM.pdb",
+    # 第十八轮新增：正电验证蛋白（native charge +8.0，未在训练集，测通用模型泛化）
+    "1b24A01": "input/1b24A01.pdb",
+    "1a87A02": "input/1a87A02.pdb",
 }
 AA1 = "ACDEFGHIKLMNPQRSTVWY"
 HYDROPHOBIC = set("ILVFMYW")  # 疏水核心位点候选（保守位点代理）
@@ -196,6 +199,7 @@ def main():
             "t1_cond": (args.pH, float(t_nat), fixed_ids),
             "t1_base": (args.pH, float(t_nat), None),
             "t2_pos":  (args.pH, float(t_nat + 3), None),   # 温和正电（用户建议 target 不设极端）
+            "t2_pos_extreme": (args.pH, float(t_nat + 8), None),  # 极端正电（第十八轮核心：验证分层采样+逆加权后高正电外推）
             "t2_neg":  (args.pH, float(t_nat - 5), None),
             "t2_ph":   (args.pH, float(CHARGE_MEAN), None),  # 均值占位（非 0 占位符：has_charge=1+值=训练均值）
         }

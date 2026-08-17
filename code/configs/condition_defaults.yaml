@@ -1,41 +1,31 @@
-# 条件向量默认配置（Phase 2 条件微调用，见 condition_embedding.py）
-# 条件向量 shape [7]：pH, has_charge, charge_val, has_pos, pos_val, has_neg, neg_val
-
 condition_defaults:
   cond_dim: 7
-
-  # 训练/采样时的 pH 采样范围（PROJECT_PLAN 4.4 连续采样）
   pH_min: 4.0
   pH_max: 10.0
-
-  # 可选约束默认值（None = 不指定）
   default_net_charge: null
-  default_local_pos_limit: 6    # 10Å 内正电荷数上限
-  default_local_neg_limit: 6    # 10Å 内负电荷数上限
-
-  # 标准化常量：从 CATH S40 1000 结构域 × 8 pH = 7992 样本统计（2026-08-16）
-  # 维度顺序与条件向量一致：[pH, has_charge, charge, has_pos, pos, has_neg, neg]
-  # 注：has_charge 恒 1、后 4 维恒 0，故 σ=0（ConditionEncoder 用 std+1e-8 保护）
+  default_local_pos_limit: 6
+  default_local_neg_limit: 6
   normalization:
-    mean: [6.9697, 1.0, -1.3446, 0.0, 0.0, 0.0, 0.0]
-    std:  [1.7338, 0.0, 7.7811, 0.0, 0.0, 0.0, 0.0]
-
-  # 条件编码器架构
+    mean:
+    - 6.9783
+    - 1.0
+    - 1.0674
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    std:
+    - 1.7378
+    - 0.0
+    - 11.988
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
   encoder:
     hidden_dim: 64
     token_dim: 128
     n_tokens: 4
-
-  # 电荷校准（Phase 3 发现：条件注入的 target→实际电荷 有线性增益）
-  # ⚠️ 默认关闭（enabled: false）：对应当前推荐编码器 code/output/finetune_t05/
-  #    （电荷损失温度化训练 charge_temp=0.5），其增益已收敛到 ~1（1BC8: 2.57→1.04），
-  #    不再需要推理侧校准；全局校准反而会过校正（per-PDB 增益 1.04~1.7 差异）
-  # 系数保留供参考（4 PDB 合并拟合，15 点）：
-  #   新编码器 t05: gain=1.289, offset=0.740（R²=0.905）——校准会过校正，不推荐开
-  #   旧编码器 finetune: gain=2.570, offset=0.160（R²=0.946）——严重过冲，建议开
-  # 机制：训练优化 softmax 期望电荷，推理测采样序列电荷，CE 自信放大 → 采样更极端
-  # 用法：run_guided.py --cond_encoder 条件注入时按此应用
-  #      target_eff = (desired - offset) / gain；--no_calibration 可关闭
   charge_calibration:
     gain: 1.289
     offset: 0.74

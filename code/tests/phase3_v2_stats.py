@@ -41,14 +41,16 @@ from src.guided_sampler import extract_calpha_coords  # noqa: E402
 from src.structure_aware_filter import default_config  # noqa: E402
 from src.pka import AA_TO_IDX, STRONG_POSITIVE, STRONG_NEGATIVE  # noqa: E402
 
-PDBS = ["1BC8", "1CRN", "1UBQ", "2LZM"]
+PDBS = ["1BC8", "1CRN", "1UBQ", "2LZM", "1b24A01", "1a87A02"]
 REF_PDB = {
     "1BC8": "input/1BC8_chainC.pdb",
     "1CRN": "input/1CRN.pdb",
     "1UBQ": "input/1UBQ.pdb",
     "2LZM": "input/2LZM.pdb",
+    "1b24A01": "input/1b24A01.pdb",  # 第十八轮正电验证蛋白
+    "1a87A02": "input/1a87A02.pdb",
 }
-ARMS = ["t1_cond", "t1_base", "t2_pos", "t2_neg", "t2_ph"]
+ARMS = ["t1_cond", "t1_base", "t2_pos", "t2_pos_extreme", "t2_neg", "t2_ph"]
 PLACEHOLDER_ARMS = {"t2_ph"}  # 占位臂（均值占位语义）：不判 H2，只看折叠
 AA1 = "ACDEFGHIKLMNPQRSTVWY"
 

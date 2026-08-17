@@ -137,6 +137,14 @@ def parse_args():
     p.add_argument("--charge_temp", type=float, default=0.5,
                    help="电荷损失的 softmax 温度（<1 锐化：训练优化的分布≈推理采样分布，"
                         "减小 ~2.57× 过冲；1.0=原版期望电荷）")
+    p.add_argument("--loss_reweight", type=int, default=0,
+                   help="逆密度加权电荷损失（第十八轮，治高正电 target 外推过冲）："
+                        "charge loss 按 target 密度逆加权 weight=k/(density_norm+eps)，"
+                        "稀有 target（高正电）权重更大。1=开 0=关")
+    p.add_argument("--reweight_k", type=float, default=1.0, help="逆加权基准权重")
+    p.add_argument("--reweight_eps", type=float, default=1e-3, help="逆加权分母保护项")
+    p.add_argument("--reweight_cap", type=float, default=5.0,
+                   help="weight 上限（防高正电样本权重过大压坏负电命中，文献警示 naive 加权过校正）")
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--max_domains", type=int, default=0,
                    help="最多用前 N 个结构域（0=全部；冒烟测试用）")
@@ -144,6 +152,30 @@ def parse_args():
     p.add_argument("--log_progress", default=str(_CODE_DIR / "log" / "train_progress.json"))
     p.add_argument("--log_file", default=str(_CODE_DIR / "log" / "train.log"))
     return p.parse_args()
+
+
+def build_density_table(charge_arr, perturb_scale, lo=-40.0, hi=60.0, bw=0.5):
+    """估算训练时 target 电荷的分布密度（native charge@各pH + ±扰动扩展）。
+
+    用于逆密度加权（--loss_reweight）：charge loss 按 target 密度逆加权，
+    稀有 target（高正电，训练分布尾部）权重更大。文献：不均衡回归逆密度加权
+    （US11720818B2 / arXiv 2506.01486）。
+
+    返回 (density_norm, bucket)：归一化密度表（0~1，最密=1）+ 分箱索引函数。
+    """
+    n_buckets = int((hi - lo) / bw)
+    counts = np.zeros(n_buckets, dtype=np.float64)
+
+    def bucket(c):
+        return int(np.clip((c - lo) / bw, 0, n_buckets - 1))
+
+    for c in charge_arr:
+        c0, c1 = bucket(c - perturb_scale), bucket(c + perturb_scale)
+        counts[c0:c1 + 1] += 1.0   # 扰动对称均匀，target 近似均匀落在区间内
+    counts = np.maximum(counts, 1.0)
+    density = counts / counts.sum()
+    density_norm = density / density.max()   # [0,1]，最密箱=1 → weight 中间≈k
+    return density_norm, bucket
 
 
 def load_backbone(weights, device):
@@ -297,6 +329,13 @@ def main():
     assert n_pH * len(domain_ids) == pH_arr.size
     logln(f"数据：{n_dom} 结构域 × {n_pH} pH = {n_dom*n_pH} 样本（{args.labels}）")
 
+    # 逆密度加权：预计算训练 target 密度表（--loss_reweight，第十八轮）
+    density_norm, density_bucket = None, None
+    if args.loss_reweight:
+        density_norm, density_bucket = build_density_table(charge_arr, args.perturb_scale)
+        logln(f"逆密度加权开：k={args.reweight_k} eps={args.reweight_eps} "
+              f"cap={args.reweight_cap}（电荷分布偏斜补偿，治高正电 target 过冲）")
+
     # 预解析每个结构域 → 缓存 feature 张量 + encode + 无条件 logits
     # （backbone 冻结 → encode 与无条件输出每域只需算一次，全 epoch 复用）
     # prody parsePDB 按文件后缀判断格式：无 .pdb 后缀会被当 mmCIF 解析。
@@ -412,6 +451,10 @@ def main():
                     logits[i:i+1], pH=pH_b[i], target_charge=tgt_i,
                     mask=ce_mask[i:i+1], temperature=args.charge_temp,
                 )
+                if args.loss_reweight:
+                    w = args.reweight_k / (
+                        density_norm[density_bucket(float(tgt_i))] + args.reweight_eps)
+                    cd[i] *= min(w, args.reweight_cap)
             cd = cd.mean()
 
             # KL 锚（条件化 ‖ 无条件）
