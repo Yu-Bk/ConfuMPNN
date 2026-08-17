@@ -19,7 +19,6 @@ REF[1CRN]=code/input/1CRN.pdb
 REF[1UBQ]=code/input/1UBQ.pdb
 REF[2LZM]=code/input/2LZM.pdb
 REF[1b24A01]=code/input/1b24A01.pdb
-REF[1a87A02]=code/input/1a87A02.pdb
 
 echo "=== [1/4] ESMFold 回折 + pLDDT（confumpnn-esmfold，递归扫描所有 arm 的 seqs.fa）==="
 CUDA_VISIBLE_DEVICES=$GPU $PY_ESM code/tests/esmfold_score.py \

@@ -51,9 +51,9 @@ PDBS = {
     "1CRN": "input/1CRN.pdb",
     "1UBQ": "input/1UBQ.pdb",
     "2LZM": "input/2LZM.pdb",
-    # 第十八轮新增：正电验证蛋白（native charge +8.0，未在训练集，测通用模型泛化）
+    # 正电验证蛋白（native charge +8.0，未在训练集，测通用模型泛化）。
+    # 1a87A02 已弃用（v4 验证 native ESMFold pLDDT=49.8 本身难折叠，不适合判据）
     "1b24A01": "input/1b24A01.pdb",
-    "1a87A02": "input/1a87A02.pdb",
 }
 AA1 = "ACDEFGHIKLMNPQRSTVWY"
 HYDROPHOBIC = set("ILVFMYW")  # 疏水核心位点候选（保守位点代理）
