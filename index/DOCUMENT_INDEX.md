@@ -94,3 +94,6 @@
 
 - 文档归属不定时，先按 `FILE_MANAGEMENT.md` 的目录规则判断，拿不准就放 `index/` 并在本表登记。
 - 论文笔记导入时，按 `literature/` 五个维度（baseline/innovation/pattern/tools/phenomena）分类，并在此登记。
+| **v9 训练计划**（LigandMPNN 配体模式修复）| `index/PROJECT_V9_LIGAND_PLAN.md` | 在 LigandMPNN backbone 上重训条件编码器：**配体复合物 4972×8pH**（小分子+金属+核酸，L≤500，跳过含X，DNA并入RNA，结合水不分类）；验收=1MBN dev 14.05→≤2；不调 λ_keep；数据 `data/ligand_train/`、v9脚本 `code/tests/ligand_v9/`、输出 `output/finetune_ligand_v9/` | 2026-08-18 |
+| **v9 训练进展**（LigandMPNN 配体模式修复）| `log/v9_train.log` + `output/finetune_ligand_v9/` | 数据 4972 配体复合物×8pH（小分子4389+金属568+核酸264，L≤500）；`train_finetune.py --ligand` 改造完成（load_backbone+featurize+build_domain）；30 epoch 训练中；**验证 wrapper** `code/tests/ligand_v9/validate_v9.sh`（1MBN/4DFR/1FQG → output/transfer_v9/） | 2026-08-18 |
+| **v9 训练报告**（LigandMPNN 配体模式修复成功）| `analysis/report/2026-08-18_v9_ligand_training.md` | **配体模式电荷控制全部恢复**：1MBN dev 14.05→1.55、4DFR 1.45、1FQG 1.07（全部 ≤2.0 达标）；数据 4972 配体复合物×8pH；30 epoch 111.5min；与 v7 分工（无配体/小蛋白用 v7，配体/大蛋白用 v9）| 2026-08-18 |

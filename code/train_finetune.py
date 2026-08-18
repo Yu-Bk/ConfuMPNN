@@ -114,6 +114,8 @@ def parse_args():
     p.add_argument("--labels", default=str(_DEFAULT_LABELS))
     p.add_argument("--dompdb", default=str(_DEFAULT_DOMPDB))
     p.add_argument("--cfg", default=str(_DEFAULT_CFG))
+    p.add_argument("--ligand", action="store_true",
+                   help="配体模式（v9）：用 LigandMPNN 权重 + 配体原子上下文特征化")
     p.add_argument("--device", default="cuda:1")
     p.add_argument("--epochs", type=int, default=30)
     p.add_argument("--lr", type=float, default=1e-3)
@@ -183,9 +185,25 @@ def build_density_table(charge_arr, perturb_scale, lo=-40.0, hi=60.0, bw=0.5):
     return density_norm, bucket
 
 
-def load_backbone(weights, device):
-    """复刻 run_guided.py load_model：MoMPNN = 纯 backbone ProteinMPNN。"""
+def load_backbone(weights, device, ligand=False):
+    """加载 backbone。MoMPNN=纯 backbone ProteinMPNN；--ligand 时用 LigandMPNN 权重。
+
+    --ligand 时自动检测权重类型（同 run_guided.py load_model）：
+    权重含 atom_context_num（>0）→ ligand_mpnn（配体上下文）；否则 protein_mpnn。
+    """
     checkpoint = torch.load(weights, map_location=device)
+    if ligand:
+        model_type = (
+            "ligand_mpnn" if checkpoint.get("atom_context_num", 0) > 0
+            else "protein_mpnn"
+        )
+        atom_context_num = (
+            0 if model_type == "protein_mpnn"
+            else int(checkpoint.get("atom_context_num", 16))
+        )
+    else:
+        model_type = "protein_mpnn"
+        atom_context_num = 0
     model = ProteinMPNN(
         node_features=128,
         edge_features=128,
@@ -194,8 +212,8 @@ def load_backbone(weights, device):
         num_decoder_layers=3,
         k_neighbors=int(checkpoint["num_edges"]),
         device=device,
-        atom_context_num=0,
-        model_type="protein_mpnn",
+        atom_context_num=atom_context_num,
+        model_type=model_type,
         ligand_mpnn_use_side_chain_context=0,
     )
     model.load_state_dict(checkpoint["model_state_dict"])
@@ -209,18 +227,21 @@ def build_domain(feature_dict, device, seed):
 
     返回 dict（全部在 device 上）：
         X, S, mask, chain_mask, R_idx, chain_labels, randn
+    + 透传 featurize 全部键（ligand 模式的 Y/Y_t/Y_m/mask_XY 供 backbone.encode 用）。
     其中 randn 用 seed 固定（每域一个解码顺序，批内 8 个 pH 共享）。
     """
     L = feature_dict["X"].shape[1]
     fd = {k: v.to(device) if torch.is_tensor(v) else v for k, v in feature_dict.items()}
     rng = np.random.RandomState(seed)
     randn = torch.from_numpy(rng.randn(L).astype(np.float32)).to(device)
-    return {
+    dom = dict(fd)  # 透传全部键（含配体上下文）
+    dom.update({
         "X": fd["X"], "S": fd["S"], "mask": fd["mask"].float(),
         "chain_mask": fd["chain_mask"].float(),
         "R_idx": fd["R_idx"], "chain_labels": fd["chain_labels"],
         "randn": randn,
-    }
+    })
+    return dom
 
 
 def decoder_forward(model, h_V, h_E, E_idx, dom, B, device):
@@ -299,7 +320,7 @@ def main():
           f"charge_temp={args.charge_temp}")
 
     # ---- backbone + 条件编码器 ----
-    backbone = load_backbone(args.weights, device)
+    backbone = load_backbone(args.weights, device, ligand=args.ligand)
     for p in backbone.parameters():
         p.requires_grad_(False)
     backbone.eval()
@@ -345,6 +366,8 @@ def main():
     # （backbone 冻结 → encode 与无条件输出每域只需算一次，全 epoch 复用）
     # prody parsePDB 按文件后缀判断格式：无 .pdb 后缀会被当 mmCIF 解析。
     # CATH 文件无扩展名 → 用 .pdb 后缀的符号链接目录（data/ 下，git 不跟踪）。
+    # 配体模式（v9）：domain_ids 含真实文件名（如 1JCG.pdb/1abc.cif），
+    # 直接从 --dompdb 定位真实文件，跳过 symlink（后缀真实，prody 可解析）。
     dom_cache_dir = Path(args.dompdb).parent / (Path(args.dompdb).name + "_pdb")
     dom_cache_dir.mkdir(exist_ok=True)
     abs_dompdb = os.path.abspath(args.dompdb)
@@ -352,18 +375,25 @@ def main():
     domains = []
     n_ok, n_skip = 0, 0
     for i, did in enumerate(domain_ids[:n_dom]):
-        link_path = dom_cache_dir / f"{did}.pdb"
-        if not link_path.exists():
-            os.symlink(os.path.join(abs_dompdb, str(did)), link_path)
-        pdb_path = str(link_path)
+        # 优先：真实文件已带后缀（配体数据）
+        direct = Path(args.dompdb) / str(did)
+        if direct.exists():
+            pdb_path = str(direct)
+        else:
+            link_path = dom_cache_dir / f"{did}.pdb"
+            if not link_path.exists():
+                os.symlink(os.path.join(abs_dompdb, str(did)), link_path)
+            pdb_path = str(link_path)
         try:
             protein_dict, *_ = parse_PDB(pdb_path, device="cpu", parse_all_atoms=False)
             L = protein_dict["X"].shape[0]
             # 单链 CATH 域：全部残基设计 → chain_mask = 全 1
             protein_dict["chain_mask"] = torch.ones(L, dtype=torch.int32)
             feature_dict = featurize(
-                protein_dict, use_atom_context=False, number_of_ligand_atoms=0,
-                model_type="protein_mpnn",
+                protein_dict,
+                use_atom_context=args.ligand,
+                number_of_ligand_atoms=(16 if args.ligand else 0),
+                model_type=("ligand_mpnn" if args.ligand else "protein_mpnn"),
             )
             dom = build_domain(feature_dict, device, seed=args.seed + i)
             # 冻结 backbone 上一次性 encode
