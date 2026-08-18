@@ -133,6 +133,8 @@ def main():
     ap.add_argument("--per_class", type=int, default=2500, help="三类等量采样每类抽取数")
     ap.add_argument("--exclude", default="",
                     help="逗号分隔的 PDB 前缀，从候选域排除（验证蛋白泄漏检查，如 1b24,1bc8）")
+    ap.add_argument("--extra_dompdb", default="",
+                    help="外部碱性域目录（v7：全保留加入 basic 类，不做三类平衡采样）")
     args = ap.parse_args()
     exclude_pfx = [s.strip().lower() for s in args.exclude.split(",") if s.strip()]
 
@@ -171,6 +173,21 @@ def main():
 
     sample = [parsed[i] for i in sel_idx]
     print(f"选中 {len(sample)} 域", flush=True)
+
+    # v7：外部碱性域全保留加入（不参与三类平衡采样）
+    extra_sample = []
+    if args.extra_dompdb:
+        extra_files = sorted(
+            p for p in glob.glob(os.path.join(args.extra_dompdb, "*"))
+            if os.path.isfile(p) and not os.path.basename(p).startswith("_"))
+        for i, p in enumerate(extra_files):
+            coords, seq = parse_domain(p)
+            if coords is None:
+                continue
+            extra_sample.append((p, coords, seq))
+        sample = sample + extra_sample
+        print(f"外部碱性域 {len(extra_files)} 个，解析成功 {len(extra_sample)}，"
+              f"加入后总 {len(sample)} 域", flush=True)
 
     # 第二遍：为选中域构建标签
     random.seed(args.seed)

@@ -129,6 +129,11 @@ def parse_args():
                         "第十四轮 0.5→0.3 = 原生标签 70%，治 S1 注入选择性）")
     p.add_argument("--perturb_scale", type=float, default=4.0,
                    help="扰动电荷偏移幅度上限（±Uniform[1,scale]）")
+    p.add_argument("--curriculum", action="store_true",
+                   help="课程学习（v7）：perturb_scale 从起点随 epoch 渐进到 "
+                        "curriculum_scale_max——先学温和偏移，再学极端外推")
+    p.add_argument("--curriculum_scale_max", type=float, default=8.0,
+                   help="课程学习终点扰动幅度上限")
     p.add_argument("--placeholder_prob", type=float, default=0.15,
                    help="占位符样本比例（从自洽样本中抽取）：把条件电荷置为「不控制」占位，"
                         "让模型学会未指定电荷时的行为（目标 2 的占位符语义）。"
@@ -406,8 +411,20 @@ def main():
     logln(f"开始训练：{args.epochs} epochs × {n_dom_eff} 域/epoch = {n_steps_total} steps")
 
     for epoch in range(1, args.epochs + 1):
+        # v7 课程学习：扰动幅度从 perturb_scale 随 epoch 线性渐进到 curriculum_scale_max
+        if args.curriculum:
+            progress = (epoch - 1) / max(args.epochs - 1, 1)   # 0→1
+            scale_cur = args.perturb_scale + (
+                args.curriculum_scale_max - args.perturb_scale) * progress
+            if epoch == 1:
+                logln(f"课程学习开：perturb_scale {args.perturb_scale} → "
+                      f"{args.curriculum_scale_max}（共 {args.epochs} epochs）")
+        else:
+            scale_cur = args.perturb_scale
         random.shuffle(domain_idx)
         epoch_loss, epoch_ce, epoch_cd, epoch_kl, epoch_keep = [], [], [], [], []
+        # charge loss 分拆监控（v7 归因）：self=自洽/占位, mild=温和扰动, extreme=极端扰动(|offset|≥5)
+        grp_cd = {"self": [], "mild": [], "extreme": []}
         for di in domain_idx:
             dom = domains[di]
             B = n_pH
@@ -420,7 +437,7 @@ def main():
                 mask_p = (torch.rand(B, device=device) < args.perturb_prob)
                 offset = torch.where(
                     mask_p,
-                    torch.randint(1, int(args.perturb_scale) + 1, (B,), device=device).float()
+                    torch.randint(1, int(scale_cur) + 1, (B,), device=device).float()
                     * torch.where(torch.rand(B, device=device) < 0.5, 1.0, -1.0),
                     torch.zeros(B, device=device),
                 )
@@ -464,6 +481,13 @@ def main():
                     w = args.reweight_k / (
                         density_norm[density_bucket(float(tgt_i))] + args.reweight_eps)
                     cd[i] *= min(w, args.reweight_cap)
+                # v7 分拆监控：self=自洽/占位, mild=温和扰动, extreme=极端扰动
+                if mask_ph[i] or not mask_p[i]:
+                    grp_cd["self"].append(cd[i].item())
+                elif abs(offset[i].item()) >= 5:
+                    grp_cd["extreme"].append(cd[i].item())
+                else:
+                    grp_cd["mild"].append(cd[i].item())
             cd = cd.mean()
 
             # KL 锚（条件化 ‖ 无条件）
@@ -495,10 +519,13 @@ def main():
 
         # ---- epoch 汇总 + 进度文件 ----
         avg = lambda x: float(np.mean(x))
+        grp_str = "  ".join(f"{k}={avg(v):.3f}" for k, v in grp_cd.items() if v)
         msg = (f"epoch {epoch}/{args.epochs}  total={avg(epoch_loss):.4f}  "
                f"ce={avg(epoch_ce):.4f}  charge={avg(epoch_cd):.4f}  "
-               f"kl={avg(epoch_kl):.4f}  keep={avg(epoch_keep):.4f}  "
-               f"elapsed={((time.time()-t_start)/60):.1f}min")
+               f"kl={avg(epoch_kl):.4f}  keep={avg(epoch_keep):.4f}")
+        if grp_str:
+            msg += f"  [cd {grp_str}]"
+        msg += f"  elapsed={((time.time()-t_start)/60):.1f}min"
         logln(msg)
         prog = {
             "epoch": epoch, "total_epochs": args.epochs,
@@ -529,6 +556,8 @@ def main():
             "placeholder_prob": args.placeholder_prob,
             "lambda_keep": args.lambda_keep,
             "charge_temp": args.charge_temp,
+            "curriculum": args.curriculum,
+            "curriculum_scale_max": args.curriculum_scale_max,
         }, ckpt_path)
         # 保留最新一份 alias，方便推理时加载
         torch.save(enc.state_dict(), out_dir / "condition_encoder_last.pt")

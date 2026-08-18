@@ -22,6 +22,7 @@ env/
 
 # ===== 输出结果 / 日志 =====
 code/output/
+output/
 code/log/
 log/
 results/

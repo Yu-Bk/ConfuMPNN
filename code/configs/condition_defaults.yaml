@@ -7,17 +7,17 @@ condition_defaults:
   default_local_neg_limit: 6
   normalization:
     mean:
-    - 6.9975
+    - 6.9982
     - 1.0
-    - 0.509
+    - 1.4243
     - 0.0
     - 0.0
     - 0.0
     - 0.0
     std:
-    - 1.7304
+    - 1.7299
     - 0.0
-    - 9.2157
+    - 9.5259
     - 0.0
     - 0.0
     - 0.0
