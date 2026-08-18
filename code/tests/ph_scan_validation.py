@@ -49,6 +49,7 @@ def main():
     ap.add_argument("--device", default="cuda:3")
     ap.add_argument("--uncond", action="store_true",
                     help="无条件模式（不注入条件）：作 recovery 基线对照")
+    ap.add_argument("--temperature", type=float, default=0.3)
     args = ap.parse_args()
 
     device = torch.device(args.device)
@@ -63,7 +64,7 @@ def main():
                    number_of_ligand_atoms=0, model_type="protein_mpnn")
     L = fd["X"].shape[1]
     fd["batch_size"] = 1
-    fd["temperature"] = 0.3
+    fd["temperature"] = args.temperature
     fd["bias"] = torch.zeros(1, L, 21)
     native = seq_to_string(fd["S"][0].cpu().numpy())
 
