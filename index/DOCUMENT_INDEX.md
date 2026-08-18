@@ -13,6 +13,7 @@
 | 文件管理规范 | `index/FILE_MANAGEMENT.md` | 文件分类存放的唯一规则 | 2026-08-15 |
 | 文档索引 | `index/DOCUMENT_INDEX.md` | 本文件 | 2026-08-15 |
 | README | `README.md` | 完整入门：项目简介 / 从零搭建环境 / 快速上手 / 使用指南 / 输出解读 / 文档导航 | 2026-08-16 |
+| **完整流程说明** | `WORKFLOW_GUIDE.md`（根目录） | **全项目整合汇报版**：构建计划与思路演变 / 核心公式参数 / 模块架构 / 数据流动 / 每轮训练结论 / 困难与解决（含文献）/ 复盘 / 下一步 | 2026-08-18 |
 | MoMPNN 可用性调研 | `analysis/2026-08-16_mompnn_avail.md` | Stage E0 结论：权重=纯 backbone ProteinMPNN，`strict=True` 可加载 + 1BC8 前向跑通 | 2026-08-16 |
 | E1 pH 响应对比 | `analysis/report/2026-08-16_e1_pH_response.md` | MoMPNN 电荷命中偏差≤0.10 vs 原版 +0.2~0.7 | 2026-08-16 |
 | E1 三目标 | `analysis/report/2026-08-16_e1_three_targets.md` | 完整对比：可溶+12.8、热稳+7.8°C、电荷更准、pLDDT 持平 | 2026-08-16 |
