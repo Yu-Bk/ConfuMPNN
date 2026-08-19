@@ -1,113 +1,112 @@
-# ConfuMPNN 配置文档
+# ConfuMPNN 配置文档（参考）
 
-> 全部配置项的**含义、默认值、建议范围**。配置分布在 `code/configs/*.yaml` 与 `run_guided.py` 的命令行参数。
+> **权威完整指南**：`WORKFLOW_GUIDE.md`（根目录 §6 参数全表）。本文档为配置速查。
+> 更新至 v9 定稿（2026-08-19）。
 
 ---
 
 ## 一、结构过滤器预设（`code/configs/filter_presets.yaml`）
 
-### 1.1 通用字段说明
+4 条空间规则（阈值来自 CATH S40 统计的 99 分位）：
 
-每条规则是一个字典，字段含义：
+| 规则键 | 检测内容 | 阈值 |
+|--------|---------|------|
+| `charge_cluster` | 10Å 内同号强电荷（K/R 或 D/E）| 6 |
+| `salt_bridge` | 10Å 内正负电荷对 | 4 |
+| `core_charge` | 核心埋藏位置 8Å 内带电残基 | 6 |
+| `same_sign_cluster` | 8Å 邻域同号电荷 | 4 |
 
-| 字段 | 含义 | 单位 |
-|------|------|------|
-| `radius` | 空间邻域半径（欧氏距离） | Å |
-| `threshold` | 触发抑制的数量阈值 | 个数 |
-| `strength` | 抑制强度（加到 logits 上的负 bias；越负抑制越强） | 无量纲 |
-| `burial_radius` | 判定"核心埋藏"的邻域半径 | Å |
-| `charge_radius` | 核心规则里统计带电残基的半径 | Å |
-| `burial_threshold` | 判定"埋在核心"的 burial 比例（10Å 内 Cα 数 / 最大值），>该值视为核心 | 比例 0–1 |
-| `charge_count` | 核心内带电残基数阈值 | 个数 |
-
-### 1.2 四条规则与阈值来源
-
-阈值来自 CATH S40 1000 结构域统计的 **99 分位**（详见 `docs/TECH.md` §3.3 与 `analysis/report/2026-08-16_phase1_examples.md`）：
-
-| 规则键 | 检测内容 | 关键阈值 |
-|--------|---------|---------|
-| `charge_cluster` | 10Å 邻域内同号强电荷（K/R 或 D/E） | `threshold: 6` |
-| `salt_bridge` | 10Å 内正负电荷对（min(正,负)） | `threshold: 4` |
-| `core_charge` | 核心埋藏位置 8Å 内带电残基 | `charge_count: 6` |
-| `same_sign_cluster` | 8Å 邻域同号电荷 | `threshold: 4` |
-
-### 1.3 四个预设（`--preset` 选择）
-
-| 预设 | 设计意图 | 与 default 的差异 |
-|------|---------|------------------|
-| `default` | 通用默认（99 分位阈值） | 基准 |
-| `nucleic_acid_binding` | 核酸结合蛋白：表面正电残基中和核酸骨架负电是正常现象 | 正电聚集更宽容（charge_cluster 8、salt_bridge 6、same_sign 5） |
-| `membrane` | 膜蛋白：疏水核心严格禁带电 | 核心规则收紧（charge_count 2）、惩罚加重（strength −2.0） |
-| `acidic` | 酸性环境（如溶酶体 pH≈5） | 与 default 相同（含 `ph_hint: 5.0` 元数据，供调用方参考） |
-
-> 修改方式：直接编辑 YAML。注意 `structure_aware_filter.py` 的 `default_config()` 也维护一份默认值，若改 default 预设需同步（或让调用统一走 `load_preset`）。
+4 个预设（`--preset`）：`default` / `nucleic_acid_binding`（正电更宽容）/ `membrane`（核心严格禁电）/ `acidic`。
 
 ---
 
-## 二、条件默认配置（`code/configs/condition_defaults.yaml`，**Phase 2**）
+## 二、条件默认配置（`code/configs/condition_defaults.yaml`）
 
-条件向量 shape `[7]`（mask-aware，顺序固定）：
-```
-[pH, has_charge_flag, charge_val, has_pos_limit_flag, pos_limit_val, has_neg_limit_flag, neg_limit_val]
-```
-`has_X_flag`（0/1）告诉网络哪些值是真实条件、哪些是占位符，避免 0 值歧义。
+条件向量 `[7]`（mask-aware）：`[pH, has_charge_flag, charge_val, has_pos_flag, pos_val, has_neg_flag, neg_val]`
 
 | 键 | 含义 | 当前值 |
 |----|------|--------|
 | `cond_dim` | 条件向量维度 | 7 |
-| `pH_min` / `pH_max` | 训练时连续采样 pH 范围 | 4.0 / 10.0 |
-| `default_net_charge` | 可选目标净电荷默认值 | null |
-| `default_local_pos_limit` / `default_local_neg_limit` | 10Å 内正/负电荷数上限 | 6 / 6 |
-| `normalization.mean` / `.std` | 每维标准化常量（训练前从训练集统计后填入） | **null（训练前必填）** |
-| `encoder.hidden_dim` / `token_dim` / `n_tokens` | 条件编码器结构 | 64 / 128 / 4 |
-| `charge_calibration.gain` / `.offset` / `.enabled` | 电荷校准系数（条件注入推理时线性换算 target） | 2.57 / 0.16 / true |
+| `pH_min` / `pH_max` | 训练 pH 采样范围 | 4.0 / 10.0 |
+| `normalization.mean` / `.std` | 每维标准化常量（训练集统计）| pH 均值 6.9982、电荷均值 1.4243（**已填，非 null**）|
+| `encoder.hidden_dim` / `token_dim` / `n_tokens` | 编码器结构 | 64 / 128 / 4 |
+| `charge_calibration.gain` / `.offset` / `.enabled` | 电荷校准 | **1.289 / 0.74 / false** |
 
-⚠️ **训练前必须完成**：从训练集逐维度算 μ/σ 填入 `normalization`（不同量纲的条件直接进 MLP 会梯度不稳，`docs/TECH.md` §3.2 讨论过 softmax 问题，这里是输入量纲问题）。
-
-### 电荷校准（`charge_calibration`，Phase 3 新增）
-
-条件注入模型（`--cond_encoder`）的 **target→实际电荷** 曾有 ~2.57× 线性增益（机制：训练优化 softmax 期望电荷，推理测采样序列电荷，CE 自信放大 → 采样更极端）。
-
-**根治方案（推荐）**：训练时用温度化电荷损失（`train_finetune.py --charge_temp 0.5`），让训练优化的分布≈推理采样分布 → 增益从 2.57 收敛到 ~1.04（1BC8 实测 target 8.9/5/0/−5 → +9.75/+4.74/−0.14/−4.89）。**当前推荐编码器 `finetune_t05/` 校准默认关闭**（`enabled: false`）。
-
-- **公式**：`实际 ≈ gain·target + offset`；若开启，推理时自动换算 `target_eff = (desired − offset) / gain`
-- **系数**：新编码器 t05 gain=1.289/offset=0.74（合并拟合）；旧编码器 finetune gain=2.57/offset=0.16（R²=0.946，严重过冲，建议开启校准）
-- **⚠️ 注意**：per-PDB 增益有差异（1.04~1.7），全局校准会过校正部分 PDB——优先用温度化训练根治，而非推理侧校准
-- 旧编码器验证（校准开启）：target 8.9/5/−5 → 实际 +8.76/+5.62/−7.13（校准前 +25.6/+13.0/−15.6）
+⚠️ **校准现状（重要）**：`enabled: false`——过冲已由训练侧 `charge_temp=0.5` 根治（v9 起），推理侧线性校准不再需要。历史：早期过冲 ~2.9× 曾用推理侧校准（gain=2.57）补偿。
 
 ---
 
-## 三、命令行参数（`run_guided.py`）
+## 三、训练参数（`train_finetune.py`）
 
-| 参数 | 类型 | 默认 | 含义 | 建议 |
-|------|------|------|------|------|
-| `--pdb` | 路径 | 必填 | 输入 PDB 文件（多链自动取蛋白链） | 纯蛋白链 |
-| `--pH` | float | 必填 | 工作环境 pH | 4–10（pKa 表覆盖范围） |
-| `--target_charge` | float | None | 目标净电荷；None=不引导电荷，只做结构过滤 | 先算 native 电荷做参考 |
-| `--preset` | str | default | 结构过滤器场景预设 | default/nucleic_acid_binding/membrane/acidic |
-| `--num_samples` | int | 10 | 生成候选序列数 | 5–20 |
-| `--temperature` | float | 0.3 | 采样温度（低=更保守） | 0.1–0.5 |
-| `--strength` | float | 0.5 | 电荷引导强度（大=更强但破坏模型先验） | 0.2–0.5 |
-| `--seed` | int | 111 | 随机种子（可复现） | 任意 |
-| `--weights` | 路径 | **MoMPNN 默认权重** | 模型权重：MoMPNN 的 `.ckpt`（默认）；LigandMPNN 的 `.pt`（显式回退） | 见下文 |
-| `--model_type` | str | auto | auto=按权重自动检测；protein_mpnn=纯 backbone（MoMPNN）；ligand_mpnn=配体上下文（原版） | 一般用 auto |
-| `--out_dir` | 路径 | 自动 | 输出目录（默认 `output/guided_<pdb>_pH<pH>/`） | 建议显式指定 |
+### 3.1 通用（v7/v9 共用）
 
-**权重说明**：
-- **默认 MoMPNN**（E4 决策）：`MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt`（多目标 DPO 微调版，纯 backbone，`--model_type auto` 自动识别为 protein_mpnn）
-- 显式回退原版 LigandMPNN（含配体上下文）：`LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt`
+| 参数 | 默认 | 含义 |
+|------|------|------|
+| `--weights` | MoMPNN 权重 | backbone 权重 |
+| `--ligand` | 关 | v9：LigandMPNN 权重 + 配体上下文 |
+| `--lr` | 1e-3 | 学习率 |
+| `--epochs` | 30 | 训练轮数 |
+| `--lambda_c` | 0.5 | 电荷损失权重 |
+| `--lambda_kl` | 0.05 | KL 锚权重 |
+| `--lambda_keep` | 0.5 | 序列保持权重（用户固定）|
+| `--perturb_prob` | 0.3 | 扰动样本比例（70/30 混合目标）|
+| `--perturb_scale` | 4.0 | 扰动幅度上限 |
+| `--curriculum` | 关 | 课程学习（v7 用 2.0→8.0）|
+| `--placeholder_prob` | 0.15 | 占位符样本比例 |
+| `--charge_temp` | 0.5 | 电荷损失温度（根治过冲）|
+| `--loss_reweight` | 关 | 逆密度加权（治高正电外推）|
+| `--max_domains` | 0 | 冒烟测试用（前 N 域）|
 
-**自动检测逻辑**：权重 ckpt 里有 `atom_context_num`（>0）→ ligand_mpnn；没有 → protein_mpnn。
+### 3.2 v7 / v9 实际训练命令
+
+```bash
+# v7（MoMPNN，无配体）
+python train_finetune.py --device cuda:0 --epochs 30 \
+  --labels ../data/cath/labels_balanced_v7.npz --dompdb ../data/cath/S40/dompdb \
+  --curriculum --perturb_scale 2.0 --curriculum_scale_max 8.0 \
+  --lambda_c 0.5 --lambda_kl 0.05 --lambda_keep 0.5 \
+  --charge_temp 0.5 --perturb_prob 0.3 --placeholder_prob 0.15 \
+  --out_dir ../output/finetune_v7
+
+# v9（LigandMPNN 配体模式）
+python train_finetune.py --device cuda:0 --epochs 30 --ligand \
+  --weights ../LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt \
+  --labels ../data/ligand_train/labels.npz --dompdb ../data/ligand_train/all_pdb \
+  --lambda_c 0.5 --lambda_kl 0.05 --lambda_keep 0.5 \
+  --charge_temp 0.5 --perturb_prob 0.3 --placeholder_prob 0.15 \
+  --out_dir ../output/finetune_ligand_v9
+```
 
 ---
 
-## 四、环境配置
+## 四、采样参数（`run_guided.py`）
+
+| 参数 | 默认 | 含义 |
+|------|------|------|
+| `--pdb` | 必填 | 输入 PDB |
+| `--pH` | 必填 | 工作环境 pH |
+| `--target_charge` | None | 目标净电荷（None=只结构过滤）|
+| `--cond_encoder` | None | **v7/v9 编码器权重**（给了走条件注入）|
+| `--cond_mode` | conditioned | conditioned=注入 / baseline=加载不注入（对照）|
+| `--weights` | MoMPNN | backbone 权重（配体模式用 LigandMPNN 权重）|
+| `--temperature` | 0.3 | 采样温度 |
+| `--num_samples` | 10 | 候选序列数 |
+| `--fixed_residues` | None | 固定残基（如 `'A12 C15'`）|
+| `--preset` | default | 结构过滤器预设 |
+| `--seed` | 111 | 随机种子 |
+| `--out_dir` | 自动 | 输出目录 |
+
+**权重自动检测**：ckpt 含 `atom_context_num`(>0) → ligand_mpnn；否则 protein_mpnn（MoMPNN）。
+
+---
+
+## 五、环境配置
 
 | 项 | 值 | 说明 |
 |----|-----|------|
-| 主环境 | `confumpnn`（Python 3.11, torch 2.2.1+cu121） | Phase 1 推理/开发 |
-| ESMFold | `confumpnn-esmfold`（torch 2.6.0+cu124, fair-esm 2.0.0） | 回折验证（pLDDT/TM-score） |
-| TemBERTure | `confumpnn-temberture`（torch 2.13 CPU） | 热稳定打分 |
-| Protein-Sol | 系统 python + Perl 5.34 | 可溶打分（`protein_sol_mcp/`） |
+| 主环境 | `confumpnn`（Python 3.11, torch 2.2.1+cu121）| 训练/推理/采样 |
+| ESMFold | `confumpnn-esmfold`（torch 2.6.0+cu124, fair-esm 2.0.0）| 回折验证（TM-score）|
+| TemBERTure | `confumpnn-temberture`（torch CPU）| 热稳定打分 |
+| Protein-Sol | 系统 python + Perl | 可溶打分 |
 
-> 环境细节与踩坑见 memory `confumpnn-env-setup.md` 与项目根 `CLAUDE.md`。
+> ⚠️ 主环境不要装 torchvision/torchaudio/dgl（曾致 import 崩溃）。新机配置见 `docs/SETUP_NEW_MACHINE.md`。

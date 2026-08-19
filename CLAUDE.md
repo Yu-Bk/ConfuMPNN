@@ -1,16 +1,19 @@
 # ConfuMPNN — 项目说明
 
 ## 项目概述
-将蛋白质在特定 pH 环境下的理化性质（净电荷、局部电荷分布）作为条件约束，整合到基于结构的蛋白序列生成流程（LigandMPNN 逆折叠）中。核心创新：**在 LigandMPNN 这类显式建模配体原子上下文的结构条件逆折叠模型上，首次加入 pH 感知的电荷条件控制**。
+将蛋白质在特定 pH 环境下的理化性质（净电荷、局部电荷分布）作为条件约束，整合到基于结构的蛋白序列生成流程（LigandMPNN 逆折叠）中。核心创新：**在显式建模配体原子上下文的结构条件逆折叠模型上，首次加入 pH 感知的电荷条件控制**。
 
-详细技术计划见 `PROJECT_PLAN.md`（完整中文计划，含文献调研、分阶段实施、风险表）。
+**当前状态（v9 定稿，2026-08-19 用户确认停止训练）**：
+- 两个最终条件编码器：**v7**（MoMPNN backbone，无配体/小蛋白）+ **v9**（LigandMPNN backbone，配体/大蛋白）
+- 使用边界：`analysis/report/2026-08-18_model_charge_limits.md` §8（v9 配体模式：正电到 +8、负电保守到 −5、长序列需检查）
+- 权威指南：`WORKFLOW_GUIDE.md`（框架/数据流/参数/损失/为什么）；新机配置 `docs/SETUP_NEW_MACHINE.md`；数据组织 `data/README.md`
 
 ## 运行环境（conda，位于 ~/miniconda3/envs/）
 
 | 环境 | Python | torch | 用途 | 状态 |
 |------|--------|-------|------|------|
-| `confumpnn` | 3.11 | 2.2.1+cu121 | **LigandMPNN 推理/开发** | ✅ 已验证跑通 |
-| `confumpnn-esmfold` | 3.10 | 2.6.0+cu124 | **ESMFold 回折验证** | ⚠️ openfold 依赖需确认 |
+| `confumpnn` | 3.11 | 2.2.1+cu121 | **训练/推理/采样** | ✅ 已验证跑通 |
+| `confumpnn-esmfold` | 3.10 | 2.6.0+cu124 | **ESMFold 回折验证** | ✅ 可用 |
 
 ### 已确认的环境要点
 - `confumpnn` 环境**不需要 dgl、torchvision、torchaudio**。之前 torchvision 0.21.0 / torchaudio 2.6.0 与 torch 2.2.1 不匹配导致 import 崩溃，已卸载。若装新包注意不要引入它们。
@@ -19,34 +22,54 @@
 
 ## 常用命令
 
-### LigandMPNN 推理（在 ConfuMPNN/LigandMPNN 目录下）
+### 条件采样（主线，v7/v9 双编码器）
+
 ```bash
 source /home/baokun_yu/miniconda3/etc/profile.d/conda.sh
 conda activate confumpnn
+cd /data/nfs/IC/baokun_yu/ConfuMPNN/code
 
-# 默认加载 ProteinMPNN 权重，若用配体上下文要显式指定 LigandMPNN 权重：
-python run.py --seed 111 --pdb_path ./inputs/1BC8.pdb \
-  --out_folder ./outputs/default \
-  --model_weights_path ./model_params/ligandmpnn_v_32_010_25.pt
+# v7（无配体/小蛋白）：MoMPNN 权重 + v7 编码器
+python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 \
+  --cond_encoder ../output/finetune_v7/condition_encoder_last.pt
+
+# v9（配体模式）：LigandMPNN 权重 + v9 编码器
+python run_guided.py --pdb ../data/validation_pdbs/1AZM.pdb --pH 7.4 --target_charge 0 \
+  --cond_encoder ../output/finetune_ligand_v9/finetune_epoch030.pt \
+  --weights ../LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt
 ```
-- 模型权重在 `ConfuMPNN/LigandMPNN/model_params/`（已完整下载 15 个 .pt 文件）
-- 示例输入 PDB 在 `inputs/`（1BC8.pdb 等）
+
+### 训练（如需重新微调）
+
+```bash
+# v7
+python train_finetune.py --device cuda:0 --epochs 30 \
+  --labels ../data/cath/labels_balanced_v7.npz --dompdb ../data/cath/S40/dompdb \
+  --curriculum --perturb_scale 2.0 --curriculum_scale_max 8.0 \
+  --lambda_c 0.5 --lambda_kl 0.05 --lambda_keep 0.5 \
+  --charge_temp 0.5 --perturb_prob 0.3 --placeholder_prob 0.15 \
+  --out_dir ../output/finetune_v7
+
+# v9（--ligand 开关）
+python train_finetune.py --device cuda:0 --epochs 30 --ligand \
+  --weights ../LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt \
+  --labels ../data/ligand_train/labels.npz --dompdb ../data/ligand_train/all_pdb \
+  --lambda_c 0.5 --lambda_kl 0.05 --lambda_keep 0.5 \
+  --charge_temp 0.5 --perturb_prob 0.3 --placeholder_prob 0.15 \
+  --out_dir ../output/finetune_ligand_v9
+```
 
 ## 文件结构
-- **文件管理规范**：所有文件分类存放遵循 `index/FILE_MANAGEMENT.md`（实验进行时的文件管理规则），文档定位见 `index/DOCUMENT_INDEX.md`
-- `index/PROJECT_PLAN.md` — 完整项目计划（中文）
-- `LigandMPNN/` — LigandMPNN 官方源码 clone（含 openfold/ 子模块；源码 clone，未跟踪，不提交）
-- `foundry/` — RosettaCommons 蛋白设计工具库 clone（含 RF3/ProteinMPNN，备选验证方案；源码 clone，未跟踪，不提交）
-- `code/`、`analysis/`、`literature/`、`session/`、`source/` — 按 `index/FILE_MANAGEMENT.md` 分类存放代码 / 实验分析 / 论文笔记 / 会话记录 / 论文源码
-
-## 下一步（Phase 1：Level 1 引导采样）
-按 `PROJECT_PLAN.md` 第五部分实施，待创建模块：
-- `differentiable_charge.py` — 可微 pH 感知净电荷计算（Henderson-Hasselbalch + pKa 表）
-- `isoelectric_point.py` — pI 二分搜索
-- `structure_aware_filter.py` — 结构感知过滤器（5 条规则，logit bias 注入）
-- `guided_sampler.py` — 引导采样 wrapper
-- `configs/filter_presets.yaml` — 过滤器场景预设
+- **文件管理规范**：所有文件分类存放遵循 `index/FILE_MANAGEMENT.md`，文档定位见 `index/DOCUMENT_INDEX.md`
+- **权威指南**：`WORKFLOW_GUIDE.md`（根目录）——框架/数据流/参数/损失/为什么，面向计算机新人
+- **新机配置**：`docs/SETUP_NEW_MACHINE.md`（权重下载/环境/数据重建/验证）
+- **数据组织**：`data/README.md`（数据划分/重建命令/SHA256 清单）
+- **计划/判据**：`index/PROJECT_PLAN.md`、`index/PROJECT_EXTEND.md`、`index/DESIGN_CRITERIA.md`
+- **实验报告**：`analysis/report/`（E1 → v9 泛化验证完整链）
+- `LigandMPNN/`、`MoMPNN/`、`foundry/` — 克隆的外部源码（含权重），未跟踪，不提交
+- `code/`、`analysis/`、`literature/`、`session/`、`source/` — 按 `index/FILE_MANAGEMENT.md` 分类存放
 
 ## Git 说明
 - GitHub 远程：`origin` = git@github.com:Yu-Bk/ConfuMPNN.git（另有冗余 remote `new`，同为 https，可删）
-- `LigandMPNN/`、`foundry/` 是克隆源码，**未跟踪**，不应提交（建议加入 .gitignore）
+- `LigandMPNN/`、`MoMPNN/`、`foundry/` 是克隆源码，**未跟踪**，不应提交（已在 .gitignore）
+- **模型权重（*.pt/*.ckpt）与数据（data/）均在 .gitignore**——v7/v9 自训编码器从 GitHub Releases 下载（`gh release download v1.0.0`），数据从组内 NAS 恢复或重建脚本重跑

@@ -19,8 +19,10 @@
         [--cond_mode conditioned|baseline] [--no_calibration]
     # conditioned ：注入条件向量（默认），无 logit bias —— 测模型学到的 pH 感知
     # baseline   ：加载编码器但不注入（等价 Phase 1 诚实边界对照）
-    # 电荷校准默认开：按 config 的 gain/offset 线性换算 target_eff=(desired-offset)/gain，
-    #   抵消条件注入的 ~2.57× 电荷过冲（否则 target=0 可能生成 ±3 电荷）。--no_calibration 关闭。
+    # 电荷校准（默认关）：configs/condition_defaults.yaml 的 charge_calibration.enabled=false。
+    #   过冲已由训练侧 charge_temp=0.5 根治（v9 起），推理侧校准不再需要。
+    #   如需旧式线性校准，可在 yaml 把 enabled 置 true（target_eff=(desired-offset)/gain）；
+    #   --no_calibration 强制关闭。
 
 日志建议重定向到 code/log/，输出写入 code/output/。
 """
