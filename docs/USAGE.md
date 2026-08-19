@@ -123,4 +123,4 @@ PYTHONPATH=code python code/tests/ligand_v9/validate_generalization.py \
 固定 `--seed` + 相同参数 → 相同序列。
 
 **Q6：编码器从哪来？**
-v7/v9 编码器不在仓库（git 忽略权重），从 GitHub Releases 下载（`gh release download v1.0.0`，见 `README.md` §二 步骤 3）。
+v7/v9 编码器不在仓库（git 忽略权重），从 GitHub Releases 下载（`gh release download preview1.0.0`，见 `README.md` §二 步骤 3）。

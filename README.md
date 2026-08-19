@@ -65,10 +65,10 @@ v7/v9 编码器是本项目微调产物，不在仓库内，从 GitHub Releases 
 ```bash
 # 查看已发布的 release 附件
 gh release list
-gh release view v1.0.0
+gh release view preview1.0.0
 
 # 下载两个编码器权重（v7 296K + v9 887K）
-gh release download v1.0.0 --pattern "condition_encoder*.pt" -D code/weights/
+gh release download preview1.0.0 --pattern "condition_encoder*.pt" -D code/weights/
 sha256sum -c code/weights/SHA256SUMS.txt      # 校验完整性
 ```
 

@@ -72,4 +72,4 @@ python train_finetune.py --device cuda:0 --epochs 30 --ligand \
 ## Git 说明
 - GitHub 远程：`origin` = git@github.com:Yu-Bk/ConfuMPNN.git（另有冗余 remote `new`，同为 https，可删）
 - `LigandMPNN/`、`MoMPNN/`、`foundry/` 是克隆源码，**未跟踪**，不应提交（已在 .gitignore）
-- **模型权重（*.pt/*.ckpt）与数据（data/）均在 .gitignore**——v7/v9 自训编码器从 GitHub Releases 下载（`gh release download v1.0.0`），数据从组内 NAS 恢复或重建脚本重跑
+- **模型权重（*.pt/*.ckpt）与数据（data/）均在 .gitignore**——v7/v9 自训编码器从 GitHub Releases 下载（`gh release download preview1.0.0`），数据从组内 NAS 恢复或重建脚本重跑

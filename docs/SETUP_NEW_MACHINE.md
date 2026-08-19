@@ -61,11 +61,11 @@ ls MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt  # �
 gh auth status
 
 # 查看 release 附件
-gh release view v1.0.0
+gh release view preview1.0.0
 
 # 下载两个编码器权重到 code/weights/
 mkdir -p code/weights
-gh release download v1.0.0 --pattern "condition_encoder*.pt" -D code/weights/
+gh release download preview1.0.0 --pattern "condition_encoder*.pt" -D code/weights/
 
 # 校验完整性（SHA256）
 cd code/weights
@@ -221,7 +221,7 @@ python code/tests/tm_score.py <ref.pdb> <pred.pdb>
 | `import tree` 报错 | 装 `dm-tree`（`pip install dm-tree`）|
 | `import dgl` 报错 | 主环境**不要**装 dgl |
 | MoMPNN 权重加载报错 | `--model_type auto` 会自动识别；确认权重路径正确 |
-| `gh release download` 找不到附件 | 先 `gh auth login`；确认 release 名 `v1.0.0` |
+| `gh release download` 找不到附件 | 先 `gh auth login`；确认 release 名 `preview1.0.0` |
 | ESMFold 编译 openfold 失败 | 见 §3.2 的 nvcc/cuda-toolkit 要点 |
 | 没 GPU | 自动回退 CPU，能跑但很慢 |
 

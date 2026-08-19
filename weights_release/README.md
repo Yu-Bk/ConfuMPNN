@@ -1,4 +1,4 @@
-# ConfuMPNN 自训编码器权重（GitHub Release v1.0.0）
+# ConfuMPNN 自训编码器权重（GitHub Release preview1.0.0）
 
 ConfuMPNN 微调训练的**最终交付权重**（被 `.gitignore` 排除，不在仓库内，通过 Release 分发）。
 
@@ -25,7 +25,7 @@ sha256sum -c SHA256SUMS.txt
 ## 用法
 
 ```bash
-gh release download v1.0.0 --pattern "condition_encoder*.pt" -D code/weights/
+gh release download preview1.0.0 --pattern "condition_encoder*.pt" -D code/weights/
 sha256sum -c code/weights/SHA256SUMS.txt
 
 # v7（无配体/小蛋白）
