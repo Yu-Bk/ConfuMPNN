@@ -60,7 +60,17 @@
 | `code/log/compare_*.log` | E1 对照采样日志 |
 | `code/log/*.log` | 各实验脚本运行日志 |
 
-## 六、论文写作建议引用路径
+## 六、外部工具（gitignore，获取方式）
+
+| 工具 | 用途 | 获取方式 |
+|------|------|---------|
+| `LigandMPNN/` | 逆折叠模型源码 + 权重 | ✅ `git clone --recursive https://github.com/dauparas/LigandMPNN.git` |
+| `MoMPNN/` | 默认生成器权重 | ✅ `git clone https://github.com/Qivon7/MoMPNN.git` |
+| `protein_sol_mcp/` | 可溶打分 %sol | ✅ `git clone https://github.com/MacromNex/protein_sol_mcp.git` |
+| `TemBERTure/` | 热稳打分 Tm | ⚠️ **无 git，备份包**：`confumpnn_tools_temberture_v1_20260819.tar.gz` |
+| `foundry/` | RosettaCommons 工具库（备选）| ✅ `git clone https://github.com/RosettaCommons/foundry.git` |
+
+## 七、论文写作建议引用路径
 
 1. **结论数值**：优先引 `analysis/evidence/*.json`（git 内，可复现）
 2. **方法细节**：`WORKFLOW_GUIDE.md` + `docs/TECH.md`

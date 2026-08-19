@@ -36,10 +36,14 @@ git clone git@github.com:Yu-Bk/ConfuMPNN.git
 cd ConfuMPNN
 
 # 2) LigandMPNN 官方源码（自带 model_params/ 的 15 个权重）
-git clone https://github.com/dauparas/LigandMPNN.git
+#    --recursive 拉取 openfold 子模块（推理不需要，完整复现才需要）
+git clone --recursive https://github.com/dauparas/LigandMPNN.git
 
 # 3) MoMPNN 官方权重（ProtAlign 多目标 DPO 微调版）
 git clone https://github.com/Qivon7/MoMPNN.git
+
+# 4) 打分工具：protein_sol_mcp 有 git 来源，可 clone（TemBERTure 无 git，见 §5.4）
+git clone https://github.com/MacromNex/protein_sol_mcp.git
 ```
 
 **验证**（确认权重文件在位）：
@@ -171,6 +175,21 @@ mkdir -p S40 && tar -xzf cath-dataset-nonredundant-S40.pdb.tgz -C S40
 ### 5.3 验证集 PDB（小，10 个蛋白）
 
 清单在 `data/validation_pdbs/validation_manifest.json`（含 PDB ID + 路径）。可从 RCSB 逐个下载，或直接从 NAS 恢复（推荐）。
+
+### 5.4 外部打分工具（完整复现打分管线）
+
+| 工具 | 用途 | 获取方式 |
+|------|------|---------|
+| `protein_sol_mcp/` | 可溶打分 %sol | ✅ git clone（§1 步骤 4）|
+| `TemBERTure/` | 热稳打分 Tm | ⚠️ **无 git 来源，必须从备份包恢复**（本机本地整理的工具）|
+| `foundry/` | RosettaCommons 工具库（备选验证）| ✅ `git clone https://github.com/RosettaCommons/foundry.git`（可选）|
+
+恢复 TemBERTure（从备份目录）：
+```bash
+tar -xzf <备份目录>/confumpnn_tools_temberture_v1_20260819.tar.gz -C <项目根>/
+```
+
+> 三个工具均为**选装**：只生成序列不需要它们；只有做 ESMFold/可溶/热稳的完整验证才需要。
 
 ---
 
