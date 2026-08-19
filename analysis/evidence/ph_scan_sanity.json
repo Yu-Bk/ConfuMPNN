@@ -1,0 +1,205 @@
+{
+  "1BC8_chainC": {
+    "L": 93,
+    "native_pI": 10.222625255585626,
+    "native_kd": -0.4344086021505378,
+    "core_n": 28,
+    "native_core_hydro": 0.6071428571428571,
+    "pH_arms": {
+      "5": {
+        "n": 50,
+        "n_X": 0,
+        "kd_mean": 0.15,
+        "pI_mean": 11.82,
+        "comp_l1_native": 0.354,
+        "core_hydro": 0.626,
+        "kd_drift": 0.58,
+        "kd_drift_base": 0.3,
+        "core_hydro_base": 0.525,
+        "comp_l1_base": 0.254,
+        "dev": 0.42,
+        "tm_median": 0.857,
+        "tm_ge070": 0.941,
+        "tm_lt050": 0.0,
+        "verdict": "合理",
+        "notes": [
+          "组成漂移超基线"
+        ]
+      },
+      "7.4": {
+        "n": 50,
+        "n_X": 0,
+        "kd_mean": 0.22,
+        "pI_mean": 11.7,
+        "comp_l1_native": 0.36,
+        "core_hydro": 0.636,
+        "kd_drift": 0.65,
+        "kd_drift_base": 0.3,
+        "core_hydro_base": 0.525,
+        "comp_l1_base": 0.254,
+        "dev": 0.19,
+        "tm_median": 0.862,
+        "tm_ge070": 0.922,
+        "tm_lt050": 0.0,
+        "verdict": "合理",
+        "notes": [
+          "组成漂移超基线"
+        ]
+      },
+      "9": {
+        "n": 50,
+        "n_X": 0,
+        "kd_mean": 0.25,
+        "pI_mean": 11.57,
+        "comp_l1_native": 0.368,
+        "core_hydro": 0.655,
+        "kd_drift": 0.68,
+        "kd_drift_base": 0.3,
+        "core_hydro_base": 0.525,
+        "comp_l1_base": 0.254,
+        "dev": 0.72,
+        "tm_median": 0.862,
+        "tm_ge070": 0.98,
+        "tm_lt050": 0.0,
+        "verdict": "合理",
+        "notes": [
+          "组成漂移超基线"
+        ]
+      }
+    }
+  },
+  "1FQG": {
+    "L": 263,
+    "native_pI": 5.512933015824274,
+    "native_kd": -0.25285171102661597,
+    "core_n": 79,
+    "native_core_hydro": 0.5822784810126582,
+    "pH_arms": {
+      "5": {
+        "n": 50,
+        "n_X": 0,
+        "kd_mean": 1.06,
+        "pI_mean": 8.06,
+        "comp_l1_native": 0.339,
+        "core_hydro": 0.666,
+        "kd_drift": 1.31,
+        "kd_drift_base": 0.25,
+        "core_hydro_base": 0.587,
+        "comp_l1_base": 0.132,
+        "dev": 1.28,
+        "tm_median": 0.984,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "verdict": "合理",
+        "notes": [
+          "组成漂移超基线"
+        ]
+      },
+      "7.4": {
+        "n": 50,
+        "n_X": 0,
+        "kd_mean": 0.85,
+        "pI_mean": 4.17,
+        "comp_l1_native": 0.291,
+        "core_hydro": 0.663,
+        "kd_drift": 1.1,
+        "kd_drift_base": 0.25,
+        "core_hydro_base": 0.587,
+        "comp_l1_base": 0.132,
+        "dev": 2.65,
+        "tm_median": 0.977,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "verdict": "合理",
+        "notes": [
+          "组成漂移超基线",
+          "电荷未命中"
+        ]
+      },
+      "9": {
+        "n": 50,
+        "n_X": 0,
+        "kd_mean": 0.84,
+        "pI_mean": 4.07,
+        "comp_l1_native": 0.283,
+        "core_hydro": 0.672,
+        "kd_drift": 1.09,
+        "kd_drift_base": 0.25,
+        "core_hydro_base": 0.587,
+        "comp_l1_base": 0.132,
+        "dev": 3.24,
+        "tm_median": 0.975,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "verdict": "合理",
+        "notes": [
+          "组成漂移超基线",
+          "电荷未命中"
+        ]
+      }
+    }
+  },
+  "1UBQ": {
+    "L": 76,
+    "native_pI": 7.679193735125409,
+    "native_kd": -0.48947368421052634,
+    "core_n": 23,
+    "native_core_hydro": 0.5217391304347826,
+    "pH_arms": {
+      "5": {
+        "n": 50,
+        "n_X": 0,
+        "kd_mean": 0.53,
+        "pI_mean": 6.19,
+        "comp_l1_native": 0.323,
+        "core_hydro": 0.659,
+        "kd_drift": 1.02,
+        "kd_drift_base": 0.23,
+        "core_hydro_base": 0.551,
+        "comp_l1_base": 0.258,
+        "dev": 2.0,
+        "tm_median": 0.957,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "verdict": "合理",
+        "notes": []
+      },
+      "7.4": {
+        "n": 50,
+        "n_X": 0,
+        "kd_mean": 0.61,
+        "pI_mean": 6.07,
+        "comp_l1_native": 0.325,
+        "core_hydro": 0.67,
+        "kd_drift": 1.1,
+        "kd_drift_base": 0.23,
+        "core_hydro_base": 0.551,
+        "comp_l1_base": 0.258,
+        "dev": 0.76,
+        "tm_median": 0.956,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "verdict": "合理",
+        "notes": []
+      },
+      "9": {
+        "n": 50,
+        "n_X": 0,
+        "kd_mean": 0.59,
+        "pI_mean": 7.06,
+        "comp_l1_native": 0.324,
+        "core_hydro": 0.683,
+        "kd_drift": 1.08,
+        "kd_drift_base": 0.23,
+        "core_hydro_base": 0.551,
+        "comp_l1_base": 0.258,
+        "dev": 0.49,
+        "tm_median": 0.953,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "verdict": "合理",
+        "notes": []
+      }
+    }
+  }
+}
