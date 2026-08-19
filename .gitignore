@@ -28,7 +28,10 @@ log/
 results/
 
 # ===== 外部数据集（大文件不提交）=====
-data/
+data/*
+# 但保留数据说明文档与校验清单（git 跟踪）
+!data/README.md
+!data/SHA256SUMS.txt
 
 # ===== 系统 / 编辑器 =====
 .DS_Store

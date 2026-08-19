@@ -12,17 +12,19 @@
 | 项目说明 | `CLAUDE.md`（项目根） | Claude Code 项目级说明：环境 / 常用命令 / 文件结构 / 下一步 | 2026-08-15 |
 | 文件管理规范 | `index/FILE_MANAGEMENT.md` | 文件分类存放的唯一规则 | 2026-08-15 |
 | 文档索引 | `index/DOCUMENT_INDEX.md` | 本文件 | 2026-08-15 |
-| README | `README.md` | 完整入门：项目简介 / 从零搭建环境 / 快速上手 / 使用指南 / 输出解读 / 文档导航 | 2026-08-16 |
-| **完整流程说明** | `WORKFLOW_GUIDE.md`（根目录） | **全项目整合汇报版**：构建计划与思路演变 / 核心公式参数 / 模块架构 / 数据流动 / 每轮训练结论 / 困难与解决（含文献）/ 复盘 / 下一步 | 2026-08-18 |
+| README | `README.md` | **项目入口**：简介 / 新机配置概览 / v7-v9 条件采样 / 进阶 / 文档导航 | 2026-08-19 |
+| **权威指南** | `WORKFLOW_GUIDE.md`（根目录） | **全项目唯一权威使用指南（面向计算机新人）**：背景科普 / 整体框架（两路线 + v7/v9 双编码器）/ 数据流动 / 核心模块逐一详解 / 损失函数专章（为什么）/ 参数全表 / 命令速查 / 电荷边界 / 术语表 | 2026-08-19 |
+| **新机配置指南** | `docs/SETUP_NEW_MACHINE.md` | 从零复现：4 类权重（LigandMPNN/MoMPNN clone + v7/v9 编码器 Release 下载 + ESMFold）/ conda 环境 / 数据重建 / 验证清单 | 2026-08-19 |
+| **数据组织说明** | `data/README.md` | 数据目录结构 / 训练-验证划分逻辑（防泄漏）/ 重建命令 / SHA256 校验 / NAS 备份恢复 | 2026-08-19 |
 | MoMPNN 可用性调研 | `analysis/2026-08-16_mompnn_avail.md` | Stage E0 结论：权重=纯 backbone ProteinMPNN，`strict=True` 可加载 + 1BC8 前向跑通 | 2026-08-16 |
 | E1 pH 响应对比 | `analysis/report/2026-08-16_e1_pH_response.md` | MoMPNN 电荷命中偏差≤0.10 vs 原版 +0.2~0.7 | 2026-08-16 |
 | E1 三目标 | `analysis/report/2026-08-16_e1_three_targets.md` | 完整对比：可溶+12.8、热稳+7.8°C、电荷更准、pLDDT 持平 | 2026-08-16 |
 | E1 验证扩展设计 | `session/2026-08-16_e1_validation_design.md` | 4 PDB×3pH×3target 混合设计；TM-score 主证据；位点固定；阈值防过拟合；CATH 4.2 数据 | 2026-08-16 |
 | E1 扩展验证结果 | `analysis/report/2026-08-16_e1_extended.md` | 电荷 24/24 单调；MoMPNN 16/16 全优（4 指标×4 PDB）；可用率互有胜负 | 2026-08-16 |
 | Phase 1 收尾 | `analysis/report/2026-08-16_phase1_examples.md` | 结构过滤器 99 分位阈值（CATH S40 统计）+ 示例蛋白对比；诚实边界：无引导时模型不感知 pH | 2026-08-16 |
-| 技术文档 | `docs/TECH.md` | 架构 / 算法原理（HH 电荷、电荷前瞻、softmax 教训）/ 设计决策 / 验证摘要 | 2026-08-16 |
-| 配置文档 | `docs/CONFIG.md` | filter_presets / condition_defaults / 命令行参数 / 环境 | 2026-08-16 |
-| 使用说明 | `docs/USAGE.md` | 上手 / 5 种场景 / 输出解读 / FAQ / 批处理参考 | 2026-08-16 |
+| 技术文档 | `docs/TECH.md` | 技术原理参考（可微电荷 / 电荷前瞻 / 条件注入机制 / 复合损失 / 配体差异 / 判据），已同步 v9 | 2026-08-19 |
+| 配置文档 | `docs/CONFIG.md` | 配置速查：filter_presets / condition_defaults（校准 enabled=false）/ 训练采样参数 / 环境 | 2026-08-19 |
+| 使用说明 | `docs/USAGE.md` | 使用速查：v7/v9 条件采样 / 固定残基 / 配体消融 / 输出解读 / FAQ | 2026-08-19 |
 | E4 默认生成器 | `analysis/report/2026-08-16_e4_default_mompnn.md` | MoMPNN 设为 run_guided.py 默认生成器；实现/验证/文档同步 | 2026-08-16 |
 | Phase 2 训练启动 | `analysis/report/2026-08-16_phase2_training_start.md` | 微调目标三层 / 冻结 backbone+KL 锚定防失控 / 混合目标 / 启动与查询 | 2026-08-16 |
 | Phase 3 pH 响应 | `analysis/report/2026-08-16_phase3_pH_response.md` | 条件注入 Go/No-Go 4/4 PDB 通过（target 单调+跨 pH identity<100%）；校准增益 ~2.9× 机制 | 2026-08-16 |
@@ -80,14 +82,18 @@
 | n=20 四指标打分 | `code/tests/phase3_antidrift_n20_score.sh` | 递归扫描 16 臂的四指标打分管线 |
 | n=20 配对统计 | `code/tests/phase3_antidrift_n20_stats.py` | 配对 t+Wilcoxon+BH-FDR；按判断标准输出 H1/H2/S1 判定 |
 
-## 目录填充状态
+## 目录填充状态（v9 定稿）
 
 | 目录 | 用途 | 当前内容 | 状态 |
 |------|------|---------|------|
-| `code/` | 实验模块代码 | `src/`（7 模块）+ `configs/`（2 yaml）+ `tests/`（2 脚本）+ `input/`（1BC8.pdb）+ `output/`（smoke 结果）+ `log/`（测试日志） | ✅ Phase 1 模块就绪 |
-| `analysis/` | 实验结果分析 | `2026-08-16_mompnn_avail.md`（Stage E0 调研） | ✅ 已有首份报告 |
-| `literature/` | 论文笔记 | 5 子目录骨架（baseline/innovation/pattern/tools/phenomena），均空 | ⬜ 待论文笔记导入 |
-| `session/` | 会话记录 | `2026-08-15_phase1_modules.md`、`2026-08-16_charge_lookahead_fix.md`、`2026-08-16_PROJECT_STATUS.md`、`2026-08-16_e1_validation_design.md`、`2026-08-17_s1_training_fix.md` | ✅ 快照已含 E1 完成 + 验证设计 + 第十四轮 S1 修正 |
+| `code/` | 实验模块代码 | `src/`（9 模块）+ `configs/`（2 yaml）+ `tests/`（40+ 脚本，含 `ligand_v9/` 子目录）+ `input/`（示例 PDB）+ `run_guided.py` + `train_finetune.py` | ✅ 完整（v7/v9 双线）|
+| `output/` | 训练产物 | **最终权重** `finetune_v7/`、`finetune_ligand_v9/`；验证结果 `generalization_v9/`、`transfer_v9/` 等；⚠️ 早期 `code/output/finetune_vN`（v2–v6）为**过时 checkpoint**，保留但勿用 | ✅ 定稿 |
+| `analysis/` | 实验结果分析 | `report/` 23 份报告（E1→v9 泛化验证完整链）+ `archieved/`（归档规则）+ `ablation/` | ✅ 完整 |
+| `docs/` | 文档 | TECH / CONFIG / USAGE + **SETUP_NEW_MACHINE**（新机配置）| ✅ 同步 v9 |
+| `data/` | 外部数据集 | CATH（v7 训练）+ ligand_train（v9 训练）+ validation_pdbs/ligand_test/transfer_test（验证集）+ `README.md` + `SHA256SUMS.txt` | ✅ 划分明确，待 NAS 备份 |
+| `weights_release/` | Release 暂存 | v7/v9 编码器 + SHA256 + README（待 `gh release create` 上传）| 🔶 待上传 |
+| `literature/` | 论文笔记 | 5 子目录骨架 | ⬜ 待论文笔记导入 |
+| `session/` | 会话记录 | 多份阶段快照 | ✅ |
 | `source/` | 论文源码/链接 | （空） | ⬜ 待填充 |
 
 ## 约定
@@ -99,3 +105,5 @@
 | **v9 训练报告**（LigandMPNN 配体模式修复成功）| `analysis/report/2026-08-18_v9_ligand_training.md` | **配体模式电荷控制全部恢复**：1MBN dev 14.05→1.55、4DFR 1.45、1FQG 1.07（全部 ≤2.0 达标）；数据 4972 配体复合物×8pH；30 epoch 111.5min；与 v7 分工（无配体/小蛋白用 v7，配体/大蛋白用 v9）| 2026-08-18 |
 | **v9 泛化验证计划** | `index/PROJECT_V9_GENERALIZATION_PLAN.md` | **10 未见蛋白 × 5 电荷臂（native/±2/±8）× n30 全面泛化验证**：5 类配体（小分子/RNA/DNA/金属/长序列）覆盖、配体上下文消融（ligand vs protein）、ESMFold+TM 折叠；脚本 `code/tests/ligand_v9/{pick_validation_pdbs,validate_generalization}.py`；数据 `data/validation_pdbs/` | 2026-08-19 |
 | **v9 泛化验证报告** | `analysis/report/2026-08-19_v9_generalization_validation.md` | **H1 折叠泛化可靠（7 健康蛋白 35 臂 TM≥0.70、失败率 0%）；电荷温和区 87%、极端正电+8 100%、极端负电−8 仅 40%（欠冲，v9 反转 v7 正负电不对称）；配体上下文无系统增益、L504 大蛋白上有害（dev 5.24→0.54）；长序列/血红素蛋白失败模式**；汇总 `output/generalization_v9_stats.json` | 2026-08-19 |
+| **v9 定稿决策（停止训练）** | `index/PROJECT_V9_LIGAND_PLAN.md` §八.6 | **用户确认停止训练（2026-08-19）**：v7 + v9 编码器为最终版本；使用边界 `2026-08-18_model_charge_limits.md` §8（v9 配体模式：正电到 +8、负电保守到 −5、长序列需检查）；电荷根因 = 无差别删带电残基 | 2026-08-19 |
+| **最终交付权重** | `output/finetune_v7/condition_encoder_last.pt`、`output/finetune_ligand_v9/finetune_epoch030.pt` | v7（MoMPNN 无配体）+ v9（LigandMPNN 配体）双编码器；**不在 git**（.gitignore），经 GitHub Release v1.0.0 分发（`weights_release/`） | 2026-08-19 |
