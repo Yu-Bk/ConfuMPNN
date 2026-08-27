@@ -186,9 +186,11 @@ def main():
                  "both": ["ligand", "protein"]}[args.mode]
         for mode in modes:
             arms = sel_arms if mode == "ligand" else prot_arms
-            # protein 消融：重新 parse 去配体 PDB（Y 为空），ligand 特征化不变
+            # protein 消融：同一蛋白结构，但 use_atom_context=False → 模型忽略配体原子。
+            # ⚠️ 2026-08-28 修复：不能 strip 配体后重 parse——Y 为空时 ligand_mpnn
+            # featurize 的 get_nearest_neighbours 崩溃（L2_AB_nn[:, 0] IndexError）。
+            # 保留 Y 非空 + use_atom_context=False，模型同样看不到配体上下文。
             if mode == "protein":
-                protein_dict, *_ = parse_PDB(str(noplig_path))
                 if protein_dict["X"].shape[0] != L:
                     raise SystemExit(f"{pdb} protein 模式 L 不一致")
             # 特征化按 backbone 动态：protein_mpnn（MoMPNN）无配体上下文；
@@ -199,8 +201,7 @@ def main():
             else:
                 feats = dict(model_type="ligand_mpnn",
                              use_atom_context=(mode == "ligand"),
-                             number_of_ligand_atoms=(
-                                 args.num_ligand_atoms if mode == "ligand" else 0))
+                             number_of_ligand_atoms=args.num_ligand_atoms)
             pocket_cur = None if mode == "protein" else pocket
             protein_dict["chain_mask"] = torch.ones(L, dtype=torch.int32)
             fd = featurize(protein_dict, cutoff_for_score=8.0, **feats)
