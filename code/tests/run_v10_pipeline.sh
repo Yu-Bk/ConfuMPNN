@@ -95,6 +95,30 @@ else
     log "阶段3.5: MoMPNN checkpoint 存在，跳过重跑"
 fi
 
+# ================= 阶段 3.6：LigandMPNN checkpoint 有效性检查 =================
+# ⚠️ 教训（2026-08-27）：LigandMPNN 训练曾因配体数据特定域产生 NaN（epoch 1 起
+# total=nan，权重全 NaN）。若 checkpoint 存在但含 NaN，必须**不进入验证**（否则产出
+# 全 NaN 的泛化结果），且标记需要重跑。本检查：文件存在 + 权重无 NaN 才放行。
+log "阶段3.6: 检查 LigandMPNN checkpoint 有效性..."
+LIG_OK="no"
+if [ -f "$LIG_CKPT" ]; then
+    # 用 python 检查 checkpoint 权重是否含 NaN（0 = 有效）
+    N_NAN=$("$PYBIN" -c "
+import torch, sys
+ck = torch.load('$LIG_CKPT', map_location='cpu')
+st = ck.get('condition_encoder_state', ck)
+print(sum(int(torch.isnan(v).sum().item()) for v in st.values() if torch.is_tensor(v)))
+" 2>/dev/null)
+    if [ "$N_NAN" = "0" ]; then
+        LIG_OK="yes"
+        log "阶段3.6: LigandMPNN checkpoint 有效（无 NaN）"
+    else
+        log "阶段3.6: ⚠️ LigandMPNN checkpoint 含 NaN（$N_NAN 个）！跳过验证，需重跑训练"
+    fi
+else
+    log "阶段3.6: LigandMPNN checkpoint 不存在，跳过其验证"
+fi
+
 # ================= 阶段 4：双编码器泛化验证 =================
 log "阶段4: 泛化验证（MoMPNN 编码器，protein 模式）..."
 source "$CONDA_DIR" 2>/dev/null
@@ -113,20 +137,24 @@ PYTHONPATH=code "$PYBIN" code/tests/ligand_v9/generalization_stats.py \
     --manifest data/validation_pdbs/validation_manifest.json \
     --out output/generalization_v10_mompnn_stats.json
 
-log "阶段4: LigandMPNN 编码器验证（both 模式）..."
-PYTHONPATH=code timeout 7200 "$PYBIN" code/tests/ligand_v9/validate_generalization.py \
-    --manifest data/validation_pdbs/validation_manifest.json \
-    --out_dir output/generalization_v10_ligand \
-    --mode both \
-    --backbone auto \
-    --cond_encoder output/finetune_v10_ligand/finetune_epoch030.pt \
-    --weights LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt \
-    --n 30 --device cuda:3 --pH 7.4
-log "阶段4: LigandMPNN 验证完成，汇总统计..."
-PYTHONPATH=code "$PYBIN" code/tests/ligand_v9/generalization_stats.py \
-    --root output/generalization_v10_ligand \
-    --manifest data/validation_pdbs/validation_manifest.json \
-    --out output/generalization_v10_ligand_stats.json
+if [ "$LIG_OK" = "yes" ]; then
+    log "阶段4: LigandMPNN 编码器验证（both 模式）..."
+    PYTHONPATH=code timeout 7200 "$PYBIN" code/tests/ligand_v9/validate_generalization.py \
+        --manifest data/validation_pdbs/validation_manifest.json \
+        --out_dir output/generalization_v10_ligand \
+        --mode both \
+        --backbone auto \
+        --cond_encoder output/finetune_v10_ligand/finetune_epoch030.pt \
+        --weights LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt \
+        --n 30 --device cuda:3 --pH 7.4
+    log "阶段4: LigandMPNN 验证完成，汇总统计..."
+    PYTHONPATH=code "$PYBIN" code/tests/ligand_v9/generalization_stats.py \
+        --root output/generalization_v10_ligand \
+        --manifest data/validation_pdbs/validation_manifest.json \
+        --out output/generalization_v10_ligand_stats.json
+else
+    log "阶段4: ⚠️ LigandMPNN checkpoint 无效（NaN/缺失），跳过验证（待重跑训练后手动验证）"
+fi
 
 # ================= 阶段 5：完成标记 =================
 touch log/v10_pipeline.DONE
