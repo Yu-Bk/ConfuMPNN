@@ -1,4 +1,6 @@
-"""多 pH 温和区验证统计：合并电荷/恢复率/TM 折叠/pLDDT，输出汇总表。
+"""多 pH 温和区验证统计：合并电荷/恢复率/TM 折叠(RMSD)/pLDDT，输出汇总表。
+
+v3 D6：RMSD 作为 H1b 辅助指标（US-align 输出，与 TM 联报，按域报告）。
 
 输入（由 ph_scan_validation.py 采样 + esmfold_score.py + tm_score.py 生成）：
   --root/{pdb}/pH{ph}/ph_scan.json   条件化（target=native）电荷+recovery
@@ -64,7 +66,7 @@ def main():
     root = Path(args.root)
     summary = {}
     print(f"{'蛋白':<12}{'pH':>5}{'target':>7}{'dev':>6}{'recovery':>9}"
-          f"{'rec_基线':>8}{'TM中位':>8}{'TM>0.7':>8}{'TM<0.5':>8}{'pLDDT':>7}")
+          f"{'rec_基线':>8}{'TM中位':>8}{'TM>0.7':>8}{'TM<0.5':>8}{'RMSD':>7}{'pLDDT':>7}")
     for json_path in sorted(root.glob("*/ph_scan.json")):
         pdb = json_path.parent.name
         d = json.load(open(json_path))
@@ -72,6 +74,7 @@ def main():
         for ph_s, arm in d["pH_arms"].items():
             arm_dir = json_path.parent / f"pH{ph_s}"
             tm = read_csv_col(arm_dir / "tm.csv", "tm_score")
+            rmsd = read_csv_col(arm_dir / "tm.csv", "rmsd")  # v3 D6：RMSD 辅助指标
             plddt = read_csv_col(arm_dir / "plddt.csv", "mean_plddt")
             # 无条件 recovery
             rec_base = None
@@ -85,6 +88,7 @@ def main():
                 "tm_median": round(median(tm), 3) if tm else None,
                 "tm_ge070": round(frac(tm, lo=0.7), 3) if tm else None,
                 "tm_lt050": round(frac(tm, hi=0.5), 3) if tm else None,
+                "rmsd_median": round(median(rmsd), 2) if rmsd else None,
                 "plddt_median": round(median(plddt), 1) if plddt else None,
                 "recovery_baseline": round(rec_base, 3) if rec_base else None,
             }
@@ -94,6 +98,7 @@ def main():
                   f"{str(summary[pdb]['pH_arms'][ph_s]['tm_median']):>8}"
                   f"{str(summary[pdb]['pH_arms'][ph_s]['tm_ge070']):>8}"
                   f"{str(summary[pdb]['pH_arms'][ph_s]['tm_lt050']):>8}"
+                  f"{str(summary[pdb]['pH_arms'][ph_s]['rmsd_median']):>7}"
                   f"{str(summary[pdb]['pH_arms'][ph_s]['plddt_median']):>7}",
                   flush=True)
     with open(args.out, "w") as f:

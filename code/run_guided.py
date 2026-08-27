@@ -21,8 +21,13 @@
     # baseline   ：加载编码器但不注入（等价 Phase 1 诚实边界对照）
     # 电荷校准（默认关）：configs/condition_defaults.yaml 的 charge_calibration.enabled=false。
     #   过冲已由训练侧 charge_temp=0.5 根治（v9 起），推理侧校准不再需要。
-    #   如需旧式线性校准，可在 yaml 把 enabled 置 true（target_eff=(desired-offset)/gain）；
+    #   如需旧式线性校准，可在 yaml 把 enabled 置 true（target_eff=(desired-offset)/gain)；
     #   --no_calibration 强制关闭。
+
+    # pH-only 自动补全（v3 方案 P2/D1/A9）：不传 --target_charge 时，默认自动补全
+    #   target = native 序列在 pH 下的净电荷（"保持 native 电荷行为"，落在训练分布内），
+    #   不再走 flag=0（训练恒 flag=1，推理 flag=0 从未见过 → 行为不可预测）。
+    #   --no_auto_target_charge 关闭自动补全，回到旧 flag=0 语义（A9 对照）。
 
 日志建议重定向到 code/log/，输出写入 code/output/。
 """
@@ -94,6 +99,9 @@ def parse_args():
     p.add_argument("--no_calibration", action="store_true",
                    help="关闭电荷校准（默认开：按 condition_defaults.yaml 的 gain/offset 线性校准 "
                         "target_eff=(desired-offset)/gain，抵消条件注入的 ~2.57× 电荷过冲）")
+    p.add_argument("--no_auto_target_charge", action="store_true",
+                   help="关闭 pH-only 自动补全（v3 D1/A9）。默认：--target_charge 未给出时自动补全 "
+                        "target=native_charge@pH（保持 native 电荷行为）；本开关回到旧 flag=0 语义对照")
     p.add_argument("--fixed_residues", default=None,
                    help="固定残基列表，空格分隔（链字母+残基号，如 'A12 C15'）。"
                         "这些位置的氨基酸保持不变，其余位置由模型设计。"
@@ -230,6 +238,18 @@ def main():
     feature_dict["bias"] = torch.zeros(1, L, 21)
     native_seq = seq_to_string(feature_dict["S"][0].cpu().numpy())
     print(f"    蛋白长度 {L}，native: {native_seq[:50]}...")
+    native_charge = net_charge(native_seq, args.pH)  # 提前算（自动补全 + 步骤 5 复用）
+
+    # 2.5 pH-only 自动补全（v3 D1/A9）：未显式传 target → 默认 target=native_charge@pH，
+    #     语义"设计一条在该 pH 下保持 native 电荷行为的序列"，完全落在训练分布内；
+    #     --no_auto_target_charge 关闭 → 回到旧 flag=0（不指定电荷）对照。
+    auto_target = False
+    if args.target_charge is None and not args.no_auto_target_charge:
+        args.target_charge = native_charge
+        auto_target = True
+        print(f"    [pH-only 自动补全] target = native_charge@{args.pH} = {native_charge:+.2f}")
+    elif args.target_charge is None:
+        print("    [pH-only 手动关闭] --no_auto_target_charge：条件 flag=0，不指定电荷（A9 对照）")
 
     # 3. 模式分支：条件注入（Phase 3） vs 引导采样（Phase 1）
     mode = "phase1_guided"
@@ -240,9 +260,12 @@ def main():
 
         # 电荷校准（默认开）：target_eff = (desired - offset) / gain
         # 抵消条件注入的 ~2.57× 电荷过冲（机制见 condition_defaults.yaml）
+        # 自动补全的 native target 不做校准（native 电荷本就在训练分布内，无过冲可补偿）
         target_eff = args.target_charge
         calib_note = "（未指定 target，无校准）"
-        if args.target_charge is not None and not args.no_calibration:
+        if auto_target:
+            calib_note = f"（自动补全 target={native_charge:+.2f}，跳过校准）"
+        elif args.target_charge is not None and not args.no_calibration:
             with open(_CODE_DIR / "configs" / "condition_defaults.yaml") as f:
                 cc = yaml.safe_load(f)["condition_defaults"].get("charge_calibration", {})
             gain, offset = cc.get("gain", 2.57), cc.get("offset", 0.16)
@@ -295,8 +318,7 @@ def main():
             pIs.append(find_pI(seq))
             print(f"    [{i+1:2d}] charge={charges[-1]:+6.2f}  pI={pIs[-1]:5.2f}  {seq[:60]}")
 
-    # 5. native 对照
-    native_charge = net_charge(native_seq, args.pH)
+    # 5. native 对照（native_charge 已在 2.5 提前算好，供自动补全复用）
     native_pI = find_pI(native_seq)
     print(f"[5] native   : charge={native_charge:+6.2f}  pI={native_pI:5.2f}  {native_seq[:60]}")
 
@@ -319,6 +341,7 @@ def main():
         f.write(native_seq + "\n")
     summary = {
         "pdb": args.pdb, "pH": args.pH, "target_charge": args.target_charge,
+        "auto_target": auto_target,  # True = target 由 pH-only 自动补全（D1/A9）
         "mode": mode,
         "cond_encoder": str(args.cond_encoder) if args.cond_encoder else None,
         "calibrated": bool(args.cond_encoder and not args.no_calibration),

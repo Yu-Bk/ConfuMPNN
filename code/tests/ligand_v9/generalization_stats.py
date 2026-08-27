@@ -1,4 +1,6 @@
-"""v9 泛化验证汇总统计：合并电荷/H1 折叠/pLDDT/recovery，ligand vs protein 消融对比。
+"""v9 泛化验证汇总统计：合并电荷/H1 折叠(RMSD)/pLDDT/recovery，ligand vs protein 消融对比。
+
+v3 D6：RMSD 作为 H1b 辅助指标（US-align 输出，与 TM 联报，按域报告；阈值待数据定，建议 <2.5-3.0Å）。
 
 输入（validate_generalization.py 采样 + esmfold_score.py 回折 + tm_score.py 打表生成）：
   {out_dir}/{mode}/{pdb}/validation.json      电荷/recovery/口袋/GRAVY
@@ -64,7 +66,7 @@ def main():
     summary = {"proteins": {}}
     hdr = (f"{'蛋白':<7}{'类':<10}{'L':>4} {'模式':<7}{'臂':<6}{'目标':>4}{'均值':>7}"
            f"{'dev':>6}{'达标':>4} {'rec':>6}{'pkt':>6}{'gravy':>7}"
-           f"{'TM中位':>7}{'TM≥0.7':>7}{'TM<0.5':>7}{'pLDDT':>7}")
+           f"{'TM中位':>7}{'TM≥0.7':>7}{'TM<0.5':>7}{'RMSD':>7}{'pLDDT':>7}")
     print(hdr, flush=True)
 
     for mode in ("ligand", "protein"):
@@ -83,9 +85,13 @@ def main():
                 # 只统计生成序列，排除 native 行（esmfold name 含 'native'）
                 tm_gen = read_csv_col(arm_dir / "tm.csv", "tm_score",
                                       exclude_native=True)
+                # D6：RMSD 作为 H1b 辅助指标（US-align 已输出，联报；阈值待定，按域报告）
+                rmsd_gen = read_csv_col(arm_dir / "tm.csv", "rmsd",
+                                        exclude_native=True)
                 plddt_gen = read_csv_col(arm_dir / "plddt.csv", "mean_plddt",
                                          exclude_native=True)
                 tm_med = median(tm_gen)
+                rmsd_med = median(rmsd_gen)
                 rec = summary["proteins"][pdb]["mode"][mode]["arms"][arm] = {
                     "target": a["target"],
                     "mean_charge": a["mean_charge"],
@@ -98,6 +104,7 @@ def main():
                     "tm_median": round(tm_med, 3) if tm_med else None,
                     "tm_ge070": frac_ge(tm_gen, 0.7),
                     "tm_lt050": frac_lt(tm_gen, 0.5),
+                    "rmsd_median": round(rmsd_med, 2) if rmsd_med else None,
                     "plddt_median": round(median(plddt_gen), 1) if plddt_gen else None,
                 }
                 hit = "✓" if a["dev"] <= 2.0 else "✗"
@@ -105,7 +112,8 @@ def main():
                       f"{a['mean_charge']:>7}{a['dev']:>6}{hit:>4}"
                       f"{a['recovery']:>6}{str(a['pocket_recovery']):>6}{a['gravy_mean']:>7}"
                       f"{str(rec['tm_median']):>7}{str(rec['tm_ge070']):>7}"
-                      f"{str(rec['tm_lt050']):>7}{str(rec['plddt_median']):>7}", flush=True)
+                      f"{str(rec['tm_lt050']):>7}{str(rec['rmsd_median']):>7}"
+                      f"{str(rec['plddt_median']):>7}", flush=True)
 
     # 消融对比汇总：ligand vs protein（同蛋白同臂）
     print("\n=== 配体消融对比（ligand vs protein，H2 dev / H1 TM）===", flush=True)
@@ -122,10 +130,12 @@ def main():
                     "ligand_dev": l["dev"], "protein_dev": pr["dev"],
                     "dev_delta": round(pr["dev"] - l["dev"], 2),
                     "ligand_tm": l["tm_median"], "protein_tm": pr["tm_median"],
+                    "ligand_rmsd": l["rmsd_median"], "protein_rmsd": pr["rmsd_median"],
                     "ligand_recovery": l["recovery"], "protein_recovery": pr["recovery"],
                 }
                 print(f"{pdb:<7} arm={arm:<6} dev: ligand={l['dev']:.2f} protein={pr['dev']:.2f} "
                       f"(Δ{pr['dev']-l['dev']:+.2f})  TM: {l['tm_median']}→{pr['tm_median']}  "
+                      f"RMSD: {l['rmsd_median']}→{pr['rmsd_median']}  "
                       f"rec: {l['recovery']}→{pr['recovery']}", flush=True)
     summary["ablation"] = ablation
 

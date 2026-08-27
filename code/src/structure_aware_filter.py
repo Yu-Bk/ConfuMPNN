@@ -28,7 +28,7 @@ import torch
 from scipy.sparse import csr_matrix
 from scipy.sparse.csgraph import connected_components
 
-from .pka import AA_TO_IDX, STRONG_NEGATIVE, STRONG_POSITIVE
+from .pka import AA_TO_IDX, PKA_SIDECHAIN, STRONG_NEGATIVE, STRONG_POSITIVE
 
 # 未解码标记（与 LigandMPNN 的 restype 一致：20 = X / 未知）
 UNDECODED = 20
@@ -37,6 +37,30 @@ UNDECODED = 20
 POS_AA_IDX = [AA_TO_IDX[a] for a in STRONG_POSITIVE]  # K, R
 NEG_AA_IDX = [AA_TO_IDX[a] for a in STRONG_NEGATIVE]  # D, E
 CHARGED_AA_IDX = POS_AA_IDX + NEG_AA_IDX
+
+
+def pH_adaptive_charged_aa(pH=None):
+    """按工作 pH 决定过滤器视为"带电"的氨基酸集合（v3 D4-③）。
+
+    返回 (pos_aa, neg_aa) 单字母元组：
+      - pH=None → 仅强电荷 K/R/D/E（生理 pH 下几乎完全带电），**向后兼容**。
+      - 给定 pH → 额外纳入质子化分数 ≥ 0.5 的弱带电残基：
+          His pKa=6.0 ：pH ≤ 6.0 → 咪唑质子化带正电，算正电
+          Cys pKa=8.3 ：pH ≥ 8.3 → 巯基去质子化带负电，算负电
+          Tyr pKa=10.1：pH ≥ 10.1 → 酚羟基去质子化带负电，算负电
+    质子化分数 = 1/(1+10^(pH−pKa))（碱性）/ 1/(1+10^(pKa−pH))（酸性）；
+    ≥0.5 的临界点即 pH = pKa，故上述阈值即"pH 跨过 pKa"。
+    """
+    pos = list(STRONG_POSITIVE)
+    neg = list(STRONG_NEGATIVE)
+    if pH is not None:
+        if pH <= PKA_SIDECHAIN["H"]:
+            pos.append("H")
+        if pH >= PKA_SIDECHAIN["C"]:
+            neg.append("C")
+        if pH >= PKA_SIDECHAIN["Y"]:
+            neg.append("Y")
+    return tuple(pos), tuple(neg)
 
 
 def default_config():
@@ -120,13 +144,19 @@ class StructureAwareFilter:
         return np.sqrt((diff ** 2).sum(axis=-1))
 
     @staticmethod
-    def _decode_charge_flags(seq_int):
-        """从解码序列（[L] int，20=X）提取强正/强负标记（仅已解码位置）。"""
+    def _decode_charge_flags(seq_int, pos_aa=None, neg_aa=None):
+        """从解码序列（[L] int，20=X）提取正/负带电标记（仅已解码位置）。
+
+        v3 D4-③：pos_aa/neg_aa 由 pH_adaptive_charged_aa(pH) 决定（pH 无关时
+        为强电荷 K/R/D/E；给定 pH 时纳入 His/Cys/Tyr）。None → 强电荷默认。
+        """
+        pos_aa = pos_aa or STRONG_POSITIVE
+        neg_aa = neg_aa or STRONG_NEGATIVE
         pos = np.zeros(len(seq_int), dtype=bool)
         neg = np.zeros(len(seq_int), dtype=bool)
-        for a in STRONG_POSITIVE:
+        for a in pos_aa:
             pos |= (seq_int == AA_TO_IDX[a])
-        for a in STRONG_NEGATIVE:
+        for a in neg_aa:
             neg |= (seq_int == AA_TO_IDX[a])
         return pos, neg
 
@@ -158,14 +188,19 @@ class StructureAwareFilter:
 
         参数:
             seq_int: [L] int 序列（20=X 表示尚未解码的位置）
-            pH: 预留参数（目前强电荷判断不依赖 pH；若以后需要弱电荷可按 pH 计算）
+            pH: 工作 pH。v3 D4-③：给定 pH 时按质子化分数动态纳入弱带电残基
+                （His pKa6.0 / Cys 8.3 / Tyr 10.1）；None → 仅强电荷 K/R/D/E。
 
         返回:
             bias: [L, 21] float 张量，负值抑制（将加到 logits 上）
             info: 每条规则触发的统计信息（便于记录/调试）
         """
         seq_int = np.asarray(seq_int)
-        pos, neg = self._decode_charge_flags(seq_int)
+        pos_aa, neg_aa = pH_adaptive_charged_aa(pH)
+        pos_idx = [AA_TO_IDX[a] for a in pos_aa]
+        neg_idx = [AA_TO_IDX[a] for a in neg_aa]
+        charged_idx = pos_idx + neg_idx
+        pos, neg = self._decode_charge_flags(seq_int, pos_aa, neg_aa)
         undecoded = (seq_int == UNDECODED) & self.mask  # 只有这些位置还能被抑制
         charged = pos | neg
 
@@ -180,8 +215,8 @@ class StructureAwareFilter:
         neg_count = (nb & neg[None, :]).sum(axis=1)
         over_pos = undecoded & (pos_count >= cfg["threshold"])
         over_neg = undecoded & (neg_count >= cfg["threshold"])
-        self._apply_bias(bias, over_pos, POS_AA_IDX, cfg["strength"])
-        self._apply_bias(bias, over_neg, NEG_AA_IDX, cfg["strength"])
+        self._apply_bias(bias, over_pos, pos_idx, cfg["strength"])
+        self._apply_bias(bias, over_neg, neg_idx, cfg["strength"])
         info["charge_cluster"] = {
             "pos_over": int(over_pos.sum()), "neg_over": int(over_neg.sum()),
         }
@@ -191,7 +226,7 @@ class StructureAwareFilter:
         # 以 min(正电荷数, 负电荷数) 近似已形成/潜在的盐桥对数
         pairs = np.minimum(pos_count, neg_count)
         over_bridge = undecoded & (pairs >= cfg["threshold"])
-        self._apply_bias(bias, over_bridge, CHARGED_AA_IDX, cfg["strength"])
+        self._apply_bias(bias, over_bridge, charged_idx, cfg["strength"])
         info["salt_bridge"] = {"over": int(over_bridge.sum())}
 
         # ---- 规则 3：核心电荷渗入（burial 高 + 8Å 内带电 ≥ 阈值） ----
@@ -205,7 +240,7 @@ class StructureAwareFilter:
         core = undecoded & (burial_ratio > cfg["burial_threshold"]) & (
             charge_count >= cfg["charge_count"]
         )
-        self._apply_bias(bias, core, CHARGED_AA_IDX, cfg["strength"])
+        self._apply_bias(bias, core, charged_idx, cfg["strength"])
         info["core_charge"] = {"core": int(core.sum())}
 
         # ---- 规则 4：同号电荷空间聚类（8Å 连通图 ≥ 阈值） ----
@@ -220,9 +255,9 @@ class StructureAwareFilter:
             n_neg = int((members & neg).sum())
             tgt = members & undecoded
             if n_pos >= cfg["threshold"]:
-                self._apply_bias(bias, tgt, POS_AA_IDX, cfg["strength"])
+                self._apply_bias(bias, tgt, pos_idx, cfg["strength"])
             if n_neg >= cfg["threshold"]:
-                self._apply_bias(bias, tgt, NEG_AA_IDX, cfg["strength"])
+                self._apply_bias(bias, tgt, neg_idx, cfg["strength"])
         info["same_sign_cluster"] = {"n_components": int(n_comp)}
 
         return bias, info

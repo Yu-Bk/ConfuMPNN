@@ -144,7 +144,8 @@ def make_dynamic_callback(pH, target_charge=None, structure_filter=None,
     def callback(S_cur, t):
         bias = lookahead.bias_at(S_cur, t)
         if structure_filter is not None:
-            fb, _ = structure_filter.compute_bias(S_cur)
+            # v3 D4-③：把工作 pH 传给过滤器，弱带电残基按质子化态自适应纳入
+            fb, _ = structure_filter.compute_bias(S_cur, pH=pH)
             bias = bias + fb[t].numpy()
         return bias
 

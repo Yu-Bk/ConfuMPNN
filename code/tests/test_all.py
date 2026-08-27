@@ -31,6 +31,7 @@ from src.isoelectric_point import find_pI  # noqa: E402
 from src.structure_aware_filter import (  # noqa: E402
     StructureAwareFilter,
     load_preset,
+    pH_adaptive_charged_aa,
 )
 from src.condition_embedding import ConditionEncoder, make_condition_vector  # noqa: E402
 from src.losses import composite_loss  # noqa: E402
@@ -121,6 +122,37 @@ def test_filter_rules():
     seq_neutral = [AA_TO_IDX["A"]] * 8 + [20, 20]
     b2, _ = filt.compute_bias(np.array(seq_neutral))
     check("中性序列无抑制", float(b2.abs().sum()) == 0.0)
+
+
+def test_ph_adaptive_charged_aa():
+    """v3 D4-③：pH 自适应带电集合。
+
+    pH=None（旧行为）→ 仅强电荷 K/R/D/E；
+    pH ≤ 6 → His 纳入正电；pH ≥ 8.3 → Cys 纳入负电；pH ≥ 10.1 → Tyr 纳入负电。
+    """
+    # 默认（无 pH）= 强电荷 K/R/D/E
+    pos, neg = pH_adaptive_charged_aa()
+    check("pH=None 仅 K/R", set(pos) == {"K", "R"}, str(pos))
+    check("pH=None 仅 D/E", set(neg) == {"D", "E"}, str(neg))
+
+    # 酸性 pH=5：His 质子化 → 纳入正电
+    pos5, neg5 = pH_adaptive_charged_aa(5.0)
+    check("pH=5 正电含 H", "H" in pos5, str(pos5))
+    check("pH=5 负电仍仅 D/E", set(neg5) == {"D", "E"}, str(neg5))
+
+    # 生理 pH=7.4：His 几乎不带电，不纳入
+    pos74, neg74 = pH_adaptive_charged_aa(7.4)
+    check("pH=7.4 正电不含 H", "H" not in pos74, str(pos74))
+    check("pH=7.4 负电不含 C/Y", not ({"C", "Y"} & set(neg74)), str(neg74))
+
+    # 碱性 pH=9：Cys 去质子化 → 纳入负电；Tyr 未达 pKa 10.1 不纳入
+    pos9, neg9 = pH_adaptive_charged_aa(9.0)
+    check("pH=9 负电含 C", "C" in neg9, str(neg9))
+    check("pH=9 负电不含 Y", "Y" not in neg9, str(neg9))
+
+    # 极碱 pH=10.5：Tyr 也去质子化 → 纳入负电
+    pos10, neg10 = pH_adaptive_charged_aa(10.5)
+    check("pH=10.5 负电含 C 与 Y", {"C", "Y"} <= set(neg10), str(neg10))
 
 
 def test_load_preset():
@@ -250,6 +282,7 @@ def main():
     test_net_charge_from_logits()
     test_find_pI()
     test_filter_rules()
+    test_ph_adaptive_charged_aa()
     test_load_preset()
     test_condition_vector()
     test_condition_encoder()

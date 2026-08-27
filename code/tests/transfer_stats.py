@@ -1,4 +1,6 @@
-"""迁移检验统计汇总：合并电荷/恢复率/TM 折叠/pLDDT，输出汇总表。
+"""迁移检验统计汇总：合并电荷/恢复率/TM 折叠(RMSD)/pLDDT，输出汇总表。
+
+v3 D6：RMSD 作为 H1b 辅助指标（US-align 输出，与 TM 联报，按域报告）。
 
 输入（transfer_validation.py 采样 + esmfold_score.py + tm_score.py 生成）：
   --root/{pdb}/transfer.json            迁移主实验（条件化，各 pH）
@@ -67,7 +69,7 @@ def main():
     root = Path(args.root)
     summary = {}
     print(f"{'蛋白':<14}{'pH':>5}{'target':>7}{'mean':>7}{'dev':>6}{'recovery':>9}"
-          f"{'uncond':>8}{'mompnnC':>8}{'TM中位':>8}{'TM>0.7':>8}{'TM<0.5':>8}{'pLDDT':>7}",
+          f"{'uncond':>8}{'mompnnC':>8}{'TM中位':>8}{'TM>0.7':>8}{'TM<0.5':>8}{'RMSD':>7}{'pLDDT':>7}",
           flush=True)
 
     for tj in sorted(root.glob("*/transfer.json")):
@@ -78,6 +80,7 @@ def main():
         for ph_s, arm in d["pH_arms"].items():
             arm_dir = tj.parent / f"pH{ph_s}"
             tm = read_csv_col(arm_dir / "tm.csv", "tm_score")
+            rmsd = read_csv_col(arm_dir / "tm.csv", "rmsd")  # v3 D6：RMSD 辅助指标
             plddt = read_csv_col(arm_dir / "plddt.csv", "mean_plddt")
             # 无条件基线（同蛋白 pH7.4）
             uncond = None
@@ -104,6 +107,7 @@ def main():
                 "tm_median": round(median(tm), 3) if tm else None,
                 "tm_ge070": round(frac(tm, lo=0.7), 3) if tm else None,
                 "tm_lt050": round(frac(tm, hi=0.5), 3) if tm else None,
+                "rmsd_median": round(median(rmsd), 2) if rmsd else None,
                 "plddt_median": round(median(plddt), 1) if plddt else None,
             }
             print(f"{pdb:<14}{ph_s:>5}{str(arm['target']):>7}"
@@ -113,6 +117,7 @@ def main():
                   f"{str(summary[pdb]['pH_arms'][ph_s]['tm_median']):>8}"
                   f"{str(summary[pdb]['pH_arms'][ph_s]['tm_ge070']):>8}"
                   f"{str(summary[pdb]['pH_arms'][ph_s]['tm_lt050']):>8}"
+                  f"{str(summary[pdb]['pH_arms'][ph_s]['rmsd_median']):>7}"
                   f"{str(summary[pdb]['pH_arms'][ph_s]['plddt_median']):>7}",
                   flush=True)
 
