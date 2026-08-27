@@ -113,6 +113,11 @@ def fractional_sasa(pdb_path, surface_threshold=0.25, align_to_full=True):
         frac_arr = np.clip(np.array([f for _, f, _ in keep], dtype=np.float64), 0.0, None)
         resid_arr = np.array([rid for _, _, rid in keep], dtype=np.int64)
 
+    # ⚠️ 防 NaN 污染（v10 踩坑）：freesasa 对某些异常几何残基返回 NaN relativeTotal
+    # （如 1GTV.pdb 有 177 个 NaN）。NaN 传入 surface_add_charge_loss 会污染整个训练。
+    # 处理：NaN/Inf → 0.0（视为"无法计算 → 当埋藏，不参与 L_add"）。
+    frac_arr = np.nan_to_num(frac_arr, nan=0.0, posinf=0.0, neginf=0.0)
+
     surface_mask = frac_arr >= surface_threshold
     return {
         "seq": seq,
