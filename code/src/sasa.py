@@ -30,18 +30,22 @@ _RES3TO1 = {
 }
 
 
-def fractional_sasa(pdb_path, surface_threshold=0.25):
+def fractional_sasa(pdb_path, surface_threshold=0.25, align_to_full=True):
     """计算 PDB 的逐残基 fractional SASA。
 
     参数:
         pdb_path: PDB 文件路径（蛋白结构，可含配体/核酸，会跳过）
         surface_threshold: 表面资格阈值 θ；fracSASA ≥ θ 视为"表面位点"
             （v10 B 的 L_add 表面硬门槛，θ 由配置定，默认 0.25）
+        align_to_full: 是否**保留非标准残基位置**（X 处 frac 补 0.0）。
+            True 时返回长度 = parse_PDB 的 L（含 X/非标准残基，X 对齐为 0），
+            供 train_finetune 直接按位置对齐（L_add 需要全残基索引）。
+            False 时只返回标准氨基酸（长度 = 有效残基数，freesasa 原生口径）。
 
     返回:
         dict:
-            seq: 蛋白序列（单字母，只含标准氨基酸，沿链顺序）
-            frac_sasa: [L] float 数组，逐残基 fractional SASA
+            seq: 蛋白序列（单字母；align_to_full=True 时 X/非标准残基用 '-' 占位）
+            frac_sasa: [L] float 数组，逐残基 fractional SASA（X 位置为 0.0）
             surface_mask: [L] bool，fracSASA ≥ θ 的表面位点掩码
             is_surface: 表面位点数量
     抛出:
@@ -57,25 +61,24 @@ def fractional_sasa(pdb_path, surface_threshold=0.25):
     parser = PDBParser(QUIET=True)
     structure = parser.get_structure("s", str(pdb_path))
 
-    seq = []
-    fracs = []
+    # 收集 (链, 残基号, aa, 是标准氨基酸) 顺序列表
+    residues = []  # 按 PDB 顺序：{chain, resid, aa, is_aa}
     for model in structure:
         for chain in model:
             for residue in chain:
                 res3 = residue.get_resname().strip()
                 aa = _RES3TO1.get(res3)
-                if aa is None:
-                    continue  # 跳过核酸/配体/水
-                if not residue.has_id("CA"):
-                    continue  # 无 Cα（如异常残基），跳过
-                seq.append(aa)
-                # 占位：fractional SASA 稍后从 freesasa 按 (chain, resid) 填
-                fracs.append(None)
+                residues.append({
+                    "chain": chain.id,
+                    "resid": residue.id[1],
+                    "aa": aa,
+                    "is_aa": aa is not None and residue.has_id("CA"),
+                })
 
-    if not seq:
+    if not any(r["is_aa"] for r in residues):
         raise RuntimeError(f"{pdb_path} 无蛋白残基")
 
-    # freesasa 全结构计算 → 逐残基 relativeTotal
+    # freesasa 全结构计算 → 逐残基 relativeTotal（按链+残基号索引）
     try:
         fs = freesasa.structureFromBioPDB(structure)
         result = freesasa.calc(fs)
@@ -83,33 +86,38 @@ def fractional_sasa(pdb_path, surface_threshold=0.25):
     except Exception as e:
         raise RuntimeError(f"freesasa 计算失败: {e}")
 
-    # 第二次遍历，把 freesasa 的 relativeTotal 填进 fracs（按链+残基号匹配）
-    idx = 0
-    for model in structure:
-        for chain in model:
-            chain_id = chain.id
-            chain_areas = residue_areas.get(chain_id, {})
-            for residue in chain:
-                res3 = residue.get_resname().strip()
-                aa = _RES3TO1.get(res3)
-                if aa is None or not residue.has_id("CA"):
-                    continue
-                resid = residue.id[1]  # 残基号
-                ra = chain_areas.get(str(resid))
-                if ra is not None:
-                    fracs[idx] = ra.relativeTotal
-                else:
-                    fracs[idx] = 0.0  # 兜底：未匹配则视为埋藏
-                idx += 1
+    # 逐残基填 frac
+    seq_chars, fracs, resids = [], [], []
+    for r in residues:
+        if not r["is_aa"]:
+            seq_chars.append("-" if align_to_full else None)  # 非标准/无CA
+            fracs.append(0.0 if align_to_full else None)      # X 位置 frac=0
+            resids.append(None if align_to_full else None)
+            continue
+        chain_areas = residue_areas.get(r["chain"], {})
+        ra = chain_areas.get(str(r["resid"]))
+        frac = ra.relativeTotal if ra is not None else 0.0
+        seq_chars.append(r["aa"])
+        fracs.append(frac)
+        resids.append(r["resid"])   # 残基号（供 resnum 交集对齐）
 
-    if any(f is None for f in fracs):
-        raise RuntimeError(f"{pdb_path} 部分残基未匹配 freesasa 结果")
+    if align_to_full:
+        # 全残基口径：长度 = parse_PDB L（含 X/非标准残基，X 处 frac=0）
+        seq = "".join(c if c is not None else "X" for c in seq_chars)
+        frac_arr = np.clip(np.array(fracs, dtype=np.float64), 0.0, None)
+        resid_arr = np.array([r if r is not None else -1 for r in resids], dtype=np.int64)
+    else:
+        # 只保留标准氨基酸（freesasa 原生口径），同时返回残基号列表
+        keep = [(c, f, rid) for c, f, rid in zip(seq_chars, fracs, resids) if c is not None]
+        seq = "".join(c for c, _, _ in keep)
+        frac_arr = np.clip(np.array([f for _, f, _ in keep], dtype=np.float64), 0.0, None)
+        resid_arr = np.array([rid for _, _, rid in keep], dtype=np.int64)
 
-    frac_arr = np.clip(np.array(fracs, dtype=np.float64), 0.0, None)
     surface_mask = frac_arr >= surface_threshold
     return {
-        "seq": "".join(seq),
+        "seq": seq,
         "frac_sasa": frac_arr,
+        "residues": resid_arr,       # 与 frac_sasa 同长的残基号（resnum 对齐用）
         "surface_mask": surface_mask,
         "is_surface": int(surface_mask.sum()),
     }

@@ -118,7 +118,11 @@ def main():
     ap.add_argument("--mode", choices=["ligand", "protein", "both"], default="both")
     ap.add_argument("--cond_encoder", required=True)
     ap.add_argument("--weights", default=None,
-                    help="ligand 模式必填（LigandMPNN 权重）")
+                    help="模型权重（LigandMPNN 或 MoMPNN；配合 --backbone）")
+    ap.add_argument("--backbone", default="auto",
+                    choices=["auto", "protein_mpnn", "ligand_mpnn"],
+                    help="backbone 类型：auto=按权重自动检测（LigandMPNN 含 atom_context_num，"
+                         "MoMPNN 无）；protein_mpnn=纯骨架（MoMPNN）；ligand_mpnn=配体上下文")
     ap.add_argument("--n", type=int, default=30)
     ap.add_argument("--pH", type=float, default=7.4)
     ap.add_argument("--seed_base", type=int, default=2000)
@@ -138,11 +142,16 @@ def main():
     sel_arms = [a for a in args.arms.split(",") if a in arm_map]
     prot_arms = [a for a in args.protein_arms.split(",") if a in arm_map]
 
-    # 加载 backbone + 编码器（ligand 与 protein 消融共用同一 LigandMPNN 模型）
+    # 加载 backbone + 编码器（--backbone 决定 model_type；auto 按权重自动检测）
     enc = load_condition_encoder(args.cond_encoder, device)
     if not args.weights:
-        raise SystemExit("需要 --weights（LigandMPNN 权重）")
-    model = load_model(args.weights, device, model_type="ligand_mpnn")
+        raise SystemExit("需要 --weights（LigandMPNN 或 MoMPNN 权重）")
+    model = load_model(args.weights, device, model_type=args.backbone)
+    backbone_type = model.model_type  # 解析后的实际类型（protein_mpnn / ligand_mpnn）
+    if backbone_type == "protein_mpnn" and args.mode != "protein":
+        # MoMPNN 是纯 backbone，无配体上下文 → 只有 protein 模式可用
+        print("⚠️ MoMPNN backbone：强制 protein 模式（无配体上下文）", flush=True)
+        args.mode = "protein"
 
     manifest = json.load(open(args.manifest))
     items = manifest["items"][args.start: args.end]
@@ -182,8 +191,16 @@ def main():
                 protein_dict, *_ = parse_PDB(str(noplig_path))
                 if protein_dict["X"].shape[0] != L:
                     raise SystemExit(f"{pdb} protein 模式 L 不一致")
-            feats = dict(model_type="ligand_mpnn", use_atom_context=True,
-                         number_of_ligand_atoms=args.num_ligand_atoms)
+            # 特征化按 backbone 动态：protein_mpnn（MoMPNN）无配体上下文；
+            # ligand_mpnn 的 protein 消融模式同样无配体原子（use_atom_context 由 mode 决定）。
+            if backbone_type == "protein_mpnn":
+                feats = dict(model_type="protein_mpnn", use_atom_context=False,
+                             number_of_ligand_atoms=0)
+            else:
+                feats = dict(model_type="ligand_mpnn",
+                             use_atom_context=(mode == "ligand"),
+                             number_of_ligand_atoms=(
+                                 args.num_ligand_atoms if mode == "ligand" else 0))
             pocket_cur = None if mode == "protein" else pocket
             protein_dict["chain_mask"] = torch.ones(L, dtype=torch.int32)
             fd = featurize(protein_dict, cutoff_for_score=8.0, **feats)

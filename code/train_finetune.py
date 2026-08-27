@@ -97,6 +97,9 @@ from src.differentiable_charge import net_charge  # noqa: E402
 from src.losses import (  # noqa: E402
     charge_deviation_loss, cross_entropy_loss, sequence_keep_loss,
 )
+from src.v10_losses import (  # noqa: E402
+    ph_aware_structure_penalty, surface_add_charge_loss,
+)
 
 # 默认生成器权重（与 run_guided.py E4 一致）
 _DEFAULT_WEIGHTS = (
@@ -155,6 +158,27 @@ def parse_args():
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--max_domains", type=int, default=0,
                    help="最多用前 N 个结构域（0=全部；冒烟测试用）")
+
+    # ---- v10 三组件（v3 §3.1）----
+    p.add_argument("--decouple_perturb", action="store_true",
+                   help="v10 A 条件解耦：扰动 target 与骨架 native 无关（Uniform[-range,range]），"
+                        "打破'骨架类型与 target 电荷强耦合'（碱性骨架只见正电 target → 只能外推）")
+    p.add_argument("--decouple_range", type=float, default=12.0,
+                   help="A 的随机 target 范围（±Uniform[-range, range]，v3 预期扩大可靠区至 "
+                        "[native−10, native+10]）")
+    p.add_argument("--add_supervision", action="store_true",
+                   help="v10 B 表面添加电荷监督：L_add 直接对抗'只删不加'——需要更负→表面加 D/E、"
+                        "更正要加 K/R，只动表面（fracSASA≥θ），以净电荷目标为上界")
+    p.add_argument("--lambda_add", type=float, default=0.3,
+                   help="B 的 L_add 权重（v3 建议扫 0.1/0.3/0.5）")
+    p.add_argument("--sasa_threshold", type=float, default=0.25,
+                   help="B 表面资格门槛 θ（fracSASA ≥ θ 才计入 L_add）")
+    p.add_argument("--ph_aware_filter", action="store_true",
+                   help="v10 C 结构惩罚增强：训练时用 P0-5 的 pH 自适应过滤器 bias 压制电荷聚集"
+                        "（His/Cys/Tyr 按质子化态纳入），大额添加样本动态加强（scale_boost）")
+    p.add_argument("--structure_boost", type=float, default=1.5,
+                   help="C 对大额添加扰动样本的结构惩罚放大系数（scale_boost）")
+
     p.add_argument("--out_dir", default=str(_CODE_DIR / "output" / "finetune"))
     p.add_argument("--log_progress", default=str(_CODE_DIR / "log" / "train_progress.json"))
     p.add_argument("--log_file", default=str(_CODE_DIR / "log" / "train.log"))
@@ -312,12 +336,19 @@ def main():
         log.write(line + "\n")
         log.flush()
 
-    logln(f"=== ConfuMPNN Phase 2 条件微调启动 ===")
+    logln(f"=== ConfuMPNN Phase 2 条件微调启动（v10）===")
     logln(f"device={device}  epochs={args.epochs}  lr={args.lr}  "
           f"λ_c={args.lambda_c}  λ_kl={args.lambda_kl}  λ_keep={args.lambda_keep}  "
           f"perturb_prob={args.perturb_prob}  perturb_scale={args.perturb_scale}  "
           f"placeholder_prob={args.placeholder_prob}  "
           f"charge_temp={args.charge_temp}")
+    if args.decouple_perturb:
+        logln(f"[v10 A] 条件解耦开：target 与 native 无关 Uniform[-{args.decouple_range},"
+              f"{args.decouple_range}]")
+    if args.add_supervision:
+        logln(f"[v10 B] 表面添加电荷监督开：λ_add={args.lambda_add}  SASA θ={args.sasa_threshold}")
+    if args.ph_aware_filter:
+        logln(f"[v10 C] pH 自适应结构惩罚开：boost={args.structure_boost}")
 
     # ---- backbone + 条件编码器 ----
     backbone = load_backbone(args.weights, device, ligand=args.ligand)
@@ -375,9 +406,12 @@ def main():
     domains = []
     n_ok, n_skip = 0, 0
     for i, did in enumerate(domain_ids[:n_dom]):
-        # 优先：真实文件已带后缀（配体数据）
+        # 优先：真实文件已带后缀（配体数据 .pdb/.cif，prody 按后缀判格式）。
+        # ⚠️ CATH 域 id 无后缀（如 3t97A00）——direct.exists() 为 True 但 prody
+        # 会把无后缀当 mmCIF 解析失败。因此只有「带后缀」才直用，否则走 .pdb symlink。
         direct = Path(args.dompdb) / str(did)
-        if direct.exists():
+        has_suffix = Path(str(did)).suffix in (".pdb", ".cif", ".ent", ".cif.gz", ".pdb.gz")
+        if direct.exists() and has_suffix:
             pdb_path = str(direct)
         else:
             link_path = dom_cache_dir / f"{did}.pdb"
@@ -413,6 +447,39 @@ def main():
             # CE 有效性掩码：排除非标准残基（S==20 的 X）
             valid = (dom["S"] < 20).float()
             dom["ce_mask"] = dom["mask"] * dom["chain_mask"] * valid
+            # v10 B 表面添加电荷监督：逐域预计算 fractional SASA（freesasa，backbone 冻结
+            # → 结构静态 → SASA 每域只需算一次）。供 L_add 的"只加表面"权重。
+            # ⚠️ freesasa(Bio.PDB) 与 LigandMPNN parse_PDB 对残基判定可能不同（freesasa
+            # 可能多出 parse 跳过的残基，如链端异常残基 136-138）。**正确对齐 = resnum 交集**：
+            #   sasa 的 residues[] 与 dom 的 R_idx[] 做集合匹配，只取两边都有的残基号，
+            #   freesasa 多出的残基忽略，parse 独有的残基（若有）frac 补 0。
+            #   → 不再有"长度不匹配"，L_add 覆盖全部对齐残基（用 X/非标准位置 frac=0）。
+            if args.add_supervision:
+                try:
+                    from src.sasa import fractional_sasa
+                    sasa_info = fractional_sasa(pdb_path,
+                                                surface_threshold=args.sasa_threshold,
+                                                align_to_full=False)  # 只返回标准 AA 位置
+                    sasa_frac = sasa_info["frac_sasa"]     # [n_sasa]
+                    sasa_resids = sasa_info["residues"]    # [n_sasa] 残基号
+                    # dom["R_idx"] 形状 [1, L]（featurize 带 batch 维），展平到 [L]
+                    dom_resids = np.asarray(dom["R_idx"].cpu().numpy()).reshape(-1)
+                    # resnum 交集映射：sasa 残基号 → 索引
+                    sasa_map = {int(r): i for i, r in enumerate(sasa_resids)}
+                    aligned = np.zeros(L, dtype=np.float64)
+                    n_aligned = 0
+                    for pos in range(L):
+                        rid = int(dom_resids[pos])
+                        if rid in sasa_map:
+                            aligned[pos] = sasa_frac[sasa_map[rid]]
+                            n_aligned += 1
+                        # 不在 sasa（如 parse 独有/非标准）→ 保持 0（埋藏/不参与）
+                    dom["frac_sasa"] = aligned
+                    if n_aligned < L:
+                        logln(f"  ℹ️ {did} resnum 对齐 {n_aligned}/{L}（{L-n_aligned} 个非标准/parse独有残基 frac=0）")
+                except Exception as e:
+                    dom["frac_sasa"] = None
+                    logln(f"  ⚠️ {did} SASA 计算失败: {e}（跳过 L_add）")
             # 该域 8 个 (pH, charge) 条件（按已接受域数索引，跳过坏域不错位）
             idx0 = n_ok * n_pH
             dom["pH"] = pH_arr[idx0:idx0 + n_pH]
@@ -465,12 +532,24 @@ def main():
             mask_p = torch.zeros(B, dtype=torch.bool, device=device)
             if args.perturb_prob > 0:
                 mask_p = (torch.rand(B, device=device) < args.perturb_prob)
-                offset = torch.where(
-                    mask_p,
-                    torch.randint(1, int(scale_cur) + 1, (B,), device=device).float()
-                    * torch.where(torch.rand(B, device=device) < 0.5, 1.0, -1.0),
-                    torch.zeros(B, device=device),
-                )
+                # v10 A 条件解耦（--decouple_perturb）：扰动 target 与骨架 native **无关**——
+                # 直接采样 Uniform[-decouple_range, decouple_range] 的独立随机 target，
+                # 打破"碱性骨架只见正电 target / 中性骨架只见温和 target"的耦合，
+                # 让"中性骨架+高正电"等组合进入训练分布（v3 §3.1 A）。
+                # 关闭时（默认）沿用 v7/v9：native ± Uniform[1, scale]（幅度受课程控制）。
+                if args.decouple_perturb:
+                    offset = torch.where(
+                        mask_p,
+                        (torch.rand(B, device=device) * 2 - 1) * args.decouple_range,
+                        torch.zeros(B, device=device),
+                    )
+                else:
+                    offset = torch.where(
+                        mask_p,
+                        torch.randint(1, int(scale_cur) + 1, (B,), device=device).float()
+                        * torch.where(torch.rand(B, device=device) < 0.5, 1.0, -1.0),
+                        torch.zeros(B, device=device),
+                    )
                 charge_b = charge_b + offset
             # 占位符样本（目标 2：部分条件不控制）：从自洽样本中随机抽取，把电荷条件置为占位。
             # 第十七轮修正：统一用"均值占位"（has_charge=1 + 值=训练均值 −1.34），符合目标 2
@@ -535,7 +614,57 @@ def main():
                             logits[i:i+1], anchor, ce_mask[i:i+1])
             keep = keep.mean()
 
+            # ---- v10 B 表面添加电荷监督（--add_supervision）：对抗"只删不加" ----
+            # 只在扰动样本上施加（自洽 target=native 无"需要添加电荷"的需求）。
+            # 需要的电荷增量 = offset[i]（扰动相对 native 的偏移方向）：
+            #   需要更负（offset<0）→ 表面加 D/E；需要更正（offset>0）→ 表面加 K/R。
+            add = torch.zeros(B, device=device)
+            n_add = 0
+            if args.add_supervision and dom.get("frac_sasa") is not None:
+                for i in range(B):
+                    if mask_ph[i].item() or not mask_p[i].item():
+                        continue  # 只对扰动样本施加
+                    delta = float(offset[i].item())
+                    if abs(delta) < 1.0:
+                        continue  # 需求过小，不启用
+                    add[i] = surface_add_charge_loss(
+                        logits[i:i+1], dom["frac_sasa"],
+                        target_surface_charge_delta=delta,
+                        surface_threshold=args.sasa_threshold,
+                    )
+                    n_add += 1
+            add = add.mean() if n_add else torch.zeros((), device=device)
+
+            # ---- v10 C 结构惩罚增强（--ph_aware_filter）：动态压制电荷聚集 ----
+            # 用 P0-5 的 pH 自适应过滤器 bias（His/Cys/Tyr 按质子化态纳入）；
+            # 对"大额添加"的扰动样本放大惩罚（scale_boost），防电荷成簇。
+            struct_pen = torch.zeros((), device=device)
+            if args.ph_aware_filter:
+                from src.structure_aware_filter import StructureAwareFilter
+                coords = dom["X"][0, :, 1].cpu().numpy()  # [L,3] Cα
+                filt = StructureAwareFilter(coords)
+                seq_int_cur = dom["S"][0].long().cpu().numpy()
+                # 按样本方向决定是否加强（大额扰动 → 加强）
+                sp, sp_info = ph_aware_structure_penalty(
+                    logits, filt, seq_int_cur, pH=float(pH_b[0].item()),
+                    mask=ce_mask, scale_boost=1.0,
+                )
+                # 对扰动样本（尤其大额）动态加强
+                boost = args.structure_boost if mask_p.any().item() else 1.0
+                if boost > 1.0:
+                    sp2, _ = ph_aware_structure_penalty(
+                        logits, filt, seq_int_cur, pH=float(pH_b[0].item()),
+                        mask=ce_mask, scale_boost=boost,
+                    )
+                    struct_pen = sp2
+                else:
+                    struct_pen = sp
+
             total = ce + args.lambda_c * cd + args.lambda_kl * kl + args.lambda_keep * keep
+            if args.add_supervision:
+                total = total + args.lambda_add * add
+            if args.ph_aware_filter:
+                total = total + 0.05 * struct_pen
 
             optimizer.zero_grad()
             total.backward()
@@ -588,6 +717,14 @@ def main():
             "charge_temp": args.charge_temp,
             "curriculum": args.curriculum,
             "curriculum_scale_max": args.curriculum_scale_max,
+            # v10 三组件追溯字段（v3 §3.1）
+            "decouple_perturb": args.decouple_perturb,
+            "decouple_range": args.decouple_range,
+            "add_supervision": args.add_supervision,
+            "lambda_add": args.lambda_add,
+            "sasa_threshold": args.sasa_threshold,
+            "ph_aware_filter": args.ph_aware_filter,
+            "structure_boost": args.structure_boost,
         }, ckpt_path)
         # 保留最新一份 alias，方便推理时加载
         torch.save(enc.state_dict(), out_dir / "condition_encoder_last.pt")
