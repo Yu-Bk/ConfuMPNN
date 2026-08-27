@@ -580,7 +580,7 @@ def main():
             # NaN 定位（v10 踩坑，收集模式）：分别检查 h_V / logits，记录全部触发域并跳过
             # （不止一个 NaN 域；跳过该 step 继续，epoch 结束统一打印）
             dname = dom.get("domain_id", "?")
-            if not torch.isfinite(h_V):
+            if not torch.isfinite(h_V).all():
                 nan_domains.append({
                     "domain": dname, "step": "h_V",
                     "cond_b_nan": int(torch.isnan(cond_b).sum().item()),
@@ -589,7 +589,7 @@ def main():
                 })
                 continue  # 跳过本 step
             logits = decoder_forward(backbone, h_V, dom["h_E"], dom["E_idx"], dom, B, device)
-            if not torch.isfinite(logits):
+            if not torch.isfinite(logits).all():
                 nan_domains.append({
                     "domain": dname, "step": "logits",
                     "h_V_nan": int(torch.isnan(h_V).sum().item()),
@@ -691,7 +691,7 @@ def main():
                 total = total + 0.05 * struct_pen
 
             # NaN 诊断（v10 训练踩坑，收集模式）：记录 loss 分量 NaN 并跳过本 step
-            if not torch.isfinite(total):
+            if not torch.isfinite(total).all():
                 dname = dom.get("domain_id", "?")
                 def _s(t):
                     try: return f"{t.item():.4f}"
