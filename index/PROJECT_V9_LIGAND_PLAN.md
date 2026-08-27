@@ -1,7 +1,7 @@
 # v9 训练计划 — 在 LigandMPNN backbone 上微调条件编码器（五类配体数据）
 
 > 日期：2026-08-18
-> 状态：**计划定稿，待执行**（数据清洗/训练在计划后开始）
+> 状态：**计划定稿（当时）**，待执行（数据清洗/训练在计划后开始；v10 演进见 PROJECT_LOCAL.md）
 > 关联：`session/2026-08-18_v9_ligand_plan.md`（早期草稿，以本文件为准）
 > 背景链：迁移检验定位「LigandMPNN 配体模式电荷失效」（`analysis/report/2026-08-18_seq_sanity_and_transfer.md`）——根因 = 条件编码器只在 MoMPNN backbone 上训练，LigandMPNN 的 h_V 特征分布不匹配。v9 = 用配体复合物数据在 LigandMPNN backbone 上重训同一 `ConditionEncoder`。
 
@@ -142,4 +142,4 @@ PYTHONPATH=/data/nfs/IC/baokun_yu/ConfuMPNN/code \
 3. 数据量 ~9000 > MoMPNN 7886（用户要求"稍多"）。
 4. **不调 λ_keep**（用户明确）；训练超参沿用 v7 已验证配置。
 5. v9 编码器与 v7 并存：无配体用 v7，配体用 v9，`run_guided.py --cond_encoder` 可切换。
-6. **v9 定稿（2026-08-19 用户确认）**：泛化验证完成（10 未见蛋白 × 5 电荷臂 × n30，见 `analysis/report/2026-08-19_v9_generalization_validation.md`）——折叠泛化可靠（7 健康蛋白 35 臂 TM≥0.7）、温和区与极端正电+8 可靠、极端负电−8 弱（欠冲，40%）。**停止训练，不再规划新轮次**；使用按 `2026-08-18_model_charge_limits.md` §8 边界（配体模式：正电可用到 +8、负电保守到 −5、长序列 L≥470 需检查）。电荷控制根因 = 模型无差别减少带电残基总数（收敛低电荷密度），靠不对称删减（负电多删 K/R、正电多删 D/E）逼近 target。
+6. **v9 阶段节点（2026-08-19 暂停训练）**：泛化验证完成（10 未见蛋白 × 5 电荷臂 × n30，见 `analysis/report/2026-08-19_v9_generalization_validation.md`）——折叠泛化可靠（7 健康蛋白 35 臂 TM≥0.7）、温和区与极端正电+8 可靠、极端负电−8 弱（欠冲，40%）。**当时暂停训练（非终版）**，后续 v10 演进（A/B/C）见 `index/PROJECT_LOCAL.md`；使用按 `2026-08-18_model_charge_limits.md` §8 边界（配体模式：正电可用到 +8、负电保守到 −5、长序列 L≥470 需检查）。电荷控制根因 = 模型无差别减少带电残基总数（收敛低电荷密度），靠不对称删减（负电多删 K/R、正电多删 D/E）逼近 target。

@@ -1,6 +1,6 @@
 # ConfuMPNN 自训编码器权重（GitHub Release preview1.0.0）
 
-ConfuMPNN 微调训练的**最终交付权重**（被 `.gitignore` 排除，不在仓库内，通过 Release 分发）。
+ConfuMPNN 微调训练的**当前交付权重**（v10 演进中）（被 `.gitignore` 排除，不在仓库内，通过 Release 分发）。
 
 ## 附件
 

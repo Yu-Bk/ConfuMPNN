@@ -3,7 +3,7 @@
 给定一个蛋白的**骨架结构**（PDB）和一个**工作环境 pH**（可选目标净电荷），生成一段**在该 pH 下净电荷符合目标、能折叠回原骨架、且空间上电荷分布合理**的蛋白序列。
 
 > 核心创新：在结构逆折叠模型（LigandMPNN）上首次加入 **pH 感知的电荷条件控制**。
-> 当前进度：**v9 定稿（2026-08-19，停止训练）**——两个条件编码器（v7 MoMPNN / v9 LigandMPNN）为最终版本，使用边界见 [电荷限制指南](analysis/report/2026-08-18_model_charge_limits.md)。
+> 当前进度：**v7/v9 为阶段性成果（2026-08-19 暂停训练），v10 演进中（2026-08-27）**——两个条件编码器（v7 MoMPNN / v9 LigandMPNN）当前可用，v10 方案（A/B/C）见 [v3 论文导向方案](index/PROJECT_LOCAL.md)。当前版本使用边界见 [电荷限制指南](analysis/report/2026-08-18_model_charge_limits.md)。
 
 ---
 
@@ -27,7 +27,7 @@
 
 **我们的方法（主线：条件微调，模型 pH 感知）**：训练一个小型 **ConditionEncoder**（0.08M 参数），把 (pH, 目标净电荷) 编码成 soft prompt，通过 cross-attention 注入冻结的 backbone（MoMPNN 无配体 / LigandMPNN 配体模式），让模型**自身**学会按条件生成序列。备用的**引导采样路线**（不改模型，解码时注入电荷前瞻 logit bias）用于对照与快速原型。
 
-**两个最终编码器**：
+**两个当前可用编码器**（v10 演进中）：
 - **v7**（MoMPNN backbone，无配体/小蛋白）：负电可靠，正电弱
 - **v9**（LigandMPNN backbone，配体/大蛋白）：正电可靠，负电弱
 
@@ -240,5 +240,5 @@ MSTPQGRLYLFFSTCPELYYF...
 - `analysis/` — 实验报告（`report/`、`archieved/`、`accident/`、`ablation/`）
 - `index/` — 规划、文件管理规范、文档索引、判断标准
 - `data/` — 外部数据集（CATH/配体/验证集，git 不跟踪，见 `data/README.md`）
-- `output/` — 训练产物（v7/v9 最终编码器 + 验证结果，git 不跟踪）
+- `output/` — 训练产物（v7/v9 当前编码器 + 验证结果，git 不跟踪）
 - `LigandMPNN/`、`MoMPNN/` — 外部源码/权重（git 不跟踪）

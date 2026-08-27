@@ -9,6 +9,8 @@
 |------|------|------|---------|
 | 项目计划（第一版） | `index/PROJECT_PLAN.md` | 完整技术计划（文献调研 / 分阶段实施 / 风险表 / 决策记录 / 输出清单） | 2026-08-16 |
 | 项目拓展（第二版） | `index/PROJECT_EXTEND.md` | 多目标可开发性微调（可设计/热稳定/可溶）；MoMPNN 接入 → 自微调 → 集成回主线 | 2026-08-16 |
+| **论文导向方案（第三版）** | `index/PROJECT_LOCAL.md` | v3：以投稿为目标——已知问题 P1–P10 / 决策 D1–D12 / v10 方法（A 条件解耦+B 表面电荷监督+C 结构惩罚）/ 对照 C1–C8 / 消融 A1–A10 / 判据 H4 / 执行 P0–P5 | 2026-08-27 |
+| **P1 对照实验计划** | `index/PROJECT_LOCAL_P1_PLAN.md` | v3 §8 P1 细化：每个实验目的/对照谁/采样/数据量/图表 + "先冻结基线再对照"原则 + 后续阶段可复用模板 | 2026-08-27 |
 | 项目说明 | `CLAUDE.md`（项目根） | Claude Code 项目级说明：环境 / 常用命令 / 文件结构 / 下一步 | 2026-08-15 |
 | 文件管理规范 | `index/FILE_MANAGEMENT.md` | 文件分类存放的唯一规则 | 2026-08-15 |
 | 文档索引 | `index/DOCUMENT_INDEX.md` | 本文件 | 2026-08-15 |
@@ -82,12 +84,12 @@
 | n=20 四指标打分 | `code/tests/phase3_antidrift_n20_score.sh` | 递归扫描 16 臂的四指标打分管线 |
 | n=20 配对统计 | `code/tests/phase3_antidrift_n20_stats.py` | 配对 t+Wilcoxon+BH-FDR；按判断标准输出 H1/H2/S1 判定 |
 
-## 目录填充状态（v9 定稿）
+## 目录填充状态（v9 节点，v10 演进中）
 
 | 目录 | 用途 | 当前内容 | 状态 |
 |------|------|---------|------|
 | `code/` | 实验模块代码 | `src/`（9 模块）+ `configs/`（2 yaml）+ `tests/`（40+ 脚本，含 `ligand_v9/` 子目录）+ `input/`（示例 PDB）+ `run_guided.py` + `train_finetune.py` | ✅ 完整（v7/v9 双线）|
-| `output/` | 训练产物 | **最终权重** `finetune_v7/`、`finetune_ligand_v9/`；验证结果 `generalization_v9/`、`transfer_v9/` 等；⚠️ 早期 `code/output/finetune_vN`（v2–v6）为**过时 checkpoint**，保留但勿用 | ✅ 定稿 |
+| `output/` | 训练产物 | **当前权重** `finetune_v7/`、`finetune_ligand_v9/`（v10 演进中）；验证结果 `generalization_v9/`、`transfer_v9/` 等；⚠️ 早期 `code/output/finetune_vN`（v2–v6）为**过时 checkpoint**，保留但勿用 | ✅ 完整 |
 | `analysis/` | 实验结果分析 | `report/` 23 份报告（E1→v9 泛化验证完整链）+ `archieved/`（归档规则）+ `ablation/` | ✅ 完整 |
 | `docs/` | 文档 | TECH / CONFIG / USAGE + **SETUP_NEW_MACHINE**（新机配置）| ✅ 同步 v9 |
 | `data/` | 外部数据集 | CATH（v7 训练）+ ligand_train（v9 训练）+ validation_pdbs/ligand_test/transfer_test（验证集）+ `README.md` + `SHA256SUMS.txt` | ✅ 划分明确，待 NAS 备份 |
@@ -105,5 +107,5 @@
 | **v9 训练报告**（LigandMPNN 配体模式修复成功）| `analysis/report/2026-08-18_v9_ligand_training.md` | **配体模式电荷控制全部恢复**：1MBN dev 14.05→1.55、4DFR 1.45、1FQG 1.07（全部 ≤2.0 达标）；数据 4972 配体复合物×8pH；30 epoch 111.5min；与 v7 分工（无配体/小蛋白用 v7，配体/大蛋白用 v9）| 2026-08-18 |
 | **v9 泛化验证计划** | `index/PROJECT_V9_GENERALIZATION_PLAN.md` | **10 未见蛋白 × 5 电荷臂（native/±2/±8）× n30 全面泛化验证**：5 类配体（小分子/RNA/DNA/金属/长序列）覆盖、配体上下文消融（ligand vs protein）、ESMFold+TM 折叠；脚本 `code/tests/ligand_v9/{pick_validation_pdbs,validate_generalization}.py`；数据 `data/validation_pdbs/` | 2026-08-19 |
 | **v9 泛化验证报告** | `analysis/report/2026-08-19_v9_generalization_validation.md` | **H1 折叠泛化可靠（7 健康蛋白 35 臂 TM≥0.70、失败率 0%）；电荷温和区 87%、极端正电+8 100%、极端负电−8 仅 40%（欠冲，v9 反转 v7 正负电不对称）；配体上下文无系统增益、L504 大蛋白上有害（dev 5.24→0.54）；长序列/血红素蛋白失败模式**；汇总 `output/generalization_v9_stats.json` | 2026-08-19 |
-| **v9 定稿决策（停止训练）** | `index/PROJECT_V9_LIGAND_PLAN.md` §八.6 | **用户确认停止训练（2026-08-19）**：v7 + v9 编码器为最终版本；使用边界 `2026-08-18_model_charge_limits.md` §8（v9 配体模式：正电到 +8、负电保守到 −5、长序列需检查）；电荷根因 = 无差别删带电残基 | 2026-08-19 |
-| **最终交付权重** | `output/finetune_v7/condition_encoder_last.pt`、`output/finetune_ligand_v9/finetune_epoch030.pt` | v7（MoMPNN 无配体）+ v9（LigandMPNN 配体）双编码器；**不在 git**（.gitignore），经 GitHub Release preview1.0.0 分发（`weights_release/`） | 2026-08-19 |
+| **v9 暂停训练（阶段节点）** | `index/PROJECT_V9_LIGAND_PLAN.md` §八.6 | **用户确认暂停训练（2026-08-19，非终版）**：v7 + v9 编码器为阶段性成果，**v10 演进中**（`index/PROJECT_LOCAL.md`）；当前版本使用边界 `2026-08-18_model_charge_limits.md` §8（v9 配体模式：正电到 +8、负电保守到 −5、长序列需检查）；电荷根因 = 无差别删带电残基 | 2026-08-19 |
+| **当前交付权重（v10 演进中）** | `output/finetune_v7/condition_encoder_last.pt`、`output/finetune_ligand_v9/finetune_epoch030.pt` | v7（MoMPNN 无配体）+ v9（LigandMPNN 配体）双编码器；**不在 git**（.gitignore），经 GitHub Release preview1.0.0 分发（`weights_release/`） | 2026-08-19 |

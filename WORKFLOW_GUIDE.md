@@ -1,6 +1,6 @@
 # ConfuMPNN 完整使用指南（从零理解 pH 感知的蛋白序列生成）
 
-> 版本：v9 定稿版（2026-08-19）　适用对象：**计算机新人**（也适合生物背景读者）
+> 版本：v9 版（2026-08-19，v10 演进中）　适用对象：**计算机新人**（也适合生物背景读者）
 > 定位：本指南是**全项目唯一权威入口**——讲清楚「整个框架长什么样、数据怎么流动、每个参数/函数/损失是什么、**为什么**要用它们」。
 > 配套文档：新机配置 → `docs/SETUP_NEW_MACHINE.md`；数据组织 → `data/README.md`；判断标准 → `index/DESIGN_CRITERIA.md`；电荷边界 → `analysis/report/2026-08-18_model_charge_limits.md`。
 
@@ -198,7 +198,7 @@ labels.npz  = { domain_ids, seqs, coords, pH[8], charge[8], pI[8] }
 train_finetune.py ──> 冻结 backbone  +  训练 ConditionEncoder
    │
    ▼
-condition_encoder_last.pt（v7）/ finetune_epoch030.pt（v9）── 最终交付权重
+condition_encoder_last.pt（v7）/ finetune_epoch030.pt（v9）── 当前交付权重（v10 演进中）
 
 【推理侧】
 用户 PDB（骨架 ± 配体）
@@ -693,10 +693,10 @@ python code/tests/tm_score.py <ref.pdb> <pred.pdb>
 
 ## 9. 项目当前状态与迭代史
 
-### 9.1 定稿状态（2026-08-19 用户确认停止训练）
+### 9.1 阶段状态（2026-08-19 暂停训练；2026-08-27 进入 v10 演进）
 
-- **最终交付**：v7 编码器（MoMPNN）+ v9 编码器（LigandMPNN），双编码器按场景分工。
-- **验证完成**：v9 泛化验证（10 未见蛋白 × 5 电荷臂 × n30 × ligand/protein 双模式）→ `analysis/report/2026-08-19_v9_generalization_validation.md`。
+- **当前可用**：v7 编码器（MoMPNN）+ v9 编码器（LigandMPNN），双编码器按场景分工。**这是阶段性成果，不是终版**——已知问题（删减捷径/电荷斑块丢失/极端边界）见 v3 方案 `index/PROJECT_LOCAL.md`，v10（A 条件解耦 + B 表面电荷监督 + C 结构惩罚）正在设计。
+- **验证完成（v9 节点）**：v9 泛化验证（10 未见蛋白 × 5 电荷臂 × n30 × ligand/protein 双模式）→ `analysis/report/2026-08-19_v9_generalization_validation.md`。
 - **使用边界**：§8。
 
 ### 9.2 迭代史时间线（浓缩）
@@ -709,7 +709,8 @@ Phase 3    条件注入验证 → 发现过冲 → 校准 → 训练侧温度化
 v2-v6      数据迭代（999域 → 分层 → 三类平衡 7,208 域）
 v7         外部碱性数据 + 课程学习（H2 20/25，极端正电根治）
 v9         配体模式重训（LigandMPNN backbone，电荷控制恢复）
-定稿       泛化验证完成 → 停止训练
+v9 暂停    泛化验证完成 → 阶段节点（2026-08-19）
+v10        演进中（A 条件解耦 + B 表面电荷监督 + C 结构惩罚，见 PROJECT_LOCAL）
 ```
 
 **关键迭代教训**（详见 WORKFLOW_GUIDE 早期版 §7 / 各报告）：
@@ -781,4 +782,4 @@ v9         配体模式重训（LigandMPNN backbone，电荷控制恢复）
 
 ---
 
-*本文档为 ConfuMPNN 项目唯一权威使用指南，随项目状态持续更新。最后更新：2026-08-19（v9 定稿）。*
+*本文档为 ConfuMPNN 项目唯一权威使用指南，随项目状态持续更新。最后更新：2026-08-27（v10 演进中）。*

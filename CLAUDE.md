@@ -3,9 +3,9 @@
 ## 项目概述
 将蛋白质在特定 pH 环境下的理化性质（净电荷、局部电荷分布）作为条件约束，整合到基于结构的蛋白序列生成流程（LigandMPNN 逆折叠）中。核心创新：**在显式建模配体原子上下文的结构条件逆折叠模型上，首次加入 pH 感知的电荷条件控制**。
 
-**当前状态（v9 定稿，2026-08-19 用户确认停止训练）**：
-- 两个最终条件编码器：**v7**（MoMPNN backbone，无配体/小蛋白）+ **v9**（LigandMPNN backbone，配体/大蛋白）
-- 使用边界：`analysis/report/2026-08-18_model_charge_limits.md` §8（v9 配体模式：正电到 +8、负电保守到 −5、长序列需检查）
+**当前状态（2026-08-27）**：
+- **模型为迭代演进中**：v7（MoMPNN backbone，无配体/小蛋白）+ v9（LigandMPNN backbone，配体/大蛋白）是**阶段性成果**（2026-08-19 曾暂停训练），**不是终版**——v10（A 条件解耦 + B 表面电荷监督 + C 结构惩罚）正在设计中，见 `index/PROJECT_LOCAL.md`（v3 论文导向方案）与 `index/PROJECT_LOCAL_P1_PLAN.md`（P1 对照计划）
+- v7/v9 使用边界（当前可用版本）：`analysis/report/2026-08-18_model_charge_limits.md` §8（v9 配体模式：正电到 +8、负电保守到 −5、长序列需检查）
 - 权威指南：`WORKFLOW_GUIDE.md`（框架/数据流/参数/损失/为什么）；新机配置 `docs/SETUP_NEW_MACHINE.md`；数据组织 `data/README.md`
 
 ## 运行环境（conda，位于 ~/miniconda3/envs/）
