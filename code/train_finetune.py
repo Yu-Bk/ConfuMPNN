@@ -488,6 +488,7 @@ def main():
             idx0 = n_ok * n_pH
             dom["pH"] = pH_arr[idx0:idx0 + n_pH]
             dom["charge_label"] = charge_arr[idx0:idx0 + n_pH]
+            dom["domain_id"] = str(did)   # 供训练循环 NaN 定位
             domains.append(dom)
             n_ok += 1
         except Exception as e:
@@ -524,6 +525,8 @@ def main():
             scale_cur = args.perturb_scale
         random.shuffle(domain_idx)
         epoch_loss, epoch_ce, epoch_cd, epoch_kl, epoch_keep = [], [], [], [], []
+        # NaN 收集（v10 踩坑）：记录所有触发 NaN 的域（h_V/logits/loss 三处），跳过继续
+        nan_domains = []
         # charge loss 分拆监控（v7 归因）：self=自洽/占位, mild=温和扰动, extreme=极端扰动(|offset|≥5)
         grp_cd = {"self": [], "mild": [], "extreme": []}
         for di in domain_idx:
@@ -574,7 +577,24 @@ def main():
             prompt = enc(cond_b)                 # [8, 4, 128]
             h_V = dom["h_V"].repeat(B, 1, 1)
             h_V = inject_prompt(h_V, prompt)
+            # NaN 定位（v10 踩坑，收集模式）：分别检查 h_V / logits，记录全部触发域并跳过
+            # （不止一个 NaN 域；跳过该 step 继续，epoch 结束统一打印）
+            dname = dom.get("domain_id", "?")
+            if not torch.isfinite(h_V):
+                nan_domains.append({
+                    "domain": dname, "step": "h_V",
+                    "cond_b_nan": int(torch.isnan(cond_b).sum().item()),
+                    "prompt_nan": int(torch.isnan(prompt).sum().item()),
+                    "hV_before_nan": int(torch.isnan(dom["h_V"]).sum().item()),
+                })
+                continue  # 跳过本 step
             logits = decoder_forward(backbone, h_V, dom["h_E"], dom["E_idx"], dom, B, device)
+            if not torch.isfinite(logits):
+                nan_domains.append({
+                    "domain": dname, "step": "logits",
+                    "h_V_nan": int(torch.isnan(h_V).sum().item()),
+                })
+                continue  # 跳过本 step
 
             S_true = dom["S"].long().repeat(B, 1)
             ce_mask = dom["ce_mask"].repeat(B, 1)
@@ -670,6 +690,28 @@ def main():
             if args.ph_aware_filter:
                 total = total + 0.05 * struct_pen
 
+            # NaN 诊断（v10 训练踩坑，收集模式）：记录 loss 分量 NaN 并跳过本 step
+            if not torch.isfinite(total):
+                dname = dom.get("domain_id", "?")
+                def _s(t):
+                    try: return f"{t.item():.4f}"
+                    except Exception: return "?"
+                def _nans(x):
+                    try:
+                        t = torch.as_tensor(x, dtype=torch.float32)
+                        return int(torch.isnan(t).sum().item())
+                    except Exception: return -1
+                off0 = offset[0].item() if 'offset' in dir() else None
+                ph0 = pH_b[0].item() if 'pH_b' in dir() else None
+                nan_domains.append({
+                    "domain": dname, "step": "loss",
+                    "ce": _s(ce), "charge": _s(cd), "kl": _s(kl),
+                    "keep": _s(keep), "add": _s(add), "struct": _s(struct_pen),
+                    "frac_nan": _nans(dom.get('frac_sasa')),
+                    "offset0": off0, "pH0": ph0,
+                })
+                continue  # 跳过本 step（不 backward）
+
             optimizer.zero_grad()
             total.backward()
             torch.nn.utils.clip_grad_norm_(enc.parameters(), 1.0)
@@ -690,6 +732,18 @@ def main():
             msg += f"  [cd {grp_str}]"
         msg += f"  elapsed={((time.time()-t_start)/60):.1f}min"
         logln(msg)
+        # 收集模式：打印所有 NaN 触发域（v10 踩坑）
+        if nan_domains:
+            logln(f"🚨 本 epoch NaN 域数: {len(nan_domains)}（已跳过，不更新权重）")
+            for nd in nan_domains[:20]:
+                logln(f"    NaN {nd}")
+            if len(nan_domains) > 20:
+                logln(f"    ... 共 {len(nan_domains)} 个")
+            # 写入进度文件便于分析
+            prog_nan = prog.copy()
+            prog_nan["nan_domains"] = nan_domains
+            with open(args.log_progress, "w") as f:
+                json.dump(prog_nan, f, indent=2)
         prog = {
             "epoch": epoch, "total_epochs": args.epochs,
             "loss": avg(epoch_loss), "ce": avg(epoch_ce),
