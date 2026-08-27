@@ -23,34 +23,77 @@ cd "$ROOT"
 log() { echo "[$(date '+%H:%M:%S')] $1"; }
 
 # ================= 阶段 1：等待 MoMPNN 训练完成 =================
-log "阶段1: 等待 MoMPNN 训练完成（PID 存在则轮询）..."
-while pgrep -f "train_finetune.py.*finetune_v10_mompnn" >/dev/null 2>&1; do
+# ⚠️ 教训（2026-08-27）：不能用「进程消失」判断完成——MoMPNN 曾因 dangling symlink
+# 崩溃（FileExistsError）导致进程消失被误判"完成"，管线重复启动了 LigandMPNN。
+# 正确判据 = **产物 checkpoint 存在**。若进程消失但无 checkpoint → 视为崩溃，稍后重跑。
+log "阶段1: 等待 MoMPNN 训练完成（checkpoint 存在则视为完成）..."
+MOMPNN_CKPT="output/finetune_v10_mompnn/finetune_epoch030.pt"
+while [ ! -f "$MOMPNN_CKPT" ] && pgrep -f "train_finetune.py.*finetune_v10_mompnn" >/dev/null 2>&1; do
     sleep 120
 done
-log "阶段1完成: MoMPNN 训练进程已结束"
+if [ -f "$MOMPNN_CKPT" ]; then
+    log "阶段1完成: MoMPNN checkpoint 存在"
+else
+    log "阶段1注意: MoMPNN 进程消失但无 checkpoint（可能崩溃，阶段3.5 将重跑）"
+fi
 
 # ================= 阶段 2：启动 LigandMPNN 训练 =================
-log "阶段2: 启动 LigandMPNN 训练（GPU3，30 epoch，v10 三组件）..."
-nohup setsid "$PYBIN" code/train_finetune.py \
-    --device cuda:3 --epochs 30 --ligand \
-    --weights LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt \
-    --labels data/ligand_train/labels.npz --dompdb data/ligand_train/all_pdb \
-    --lambda_c 0.5 --lambda_kl 0.05 --lambda_keep 0.5 \
-    --charge_temp 0.5 --perturb_prob 0.3 --placeholder_prob 0.15 \
-    --decouple_perturb --decouple_range 12.0 \
-    --add_supervision --lambda_add 0.3 --sasa_threshold 0.25 \
-    --ph_aware_filter --structure_boost 1.5 \
-    --out_dir output/finetune_v10_ligand \
-    --log_file log/v10_train_ligand.log --log_progress log/v10_train_ligand_prog.json \
-    > log/v10_train_ligand.stdout 2>&1 &
-log "阶段2: LigandMPNN 已后台启动"
+# ⚠️ 若 LigandMPNN 已在跑（可能由旧管线启动），不重复启动，直接等 checkpoint。
+LIG_CKPT="output/finetune_v10_ligand/finetune_epoch030.pt"
+if [ -f "$LIG_CKPT" ] || pgrep -f "train_finetune.py.*finetune_v10_ligand" >/dev/null 2>&1; then
+    log "阶段2: LigandMPNN 已在运行/已完成，跳过启动"
+else
+    log "阶段2: 启动 LigandMPNN 训练（GPU3，30 epoch，v10 三组件）..."
+    nohup setsid "$PYBIN" code/train_finetune.py \
+        --device cuda:3 --epochs 30 --ligand \
+        --weights LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt \
+        --labels data/ligand_train/labels.npz --dompdb data/ligand_train/all_pdb \
+        --lambda_c 0.5 --lambda_kl 0.05 --lambda_keep 0.5 \
+        --charge_temp 0.5 --perturb_prob 0.3 --placeholder_prob 0.15 \
+        --decouple_perturb --decouple_range 12.0 \
+        --add_supervision --lambda_add 0.3 --sasa_threshold 0.25 \
+        --ph_aware_filter --structure_boost 1.5 \
+        --out_dir output/finetune_v10_ligand \
+        --log_file log/v10_train_ligand.log --log_progress log/v10_train_ligand_prog.json \
+        > log/v10_train_ligand.stdout 2>&1 &
+    log "阶段2: LigandMPNN 已后台启动"
+fi
 
-# ================= 阶段 3：等待 LigandMPNN 完成 =================
+# ================= 阶段 3：等待 LigandMPNN 完成（checkpoint 判据）=================
 log "阶段3: 等待 LigandMPNN 训练完成..."
-while pgrep -f "train_finetune.py.*finetune_v10_ligand" >/dev/null 2>&1; do
+while [ ! -f "$LIG_CKPT" ] && pgrep -f "train_finetune.py.*finetune_v10_ligand" >/dev/null 2>&1; do
     sleep 120
 done
-log "阶段3完成: LigandMPNN 训练进程已结束"
+if [ -f "$LIG_CKPT" ]; then
+    log "阶段3完成: LigandMPNN checkpoint 存在"
+else
+    log "阶段3注意: LigandMPNN 进程消失但无 checkpoint（崩溃），阶段3.5 将重跑"
+fi
+
+# ================= 阶段 3.5：检查/重跑 MoMPNN（若因 dangling symlink 等中途崩溃）=================
+# MoMPNN 训练曾因 dompdb_pdb 的 dangling symlink 崩溃（FileExistsError，2026-08-27 修复）。
+# 若 checkpoint 不存在 → 重跑 MoMPNN（GPU3 现已空闲，因为 LigandMPNN 已完成）。
+log "阶段3.5: 检查 MoMPNN 编码器是否存在..."
+MOMPNN_CKPT="output/finetune_v10_mompnn/finetune_epoch030.pt"
+if [ ! -f "$MOMPNN_CKPT" ]; then
+    log "阶段3.5: MoMPNN checkpoint 缺失（可能上次崩溃），重跑训练..."
+    "$PYBIN" code/train_finetune.py \
+        --device cuda:3 --epochs 30 \
+        --weights MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt \
+        --labels data/cath/labels_balanced_v7.npz --dompdb data/cath/S40/dompdb \
+        --curriculum --perturb_scale 2.0 --curriculum_scale_max 8.0 \
+        --lambda_c 0.5 --lambda_kl 0.05 --lambda_keep 0.5 \
+        --charge_temp 0.5 --perturb_prob 0.3 --placeholder_prob 0.15 \
+        --decouple_perturb --decouple_range 12.0 \
+        --add_supervision --lambda_add 0.3 --sasa_threshold 0.25 \
+        --ph_aware_filter --structure_boost 1.5 \
+        --out_dir output/finetune_v10_mompnn \
+        --log_file log/v10_train_mompnn.log --log_progress log/v10_train_mompnn_prog.json \
+        >> log/v10_pipeline.stdout 2>&1
+    log "阶段3.5: MoMPNN 重跑完成"
+else
+    log "阶段3.5: MoMPNN checkpoint 存在，跳过重跑"
+fi
 
 # ================= 阶段 4：双编码器泛化验证 =================
 log "阶段4: 泛化验证（MoMPNN 编码器，protein 模式）..."

@@ -411,14 +411,18 @@ def main():
         # 会把无后缀当 mmCIF 解析失败。因此只有「带后缀」才直用，否则走 .pdb symlink。
         direct = Path(args.dompdb) / str(did)
         has_suffix = Path(str(did)).suffix in (".pdb", ".cif", ".ent", ".cif.gz", ".pdb.gz")
-        if direct.exists() and has_suffix:
-            pdb_path = str(direct)
-        else:
-            link_path = dom_cache_dir / f"{did}.pdb"
-            if not link_path.exists():
-                os.symlink(os.path.join(abs_dompdb, str(did)), link_path)
-            pdb_path = str(link_path)
+        # ⚠️ 无后缀的 CATH 域走 .pdb symlink；symlink 创建放在 try 内，
+        #    目标文件缺失的域（dangling link）会被当作坏域跳过，不崩溃。
         try:
+            if direct.exists() and has_suffix:
+                pdb_path = str(direct)
+            else:
+                link_path = dom_cache_dir / f"{did}.pdb"
+                # lexists 检查 symlink 本身存在（避免 dangling link 上 Path.exists()=False
+                # 导致 os.symlink 报 FileExistsError）；目标是绝对路径，与 cwd 无关。
+                if not os.path.lexists(link_path):
+                    os.symlink(os.path.join(abs_dompdb, str(did)), link_path)
+                pdb_path = str(link_path)
             protein_dict, *_ = parse_PDB(pdb_path, device="cpu", parse_all_atoms=False)
             L = protein_dict["X"].shape[0]
             # 单链 CATH 域：全部残基设计 → chain_mask = 全 1
