@@ -2,7 +2,7 @@
 
 > **版本**：v3（代号 `PROJECT_LOCAL`）｜**日期**：2026-08-26 定稿，2026-08-27 落盘｜**状态**：计划（未执行）
 > **前两版**：`index/PROJECT_PLAN.md`（v1：pH/电荷条件生成主线）、`index/PROJECT_EXTEND.md`（v2：多目标可开发性微调 / MoMPNN 接入）
-> **定位**：以**投稿论文**为目标，在 v7/v9 双编码器**阶段性成果**（2026-08-19 暂停训练，非终版）基础上：解决已知问题、补齐对照、定义消融与统计口径、规划论文章节与图表。v10 为下一步模型演进（§3）。
+> **定位**：以**投稿论文**为目标，在 v7/v9 双编码器定稿（2026-08-19）基础上：解决已知问题、补齐对照、定义消融与统计口径、规划论文章节与图表。
 > **依据**：v9 泛化验证（`analysis/report/2026-08-19_v9_generalization_validation.md`）、电荷边界与根因分析（`2026-08-18_model_charge_limits.md`）、`WORKFLOW_GUIDE.md`、与用户 2026-08-25/26 两轮技术讨论。
 > **配套会话记录**：`session/2026-08-26_project_local_plan.md`（思考过程、对话与决策的完整记录）。
 
@@ -103,6 +103,7 @@ w_i 额外乘以 mask_core：若位置落在埋藏残基 8Å 内 → 0（决策 
 - **新判据 H4（物理真实性）**：`|Q_phys 均值 − target| ≤ 2.0` 的臂达标率（阈值与 H2 一致，待定稿）；在论文中明确"设计是组成层面电荷，非微环境精确 pKa 设计"的边界
 - 工具接入：`propka`/`pypka` 安装进 `confumpnn` 或独立 env；脚本 `code/tests/propka_charge_check.py`
 - 预期风险：部分臂物理口径下"失败"→ 这正是 limitation/边界证据，不掩盖
+- （可选 oracle）**CamSol-pH**（Brief. Bioinform. 2023）：pH 依赖可溶性预测器，与 Protein-Sol 互补；可加入验证管线作"pH 环境下的可溶性复核"（见 §11.2 查新定位）
 
 ### 3.4 AF2 交叉回折（P6）
 
@@ -252,9 +253,102 @@ w_i 额外乘以 mask_core：若位置落在埋藏残基 8Å 内 → 0（决策 
 
 ---
 
-## 11. 遗留问题（待用户确认）
+## 11. 同行查新（2026-08-28）：附近工作与区分
 
-1. **投稿目标**：计算/AI 向（会议或 ML 子刊）vs 生物计算方法向（Nat Commun / JACS / Protein Science / Structure 等）——决定 C7、湿实验优先级与写法
+> 执行：`nature-academic-search` 技能；MCP 学术源未挂载 → 按技能 fallback 走 **OpenAlex**（覆盖 CrossRef / PubMed / arXiv / bioRxiv）；3 轮 30 组关键词，命中 400+、去重后筛读约 280 篇；范围 2021-2026。
+> 会话记录：`session/2026-08-28_novelty_audit.md`。
+
+### 11.1 结论
+
+- **未发现直接冲突**：`pH-conditioned protein generation`、`charge-conditioned sequence diffusion protein` 等精确组合均 0 命中；无任何工作以"**连续 pH/净电荷为显式条件 + 结构逆折叠（LigandMPNN/ProteinMPNN 系）+ 可微 HH 电荷目标**"做序列生成。
+- 核心组合在本检索范围内**未被占据**；同时全文核实 **DynamicMPNN = 多构象条件**（22 页正文 0 处 charge/pH/electrostatics，已读全文）。
+- **局限提醒**：OpenAlex 对极新 2026 预印本可能滞后，不含 Google Scholar / 中文库；仍需补 arXiv/bioRxiv 页面级检索与最近邻全文精读（见 §11.4）。
+
+### 11.2 最近邻必须区分（论文 Related Work 区分表）
+
+| 最近邻 | 年份/出处 | 它做什么 | 与你的本质不同 |
+|---|---|---|---|
+| **SurfPro** | 2024, arXiv 2405.06693 | 给定目标表面 + 表面生化性质条件化生成序列（层级表面编码器 + 自回归解码） | 条件是"表面几何/生化性质场"（非 pH/净电荷标量）；非 LigandMPNN 微调；无 HH 电荷目标 |
+| **SurfDesign / SurfFold / BC-Design** | 2025-2026 | 表面/生化感知逆折叠（表面法向、曲率、生化特征并入模型提精度） | 把表面生化特征当**输入特征**提精度，非"按 pH/电荷条件生成"；**需精读 BC-Design，确认其 biochemistry-aware 是否含电荷特征** |
+| **Controllable protein design with LMs** | 2022, Nat. Mach. Intell. | 属性标签控制蛋白语言模型 | 序列空间 + 离散标签；无结构、无连续 pH/电荷 |
+| **Regression Transformer** | 2023, Nat. Mach. Intell. | 连续性质回归作为条件序列生成（分子/蛋白 LM） | 序列空间连续性质条件化范式；不基于结构逆折叠 |
+| **Integrative multiobjective (NSGA-II)** | 2024, PLoS Comput. Biol. | 演化多目标优化整合多个目标做序列设计 | 优化/筛选框架，非模型内条件编码器；无 pH/电荷特化 |
+| **LaMBO-2 / Guided Discrete Diffusion** | 2023, arXiv 2305.20009 | 离散扩散 + 性质引导 | 纯序列扩散 + guidance（已列为 baseline，C 组） |
+| **Electrostatics as a Guiding Principle（酶设计）** | 2024, JCTC | 静电计算引导酶设计（物理/能量法） | 物理计算引导，非学习型条件；作"静电引导"先例引用 |
+| **pH-responsive filaments / antibody nanoparticles** | 2024, Nat. Nanotechnol. / NSMB | 设计**对 pH 响应**的组装/解离结构（埋藏 His 触发） | 任务是"pH 触发结构转变"（开关/传感器）；**不是**"固定工作 pH 下的电荷/组成控制"——审稿人最易混淆项，需专门区分段 |
+| **CamSol pH-dependent solubility** | 2023, Brief. Bioinform. | pH 依赖可溶性的**预测器** | 非生成器；建议作为验证 oracle（已入 §3.3 可选） |
+| **ABACUS-T / MapDiff / DynamicMPNN** | 2024-2026 | 多模态条件逆折叠（原子+多状态+进化）/ mask 先验扩散 / 多构象 | 条件分别是原子上下文/结构置信度/构象集合——均无理化标量条件 |
+
+### 11.3 对方案与论文定位的影响
+
+1. "首个 pH/电荷条件化逆折叠"**可主张，但必须加限定词**：*首个在配体感知结构逆折叠上，以连续 pH + 净电荷为显式条件、并用可微 HH 电荷目标训练的方法*——这样 SurfPro/SurfDesign（表面场条件）、RT/可控 LM（序列空间）、NSGA-II（优化框架）都无法一句话击穿。
+2. **护城河 = 机制发现（删减捷径→电荷斑块丢失→表面疏水化）+ v10 表面可控制电荷设计**——检索未发现同类机制研究，其与所有条件生成论文均不重叠，是最抗打的贡献。
+3. 审稿人最可能引用的混淆项 = **pH-responsive filaments / antibody nanoparticles**（2024 顶刊，高影响力）：Related Work 需专门一段讲清"pH 触发结构开关 vs 固定工作 pH 的电荷/组成控制"。
+
+### 11.4 新增行动项
+
+- [ ] 精读 **SurfPro / SurfDesign / BC-Design** 全文（重点：BC-Design 是否含电荷/静电输入特征），结论写入 `literature/`
+- [ ] 补 arXiv/bioRxiv **页面级**关键词检索（OpenAlex 对 2026 预印本可能滞后），覆盖 `charge-conditioned / pH-conditioned inverse folding` 2025-2026
+- [ ] CamSol-pH 接入验证管线（可选 oracle，§3.3）
+- [ ] 按 §11.2 表格撰写论文 Related Work 段落
+
+---
+
+## 12. v10 泛化失败归因与 v11 修复计划（2026-08-28）
+
+> 关联提交：`d3d2ec3`（v10 泛化验证完成 + 发现电荷控制退化）、`9df9cf7`（NaN 复检 + stats 入版本）。
+> 交付脚本：`v10_repair/`（诊断脚本 v10_diag_response_curve.py、train_finetune v11 补丁、README）。
+> **⚠️ 2026-08-28 诊断已跑（17 蛋白响应曲线），结论修正如下**：
+> 外推假说**未坐实**——训练覆盖区内（native±12，n=17）slope 已 **1.59±0.57**；负区外 1.59±0.65，
+> 正区外 **1.10±0.34**（正target正常、负target超线性过冲）。真正的机制 = **负向响应增益失控**：
+> "删 K/R 捷径（P1 根因）"与 **B（L_add 表面加 D/E）同向双算 → 净效果≈2×Δ**；decouple 弱化 native
+> 锚 → 自洽 native 点也过冲（7pujA01 dev 12、1A65 dev 26）；深负外推只是放大器。已确认 MoMPNN
+> 训练为 **A+B+C 三组件全开**（log `log/v10_train_mompnn.log` + 管线脚本），验证报告 §5"只改
+> decouple"归因**不正确**。损坏并非全局（2d3yA00/1C6O 近乎完美）→ 修 B 有望直接修复。
+
+### 12.1 数据事实（130 臂全真实，来自 stats JSON）
+
+- **v10-MoMPNN 崩在负目标域**：每蛋白拟合 `生成 = a·target + b`，a∈[0.9,2.4]（1A65 2.09 / 1AXW 2.11 / 1BJ4 2.37），b 全部为负（−2.4~−5.7）；负域比值 1.9~2.3、n8 命中 **0/28**、neg 2..8 命中 1/12；正域基本正常（pos 2..8 命中 3/4）；折叠未受损（TM 正常甚至略升）。
+- **v10-Ligand 未崩**：native 4/10 vs v9 7/10、p2 8/10（改善）、n8 持平；GRAVY/recovery 与 v9 几乎一致（0.295/0.470 vs 0.281/0.475）。
+- **关键判别**：两个模型用完全相同的 A+B+C，结果天差地别 → 组件本身不是祸首，**训练数据对 target 值域的覆盖**才是分水岭。
+
+### 12.2 根因（按证据强度）
+
+1. **主因（目标外推）**：CATH（MoMPNN）域 native 多集中在 [−15,+15]，±12 相对扰动的 target 密度 ≥ −27 且中心在 −10~+10；验证集大蛋白 target 落在 **−19~−35** → 编码器输入（归一化后 ≤ −3σ）超出训练区间 → GELU-MLP 外推段斜率≈2 → "生成≈2×target + 负偏置"。Ligand 训练数据天然含大而负复合物 → 覆盖该靶区 → 不外推 → 不崩。
+2. **次因（B 计数语义叠加）**：L_add 目标 = "表面新增 |Δ| 个电荷"（计数），与电荷损失"净电荷=target"语义叠加，且模型既有"删减捷径"仍活跃 → 净效果≈2Δ（负向可删的 K/R 充裕；正向可删的 D/E 少 → 正向不放大）。
+3. **辅因（C 横批）**：boost=1.5 在约 94% 批次（批内任一样本扰动）对全批（含自洽样本）生效，且整批共用 pH_b[0]（潜在 bug）→ 轻微推负。
+4. **已排除**：推理期归一化错配（checkpoint 自带训练时 μ/σ，已核实 load_condition_encoder）；欠拟合（训练 charge 终点 2.05/2.82，训练域内实为 identity——是外推而非没学会）。
+
+> ⚠️ 待闭环：v10 泛化报告称"MoMPNN 唯一改动是 decouple"，与 `run_v10_pipeline.sh` 阶段 3.5 的三组件命令矛盾；**需从训练机 push `log/v10_train_mompnn.log` + `_prog.json` 定论 MoMPNN 实际开了哪些 flag**，否则归因不可信。
+
+### 12.3 v11 修复计划（三步，均带判据）
+
+**步骤 1（零成本，先于一切）：响应曲线诊断** — `v10_repair/v10_diag_response_curve.py`
+- 用现有 v10 checkpoint，在"训练域蛋白（CATH 8 个）"与"验证域蛋白（10 个）"上扫 target∈[−34,18]，输出每蛋白 slope/int/r²。
+- 判据：训练域 slope≈1 且验证域 slope≈1.8~2.4 → **外推坐实**，直接上 v11 重训；训练域也≈2 → 先只开 A-fix 再逐个加 B/C；都≈1 → 停止、复查（勿重训）。
+
+**✅ 步骤 1 已执行（2026-08-28）结果**：外推未坐实（区内 slope 1.59±0.57）；**改为 v11a B-OFF 消融优先**（见下）。
+
+**步骤 2：train_finetune v11 补丁**（`v10_repair/train_finetune_v11_patch.md`，三处搜索-替换）
+- **A-fix（主修复）**：新增 `--decouple_absolute`——绝对 target ∈ Uniform[−35, +20]，直接覆盖验证靶区，与 native 无关；保留 offset=target−native 语义供 B/分组监控。
+- **B-fix**：`--add_target_scale`（建议 0.5）+ `--lambda_add 0.1`（降权）——L_add 半量，避免与删减叠加双算。
+- **C-fix**：结构惩罚改**逐样本 boost + 逐样本 pH**（修横批自洽样本、共用 pH_b[0] 两个问题）。
+- 流程：语法检查 → 冒烟 50 域 → **按实验矩阵 v11a(B-OFF)→v11b(A-fix)→v11c(全fix)**（一次只动一个变量）。
+
+**步骤 3：闭环** — 用同一诊断脚本在 v11 checkpoint 上重跑（**验证域 slope 回到 ≈1、|b|<1**），再跑完整泛化验证 + 对照 C1/C3。若 slope 仍 >1.3 → **A7 三因子消融**（仅A / 仅B / A+B+C 各 30 epoch，一次只加一个组件——v10 的教训是三组件耦合无法归因）。
+
+**验证指标补强（P1 治疗证据，当前缺失）**：泛化验证必须新增 §6.4 的 H3 成簇违规率 +"生成 vs native 的带电残基总数 / GRAVY Δ / 表面带电占比 / 电荷斑块计数"——否则无法证明 B 修好了"只删不加"、C 防住了成簇。
+
+### 12.4 论文章节决策（并行准备）
+
+- **止血**：主方法回退 v7/v9（已验证可用），v10 作为"失败分析 + 消融证据"章节。
+- **若 v11 成功**：v11 作主方法；v10 失败仍作为机制/negative 发现写进 Discussion——"条件化逆折叠的电荷控制受训练 target 值域覆盖约束，目标区间外推会导致增益≠1 的系统标定失调（负域尤甚）"（配步骤 1 的响应曲线图），与 §10 原"机制发现"主线衔接。
+
+---
+
+## 13. 遗留问题（待用户确认）
+
+1. **投稿目标**：计算/AI 向（会议或 ML 子刊）vs 生物计算方法向（Nat Commun / JACS / Protein Science / Structure 等）——决定 C7、湿实验优先级与写法。**§11 查新已确认无直接冲突**，两类可任选；核心 claim 措辞建议按 §11.3.1 限定
 2. **v10 定位**：作为论文主方法（重训替换 v7/v9）vs 作为"改进型消融"（v7/v9 为主方法，v10 为机制/改进章节）
 3. **公开策略**：是否公开数据子集（~500 域）与新 Release；代码是否补 Docker
 4. **湿实验**：是否列入里程碑（D9 默认不列；若目标高影响刊，建议 2 条蛋白可选做）
@@ -274,4 +368,4 @@ w_i 额外乘以 mask_core：若位置落在埋藏残基 8Å 内 → 0（决策 
 
 ---
 
-*第三版方案，2026-08-26 讨论定稿，2026-08-27 落盘。配套会话记录见 `session/2026-08-26_project_local_plan.md`。与 v1/v2 共同构成 ConfuMPNN 整体规划。*
+*第三版方案，2026-08-26 讨论定稿，2026-08-27 落盘，2026-08-28 更新（同行查新 §11）。配套会话记录：`session/2026-08-26_project_local_plan.md`、`session/2026-08-28_novelty_audit.md`。与 v1/v2 共同构成 ConfuMPNN 整体规划。*
