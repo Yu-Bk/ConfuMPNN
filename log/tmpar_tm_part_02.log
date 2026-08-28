@@ -1,0 +1,41 @@
+/home/baokun_yu/miniconda3/envs/confumpnn-temberture/lib/python3.10/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/home/baokun_yu/miniconda3/envs/confumpnn-temberture/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+加载 replica1...
+加载 replica2...
+加载 replica3...
+分组模式：5 个目录
+  skip code/output/e1_ext/1BC8_mompnn/baseline（已存在）
+  skip code/output/e1_ext/1BC8_mompnn/pH4.0_t0（已存在）
+  skip code/output/e1_ext/1BC8_mompnn/pH4.0_t-5（已存在）
+  skip code/output/e1_ext/1BC8_mompnn/pH4.0_t5（已存在）
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.76s/it]100%|██████████| 1/1 [00:02<00:00,  2.76s/it]
+Predicted melting temperature: [53.46825408935547]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.20s/it]100%|██████████| 1/1 [00:01<00:00,  1.20s/it]
+Predicted melting temperature: [71.256591796875]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.07s/it]100%|██████████| 1/1 [00:01<00:00,  1.07s/it]
+Predicted melting temperature: [53.95528793334961]
+  sample_1 pH=7.4 charge=-0.98 pI=5.79       Tm=59.56  replicas=[53.5, 71.3, 54.0]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.08s/it]100%|██████████| 1/1 [00:01<00:00,  1.08s/it]
+Predicted melting temperature: [56.49381637573242]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.18s/it]100%|██████████| 1/1 [00:01<00:00,  1.18s/it]
+Predicted melting temperature: [74.33656311035156]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.27s/it]100%|██████████| 1/1 [00:01<00:00,  1.27s/it]
+Predicted melting temperature: [65.58958435058594]
+  sample_2 pH=7.4 charge=-0.02 pI=7.17       Tm=65.47  replicas=[56.5, 74.3, 65.6]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.13s/it]100%|██████████| 1/1 [00:01<00:00,  1.13s/it]
+Predicted melting temperature: [54.59328842163086]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.09s/it]100%|██████████| 1/1 [00:01<00:00,  1.09s/it]
+Predicted melting temperature: [71.80012512207031]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.22s/it]100%|██████████| 1/1 [00:01<00:00,  1.22s/it]
+Predicted melting temperature: [57.12364196777344]
+  sample_3 pH=7.4 charge=+0.98 pI=8.97       Tm=61.17  replicas=[54.6, 71.8, 57.1]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.02s/it]100%|██████████| 1/1 [00:01<00:00,  1.02s/it]
+Predicted melting temperature: [50.912879943847656]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.04it/s]100%|██████████| 1/1 [00:00<00:00,  1.04it/s]
+Predicted melting temperature: [53.062355041503906]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.31it/s]100%|██████████| 1/1 [00:00<00:00,  1.31it/s]
+Predicted melting temperature: [48.72527313232422]
+  native charge=+8.90 pI=10.22               Tm=50.90  replicas=[50.9, 53.1, 48.7]
+  [code/output/e1_ext/1BC8_mompnn/pH7.4_t0/seqs.fa] 已写 code/output/e1_ext/1BC8_mompnn/pH7.4_t0/seqs.fa.tm.csv

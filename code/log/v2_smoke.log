@@ -1,0 +1,36 @@
+[load] model=mompnn_temberture_tm_esm_6_4_4_b01.ckpt device=cuda:1
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+
+=== 1BC8 L=93 native@7.4=+8.90 t_nat=9 固定位点=['C1', 'C24', 'C47', 'C71'] ===
+  t1_cond   target=  9.0 mean=+10.00±2.98 dev=1.00 pairID=0.51 Hpos=0.49
+  t1_base   target=  9.0 mean=+15.52±2.46 dev=6.52 pairID=0.59 Hpos=0.41
+  t2_pos    target= 14.0 mean=+22.52±1.46 dev=8.52 pairID=0.55 Hpos=0.45
+  t2_neg    target=  4.0 mean= +7.48±0.50 dev=3.48 pairID=0.66 Hpos=0.34
+  t2_ph     target=   占位 mean=-12.50±1.50 dev=21.40 pairID=0.14 Hpos=0.86
+  → output/finetune_v2_validate/1BC8/charge_stats.json
+
+=== 1CRN L=46 native@7.4=-0.68 t_nat=-1 固定位点=['A7', 'A13', 'A25', 'A35'] ===
+  t1_cond   target= -1.0 mean= +0.82±1.50 dev=1.82 pairID=0.80 Hpos=0.20
+  t1_base   target= -1.0 mean= -0.18±0.50 dev=0.82 pairID=0.91 Hpos=0.09
+  t2_pos    target=  4.0 mean= +2.82±0.50 dev=1.18 pairID=0.85 Hpos=0.15
+  t2_neg    target= -6.0 mean= -3.68±1.00 dev=2.32 pairID=0.78 Hpos=0.22
+  t2_ph     target=   占位 mean= -8.00±1.00 dev=7.32 pairID=0.11 Hpos=0.89
+  → output/finetune_v2_validate/1CRN/charge_stats.json
+
+=== 1UBQ L=76 native@7.4=+0.03 t_nat=0 固定位点=['A1', 'A23', 'A43', 'A59'] ===
+  t1_cond   target=  0.0 mean= -1.01±2.00 dev=1.01 pairID=0.72 Hpos=0.28
+  t1_base   target=  0.0 mean= -1.51±1.50 dev=1.51 pairID=0.67 Hpos=0.33
+  t2_pos    target=  5.0 mean= +3.99±1.00 dev=1.01 pairID=0.67 Hpos=0.33
+  t2_neg    target= -5.0 mean= -5.01±1.00 dev=0.01 pairID=0.68 Hpos=0.32
+  t2_ph     target=   占位 mean=-16.99±1.00 dev=17.02 pairID=0.20 Hpos=0.80
+  → output/finetune_v2_validate/1UBQ/charge_stats.json
+
+=== 2LZM L=164 native@7.4=+7.80 t_nat=8 固定位点=['A1', 'A46', 'A84', 'A126'] ===
+  t1_cond   target=  8.0 mean=+13.53±0.51 dev=5.53 pairID=0.63 Hpos=0.37
+  t1_base   target=  8.0 mean=+10.51±0.52 dev=2.51 pairID=0.65 Hpos=0.35
+  t2_pos    target= 13.0 mean=+22.39±1.63 dev=9.39 pairID=0.62 Hpos=0.38
+  t2_neg    target=  3.0 mean= +3.01±0.98 dev=0.01 pairID=0.71 Hpos=0.29
+  t2_ph     target=   占位 mean=-16.99±5.00 dev=24.79 pairID=0.11 Hpos=0.89
+  → output/finetune_v2_validate/2LZM/charge_stats.json
+
+=== 采样完成 ===

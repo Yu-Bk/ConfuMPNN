@@ -1,0 +1,514 @@
+ESMFold 加载完成（cuda）
+批量模式：找到 84 个 seqs.fa
+[code/output/e1_ext/1BC8_ligand/baseline/seqs.fa] 共 6 条序列
+  sample_1 pH=7.4 charge=+8.02 p   L=  93  mean_pLDDT= 82.85
+  sample_2 pH=7.4 charge=+10.05    L=  93  mean_pLDDT= 82.29
+  sample_3 pH=7.4 charge=+8.02 p   L=  93  mean_pLDDT= 79.20
+  sample_4 pH=7.4 charge=+7.06 p   L=  93  mean_pLDDT= 82.18
+  sample_5 pH=7.4 charge=+10.06    L=  93  mean_pLDDT= 81.32
+  native charge=+8.90 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_ligand/baseline/plddt.csv
+[code/output/e1_ext/1BC8_ligand/pH4.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=-3.79 p   L=  93  mean_pLDDT= 82.52
+  sample_2 pH=4.0 charge=-3.01 p   L=  93  mean_pLDDT= 83.05
+  sample_3 pH=4.0 charge=-5.02 p   L=  93  mean_pLDDT= 82.56
+  native charge=+13.34 pI=10.22    L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_ligand/pH4.0_t-5/plddt.csv
+[code/output/e1_ext/1BC8_ligand/pH4.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=+1.21 p   L=  93  mean_pLDDT= 83.37
+  sample_2 pH=4.0 charge=-0.23 p   L=  93  mean_pLDDT= 79.25
+  sample_3 pH=4.0 charge=+0.21 p   L=  93  mean_pLDDT= 82.14
+  native charge=+13.34 pI=10.22    L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_ligand/pH4.0_t0/plddt.csv
+[code/output/e1_ext/1BC8_ligand/pH4.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=+4.10 p   L=  93  mean_pLDDT= 83.45
+  sample_2 pH=4.0 charge=+4.44 p   L=  93  mean_pLDDT= 82.79
+  sample_3 pH=4.0 charge=+4.33 p   L=  93  mean_pLDDT= 82.04
+  native charge=+13.34 pI=10.22    L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_ligand/pH4.0_t5/plddt.csv
+[code/output/e1_ext/1BC8_ligand/pH7.4_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=-3.86 p   L=  93  mean_pLDDT= 82.21
+  sample_2 pH=7.4 charge=-3.94 p   L=  93  mean_pLDDT= 82.30
+  sample_3 pH=7.4 charge=-5.97 p   L=  93  mean_pLDDT= 82.04
+  native charge=+8.90 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_ligand/pH7.4_t-5/plddt.csv
+[code/output/e1_ext/1BC8_ligand/pH7.4_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=+1.06 p   L=  93  mean_pLDDT= 83.25
+  sample_2 pH=7.4 charge=+1.06 p   L=  93  mean_pLDDT= 82.56
+  sample_3 pH=7.4 charge=+0.06 p   L=  93  mean_pLDDT= 82.10
+  native charge=+8.90 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_ligand/pH7.4_t0/plddt.csv
+[code/output/e1_ext/1BC8_ligand/pH7.4_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=+5.06 p   L=  93  mean_pLDDT= 81.25
+  sample_2 pH=7.4 charge=+6.10 p   L=  93  mean_pLDDT= 81.26
+  sample_3 pH=7.4 charge=+4.06 p   L=  93  mean_pLDDT= 79.70
+  native charge=+8.90 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_ligand/pH7.4_t5/plddt.csv
+[code/output/e1_ext/1BC8_ligand/pH9.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=-3.66 p   L=  93  mean_pLDDT= 82.62
+  sample_2 pH=9.0 charge=-4.49 p   L=  93  mean_pLDDT= 82.51
+  sample_3 pH=9.0 charge=-4.61 p   L=  93  mean_pLDDT= 81.04
+  native charge=+7.22 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_ligand/pH9.0_t-5/plddt.csv
+[code/output/e1_ext/1BC8_ligand/pH9.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=+1.25 p   L=  93  mean_pLDDT= 81.93
+  sample_2 pH=9.0 charge=+1.28 p   L=  93  mean_pLDDT= 81.37
+  sample_3 pH=9.0 charge=-0.78 p   L=  93  mean_pLDDT= 80.22
+  native charge=+7.22 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_ligand/pH9.0_t0/plddt.csv
+[code/output/e1_ext/1BC8_ligand/pH9.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=+5.22 p   L=  93  mean_pLDDT= 82.37
+  sample_2 pH=9.0 charge=+7.19 p   L=  93  mean_pLDDT= 81.85
+  sample_3 pH=9.0 charge=+5.10 p   L=  93  mean_pLDDT= 79.18
+  native charge=+7.22 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_ligand/pH9.0_t5/plddt.csv
+[code/output/e1_ext/1BC8_mompnn/baseline/seqs.fa] 共 6 条序列
+  sample_1 pH=7.4 charge=+8.00 p   L=  93  mean_pLDDT= 81.79
+  sample_2 pH=7.4 charge=+7.98 p   L=  93  mean_pLDDT= 80.48
+  sample_3 pH=7.4 charge=+10.01    L=  93  mean_pLDDT= 83.66
+  sample_4 pH=7.4 charge=+10.02    L=  93  mean_pLDDT= 83.19
+  sample_5 pH=7.4 charge=+9.05 p   L=  93  mean_pLDDT= 85.00
+  native charge=+8.90 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_mompnn/baseline/plddt.csv
+[code/output/e1_ext/1BC8_mompnn/pH4.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=-5.45 p   L=  93  mean_pLDDT= 84.88
+  sample_2 pH=4.0 charge=-5.01 p   L=  93  mean_pLDDT= 81.97
+  sample_3 pH=4.0 charge=-4.67 p   L=  93  mean_pLDDT= 81.16
+  native charge=+13.34 pI=10.22    L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_mompnn/pH4.0_t-5/plddt.csv
+[code/output/e1_ext/1BC8_mompnn/pH4.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=-0.90 p   L=  93  mean_pLDDT= 82.78
+  sample_2 pH=4.0 charge=-0.33 p   L=  93  mean_pLDDT= 82.58
+  sample_3 pH=4.0 charge=+0.34 p   L=  93  mean_pLDDT= 81.81
+  native charge=+13.34 pI=10.22    L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_mompnn/pH4.0_t0/plddt.csv
+[code/output/e1_ext/1BC8_mompnn/pH4.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=+4.55 p   L=  93  mean_pLDDT= 83.69
+  sample_2 pH=4.0 charge=+4.44 p   L=  93  mean_pLDDT= 80.89
+  sample_3 pH=4.0 charge=+5.56 p   L=  93  mean_pLDDT= 81.70
+  native charge=+13.34 pI=10.22    L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_mompnn/pH4.0_t5/plddt.csv
+[code/output/e1_ext/1BC8_mompnn/pH7.4_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=-4.94 p   L=  93  mean_pLDDT= 82.68
+  sample_2 pH=7.4 charge=-4.02 p   L=  93  mean_pLDDT= 81.58
+  sample_3 pH=7.4 charge=-4.02 p   L=  93  mean_pLDDT= 83.97
+  native charge=+8.90 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_mompnn/pH7.4_t-5/plddt.csv
+[code/output/e1_ext/1BC8_mompnn/pH7.4_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=-0.98 p   L=  93  mean_pLDDT= 81.89
+  sample_2 pH=7.4 charge=-0.02 p   L=  93  mean_pLDDT= 80.71
+  sample_3 pH=7.4 charge=+0.98 p   L=  93  mean_pLDDT= 82.94
+  native charge=+8.90 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_mompnn/pH7.4_t0/plddt.csv
+[code/output/e1_ext/1BC8_mompnn/pH7.4_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=+3.97 p   L=  93  mean_pLDDT= 83.00
+  sample_2 pH=7.4 charge=+4.98 p   L=  93  mean_pLDDT= 81.36
+  sample_3 pH=7.4 charge=+7.01 p   L=  93  mean_pLDDT= 83.40
+  native charge=+8.90 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_mompnn/pH7.4_t5/plddt.csv
+[code/output/e1_ext/1BC8_mompnn/pH9.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=-4.10 p   L=  93  mean_pLDDT= 82.44
+  sample_2 pH=9.0 charge=-4.96 p   L=  93  mean_pLDDT= 80.46
+  sample_3 pH=9.0 charge=-5.09 p   L=  93  mean_pLDDT= 83.26
+  native charge=+7.22 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_mompnn/pH9.0_t-5/plddt.csv
+[code/output/e1_ext/1BC8_mompnn/pH9.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=-0.16 p   L=  93  mean_pLDDT= 82.86
+  sample_2 pH=9.0 charge=-0.17 p   L=  93  mean_pLDDT= 81.21
+  sample_3 pH=9.0 charge=+0.77 p   L=  93  mean_pLDDT= 83.43
+  native charge=+7.22 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_mompnn/pH9.0_t0/plddt.csv
+[code/output/e1_ext/1BC8_mompnn/pH9.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=+5.61 p   L=  93  mean_pLDDT= 82.87
+  sample_2 pH=9.0 charge=+4.83 p   L=  93  mean_pLDDT= 79.32
+  sample_3 pH=9.0 charge=+5.82 p   L=  93  mean_pLDDT= 85.70
+  native charge=+7.22 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/1BC8_mompnn/pH9.0_t5/plddt.csv
+[code/output/e1_ext/1CRN_ligand/baseline/seqs.fa] 共 6 条序列
+  sample_1 pH=7.4 charge=-1.79 p   L=  46  mean_pLDDT= 83.48
+  sample_2 pH=7.4 charge=-1.79 p   L=  46  mean_pLDDT= 59.48
+  sample_3 pH=7.4 charge=-1.79 p   L=  46  mean_pLDDT= 42.75
+  sample_4 pH=7.4 charge=-0.79 p   L=  46  mean_pLDDT= 76.19
+  sample_5 pH=7.4 charge=+0.32 p   L=  46  mean_pLDDT= 84.52
+  native charge=-0.68 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_ligand/baseline/plddt.csv
+[code/output/e1_ext/1CRN_ligand/pH4.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=-3.10 p   L=  46  mean_pLDDT= 80.73
+  sample_2 pH=4.0 charge=-2.88 p   L=  46  mean_pLDDT= 86.74
+  sample_3 pH=4.0 charge=-2.77 p   L=  46  mean_pLDDT= 42.99
+  native charge=+1.13 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_ligand/pH4.0_t-5/plddt.csv
+[code/output/e1_ext/1CRN_ligand/pH4.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=+0.12 p   L=  46  mean_pLDDT= 85.87
+  sample_2 pH=4.0 charge=+0.24 p   L=  46  mean_pLDDT= 79.04
+  sample_3 pH=4.0 charge=+0.46 p   L=  46  mean_pLDDT= 75.91
+  native charge=+1.13 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_ligand/pH4.0_t0/plddt.csv
+[code/output/e1_ext/1CRN_ligand/pH4.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=+3.46 p   L=  46  mean_pLDDT= 86.84
+  sample_2 pH=4.0 charge=+3.13 p   L=  46  mean_pLDDT= 59.70
+  sample_3 pH=4.0 charge=+4.12 p   L=  46  mean_pLDDT= 56.65
+  native charge=+1.13 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_ligand/pH4.0_t5/plddt.csv
+[code/output/e1_ext/1CRN_ligand/pH7.4_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=-3.79 p   L=  46  mean_pLDDT= 78.06
+  sample_2 pH=7.4 charge=-4.79 p   L=  46  mean_pLDDT= 46.12
+  sample_3 pH=7.4 charge=-3.79 p   L=  46  mean_pLDDT= 48.89
+  native charge=-0.68 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_ligand/pH7.4_t-5/plddt.csv
+[code/output/e1_ext/1CRN_ligand/pH7.4_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=-0.79 p   L=  46  mean_pLDDT= 84.29
+  sample_2 pH=7.4 charge=+0.21 p   L=  46  mean_pLDDT= 80.56
+  sample_3 pH=7.4 charge=-0.79 p   L=  46  mean_pLDDT= 83.73
+  native charge=-0.68 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_ligand/pH7.4_t0/plddt.csv
+[code/output/e1_ext/1CRN_ligand/pH7.4_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=+3.21 p   L=  46  mean_pLDDT= 42.12
+  sample_2 pH=7.4 charge=+3.32 p   L=  46  mean_pLDDT= 85.91
+  sample_3 pH=7.4 charge=+2.21 p   L=  46  mean_pLDDT= 85.01
+  native charge=-0.68 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_ligand/pH7.4_t5/plddt.csv
+[code/output/e1_ext/1CRN_ligand/pH9.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=-6.24 p   L=  46  mean_pLDDT= 41.31
+  sample_2 pH=9.0 charge=-6.28 p   L=  46  mean_pLDDT= 58.09
+  sample_3 pH=9.0 charge=-7.18 p   L=  46  mean_pLDDT= 43.81
+  native charge=-5.32 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_ligand/pH9.0_t-5/plddt.csv
+[code/output/e1_ext/1CRN_ligand/pH9.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=-1.15 p   L=  46  mean_pLDDT= 83.07
+  sample_2 pH=9.0 charge=-1.48 p   L=  46  mean_pLDDT= 82.37
+  sample_3 pH=9.0 charge=-2.26 p   L=  46  mean_pLDDT= 85.12
+  native charge=-5.32 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_ligand/pH9.0_t0/plddt.csv
+[code/output/e1_ext/1CRN_ligand/pH9.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=+3.79 p   L=  46  mean_pLDDT= 71.43
+  sample_2 pH=9.0 charge=+3.29 p   L=  46  mean_pLDDT= 71.00
+  sample_3 pH=9.0 charge=+1.82 p   L=  46  mean_pLDDT= 82.20
+  native charge=-5.32 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_ligand/pH9.0_t5/plddt.csv
+[code/output/e1_ext/1CRN_mompnn/baseline/seqs.fa] 共 6 条序列
+  sample_1 pH=7.4 charge=-0.68 p   L=  46  mean_pLDDT= 87.59
+  sample_2 pH=7.4 charge=-1.68 p   L=  46  mean_pLDDT= 88.08
+  sample_3 pH=7.4 charge=+0.32 p   L=  46  mean_pLDDT= 91.50
+  sample_4 pH=7.4 charge=-2.68 p   L=  46  mean_pLDDT= 89.77
+  sample_5 pH=7.4 charge=-0.68 p   L=  46  mean_pLDDT= 88.76
+  native charge=-0.68 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_mompnn/baseline/plddt.csv
+[code/output/e1_ext/1CRN_mompnn/pH4.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=-3.21 p   L=  46  mean_pLDDT= 89.07
+  sample_2 pH=4.0 charge=-3.43 p   L=  46  mean_pLDDT= 89.76
+  sample_3 pH=4.0 charge=-3.44 p   L=  46  mean_pLDDT= 89.40
+  native charge=+1.13 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_mompnn/pH4.0_t-5/plddt.csv
+[code/output/e1_ext/1CRN_mompnn/pH4.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=+1.12 p   L=  46  mean_pLDDT= 89.99
+  sample_2 pH=4.0 charge=+0.90 p   L=  46  mean_pLDDT= 90.25
+  sample_3 pH=4.0 charge=+1.79 p   L=  46  mean_pLDDT= 89.66
+  native charge=+1.13 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_mompnn/pH4.0_t0/plddt.csv
+[code/output/e1_ext/1CRN_mompnn/pH4.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=+5.02 p   L=  46  mean_pLDDT= 86.82
+  sample_2 pH=4.0 charge=+4.02 p   L=  46  mean_pLDDT= 85.86
+  sample_3 pH=4.0 charge=+6.13 p   L=  46  mean_pLDDT= 89.83
+  native charge=+1.13 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_mompnn/pH4.0_t5/plddt.csv
+[code/output/e1_ext/1CRN_mompnn/pH7.4_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=-5.68 p   L=  46  mean_pLDDT= 89.55
+  sample_2 pH=7.4 charge=-6.68 p   L=  46  mean_pLDDT= 89.47
+  sample_3 pH=7.4 charge=-4.68 p   L=  46  mean_pLDDT= 89.02
+  native charge=-0.68 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_mompnn/pH7.4_t-5/plddt.csv
+[code/output/e1_ext/1CRN_mompnn/pH7.4_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=+0.32 p   L=  46  mean_pLDDT= 81.29
+  sample_2 pH=7.4 charge=-0.68 p   L=  46  mean_pLDDT= 85.86
+  sample_3 pH=7.4 charge=+1.32 p   L=  46  mean_pLDDT= 89.81
+  native charge=-0.68 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_mompnn/pH7.4_t0/plddt.csv
+[code/output/e1_ext/1CRN_mompnn/pH7.4_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=+5.31 p   L=  46  mean_pLDDT= 86.32
+  sample_2 pH=7.4 charge=+4.32 p   L=  46  mean_pLDDT= 82.28
+  sample_3 pH=7.4 charge=+4.32 p   L=  46  mean_pLDDT= 86.29
+  native charge=-0.68 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_mompnn/pH7.4_t5/plddt.csv
+[code/output/e1_ext/1CRN_mompnn/pH9.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=-4.60 p   L=  46  mean_pLDDT= 87.16
+  sample_2 pH=9.0 charge=-5.60 p   L=  46  mean_pLDDT= 88.77
+  sample_3 pH=9.0 charge=-4.54 p   L=  46  mean_pLDDT= 89.58
+  native charge=-5.32 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_mompnn/pH9.0_t-5/plddt.csv
+[code/output/e1_ext/1CRN_mompnn/pH9.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=+0.40 p   L=  46  mean_pLDDT= 83.45
+  sample_2 pH=9.0 charge=-0.56 p   L=  46  mean_pLDDT= 85.66
+  sample_3 pH=9.0 charge=+0.62 p   L=  46  mean_pLDDT= 85.22
+  native charge=-5.32 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_mompnn/pH9.0_t0/plddt.csv
+[code/output/e1_ext/1CRN_mompnn/pH9.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=+4.27 p   L=  46  mean_pLDDT= 85.74
+  sample_2 pH=9.0 charge=+4.41 p   L=  46  mean_pLDDT= 84.46
+  sample_3 pH=9.0 charge=+4.35 p   L=  46  mean_pLDDT= 81.71
+  native charge=-5.32 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/1CRN_mompnn/pH9.0_t5/plddt.csv
+[code/output/e1_ext/1UBQ_ligand/baseline/seqs.fa] 共 6 条序列
+  sample_1 pH=7.4 charge=-2.01 p   L=  76  mean_pLDDT= 87.57
+  sample_2 pH=7.4 charge=-1.01 p   L=  76  mean_pLDDT= 88.34
+  sample_3 pH=7.4 charge=-1.01 p   L=  76  mean_pLDDT= 88.49
+  sample_4 pH=7.4 charge=-1.01 p   L=  76  mean_pLDDT= 88.81
+  sample_5 pH=7.4 charge=+0.98 p   L=  76  mean_pLDDT= 87.50
+  native charge=+0.03 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_ligand/baseline/plddt.csv
+[code/output/e1_ext/1UBQ_ligand/pH4.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=-5.00 p   L=  76  mean_pLDDT= 89.56
+  sample_2 pH=4.0 charge=-3.57 p   L=  76  mean_pLDDT= 88.46
+  sample_3 pH=4.0 charge=-4.45 p   L=  76  mean_pLDDT= 87.83
+  native charge=+7.22 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_ligand/pH4.0_t-5/plddt.csv
+[code/output/e1_ext/1UBQ_ligand/pH4.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=-1.55 p   L=  76  mean_pLDDT= 90.00
+  sample_2 pH=4.0 charge=-0.56 p   L=  76  mean_pLDDT= 89.21
+  sample_3 pH=4.0 charge=-0.45 p   L=  76  mean_pLDDT= 87.73
+  native charge=+7.22 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_ligand/pH4.0_t0/plddt.csv
+[code/output/e1_ext/1UBQ_ligand/pH4.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=+3.54 p   L=  76  mean_pLDDT= 88.90
+  sample_2 pH=4.0 charge=+3.01 p   L=  76  mean_pLDDT= 87.24
+  sample_3 pH=4.0 charge=+2.45 p   L=  76  mean_pLDDT= 87.53
+  native charge=+7.22 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_ligand/pH4.0_t5/plddt.csv
+[code/output/e1_ext/1UBQ_ligand/pH7.4_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=-6.97 p   L=  76  mean_pLDDT= 88.72
+  sample_2 pH=7.4 charge=-5.01 p   L=  76  mean_pLDDT= 88.63
+  sample_3 pH=7.4 charge=-6.01 p   L=  76  mean_pLDDT= 88.21
+  native charge=+0.03 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_ligand/pH7.4_t-5/plddt.csv
+[code/output/e1_ext/1UBQ_ligand/pH7.4_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=-2.01 p   L=  76  mean_pLDDT= 87.91
+  sample_2 pH=7.4 charge=-1.01 p   L=  76  mean_pLDDT= 88.34
+  sample_3 pH=7.4 charge=-1.01 p   L=  76  mean_pLDDT= 88.49
+  native charge=+0.03 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_ligand/pH7.4_t0/plddt.csv
+[code/output/e1_ext/1UBQ_ligand/pH7.4_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=+2.99 p   L=  76  mean_pLDDT= 89.20
+  sample_2 pH=7.4 charge=+3.98 p   L=  76  mean_pLDDT= 87.36
+  sample_3 pH=7.4 charge=+1.99 p   L=  76  mean_pLDDT= 87.95
+  native charge=+0.03 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_ligand/pH7.4_t5/plddt.csv
+[code/output/e1_ext/1UBQ_ligand/pH9.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=-7.44 p   L=  76  mean_pLDDT= 89.62
+  sample_2 pH=9.0 charge=-4.60 p   L=  76  mean_pLDDT= 88.71
+  sample_3 pH=9.0 charge=-5.57 p   L=  76  mean_pLDDT= 88.58
+  native charge=-0.45 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_ligand/pH9.0_t-5/plddt.csv
+[code/output/e1_ext/1UBQ_ligand/pH9.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=-1.66 p   L=  76  mean_pLDDT= 89.34
+  sample_2 pH=9.0 charge=-0.64 p   L=  76  mean_pLDDT= 87.99
+  sample_3 pH=9.0 charge=-1.63 p   L=  76  mean_pLDDT= 88.19
+  native charge=-0.45 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_ligand/pH9.0_t0/plddt.csv
+[code/output/e1_ext/1UBQ_ligand/pH9.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=+2.44 p   L=  76  mean_pLDDT= 86.72
+  sample_2 pH=9.0 charge=+3.37 p   L=  76  mean_pLDDT= 86.29
+  sample_3 pH=9.0 charge=+3.21 p   L=  76  mean_pLDDT= 88.06
+  native charge=-0.45 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_ligand/pH9.0_t5/plddt.csv
+[code/output/e1_ext/1UBQ_mompnn/baseline/seqs.fa] 共 6 条序列
+  sample_1 pH=7.4 charge=+0.03 p   L=  76  mean_pLDDT= 90.70
+  sample_2 pH=7.4 charge=-2.01 p   L=  76  mean_pLDDT= 90.25
+  sample_3 pH=7.4 charge=-2.01 p   L=  76  mean_pLDDT= 88.73
+  sample_4 pH=7.4 charge=-1.01 p   L=  76  mean_pLDDT= 88.59
+  sample_5 pH=7.4 charge=-1.01 p   L=  76  mean_pLDDT= 88.51
+  native charge=+0.03 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_mompnn/baseline/plddt.csv
+[code/output/e1_ext/1UBQ_mompnn/pH4.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=-4.56 p   L=  76  mean_pLDDT= 90.34
+  sample_2 pH=4.0 charge=-6.12 p   L=  76  mean_pLDDT= 89.91
+  sample_3 pH=4.0 charge=-5.34 p   L=  76  mean_pLDDT= 90.28
+  native charge=+7.22 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_mompnn/pH4.0_t-5/plddt.csv
+[code/output/e1_ext/1UBQ_mompnn/pH4.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=+0.56 p   L=  76  mean_pLDDT= 90.87
+  sample_2 pH=4.0 charge=-0.55 p   L=  76  mean_pLDDT= 89.68
+  sample_3 pH=4.0 charge=-0.78 p   L=  76  mean_pLDDT= 89.37
+  native charge=+7.22 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_mompnn/pH4.0_t0/plddt.csv
+[code/output/e1_ext/1UBQ_mompnn/pH4.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=+3.34 p   L=  76  mean_pLDDT= 91.14
+  sample_2 pH=4.0 charge=+4.56 p   L=  76  mean_pLDDT= 88.97
+  sample_3 pH=4.0 charge=+4.00 p   L=  76  mean_pLDDT= 87.86
+  native charge=+7.22 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_mompnn/pH4.0_t5/plddt.csv
+[code/output/e1_ext/1UBQ_mompnn/pH7.4_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=-3.97 p   L=  76  mean_pLDDT= 90.56
+  sample_2 pH=7.4 charge=-7.01 p   L=  76  mean_pLDDT= 89.40
+  sample_3 pH=7.4 charge=-6.01 p   L=  76  mean_pLDDT= 89.42
+  native charge=+0.03 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_mompnn/pH7.4_t-5/plddt.csv
+[code/output/e1_ext/1UBQ_mompnn/pH7.4_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=+0.03 p   L=  76  mean_pLDDT= 90.70
+  sample_2 pH=7.4 charge=-2.01 p   L=  76  mean_pLDDT= 89.80
+  sample_3 pH=7.4 charge=-1.01 p   L=  76  mean_pLDDT= 88.29
+  native charge=+0.03 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_mompnn/pH7.4_t0/plddt.csv
+[code/output/e1_ext/1UBQ_mompnn/pH7.4_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=+4.99 p   L=  76  mean_pLDDT= 88.78
+  sample_2 pH=7.4 charge=+1.99 p   L=  76  mean_pLDDT= 88.03
+  sample_3 pH=7.4 charge=+3.99 p   L=  76  mean_pLDDT= 87.90
+  native charge=+0.03 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_mompnn/pH7.4_t5/plddt.csv
+[code/output/e1_ext/1UBQ_mompnn/pH9.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=-3.56 p   L=  76  mean_pLDDT= 90.05
+  sample_2 pH=9.0 charge=-5.72 p   L=  76  mean_pLDDT= 89.22
+  sample_3 pH=9.0 charge=-5.60 p   L=  76  mean_pLDDT= 88.52
+  native charge=-0.45 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_mompnn/pH9.0_t-5/plddt.csv
+[code/output/e1_ext/1UBQ_mompnn/pH9.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=+0.28 p   L=  76  mean_pLDDT= 90.01
+  sample_2 pH=9.0 charge=-1.63 p   L=  76  mean_pLDDT= 88.78
+  sample_3 pH=9.0 charge=-1.50 p   L=  76  mean_pLDDT= 88.07
+  native charge=-0.45 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_mompnn/pH9.0_t0/plddt.csv
+[code/output/e1_ext/1UBQ_mompnn/pH9.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=+6.29 p   L=  76  mean_pLDDT= 89.40
+  sample_2 pH=9.0 charge=+5.33 p   L=  76  mean_pLDDT= 88.10
+  sample_3 pH=9.0 charge=+5.11 p   L=  76  mean_pLDDT= 88.02
+  native charge=-0.45 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/1UBQ_mompnn/pH9.0_t5/plddt.csv
+[code/output/e1_ext/2LZM_ligand/baseline/seqs.fa] 共 6 条序列
+  sample_1 pH=7.4 charge=+6.99 p   L= 164  mean_pLDDT= 85.13
+  sample_2 pH=7.4 charge=+8.03 p   L= 164  mean_pLDDT= 87.85
+  sample_3 pH=7.4 charge=+7.02 p   L= 164  mean_pLDDT= 87.20
+  sample_4 pH=7.4 charge=+5.90 p   L= 164  mean_pLDDT= 88.10
+  sample_5 pH=7.4 charge=+6.02 p   L= 164  mean_pLDDT= 87.96
+  native charge=+7.80 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_ligand/baseline/plddt.csv
+[code/output/e1_ext/2LZM_ligand/pH4.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=-3.94 p   L= 164  mean_pLDDT= 82.17
+  sample_2 pH=4.0 charge=-6.57 p   L= 164  mean_pLDDT= 82.24
+  sample_3 pH=4.0 charge=-5.14 p   L= 164  mean_pLDDT= 86.81
+  native charge=+18.77 pI=9.95     L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_ligand/pH4.0_t-5/plddt.csv
+[code/output/e1_ext/2LZM_ligand/pH4.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=+0.52 p   L= 164  mean_pLDDT= 85.06
+  sample_2 pH=4.0 charge=-0.67 p   L= 164  mean_pLDDT= 86.85
+  sample_3 pH=4.0 charge=-0.47 p   L= 164  mean_pLDDT= 87.31
+  native charge=+18.77 pI=9.95     L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_ligand/pH4.0_t0/plddt.csv
+[code/output/e1_ext/2LZM_ligand/pH4.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=+4.85 p   L= 164  mean_pLDDT= 85.54
+  sample_2 pH=4.0 charge=+2.34 p   L= 164  mean_pLDDT= 87.19
+  sample_3 pH=4.0 charge=+4.20 p   L= 164  mean_pLDDT= 89.34
+  native charge=+18.77 pI=9.95     L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_ligand/pH4.0_t5/plddt.csv
+[code/output/e1_ext/2LZM_ligand/pH7.4_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=-4.93 p   L= 164  mean_pLDDT= 83.79
+  sample_2 pH=7.4 charge=-3.97 p   L= 164  mean_pLDDT= 89.18
+  sample_3 pH=7.4 charge=-4.97 p   L= 164  mean_pLDDT= 87.74
+  native charge=+7.80 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_ligand/pH7.4_t-5/plddt.csv
+[code/output/e1_ext/2LZM_ligand/pH7.4_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=+0.03 p   L= 164  mean_pLDDT= 87.08
+  sample_2 pH=7.4 charge=+1.03 p   L= 164  mean_pLDDT= 89.10
+  sample_3 pH=7.4 charge=-0.97 p   L= 164  mean_pLDDT= 88.43
+  native charge=+7.80 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_ligand/pH7.4_t0/plddt.csv
+[code/output/e1_ext/2LZM_ligand/pH7.4_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=+5.02 p   L= 164  mean_pLDDT= 85.04
+  sample_2 pH=7.4 charge=+5.03 p   L= 164  mean_pLDDT= 88.23
+  sample_3 pH=7.4 charge=+4.02 p   L= 164  mean_pLDDT= 88.40
+  native charge=+7.80 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_ligand/pH7.4_t5/plddt.csv
+[code/output/e1_ext/2LZM_ligand/pH9.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=-4.74 p   L= 164  mean_pLDDT= 88.82
+  sample_2 pH=9.0 charge=-3.63 p   L= 164  mean_pLDDT= 88.63
+  sample_3 pH=9.0 charge=-4.55 p   L= 164  mean_pLDDT= 88.46
+  native charge=+5.32 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_ligand/pH9.0_t-5/plddt.csv
+[code/output/e1_ext/2LZM_ligand/pH9.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=+0.32 p   L= 164  mean_pLDDT= 85.94
+  sample_2 pH=9.0 charge=+0.40 p   L= 164  mean_pLDDT= 88.14
+  sample_3 pH=9.0 charge=+0.09 p   L= 164  mean_pLDDT= 87.72
+  native charge=+5.32 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_ligand/pH9.0_t0/plddt.csv
+[code/output/e1_ext/2LZM_ligand/pH9.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=+5.06 p   L= 164  mean_pLDDT= 85.71
+  sample_2 pH=9.0 charge=+5.35 p   L= 164  mean_pLDDT= 83.29
+  sample_3 pH=9.0 charge=+5.16 p   L= 164  mean_pLDDT= 87.55
+  native charge=+5.32 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_ligand/pH9.0_t5/plddt.csv
+[code/output/e1_ext/2LZM_mompnn/baseline/seqs.fa] 共 6 条序列
+  sample_1 pH=7.4 charge=+6.02 p   L= 164  mean_pLDDT= 88.76
+  sample_2 pH=7.4 charge=+8.01 p   L= 164  mean_pLDDT= 88.05
+  sample_3 pH=7.4 charge=+9.02 p   L= 164  mean_pLDDT= 89.11
+  sample_4 pH=7.4 charge=+7.02 p   L= 164  mean_pLDDT= 88.01
+  sample_5 pH=7.4 charge=+8.02 p   L= 164  mean_pLDDT= 88.40
+  native charge=+7.80 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_mompnn/baseline/plddt.csv
+[code/output/e1_ext/2LZM_mompnn/pH4.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=-5.25 p   L= 164  mean_pLDDT= 88.55
+  sample_2 pH=4.0 charge=-5.36 p   L= 164  mean_pLDDT= 88.49
+  sample_3 pH=4.0 charge=-5.47 p   L= 164  mean_pLDDT= 89.06
+  native charge=+18.77 pI=9.95     L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_mompnn/pH4.0_t-5/plddt.csv
+[code/output/e1_ext/2LZM_mompnn/pH4.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=+0.54 p   L= 164  mean_pLDDT= 89.38
+  sample_2 pH=4.0 charge=-0.80 p   L= 164  mean_pLDDT= 87.96
+  sample_3 pH=4.0 charge=+0.99 p   L= 164  mean_pLDDT= 88.70
+  native charge=+18.77 pI=9.95     L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_mompnn/pH4.0_t0/plddt.csv
+[code/output/e1_ext/2LZM_mompnn/pH4.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=4.0 charge=+4.09 p   L= 164  mean_pLDDT= 88.16
+  sample_2 pH=4.0 charge=+4.56 p   L= 164  mean_pLDDT= 88.77
+  sample_3 pH=4.0 charge=+4.99 p   L= 164  mean_pLDDT= 88.31
+  native charge=+18.77 pI=9.95     L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_mompnn/pH4.0_t5/plddt.csv
+[code/output/e1_ext/2LZM_mompnn/pH7.4_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=-5.97 p   L= 164  mean_pLDDT= 88.84
+  sample_2 pH=7.4 charge=-4.97 p   L= 164  mean_pLDDT= 87.79
+  sample_3 pH=7.4 charge=-3.94 p   L= 164  mean_pLDDT= 89.03
+  native charge=+7.80 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_mompnn/pH7.4_t-5/plddt.csv
+[code/output/e1_ext/2LZM_mompnn/pH7.4_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=+0.02 p   L= 164  mean_pLDDT= 89.39
+  sample_2 pH=7.4 charge=+0.02 p   L= 164  mean_pLDDT= 88.75
+  sample_3 pH=7.4 charge=+1.06 p   L= 164  mean_pLDDT= 86.24
+  native charge=+7.80 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_mompnn/pH7.4_t0/plddt.csv
+[code/output/e1_ext/2LZM_mompnn/pH7.4_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=7.4 charge=+4.06 p   L= 164  mean_pLDDT= 88.82
+  sample_2 pH=7.4 charge=+4.01 p   L= 164  mean_pLDDT= 89.17
+  sample_3 pH=7.4 charge=+6.06 p   L= 164  mean_pLDDT= 87.76
+  native charge=+7.80 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_mompnn/pH7.4_t5/plddt.csv
+[code/output/e1_ext/2LZM_mompnn/pH9.0_t-5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=-3.00 p   L= 164  mean_pLDDT= 89.14
+  sample_2 pH=9.0 charge=-3.23 p   L= 164  mean_pLDDT= 87.55
+  sample_3 pH=9.0 charge=-4.85 p   L= 164  mean_pLDDT= 88.98
+  native charge=+5.32 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_mompnn/pH9.0_t-5/plddt.csv
+[code/output/e1_ext/2LZM_mompnn/pH9.0_t0/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=-1.15 p   L= 164  mean_pLDDT= 89.31
+  sample_2 pH=9.0 charge=+0.77 p   L= 164  mean_pLDDT= 88.37
+  sample_3 pH=9.0 charge=+1.17 p   L= 164  mean_pLDDT= 88.66
+  native charge=+5.32 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_mompnn/pH9.0_t0/plddt.csv
+[code/output/e1_ext/2LZM_mompnn/pH9.0_t5/seqs.fa] 共 4 条序列
+  sample_1 pH=9.0 charge=+3.69 p   L= 164  mean_pLDDT= 87.54
+  sample_2 pH=9.0 charge=+4.71 p   L= 164  mean_pLDDT= 88.09
+  sample_3 pH=9.0 charge=+5.96 p   L= 164  mean_pLDDT= 83.23
+  native charge=+5.32 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/2LZM_mompnn/pH9.0_t5/plddt.csv
+[code/output/e1_ext/_probe_1BC8/seqs.fa] 共 2 条序列
+  sample_1 pH=7.4 charge=+1.06 p   L=  93  mean_pLDDT= 83.25
+  native charge=+8.90 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/e1_ext/_probe_1BC8/plddt.csv
+[code/output/e1_ext/_probe_1CRN/seqs.fa] 共 2 条序列
+  sample_1 pH=7.4 charge=-0.79 p   L=  46  mean_pLDDT= 84.29
+  native charge=-0.68 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/e1_ext/_probe_1CRN/plddt.csv
+[code/output/e1_ext/_probe_1UBQ/seqs.fa] 共 2 条序列
+  sample_1 pH=7.4 charge=-2.01 p   L=  76  mean_pLDDT= 87.91
+  native charge=+0.03 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/e1_ext/_probe_1UBQ/plddt.csv
+[code/output/e1_ext/_probe_2LZM/seqs.fa] 共 2 条序列
+  sample_1 pH=7.4 charge=+0.03 p   L= 164  mean_pLDDT= 87.08
+  native charge=+7.80 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/e1_ext/_probe_2LZM/plddt.csv

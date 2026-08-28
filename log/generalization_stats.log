@@ -1,0 +1,118 @@
+蛋白     类            L 模式     臂       目标     均值   dev  达标    rec   pkt  gravy   TM中位 TM≥0.7 TM<0.5  pLDDT
+1A65   long       504 ligand native -27 -21.76  5.24   ✗ 0.571 0.531  0.106  0.971    1.0    0.0   84.0
+1A65   long       504 ligand n2     -29 -24.31  4.69   ✗ 0.569 0.526  0.083  0.971    1.0    0.0   83.8
+1A65   long       504 ligand p2     -25 -19.11  5.89   ✗  0.57 0.535  0.132  0.972    1.0    0.0   84.2
+1A65   long       504 ligand n8     -35 -30.03  4.97   ✗ 0.564  0.51  0.021  0.972    1.0    0.0   83.5
+1A65   long       504 ligand p8     -19 -12.33  6.67   ✗ 0.568 0.544  0.205   0.97    1.0    0.0   83.5
+1AG0   metal      256 ligand native  -8  -6.85  1.15   ✓ 0.488 0.642   0.33  0.495    0.0    1.0   87.7
+1AG0   metal      256 ligand n2     -10  -9.27  0.73   ✓ 0.494 0.644  0.322  0.495    0.0    1.0   88.5
+1AG0   metal      256 ligand p2      -6   -5.1   0.9   ✓ 0.482  0.62  0.323  0.494    0.0    1.0   87.4
+1AG0   metal      256 ligand n8     -16 -16.86  0.86   ✓ 0.514 0.655  0.223  0.494    0.0    1.0   87.4
+1AG0   metal      256 ligand p8       0   -0.3   0.3   ✓ 0.463 0.576  0.268  0.494    0.0    1.0   87.2
+1AS2   rna        312 ligand native  -3  -1.44  1.56   ✓ 0.355 0.362  0.348  0.931    1.0    0.0   82.9
+1AS2   rna        312 ligand n2      -5  -3.46  1.54   ✓ 0.356 0.352  0.329  0.935    1.0    0.0   83.0
+1AS2   rna        312 ligand p2      -1   0.73  1.73   ✓ 0.359 0.378  0.369  0.938    1.0    0.0   82.8
+1AS2   rna        312 ligand n8     -11  -8.67  2.33   ✗ 0.366 0.362  0.256  0.942    1.0    0.0   82.2
+1AS2   rna        312 ligand p8       5   5.85  0.85   ✓  0.36 0.393   0.39  0.939    1.0    0.0   82.8
+1AXW   rna        528 ligand native -18  -19.9   1.9   ✓ 0.495 0.456   0.34  0.515  0.333  0.233   81.0
+1AXW   rna        528 ligand n2     -20 -22.27  2.27   ✗ 0.501 0.463   0.31  0.512  0.333  0.333   80.7
+1AXW   rna        528 ligand p2     -16 -16.72  0.72   ✓ 0.488 0.449  0.375   0.51  0.333  0.433   81.2
+1AXW   rna        528 ligand n8     -26 -29.09  3.09   ✗ 0.519 0.489  0.227  0.827  0.533    0.1   81.3
+1AXW   rna        528 ligand p8     -10  -8.61  1.39   ✓ 0.475 0.439  0.444  0.522  0.467  0.367   81.3
+1AZM   small_mol  258 ligand native  -2  -0.37  1.63   ✓  0.49 0.647  0.058  0.984    1.0    0.0   89.6
+1AZM   small_mol  258 ligand n2      -4  -1.89  2.11   ✗ 0.492 0.648   0.08  0.985    1.0    0.0   89.4
+1AZM   small_mol  258 ligand p2       0   0.86  0.86   ✓ 0.488 0.647  0.038  0.986    1.0    0.0   89.8
+1AZM   small_mol  258 ligand n8     -10  -8.56  1.44   ✓ 0.501 0.632  0.066  0.985    1.0    0.0   89.0
+1AZM   small_mol  258 ligand p8       6   5.24  0.76   ✓ 0.491 0.644 -0.002  0.984    1.0    0.0   88.9
+1BJ4   long       470 ligand native   0    2.3   2.3   ✗ 0.431 0.343  0.551  0.916    1.0    0.0   79.9
+1BJ4   long       470 ligand n2      -2   0.05  2.05   ✗ 0.431 0.347  0.524  0.915    1.0    0.0   79.3
+1BJ4   long       470 ligand p2       2   4.18  2.18   ✗ 0.431 0.333  0.562  0.916    1.0    0.0   79.8
+1BJ4   long       470 ligand n8      -8 -11.16  3.16   ✗ 0.442 0.339    0.4  0.934    1.0    0.0   80.6
+1BJ4   long       470 ligand p8       8   14.0   6.0   ✗ 0.446  0.38  0.445  0.933    1.0    0.0   80.5
+1C6O   small_mol  177 ligand native -14  -9.86  4.14   ✗ 0.569 0.598  0.326  0.512    0.0  0.333   86.4
+1C6O   small_mol  177 ligand n2     -16 -11.43  4.57   ✗ 0.572   0.6  0.299  0.512    0.0    0.3   86.7
+1C6O   small_mol  177 ligand p2     -12  -8.91  3.09   ✗ 0.566 0.593  0.348  0.515    0.0  0.267   86.2
+1C6O   small_mol  177 ligand n8     -22 -14.36  7.64   ✗ 0.573 0.595  0.166  0.514    0.0    0.2   87.1
+1C6O   small_mol  177 ligand p8      -6  -2.02  3.98   ✗ 0.558 0.595  0.384  0.512    0.0    0.3   87.0
+1CGE   metal      162 ligand native -12 -11.21  0.79   ✓ 0.563 0.658 -0.006  0.967    1.0    0.0   87.5
+1CGE   metal      162 ligand n2     -14 -12.34  1.66   ✓ 0.561 0.655 -0.026  0.968    1.0    0.0   87.6
+1CGE   metal      162 ligand p2     -10  -9.98  0.02   ✓ 0.562 0.657  0.007  0.969    1.0    0.0   87.2
+1CGE   metal      162 ligand n8     -20 -16.47  3.53   ✗ 0.559  0.66 -0.077  0.971    1.0    0.0   87.8
+1CGE   metal      162 ligand p8      -4  -4.44  0.44   ✓ 0.552 0.633  0.027  0.969    1.0    0.0   87.9
+2FEO   dna        221 ligand native  -7  -5.29  1.71   ✓ 0.335 0.344  0.595   0.91    1.0    0.0   78.0
+2FEO   dna        221 ligand n2      -9  -7.52  1.48   ✓ 0.338 0.346  0.555   0.91    1.0    0.0   77.6
+2FEO   dna        221 ligand p2      -5  -2.54  2.46   ✗ 0.335 0.342   0.67    0.9    1.0    0.0   79.1
+2FEO   dna        221 ligand n8     -15 -15.04  0.04   ✓ 0.347 0.365  0.435  0.919    1.0    0.0   78.1
+2FEO   dna        221 ligand p8       1   1.15  0.15   ✓ 0.334 0.352  0.903    0.9    1.0    0.0   79.2
+5CQH   dna        183 ligand native  -6  -4.56  1.44   ✓ 0.452 0.462  0.159  0.964    1.0    0.0   86.2
+5CQH   dna        183 ligand n2      -8  -6.72  1.28   ✓ 0.457  0.47  0.159  0.964    1.0    0.0   85.7
+5CQH   dna        183 ligand p2      -4  -3.14  0.86   ✓ 0.446 0.451  0.151  0.965    1.0    0.0   86.1
+5CQH   dna        183 ligand n8     -14 -11.75  2.25   ✗ 0.472 0.497  0.128  0.965    1.0    0.0   86.2
+5CQH   dna        183 ligand p8       2   0.44  1.56   ✓ 0.434 0.418  0.159  0.966    1.0    0.0   85.5
+1A65   long       504 proteinnative -27 -26.46  0.54   ✓ 0.542  None  0.034  0.971    1.0    0.0   83.2
+1A65   long       504 proteinn8     -35 -34.27  0.73   ✓ 0.542  None  -0.05  0.971    1.0    0.0   82.7
+1A65   long       504 proteinp8     -19 -15.75  3.25   ✗ 0.539  None  0.113   0.97    1.0    0.0   83.6
+1AG0   metal      256 proteinnative  -8  -8.14  0.14   ✓ 0.465  None  0.199  0.483    0.0    1.0   73.6
+1AG0   metal      256 proteinn8     -16 -19.37  3.37   ✗ 0.477  None  0.098  0.492    0.0    1.0   84.5
+1AG0   metal      256 proteinp8       0  -0.29  0.29   ✓ 0.442  None  0.109  0.369    0.0    1.0   53.7
+1AS2   rna        312 proteinnative  -3  -1.32  1.68   ✓ 0.349  None  0.286   0.92    1.0    0.0   82.5
+1AS2   rna        312 proteinn8     -11 -10.41  0.59   ✓ 0.361  None  0.202  0.941    1.0    0.0   82.7
+1AS2   rna        312 proteinp8       5   6.04  1.04   ✓ 0.351  None   0.32  0.922    1.0    0.0   82.4
+1AXW   rna        528 proteinnative -18 -18.28  0.28   ✓ 0.472  None  0.316  0.513  0.433  0.267   79.7
+1AXW   rna        528 proteinn8     -26 -29.52  3.52   ✗ 0.492  None  0.185  0.939  0.633    0.1   80.1
+1AXW   rna        528 proteinp8     -10  -7.82  2.18   ✗ 0.453  None  0.431  0.897  0.567  0.367   80.3
+1AZM   small_mol  258 proteinnative  -2  -0.19  1.81   ✓ 0.473  None  0.096  0.983    1.0    0.0   89.0
+1AZM   small_mol  258 proteinn8     -10  -8.06  1.94   ✓ 0.477  None  0.084  0.985    1.0    0.0   88.7
+1AZM   small_mol  258 proteinp8       6   5.15  0.85   ✓ 0.473  None  0.024  0.984    1.0    0.0   88.4
+1BJ4   long       470 proteinnative   0   2.77  2.77   ✗ 0.422  None  0.518  0.915    1.0    0.0   79.5
+1BJ4   long       470 proteinn8      -8 -11.65  3.65   ✗ 0.432  None  0.357  0.931    1.0    0.0   80.3
+1BJ4   long       470 proteinp8       8  16.91  8.91   ✗ 0.434  None  0.448  0.925    1.0    0.0   78.8
+1C6O   small_mol  177 proteinnative -14  -10.7   3.3   ✗ 0.505  None  0.236  0.505    0.0  0.433   79.8
+1C6O   small_mol  177 proteinn8     -22 -15.09  6.91   ✗   0.5  None  0.097  0.504    0.0    0.4   79.8
+1C6O   small_mol  177 proteinp8      -6  -2.68  3.32   ✗ 0.502  None  0.268  0.503    0.0    0.5   81.1
+1CGE   metal      162 proteinnative -12  -9.94  2.06   ✗ 0.525  None  0.051  0.961    1.0    0.0   85.1
+1CGE   metal      162 proteinn8     -20 -14.96  5.04   ✗ 0.521  None -0.038  0.964    1.0    0.0   85.1
+1CGE   metal      162 proteinp8      -4  -2.35  1.65   ✓ 0.508  None  0.109  0.956    1.0    0.0   84.8
+2FEO   dna        221 proteinnative  -7  -4.52  2.48   ✗ 0.324  None   0.61  0.906    1.0    0.0   78.7
+2FEO   dna        221 proteinn8     -15 -15.66  0.66   ✓ 0.333  None  0.403   0.91    1.0    0.0   77.6
+2FEO   dna        221 proteinp8       1   0.96  0.04   ✓ 0.328  None  0.874   0.89    1.0    0.0   78.4
+5CQH   dna        183 proteinnative  -6  -4.41  1.59   ✓ 0.439  None  0.155  0.959    1.0    0.0   85.6
+5CQH   dna        183 proteinn8     -14 -11.64  2.36   ✗ 0.453  None   0.11  0.964    1.0    0.0   86.1
+5CQH   dna        183 proteinp8       2   0.23  1.77   ✓ 0.426  None  0.197  0.962    1.0    0.0   84.5
+
+=== 配体消融对比（ligand vs protein，H2 dev / H1 TM）===
+1A65    arm=native dev: ligand=5.24 protein=0.54 (Δ-4.70)  TM: 0.971→0.971  rec: 0.571→0.542
+1A65    arm=n8     dev: ligand=4.97 protein=0.73 (Δ-4.24)  TM: 0.972→0.971  rec: 0.564→0.542
+1A65    arm=p8     dev: ligand=6.67 protein=3.25 (Δ-3.42)  TM: 0.97→0.97  rec: 0.568→0.539
+1AG0    arm=native dev: ligand=1.15 protein=0.14 (Δ-1.01)  TM: 0.495→0.483  rec: 0.488→0.465
+1AG0    arm=n8     dev: ligand=0.86 protein=3.37 (Δ+2.51)  TM: 0.494→0.492  rec: 0.514→0.477
+1AG0    arm=p8     dev: ligand=0.30 protein=0.29 (Δ-0.01)  TM: 0.494→0.369  rec: 0.463→0.442
+1AS2    arm=native dev: ligand=1.56 protein=1.68 (Δ+0.12)  TM: 0.931→0.92  rec: 0.355→0.349
+1AS2    arm=n8     dev: ligand=2.33 protein=0.59 (Δ-1.74)  TM: 0.942→0.941  rec: 0.366→0.361
+1AS2    arm=p8     dev: ligand=0.85 protein=1.04 (Δ+0.19)  TM: 0.939→0.922  rec: 0.36→0.351
+1AXW    arm=native dev: ligand=1.90 protein=0.28 (Δ-1.62)  TM: 0.515→0.513  rec: 0.495→0.472
+1AXW    arm=n8     dev: ligand=3.09 protein=3.52 (Δ+0.43)  TM: 0.827→0.939  rec: 0.519→0.492
+1AXW    arm=p8     dev: ligand=1.39 protein=2.18 (Δ+0.79)  TM: 0.522→0.897  rec: 0.475→0.453
+1AZM    arm=native dev: ligand=1.63 protein=1.81 (Δ+0.18)  TM: 0.984→0.983  rec: 0.49→0.473
+1AZM    arm=n8     dev: ligand=1.44 protein=1.94 (Δ+0.50)  TM: 0.985→0.985  rec: 0.501→0.477
+1AZM    arm=p8     dev: ligand=0.76 protein=0.85 (Δ+0.09)  TM: 0.984→0.984  rec: 0.491→0.473
+1BJ4    arm=native dev: ligand=2.30 protein=2.77 (Δ+0.47)  TM: 0.916→0.915  rec: 0.431→0.422
+1BJ4    arm=n8     dev: ligand=3.16 protein=3.65 (Δ+0.49)  TM: 0.934→0.931  rec: 0.442→0.432
+1BJ4    arm=p8     dev: ligand=6.00 protein=8.91 (Δ+2.91)  TM: 0.933→0.925  rec: 0.446→0.434
+1C6O    arm=native dev: ligand=4.14 protein=3.30 (Δ-0.84)  TM: 0.512→0.505  rec: 0.569→0.505
+1C6O    arm=n8     dev: ligand=7.64 protein=6.91 (Δ-0.73)  TM: 0.514→0.504  rec: 0.573→0.5
+1C6O    arm=p8     dev: ligand=3.98 protein=3.32 (Δ-0.66)  TM: 0.512→0.503  rec: 0.558→0.502
+1CGE    arm=native dev: ligand=0.79 protein=2.06 (Δ+1.27)  TM: 0.967→0.961  rec: 0.563→0.525
+1CGE    arm=n8     dev: ligand=3.53 protein=5.04 (Δ+1.51)  TM: 0.971→0.964  rec: 0.559→0.521
+1CGE    arm=p8     dev: ligand=0.44 protein=1.65 (Δ+1.21)  TM: 0.969→0.956  rec: 0.552→0.508
+2FEO    arm=native dev: ligand=1.71 protein=2.48 (Δ+0.77)  TM: 0.91→0.906  rec: 0.335→0.324
+2FEO    arm=n8     dev: ligand=0.04 protein=0.66 (Δ+0.62)  TM: 0.919→0.91  rec: 0.347→0.333
+2FEO    arm=p8     dev: ligand=0.15 protein=0.04 (Δ-0.11)  TM: 0.9→0.89  rec: 0.334→0.328
+5CQH    arm=native dev: ligand=1.44 protein=1.59 (Δ+0.15)  TM: 0.964→0.959  rec: 0.452→0.439
+5CQH    arm=n8     dev: ligand=2.25 protein=2.36 (Δ+0.11)  TM: 0.965→0.964  rec: 0.472→0.453
+5CQH    arm=p8     dev: ligand=1.56 protein=1.77 (Δ+0.21)  TM: 0.966→0.962  rec: 0.434→0.426
+
+H2 电荷达标: 44/80 = 0.55
+H1 TM≥0.70: 59/80 = 0.738
+
+已写 output/generalization_v9_stats.json

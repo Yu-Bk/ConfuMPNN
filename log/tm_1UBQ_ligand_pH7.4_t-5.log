@@ -1,0 +1,5 @@
+  native_charge__0_03_pI_7_68              TM-score=0.95791  RMSD=0.84
+  sample_1_pH_7_4_charge_-6_97_pI_4_26     TM-score=0.9576  RMSD=1.08
+  sample_2_pH_7_4_charge_-5_01_pI_4_20     TM-score=0.95694  RMSD=0.84
+  sample_3_pH_7_4_charge_-6_01_pI_4_19     TM-score=0.96333  RMSD=0.87
+已写入 code/output/e1_ext/1UBQ_ligand/pH7.4_t-5//tm.csv

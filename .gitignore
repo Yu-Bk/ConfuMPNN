@@ -20,12 +20,11 @@ env/
 *.ckpt
 *.safetensors
 
-# ===== 输出结果 / 日志 =====
+# ===== 输出结果 =====
 code/output/
 output/
-code/log/
-log/
 results/
+# 注：log/ 与 code/log/ 不再忽略——训练/验证日志纳入版本管理，方便多机查看与论文复现。
 
 # ===== 外部数据集（大文件不提交）=====
 data/*

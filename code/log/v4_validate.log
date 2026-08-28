@@ -1,0 +1,58 @@
+[load] model=mompnn_temberture_tm_esm_6_4_4_b01.ckpt device=cuda:1
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+
+=== 1BC8 L=93 native@7.4=+8.90 t_nat=9 固定位点=['C1', 'C24', 'C47', 'C71'] ===
+  t1_cond   target=  9.0 mean= +8.89±3.24 dev=0.11 pairID=0.63 Hpos=0.96
+  t1_base   target=  9.0 mean= +8.69±2.90 dev=0.31 pairID=0.63 Hpos=1.00
+  t2_pos    target= 12.0 mean=+11.54±4.15 dev=0.46 pairID=0.62 Hpos=1.01
+  t2_pos_extreme target= 17.0 mean=+16.63±4.70 dev=0.37 pairID=0.60 Hpos=1.04
+  t2_neg    target=  4.0 mean= +4.15±3.23 dev=0.15 pairID=0.63 Hpos=0.99
+  t2_ph     target=1.0674 mean= +0.46±2.52 dev=0.61 pairID=0.64 Hpos=0.96
+  → output/finetune_v4_validate/1BC8/charge_stats.json
+
+=== 1CRN L=46 native@7.4=-0.68 t_nat=-1 固定位点=['A7', 'A13', 'A25', 'A35'] ===
+  t1_cond   target= -1.0 mean= -1.13±1.63 dev=0.13 pairID=0.75 Hpos=0.64
+  t1_base   target= -1.0 mean= -2.18±1.77 dev=1.18 pairID=0.69 Hpos=0.80
+  t2_pos    target=  2.0 mean= -0.38±1.55 dev=2.38 pairID=0.69 Hpos=0.81
+  t2_pos_extreme target=  7.0 mean= +2.87±2.20 dev=4.13 pairID=0.70 Hpos=0.79
+  t2_neg    target= -6.0 mean= -5.53±1.88 dev=0.47 pairID=0.69 Hpos=0.78
+  t2_ph     target=1.0674 mean= -0.68±1.61 dev=1.75 pairID=0.69 Hpos=0.80
+  → output/finetune_v4_validate/1CRN/charge_stats.json
+
+=== 1UBQ L=76 native@7.4=+0.03 t_nat=0 固定位点=['A1', 'A23', 'A43', 'A59'] ===
+  t1_cond   target=  0.0 mean= -2.59±2.41 dev=2.59 pairID=0.65 Hpos=0.92
+  t1_base   target=  0.0 mean= -2.54±3.11 dev=2.54 pairID=0.65 Hpos=0.93
+  t2_pos    target=  3.0 mean= +0.20±3.23 dev=2.80 pairID=0.65 Hpos=0.92
+  t2_pos_extreme target=  8.0 mean= +4.80±2.94 dev=3.20 pairID=0.63 Hpos=0.97
+  t2_neg    target= -5.0 mean= -7.90±3.14 dev=2.90 pairID=0.64 Hpos=0.92
+  t2_ph     target=1.0674 mean= -1.15±3.18 dev=2.21 pairID=0.65 Hpos=0.93
+  → output/finetune_v4_validate/1UBQ/charge_stats.json
+
+=== 2LZM L=164 native@7.4=+7.80 t_nat=8 固定位点=['A1', 'A46', 'A84', 'A126'] ===
+  t1_cond   target=  8.0 mean= +7.65±2.82 dev=0.35 pairID=0.65 Hpos=0.93
+  t1_base   target=  8.0 mean= +9.93±3.32 dev=1.93 pairID=0.66 Hpos=0.90
+  t2_pos    target= 11.0 mean=+14.69±3.45 dev=3.69 pairID=0.65 Hpos=0.92
+  t2_pos_extreme target= 16.0 mean=+21.43±4.00 dev=5.43 pairID=0.63 Hpos=0.96
+  t2_neg    target=  3.0 mean= +1.82±3.73 dev=1.18 pairID=0.67 Hpos=0.85
+  t2_ph     target=1.0674 mean= -1.13±3.34 dev=2.20 pairID=0.67 Hpos=0.85
+  → output/finetune_v4_validate/2LZM/charge_stats.json
+
+=== 1b24A01 L=95 native@7.4=+8.01 t_nat=8 固定位点=['A7', 'A36', 'A55', 'A78'] ===
+  t1_cond   target=  8.0 mean= +9.52±2.56 dev=1.52 pairID=0.58 Hpos=1.14
+  t1_base   target=  8.0 mean= +9.17±3.83 dev=1.17 pairID=0.50 Hpos=1.36
+  t2_pos    target= 11.0 mean=+12.82±3.96 dev=1.82 pairID=0.51 Hpos=1.33
+  t2_pos_extreme target= 16.0 mean=+18.86±5.06 dev=2.86 pairID=0.51 Hpos=1.31
+  t2_neg    target=  3.0 mean= +2.61±4.21 dev=0.39 pairID=0.52 Hpos=1.31
+  t2_ph     target=1.0674 mean= -0.18±4.25 dev=1.24 pairID=0.52 Hpos=1.30
+  → output/finetune_v4_validate/1b24A01/charge_stats.json
+
+=== 1a87A02 L=200 native@7.4=+8.02 t_nat=8 固定位点=['A196', 'A240', 'A289', 'A338'] ===
+  t1_cond   target=  8.0 mean= +3.56±4.38 dev=4.44 pairID=0.59 Hpos=1.05
+  t1_base   target=  8.0 mean= +3.18±3.30 dev=4.82 pairID=0.59 Hpos=1.03
+  t2_pos    target= 11.0 mean= +7.32±4.23 dev=3.68 pairID=0.58 Hpos=1.07
+  t2_pos_extreme target= 16.0 mean=+11.67±5.89 dev=4.33 pairID=0.57 Hpos=1.11
+  t2_neg    target=  3.0 mean= -2.68±2.90 dev=5.68 pairID=0.60 Hpos=1.00
+  t2_ph     target=1.0674 mean= -4.24±3.31 dev=5.31 pairID=0.61 Hpos=0.98
+  → output/finetune_v4_validate/1a87A02/charge_stats.json
+
+=== 采样完成 ===

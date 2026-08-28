@@ -1,0 +1,13 @@
+[1] 加载模型权重: ligandmpnn_v_32_010_25.pt
+    参数数量: 2,618,693
+[2] 读取 PDB: 1BC8.pdb
+    蛋白长度: 93, native 序列: MDSAITLWQFLLQLLQKPQNKHMICWTSNDGQFKLLQAEE...
+[3] 结构感知过滤器（default 预设）
+    过滤器规则触发: {'charge_cluster': {'pos_over': 0, 'neg_over': 0}, 'salt_bridge': {'over': 0}, 'core_charge': {'core': 0}, 'same_sign_cluster': {'n_components': 1}}
+    被抑制的 (位置, 氨基酸) 对数: 0
+[4a] 引导采样（静态 bias）
+    生成序列: GGSPISLHEFLLELLSDPKYEDIIKWVSDNGEFRLVDPEAVAKLWGEVKGKPKMNWGNLNDALRGYKKKKIISTVKGKPYQYRFVNYPELLHP
+[4b] 引导采样（动态回调接口，zero bias）
+    生成序列: MGSPISLHEFLLELLSDPKYADIIEWVSDNGEFRLVDPERVAKLWGEVKGKPKMNWENLHDALRGYKKKKIISTVEGKPYQYRFVNYPELLHP
+[5] 结果已保存: /data/nfs/IC/baokun_yu/ConfuMPNN/code/output/smoke_1BC8_guided.txt
+冒烟测试通过 ✅

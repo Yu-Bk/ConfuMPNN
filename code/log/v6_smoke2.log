@@ -1,0 +1,18 @@
+[22:55:53] === ConfuMPNN Phase 2 条件微调启动 ===
+[22:55:53] device=cuda:1  epochs=1  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=8.0  placeholder_prob=0.15  charge_temp=0.5
+[22:55:54] backbone: MoMPNN 冻结（1.66M 参数，不更新）
+[22:55:54] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[22:55:54] 数据：1600 结构域 × 8 pH = 12800 样本（/data/nfs/IC/baokun_yu/ConfuMPNN/data/cath/labels_balanced_v6.npz）
+[22:55:55] 逆密度加权开：k=1.0 eps=0.001 cap=2.0（电荷分布偏斜补偿，治高正电 target 过冲）
+[22:56:02]   预解析+encode 200/1600（跳过 0）
+[22:56:07]   预解析+encode 400/1600（跳过 0）
+[22:56:14]   预解析+encode 600/1600（跳过 0）
+[22:56:24]   预解析+encode 800/1600（跳过 0）
+[22:56:29]   预解析+encode 1000/1600（跳过 0）
+[22:56:35]   预解析+encode 1200/1600（跳过 0）
+[22:56:44]   预解析+encode 1400/1600（跳过 0）
+[22:56:46]   ⚠️ 跳过坏域 1c77B00: 'NoneType' object has no attribute 'select'
+[22:56:49]   预解析+encode 1599/1600（跳过 1）
+[22:56:49] ⚠️ 共跳过 1 个坏域（prody 无法解析），实际训练 1599 域
+[22:56:49] 预解析完成，缓存 encode 特征 ~6.34GB
+[22:56:49] 开始训练：1 epochs × 1599 域/epoch = 1599 steps

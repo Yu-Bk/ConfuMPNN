@@ -1,0 +1,13 @@
+[1] 加载模型: ligandmpnn_v_32_010_25.pt  (device=cuda)
+    解析 model_type = ligand_mpnn
+[2] 读取 PDB: input/1CRN.pdb
+    蛋白长度 46，native: TTCCPSIVARSNFNVCRLPGTPEAICATYTGCIIIPGATCPGDYAN...
+[3] 引导设置: pH=9.0, target_charge=-5.0, preset=default, strength=0.5
+[4] 引导采样 3 条候选序列...
+    [ 1] charge= -6.24  pI= 6.16  TVCCPSRKALEEFKICRQDGTPDEVCCKATGCILIAGSTCPSNYSY
+    [ 2] charge= -6.28  pI= 6.20  TVCCPSREALERYKQCRKPGTPDSVCCEATGCILIPGTTCPPEYSY
+    [ 3] charge= -7.18  pI= 4.90  TVCCPSEAALQRFRVCLEPGTPREVCCEKTGCILIPGTTCPPEYSY
+[5] native   : charge= -5.32  pI= 5.98  TTCCPSIVARSNFNVCRLPGTPEAICATYTGCIIIPGATCPGDYAN
+    平均净电荷 = -6.57 ± 0.43  (目标 -5.0)
+[6] 输出已保存: output/e1_ext/1CRN_ligand/pH9.0_t-5/seqs.fa
+完成 ✅

@@ -1,0 +1,149 @@
+/home/baokun_yu/miniconda3/envs/confumpnn-temberture/lib/python3.10/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/home/baokun_yu/miniconda3/envs/confumpnn-temberture/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+加载 replica1...
+加载 replica2...
+加载 replica3...
+批量模式：找到 1 个 seqs.fa
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.64s/it]100%|██████████| 1/1 [00:02<00:00,  2.64s/it]
+Predicted melting temperature: [56.05029296875]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.03s/it]100%|██████████| 1/1 [00:01<00:00,  1.03s/it]
+Predicted melting temperature: [59.76525115966797]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.09it/s]100%|██████████| 1/1 [00:00<00:00,  1.09it/s]
+Predicted melting temperature: [63.42881774902344]
+  seed_111 arm=cond scenario=A pH=7.4 targ   Tm=59.75  replicas=[56.1, 59.8, 63.4]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.20it/s]100%|██████████| 1/1 [00:00<00:00,  1.20it/s]
+Predicted melting temperature: [50.9727897644043]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.07it/s]100%|██████████| 1/1 [00:00<00:00,  1.07it/s]
+Predicted melting temperature: [56.531944274902344]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.11it/s]100%|██████████| 1/1 [00:00<00:00,  1.11it/s]
+Predicted melting temperature: [56.34537887573242]
+  seed_112 arm=cond scenario=A pH=7.4 targ   Tm=54.62  replicas=[51.0, 56.5, 56.3]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.24it/s]100%|██████████| 1/1 [00:00<00:00,  1.24it/s]
+Predicted melting temperature: [50.75115203857422]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.63it/s]100%|██████████| 1/1 [00:00<00:00,  1.63it/s]
+Predicted melting temperature: [57.38914489746094]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.75it/s]100%|██████████| 1/1 [00:00<00:00,  1.75it/s]
+Predicted melting temperature: [59.64636993408203]
+  seed_113 arm=cond scenario=A pH=7.4 targ   Tm=55.93  replicas=[50.8, 57.4, 59.6]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.50it/s]100%|██████████| 1/1 [00:00<00:00,  1.50it/s]
+Predicted melting temperature: [61.37760925292969]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.04it/s]100%|██████████| 1/1 [00:00<00:00,  1.04it/s]
+Predicted melting temperature: [58.827110290527344]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.19it/s]100%|██████████| 1/1 [00:00<00:00,  1.19it/s]
+Predicted melting temperature: [60.3607177734375]
+  seed_114 arm=cond scenario=A pH=7.4 targ   Tm=60.19  replicas=[61.4, 58.8, 60.4]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.28it/s]100%|██████████| 1/1 [00:00<00:00,  1.28it/s]
+Predicted melting temperature: [63.595455169677734]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.28it/s]100%|██████████| 1/1 [00:00<00:00,  1.28it/s]
+Predicted melting temperature: [55.58135223388672]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.99it/s]100%|██████████| 1/1 [00:00<00:00,  1.99it/s]
+Predicted melting temperature: [63.87472152709961]
+  seed_115 arm=cond scenario=A pH=7.4 targ   Tm=61.02  replicas=[63.6, 55.6, 63.9]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.44it/s]100%|██████████| 1/1 [00:00<00:00,  1.44it/s]
+Predicted melting temperature: [51.11226272583008]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.51it/s]100%|██████████| 1/1 [00:00<00:00,  1.51it/s]
+Predicted melting temperature: [53.61035919189453]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.08it/s]100%|██████████| 1/1 [00:00<00:00,  1.08it/s]
+Predicted melting temperature: [55.559322357177734]
+  seed_116 arm=cond scenario=A pH=7.4 targ   Tm=53.43  replicas=[51.1, 53.6, 55.6]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.23it/s]100%|██████████| 1/1 [00:00<00:00,  1.23it/s]
+Predicted melting temperature: [48.657752990722656]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.14it/s]100%|██████████| 1/1 [00:00<00:00,  1.14it/s]
+Predicted melting temperature: [54.959007263183594]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.20it/s]100%|██████████| 1/1 [00:00<00:00,  1.20it/s]
+Predicted melting temperature: [55.803993225097656]
+  seed_117 arm=cond scenario=A pH=7.4 targ   Tm=53.14  replicas=[48.7, 55.0, 55.8]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.20it/s]100%|██████████| 1/1 [00:00<00:00,  1.20it/s]
+Predicted melting temperature: [60.06388473510742]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.11it/s]100%|██████████| 1/1 [00:00<00:00,  1.11it/s]
+Predicted melting temperature: [62.39900207519531]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.35it/s]100%|██████████| 1/1 [00:00<00:00,  1.35it/s]
+Predicted melting temperature: [58.91965103149414]
+  seed_118 arm=cond scenario=A pH=7.4 targ   Tm=60.46  replicas=[60.1, 62.4, 58.9]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.21it/s]100%|██████████| 1/1 [00:00<00:00,  1.21it/s]
+Predicted melting temperature: [52.61095428466797]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.68it/s]100%|██████████| 1/1 [00:00<00:00,  1.68it/s]
+Predicted melting temperature: [55.175559997558594]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.19it/s]100%|██████████| 1/1 [00:00<00:00,  1.19it/s]
+Predicted melting temperature: [63.49065017700195]
+  seed_119 arm=cond scenario=A pH=7.4 targ   Tm=57.09  replicas=[52.6, 55.2, 63.5]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.09it/s]100%|██████████| 1/1 [00:00<00:00,  1.09it/s]
+Predicted melting temperature: [52.13439178466797]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.16it/s]100%|██████████| 1/1 [00:00<00:00,  1.16it/s]
+Predicted melting temperature: [57.691436767578125]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.02it/s]100%|██████████| 1/1 [00:00<00:00,  1.02it/s]
+Predicted melting temperature: [57.65397644042969]
+  seed_120 arm=cond scenario=A pH=7.4 targ   Tm=55.83  replicas=[52.1, 57.7, 57.7]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.07s/it]100%|██████████| 1/1 [00:01<00:00,  1.07s/it]
+Predicted melting temperature: [51.66963195800781]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.00it/s]100%|██████████| 1/1 [00:00<00:00,  1.00it/s]
+Predicted melting temperature: [56.05797576904297]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.05it/s]100%|██████████| 1/1 [00:00<00:00,  1.05it/s]
+Predicted melting temperature: [61.67536926269531]
+  seed_121 arm=cond scenario=A pH=7.4 targ   Tm=56.47  replicas=[51.7, 56.1, 61.7]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.02s/it]100%|██████████| 1/1 [00:01<00:00,  1.02s/it]
+Predicted melting temperature: [50.4705924987793]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.13it/s]100%|██████████| 1/1 [00:00<00:00,  1.13it/s]
+Predicted melting temperature: [56.5269889831543]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.06it/s]100%|██████████| 1/1 [00:00<00:00,  1.06it/s]
+Predicted melting temperature: [56.299476623535156]
+  seed_122 arm=cond scenario=A pH=7.4 targ   Tm=54.43  replicas=[50.5, 56.5, 56.3]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.04it/s]100%|██████████| 1/1 [00:00<00:00,  1.04it/s]
+Predicted melting temperature: [54.47433853149414]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.04it/s]100%|██████████| 1/1 [00:00<00:00,  1.04it/s]
+Predicted melting temperature: [54.7180290222168]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.09it/s]100%|██████████| 1/1 [00:00<00:00,  1.09it/s]
+Predicted melting temperature: [63.972618103027344]
+  seed_123 arm=cond scenario=A pH=7.4 targ   Tm=57.72  replicas=[54.5, 54.7, 64.0]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.26it/s]100%|██████████| 1/1 [00:00<00:00,  1.26it/s]
+Predicted melting temperature: [48.10738754272461]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.82it/s]100%|██████████| 1/1 [00:00<00:00,  1.82it/s]
+Predicted melting temperature: [54.48046875]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.81it/s]100%|██████████| 1/1 [00:00<00:00,  1.81it/s]
+Predicted melting temperature: [58.953155517578125]
+  seed_124 arm=cond scenario=A pH=7.4 targ   Tm=53.85  replicas=[48.1, 54.5, 59.0]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.32it/s]100%|██████████| 1/1 [00:00<00:00,  1.32it/s]
+Predicted melting temperature: [47.92214584350586]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.10it/s]100%|██████████| 1/1 [00:00<00:00,  1.10it/s]
+Predicted melting temperature: [59.41166687011719]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.08it/s]100%|██████████| 1/1 [00:00<00:00,  1.08it/s]
+Predicted melting temperature: [60.661590576171875]
+  seed_125 arm=cond scenario=A pH=7.4 targ   Tm=56.00  replicas=[47.9, 59.4, 60.7]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.06s/it]100%|██████████| 1/1 [00:01<00:00,  1.06s/it]
+Predicted melting temperature: [59.60738754272461]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.26it/s]100%|██████████| 1/1 [00:00<00:00,  1.25it/s]
+Predicted melting temperature: [57.569087982177734]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.01s/it]100%|██████████| 1/1 [00:01<00:00,  1.01s/it]
+Predicted melting temperature: [57.13947296142578]
+  seed_126 arm=cond scenario=A pH=7.4 targ   Tm=58.11  replicas=[59.6, 57.6, 57.1]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.25it/s]100%|██████████| 1/1 [00:00<00:00,  1.25it/s]
+Predicted melting temperature: [62.81232452392578]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.10it/s]100%|██████████| 1/1 [00:00<00:00,  1.10it/s]
+Predicted melting temperature: [54.46479797363281]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.10it/s]100%|██████████| 1/1 [00:00<00:00,  1.10it/s]
+Predicted melting temperature: [55.84077453613281]
+  seed_127 arm=cond scenario=A pH=7.4 targ   Tm=57.71  replicas=[62.8, 54.5, 55.8]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.30it/s]100%|██████████| 1/1 [00:00<00:00,  1.30it/s]
+Predicted melting temperature: [64.99687957763672]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.06s/it]100%|██████████| 1/1 [00:01<00:00,  1.06s/it]
+Predicted melting temperature: [58.92555236816406]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.12it/s]100%|██████████| 1/1 [00:00<00:00,  1.12it/s]
+Predicted melting temperature: [61.68206787109375]
+  seed_128 arm=cond scenario=A pH=7.4 targ   Tm=61.87  replicas=[65.0, 58.9, 61.7]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.16it/s]100%|██████████| 1/1 [00:00<00:00,  1.16it/s]
+Predicted melting temperature: [49.0939826965332]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.36it/s]100%|██████████| 1/1 [00:00<00:00,  1.36it/s]
+Predicted melting temperature: [56.10765075683594]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.09it/s]100%|██████████| 1/1 [00:00<00:00,  1.09it/s]
+Predicted melting temperature: [53.89453887939453]
+  seed_129 arm=cond scenario=A pH=7.4 targ   Tm=53.03  replicas=[49.1, 56.1, 53.9]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.02it/s]100%|██████████| 1/1 [00:00<00:00,  1.02it/s]
+Predicted melting temperature: [58.642539978027344]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.31it/s]100%|██████████| 1/1 [00:00<00:00,  1.31it/s]
+Predicted melting temperature: [55.68953323364258]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.47it/s]100%|██████████| 1/1 [00:00<00:00,  1.47it/s]
+Predicted melting temperature: [61.416439056396484]
+  seed_130 arm=cond scenario=A pH=7.4 targ   Tm=58.58  replicas=[58.6, 55.7, 61.4]
+  [code/output/phase3_antidrift_s1_n20/1CRN/A_cond/seqs.fa] 已写 code/output/phase3_antidrift_s1_n20/1CRN/A_cond/seqs.fa.tm.csv

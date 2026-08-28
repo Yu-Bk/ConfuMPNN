@@ -1,0 +1,8 @@
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+[load] L=263 native_charge@7.4=-6.00 结合位点(5.0A内) 8 残基
+  配体: ['PNM']
+  uncond       无条件（原始 LigandMPNN）           charge=-8.00±2.47 globRec=0.514 pocketRec=0.619
+  cond_native  条件化 target=native            charge=-5.03±3.88 globRec=0.468 pocketRec=0.412
+  cond_neg5    条件化 target=native-5          charge=-13.01±2.43 globRec=0.438 pocketRec=0.450
+
+已写 ../output/ligand_pocket_1FQG/pocket_validation.json

@@ -1,0 +1,7 @@
+  native_charge__7_80_pI_9_95              TM-score=0.98688  RMSD=0.56
+  sample_1_pH_7_4_charge__6_99_pI_10_53    TM-score=0.88075  RMSD=1.85
+  sample_2_pH_7_4_charge__8_03_pI_10_56    TM-score=0.98188  RMSD=0.66
+  sample_3_pH_7_4_charge__7_02_pI_10_06    TM-score=0.96436  RMSD=1.02
+  sample_4_pH_7_4_charge__5_90_pI_9_76     TM-score=0.98519  RMSD=0.59
+  sample_5_pH_7_4_charge__6_02_pI_9_95     TM-score=0.97911  RMSD=0.71
+已写入 code/output/e1_ext/2LZM_ligand/baseline//tm.csv

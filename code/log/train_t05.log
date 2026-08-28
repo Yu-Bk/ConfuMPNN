@@ -1,0 +1,42 @@
+[20:32:36] === ConfuMPNN Phase 2 条件微调启动 ===
+[20:32:36] device=cuda:1  epochs=30  lr=0.001  λ_c=0.5  λ_kl=0.05  perturb_prob=0.5  perturb_scale=4.0  charge_temp=0.5
+[20:32:37] backbone: MoMPNN 冻结（1.66M 参数，不更新）
+[20:32:37] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[20:32:38] 数据：999 结构域 × 8 pH = 7992 样本（/data/nfs/IC/baokun_yu/ConfuMPNN/data/cath/labels.npz）
+[20:32:51]   预解析+encode 200/999
+[20:33:08]   预解析+encode 400/999
+[20:33:20]   预解析+encode 600/999
+[20:33:32]   预解析+encode 800/999
+[20:33:44] 预解析完成，缓存 encode 特征 ~3.71GB
+[20:33:44] 开始训练：30 epochs × 999 域/epoch = 29970 steps
+[20:34:14] epoch 1/30  total=3.5549  ce=1.8384  charge=3.4231  kl=0.1003  elapsed=0.5min
+[20:34:43] epoch 2/30  total=3.2276  ce=1.8811  charge=2.6764  kl=0.1660  elapsed=1.0min
+[20:35:13] epoch 3/30  total=3.0664  ce=1.9024  charge=2.3092  kl=0.1891  elapsed=1.5min
+[20:35:43] epoch 4/30  total=3.0232  ce=1.9167  charge=2.1923  kl=0.2076  elapsed=2.0min
+[20:36:14] epoch 5/30  total=3.0323  ce=1.9163  charge=2.2112  kl=0.2089  elapsed=2.5min
+[20:36:43] epoch 6/30  total=2.9705  ce=1.9191  charge=2.0816  kl=0.2127  elapsed=3.0min
+[20:37:12] epoch 7/30  total=2.9364  ce=1.9238  charge=2.0034  kl=0.2180  elapsed=3.5min
+[20:37:41] epoch 8/30  total=2.9454  ce=1.9190  charge=2.0313  kl=0.2141  elapsed=4.0min
+[20:38:10] epoch 9/30  total=2.9109  ce=1.9261  charge=1.9475  kl=0.2219  elapsed=4.4min
+[20:38:40] epoch 10/30  total=2.8793  ce=1.9293  charge=1.8773  kl=0.2261  elapsed=4.9min
+[20:39:10] epoch 11/30  total=2.9272  ce=1.9286  charge=1.9748  kl=0.2238  elapsed=5.4min
+[20:39:39] epoch 12/30  total=2.9023  ce=1.9345  charge=1.9127  kl=0.2312  elapsed=5.9min
+[20:40:08] epoch 13/30  total=2.8583  ce=1.9286  charge=1.8368  kl=0.2249  elapsed=6.4min
+[20:40:37] epoch 14/30  total=2.8648  ce=1.9296  charge=1.8477  kl=0.2271  elapsed=6.9min
+[20:41:07] epoch 15/30  total=2.8573  ce=1.9336  charge=1.8243  kl=0.2301  elapsed=7.4min
+[20:41:36] epoch 16/30  total=2.8444  ce=1.9307  charge=1.8046  kl=0.2283  elapsed=7.9min
+[20:42:06] epoch 17/30  total=2.8464  ce=1.9317  charge=1.8064  kl=0.2301  elapsed=8.4min
+[20:42:35] epoch 18/30  total=2.8419  ce=1.9356  charge=1.7892  kl=0.2333  elapsed=8.9min
+[20:43:05] epoch 19/30  total=2.8389  ce=1.9320  charge=1.7909  kl=0.2295  elapsed=9.3min
+[20:43:34] epoch 20/30  total=2.8363  ce=1.9321  charge=1.7856  kl=0.2280  elapsed=9.8min
+[20:44:03] epoch 21/30  total=2.8345  ce=1.9347  charge=1.7764  kl=0.2324  elapsed=10.3min
+[20:44:32] epoch 22/30  total=2.8236  ce=1.9401  charge=1.7430  kl=0.2382  elapsed=10.8min
+[20:45:04] epoch 23/30  total=2.8049  ce=1.9385  charge=1.7091  kl=0.2364  elapsed=11.3min
+[20:45:33] epoch 24/30  total=2.8014  ce=1.9358  charge=1.7076  kl=0.2348  elapsed=11.8min
+[20:46:02] epoch 25/30  total=2.7981  ce=1.9383  charge=1.6960  kl=0.2367  elapsed=12.3min
+[20:46:33] epoch 26/30  total=2.8107  ce=1.9399  charge=1.7179  kl=0.2384  elapsed=12.8min
+[20:47:01] epoch 27/30  total=2.8158  ce=1.9368  charge=1.7345  kl=0.2342  elapsed=13.3min
+[20:47:30] epoch 28/30  total=2.8060  ce=1.9347  charge=1.7193  kl=0.2331  elapsed=13.8min
+[20:48:01] epoch 29/30  total=2.7909  ce=1.9302  charge=1.6987  kl=0.2278  elapsed=14.3min
+[20:48:32] epoch 30/30  total=2.8107  ce=1.9335  charge=1.7312  kl=0.2328  elapsed=14.8min
+[20:48:32] 训练完成。总耗时 14.8min。checkpoint 在 code/output/finetune_t05/

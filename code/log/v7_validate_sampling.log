@@ -1,0 +1,49 @@
+[load] model=mompnn_temberture_tm_esm_6_4_4_b01.ckpt device=cuda:3
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+
+=== 1BC8 L=93 native@7.4=+8.90 t_nat=9 固定位点=['C1', 'C24', 'C47', 'C71'] ===
+  t1_cond   target=  9.0 mean= +8.48±2.22 dev=0.52 pairID=0.59 Hpos=1.10
+  t1_base   target=  9.0 mean= +8.04±2.85 dev=0.96 pairID=0.57 Hpos=1.19
+  t2_pos    target= 12.0 mean=+12.69±3.18 dev=0.69 pairID=0.55 Hpos=1.24
+  t2_pos_extreme target= 17.0 mean=+22.45±3.24 dev=5.45 pairID=0.56 Hpos=1.16
+  t2_neg    target=  4.0 mean= +3.02±2.65 dev=0.98 pairID=0.58 Hpos=1.14
+  t2_ph     target=1.4243 mean= +0.60±2.15 dev=0.83 pairID=0.59 Hpos=1.09
+  → /data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_v7_validate/1BC8/charge_stats.json
+
+=== 1CRN L=46 native@7.4=-0.68 t_nat=-1 固定位点=['A7', 'A13', 'A25', 'A35'] ===
+  t1_cond   target= -1.0 mean= -1.30±1.62 dev=0.30 pairID=0.68 Hpos=0.86
+  t1_base   target= -1.0 mean= -1.99±1.51 dev=0.99 pairID=0.65 Hpos=0.92
+  t2_pos    target=  2.0 mean= +0.46±1.88 dev=1.54 pairID=0.63 Hpos=0.96
+  t2_pos_extreme target=  7.0 mean= +5.39±2.49 dev=1.61 pairID=0.61 Hpos=1.07
+  t2_neg    target= -6.0 mean= -7.70±2.38 dev=1.70 pairID=0.65 Hpos=0.92
+  t2_ph     target=1.4243 mean= -0.10±1.80 dev=1.53 pairID=0.63 Hpos=0.95
+  → /data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_v7_validate/1CRN/charge_stats.json
+
+=== 1UBQ L=76 native@7.4=+0.03 t_nat=0 固定位点=['A1', 'A23', 'A43', 'A59'] ===
+  t1_cond   target=  0.0 mean= -0.70±2.31 dev=0.70 pairID=0.63 Hpos=0.99
+  t1_base   target=  0.0 mean= -1.20±1.94 dev=1.20 pairID=0.63 Hpos=0.99
+  t2_pos    target=  3.0 mean= +1.26±1.64 dev=1.74 pairID=0.62 Hpos=1.04
+  t2_pos_extreme target=  8.0 mean= +5.46±2.56 dev=2.54 pairID=0.58 Hpos=1.16
+  t2_neg    target= -5.0 mean= -6.95±2.18 dev=1.95 pairID=0.61 Hpos=1.03
+  t2_ph     target=1.4243 mean= -0.05±1.72 dev=1.47 pairID=0.62 Hpos=1.02
+  → /data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_v7_validate/1UBQ/charge_stats.json
+
+=== 2LZM L=164 native@7.4=+7.80 t_nat=8 固定位点=['A1', 'A46', 'A84', 'A126'] ===
+  t1_cond   target=  8.0 mean= +6.72±1.97 dev=1.28 pairID=0.63 Hpos=0.98
+  t1_base   target=  8.0 mean= +8.77±2.29 dev=0.77 pairID=0.62 Hpos=1.02
+  t2_pos    target= 11.0 mean=+11.77±2.12 dev=0.77 pairID=0.60 Hpos=1.07
+  t2_pos_extreme target= 16.0 mean=+17.07±3.15 dev=1.07 pairID=0.59 Hpos=1.11
+  t2_neg    target=  3.0 mean= +3.57±2.32 dev=0.57 pairID=0.66 Hpos=0.88
+  t2_ph     target=1.4243 mean= +1.77±2.46 dev=0.35 pairID=0.67 Hpos=0.85
+  → /data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_v7_validate/2LZM/charge_stats.json
+
+=== 1b24A01 L=95 native@7.4=+8.01 t_nat=8 固定位点=['A7', 'A36', 'A55', 'A78'] ===
+  t1_cond   target=  8.0 mean=+10.21±3.55 dev=2.21 pairID=0.51 Hpos=1.34
+  t1_base   target=  8.0 mean= +8.77±2.76 dev=0.77 pairID=0.48 Hpos=1.42
+  t2_pos    target= 11.0 mean=+13.13±3.57 dev=2.13 pairID=0.48 Hpos=1.42
+  t2_pos_extreme target= 16.0 mean=+20.58±4.71 dev=4.58 pairID=0.47 Hpos=1.42
+  t2_neg    target=  3.0 mean= +1.84±2.27 dev=1.16 pairID=0.51 Hpos=1.35
+  t2_ph     target=1.4243 mean= -0.52±2.27 dev=1.94 pairID=0.51 Hpos=1.34
+  → /data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_v7_validate/1b24A01/charge_stats.json
+
+=== 采样完成 ===

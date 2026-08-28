@@ -1,0 +1,11 @@
+[18:46:49] === ConfuMPNN Phase 2 条件微调启动 ===
+[18:46:49] device=cuda:1  epochs=3  lr=0.001  λ_c=0.5  λ_kl=0.05  perturb_prob=0.5  perturb_scale=4.0
+[18:46:50] backbone: MoMPNN 冻结（1.66M 参数，不更新）
+[18:46:50] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[18:46:51] 数据：5 结构域 × 8 pH = 40 样本（/data/nfs/IC/baokun_yu/ConfuMPNN/data/cath/labels.npz）
+[18:46:52] 预解析完成，缓存 encode 特征 ~0.02GB
+[18:46:52] 开始训练：3 epochs × 5 域/epoch = 15 steps
+[18:46:52] epoch 1/3  total=3.9381  ce=1.5806  charge=4.7145  kl=0.0043  elapsed=0.0min
+[18:46:53] epoch 2/3  total=3.4112  ce=1.5750  charge=3.6716  kl=0.0073  elapsed=0.0min
+[18:46:53] epoch 3/3  total=3.5440  ce=1.5768  charge=3.9335  kl=0.0099  elapsed=0.0min
+[18:46:53] 训练完成。总耗时 0.0min。checkpoint 在 code/output/finetune_smoke2/

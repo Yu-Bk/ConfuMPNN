@@ -1,0 +1,138 @@
+[22:45:02] === ConfuMPNN Phase 2 条件微调启动 ===
+[22:45:02] device=cuda:1  epochs=30  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=8.0  placeholder_prob=0.15  charge_temp=0.5
+[22:45:04] backbone: MoMPNN 冻结（1.66M 参数，不更新）
+[22:45:04] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[22:45:04] 数据：7208 结构域 × 8 pH = 57664 样本（/data/nfs/IC/baokun_yu/ConfuMPNN/data/cath/labels_balanced_v6.npz）
+[22:45:05] 逆密度加权开：k=1.0 eps=0.001 cap=2.0（电荷分布偏斜补偿，治高正电 target 过冲）
+[22:45:11]   预解析+encode 200/7208
+[22:45:17]   预解析+encode 400/7208
+[22:45:24]   预解析+encode 600/7208
+[22:45:35]   预解析+encode 800/7208
+[22:45:41]   预解析+encode 1000/7208
+[22:45:48]   预解析+encode 1200/7208
+[22:45:58]   预解析+encode 1400/7208
+[22:47:13] === ConfuMPNN Phase 2 条件微调启动 ===
+[22:47:13] device=cuda:1  epochs=30  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=8.0  placeholder_prob=0.15  charge_temp=0.5
+[22:47:14] backbone: MoMPNN 冻结（1.66M 参数，不更新）
+[22:47:14] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[22:47:14] 数据：7208 结构域 × 8 pH = 57664 样本（/data/nfs/IC/baokun_yu/ConfuMPNN/data/cath/labels_balanced_v6.npz）
+[22:47:15] 逆密度加权开：k=1.0 eps=0.001 cap=2.0（电荷分布偏斜补偿，治高正电 target 过冲）
+[22:47:23]   预解析+encode 200/7208（跳过 0）
+[22:47:34]   预解析+encode 400/7208（跳过 0）
+[22:47:40]   预解析+encode 600/7208（跳过 0）
+[22:47:45]   预解析+encode 800/7208（跳过 0）
+[22:47:56]   预解析+encode 1000/7208（跳过 0）
+[22:48:01]   预解析+encode 1200/7208（跳过 0）
+[22:48:07]   预解析+encode 1400/7208（跳过 0）
+[22:48:10]   ⚠️ 跳过坏域 1c77B00: 'NoneType' object has no attribute 'select'
+[22:48:17]   预解析+encode 1599/7208（跳过 1）
+[22:48:23]   预解析+encode 1799/7208（跳过 1）
+[22:48:29]   预解析+encode 1999/7208（跳过 1）
+[22:48:35]   预解析+encode 2199/7208（跳过 1）
+[22:48:46]   预解析+encode 2399/7208（跳过 1）
+[22:48:52]   预解析+encode 2599/7208（跳过 1）
+[22:48:58]   预解析+encode 2799/7208（跳过 1）
+[22:49:10]   预解析+encode 2999/7208（跳过 1）
+[22:49:15]   预解析+encode 3199/7208（跳过 1）
+[22:49:21]   预解析+encode 3399/7208（跳过 1）
+[22:49:31]   预解析+encode 3599/7208（跳过 1）
+[22:49:37]   预解析+encode 3799/7208（跳过 1）
+[22:49:43]   预解析+encode 3999/7208（跳过 1）
+[22:49:50]   预解析+encode 4199/7208（跳过 1）
+[22:50:00]   预解析+encode 4399/7208（跳过 1）
+[22:50:06]   预解析+encode 4599/7208（跳过 1）
+[22:50:16]   预解析+encode 4799/7208（跳过 1）
+[22:50:22]   预解析+encode 4999/7208（跳过 1）
+[22:50:28]   预解析+encode 5199/7208（跳过 1）
+[22:50:38]   预解析+encode 5399/7208（跳过 1）
+[22:50:43]   预解析+encode 5599/7208（跳过 1）
+[22:50:53]   预解析+encode 5799/7208（跳过 1）
+[22:50:58]   预解析+encode 5999/7208（跳过 1）
+[22:51:05]   预解析+encode 6199/7208（跳过 1）
+[22:51:06]   ⚠️ 跳过坏域 2qe7G01: 'NoneType' object has no attribute 'select'
+[22:51:14]   预解析+encode 6398/7208（跳过 2）
+[22:51:20]   预解析+encode 6598/7208（跳过 2）
+[22:51:26]   预解析+encode 6798/7208（跳过 2）
+[22:51:37]   预解析+encode 6998/7208（跳过 2）
+[22:51:43]   预解析+encode 7198/7208（跳过 2）
+[22:51:43] ⚠️ 共跳过 2 个坏域（prody 无法解析），实际训练 7206 域
+[22:51:43] 预解析完成，缓存 encode 特征 ~28.22GB
+[22:51:43] 开始训练：30 epochs × 7208 域/epoch = 216240 steps
+[22:58:01] === ConfuMPNN Phase 2 条件微调启动 ===
+[22:58:01] device=cuda:1  epochs=30  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=8.0  placeholder_prob=0.15  charge_temp=0.5
+[22:58:03] backbone: MoMPNN 冻结（1.66M 参数，不更新）
+[22:58:03] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[22:58:05] 数据：7208 结构域 × 8 pH = 57664 样本（/data/nfs/IC/baokun_yu/ConfuMPNN/data/cath/labels_balanced_v6.npz）
+[22:58:06] 逆密度加权开：k=1.0 eps=0.001 cap=2.0（电荷分布偏斜补偿，治高正电 target 过冲）
+[22:58:12]   预解析+encode 200/7208（跳过 0）
+[22:58:19]   预解析+encode 400/7208（跳过 0）
+[22:58:29]   预解析+encode 600/7208（跳过 0）
+[22:58:35]   预解析+encode 800/7208（跳过 0）
+[22:58:40]   预解析+encode 1000/7208（跳过 0）
+[22:58:46]   预解析+encode 1200/7208（跳过 0）
+[22:58:56]   预解析+encode 1400/7208（跳过 0）
+[22:58:58]   ⚠️ 跳过坏域 1c77B00: 'NoneType' object has no attribute 'select'
+[22:59:01]   预解析+encode 1599/7208（跳过 1）
+[22:59:07]   预解析+encode 1799/7208（跳过 1）
+[22:59:18]   预解析+encode 1999/7208（跳过 1）
+[22:59:23]   预解析+encode 2199/7208（跳过 1）
+[22:59:29]   预解析+encode 2399/7208（跳过 1）
+[22:59:35]   预解析+encode 2599/7208（跳过 1）
+[22:59:45]   预解析+encode 2799/7208（跳过 1）
+[22:59:51]   预解析+encode 2999/7208（跳过 1）
+[22:59:56]   预解析+encode 3199/7208（跳过 1）
+[23:00:02]   预解析+encode 3399/7208（跳过 1）
+[23:00:13]   预解析+encode 3599/7208（跳过 1）
+[23:00:19]   预解析+encode 3799/7208（跳过 1）
+[23:00:24]   预解析+encode 3999/7208（跳过 1）
+[23:00:32]   预解析+encode 4199/7208（跳过 1）
+[23:00:38]   预解析+encode 4399/7208（跳过 1）
+[23:00:46]   预解析+encode 4599/7208（跳过 1）
+[23:00:52]   预解析+encode 4799/7208（跳过 1）
+[23:00:58]   预解析+encode 4999/7208（跳过 1）
+[23:01:08]   预解析+encode 5199/7208（跳过 1）
+[23:01:13]   预解析+encode 5399/7208（跳过 1）
+[23:01:19]   预解析+encode 5599/7208（跳过 1）
+[23:01:25]   预解析+encode 5799/7208（跳过 1）
+[23:01:35]   预解析+encode 5999/7208（跳过 1）
+[23:01:41]   预解析+encode 6199/7208（跳过 1）
+[23:01:41]   ⚠️ 跳过坏域 2qe7G01: 'NoneType' object has no attribute 'select'
+[23:01:46]   预解析+encode 6398/7208（跳过 2）
+[23:01:58]   预解析+encode 6598/7208（跳过 2）
+[23:02:03]   预解析+encode 6798/7208（跳过 2）
+[23:02:09]   预解析+encode 6998/7208（跳过 2）
+[23:02:15]   预解析+encode 7198/7208（跳过 2）
+[23:02:16] ⚠️ 共跳过 2 个坏域（prody 无法解析），实际训练 7206 域
+[23:02:16] 预解析完成，缓存 encode 特征 ~28.22GB
+[23:02:16] 开始训练：30 epochs × 7206 域/epoch = 216180 steps
+[23:08:29] epoch 1/30  total=4.8356  ce=1.9163  charge=4.9532  kl=0.1570  keep=0.8698  elapsed=6.2min
+[23:14:46] epoch 2/30  total=4.4894  ce=1.9467  charge=4.1432  kl=0.1931  keep=0.9228  elapsed=12.5min
+[23:21:03] epoch 3/30  total=4.3589  ce=1.9520  charge=3.8566  kl=0.1986  keep=0.9372  elapsed=18.8min
+[23:27:18] epoch 4/30  total=4.3322  ce=1.9529  charge=3.7961  kl=0.2004  keep=0.9425  elapsed=25.0min
+[23:33:32] epoch 5/30  total=4.2788  ce=1.9644  charge=3.6437  kl=0.2130  keep=0.9637  elapsed=31.3min
+[23:39:49] epoch 6/30  total=4.2725  ce=1.9660  charge=3.6315  kl=0.2144  keep=0.9601  elapsed=37.6min
+[23:46:06] epoch 7/30  total=4.2376  ce=1.9654  charge=3.5595  kl=0.2139  keep=0.9634  elapsed=43.8min
+[23:52:24] epoch 8/30  total=4.2270  ce=1.9689  charge=3.5223  kl=0.2178  keep=0.9722  elapsed=50.1min
+[23:58:38] epoch 9/30  total=4.2077  ce=1.9693  charge=3.4895  kl=0.2191  keep=0.9656  elapsed=56.4min
+[00:04:55] epoch 10/30  total=4.1862  ce=1.9721  charge=3.4260  kl=0.2225  keep=0.9799  elapsed=62.7min
+[00:11:07] epoch 11/30  total=4.1640  ce=1.9751  charge=3.3815  kl=0.2257  keep=0.9737  elapsed=68.9min
+[00:17:22] epoch 12/30  total=4.1511  ce=1.9773  charge=3.3422  kl=0.2279  keep=0.9826  elapsed=75.1min
+[00:23:29] epoch 13/30  total=4.1428  ce=1.9783  charge=3.3189  kl=0.2294  keep=0.9872  elapsed=81.2min
+[00:29:45] epoch 14/30  total=4.1258  ce=1.9805  charge=3.2737  kl=0.2322  keep=0.9936  elapsed=87.5min
+[00:36:03] epoch 15/30  total=4.0849  ce=1.9797  charge=3.1984  kl=0.2314  keep=0.9887  elapsed=93.8min
+[00:42:21] epoch 16/30  total=4.0787  ce=1.9830  charge=3.1686  kl=0.2346  keep=0.9993  elapsed=100.1min
+[00:48:40] epoch 17/30  total=4.0627  ce=1.9865  charge=3.1233  kl=0.2387  keep=1.0052  elapsed=106.4min
+[00:54:35] epoch 18/30  total=4.0281  ce=1.9883  charge=3.0546  kl=0.2407  keep=1.0009  elapsed=112.3min
+[01:00:53] epoch 19/30  total=4.0115  ce=1.9938  charge=2.9961  kl=0.2470  keep=1.0145  elapsed=118.6min
+[01:07:03] epoch 20/30  total=3.9977  ce=1.9983  charge=2.9556  kl=0.2510  keep=1.0181  elapsed=124.8min
+[01:13:09] epoch 21/30  total=3.9869  ce=1.9996  charge=2.9363  kl=0.2526  keep=1.0130  elapsed=130.9min
+[01:19:16] epoch 22/30  total=3.9749  ce=2.0000  charge=2.9047  kl=0.2530  keep=1.0196  elapsed=137.0min
+[01:24:51] epoch 23/30  total=3.9519  ce=2.0051  charge=2.8446  kl=0.2580  keep=1.0232  elapsed=142.6min
+[01:30:42] epoch 24/30  total=3.9378  ce=2.0093  charge=2.8025  kl=0.2616  keep=1.0284  elapsed=148.4min
+[01:36:58] epoch 25/30  total=3.9108  ce=2.0116  charge=2.7427  kl=0.2639  keep=1.0293  elapsed=154.7min
+[01:43:17] epoch 26/30  total=3.9039  ce=2.0151  charge=2.7150  kl=0.2680  keep=1.0357  elapsed=161.0min
+[01:49:35] epoch 27/30  total=3.8939  ce=2.0172  charge=2.6886  kl=0.2698  keep=1.0378  elapsed=167.3min
+[01:55:55] epoch 28/30  total=3.8762  ce=2.0122  charge=2.6676  kl=0.2641  keep=1.0340  elapsed=173.7min
+[02:02:18] epoch 29/30  total=3.8681  ce=2.0148  charge=2.6452  kl=0.2668  keep=1.0348  elapsed=180.0min
+[02:08:40] epoch 30/30  total=3.8583  ce=2.0151  charge=2.6265  kl=0.2669  keep=1.0331  elapsed=186.4min
+[02:08:42] 训练完成。总耗时 186.4min。checkpoint 在 output/finetune_v6/

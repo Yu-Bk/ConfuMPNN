@@ -1,0 +1,13 @@
+[1] 加载模型: ligandmpnn_v_32_010_25.pt  (device=cuda)
+    解析 model_type = ligand_mpnn
+[2] 读取 PDB: input/2LZM.pdb
+    蛋白长度 164，native: MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAI...
+[3] 引导设置: pH=7.4, target_charge=0.0, preset=default, strength=0.5
+[4] 引导采样 3 条候选序列...
+    [ 1] charge= +0.03  pI= 7.59  LNIFEILAILEGLRLTIYRDSDGNFTIGIGHVLTTAPSLAAAQAALDAAVGATTGGTITL
+    [ 2] charge= +1.03  pI= 9.27  LNIETILKILNGLRLTLYRNLRGFWTIGIGHTLTTDPSLAVALAAQNAAIGAVTNGQITR
+    [ 3] charge= -0.97  pI= 5.78  MNIYEILTILEGLRLTLYRDAAGRWTIGIGHVLTTDPSRQAALAALDRSVGRVTGGVITL
+[5] native   : charge= +7.80  pI= 9.95  MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNCNGVITK
+    平均净电荷 = +0.03 ± 0.82  (目标 0.0)
+[6] 输出已保存: output/e1_ext/2LZM_ligand/pH7.4_t0/seqs.fa
+完成 ✅

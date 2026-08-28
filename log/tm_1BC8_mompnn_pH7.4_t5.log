@@ -1,0 +1,5 @@
+  native_charge__8_90_pI_10_22             TM-score=0.94415  RMSD=1.56
+  sample_1_pH_7_4_charge__3_97_pI_9_54     TM-score=0.88303  RMSD=1.62
+  sample_2_pH_7_4_charge__4_98_pI_9_77     TM-score=0.88921  RMSD=1.72
+  sample_3_pH_7_4_charge__7_01_pI_9_91     TM-score=0.94564  RMSD=1.02
+已写入 code/output/e1_ext/1BC8_mompnn/pH7.4_t5//tm.csv

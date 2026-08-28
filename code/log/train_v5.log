@@ -1,0 +1,49 @@
+[20:54:17] === ConfuMPNN Phase 2 条件微调启动 ===
+[20:54:17] device=cuda:1  epochs=30  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=8.0  placeholder_prob=0.15  charge_temp=0.5
+[20:54:18] backbone: MoMPNN 冻结（1.66M 参数，不更新）
+[20:54:19] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[20:54:19] 数据：2176 结构域 × 8 pH = 17408 样本（/data/nfs/IC/baokun_yu/ConfuMPNN/data/cath/labels_balanced_v5.npz）
+[20:54:20] 逆密度加权开：k=1.0 eps=0.001 cap=2.0（电荷分布偏斜补偿，治高正电 target 过冲）
+[20:54:27]   预解析+encode 200/2176
+[20:54:34]   预解析+encode 400/2176
+[20:54:41]   预解析+encode 600/2176
+[20:54:47]   预解析+encode 800/2176
+[20:54:55]   预解析+encode 1000/2176
+[20:55:03]   预解析+encode 1200/2176
+[20:55:11]   预解析+encode 1400/2176
+[20:55:18]   预解析+encode 1600/2176
+[20:55:26]   预解析+encode 1800/2176
+[20:55:32]   预解析+encode 2000/2176
+[20:55:39] 预解析完成，缓存 encode 特征 ~9.44GB
+[20:55:39] 开始训练：30 epochs × 2176 域/epoch = 65280 steps
+[20:57:37] epoch 1/30  total=5.1794  ce=1.8495  charge=5.8990  kl=0.0740  keep=0.7535  elapsed=2.0min
+[20:59:35] epoch 2/30  total=4.6663  ce=1.8760  charge=4.7296  kl=0.1147  keep=0.8397  elapsed=3.9min
+[21:01:36] epoch 3/30  total=4.5869  ce=1.8905  charge=4.5245  kl=0.1333  keep=0.8549  elapsed=5.9min
+[21:03:34] epoch 4/30  total=4.4703  ce=1.9026  charge=4.2516  kl=0.1479  keep=0.8689  elapsed=7.9min
+[21:05:21] epoch 5/30  total=4.4367  ce=1.9014  charge=4.1764  kl=0.1473  keep=0.8796  elapsed=9.7min
+[21:07:21] epoch 6/30  total=4.4175  ce=1.9083  charge=4.1214  kl=0.1540  keep=0.8815  elapsed=11.7min
+[21:09:18] epoch 7/30  total=4.3552  ce=1.9121  charge=3.9859  kl=0.1605  keep=0.8843  elapsed=13.7min
+[21:11:17] epoch 8/30  total=4.3137  ce=1.9134  charge=3.8881  kl=0.1612  keep=0.8964  elapsed=15.6min
+[21:13:14] epoch 9/30  total=4.3572  ce=1.9151  charge=3.9700  kl=0.1640  keep=0.8977  elapsed=17.6min
+[21:14:43] epoch 10/30  total=4.2701  ce=1.9241  charge=3.7618  kl=0.1742  keep=0.9128  elapsed=19.1min
+[21:16:41] epoch 11/30  total=4.2639  ce=1.9163  charge=3.7861  kl=0.1652  keep=0.8927  elapsed=21.0min
+[21:18:38] epoch 12/30  total=4.2684  ce=1.9197  charge=3.7779  kl=0.1680  keep=0.9026  elapsed=23.0min
+[21:20:38] epoch 13/30  total=4.2559  ce=1.9193  charge=3.7422  kl=0.1683  keep=0.9143  elapsed=25.0min
+[21:22:34] epoch 14/30  total=4.2666  ce=1.9220  charge=3.7625  kl=0.1716  keep=0.9095  elapsed=26.9min
+[21:24:29] epoch 15/30  total=4.2152  ce=1.9236  charge=3.6478  kl=0.1733  keep=0.9181  elapsed=28.8min
+[21:26:27] epoch 16/30  total=4.2149  ce=1.9240  charge=3.6549  kl=0.1731  keep=0.9095  elapsed=30.8min
+[21:28:24] epoch 17/30  total=4.2084  ce=1.9276  charge=3.6105  kl=0.1784  keep=0.9332  elapsed=32.8min
+[21:30:21] epoch 18/30  total=4.1798  ce=1.9294  charge=3.5540  kl=0.1814  keep=0.9288  elapsed=34.7min
+[21:32:19] epoch 19/30  total=4.1501  ce=1.9284  charge=3.5023  kl=0.1808  keep=0.9230  elapsed=36.7min
+[21:34:16] epoch 20/30  total=4.1679  ce=1.9314  charge=3.5287  kl=0.1838  keep=0.9260  elapsed=38.6min
+[21:36:08] epoch 21/30  total=4.1504  ce=1.9324  charge=3.4867  kl=0.1847  keep=0.9308  elapsed=40.5min
+[21:38:03] epoch 22/30  total=4.1531  ce=1.9328  charge=3.4923  kl=0.1845  keep=0.9297  elapsed=42.4min
+[21:39:59] epoch 23/30  total=4.1182  ce=1.9343  charge=3.4106  kl=0.1848  keep=0.9387  elapsed=44.3min
+[21:41:55] epoch 24/30  total=4.1252  ce=1.9366  charge=3.4227  kl=0.1882  keep=0.9358  elapsed=46.3min
+[21:43:51] epoch 25/30  total=4.1247  ce=1.9330  charge=3.4253  kl=0.1853  keep=0.9395  elapsed=48.2min
+[21:45:46] epoch 26/30  total=4.1577  ce=1.9354  charge=3.4896  kl=0.1868  keep=0.9364  elapsed=50.1min
+[21:47:47] epoch 27/30  total=4.1200  ce=1.9354  charge=3.4145  kl=0.1889  keep=0.9359  elapsed=52.1min
+[21:49:40] epoch 28/30  total=4.0894  ce=1.9363  charge=3.3570  kl=0.1873  keep=0.9305  elapsed=54.0min
+[21:51:35] epoch 29/30  total=4.0805  ce=1.9399  charge=3.3296  kl=0.1924  keep=0.9323  elapsed=55.9min
+[21:53:31] epoch 30/30  total=4.0968  ce=1.9340  charge=3.3766  kl=0.1870  keep=0.9303  elapsed=57.9min
+[21:53:31] 训练完成。总耗时 57.9min。checkpoint 在 output/finetune_v5/

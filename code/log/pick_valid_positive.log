@@ -1,0 +1,14 @@
+训练域（排除）: 776
+  扫描 5000/34653，候选 54
+  扫描 10000/34653，候选 114
+  扫描 15000/34653，候选 170
+  扫描 20000/34653，候选 218
+  扫描 25000/34653，候选 264
+  扫描 30000/34653，候选 312
+候选域（charge 8.0~12.0, 长度 50-220）: 361
+
+选中的验证蛋白:
+  1b24A01: charge@7.4=+8.0, L=93 → /data/nfs/IC/baokun_yu/ConfuMPNN/code/input/1b24A01.pdb
+  1a87A02: charge@7.4=+8.0, L=200 → /data/nfs/IC/baokun_yu/ConfuMPNN/code/input/1a87A02.pdb
+
+清单 → /data/nfs/IC/baokun_yu/ConfuMPNN/code/input/positive_valid_pdbs.txt

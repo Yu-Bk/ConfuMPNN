@@ -1,0 +1,15 @@
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+处理 1 个蛋白（0-1），臂 ligand=['native', 'n2', 'p2', 'n8', 'p8'] protein=['native', 'n8', 'p8']，n=3，pH=7.4
+
+=== 1C6O cat=small_mol L=177 native=SADLALGKQTFEANCAACHAGGNNS... charge@7.4=-14.31 口袋残基=86
+  [ligand/native] target= -14 mean=-10.38 dev=3.62 rec=0.573 pkt=0.643 gravy=0.310
+  [ligand/n2] target= -16 mean=-12.71 dev=3.29 rec=0.578 pkt=0.651 gravy=0.300
+  [ligand/p2] target= -12 mean= -9.05 dev=2.95 rec=0.574 pkt=0.647 gravy=0.310
+  [ligand/n8] target= -22 mean=-15.71 dev=6.29 rec=0.573 pkt=0.632 gravy=0.147
+  [ligand/p8] target=  -6 mean= -1.06 dev=4.94 rec=0.571 pkt=0.632 gravy=0.384
+  [protein/native] target= -14 mean=-10.35 dev=3.65 rec=0.505 pkt=nan gravy=0.263
+  [protein/n8] target= -22 mean=-15.67 dev=6.33 rec=0.507 pkt=nan gravy=0.181
+  [protein/p8] target=  -6 mean= -2.34 dev=3.66 rec=0.503 pkt=nan gravy=0.317
+  已写 1C6O 结果
+
+=== 全部完成 ===

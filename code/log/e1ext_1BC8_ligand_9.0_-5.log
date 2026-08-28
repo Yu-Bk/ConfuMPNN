@@ -1,0 +1,13 @@
+[1] 加载模型: ligandmpnn_v_32_010_25.pt  (device=cuda)
+    解析 model_type = ligand_mpnn
+[2] 读取 PDB: input/1BC8.pdb
+    蛋白长度 93，native: MDSAITLWQFLLQLLQKPQNKHMICWTSNDGQFKLLQAEEVARLWGIRKN...
+[3] 引导设置: pH=9.0, target_charge=-5.0, preset=default, strength=0.5
+[4] 引导采样 3 条候选序列...
+    [ 1] charge= -3.66  pI= 5.09  AASPISLHQFLRELLSDPRYAGIIAWVSSSGEFQLLDPEAVAQLWGERKGKPSMNWGNLQ
+    [ 2] charge= -4.49  pI= 5.01  GGSPISLHEFLLSLLSDPAFNDIICWVSDNGEFQLVDPEAVAALWGATKGKPNMNYSNLQ
+    [ 3] charge= -4.61  pI= 5.44  SGSPISTHEFIDSLLSNPEYESIICWTSDNGEFQFVDPDAVAKLWGEVHGKPSMNWENLN
+[5] native   : charge= +7.22  pI=10.22  MDSAITLWQFLLQLLQKPQNKHMICWTSNDGQFKLLQAEEVARLWGIRKNKPNMNYDKLS
+    平均净电荷 = -4.25 ± 0.42  (目标 -5.0)
+[6] 输出已保存: output/e1_ext/1BC8_ligand/pH9.0_t-5/seqs.fa
+完成 ✅

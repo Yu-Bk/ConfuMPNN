@@ -1,0 +1,33 @@
+[PASS] D @ pH7.4 ≈ -1 
+[PASS] E @ pH7.4 ≈ -1 
+[PASS] K @ pH7.4 ≈ +1 
+[PASS] R @ pH7.4 ≈ +1 
+[PASS] A（非电离）≈ 0 
+[PASS] H @ pH6.0 ≈ +0.5 
+  [单调性] 电荷随 pH 变化方向正确
+[PASS] net_charge('DDD', 7.4) ≈ -3 got -3.004
+[PASS] net_charge('KKK', 7.4) ≈ +3 got 2.993
+[PASS] net_charge_from_logits 含确定 K ≈ +1 got 0.986
+[PASS] net_charge_from_logits 可反向传播 
+[PASS] 多碱性序列 pI 高 (>9) pI=13.10
+[PASS] 多酸性序列 pI 低 (<4) pI=2.69
+[PASS] pI 处净电荷 ≈ 0 q=0.000
+[PASS] 聚集规则触发 {'pos_over': 2, 'neg_over': 0}
+[PASS] 连通聚类规则触发 
+[PASS] 未解码位置 K 被抑制 
+[PASS] 中性序列无抑制 
+[PASS] default 预设含 4 条规则 
+[PASS] membrane 预设核心规则更严 
+[PASS] 条件向量维度 = 7 
+[PASS] 只给 pH 时 flag 全 0 
+[PASS] 给约束后 flag 置 1 
+[PASS] soft prompt shape [2, 4, 128] 
+[PASS] soft prompt 可微 
+[PASS] 不同条件向量产生不同 embedding 
+[PASS] 复合损失能 backward 
+[PASS] 梯度传导到 logits 
+[PASS] 返回各分量 terms 
+[PASS] 静态 bias 维度 [1, 10, 21] (1, 10, 21)
+
+==================================================
+通过 29/29 项测试

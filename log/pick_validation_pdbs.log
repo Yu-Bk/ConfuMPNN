@@ -1,0 +1,73 @@
+候选 800（RCSB 搜索返回）
+下载完成 800/800
+分类统计（共 670 可解析）: {'small_mol': 580, 'metal': 62, 'rna': 28}
+泄漏/验证蛋白排除: {'small_mol': 331, 'metal': 36, 'rna': 16}
+长序列候选（L≥400）: 245 个
+已写 data/validation_pdbs/candidates.json
+
+--- small_mol（非泄漏前15）---
+  1B5L L= 152 有机 ['SO4']
+  14WQ L= 614 有机 ['PO4', 'WKV']
+  14GS L= 388 有机 ['MES']
+  1BKM L= 102 有机 ['1C5']
+  1C6D L= 162 有机 ['CL', 'KR', 'BME']
+  1AS8 L=1008 有机 ['NO2']
+  1B09 L=1030 有机 ['PC']
+  1AB1 L=  49 有机 ['EOH']
+  1AF6 L=1263 有机 ['GLC', 'FRU']
+  14WW L= 692 有机 ['PO4', 'RZJ']
+  1BNW L= 256 有机 ['TPD']
+  1A65 L= 504 有机 ['NAG', 'PYE', 'O']
+  14VU L= 628 有机 ['PO4', 'X0S']
+  10TX L=1927 有机 ['NAG', 'BMA', 'MAN', 'FUC']
+  1BJ5 L= 582 有机 ['MYR']
+
+--- rna（非泄漏前15）---
+  1BHN L= 906 RNA核苷酸 ['GDP']
+  1AXW L= 528 RNA核苷酸 ['UMP']
+  1AYL L= 532 RNA核苷酸 ['ATP']
+  1AIQ L= 526 RNA核苷酸 ['UMP']
+  1BR2 L=4038 RNA核苷酸 ['ADP']
+  1AS2 L= 315 RNA核苷酸 ['GDP']
+  10TZ L=1928 RNA核苷酸 ['ATP']
+  1BD4 L= 896 RNA核苷酸 ['URA']
+  10QQ L=8820 RNA核苷酸 ['ADP']
+  10SW L=1639 RNA核苷酸 ['GDP']
+  1A9C L=3315 RNA核苷酸 ['GTP']
+  1AO0 L=1820 RNA核苷酸 ['ADP']
+
+--- dna（非泄漏前15）---
+
+--- metal（非泄漏前15）---
+  1C3H L= 822 纯金属 ['CA']
+  1CFZ L= 972 纯金属 ['CD']
+  1B47 L= 912 纯金属 ['CA']
+  1B2O L= 108 纯金属 ['FE']
+  1C5V L= 223 纯金属 ['CA', 'MG']
+  1CEV L=1794 纯金属 ['MN']
+  1B7L L= 130 纯金属 ['NA']
+  1C8N L= 597 纯金属 ['CA']
+  1BNL L= 712 纯金属 ['ZN']
+  1CGE L= 162 纯金属 ['CA', 'ZN']
+  1AG0 L= 256 纯金属 ['CU']
+  1AMY L= 403 纯金属 ['CA']
+  10AC L=1206 纯金属 ['CA']
+  1BXU L=  91 纯金属 ['CU']
+  1AJC L= 895 纯金属 ['MG', 'ZN']
+
+--- 长序列（非泄漏，L≥400）---
+  14WQ L= 614 cat=small_mol 有机 ['PO4', 'WKV']
+  1AS8 L=1008 cat=small_mol 有机 ['NO2']
+  1B09 L=1030 cat=small_mol 有机 ['PC']
+  1AF6 L=1263 cat=small_mol 有机 ['GLC', 'FRU']
+  14WW L= 692 cat=small_mol 有机 ['PO4', 'RZJ']
+  1C3H L= 822 cat=metal 纯金属 ['CA']
+  1CFZ L= 972 cat=metal 纯金属 ['CD']
+  1A65 L= 504 cat=small_mol 有机 ['NAG', 'PYE', 'O']
+  14VU L= 628 cat=small_mol 有机 ['PO4', 'X0S']
+  10TX L=1927 cat=small_mol 有机 ['NAG', 'BMA', 'MAN', 'FUC']
+  1BJ5 L= 582 cat=small_mol 有机 ['MYR']
+  1ARG L= 792 cat=small_mol 有机 ['PPD']
+  11KM L= 646 cat=small_mol 有机 ['COA', 'PRX']
+  1ASQ L=1104 cat=small_mol 有机 ['NAG', 'OH', 'AZI']
+  1B47 L= 912 cat=metal 纯金属 ['CA']

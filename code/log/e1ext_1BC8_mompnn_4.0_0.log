@@ -1,0 +1,13 @@
+[1] 加载模型: mompnn_temberture_tm_esm_6_4_4_b01.ckpt  (device=cuda)
+    解析 model_type = protein_mpnn
+[2] 读取 PDB: input/1BC8.pdb
+    蛋白长度 93，native: MDSAITLWQFLLQLLQKPQNKHMICWTSNDGQFKLLQAEEVARLWGIRKN...
+[3] 引导设置: pH=4.0, target_charge=0.0, preset=default, strength=0.5
+[4] 引导采样 3 条候选序列...
+    [ 1] charge= -0.90  pI= 3.91  MVSDISLYEFLYYLLSKPEYADIITWTSDNGEFQLLDPEAVAALWGKVKGDPDMNWEELY
+    [ 2] charge= -0.33  pI= 3.97  MVSPKSLWEFLLELLSDPAYDSIIRWVSDDGRFELVDPDAVAKLWGQLKGEPDMDAARLY
+    [ 3] charge= +0.34  pI= 4.04  MLSNISLPQFLLDLLSNPEYSDIIEWVSDNGAFQLRKPEEVAALWGEKWGLPSMNYKELN
+[5] native   : charge=+13.34  pI=10.22  MDSAITLWQFLLQLLQKPQNKHMICWTSNDGQFKLLQAEEVARLWGIRKNKPNMNYDKLS
+    平均净电荷 = -0.30 ± 0.51  (目标 0.0)
+[6] 输出已保存: output/e1_ext/1BC8_mompnn/pH4.0_t0/seqs.fa
+完成 ✅

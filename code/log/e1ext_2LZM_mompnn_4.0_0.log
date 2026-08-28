@@ -1,0 +1,13 @@
+[1] 加载模型: mompnn_temberture_tm_esm_6_4_4_b01.ckpt  (device=cuda)
+    解析 model_type = protein_mpnn
+[2] 读取 PDB: input/2LZM.pdb
+    蛋白长度 164，native: MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAI...
+[3] 引导设置: pH=4.0, target_charge=0.0, preset=default, strength=0.5
+[4] 引导采样 3 条候选序列...
+    [ 1] charge= +0.54  pI= 4.04  MNIEEILRILRGLRLTIYLDADGNYTIGIGHLLTTSPSLADALAALDAAIGRQTGGVITE
+    [ 2] charge= -0.80  pI= 3.95  MNIEEMLRILEGLRLEIYEDEAGNYTIGIGYLLTTDPSLETALAELDKAIGRTTNGVITE
+    [ 3] charge= +0.99  pI= 4.07  MNIYEILRILEGLQLEIYKDRDGNYTIGIGDLLTTDPDLTAALAALNEAIGDDTNGVITE
+[5] native   : charge=+18.77  pI= 9.95  MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNCNGVITK
+    平均净电荷 = +0.24 ± 0.76  (目标 0.0)
+[6] 输出已保存: output/e1_ext/2LZM_mompnn/pH4.0_t0/seqs.fa
+完成 ✅

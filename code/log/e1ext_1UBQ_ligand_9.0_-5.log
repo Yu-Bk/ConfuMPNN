@@ -1,0 +1,13 @@
+[1] 加载模型: ligandmpnn_v_32_010_25.pt  (device=cuda)
+    解析 model_type = ligand_mpnn
+[2] 读取 PDB: input/1UBQ.pdb
+    蛋白长度 76，native: MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQL...
+[3] 引导设置: pH=9.0, target_charge=-5.0, preset=default, strength=0.5
+[4] 引导采样 3 条候选序列...
+    [ 1] charge= -7.44  pI= 4.19  MTIHIAFQDGRTLTLEVSESDTIAQVKEKIERAAGIPPAQQVLIYEGKVLEDDKTLADYN
+    [ 2] charge= -4.60  pI= 4.42  MKIFIQREDGTTLELEVSPTDTIAQVKQKIFEQTGIPPEQQVLIYKGQTLQDDKTLADYD
+    [ 3] charge= -5.57  pI= 4.29  MTIFVQLEDGTTIKLEVSTSDTIAQVKQKIYEQIGIPPSRQVLIYKGQELQDDKTLADYN
+[5] native   : charge= -0.45  pI= 7.68  MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYN
+    平均净电荷 = -5.87 ± 1.18  (目标 -5.0)
+[6] 输出已保存: output/e1_ext/1UBQ_ligand/pH9.0_t-5/seqs.fa
+完成 ✅

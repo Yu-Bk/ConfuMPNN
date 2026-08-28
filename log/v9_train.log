@@ -1,0 +1,66 @@
+[21:41:19] === ConfuMPNN Phase 2 条件微调启动 ===
+[21:41:19] device=cuda:3  epochs=30  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[21:41:20] backbone: MoMPNN 冻结（2.62M 参数，不更新）
+[21:41:20] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[21:41:21] 数据：4972 结构域 × 8 pH = 39776 样本（data/ligand_train/labels.npz）
+[21:42:07]   预解析+encode 200/4972（跳过 0）
+[21:42:51]   预解析+encode 400/4972（跳过 0）
+[21:43:37]   预解析+encode 600/4972（跳过 0）
+[21:44:30]   预解析+encode 800/4972（跳过 0）
+[21:45:25]   预解析+encode 1000/4972（跳过 0）
+[21:46:12]   预解析+encode 1200/4972（跳过 0）
+[21:46:55]   预解析+encode 1400/4972（跳过 0）
+[21:46:59]   ⚠️ 跳过坏域 1OBP.pdb: index 0 is out of bounds for dimension 1 with size 0
+[21:47:42]   预解析+encode 1599/4972（跳过 1）
+[21:48:36]   预解析+encode 1799/4972（跳过 1）
+[21:49:34]   预解析+encode 1999/4972（跳过 1）
+[21:50:26]   预解析+encode 2199/4972（跳过 1）
+[21:51:11]   预解析+encode 2399/4972（跳过 1）
+[21:51:56]   预解析+encode 2599/4972（跳过 1）
+[21:52:48]   预解析+encode 2799/4972（跳过 1）
+[21:53:43]   预解析+encode 2999/4972（跳过 1）
+[21:54:36]   预解析+encode 3199/4972（跳过 1）
+[21:55:26]   预解析+encode 3399/4972（跳过 1）
+[21:56:14]   预解析+encode 3599/4972（跳过 1）
+[21:57:02]   预解析+encode 3799/4972（跳过 1）
+[21:57:50]   预解析+encode 3999/4972（跳过 1）
+[21:58:36]   预解析+encode 4199/4972（跳过 1）
+[21:59:20]   预解析+encode 4399/4972（跳过 1）
+[22:00:03]   预解析+encode 4599/4972（跳过 1）
+[22:00:54]   预解析+encode 4799/4972（跳过 1）
+[22:01:32] ⚠️ 共跳过 1 个坏域（prody 无法解析），实际训练 4971 域
+[22:01:32] 预解析完成，缓存 encode 特征 ~23.30GB
+[22:01:32] 开始训练：30 epochs × 4971 域/epoch = 149130 steps
+[22:05:13] epoch 1/30  total=4.3022  ce=1.4252  charge=5.0782  kl=0.1107  keep=0.6649  [cd self=4.994  mild=5.277]  elapsed=3.7min
+[22:08:56] epoch 2/30  total=3.9669  ce=1.4884  charge=4.2063  kl=0.1623  keep=0.7346  [cd self=4.119  mild=4.406]  elapsed=7.4min
+[22:12:37] epoch 3/30  total=3.8505  ce=1.5193  charge=3.8728  kl=0.1864  keep=0.7710  [cd self=3.750  mild=4.154]  elapsed=11.1min
+[22:16:25] epoch 4/30  total=3.7846  ce=1.5243  charge=3.7227  kl=0.1904  keep=0.7787  [cd self=3.618  mild=3.968]  elapsed=14.9min
+[22:20:03] epoch 5/30  total=3.7400  ce=1.5339  charge=3.6033  kl=0.1979  keep=0.7891  [cd self=3.519  mild=3.798]  elapsed=18.5min
+[22:23:40] epoch 6/30  total=3.7329  ce=1.5373  charge=3.5758  kl=0.2011  keep=0.7953  [cd self=3.461  mild=3.845]  elapsed=22.1min
+[22:27:33] epoch 7/30  total=3.7041  ce=1.5417  charge=3.5040  kl=0.2046  keep=0.8002  [cd self=3.414  mild=3.715]  elapsed=26.0min
+[22:31:22] epoch 8/30  total=3.6754  ce=1.5463  charge=3.4276  kl=0.2080  keep=0.8099  [cd self=3.329  mild=3.662]  elapsed=29.8min
+[22:35:02] epoch 9/30  total=3.6545  ce=1.5497  charge=3.3833  kl=0.2107  keep=0.8053  [cd self=3.274  mild=3.633]  elapsed=33.5min
+[22:38:45] epoch 10/30  total=3.6543  ce=1.5483  charge=3.3815  kl=0.2096  keep=0.8096  [cd self=3.285  mild=3.609]  elapsed=37.2min
+[22:42:34] epoch 11/30  total=3.6024  ce=1.5459  charge=3.2860  kl=0.2077  keep=0.8063  [cd self=3.197  mild=3.495]  elapsed=41.0min
+[22:46:12] epoch 12/30  total=3.6006  ce=1.5528  charge=3.2601  kl=0.2135  keep=0.8140  [cd self=3.159  mild=3.496]  elapsed=44.7min
+[22:49:45] epoch 13/30  total=3.5756  ce=1.5483  charge=3.2319  kl=0.2100  keep=0.8018  [cd self=3.141  mild=3.440]  elapsed=48.2min
+[22:53:47] epoch 14/30  total=3.5653  ce=1.5474  charge=3.2059  kl=0.2097  keep=0.8089  [cd self=3.121  mild=3.406]  elapsed=52.2min
+[22:57:31] epoch 15/30  total=3.5524  ce=1.5500  charge=3.1706  kl=0.2122  keep=0.8129  [cd self=3.080  mild=3.384]  elapsed=56.0min
+[23:00:49] epoch 16/30  total=3.5178  ce=1.5526  charge=3.1015  kl=0.2146  keep=0.8075  [cd self=2.985  mild=3.366]  elapsed=59.3min
+[23:04:41] epoch 17/30  total=3.4940  ce=1.5512  charge=3.0530  kl=0.2138  keep=0.8112  [cd self=2.957  mild=3.274]  elapsed=63.2min
+[23:08:39] epoch 18/30  total=3.5034  ce=1.5532  charge=3.0614  kl=0.2163  keep=0.8175  [cd self=2.984  mild=3.244]  elapsed=67.1min
+[23:12:25] epoch 19/30  total=3.4695  ce=1.5538  charge=2.9989  kl=0.2167  keep=0.8108  [cd self=2.872  mild=3.289]  elapsed=70.9min
+[23:16:01] epoch 20/30  total=3.4508  ce=1.5560  charge=2.9466  kl=0.2191  keep=0.8212  [cd self=2.861  mild=3.151]  elapsed=74.5min
+[23:19:43] epoch 21/30  total=3.4444  ce=1.5520  charge=2.9497  kl=0.2162  keep=0.8136  [cd self=2.836  mild=3.215]  elapsed=78.2min
+[23:23:19] epoch 22/30  total=3.4133  ce=1.5574  charge=2.8695  kl=0.2212  keep=0.8202  [cd self=2.781  mild=3.076]  elapsed=81.8min
+[23:26:45] epoch 23/30  total=3.4041  ce=1.5539  charge=2.8624  kl=0.2185  keep=0.8162  [cd self=2.775  mild=3.069]  elapsed=85.2min
+[23:30:20] epoch 24/30  total=3.4020  ce=1.5547  charge=2.8581  kl=0.2200  keep=0.8146  [cd self=2.782  mild=3.036]  elapsed=88.8min
+[23:34:09] epoch 25/30  total=3.3809  ce=1.5548  charge=2.8146  kl=0.2204  keep=0.8156  [cd self=2.738  mild=2.994]  elapsed=92.6min
+[23:38:02] epoch 26/30  total=3.3644  ce=1.5528  charge=2.7910  kl=0.2190  keep=0.8104  [cd self=2.685  mild=3.036]  elapsed=96.5min
+[23:41:47] epoch 27/30  total=3.3630  ce=1.5564  charge=2.7779  kl=0.2222  keep=0.8129  [cd self=2.713  mild=2.928]  elapsed=100.2min
+[23:45:24] epoch 28/30  total=3.3504  ce=1.5537  charge=2.7552  kl=0.2201  keep=0.8161  [cd self=2.672  mild=2.954]  elapsed=103.9min
+[23:49:10] epoch 29/30  total=3.3505  ce=1.5523  charge=2.7642  kl=0.2191  keep=0.8104  [cd self=2.688  mild=2.943]  elapsed=107.6min
+[23:53:00] epoch 30/30  total=3.3325  ce=1.5547  charge=2.7229  kl=0.2211  keep=0.8105  [cd self=2.614  mild=2.976]  elapsed=111.5min
+[23:53:01] 训练完成。总耗时 111.5min。checkpoint 在 output/finetune_ligand_v9/
+l=0.2211  keep=0.8105  [cd self=2.614  mild=2.976]  elapsed=111.5min
+[23:53:01] 训练完成。总耗时 111.5min。checkpoint 在 output/finetune_ligand_v9/

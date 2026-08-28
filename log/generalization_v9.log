@@ -1,0 +1,114 @@
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+处理 10 个蛋白（0-10），臂 ligand=['native', 'n2', 'p2', 'n8', 'p8'] protein=['native', 'n8', 'p8']，n=30，pH=7.4
+
+=== 1C6O cat=small_mol L=177 native=SADLALGKQTFEANCAACHAGGNNS... charge@7.4=-14.31 口袋残基=86
+  [ligand/native] target= -14 mean= -9.86 dev=4.14 rec=0.569 pkt=0.598 gravy=0.326
+  [ligand/n2] target= -16 mean=-11.43 dev=4.57 rec=0.572 pkt=0.600 gravy=0.299
+  [ligand/p2] target= -12 mean= -8.91 dev=3.09 rec=0.566 pkt=0.593 gravy=0.348
+  [ligand/n8] target= -22 mean=-14.36 dev=7.64 rec=0.573 pkt=0.595 gravy=0.166
+  [ligand/p8] target=  -6 mean= -2.02 dev=3.98 rec=0.558 pkt=0.595 gravy=0.384
+  [protein/native] target= -14 mean=-10.70 dev=3.30 rec=0.505 pkt=nan gravy=0.236
+  [protein/n8] target= -22 mean=-15.09 dev=6.91 rec=0.500 pkt=nan gravy=0.097
+  [protein/p8] target=  -6 mean= -2.68 dev=3.32 rec=0.502 pkt=nan gravy=0.268
+  已写 1C6O 结果
+
+=== 1AZM cat=small_mol L=258 native=PDWGYDDKNGPEQWSKLYPIANGNN... charge@7.4=-1.71 口袋残基=25
+  [ligand/native] target=  -2 mean= -0.37 dev=1.63 rec=0.490 pkt=0.647 gravy=0.058
+  [ligand/n2] target=  -4 mean= -1.89 dev=2.11 rec=0.492 pkt=0.648 gravy=0.080
+  [ligand/p2] target=   0 mean= +0.86 dev=0.86 rec=0.488 pkt=0.647 gravy=0.038
+  [ligand/n8] target= -10 mean= -8.56 dev=1.44 rec=0.501 pkt=0.632 gravy=0.066
+  [ligand/p8] target=   6 mean= +5.24 dev=0.76 rec=0.491 pkt=0.644 gravy=-0.002
+  [protein/native] target=  -2 mean= -0.19 dev=1.81 rec=0.473 pkt=nan gravy=0.096
+  [protein/n8] target= -10 mean= -8.06 dev=1.94 rec=0.477 pkt=nan gravy=0.084
+  [protein/p8] target=   6 mean= +5.15 dev=0.85 rec=0.473 pkt=nan gravy=0.024
+  已写 1AZM 结果
+
+=== 1AS2 cat=rna L=312 native=REVKLLLLGAVESGKSTIVKQMKII... charge@7.4=-2.69 口袋残基=40
+  [ligand/native] target=  -3 mean= -1.44 dev=1.56 rec=0.355 pkt=0.362 gravy=0.348
+  [ligand/n2] target=  -5 mean= -3.46 dev=1.54 rec=0.356 pkt=0.352 gravy=0.329
+  [ligand/p2] target=  -1 mean= +0.73 dev=1.73 rec=0.359 pkt=0.378 gravy=0.369
+  [ligand/n8] target= -11 mean= -8.67 dev=2.33 rec=0.366 pkt=0.362 gravy=0.256
+  [ligand/p8] target=   5 mean= +5.85 dev=0.85 rec=0.360 pkt=0.393 gravy=0.390
+  [protein/native] target=  -3 mean= -1.32 dev=1.68 rec=0.349 pkt=nan gravy=0.286
+  [protein/n8] target= -11 mean=-10.41 dev=0.59 rec=0.361 pkt=nan gravy=0.202
+  [protein/p8] target=   5 mean= +6.04 dev=1.04 rec=0.351 pkt=nan gravy=0.320
+  已写 1AS2 结果
+
+=== 1AXW cat=rna L=528 native=MKQYLELMQKVLDEGTQKNDRTGTG... charge@7.4=-18.30 口袋残基=119
+  [ligand/native] target= -18 mean=-19.90 dev=1.90 rec=0.495 pkt=0.456 gravy=0.340
+  [ligand/n2] target= -20 mean=-22.27 dev=2.27 rec=0.501 pkt=0.463 gravy=0.310
+  [ligand/p2] target= -16 mean=-16.72 dev=0.72 rec=0.488 pkt=0.449 gravy=0.375
+  [ligand/n8] target= -26 mean=-29.09 dev=3.09 rec=0.519 pkt=0.489 gravy=0.227
+  [ligand/p8] target= -10 mean= -8.61 dev=1.39 rec=0.475 pkt=0.439 gravy=0.444
+  [protein/native] target= -18 mean=-18.28 dev=0.28 rec=0.472 pkt=nan gravy=0.316
+  [protein/n8] target= -26 mean=-29.52 dev=3.52 rec=0.492 pkt=nan gravy=0.185
+  [protein/p8] target= -10 mean= -7.82 dev=2.18 rec=0.453 pkt=nan gravy=0.431
+  已写 1AXW 结果
+
+=== 2FEO cat=dna L=221 native=AIAPVITIDGPSGAGKGTLCKAMAE... charge@7.4=-6.88 口袋残基=40
+  [ligand/native] target=  -7 mean= -5.29 dev=1.71 rec=0.335 pkt=0.344 gravy=0.595
+  [ligand/n2] target=  -9 mean= -7.52 dev=1.48 rec=0.338 pkt=0.346 gravy=0.555
+  [ligand/p2] target=  -5 mean= -2.54 dev=2.46 rec=0.335 pkt=0.342 gravy=0.670
+  [ligand/n8] target= -15 mean=-15.04 dev=0.04 rec=0.347 pkt=0.365 gravy=0.435
+  [ligand/p8] target=   1 mean= +1.15 dev=0.15 rec=0.334 pkt=0.352 gravy=0.903
+  [protein/native] target=  -7 mean= -4.52 dev=2.48 rec=0.324 pkt=nan gravy=0.610
+  [protein/n8] target= -15 mean=-15.66 dev=0.66 rec=0.333 pkt=nan gravy=0.403
+  [protein/p8] target=   1 mean= +0.96 dev=0.04 rec=0.328 pkt=nan gravy=0.874
+  已写 2FEO 结果
+
+=== 5CQH cat=dna L=183 native=LRYLMDPDTFTSNFNNDPLVLRRRQ... charge@7.4=-5.53 口袋残基=55
+  [ligand/native] target=  -6 mean= -4.56 dev=1.44 rec=0.452 pkt=0.462 gravy=0.159
+  [ligand/n2] target=  -8 mean= -6.72 dev=1.28 rec=0.457 pkt=0.470 gravy=0.159
+  [ligand/p2] target=  -4 mean= -3.14 dev=0.86 rec=0.446 pkt=0.451 gravy=0.151
+  [ligand/n8] target= -14 mean=-11.75 dev=2.25 rec=0.472 pkt=0.497 gravy=0.128
+  [ligand/p8] target=   2 mean= +0.44 dev=1.56 rec=0.434 pkt=0.418 gravy=0.159
+  [protein/native] target=  -6 mean= -4.41 dev=1.59 rec=0.439 pkt=nan gravy=0.155
+  [protein/n8] target= -14 mean=-11.64 dev=2.36 rec=0.453 pkt=nan gravy=0.110
+  [protein/p8] target=   2 mean= +0.23 dev=1.77 rec=0.426 pkt=nan gravy=0.197
+  已写 5CQH 结果
+
+=== 1CGE cat=metal L=162 native=LTEGNPRWEQTHLRYRIENYTPDLP... charge@7.4=-11.66 口袋残基=53
+  [ligand/native] target= -12 mean=-11.21 dev=0.79 rec=0.563 pkt=0.658 gravy=-0.006
+  [ligand/n2] target= -14 mean=-12.34 dev=1.66 rec=0.561 pkt=0.655 gravy=-0.026
+  [ligand/p2] target= -10 mean= -9.98 dev=0.02 rec=0.562 pkt=0.657 gravy=0.007
+  [ligand/n8] target= -20 mean=-16.47 dev=3.53 rec=0.559 pkt=0.660 gravy=-0.077
+  [ligand/p8] target=  -4 mean= -4.44 dev=0.44 rec=0.552 pkt=0.633 gravy=0.027
+  [protein/native] target= -12 mean= -9.94 dev=2.06 rec=0.525 pkt=nan gravy=0.051
+  [protein/n8] target= -20 mean=-14.96 dev=5.04 rec=0.521 pkt=nan gravy=-0.038
+  [protein/p8] target=  -4 mean= -2.35 dev=1.65 rec=0.508 pkt=nan gravy=0.109
+  已写 1CGE 结果
+
+=== 1AG0 cat=metal L=256 native=AECSVDIQGNDQMQFNTNAITVDKS... charge@7.4=-8.16 口袋残基=44
+  [ligand/native] target=  -8 mean= -6.85 dev=1.15 rec=0.488 pkt=0.642 gravy=0.330
+  [ligand/n2] target= -10 mean= -9.27 dev=0.73 rec=0.494 pkt=0.644 gravy=0.322
+  [ligand/p2] target=  -6 mean= -5.10 dev=0.90 rec=0.482 pkt=0.620 gravy=0.323
+  [ligand/n8] target= -16 mean=-16.86 dev=0.86 rec=0.514 pkt=0.655 gravy=0.223
+  [ligand/p8] target=   0 mean= -0.30 dev=0.30 rec=0.463 pkt=0.576 gravy=0.268
+  [protein/native] target=  -8 mean= -8.14 dev=0.14 rec=0.465 pkt=nan gravy=0.199
+  [protein/n8] target= -16 mean=-19.37 dev=3.37 rec=0.477 pkt=nan gravy=0.098
+  [protein/p8] target=   0 mean= -0.29 dev=0.29 rec=0.442 pkt=nan gravy=0.109
+  已写 1AG0 结果
+
+=== 1A65 cat=long L=504 native=QIVNSVDTMTLTNANVSPDGFTRAG... charge@7.4=-26.85 口袋残基=49
+  [ligand/native] target= -27 mean=-21.76 dev=5.24 rec=0.571 pkt=0.531 gravy=0.106
+  [ligand/n2] target= -29 mean=-24.31 dev=4.69 rec=0.569 pkt=0.526 gravy=0.083
+  [ligand/p2] target= -25 mean=-19.11 dev=5.89 rec=0.570 pkt=0.535 gravy=0.132
+  [ligand/n8] target= -35 mean=-30.03 dev=4.97 rec=0.564 pkt=0.510 gravy=0.021
+  [ligand/p8] target= -19 mean=-12.33 dev=6.67 rec=0.568 pkt=0.544 gravy=0.205
+  [protein/native] target= -27 mean=-26.46 dev=0.54 rec=0.542 pkt=nan gravy=0.034
+  [protein/n8] target= -35 mean=-34.27 dev=0.73 rec=0.542 pkt=nan gravy=-0.050
+  [protein/p8] target= -19 mean=-15.75 dev=3.25 rec=0.539 pkt=nan gravy=0.113
+  已写 1A65 结果
+
+=== 1BJ4 cat=long L=470 native=DADLWSSHDKMLAQPLKDSDVEVYN... charge@7.4=+0.42 口袋残基=29
+  [ligand/native] target=   0 mean= +2.30 dev=2.30 rec=0.431 pkt=0.343 gravy=0.551
+  [ligand/n2] target=  -2 mean= +0.05 dev=2.05 rec=0.431 pkt=0.347 gravy=0.524
+  [ligand/p2] target=   2 mean= +4.18 dev=2.18 rec=0.431 pkt=0.333 gravy=0.562
+  [ligand/n8] target=  -8 mean=-11.16 dev=3.16 rec=0.442 pkt=0.339 gravy=0.400
+  [ligand/p8] target=   8 mean=+14.00 dev=6.00 rec=0.446 pkt=0.380 gravy=0.445
+  [protein/native] target=   0 mean= +2.77 dev=2.77 rec=0.422 pkt=nan gravy=0.518
+  [protein/n8] target=  -8 mean=-11.65 dev=3.65 rec=0.432 pkt=nan gravy=0.357
+  [protein/p8] target=   8 mean=+16.91 dev=8.91 rec=0.434 pkt=nan gravy=0.448
+  已写 1BJ4 结果
+
+=== 全部完成 ===

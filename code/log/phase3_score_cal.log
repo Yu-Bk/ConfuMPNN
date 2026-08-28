@@ -1,0 +1,641 @@
+=== [1/4] ESMFold 回折 + pLDDT（confumpnn-esmfold，GPU）===
+ESMFold 加载完成（cuda）
+批量模式：找到 4 个 seqs.fa
+[code/output/phase3_antidrift_cal/1BC8/seqs.fa] 共 9 条序列
+  sample_1 pH=7.4 charge=+14.02    L=  93  mean_pLDDT= 81.66
+  sample_2 pH=7.4 charge=+9.02 p   L=  93  mean_pLDDT= 82.26
+  sample_3 pH=7.4 charge=+3.98 p   L=  93  mean_pLDDT= 80.91
+  sample_4 pH=7.4 charge=+6.02 p   L=  93  mean_pLDDT= 83.63
+  sample_5 pH=7.4 charge=+8.99 p   L=  93  mean_pLDDT= 83.13
+  sample_6 pH=7.4 charge=+7.02 p   L=  93  mean_pLDDT= 80.60
+  sample_7 pH=7.4 charge=+12.01    L=  93  mean_pLDDT= 85.32
+  sample_8 pH=7.4 charge=+10.03    L=  93  mean_pLDDT= 81.17
+  native charge=+8.90 pI=10.22     L=  93  mean_pLDDT= 80.45
+  已写入 code/output/phase3_antidrift_cal/1BC8/plddt.csv
+[code/output/phase3_antidrift_cal/1CRN/seqs.fa] 共 9 条序列
+  sample_1 pH=7.4 charge=+0.32 p   L=  46  mean_pLDDT= 88.87
+  sample_2 pH=7.4 charge=-1.45 p   L=  46  mean_pLDDT= 65.14
+  sample_3 pH=7.4 charge=+0.32 p   L=  46  mean_pLDDT= 85.44
+  sample_4 pH=7.4 charge=-2.68 p   L=  46  mean_pLDDT= 84.20
+  sample_5 pH=7.4 charge=-2.68 p   L=  46  mean_pLDDT= 90.58
+  sample_6 pH=7.4 charge=+0.32 p   L=  46  mean_pLDDT= 91.82
+  sample_7 pH=7.4 charge=-5.67 p   L=  46  mean_pLDDT= 84.12
+  sample_8 pH=7.4 charge=-2.68 p   L=  46  mean_pLDDT= 91.06
+  native charge=-0.68 pI=5.98      L=  46  mean_pLDDT= 48.72
+  已写入 code/output/phase3_antidrift_cal/1CRN/plddt.csv
+[code/output/phase3_antidrift_cal/1UBQ/seqs.fa] 共 9 条序列
+  sample_1 pH=7.4 charge=-0.01 p   L=  76  mean_pLDDT= 87.77
+  sample_2 pH=7.4 charge=+0.99 p   L=  76  mean_pLDDT= 88.32
+  sample_3 pH=7.4 charge=-2.01 p   L=  76  mean_pLDDT= 88.80
+  sample_4 pH=7.4 charge=-4.01 p   L=  76  mean_pLDDT= 89.23
+  sample_5 pH=7.4 charge=+1.99 p   L=  76  mean_pLDDT= 88.84
+  sample_6 pH=7.4 charge=-2.01 p   L=  76  mean_pLDDT= 88.68
+  sample_7 pH=7.4 charge=-3.01 p   L=  76  mean_pLDDT= 88.65
+  sample_8 pH=7.4 charge=-0.01 p   L=  76  mean_pLDDT= 87.35
+  native charge=+0.03 pI=7.68      L=  76  mean_pLDDT= 85.83
+  已写入 code/output/phase3_antidrift_cal/1UBQ/plddt.csv
+[code/output/phase3_antidrift_cal/2LZM/seqs.fa] 共 9 条序列
+  sample_1 pH=7.4 charge=+11.06    L= 164  mean_pLDDT= 88.99
+  sample_2 pH=7.4 charge=+8.02 p   L= 164  mean_pLDDT= 88.12
+  sample_3 pH=7.4 charge=+11.02    L= 164  mean_pLDDT= 88.47
+  sample_4 pH=7.4 charge=+14.99    L= 164  mean_pLDDT= 85.83
+  sample_5 pH=7.4 charge=+9.02 p   L= 164  mean_pLDDT= 83.87
+  sample_6 pH=7.4 charge=+12.03    L= 164  mean_pLDDT= 87.07
+  sample_7 pH=7.4 charge=+9.98 p   L= 164  mean_pLDDT= 85.97
+  sample_8 pH=7.4 charge=+9.03 p   L= 164  mean_pLDDT= 86.43
+  native charge=+7.80 pI=9.95      L= 164  mean_pLDDT= 90.11
+  已写入 code/output/phase3_antidrift_cal/2LZM/plddt.csv
+  ESMFold DONE 19:43:29
+=== [2/4] TM-score 自洽性（USalign）===
+  native_charge__8_90_pI_10_22             TM-score=0.94415  RMSD=1.56
+  sample_1_pH_7_4_charge__14_02_pI_10_93   TM-score=0.89929  RMSD=1.48
+  sample_2_pH_7_4_charge__9_02_pI_10_47    TM-score=0.87923  RMSD=1.83
+  sample_3_pH_7_4_charge__3_98_pI_9_79     TM-score=0.90579  RMSD=1.55
+  sample_4_pH_7_4_charge__6_02_pI_10_33    TM-score=0.88108  RMSD=1.86
+  sample_5_pH_7_4_charge__8_99_pI_11_01    TM-score=0.90314  RMSD=1.7
+  sample_6_pH_7_4_charge__7_02_pI_10_13    TM-score=0.87834  RMSD=1.74
+  sample_7_pH_7_4_charge__12_01_pI_10_33   TM-score=0.90685  RMSD=1.3
+  sample_8_pH_7_4_charge__10_03_pI_12_50   TM-score=0.87742  RMSD=1.84
+已写入 code/output/phase3_antidrift_cal/1BC8/tm.csv
+  1BC8 tm DONE
+  native_charge_-0_68_pI_5_98              TM-score=0.36965  RMSD=2.95
+  sample_1_pH_7_4_charge__0_32_pI_7_59     TM-score=0.88368  RMSD=0.87
+  sample_2_pH_7_4_charge_-1_45_pI_4_78     TM-score=0.57305  RMSD=2.48
+  sample_3_pH_7_4_charge__0_32_pI_7_60     TM-score=0.86326  RMSD=1.01
+  sample_4_pH_7_4_charge_-2_68_pI_4_21     TM-score=0.85112  RMSD=1.05
+  sample_5_pH_7_4_charge_-2_68_pI_4_60     TM-score=0.90474  RMSD=0.73
+  sample_6_pH_7_4_charge__0_32_pI_7_59     TM-score=0.89919  RMSD=0.76
+  sample_7_pH_7_4_charge_-5_67_pI_3_62     TM-score=0.85663  RMSD=1.06
+  sample_8_pH_7_4_charge_-2_68_pI_4_41     TM-score=0.90175  RMSD=0.81
+已写入 code/output/phase3_antidrift_cal/1CRN/tm.csv
+  1CRN tm DONE
+  native_charge__0_03_pI_7_68              TM-score=0.95791  RMSD=0.84
+  sample_1_pH_7_4_charge_-0_01_pI_7_13     TM-score=0.96442  RMSD=0.72
+  sample_2_pH_7_4_charge__0_99_pI_9_28     TM-score=0.95563  RMSD=0.89
+  sample_3_pH_7_4_charge_-2_01_pI_4_77     TM-score=0.96567  RMSD=0.8
+  sample_4_pH_7_4_charge_-4_01_pI_4_37     TM-score=0.96916  RMSD=0.71
+  sample_5_pH_7_4_charge__1_99_pI_9_62     TM-score=0.95458  RMSD=0.85
+  sample_6_pH_7_4_charge_-2_01_pI_4_70     TM-score=0.96819  RMSD=0.76
+  sample_7_pH_7_4_charge_-3_01_pI_4_56     TM-score=0.95075  RMSD=0.92
+  sample_8_pH_7_4_charge_-0_01_pI_7_19     TM-score=0.96101  RMSD=0.8
+已写入 code/output/phase3_antidrift_cal/1UBQ/tm.csv
+  1UBQ tm DONE
+  native_charge__7_80_pI_9_95              TM-score=0.98688  RMSD=0.56
+  sample_1_pH_7_4_charge__11_06_pI_11_12   TM-score=0.97983  RMSD=0.69
+  sample_2_pH_7_4_charge__8_02_pI_10_21    TM-score=0.98102  RMSD=0.68
+  sample_3_pH_7_4_charge__11_02_pI_10_43   TM-score=0.98311  RMSD=0.63
+  sample_4_pH_7_4_charge__14_99_pI_10_95   TM-score=0.97717  RMSD=0.74
+  sample_5_pH_7_4_charge__9_02_pI_10_11    TM-score=0.98742  RMSD=0.54
+  sample_6_pH_7_4_charge__12_03_pI_11_51   TM-score=0.94261  RMSD=1.21
+  sample_7_pH_7_4_charge__9_98_pI_10_34    TM-score=0.98253  RMSD=0.69
+  sample_8_pH_7_4_charge__9_03_pI_10_41    TM-score=0.97583  RMSD=0.76
+已写入 code/output/phase3_antidrift_cal/2LZM/tm.csv
+  2LZM tm DONE
+=== [3/4] Protein-Sol %sol（系统 python3）===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: code/output/phase3_antidrift_cal/1BC8/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>sample_1            80.919          0.701           0.446           10.970    
+>sample_2            81.784          0.709           0.446           10.490    
+>sample_3            75.404          0.650           0.446           9.800     
+>sample_4            62.284          0.528           0.446           10.400    
+>sample_5            77.081          0.665           0.446           11.100    
+>sample_6            77.081          0.665           0.446           10.170    
+>sample_7            79.304          0.686           0.446           10.300    
+>sample_8            61.944          0.525           0.446           12.140    
+>native              66.771          0.570           0.446           10.340    
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/code/output/phase3_antidrift_cal/1BC8:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+  code/output/phase3_antidrift_cal/1BC8 sol DONE
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: code/output/phase3_antidrift_cal/1CRN/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>sample_1            77.638          0.670           0.446           9.630     
+>sample_2            71.412          0.613           0.446           4.900     
+>sample_3            64.750          0.551           0.446           10.190    
+>sample_4            73.552          0.633           0.446           4.300     
+>sample_5            96.799          0.848           0.446           4.730     
+>sample_6            77.638          0.670           0.446           9.580     
+>sample_7            92.088          0.804           0.446           3.660     
+>sample_8            86.440          0.752           0.446           4.500     
+>native              62.235          0.528           0.446           7.160     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/code/output/phase3_antidrift_cal/1CRN:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+  code/output/phase3_antidrift_cal/1CRN sol DONE
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: code/output/phase3_antidrift_cal/1UBQ/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>sample_1            65.702          0.560           0.446           7.240     
+>sample_2            74.771          0.644           0.446           9.320     
+>sample_3            87.767          0.764           0.446           4.900     
+>sample_4            91.841          0.802           0.446           4.470     
+>sample_5            81.253          0.704           0.446           9.640     
+>sample_6            79.227          0.685           0.446           4.820     
+>sample_7            83.763          0.727           0.446           4.690     
+>sample_8            86.225          0.750           0.446           7.290     
+>native              87.422          0.761           0.446           7.890     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/code/output/phase3_antidrift_cal/1UBQ:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+  code/output/phase3_antidrift_cal/1UBQ sol DONE
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: code/output/phase3_antidrift_cal/2LZM/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>sample_1            67.837          0.580           0.446           11.040    
+>sample_2            78.023          0.674           0.446           10.200    
+>sample_3            81.891          0.710           0.446           10.410    
+>sample_4            80.383          0.696           0.446           10.910    
+>sample_5            84.161          0.731           0.446           10.090    
+>sample_6            71.273          0.612           0.446           11.250    
+>sample_7            80.725          0.699           0.446           10.320    
+>sample_8            68.384          0.585           0.446           10.410    
+>native              66.951          0.572           0.446           10.140    
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/code/output/phase3_antidrift_cal/2LZM:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+  code/output/phase3_antidrift_cal/2LZM sol DONE
+=== [4/4] TemBERTure Tm（confumpnn-temberture，每 PDB 一进程并行）===
+/home/baokun_yu/miniconda3/envs/confumpnn-temberture/lib/python3.10/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/home/baokun_yu/miniconda3/envs/confumpnn-temberture/lib/python3.10/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/home/baokun_yu/miniconda3/envs/confumpnn-temberture/lib/python3.10/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/home/baokun_yu/miniconda3/envs/confumpnn-temberture/lib/python3.10/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/home/baokun_yu/miniconda3/envs/confumpnn-temberture/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+加载 replica1...
+/home/baokun_yu/miniconda3/envs/confumpnn-temberture/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/home/baokun_yu/miniconda3/envs/confumpnn-temberture/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/home/baokun_yu/miniconda3/envs/confumpnn-temberture/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+加载 replica1...
+加载 replica1...
+加载 replica1...
+加载 replica2...
+加载 replica2...
+加载 replica2...
+加载 replica2...
+加载 replica3...
+加载 replica3...
+加载 replica3...
+加载 replica3...
+批量模式：找到 1 个 seqs.fa
+  0%|          | 0/1 [00:00<?, ?it/s]批量模式：找到 1 个 seqs.fa
+  0%|          | 0/1 [00:00<?, ?it/s]批量模式：找到 1 个 seqs.fa
+  0%|          | 0/1 [00:00<?, ?it/s]批量模式：找到 1 个 seqs.fa
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.67s/it]100%|██████████| 1/1 [00:02<00:00,  2.67s/it]
+Predicted melting temperature: [66.69426727294922]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.86s/it]100%|██████████| 1/1 [00:02<00:00,  2.86s/it]
+Predicted melting temperature: [52.214927673339844]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:03<00:00,  3.50s/it]100%|██████████| 1/1 [00:03<00:00,  3.50s/it]
+Predicted melting temperature: [71.79793548583984]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.89s/it]100%|██████████| 1/1 [00:02<00:00,  2.89s/it]
+Predicted melting temperature: [56.09282684326172]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.12s/it]100%|██████████| 1/1 [00:01<00:00,  1.12s/it]
+Predicted melting temperature: [71.63835144042969]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.03s/it]100%|██████████| 1/1 [00:01<00:00,  1.03s/it]
+Predicted melting temperature: [55.748416900634766]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.10it/s]100%|██████████| 1/1 [00:00<00:00,  1.10it/s]
+Predicted melting temperature: [64.05439758300781]
+  sample_1 pH=7.4 charge=-0.01 pI=7.13       Tm=67.46  replicas=[66.7, 71.6, 64.1]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.44s/it]100%|██████████| 1/1 [00:01<00:00,  1.44s/it]
+Predicted melting temperature: [77.03599548339844]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.45s/it]100%|██████████| 1/1 [00:01<00:00,  1.45s/it]
+Predicted melting temperature: [57.096004486083984]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.13it/s]100%|██████████| 1/1 [00:00<00:00,  1.13it/s]
+Predicted melting temperature: [50.907020568847656]
+  sample_1 pH=7.4 charge=+14.02 pI=10.93     Tm=52.96  replicas=[52.2, 55.7, 50.9]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.05it/s]100%|██████████| 1/1 [00:00<00:00,  1.05it/s]
+Predicted melting temperature: [67.50526428222656]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.30it/s]100%|██████████| 1/1 [00:00<00:00,  1.30it/s]
+Predicted melting temperature: [63.90996170043945]
+  sample_1 pH=7.4 charge=+0.32 pI=7.59       Tm=59.03  replicas=[56.1, 57.1, 63.9]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.26s/it]100%|██████████| 1/1 [00:01<00:00,  1.26s/it]100%|██████████| 1/1 [00:00<00:00,  1.01it/s]
+Predicted melting temperature: [64.12258911132812]
+  sample_1 pH=7.4 charge=+11.06 pI=11.12     Tm=70.99  replicas=[71.8, 77.0, 64.1]
+100%|██████████| 1/1 [00:01<00:00,  1.02s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]Predicted melting temperature: [52.123939514160156]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.24it/s]100%|██████████| 1/1 [00:00<00:00,  1.24it/s]100%|██████████| 1/1 [00:00<00:00,  1.15it/s]
+100%|██████████| 1/1 [00:00<00:00,  1.12it/s]
+Predicted melting temperature: [66.69694519042969]
+  0%|          | 0/1 [00:00<?, ?it/s]Predicted melting temperature: [55.07326889038086]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.09s/it]100%|██████████| 1/1 [00:01<00:00,  1.09s/it]
+Predicted melting temperature: [67.68585968017578]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.33it/s]100%|██████████| 1/1 [00:00<00:00,  1.33it/s]
+Predicted melting temperature: [54.11671447753906]
+  sample_2 pH=7.4 charge=+0.99 pI=9.28       Tm=62.77  replicas=[67.5, 66.7, 54.1]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.48s/it]100%|██████████| 1/1 [00:01<00:00,  1.48s/it]
+100%|██████████| 1/1 [00:01<00:00,  1.05s/it]100%|██████████| 1/1 [00:01<00:00,  1.05s/it]Predicted melting temperature: [63.09739685058594]
+
+  0%|          | 0/1 [00:00<?, ?it/s]Predicted melting temperature: [53.06079864501953]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.21it/s]100%|██████████| 1/1 [00:00<00:00,  1.21it/s]
+Predicted melting temperature: [66.68681335449219]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.05s/it]100%|██████████| 1/1 [00:01<00:00,  1.05s/it]
+Predicted melting temperature: [50.442543029785156]
+  sample_2 pH=7.4 charge=+9.02 pI=10.47      Tm=56.75  replicas=[52.1, 67.7, 50.4]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.23it/s]100%|██████████| 1/1 [00:00<00:00,  1.23it/s]
+Predicted melting temperature: [54.560096740722656]
+  sample_2 pH=7.4 charge=-1.45 pI=4.78       Tm=54.23  replicas=[55.1, 53.1, 54.6]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.68it/s]100%|██████████| 1/1 [00:00<00:00,  1.68it/s]
+Predicted melting temperature: [71.36302185058594]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.49s/it]100%|██████████| 1/1 [00:01<00:00,  1.49s/it]
+Predicted melting temperature: [72.3657455444336]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.04s/it]100%|██████████| 1/1 [00:01<00:00,  1.04s/it]
+Predicted melting temperature: [54.54034423828125]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.41it/s]100%|██████████| 1/1 [00:00<00:00,  1.41it/s]
+Predicted melting temperature: [62.40484619140625]
+  sample_3 pH=7.4 charge=-2.01 pI=4.77       Tm=66.82  replicas=[66.7, 71.4, 62.4]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.34s/it]100%|██████████| 1/1 [00:01<00:00,  1.35s/it]
+Predicted melting temperature: [51.33820724487305]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.61it/s]100%|██████████| 1/1 [00:00<00:00,  1.61it/s]
+Predicted melting temperature: [75.30274963378906]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.06s/it]100%|██████████| 1/1 [00:01<00:00,  1.06s/it]
+Predicted melting temperature: [73.0963134765625]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.52s/it]100%|██████████| 1/1 [00:01<00:00,  1.52s/it]
+Predicted melting temperature: [49.96946716308594]
+  sample_2 pH=7.4 charge=+8.02 pI=10.21      Tm=61.81  replicas=[63.1, 72.4, 50.0]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.23s/it]100%|██████████| 1/1 [00:01<00:00,  1.23s/it]
+Predicted melting temperature: [57.187686920166016]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.04it/s]100%|██████████| 1/1 [00:00<00:00,  1.04it/s]
+Predicted melting temperature: [73.95047760009766]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.01it/s]100%|██████████| 1/1 [00:00<00:00,  1.01it/s]
+Predicted melting temperature: [58.794921875]
+  sample_3 pH=7.4 charge=+3.98 pI=9.79       Tm=62.14  replicas=[54.5, 73.1, 58.8]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.50s/it]100%|██████████| 1/1 [00:01<00:00,  1.50s/it]100%|██████████| 1/1 [00:01<00:00,  1.10s/it]
+100%|██████████| 1/1 [00:00<00:00,  1.02it/s]100%|██████████| 1/1 [00:01<00:00,  1.06s/it]100%|██████████| 1/1 [00:01<00:00,  1.23s/it]
+
+Predicted melting temperature: [66.68362426757812]
+  sample_4 pH=7.4 charge=-4.01 pI=4.37       Tm=71.98  replicas=[75.3, 74.0, 66.7]
+Predicted melting temperature: [54.303466796875]
+  sample_3 pH=7.4 charge=+0.32 pI=7.60       Tm=54.28  replicas=[51.3, 57.2, 54.3]
+Predicted melting temperature: [66.872802734375]
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.22s/it]100%|██████████| 1/1 [00:01<00:00,  1.22s/it]
+Predicted melting temperature: [53.95618438720703]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.05it/s]100%|██████████| 1/1 [00:00<00:00,  1.05it/s]
+Predicted melting temperature: [65.7090835571289]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.17s/it]100%|██████████| 1/1 [00:01<00:00,  1.17s/it]
+Predicted melting temperature: [83.92840576171875]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.05it/s]100%|██████████| 1/1 [00:00<00:00,  1.05it/s]100%|██████████| 1/1 [00:01<00:00,  1.56s/it]
+100%|██████████| 1/1 [00:01<00:00,  1.59s/it]
+Predicted melting temperature: [71.91127014160156]
+  0%|          | 0/1 [00:00<?, ?it/s]Predicted melting temperature: [71.74214935302734]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.11it/s]100%|██████████| 1/1 [00:00<00:00,  1.11it/s]100%|██████████| 1/1 [00:00<00:00,  1.09it/s]
+100%|██████████| 1/1 [00:00<00:00,  1.05it/s]
+Predicted melting temperature: [64.52796936035156]
+  0%|          | 0/1 [00:00<?, ?it/s]Predicted melting temperature: [75.14366149902344]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.15it/s]100%|██████████| 1/1 [00:00<00:00,  1.15it/s]
+Predicted melting temperature: [66.03081512451172]
+  sample_4 pH=7.4 charge=+6.02 pI=10.33      Tm=63.97  replicas=[54.0, 71.9, 66.0]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.18it/s]100%|██████████| 1/1 [00:00<00:00,  1.18it/s]100%|██████████| 1/1 [00:00<00:00,  1.12it/s]
+100%|██████████| 1/1 [00:00<00:00,  1.01it/s]Predicted melting temperature: [65.92671203613281]
+  sample_4 pH=7.4 charge=-2.68 pI=4.21       Tm=75.00  replicas=[83.9, 75.1, 65.9]
+
+Predicted melting temperature: [61.011863708496094]
+  sample_5 pH=7.4 charge=+1.99 pI=9.62       Tm=63.75  replicas=[65.7, 64.5, 61.0]
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.69s/it]100%|██████████| 1/1 [00:01<00:00,  1.69s/it]
+Predicted melting temperature: [49.366249084472656]
+  sample_3 pH=7.4 charge=+11.02 pI=10.43     Tm=62.66  replicas=[66.9, 71.7, 49.4]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.07it/s]100%|██████████| 1/1 [00:00<00:00,  1.06it/s]
+Predicted melting temperature: [52.74454879760742]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.21it/s]100%|██████████| 1/1 [00:00<00:00,  1.21it/s]
+Predicted melting temperature: [63.16817855834961]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.10s/it]100%|██████████| 1/1 [00:01<00:00,  1.11s/it]100%|██████████| 1/1 [00:01<00:00,  1.49s/it]
+100%|██████████| 1/1 [00:01<00:00,  1.61s/it]
+Predicted melting temperature: [69.43812561035156]
+  0%|          | 0/1 [00:00<?, ?it/s]Predicted melting temperature: [58.307167053222656]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.57s/it]100%|██████████| 1/1 [00:01<00:00,  1.57s/it]100%|██████████| 1/1 [00:00<00:00,  1.15it/s]
+100%|██████████| 1/1 [00:00<00:00,  1.15it/s]Predicted melting temperature: [68.56397247314453]
+
+  0%|          | 0/1 [00:00<?, ?it/s]Predicted melting temperature: [66.78469848632812]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.03s/it]100%|██████████| 1/1 [00:01<00:00,  1.03s/it]
+Predicted melting temperature: [50.37114715576172]
+  sample_5 pH=7.4 charge=+8.99 pI=11.01      Tm=57.52  replicas=[52.7, 69.4, 50.4]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.08it/s]100%|██████████| 1/1 [00:00<00:00,  1.08it/s]
+Predicted melting temperature: [59.80421447753906]
+  sample_6 pH=7.4 charge=-2.01 pI=4.70       Tm=63.25  replicas=[63.2, 66.8, 59.8]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.30s/it]100%|██████████| 1/1 [00:01<00:00,  1.30s/it]
+Predicted melting temperature: [56.805885314941406]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.53s/it]100%|██████████| 1/1 [00:01<00:00,  1.53s/it]
+Predicted melting temperature: [74.37901306152344]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.11it/s]100%|██████████| 1/1 [00:00<00:00,  1.11it/s]
+Predicted melting temperature: [68.0628433227539]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.16s/it]100%|██████████| 1/1 [00:01<00:00,  1.16s/it]
+Predicted melting temperature: [53.50768280029297]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.63s/it]100%|██████████| 1/1 [00:01<00:00,  1.63s/it]
+Predicted melting temperature: [61.638648986816406]
+  sample_5 pH=7.4 charge=-2.68 pI=4.60       Tm=58.92  replicas=[58.3, 56.8, 61.6]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.16s/it]100%|██████████| 1/1 [00:01<00:00,  1.16s/it]
+100%|██████████| 1/1 [00:01<00:00,  1.48s/it]100%|██████████| 1/1 [00:01<00:00,  1.49s/it]100%|██████████| 1/1 [00:01<00:00,  1.00s/it]
+Predicted melting temperature: [71.35298156738281]
+Predicted melting temperature: [66.78636932373047]
+  sample_4 pH=7.4 charge=+14.99 pI=10.95     Tm=69.91  replicas=[68.6, 74.4, 66.8]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.01s/it]
+Predicted melting temperature: [69.80545043945312]
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.04s/it]100%|██████████| 1/1 [00:01<00:00,  1.04s/it]
+100%|██████████| 1/1 [00:00<00:00,  1.04it/s]100%|██████████| 1/1 [00:00<00:00,  1.02it/s]100%|██████████| 1/1 [00:01<00:00,  1.17s/it]100%|██████████| 1/1 [00:01<00:00,  1.15s/it]
+Predicted melting temperature: [50.849178314208984]
+
+Predicted melting temperature: [64.1017074584961]
+  sample_7 pH=7.4 charge=-3.01 pI=4.56       Tm=67.84  replicas=[68.1, 71.4, 64.1]
+  0%|          | 0/1 [00:00<?, ?it/s]Predicted melting temperature: [60.65415573120117]
+  sample_6 pH=7.4 charge=+7.02 pI=10.13      Tm=61.32  replicas=[53.5, 69.8, 60.7]
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.59s/it]100%|██████████| 1/1 [00:01<00:00,  1.59s/it]
+Predicted melting temperature: [67.78712463378906]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.00s/it]100%|██████████| 1/1 [00:01<00:00,  1.00s/it]
+Predicted melting temperature: [64.3541259765625]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.14s/it]100%|██████████| 1/1 [00:01<00:00,  1.14s/it]
+Predicted melting temperature: [54.722511291503906]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.26s/it]100%|██████████| 1/1 [00:01<00:00,  1.26s/it]
+Predicted melting temperature: [55.82743835449219]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.00it/s]100%|██████████| 1/1 [00:00<00:00,  1.00it/s]100%|██████████| 1/1 [00:01<00:00,  1.58s/it]100%|██████████| 1/1 [00:00<00:00,  1.10it/s]
+100%|██████████| 1/1 [00:01<00:00,  1.00s/it]
+100%|██████████| 1/1 [00:01<00:00,  1.74s/it]
+Predicted melting temperature: [71.44134521484375]
+  0%|          | 0/1 [00:00<?, ?it/s]Predicted melting temperature: [71.12448120117188]
+  0%|          | 0/1 [00:00<?, ?it/s]Predicted melting temperature: [72.5827865600586]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.01it/s]100%|██████████| 1/1 [00:00<00:00,  1.01it/s]
+Predicted melting temperature: [58.65199279785156]
+  sample_6 pH=7.4 charge=+0.32 pI=7.59       Tm=55.11  replicas=[50.8, 55.8, 58.7]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.00it/s]100%|██████████| 1/1 [00:00<00:00,  1.00it/s]100%|██████████| 1/1 [00:01<00:00,  1.04s/it]
+100%|██████████| 1/1 [00:01<00:00,  1.22s/it]Predicted melting temperature: [61.70814514160156]
+  sample_8 pH=7.4 charge=-0.01 pI=7.19       Tm=65.73  replicas=[64.4, 71.1, 61.7]
+
+Predicted melting temperature: [51.59571838378906]
+  sample_7 pH=7.4 charge=+12.01 pI=10.33     Tm=59.25  replicas=[54.7, 71.4, 51.6]
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.34s/it]100%|██████████| 1/1 [00:01<00:00,  1.34s/it]100%|██████████| 1/1 [00:01<00:00,  1.42s/it]
+100%|██████████| 1/1 [00:01<00:00,  1.45s/it]Predicted melting temperature: [53.364501953125]
+
+  0%|          | 0/1 [00:00<?, ?it/s]Predicted melting temperature: [53.08366394042969]
+  sample_5 pH=7.4 charge=+9.02 pI=10.11      Tm=64.48  replicas=[67.8, 72.6, 53.1]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.01it/s]100%|██████████| 1/1 [00:00<00:00,  1.01it/s]
+Predicted melting temperature: [53.32732009887695]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.15s/it]100%|██████████| 1/1 [00:01<00:00,  1.15s/it]
+Predicted melting temperature: [67.75798797607422]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.15s/it]100%|██████████| 1/1 [00:01<00:00,  1.15s/it]
+Predicted melting temperature: [55.79554748535156]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.53s/it]100%|██████████| 1/1 [00:01<00:00,  1.53s/it]
+Predicted melting temperature: [70.69271087646484]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.07s/it]100%|██████████| 1/1 [00:01<00:00,  1.07s/it]
+Predicted melting temperature: [51.93048858642578]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.11s/it]100%|██████████| 1/1 [00:01<00:00,  1.12s/it]
+Predicted melting temperature: [74.98722839355469]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.39s/it]100%|██████████| 1/1 [00:01<00:00,  1.39s/it]
+Predicted melting temperature: [55.79058074951172]
+  sample_7 pH=7.4 charge=-5.67 pI=3.62       Tm=54.98  replicas=[53.4, 55.8, 55.8]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.38s/it]100%|██████████| 1/1 [00:01<00:00,  1.38s/it]
+Predicted melting temperature: [76.58837890625]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.07s/it]100%|██████████| 1/1 [00:01<00:00,  1.07s/it]
+Predicted melting temperature: [50.982444763183594]
+  native charge=+0.03 pI=7.68                Tm=52.08  replicas=[53.3, 51.9, 51.0]
+  [code/output/phase3_antidrift_cal/1UBQ/seqs.fa] 已写 code/output/phase3_antidrift_cal/1UBQ/seqs.fa.tm.csv
+100%|██████████| 1/1 [00:01<00:00,  1.16s/it]100%|██████████| 1/1 [00:01<00:00,  1.16s/it]
+Predicted melting temperature: [78.79258728027344]
+  sample_8 pH=7.4 charge=+10.03 pI=12.50     Tm=73.85  replicas=[67.8, 75.0, 78.8]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.33s/it]100%|██████████| 1/1 [00:01<00:00,  1.33s/it]
+Predicted melting temperature: [65.38211059570312]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.08s/it]100%|██████████| 1/1 [00:01<00:00,  1.08s/it]100%|██████████| 1/1 [00:01<00:00,  1.34s/it]
+100%|██████████| 1/1 [00:01<00:00,  1.40s/it]
+Predicted melting temperature: [69.01837158203125]
+  sample_6 pH=7.4 charge=+12.03 pI=11.51     Tm=72.10  replicas=[70.7, 76.6, 69.0]
+Predicted melting temperature: [50.912879943847656]
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.06s/it]100%|██████████| 1/1 [00:01<00:00,  1.06s/it]
+Predicted melting temperature: [56.5949821472168]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.14s/it]100%|██████████| 1/1 [00:01<00:00,  1.14s/it]
+Predicted melting temperature: [53.062355041503906]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.28s/it]100%|██████████| 1/1 [00:01<00:00,  1.28s/it]
+Predicted melting temperature: [72.27164459228516]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.05it/s]100%|██████████| 1/1 [00:00<00:00,  1.05it/s]
+Predicted melting temperature: [48.72527313232422]
+  native charge=+8.90 pI=10.22               Tm=50.90  replicas=[50.9, 53.1, 48.7]
+  [code/output/phase3_antidrift_cal/1BC8/seqs.fa] 已写 code/output/phase3_antidrift_cal/1BC8/seqs.fa.tm.csv
+100%|██████████| 1/1 [00:01<00:00,  1.48s/it]100%|██████████| 1/1 [00:01<00:00,  1.48s/it]
+Predicted melting temperature: [60.11608123779297]
+  sample_8 pH=7.4 charge=-2.68 pI=4.41       Tm=60.70  replicas=[65.4, 56.6, 60.1]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.50s/it]100%|██████████| 1/1 [00:01<00:00,  1.50s/it]
+Predicted melting temperature: [75.25711822509766]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.04it/s]100%|██████████| 1/1 [00:00<00:00,  1.04it/s]
+Predicted melting temperature: [57.973060607910156]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.39s/it]100%|██████████| 1/1 [00:01<00:00,  1.39s/it]
+Predicted melting temperature: [64.89994812011719]
+  sample_7 pH=7.4 charge=+9.98 pI=10.34      Tm=70.81  replicas=[72.3, 75.3, 64.9]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.23s/it]100%|██████████| 1/1 [00:01<00:00,  1.23s/it]
+Predicted melting temperature: [55.03009033203125]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.41s/it]100%|██████████| 1/1 [00:01<00:00,  1.41s/it]
+Predicted melting temperature: [72.82087707519531]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.24s/it]100%|██████████| 1/1 [00:01<00:00,  1.24s/it]
+Predicted melting temperature: [56.89667510986328]
+  native charge=-0.68 pI=5.98                Tm=56.63  replicas=[58.0, 55.0, 56.9]
+  [code/output/phase3_antidrift_cal/1CRN/seqs.fa] 已写 code/output/phase3_antidrift_cal/1CRN/seqs.fa.tm.csv
+100%|██████████| 1/1 [00:01<00:00,  1.41s/it]100%|██████████| 1/1 [00:01<00:00,  1.41s/it]
+Predicted melting temperature: [78.422607421875]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.38s/it]100%|██████████| 1/1 [00:01<00:00,  1.38s/it]
+Predicted melting temperature: [67.5925064086914]
+  sample_8 pH=7.4 charge=+9.03 pI=10.41      Tm=72.95  replicas=[72.8, 78.4, 67.6]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.39s/it]100%|██████████| 1/1 [00:01<00:00,  1.39s/it]
+Predicted melting temperature: [52.577816009521484]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.72s/it]100%|██████████| 1/1 [00:01<00:00,  1.72s/it]
+Predicted melting temperature: [55.878440856933594]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.59s/it]100%|██████████| 1/1 [00:01<00:00,  1.59s/it]
+Predicted melting temperature: [45.50361251831055]
+  native charge=+7.80 pI=9.95                Tm=51.32  replicas=[52.6, 55.9, 45.5]
+  [code/output/phase3_antidrift_cal/2LZM/seqs.fa] 已写 code/output/phase3_antidrift_cal/2LZM/seqs.fa.tm.csv
+  TemBERTure DONE 19:45:06
+=== ALL PHASE3 SCORING DONE ===

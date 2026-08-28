@@ -1,0 +1,13 @@
+/home/baokun_yu/miniconda3/envs/confumpnn-temberture/lib/python3.10/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/home/baokun_yu/miniconda3/envs/confumpnn-temberture/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+加载 replica1...
+加载 replica2...
+加载 replica3...
+分组模式：5 个目录
+  skip code/output/e1_ext/1BC8_ligand/pH7.4_t-5（已存在）
+  skip code/output/e1_ext/1BC8_ligand/pH7.4_t5（已存在）
+  skip code/output/e1_ext/1BC8_ligand/pH9.0_t0（已存在）
+  skip code/output/e1_ext/1BC8_ligand/pH9.0_t-5（已存在）
+  skip code/output/e1_ext/1BC8_ligand/pH9.0_t5（已存在）

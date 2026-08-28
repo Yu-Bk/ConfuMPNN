@@ -1,0 +1,24 @@
+===== target_charge=8 =====
+[1] 加载模型: ligandmpnn_v_32_010_25.pt  (device=cuda)
+[2] 读取 PDB: input/1BC8.pdb
+[3] 引导设置: pH=7.4, target_charge=8.0, preset=default, strength=0.5
+[4] 引导采样 3 条候选序列...
+[5] native   : charge= +8.90  pI=10.22  MDSAITLWQFLLQLLQKPQNKHMICWTSNDGQFKLLQAEEVARLWGIRKNKPNMNYDKLS
+    平均净电荷 = -2.27 ± 0.44  (目标 8.0)
+[6] 输出已保存: output/guided_1BC8_pH7.4/target_8/seqs.fa
+===== target_charge=0 =====
+[1] 加载模型: ligandmpnn_v_32_010_25.pt  (device=cuda)
+[2] 读取 PDB: input/1BC8.pdb
+[3] 引导设置: pH=7.4, target_charge=0.0, preset=default, strength=0.5
+[4] 引导采样 3 条候选序列...
+[5] native   : charge= +8.90  pI=10.22  MDSAITLWQFLLQLLQKPQNKHMICWTSNDGQFKLLQAEEVARLWGIRKNKPNMNYDKLS
+    平均净电荷 = -2.27 ± 0.44  (目标 0.0)
+[6] 输出已保存: output/guided_1BC8_pH7.4/target_0/seqs.fa
+===== target_charge=-8 =====
+[1] 加载模型: ligandmpnn_v_32_010_25.pt  (device=cuda)
+[2] 读取 PDB: input/1BC8.pdb
+[3] 引导设置: pH=7.4, target_charge=-8.0, preset=default, strength=0.5
+[4] 引导采样 3 条候选序列...
+[5] native   : charge= +8.90  pI=10.22  MDSAITLWQFLLQLLQKPQNKHMICWTSNDGQFKLLQAEEVARLWGIRKNKPNMNYDKLS
+    平均净电荷 = -2.27 ± 0.44  (目标 -8.0)
+[6] 输出已保存: output/guided_1BC8_pH7.4/target_-8/seqs.fa

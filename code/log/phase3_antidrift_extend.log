@@ -1,0 +1,27 @@
+    条件编码器已加载: condition_encoder_last.pt  (epoch=last, n_tokens=4, token_dim=128)
+
+=== 1BC8  L=93  native@7.4=+8.90  A:pH7.4/t9  B:pH4.0/t14 ===
+  1BC8 seed 5/20 done
+  1BC8 seed 10/20 done
+  1BC8 seed 15/20 done
+  1BC8 seed 20/20 done
+
+=== 1CRN  L=46  native@7.4=-0.68  A:pH7.4/t-1  B:pH4.0/t4 ===
+  1CRN seed 5/20 done
+  1CRN seed 10/20 done
+  1CRN seed 15/20 done
+  1CRN seed 20/20 done
+
+=== 1UBQ  L=76  native@7.4=+0.03  A:pH7.4/t0  B:pH4.0/t5 ===
+  1UBQ seed 5/20 done
+  1UBQ seed 10/20 done
+  1UBQ seed 15/20 done
+  1UBQ seed 20/20 done
+
+=== 2LZM  L=164  native@7.4=+7.80  A:pH7.4/t8  B:pH4.0/t13 ===
+  2LZM seed 5/20 done
+  2LZM seed 10/20 done
+  2LZM seed 15/20 done
+  2LZM seed 20/20 done
+
+=== 采样完成 ===

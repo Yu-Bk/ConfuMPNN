@@ -1,0 +1,786 @@
+[13:10:18] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[13:10:18] device=cuda:3  epochs=30  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[13:10:18] [v10 A] 条件解耦开：target 与 native 无关 Uniform[-12.0,12.0]
+[13:10:18] [v10 B] 表面添加电荷监督开：λ_add=0.3  SASA θ=0.25
+[13:10:18] [v10 C] pH 自适应结构惩罚开：boost=1.5
+[13:10:19] backbone: MoMPNN 冻结（2.62M 参数，不更新）
+[13:10:19] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[13:10:20] 数据：4972 结构域 × 8 pH = 39776 样本（data/ligand_train/labels.npz）
+[13:10:23]   ℹ️ 1EST.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[13:10:28]   ℹ️ 1JQZ.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[13:10:41]   ℹ️ 1RP1.pdb resnum 对齐 435/441（6 个非标准/parse独有残基 frac=0）
+[13:11:05]   ℹ️ 1O2I.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:11:12]   ℹ️ 1FQ8.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[13:11:35]   ℹ️ 1F5K.pdb resnum 对齐 227/247（20 个非标准/parse独有残基 frac=0）
+[13:11:47]   ℹ️ 1FZZ.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[13:12:22]   预解析+encode 200/4972（跳过 0）
+[13:12:26]   ℹ️ 1EWO.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[13:12:36]   ℹ️ 1MM9.pdb resnum 对齐 124/127（3 个非标准/parse独有残基 frac=0）
+[13:12:43]   ℹ️ 1JT5.pdb resnum 对齐 269/284（15 个非标准/parse独有残基 frac=0）
+[13:12:47]   ℹ️ 1ESO.pdb resnum 对齐 133/150（17 个非标准/parse独有残基 frac=0）
+[13:12:48]   ℹ️ 1O3H.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:13:00]   ℹ️ 1C2F.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:13:30]   ℹ️ 1KLT.pdb resnum 对齐 210/226（16 个非标准/parse独有残基 frac=0）
+[13:13:34]   ℹ️ 1IY2.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[13:13:53]   ℹ️ 1MEM.pdb resnum 对齐 203/215（12 个非标准/parse独有残基 frac=0）
+[13:13:54]   ℹ️ 1OSS.pdb resnum 对齐 202/223（21 个非标准/parse独有残基 frac=0）
+[13:13:55]   ℹ️ 1ANB.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:14:02]   预解析+encode 400/4972（跳过 0）
+[13:14:34]   ℹ️ 1EXF.pdb resnum 对齐 187/242（55 个非标准/parse独有残基 frac=0）
+[13:14:45]   ℹ️ 1C2D.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:14:49]   ℹ️ 1C2H.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:15:04]   ℹ️ 1C2I.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:15:04]   ℹ️ 1B0F.pdb resnum 对齐 197/218（21 个非标准/parse独有残基 frac=0）
+[13:15:17]   ℹ️ 1J17.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:15:27]   ℹ️ 1C2K.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:15:34]   预解析+encode 600/4972（跳过 0）
+[13:15:56]   ℹ️ 1O32.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:16:00]   ℹ️ 1L7G.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[13:16:33]   ℹ️ 1O2J.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:16:46]   ℹ️ 1O2K.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:16:48]   ⚠️ 1O0E.pdb SASA 计算失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 L_add）
+[13:16:53]   ℹ️ 1EPP.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[13:17:16]   ⚠️ 155C.pdb SASA 计算失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 L_add）
+[13:17:25]   预解析+encode 800/4972（跳过 0）
+[13:17:34]   ℹ️ 1LQE.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:17:42]   ℹ️ 1EQ9.pdb resnum 对齐 397/444（47 个非标准/parse独有残基 frac=0）
+[13:18:04]   ℹ️ 1LVY.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[13:18:23]   ℹ️ 1EFQ.pdb resnum 对齐 107/113（6 个非标准/parse独有残基 frac=0）
+[13:18:26]   ℹ️ 1A5Z.pdb resnum 对齐 302/309（7 个非标准/parse独有残基 frac=0）
+[13:18:28]   ℹ️ 1ENT.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[13:18:36]   ℹ️ 1O2L.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:18:54]   ℹ️ 1GVZ.pdb resnum 对齐 217/237（20 个非标准/parse独有残基 frac=0）
+[13:18:56]   ℹ️ 1F0T.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:19:09]   预解析+encode 1000/4972（跳过 0）
+[13:19:27]   ℹ️ 1BZO.pdb resnum 对齐 132/150（18 个非标准/parse独有残基 frac=0）
+[13:19:36]   ℹ️ 1OS8.pdb resnum 对齐 202/223（21 个非标准/parse独有残基 frac=0）
+[13:19:59]   ℹ️ 1L7F.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[13:20:06]   ℹ️ 1BJU.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:20:06]   ℹ️ 1NPM.pdb resnum 对齐 410/446（36 个非标准/parse独有残基 frac=0）
+[13:20:39]   预解析+encode 1200/4972（跳过 0）
+[13:20:46]   ℹ️ 1NC6.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:21:03]   ℹ️ 1O2Z.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:21:04]   ℹ️ 1O3I.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:21:06]   ℹ️ 1MMP.pdb resnum 对齐 329/332（3 个非标准/parse独有残基 frac=0）
+[13:21:30]   ℹ️ 1GJ6.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:21:42]   ℹ️ 1EPR.pdb resnum 对齐 309/329（20 个非标准/parse独有残基 frac=0）
+[13:21:49]   ℹ️ 1C2M.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:21:54]   ℹ️ 1C5R.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:22:05]   ℹ️ 1G3E.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:22:27]   预解析+encode 1400/4972（跳过 0）
+[13:22:36]   ⚠️ 跳过坏域 1OBP.pdb: index 0 is out of bounds for dimension 1 with size 0
+[13:22:42]   ℹ️ 1C1P.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:22:58]   ℹ️ 1HFZ.pdb resnum 对齐 486/491（5 个非标准/parse独有残基 frac=0）
+[13:23:05]   ℹ️ 1O2N.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:23:28]   ℹ️ 1O3D.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:23:28]   ℹ️ 1C2E.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:23:29]   ℹ️ 1J15.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:23:46]   ℹ️ 1E25.pdb resnum 对齐 269/278（9 个非标准/parse独有残基 frac=0）
+[13:24:11]   预解析+encode 1599/4972（跳过 1）
+[13:24:21]   ℹ️ 1JY0.pdb resnum 对齐 271/281（10 个非标准/parse独有残基 frac=0）
+[13:24:23]   ℹ️ 1ANC.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:24:45]   ℹ️ 1C2J.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:25:01]   ℹ️ 1GBA.pdb resnum 对齐 138/198（60 个非标准/parse独有残基 frac=0）
+[13:25:04]   ℹ️ 1BTY.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:25:09]   ℹ️ 1O2T.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:25:40]   ℹ️ 1F2C.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[13:25:48]   预解析+encode 1799/4972（跳过 1）
+[13:26:24]   ℹ️ 1O2V.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:26:31]   ℹ️ 1F92.pdb resnum 对齐 225/247（22 个非标准/parse独有残基 frac=0）
+[13:27:02]   ℹ️ 1SGT.pdb resnum 对齐 202/223（21 个非标准/parse独有残基 frac=0）
+[13:27:09]   ℹ️ 1O3K.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:27:09]   ℹ️ 1N6Y.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:27:15]   ℹ️ 1C5T.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:27:24]   预解析+encode 1999/4972（跳过 1）
+[13:27:27]   ℹ️ 1FQ6.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[13:27:49]   ℹ️ 1MTS.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:27:50]   ℹ️ 1GI5.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:28:06]   ℹ️ 1PCA.pdb resnum 对齐 393/396（3 个非标准/parse独有残基 frac=0）
+[13:28:13]   ℹ️ 1F8E.pdb resnum 对齐 386/388（2 个非标准/parse独有残基 frac=0）
+[13:28:23]   ℹ️ 1INC.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[13:28:31]   ℹ️ 1O3B.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:28:56]   预解析+encode 2199/4972（跳过 1）
+[13:29:01]   ℹ️ 1C2L.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:29:31]   ℹ️ 1C5P.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:29:35]   ℹ️ 1AND.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:29:43]   ℹ️ 1HJ9.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:29:51]   ℹ️ 1FXY.pdb resnum 对齐 218/227（9 个非标准/parse独有残基 frac=0）
+[13:29:54]   ℹ️ 1EAU.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[13:30:00]   ℹ️ 1E36.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[13:30:04]   ℹ️ 1GI6.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:30:17]   ℹ️ 1O2U.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:30:17]   ℹ️ 1NSA.pdb resnum 对齐 393/394（1 个非标准/parse独有残基 frac=0）
+[13:30:30]   预解析+encode 2399/4972（跳过 1）
+[13:30:51]   ℹ️ 1JT3.pdb resnum 对齐 268/285（17 个非标准/parse独有残基 frac=0）
+[13:30:52]   ℹ️ 1IXZ.pdb resnum 对齐 237/238（1 个非标准/parse独有残基 frac=0）
+[13:30:56]   ℹ️ 1M16.pdb resnum 对齐 269/284（15 个非标准/parse独有残基 frac=0）
+[13:31:02]   ℹ️ 1MWE.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[13:31:07]   ℹ️ 1IY1.pdb resnum 对齐 233/234（1 个非标准/parse独有残基 frac=0）
+[13:31:17]   ℹ️ 1C2G.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:31:18]   ℹ️ 1BJI.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[13:31:57]   ℹ️ 1C1M.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[13:32:02] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[13:32:02] device=cuda:3  epochs=30  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[13:32:02] [v10 A] 条件解耦开：target 与 native 无关 Uniform[-12.0,12.0]
+[13:32:02] [v10 B] 表面添加电荷监督开：λ_add=0.3  SASA θ=0.25
+[13:32:02] [v10 C] pH 自适应结构惩罚开：boost=1.5
+[13:32:03] backbone: MoMPNN 冻结（2.62M 参数，不更新）
+[13:32:03] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[13:32:04] 数据：4972 结构域 × 8 pH = 39776 样本（data/ligand_train/labels.npz）
+[13:32:07]   ℹ️ 1EST.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[13:32:12]   ℹ️ 1JQZ.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[13:32:20]   ℹ️ 1P63.pdb resnum 对齐 271/281（10 个非标准/parse独有残基 frac=0）
+[13:32:20]   预解析+encode 2599/4972（跳过 1）
+[13:32:22]   ℹ️ 1RP1.pdb resnum 对齐 435/441（6 个非标准/parse独有残基 frac=0）
+[13:32:31]   ℹ️ 1J14.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:32:47]   ℹ️ 1O36.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:33:10]   ℹ️ 1A5I.pdb resnum 对齐 238/262（24 个非标准/parse独有残基 frac=0）
+[13:33:16]   ℹ️ 1O2M.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:33:20]   ℹ️ 1F8C.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[13:34:20]   预解析+encode 2799/4972（跳过 1）
+[13:34:25]   ℹ️ 1BJV.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:34:34]   ℹ️ 1AMH.pdb resnum 对齐 424/446（22 个非标准/parse独有残基 frac=0）
+[13:34:34]   ℹ️ 1HJ8.pdb resnum 对齐 216/220（4 个非标准/parse独有残基 frac=0）
+[13:34:41]   ℹ️ 1IGO.pdb resnum 对齐 407/410（3 个非标准/parse独有残基 frac=0）
+[13:34:43]   ℹ️ 1E81.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[13:34:50]   ℹ️ 1FSG.pdb resnum 对齐 460/466（6 个非标准/parse独有残基 frac=0）
+[13:35:33]   ℹ️ 1K1I.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:35:34]   ℹ️ 1BTU.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[13:35:42]   ℹ️ 1F5L.pdb resnum 对齐 225/245（20 个非标准/parse独有残基 frac=0）
+[13:35:48]   ℹ️ 1B0E.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[13:35:56]   ℹ️ 1DFP.pdb resnum 对齐 417/456（39 个非标准/parse独有残基 frac=0）
+[13:35:57]   预解析+encode 2999/4972（跳过 1）
+[13:36:11]   ℹ️ 1O39.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:36:12]   ℹ️ 1O3N.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:36:34]   ℹ️ 1AYE.pdb resnum 对齐 397/399（2 个非标准/parse独有残基 frac=0）
+[13:36:34]   ℹ️ 102L.pdb resnum 对齐 162/163（1 个非标准/parse独有残基 frac=0）
+[13:36:35]   ℹ️ 103L.pdb resnum 对齐 157/159（2 个非标准/parse独有残基 frac=0）
+[13:36:47]   ℹ️ 1F2A.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[13:36:52]   ℹ️ 1O2O.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:37:05]   ℹ️ 1EWM.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[13:37:07]   ℹ️ 1CET.pdb resnum 对齐 293/305（12 个非标准/parse独有残基 frac=0）
+[13:37:16]   ℹ️ 1O3O.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:37:33]   ℹ️ 1L7H.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[13:37:49]   预解析+encode 3199/4972（跳过 1）
+[13:38:14]   ℹ️ 1GBJ.pdb resnum 对齐 138/198（60 个非标准/parse独有残基 frac=0）
+[13:38:19]   ℹ️ 1C1N.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:38:22]   ℹ️ 1HB0.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[13:38:44]   ℹ️ 1GI4.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:39:25]   ℹ️ 1LDG.pdb resnum 对齐 298/315（17 个非标准/parse独有残基 frac=0）
+[13:39:33]   ℹ️ 1MMR.pdb resnum 对齐 166/167（1 个非标准/parse独有残基 frac=0）
+[13:39:46]   ℹ️ 1BRA.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:39:51]   ℹ️ 1FH0.pdb resnum 对齐 439/442（3 个非标准/parse独有残基 frac=0）
+[13:39:51]   预解析+encode 3399/4972（跳过 1）
+[13:39:59]   ℹ️ 1O3A.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:40:25]   ℹ️ 1EUF.pdb resnum 对齐 210/224（14 个非标准/parse独有残基 frac=0）
+[13:40:28]   ℹ️ 1BUL.pdb resnum 对齐 263/265（2 个非标准/parse独有残基 frac=0）
+[13:41:13]   ℹ️ 1K1P.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:41:25]   ℹ️ 1O2Y.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:41:41]   ℹ️ 1CEB.pdb resnum 对齐 157/160（3 个非标准/parse独有残基 frac=0）
+[13:41:42]   ℹ️ 1C5Q.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:41:43]   ℹ️ 1LLC.pdb resnum 对齐 311/320（9 个非标准/parse独有残基 frac=0）
+[13:41:46]   预解析+encode 3599/4972（跳过 1）
+[13:42:18]   ℹ️ 1GPL.pdb resnum 对齐 419/424（5 个非标准/parse独有残基 frac=0）
+[13:42:21]   ℹ️ 1NNC.pdb resnum 对齐 386/388（2 个非标准/parse独有残基 frac=0）
+[13:42:25]   ℹ️ 1FMG.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:42:31]   ℹ️ 1C1O.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:42:32]   ℹ️ 1FQ4.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[13:42:33]   ℹ️ 1GBT.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:42:34]   ℹ️ 1C5S.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:42:46]   ℹ️ 1MTV.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:43:06]   ℹ️ 1JIR.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:43:12]   ℹ️ 1B4B.pdb resnum 对齐 214/216（2 个非标准/parse独有残基 frac=0）
+[13:43:30]   预解析+encode 3799/4972（跳过 1）
+[13:43:30]   ℹ️ 1K1M.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:43:37]   ℹ️ 1EEU.pdb resnum 对齐 207/225（18 个非标准/parse独有残基 frac=0）
+[13:43:45]   ℹ️ 1FQ7.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[13:44:04]   ℹ️ 1BQY.pdb resnum 对齐 418/468（50 个非标准/parse独有残基 frac=0）
+[13:44:07]   ℹ️ 1HOW.pdb resnum 对齐 338/346（8 个非标准/parse独有残基 frac=0）
+[13:44:14]   ℹ️ 1E38.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[13:44:22]   ℹ️ 1OWI.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[13:44:31]   ℹ️ 1JT4.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[13:44:44]   ℹ️ 1O2H.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:44:46]   ℹ️ 1E80.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[13:44:49]   ℹ️ 1F8B.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[13:44:54]   ℹ️ 1OVB.pdb resnum 对齐 143/159（16 个非标准/parse独有残基 frac=0）
+[13:45:11]   预解析+encode 3999/4972（跳过 1）
+[13:45:13]   ℹ️ 1OWK.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[13:45:36]   ℹ️ 1DPO.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:45:41]   ℹ️ 1C1T.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:45:49]   ℹ️ 1O3F.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:46:09]   ℹ️ 1EPN.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[13:46:11]   ℹ️ 1EPQ.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[13:46:15]   ℹ️ 1FQ5.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[13:46:25]   ℹ️ 1OWJ.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[13:46:25]   ℹ️ 1BTW.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:46:49]   ℹ️ 1EPO.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[13:46:54]   预解析+encode 4199/4972（跳过 1）
+[13:47:10]   ℹ️ 1MPP.pdb resnum 对齐 317/357（40 个非标准/parse独有残基 frac=0）
+[13:47:16]   ℹ️ 1M6D.pdb resnum 对齐 384/428（44 个非标准/parse独有残基 frac=0）
+[13:47:47]   ℹ️ 1EAX.pdb resnum 对齐 225/241（16 个非标准/parse独有残基 frac=0）
+[13:47:48]   ℹ️ 1BU8.pdb resnum 对齐 439/446（7 个非标准/parse独有残基 frac=0）
+[13:48:11]   ℹ️ 1E82.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[13:48:28]   预解析+encode 4399/4972（跳过 1）
+[13:48:32]   ℹ️ 1O2W.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:48:55]   ℹ️ 1HSL.pdb resnum 对齐 477/478（1 个非标准/parse独有残基 frac=0）
+[13:49:11]   ℹ️ 1GI3.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:49:20]   ℹ️ 1EK3.pdb resnum 对齐 210/228（18 个非标准/parse独有残基 frac=0）
+[13:49:30]   ℹ️ 1J16.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:49:39]   ℹ️ 1G3B.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:49:51]   ℹ️ 1EED.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[13:50:07]   预解析+encode 4599/4972（跳过 1）
+[13:50:57]   ℹ️ 1E5O.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[13:51:12]   ℹ️ 1GI0.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:51:16]   ℹ️ 1RNE.pdb resnum 对齐 319/329（10 个非标准/parse独有残基 frac=0）
+[13:51:42]   ℹ️ 1MTW.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:51:45]   ℹ️ 1EL3.pdb resnum 对齐 315/316（1 个非标准/parse独有残基 frac=0）
+[13:51:45]   ℹ️ 1O37.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:51:49]   ℹ️ 1H1B.pdb resnum 对齐 382/436（54 个非标准/parse独有残基 frac=0）
+[13:52:00]   ℹ️ 1FQ3.pdb resnum 对齐 417/451（34 个非标准/parse独有残基 frac=0）
+[13:52:13]   预解析+encode 4799/4972（跳过 1）
+[13:52:20]   ℹ️ 1N6X.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:52:20]   ℹ️ 1K1L.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:52:37]   ℹ️ 1K1N.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:52:38]   ℹ️ 1MAY.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[13:52:39]   ℹ️ 1MMQ.pdb resnum 对齐 165/166（1 个非标准/parse独有残基 frac=0）
+[13:52:45]   ℹ️ 1J8A.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:52:48]   ℹ️ 1MAX.pdb resnum 对齐 213/219（6 个非标准/parse独有残基 frac=0）
+[13:52:57]   ℹ️ 1AZ8.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[13:53:00]   ℹ️ 1F8D.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[13:53:09]   ℹ️ 1LO6.pdb resnum 对齐 216/221（5 个非标准/parse独有残基 frac=0）
+[13:53:30]   ℹ️ 1JQG.pdb resnum 对齐 394/409（15 个非标准/parse独有残基 frac=0）
+[13:53:42] ⚠️ 共跳过 1 个坏域（prody 无法解析），实际训练 4971 域
+[13:53:42] 预解析完成，缓存 encode 特征 ~23.30GB
+[13:53:42] 开始训练：30 epochs × 4971 域/epoch = 149130 steps
+[13:57:59] epoch 1/30  total=nan  ce=nan  charge=nan  kl=nan  keep=nan  [cd self=nan  mild=nan  extreme=nan]  elapsed=4.3min
+[14:02:10] epoch 2/30  total=nan  ce=nan  charge=nan  kl=nan  keep=nan  [cd self=nan  mild=nan  extreme=nan]  elapsed=8.5min
+[14:06:21] epoch 3/30  total=nan  ce=nan  charge=nan  kl=nan  keep=nan  [cd self=nan  mild=nan  extreme=nan]  elapsed=12.7min
+[14:10:39] epoch 4/30  total=nan  ce=nan  charge=nan  kl=nan  keep=nan  [cd self=nan  mild=nan  extreme=nan]  elapsed=17.0min
+[14:14:54] epoch 5/30  total=nan  ce=nan  charge=nan  kl=nan  keep=nan  [cd self=nan  mild=nan  extreme=nan]  elapsed=21.2min
+[14:19:07] epoch 6/30  total=nan  ce=nan  charge=nan  kl=nan  keep=nan  [cd self=nan  mild=nan  extreme=nan]  elapsed=25.4min
+[14:23:22] epoch 7/30  total=nan  ce=nan  charge=nan  kl=nan  keep=nan  [cd self=nan  mild=nan  extreme=nan]  elapsed=29.7min
+[14:27:38] epoch 8/30  total=nan  ce=nan  charge=nan  kl=nan  keep=nan  [cd self=nan  mild=nan  extreme=nan]  elapsed=33.9min
+[21:07:07] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[21:07:07] device=cuda:3  epochs=30  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[21:07:07] [v10 A] 条件解耦开：target 与 native 无关 Uniform[-12.0,12.0]
+[21:07:07] [v10 B] 表面添加电荷监督开：λ_add=0.3  SASA θ=0.25
+[21:07:07] [v10 C] pH 自适应结构惩罚开：boost=1.5
+[21:07:08] backbone: MoMPNN 冻结（2.62M 参数，不更新）
+[21:07:08] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[21:07:08] 数据：4972 结构域 × 8 pH = 39776 样本（data/ligand_train/labels.npz）
+[21:07:10]   ℹ️ 1EST.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[21:07:12]   ℹ️ 1JQZ.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[21:07:16]   ℹ️ 1RP1.pdb resnum 对齐 435/441（6 个非标准/parse独有残基 frac=0）
+[21:07:22]   ℹ️ 1O2I.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:07:23]   ℹ️ 1FQ8.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[21:07:29]   ℹ️ 1F5K.pdb resnum 对齐 227/247（20 个非标准/parse独有残基 frac=0）
+[21:07:32]   ℹ️ 1FZZ.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[21:07:40]   预解析+encode 200/4972（跳过 0）
+[21:07:41]   ℹ️ 1EWO.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[21:07:43]   ℹ️ 1MM9.pdb resnum 对齐 124/127（3 个非标准/parse独有残基 frac=0）
+[21:07:45]   ℹ️ 1JT5.pdb resnum 对齐 269/284（15 个非标准/parse独有残基 frac=0）
+[21:07:46]   ℹ️ 1ESO.pdb resnum 对齐 133/150（17 个非标准/parse独有残基 frac=0）
+[21:07:47]   ℹ️ 1O3H.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:07:51]   ℹ️ 1C2F.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:08:01]   ℹ️ 1KLT.pdb resnum 对齐 210/226（16 个非标准/parse独有残基 frac=0）
+[21:08:02]   ℹ️ 1IY2.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[21:08:09]   ℹ️ 1MEM.pdb resnum 对齐 203/215（12 个非标准/parse独有残基 frac=0）
+[21:08:09]   ℹ️ 1OSS.pdb resnum 对齐 202/223（21 个非标准/parse独有残基 frac=0）
+[21:08:10]   ℹ️ 1ANB.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:08:12]   预解析+encode 400/4972（跳过 0）
+[21:08:23]   ℹ️ 1EXF.pdb resnum 对齐 187/242（55 个非标准/parse独有残基 frac=0）
+[21:08:27]   ℹ️ 1C2D.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:08:28]   ℹ️ 1C2H.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:08:34]   ℹ️ 1C2I.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:08:34]   ℹ️ 1B0F.pdb resnum 对齐 197/218（21 个非标准/parse独有残基 frac=0）
+[21:08:38]   ℹ️ 1J17.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:08:42]   ℹ️ 1C2K.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:08:44]   预解析+encode 600/4972（跳过 0）
+[21:08:52]   ℹ️ 1O32.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:08:53]   ℹ️ 1L7G.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[21:09:03]   ℹ️ 1O2J.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:09:07]   ℹ️ 1O2K.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:09:07]   ⚠️ 1O0E.pdb SASA 计算失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 L_add）
+[21:09:09]   ℹ️ 1EPP.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[21:09:18]   ⚠️ 155C.pdb SASA 计算失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 L_add）
+[21:09:20]   预解析+encode 800/4972（跳过 0）
+[21:09:22]   ℹ️ 1LQE.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:09:24]   ℹ️ 1EQ9.pdb resnum 对齐 397/444（47 个非标准/parse独有残基 frac=0）
+[21:09:31]   ℹ️ 1LVY.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[21:09:37]   ℹ️ 1EFQ.pdb resnum 对齐 107/113（6 个非标准/parse独有残基 frac=0）
+[21:09:38]   ℹ️ 1A5Z.pdb resnum 对齐 302/309（7 个非标准/parse独有残基 frac=0）
+[21:09:39]   ℹ️ 1ENT.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[21:09:41]   ℹ️ 1O2L.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:09:47]   ℹ️ 1GVZ.pdb resnum 对齐 217/237（20 个非标准/parse独有残基 frac=0）
+[21:09:48]   ℹ️ 1F0T.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:09:52]   预解析+encode 1000/4972（跳过 0）
+[21:09:59]   ℹ️ 1BZO.pdb resnum 对齐 132/150（18 个非标准/parse独有残基 frac=0）
+[21:10:01]   ℹ️ 1OS8.pdb resnum 对齐 202/223（21 个非标准/parse独有残基 frac=0）
+[21:10:09]   ℹ️ 1L7F.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[21:10:12]   ℹ️ 1BJU.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:10:12]   ℹ️ 1NPM.pdb resnum 对齐 410/446（36 个非标准/parse独有残基 frac=0）
+[21:10:23]   预解析+encode 1200/4972（跳过 0）
+[21:10:25]   ℹ️ 1NC6.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:10:30]   ℹ️ 1O2Z.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:10:30]   ℹ️ 1O3I.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:10:31]   ℹ️ 1MMP.pdb resnum 对齐 329/332（3 个非标准/parse独有残基 frac=0）
+[21:10:36]   ℹ️ 1GJ6.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:10:40]   ℹ️ 1EPR.pdb resnum 对齐 309/329（20 个非标准/parse独有残基 frac=0）
+[21:10:42]   ℹ️ 1C2M.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:10:44]   ℹ️ 1C5R.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:10:48]   ℹ️ 1G3E.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:10:56]   预解析+encode 1400/4972（跳过 0）
+[21:10:59]   ⚠️ 跳过坏域 1OBP.pdb: index 0 is out of bounds for dimension 1 with size 0
+[21:11:01]   ℹ️ 1C1P.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:11:06]   ℹ️ 1HFZ.pdb resnum 对齐 486/491（5 个非标准/parse独有残基 frac=0）
+[21:11:09]   ℹ️ 1O2N.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:11:18]   ℹ️ 1O3D.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:11:18]   ℹ️ 1C2E.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:11:18]   ℹ️ 1J15.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:11:25]   ℹ️ 1E25.pdb resnum 对齐 269/278（9 个非标准/parse独有残基 frac=0）
+[21:11:30]   预解析+encode 1599/4972（跳过 1）
+[21:11:33]   ℹ️ 1JY0.pdb resnum 对齐 271/281（10 个非标准/parse独有残基 frac=0）
+[21:11:34]   ℹ️ 1ANC.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:11:40]   ℹ️ 1C2J.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:11:46]   ℹ️ 1GBA.pdb resnum 对齐 138/198（60 个非标准/parse独有残基 frac=0）
+[21:11:47]   ℹ️ 1BTY.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:11:49]   ℹ️ 1O2T.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:11:59]   ℹ️ 1F2C.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[21:12:02]   预解析+encode 1799/4972（跳过 1）
+[21:12:13]   ℹ️ 1O2V.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:12:16]   ℹ️ 1F92.pdb resnum 对齐 225/247（22 个非标准/parse独有残基 frac=0）
+[21:12:27]   ℹ️ 1SGT.pdb resnum 对齐 202/223（21 个非标准/parse独有残基 frac=0）
+[21:12:29]   ℹ️ 1O3K.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:12:29]   ℹ️ 1N6Y.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:12:31]   ℹ️ 1C5T.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:12:35]   预解析+encode 1999/4972（跳过 1）
+[21:12:36]   ℹ️ 1FQ6.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[21:12:44]   ℹ️ 1MTS.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:12:44]   ℹ️ 1GI5.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:12:50]   ℹ️ 1PCA.pdb resnum 对齐 393/396（3 个非标准/parse独有残基 frac=0）
+[21:12:53]   ℹ️ 1F8E.pdb resnum 对齐 386/388（2 个非标准/parse独有残基 frac=0）
+[21:12:56]   ℹ️ 1INC.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[21:12:59]   ℹ️ 1O3B.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:13:08]   预解析+encode 2199/4972（跳过 1）
+[21:13:09]   ℹ️ 1C2L.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:13:20]   ℹ️ 1C5P.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:13:21]   ℹ️ 1AND.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:13:24]   ℹ️ 1HJ9.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:13:27]   ℹ️ 1FXY.pdb resnum 对齐 218/227（9 个非标准/parse独有残基 frac=0）
+[21:13:28]   ℹ️ 1EAU.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[21:13:30]   ℹ️ 1E36.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[21:13:32]   ℹ️ 1GI6.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:13:37]   ℹ️ 1O2U.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:13:37]   ℹ️ 1NSA.pdb resnum 对齐 393/394（1 个非标准/parse独有残基 frac=0）
+[21:13:41]   预解析+encode 2399/4972（跳过 1）
+[21:13:47]   ℹ️ 1JT3.pdb resnum 对齐 268/285（17 个非标准/parse独有残基 frac=0）
+[21:13:48]   ℹ️ 1IXZ.pdb resnum 对齐 237/238（1 个非标准/parse独有残基 frac=0）
+[21:13:48]   ℹ️ 1M16.pdb resnum 对齐 269/284（15 个非标准/parse独有残基 frac=0）
+[21:13:50]   ℹ️ 1MWE.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[21:13:51]   ℹ️ 1IY1.pdb resnum 对齐 233/234（1 个非标准/parse独有残基 frac=0）
+[21:13:55]   ℹ️ 1C2G.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:13:55]   ℹ️ 1BJI.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[21:14:07]   ℹ️ 1C1M.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[21:14:14]   ℹ️ 1P63.pdb resnum 对齐 271/281（10 个非标准/parse独有残基 frac=0）
+[21:14:14]   预解析+encode 2599/4972（跳过 1）
+[21:14:17]   ℹ️ 1J14.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:14:19]   ℹ️ 1O36.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:14:27]   ℹ️ 1A5I.pdb resnum 对齐 238/262（24 个非标准/parse独有残基 frac=0）
+[21:14:28]   ℹ️ 1O2M.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:14:29]   ℹ️ 1F8C.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[21:14:46]   预解析+encode 2799/4972（跳过 1）
+[21:14:48]   ℹ️ 1BJV.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:14:51]   ℹ️ 1AMH.pdb resnum 对齐 424/446（22 个非标准/parse独有残基 frac=0）
+[21:14:51]   ℹ️ 1HJ8.pdb resnum 对齐 216/220（4 个非标准/parse独有残基 frac=0）
+[21:14:52]   ℹ️ 1IGO.pdb resnum 对齐 407/410（3 个非标准/parse独有残基 frac=0）
+[21:14:53]   ℹ️ 1E81.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[21:14:56]   ℹ️ 1FSG.pdb resnum 对齐 460/466（6 个非标准/parse独有残基 frac=0）
+[21:15:11]   ℹ️ 1K1I.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:15:12]   ℹ️ 1BTU.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[21:15:14]   ℹ️ 1F5L.pdb resnum 对齐 225/245（20 个非标准/parse独有残基 frac=0）
+[21:15:16]   ℹ️ 1B0E.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[21:15:19]   ℹ️ 1DFP.pdb resnum 对齐 417/456（39 个非标准/parse独有残基 frac=0）
+[21:15:19]   预解析+encode 2999/4972（跳过 1）
+[21:15:24]   ℹ️ 1O39.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:15:24]   ℹ️ 1O3N.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:15:30]   ℹ️ 1AYE.pdb resnum 对齐 397/399（2 个非标准/parse独有残基 frac=0）
+[21:15:30]   ℹ️ 102L.pdb resnum 对齐 162/163（1 个非标准/parse独有残基 frac=0）
+[21:15:30]   ℹ️ 103L.pdb resnum 对齐 157/159（2 个非标准/parse独有残基 frac=0）
+[21:15:34]   ℹ️ 1F2A.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[21:15:36]   ℹ️ 1O2O.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:15:39]   ℹ️ 1EWM.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[21:15:40]   ℹ️ 1CET.pdb resnum 对齐 293/305（12 个非标准/parse独有残基 frac=0）
+[21:15:44]   ℹ️ 1O3O.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:15:49]   ℹ️ 1L7H.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[21:15:54]   预解析+encode 3199/4972（跳过 1）
+[21:16:01]   ℹ️ 1GBJ.pdb resnum 对齐 138/198（60 个非标准/parse独有残基 frac=0）
+[21:16:03]   ℹ️ 1C1N.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:16:04]   ℹ️ 1HB0.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[21:16:12]   ℹ️ 1GI4.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:16:19]   ℹ️ 1LDG.pdb resnum 对齐 298/315（17 个非标准/parse独有残基 frac=0）
+[21:16:21]   ℹ️ 1MMR.pdb resnum 对齐 166/167（1 个非标准/parse独有残基 frac=0）
+[21:16:26]   ℹ️ 1BRA.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:16:27]   ℹ️ 1FH0.pdb resnum 对齐 439/442（3 个非标准/parse独有残基 frac=0）
+[21:16:27]   预解析+encode 3399/4972（跳过 1）
+[21:16:29]   ℹ️ 1O3A.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:16:36]   ℹ️ 1EUF.pdb resnum 对齐 210/224（14 个非标准/parse独有残基 frac=0）
+[21:16:37]   ℹ️ 1BUL.pdb resnum 对齐 263/265（2 个非标准/parse独有残基 frac=0）
+[21:16:48]   ℹ️ 1K1P.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:16:52]   ℹ️ 1O2Y.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:16:57]   ℹ️ 1CEB.pdb resnum 对齐 157/160（3 个非标准/parse独有残基 frac=0）
+[21:16:58]   ℹ️ 1C5Q.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:16:58]   ℹ️ 1LLC.pdb resnum 对齐 311/320（9 个非标准/parse独有残基 frac=0）
+[21:16:59]   预解析+encode 3599/4972（跳过 1）
+[21:17:11]   ℹ️ 1GPL.pdb resnum 对齐 419/424（5 个非标准/parse独有残基 frac=0）
+[21:17:12]   ℹ️ 1NNC.pdb resnum 对齐 386/388（2 个非标准/parse独有残基 frac=0）
+[21:17:13]   ℹ️ 1FMG.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:17:15]   ℹ️ 1C1O.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:17:15]   ℹ️ 1FQ4.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[21:17:15]   ℹ️ 1GBT.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:17:16]   ℹ️ 1C5S.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:17:19]   ℹ️ 1MTV.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:17:25]   ℹ️ 1JIR.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:17:27]   ℹ️ 1B4B.pdb resnum 对齐 214/216（2 个非标准/parse独有残基 frac=0）
+[21:17:32]   预解析+encode 3799/4972（跳过 1）
+[21:17:33]   ℹ️ 1K1M.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:17:34]   ℹ️ 1EEU.pdb resnum 对齐 207/225（18 个非标准/parse独有残基 frac=0）
+[21:17:38]   ℹ️ 1FQ7.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[21:17:44]   ℹ️ 1BQY.pdb resnum 对齐 418/468（50 个非标准/parse独有残基 frac=0）
+[21:17:44]   ℹ️ 1HOW.pdb resnum 对齐 338/346（8 个非标准/parse独有残基 frac=0）
+[21:17:47]   ℹ️ 1E38.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[21:17:49]   ℹ️ 1OWI.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[21:17:53]   ℹ️ 1JT4.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[21:17:57]   ℹ️ 1O2H.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:17:58]   ℹ️ 1E80.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[21:17:59]   ℹ️ 1F8B.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[21:18:01]   ℹ️ 1OVB.pdb resnum 对齐 143/159（16 个非标准/parse独有残基 frac=0）
+[21:18:07]   预解析+encode 3999/4972（跳过 1）
+[21:18:07]   ℹ️ 1OWK.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[21:18:14]   ℹ️ 1DPO.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:18:16]   ℹ️ 1C1T.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:18:19]   ℹ️ 1O3F.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:18:24]   ℹ️ 1EPN.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[21:18:24]   ℹ️ 1EPQ.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[21:18:26]   ℹ️ 1FQ5.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[21:18:28]   ℹ️ 1OWJ.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[21:18:29]   ℹ️ 1BTW.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:18:38]   ℹ️ 1EPO.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[21:18:39]   预解析+encode 4199/4972（跳过 1）
+[21:18:45]   ℹ️ 1MPP.pdb resnum 对齐 317/357（40 个非标准/parse独有残基 frac=0）
+[21:18:47]   ℹ️ 1M6D.pdb resnum 对齐 384/428（44 个非标准/parse独有残基 frac=0）
+[21:18:57]   ℹ️ 1EAX.pdb resnum 对齐 225/241（16 个非标准/parse独有残基 frac=0）
+[21:18:58]   ℹ️ 1BU8.pdb resnum 对齐 439/446（7 个非标准/parse独有残基 frac=0）
+[21:19:06]   ℹ️ 1E82.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[21:19:13]   预解析+encode 4399/4972（跳过 1）
+[21:19:15]   ℹ️ 1O2W.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:19:21]   ℹ️ 1HSL.pdb resnum 对齐 477/478（1 个非标准/parse独有残基 frac=0）
+[21:19:26]   ℹ️ 1GI3.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:19:29]   ℹ️ 1EK3.pdb resnum 对齐 210/228（18 个非标准/parse独有残基 frac=0）
+[21:19:31]   ℹ️ 1J16.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:19:34]   ℹ️ 1G3B.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:19:39]   ℹ️ 1EED.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[21:19:45]   预解析+encode 4599/4972（跳过 1）
+[21:20:00]   ℹ️ 1E5O.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[21:20:04]   ℹ️ 1GI0.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:20:06]   ℹ️ 1RNE.pdb resnum 对齐 319/329（10 个非标准/parse独有残基 frac=0）
+[21:20:10]   ℹ️ 1MTW.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:20:10]   ℹ️ 1EL3.pdb resnum 对齐 315/316（1 个非标准/parse独有残基 frac=0）
+[21:20:10]   ℹ️ 1O37.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:20:12]   ℹ️ 1H1B.pdb resnum 对齐 382/436（54 个非标准/parse独有残基 frac=0）
+[21:20:14]   ℹ️ 1FQ3.pdb resnum 对齐 417/451（34 个非标准/parse独有残基 frac=0）
+[21:20:19]   预解析+encode 4799/4972（跳过 1）
+[21:20:21]   ℹ️ 1N6X.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:20:21]   ℹ️ 1K1L.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:20:25]   ℹ️ 1K1N.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:20:26]   ℹ️ 1MAY.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[21:20:26]   ℹ️ 1MMQ.pdb resnum 对齐 165/166（1 个非标准/parse独有残基 frac=0）
+[21:20:28]   ℹ️ 1J8A.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:20:29]   ℹ️ 1MAX.pdb resnum 对齐 213/219（6 个非标准/parse独有残基 frac=0）
+[21:20:33]   ℹ️ 1AZ8.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[21:20:34]   ℹ️ 1F8D.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[21:20:36]   ℹ️ 1LO6.pdb resnum 对齐 216/221（5 个非标准/parse独有残基 frac=0）
+[21:20:43]   ℹ️ 1JQG.pdb resnum 对齐 394/409（15 个非标准/parse独有残基 frac=0）
+[21:20:47] ⚠️ 共跳过 1 个坏域（prody 无法解析），实际训练 4971 域
+[21:20:47] 预解析完成，缓存 encode 特征 ~23.30GB
+[21:20:47] 开始训练：30 epochs × 4971 域/epoch = 149130 steps
+[21:25:42] epoch 1/30  total=4.3700  ce=1.4221  charge=5.1842  kl=0.1074  keep=0.6652  [cd self=4.991  mild=5.325  extreme=5.864]  elapsed=4.9min
+[21:30:57] epoch 2/30  total=4.0251  ce=1.5066  charge=4.2243  kl=0.1769  keep=0.7608  [cd self=4.009  mild=4.316  extreme=5.020]  elapsed=10.2min
+[21:36:14] epoch 3/30  total=3.9250  ce=1.5275  charge=3.9581  kl=0.1927  keep=0.7845  [cd self=3.755  mild=4.060  extreme=4.690]  elapsed=15.5min
+[21:41:31] epoch 4/30  total=3.8511  ce=1.5277  charge=3.8115  kl=0.1923  keep=0.7832  [cd self=3.590  mild=3.960  extreme=4.568]  elapsed=20.7min
+[21:46:36] epoch 5/30  total=3.8116  ce=1.5431  charge=3.6750  kl=0.2051  keep=0.8079  [cd self=3.470  mild=3.771  extreme=4.433]  elapsed=25.8min
+[21:52:02] epoch 6/30  total=3.7981  ce=1.5469  charge=3.6426  kl=0.2082  keep=0.8067  [cd self=3.416  mild=3.871  extreme=4.377]  elapsed=31.2min
+[21:57:26] epoch 7/30  total=3.7767  ce=1.5488  charge=3.5886  kl=0.2095  keep=0.8149  [cd self=3.363  mild=3.769  extreme=4.356]  elapsed=36.7min
+[22:00:18] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[22:00:18] device=cuda:3  epochs=30  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[22:00:18] [v10 A] 条件解耦开：target 与 native 无关 Uniform[-12.0,12.0]
+[22:00:18] [v10 B] 表面添加电荷监督开：λ_add=0.3  SASA θ=0.25
+[22:00:18] [v10 C] pH 自适应结构惩罚开：boost=1.5
+[22:00:19] backbone: MoMPNN 冻结（2.62M 参数，不更新）
+[22:00:19] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[22:00:20] 数据：4957 结构域 × 8 pH = 39656 样本（data/ligand_train/labels.npz）
+[22:00:21]   ℹ️ 1EST.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[22:00:23]   ℹ️ 1JQZ.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[22:00:28]   ℹ️ 1RP1.pdb resnum 对齐 435/441（6 个非标准/parse独有残基 frac=0）
+[22:00:34]   ℹ️ 1O2I.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:00:35]   ℹ️ 1FQ8.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[22:00:42]   ℹ️ 1F5K.pdb resnum 对齐 227/247（20 个非标准/parse独有残基 frac=0）
+[22:00:45]   ℹ️ 1FZZ.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[22:00:53]   预解析+encode 200/4957（跳过 0）
+[22:00:53]   ℹ️ 1EWO.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[22:00:56]   ℹ️ 1MM9.pdb resnum 对齐 124/127（3 个非标准/parse独有残基 frac=0）
+[22:00:58]   ℹ️ 1JT5.pdb resnum 对齐 269/284（15 个非标准/parse独有残基 frac=0）
+[22:00:59]   ℹ️ 1ESO.pdb resnum 对齐 133/150（17 个非标准/parse独有残基 frac=0）
+[22:01:00]   ℹ️ 1O3H.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:01:04]   ℹ️ 1C2F.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:01:14]   ℹ️ 1KLT.pdb resnum 对齐 210/226（16 个非标准/parse独有残基 frac=0）
+[22:01:15]   ℹ️ 1IY2.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[22:01:22]   ℹ️ 1MEM.pdb resnum 对齐 203/215（12 个非标准/parse独有残基 frac=0）
+[22:01:22]   ℹ️ 1OSS.pdb resnum 对齐 202/223（21 个非标准/parse独有残基 frac=0）
+[22:01:23]   ℹ️ 1ANB.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:01:26]   预解析+encode 400/4957（跳过 0）
+[22:01:36]   ℹ️ 1EXF.pdb resnum 对齐 187/242（55 个非标准/parse独有残基 frac=0）
+[22:01:40]   ℹ️ 1C2D.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:01:42]   ℹ️ 1C2H.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:01:47]   ℹ️ 1C2I.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:01:47]   ℹ️ 1B0F.pdb resnum 对齐 197/218（21 个非标准/parse独有残基 frac=0）
+[22:01:51]   ℹ️ 1J17.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:01:55]   ℹ️ 1C2K.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:01:58]   预解析+encode 600/4957（跳过 0）
+[22:02:05]   ℹ️ 1O32.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:02:06]   ℹ️ 1L7G.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[22:02:16]   ℹ️ 1O2J.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:02:20]   ℹ️ 1O2K.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:02:20]   ⚠️ 1O0E.pdb SASA 计算失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 L_add）
+[22:02:22]   ℹ️ 1EPP.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[22:02:29]   ⚠️ 155C.pdb SASA 计算失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 L_add）
+[22:02:31]   预解析+encode 800/4957（跳过 0）
+[22:02:33]   ℹ️ 1LQE.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:02:35]   ℹ️ 1EQ9.pdb resnum 对齐 397/444（47 个非标准/parse独有残基 frac=0）
+[22:02:42]   ℹ️ 1LVY.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[22:02:48]   ℹ️ 1EFQ.pdb resnum 对齐 107/113（6 个非标准/parse独有残基 frac=0）
+[22:02:49]   ℹ️ 1A5Z.pdb resnum 对齐 302/309（7 个非标准/parse独有残基 frac=0）
+[22:02:49]   ℹ️ 1ENT.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[22:02:52]   ℹ️ 1O2L.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:02:58]   ℹ️ 1GVZ.pdb resnum 对齐 217/237（20 个非标准/parse独有残基 frac=0）
+[22:02:59]   ℹ️ 1F0T.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:03:04]   预解析+encode 1000/4957（跳过 0）
+[22:03:09]   ℹ️ 1BZO.pdb resnum 对齐 132/150（18 个非标准/parse独有残基 frac=0）
+[22:03:12]   ℹ️ 1OS8.pdb resnum 对齐 202/223（21 个非标准/parse独有残基 frac=0）
+[22:03:20]   ℹ️ 1L7F.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[22:03:23]   ℹ️ 1BJU.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:03:23]   ℹ️ 1NPM.pdb resnum 对齐 410/446（36 个非标准/parse独有残基 frac=0）
+[22:03:35]   预解析+encode 1200/4957（跳过 0）
+[22:03:36]   ℹ️ 1NC6.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:03:41]   ℹ️ 1O2Z.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:03:41]   ℹ️ 1O3I.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:03:41]   ℹ️ 1MMP.pdb resnum 对齐 329/332（3 个非标准/parse独有残基 frac=0）
+[22:03:47]   ℹ️ 1GJ6.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:03:50]   ℹ️ 1EPR.pdb resnum 对齐 309/329（20 个非标准/parse独有残基 frac=0）
+[22:03:52]   ℹ️ 1C2M.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:03:54]   ℹ️ 1C5R.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:03:59]   ℹ️ 1G3E.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:04:07]   预解析+encode 1400/4957（跳过 0）
+[22:04:09]   ⚠️ 跳过坏域 1OBP.pdb: index 0 is out of bounds for dimension 1 with size 0
+[22:04:11]   ℹ️ 1C1P.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:04:16]   ℹ️ 1HFZ.pdb resnum 对齐 486/491（5 个非标准/parse独有残基 frac=0）
+[22:04:19]   ℹ️ 1O2N.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:04:28]   ℹ️ 1O3D.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:04:29]   ℹ️ 1C2E.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:04:29]   ℹ️ 1J15.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:04:35]   ℹ️ 1E25.pdb resnum 对齐 269/278（9 个非标准/parse独有残基 frac=0）
+[22:04:41]   预解析+encode 1599/4957（跳过 1）
+[22:04:44]   ℹ️ 1JY0.pdb resnum 对齐 271/281（10 个非标准/parse独有残基 frac=0）
+[22:04:45]   ℹ️ 1ANC.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:04:50]   ℹ️ 1C2J.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:04:56]   ℹ️ 1GBA.pdb resnum 对齐 138/198（60 个非标准/parse独有残基 frac=0）
+[22:04:57]   ℹ️ 1BTY.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:04:59]   ℹ️ 1O2T.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:05:10]   ℹ️ 1F2C.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[22:05:14]   预解析+encode 1799/4957（跳过 1）
+[22:05:24]   ℹ️ 1O2V.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:05:27]   ℹ️ 1F92.pdb resnum 对齐 225/247（22 个非标准/parse独有残基 frac=0）
+[22:05:38]   ℹ️ 1SGT.pdb resnum 对齐 202/223（21 个非标准/parse独有残基 frac=0）
+[22:05:40]   ℹ️ 1O3K.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:05:40]   ℹ️ 1N6Y.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:05:42]   ℹ️ 1C5T.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:05:47]   ℹ️ 1FQ6.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[22:05:47]   预解析+encode 1999/4957（跳过 1）
+[22:05:56]   ℹ️ 1MTS.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:05:56]   ℹ️ 1GI5.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:06:02]   ℹ️ 1PCA.pdb resnum 对齐 393/396（3 个非标准/parse独有残基 frac=0）
+[22:06:04]   ℹ️ 1F8E.pdb resnum 对齐 386/388（2 个非标准/parse独有残基 frac=0）
+[22:06:08]   ℹ️ 1INC.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[22:06:11]   ℹ️ 1O3B.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:06:34]   预解析+encode 2199/4957（跳过 1）
+[22:06:34]   ℹ️ 1C2L.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:06:49]   ℹ️ 1C5P.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:06:51]   ℹ️ 1AND.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:06:56]   ℹ️ 1HJ9.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:07:00]   ℹ️ 1FXY.pdb resnum 对齐 218/227（9 个非标准/parse独有残基 frac=0）
+[22:07:01]   ℹ️ 1EAU.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[22:07:05]   ℹ️ 1E36.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[22:07:07]   ℹ️ 1GI6.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:07:15]   ℹ️ 1O2U.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:07:16]   ℹ️ 1NSA.pdb resnum 对齐 393/394（1 个非标准/parse独有残基 frac=0）
+[22:07:25]   预解析+encode 2399/4957（跳过 1）
+[22:07:34]   ℹ️ 1JT3.pdb resnum 对齐 268/285（17 个非标准/parse独有残基 frac=0）
+[22:07:36]   ℹ️ 1IXZ.pdb resnum 对齐 237/238（1 个非标准/parse独有残基 frac=0）
+[22:07:37]   ℹ️ 1M16.pdb resnum 对齐 269/284（15 个非标准/parse独有残基 frac=0）
+[22:07:39]   ℹ️ 1MWE.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[22:07:41]   ℹ️ 1IY1.pdb resnum 对齐 233/234（1 个非标准/parse独有残基 frac=0）
+[22:07:48]   ℹ️ 1C2G.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:07:48]   ℹ️ 1BJI.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[22:08:09]   ℹ️ 1C1M.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[22:08:21]   ℹ️ 1P63.pdb resnum 对齐 271/281（10 个非标准/parse独有残基 frac=0）
+[22:08:23]   预解析+encode 2599/4957（跳过 1）
+[22:08:26]   ℹ️ 1J14.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:08:29]   ℹ️ 1O36.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:08:39]   ℹ️ 1A5I.pdb resnum 对齐 238/262（24 个非标准/parse独有残基 frac=0）
+[22:08:41]   ℹ️ 1O2M.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:08:42]   ℹ️ 1F8C.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[22:09:20]   预解析+encode 2799/4957（跳过 1）
+[22:09:20]   ℹ️ 1BJV.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:09:24]   ℹ️ 1AMH.pdb resnum 对齐 424/446（22 个非标准/parse独有残基 frac=0）
+[22:09:24]   ℹ️ 1HJ8.pdb resnum 对齐 216/220（4 个非标准/parse独有残基 frac=0）
+[22:09:26]   ℹ️ 1IGO.pdb resnum 对齐 407/410（3 个非标准/parse独有残基 frac=0）
+[22:09:27]   ℹ️ 1E81.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[22:09:33]   ℹ️ 1FSG.pdb resnum 对齐 460/466（6 个非标准/parse独有残基 frac=0）
+[22:09:57]   ℹ️ 1K1I.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:09:58]   ℹ️ 1BTU.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[22:10:02]   ℹ️ 1F5L.pdb resnum 对齐 225/245（20 个非标准/parse独有残基 frac=0）
+[22:10:05]   ℹ️ 1B0E.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[22:10:09]   ℹ️ 1DFP.pdb resnum 对齐 417/456（39 个非标准/parse独有残基 frac=0）
+[22:10:11]   预解析+encode 2999/4957（跳过 1）
+[22:10:15]   ℹ️ 1O39.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:10:16]   ℹ️ 1O3N.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:10:21]   ℹ️ 1AYE.pdb resnum 对齐 397/399（2 个非标准/parse独有残基 frac=0）
+[22:10:21]   ℹ️ 102L.pdb resnum 对齐 162/163（1 个非标准/parse独有残基 frac=0）
+[22:10:22]   ℹ️ 103L.pdb resnum 对齐 157/159（2 个非标准/parse独有残基 frac=0）
+[22:10:27]   ℹ️ 1F2A.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[22:10:29]   ℹ️ 1O2O.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:10:34]   ℹ️ 1EWM.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[22:10:36]   ℹ️ 1CET.pdb resnum 对齐 293/305（12 个非标准/parse独有残基 frac=0）
+[22:10:40]   ℹ️ 1O3O.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:10:47]   ℹ️ 1L7H.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[22:10:59]   预解析+encode 3199/4957（跳过 1）
+[22:11:07]   ℹ️ 1GBJ.pdb resnum 对齐 138/198（60 个非标准/parse独有残基 frac=0）
+[22:11:09]   ℹ️ 1C1N.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:11:12]   ℹ️ 1HB0.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[22:11:25]   ℹ️ 1GI4.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:11:36]   ℹ️ 1LDG.pdb resnum 对齐 298/315（17 个非标准/parse独有残基 frac=0）
+[22:11:38]   ℹ️ 1MMR.pdb resnum 对齐 166/167（1 个非标准/parse独有残基 frac=0）
+[22:11:44]   ℹ️ 1BRA.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:11:46]   ℹ️ 1FH0.pdb resnum 对齐 439/442（3 个非标准/parse独有残基 frac=0）
+[22:11:48]   预解析+encode 3399/4957（跳过 1）
+[22:11:49]   ℹ️ 1O3A.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:11:59]   ℹ️ 1EUF.pdb resnum 对齐 210/224（14 个非标准/parse独有残基 frac=0）
+[22:12:01]   ℹ️ 1BUL.pdb resnum 对齐 263/265（2 个非标准/parse独有残基 frac=0）
+[22:12:20]   ℹ️ 1K1P.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:12:25]   ℹ️ 1O2Y.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:12:31]   ℹ️ 1CEB.pdb resnum 对齐 157/160（3 个非标准/parse独有残基 frac=0）
+[22:12:31]   ℹ️ 1C5Q.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:12:32]   ℹ️ 1LLC.pdb resnum 对齐 311/320（9 个非标准/parse独有残基 frac=0）
+[22:12:36]   预解析+encode 3599/4957（跳过 1）
+[22:12:45]   ℹ️ 1GPL.pdb resnum 对齐 419/424（5 个非标准/parse独有残基 frac=0）
+[22:12:46]   ℹ️ 1NNC.pdb resnum 对齐 386/388（2 个非标准/parse独有残基 frac=0）
+[22:12:48]   ℹ️ 1FMG.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:12:50]   ℹ️ 1C1O.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:12:51]   ℹ️ 1FQ4.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[22:12:51]   ℹ️ 1GBT.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:12:51]   ℹ️ 1C5S.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:12:54]   ℹ️ 1MTV.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:13:00]   ℹ️ 1JIR.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:13:02]   ℹ️ 1B4B.pdb resnum 对齐 214/216（2 个非标准/parse独有残基 frac=0）
+[22:13:08]   ℹ️ 1K1M.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:13:09]   ℹ️ 1EEU.pdb resnum 对齐 207/225（18 个非标准/parse独有残基 frac=0）
+[22:13:10]   预解析+encode 3799/4957（跳过 1）
+[22:13:12]   ℹ️ 1FQ7.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[22:13:19]   ℹ️ 1BQY.pdb resnum 对齐 418/468（50 个非标准/parse独有残基 frac=0）
+[22:13:19]   ℹ️ 1HOW.pdb resnum 对齐 338/346（8 个非标准/parse独有残基 frac=0）
+[22:13:22]   ℹ️ 1E38.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[22:13:25]   ℹ️ 1OWI.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[22:13:28]   ℹ️ 1JT4.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[22:13:32]   ℹ️ 1O2H.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:13:33]   ℹ️ 1E80.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[22:13:34]   ℹ️ 1F8B.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[22:13:36]   ℹ️ 1OVB.pdb resnum 对齐 143/159（16 个非标准/parse独有残基 frac=0）
+[22:13:42]   ℹ️ 1OWK.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[22:13:44]   预解析+encode 3999/4957（跳过 1）
+[22:13:49]   ℹ️ 1DPO.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:13:51]   ℹ️ 1C1T.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:13:54]   ℹ️ 1O3F.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:13:59]   ℹ️ 1EPN.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[22:14:00]   ℹ️ 1EPQ.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[22:14:01]   ℹ️ 1FQ5.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[22:14:04]   ℹ️ 1OWJ.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[22:14:04]   ℹ️ 1BTW.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:14:13]   ℹ️ 1EPO.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[22:14:17]   预解析+encode 4199/4957（跳过 1）
+[22:14:21]   ℹ️ 1MPP.pdb resnum 对齐 317/357（40 个非标准/parse独有残基 frac=0）
+[22:14:22]   ℹ️ 1M6D.pdb resnum 对齐 384/428（44 个非标准/parse独有残基 frac=0）
+[22:14:32]   ℹ️ 1EAX.pdb resnum 对齐 225/241（16 个非标准/parse独有残基 frac=0）
+[22:14:33]   ℹ️ 1BU8.pdb resnum 对齐 439/446（7 个非标准/parse独有残基 frac=0）
+[22:14:42]   ℹ️ 1E82.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[22:14:50]   ℹ️ 1O2W.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:14:51]   预解析+encode 4399/4957（跳过 1）
+[22:14:57]   ℹ️ 1HSL.pdb resnum 对齐 477/478（1 个非标准/parse独有残基 frac=0）
+[22:15:02]   ℹ️ 1GI3.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:15:05]   ℹ️ 1EK3.pdb resnum 对齐 210/228（18 个非标准/parse独有残基 frac=0）
+[22:15:07]   ℹ️ 1J16.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:15:11]   ℹ️ 1G3B.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:15:15]   ℹ️ 1EED.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[22:15:23]   预解析+encode 4599/4957（跳过 1）
+[22:15:36]   ℹ️ 1E5O.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[22:15:40]   ℹ️ 1GI0.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:15:42]   ℹ️ 1RNE.pdb resnum 对齐 319/329（10 个非标准/parse独有残基 frac=0）
+[22:15:46]   ℹ️ 1MTW.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:15:47]   ℹ️ 1EL3.pdb resnum 对齐 315/316（1 个非标准/parse独有残基 frac=0）
+[22:15:47]   ℹ️ 1O37.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:15:48]   ℹ️ 1H1B.pdb resnum 对齐 382/436（54 个非标准/parse独有残基 frac=0）
+[22:15:51]   ℹ️ 1FQ3.pdb resnum 对齐 417/451（34 个非标准/parse独有残基 frac=0）
+[22:15:57]   ℹ️ 1N6X.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:15:57]   ℹ️ 1K1L.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:15:57]   预解析+encode 4799/4957（跳过 1）
+[22:16:02]   ℹ️ 1K1N.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:16:02]   ℹ️ 1MAY.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[22:16:03]   ℹ️ 1MMQ.pdb resnum 对齐 165/166（1 个非标准/parse独有残基 frac=0）
+[22:16:05]   ℹ️ 1J8A.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:16:06]   ℹ️ 1MAX.pdb resnum 对齐 213/219（6 个非标准/parse独有残基 frac=0）
+[22:16:09]   ℹ️ 1AZ8.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[22:16:11]   ℹ️ 1F8D.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[22:16:12]   ℹ️ 1LO6.pdb resnum 对齐 216/221（5 个非标准/parse独有残基 frac=0）
+[22:16:20]   ℹ️ 1JQG.pdb resnum 对齐 394/409（15 个非标准/parse独有残基 frac=0）
+[22:16:24] ⚠️ 共跳过 1 个坏域（prody 无法解析），实际训练 4956 域
+[22:16:24] 预解析完成，缓存 encode 特征 ~23.24GB
+[22:16:24] 开始训练：30 epochs × 4956 域/epoch = 148680 steps
+[22:21:52] epoch 1/30  total=4.4177  ce=1.4344  charge=5.2455  kl=0.1162  keep=0.6723  [cd self=5.050  mild=5.330  extreme=5.975]  elapsed=5.5min
+[22:27:17] epoch 2/30  total=3.9985  ce=1.5050  charge=4.1793  kl=0.1740  keep=0.7568  [cd self=3.962  mild=4.195  extreme=5.038]  elapsed=10.9min
+[22:32:40] epoch 3/30  total=3.9305  ce=1.5335  charge=3.9530  kl=0.1962  keep=0.7904  [cd self=3.738  mild=4.185  extreme=4.639]  elapsed=16.3min
+[22:38:05] epoch 4/30  total=3.8559  ce=1.5376  charge=3.7942  kl=0.1985  keep=0.7915  [cd self=3.597  mild=3.886  extreme=4.494]  elapsed=21.7min
+[22:43:27] epoch 5/30  total=3.8457  ce=1.5371  charge=3.7668  kl=0.1979  keep=0.7974  [cd self=3.562  mild=3.909  extreme=4.489]  elapsed=27.1min
+[22:48:51] epoch 6/30  total=3.8052  ce=1.5460  charge=3.6593  kl=0.2053  keep=0.8053  [cd self=3.459  mild=3.796  extreme=4.355]  elapsed=32.5min
+[22:53:28] epoch 7/30  total=3.7809  ce=1.5439  charge=3.6206  kl=0.2035  keep=0.8035  [cd self=3.429  mild=3.742  extreme=4.296]  elapsed=37.1min
+[22:58:13] epoch 8/30  total=3.7790  ce=1.5423  charge=3.6162  kl=0.2017  keep=0.8040  [cd self=3.418  mild=3.683  extreme=4.344]  elapsed=41.8min
+[23:03:32] epoch 9/30  total=3.7578  ce=1.5474  charge=3.5554  kl=0.2057  keep=0.8110  [cd self=3.357  mild=3.657  extreme=4.262]  elapsed=47.1min
+[23:08:53] epoch 10/30  total=3.7455  ce=1.5510  charge=3.5193  kl=0.2089  keep=0.8152  [cd self=3.290  mild=3.671  extreme=4.322]  elapsed=52.5min
+[23:14:10] epoch 11/30  total=3.6972  ce=1.5502  charge=3.4298  kl=0.2083  keep=0.8137  [cd self=3.228  mild=3.572  extreme=4.135]  elapsed=57.8min
+[23:19:34] epoch 12/30  total=3.6867  ce=1.5463  charge=3.4227  kl=0.2052  keep=0.8061  [cd self=3.245  mild=3.526  extreme=4.054]  elapsed=63.2min
+[23:24:21] epoch 13/30  total=3.6677  ce=1.5508  charge=3.3671  kl=0.2089  keep=0.8155  [cd self=3.179  mild=3.425  extreme=4.073]  elapsed=68.0min
+[23:29:45] epoch 14/30  total=3.6482  ce=1.5486  charge=3.3312  kl=0.2075  keep=0.8174  [cd self=3.157  mild=3.468  extreme=3.936]  elapsed=73.4min
+[23:35:08] epoch 15/30  total=3.6351  ce=1.5483  charge=3.3036  kl=0.2077  keep=0.8189  [cd self=3.117  mild=3.389  extreme=4.019]  elapsed=78.7min
+[23:40:33] epoch 16/30  total=3.6181  ce=1.5476  charge=3.2798  kl=0.2074  keep=0.8119  [cd self=3.066  mild=3.537  extreme=3.948]  elapsed=84.2min
+[23:45:51] epoch 17/30  total=3.5972  ce=1.5477  charge=3.2304  kl=0.2079  keep=0.8166  [cd self=3.034  mild=3.359  extreme=3.942]  elapsed=89.5min
+[23:51:13] epoch 18/30  total=3.5659  ce=1.5471  charge=3.1757  kl=0.2080  keep=0.8103  [cd self=2.980  mild=3.300  extreme=3.871]  elapsed=94.8min
+[23:56:35] epoch 19/30  total=3.5726  ce=1.5493  charge=3.1771  kl=0.2097  keep=0.8198  [cd self=3.010  mild=3.290  extreme=3.782]  elapsed=100.2min
+[00:01:55] epoch 20/30  total=3.5508  ce=1.5500  charge=3.1301  kl=0.2110  keep=0.8190  [cd self=2.929  mild=3.292  extreme=3.828]  elapsed=105.5min
+[00:07:19] epoch 21/30  total=3.5264  ce=1.5491  charge=3.0909  kl=0.2109  keep=0.8087  [cd self=2.893  mild=3.235  extreme=3.759]  elapsed=110.9min
+[00:12:41] epoch 22/30  total=3.4837  ce=1.5518  charge=3.0032  kl=0.2136  keep=0.8080  [cd self=2.822  mild=3.064  extreme=3.660]  elapsed=116.3min
+[00:18:02] epoch 23/30  total=3.4960  ce=1.5508  charge=3.0253  kl=0.2133  keep=0.8117  [cd self=2.844  mild=3.173  extreme=3.632]  elapsed=121.6min
+[00:23:23] epoch 24/30  total=3.4655  ce=1.5463  charge=2.9749  kl=0.2102  keep=0.8118  [cd self=2.792  mild=3.106  extreme=3.617]  elapsed=127.0min
+[00:28:43] epoch 25/30  total=3.4589  ce=1.5514  charge=2.9507  kl=0.2148  keep=0.8106  [cd self=2.748  mild=3.142  extreme=3.604]  elapsed=132.3min
+[00:34:04] epoch 26/30  total=3.4449  ce=1.5522  charge=2.9176  kl=0.2156  keep=0.8163  [cd self=2.708  mild=3.061  extreme=3.637]  elapsed=137.7min
+[00:39:25] epoch 27/30  total=3.4436  ce=1.5495  charge=2.9252  kl=0.2137  keep=0.8120  [cd self=2.756  mild=3.070  extreme=3.497]  elapsed=143.0min
+[00:44:45] epoch 28/30  total=3.4177  ce=1.5526  charge=2.8618  kl=0.2166  keep=0.8140  [cd self=2.687  mild=3.062  extreme=3.414]  elapsed=148.4min
+[00:50:05] epoch 29/30  total=3.4079  ce=1.5491  charge=2.8580  kl=0.2139  keep=0.8077  [cd self=2.692  mild=2.958  extreme=3.433]  elapsed=153.7min
+[00:55:25] epoch 30/30  total=3.3965  ce=1.5521  charge=2.8206  kl=0.2166  keep=0.8162  [cd self=2.657  mild=2.910  extreme=3.419]  elapsed=159.0min
+[00:55:26] 训练完成。总耗时 159.0min。checkpoint 在 output/finetune_v10_ligand/

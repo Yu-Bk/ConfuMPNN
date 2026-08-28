@@ -1,0 +1,58 @@
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: code/output/e1_ext/2LZM_mompnn/pH7.4_t-5/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>sample_1            71.407          0.613           0.446           4.960     
+>sample_2            74.118          0.638           0.446           5.020     
+>sample_3            69.345          0.594           0.446           5.290     
+>native              66.951          0.572           0.446           10.140    
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/code/output/e1_ext/2LZM_mompnn/pH7.4_t-5:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
