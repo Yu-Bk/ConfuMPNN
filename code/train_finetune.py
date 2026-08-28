@@ -178,6 +178,17 @@ def parse_args():
                         "（His/Cys/Tyr 按质子化态纳入），大额添加样本动态加强（scale_boost）")
     p.add_argument("--structure_boost", type=float, default=1.5,
                    help="C 对大额添加扰动样本的结构惩罚放大系数（scale_boost）")
+    p.add_argument("--decouple_absolute", action="store_true",
+                   help="v11 A-fix：绝对 target 采样——与 native 无关，直接覆盖 [lo,hi]，"
+                        "解决 v10 相对解耦±12 无法覆盖验证深负靶区（−19~−35）的问题")
+    p.add_argument("--decouple_abs_lo", type=float, default=-35.0,
+                   help="绝对 target 下界（对标验证最负靶区，默认 -35）")
+    p.add_argument("--decouple_abs_hi", type=float, default=20.0,
+                   help="绝对 target 上界（默认 20）")
+    p.add_argument("--add_target_scale", type=float, default=1.0,
+                   help="v11 B-fix：L_add 的 delta 缩放（默认 1.0；修复建议 0.5）——"
+                        "表面'新增电荷数'目标与电荷损失的净电荷目标语义叠加、再叠模型原有"
+                        "'删减捷径'→ 净效果≈2Δ；半量/低权避免双算")
 
     p.add_argument("--out_dir", default=str(_CODE_DIR / "output" / "finetune"))
     p.add_argument("--log_progress", default=str(_CODE_DIR / "log" / "train_progress.json"))
@@ -342,7 +353,10 @@ def main():
           f"perturb_prob={args.perturb_prob}  perturb_scale={args.perturb_scale}  "
           f"placeholder_prob={args.placeholder_prob}  "
           f"charge_temp={args.charge_temp}")
-    if args.decouple_perturb:
+    if args.decouple_absolute:
+        logln(f"[v11 A-fix] 绝对 target 采样开：target ∈ Uniform[{args.decouple_abs_lo}, "
+              f"{args.decouple_abs_hi}]，与 native 无关（覆盖验证深负靶区）")
+    elif args.decouple_perturb:
         logln(f"[v10 A] 条件解耦开：target 与 native 无关 Uniform[-{args.decouple_range},"
               f"{args.decouple_range}]")
     if args.add_supervision:
@@ -544,7 +558,17 @@ def main():
                 # 打破"碱性骨架只见正电 target / 中性骨架只见温和 target"的耦合，
                 # 让"中性骨架+高正电"等组合进入训练分布（v3 §3.1 A）。
                 # 关闭时（默认）沿用 v7/v9：native ± Uniform[1, scale]（幅度受课程控制）。
-                if args.decouple_perturb:
+                if args.decouple_absolute:
+                    # v11 A-fix：绝对 target ∈ Uniform[lo, hi]，与骨架 native 无关。
+                    # 依然给出 offset = target − native 语义（B 的 L_add 与分组监控依赖），
+                    # 共享随后的 charge_b = charge_b + offset 流程。
+                    native_b = charge_b.clone()
+                    target_abs = (torch.rand(B, device=device)
+                                  * (args.decouple_abs_hi - args.decouple_abs_lo)
+                                  + args.decouple_abs_lo)
+                    offset = torch.where(mask_p, target_abs - native_b,
+                                         torch.zeros(B, device=device))
+                elif args.decouple_perturb:
                     offset = torch.where(
                         mask_p,
                         (torch.rand(B, device=device) * 2 - 1) * args.decouple_range,
@@ -648,7 +672,7 @@ def main():
                 for i in range(B):
                     if mask_ph[i].item() or not mask_p[i].item():
                         continue  # 只对扰动样本施加
-                    delta = float(offset[i].item())
+                    delta = float(offset[i].item()) * args.add_target_scale
                     if abs(delta) < 1.0:
                         continue  # 需求过小，不启用
                     add[i] = surface_add_charge_loss(
@@ -668,21 +692,17 @@ def main():
                 coords = dom["X"][0, :, 1].cpu().numpy()  # [L,3] Cα
                 filt = StructureAwareFilter(coords)
                 seq_int_cur = dom["S"][0].long().cpu().numpy()
-                # 按样本方向决定是否加强（大额扰动 → 加强）
-                sp, sp_info = ph_aware_structure_penalty(
-                    logits, filt, seq_int_cur, pH=float(pH_b[0].item()),
-                    mask=ce_mask, scale_boost=1.0,
-                )
-                # 对扰动样本（尤其大额）动态加强
-                boost = args.structure_boost if mask_p.any().item() else 1.0
-                if boost > 1.0:
-                    sp2, _ = ph_aware_structure_penalty(
-                        logits, filt, seq_int_cur, pH=float(pH_b[0].item()),
-                        mask=ce_mask, scale_boost=boost,
+                # v11 C-fix：逐样本 boost（只有扰动样本加强）+ 逐样本 pH
+                sp_vec = torch.zeros(B, device=device)
+                for i in range(B):
+                    boost_i = args.structure_boost if mask_p[i].item() else 1.0
+                    sp_i, _ = ph_aware_structure_penalty(
+                        logits[i:i+1], filt, seq_int_cur,
+                        pH=float(pH_b[i].item()),
+                        mask=ce_mask[i:i+1], scale_boost=boost_i,
                     )
-                    struct_pen = sp2
-                else:
-                    struct_pen = sp
+                    sp_vec[i] = sp_i
+                struct_pen = sp_vec.mean()
 
             total = ce + args.lambda_c * cd + args.lambda_kl * kl + args.lambda_keep * keep
             if args.add_supervision:

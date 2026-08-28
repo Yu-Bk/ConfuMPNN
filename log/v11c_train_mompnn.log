@@ -1,0 +1,68 @@
+[00:53:29] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[00:53:29] device=cuda:4  epochs=30  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=2.0  placeholder_prob=0.15  charge_temp=0.5
+[00:53:29] [v11 A-fix] 绝对 target 采样开：target ∈ Uniform[-35.0, 20.0]，与 native 无关（覆盖验证深负靶区）
+[00:53:29] [v10 B] 表面添加电荷监督开：λ_add=0.1  SASA θ=0.25
+[00:53:29] [v10 C] pH 自适应结构惩罚开：boost=1.5
+[00:53:30] backbone: MoMPNN 冻结（1.66M 参数，不更新）
+[00:53:30] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[00:53:30] 数据：7886 结构域 × 8 pH = 63088 样本（data/cath/labels_balanced_v7.npz）
+[00:53:31]   ℹ️ 3dteA01 resnum 对齐 113/117（4 个非标准/parse独有残基 frac=0）
+[00:53:31]   ℹ️ 4ljyA02 resnum 对齐 183/188（5 个非标准/parse独有残基 frac=0）
+[00:53:32]   ℹ️ 5x4kA01 resnum 对齐 187/189（2 个非标准/parse独有残基 frac=0）
+[00:53:33]   ℹ️ 2y6uA01 resnum 对齐 332/335（3 个非标准/parse独有残基 frac=0）
+[00:53:33]   ℹ️ 3luqB00 resnum 对齐 111/114（3 个非标准/parse独有残基 frac=0）
+[00:53:33]   ℹ️ 4q62A00 resnum 对齐 382/387（5 个非标准/parse独有残基 frac=0）
+[00:53:34]   ℹ️ 3v75A01 resnum 对齐 266/270（4 个非标准/parse独有残基 frac=0）
+[00:53:34]   ℹ️ 7rpyA02 resnum 对齐 119/121（2 个非标准/parse独有残基 frac=0）
+[00:53:35]   ℹ️ 4ntqB00 resnum 对齐 141/144（3 个非标准/parse独有残基 frac=0）
+[00:53:36]   ℹ️ 3eucA01 resnum 对齐 129/133（4 个非标准/parse独有残基 frac=0）
+[00:53:36]   ℹ️ 3rosA01 resnum 对齐 261/268（7 个非标准/parse独有残基 frac=0）
+[00:53:36]   ℹ️ 2qgmA01 resnum 对齐 200/203（3 个非标准/parse独有残基 frac=0）
+[00:53:36]   ℹ️ 1hv8A02 resnum 对齐 147/151（4 个非标准/parse独有残基 frac=0）
+[00:53:37]   ℹ️ 4fidA02 resnum 对齐 111/114（3 个非标准/parse独有残基 frac=0）
+[00:53:37]   ℹ️ 2pfyA00 resnum 对齐 295/301（6 个非标准/parse独有残基 frac=0）
+[00:53:39]   ℹ️ 2p9bA01 resnum 对齐 101/102（1 个非标准/parse独有残基 frac=0）
+[00:53:39]   ℹ️ 2o6cA00 resnum 对齐 153/156（3 个非标准/parse独有残基 frac=0）
+[00:53:39]   ℹ️ 3egyX00 resnum 对齐 230/234（4 个非标准/parse独有残基 frac=0）
+[00:53:39]   ℹ️ 3m2oA01 resnum 对齐 52/53（1 个非标准/parse独有残基 frac=0）
+[00:53:39]   ℹ️ 1a0hA02 resnum 对齐 68/70（2 个非标准/parse独有残基 frac=0）
+[00:53:40]   ℹ️ 3pjyA00 resnum 对齐 108/115（7 个非标准/parse独有残基 frac=0）
+[00:53:40]   ℹ️ 4ecnA01 resnum 对齐 101/103（2 个非标准/parse独有残基 frac=0）
+[00:53:40]   ℹ️ 2ijrA01 resnum 对齐 94/96（2 个非标准/parse独有残基 frac=0）
+[00:53:41]   ℹ️ 2zoeB02 resnum 对齐 151/152（1 个非标准/parse独有残基 frac=0）
+[00:53:42]   ℹ️ 4i2zA02 resnum 对齐 350/368（18 个非标准/parse独有残基 frac=0）
+[00:53:42]   ℹ️ 1r8gA00 resnum 对齐 342/352（10 个非标准/parse独有残基 frac=0）
+[00:53:42]   ℹ️ 2ouxA01 resnum 对齐 120/128（8 个非标准/parse独有残基 frac=0）
+[00:53:43]   ℹ️ 3ds8A00 resnum 对齐 244/252（8 个非标准/parse独有残基 frac=0）
+[00:53:43]   ℹ️ 4ldaB00 resnum 对齐 124/126（2 个非标准/parse独有残基 frac=0）
+[00:53:43]   ℹ️ 4dllB02 resnum 对齐 126/130（4 个非标准/parse独有残基 frac=0）
+[00:53:44]   ℹ️ 3loqA02 resnum 对齐 125/129（4 个非标准/parse独有残基 frac=0）
+[00:53:44]   ℹ️ 3k8kA02 resnum 对齐 349/355（6 个非标准/parse独有残基 frac=0）
+[00:53:45]   ℹ️ 3memA02 resnum 对齐 293/303（10 个非标准/parse独有残基 frac=0）
+[00:53:46]   ℹ️ 3tvaA00 resnum 对齐 273/276（3 个非标准/parse独有残基 frac=0）
+[00:53:46]   ℹ️ 3fd0A02 resnum 对齐 208/210（2 个非标准/parse独有残基 frac=0）
+[00:53:46]   ℹ️ 4q6bA02 resnum 对齐 129/133（4 个非标准/parse独有残基 frac=0）
+[00:53:47]   ℹ️ 4o8sA02 resnum 对齐 105/107（2 个非标准/parse独有残基 frac=0）
+[00:53:47]   ℹ️ 1m32A02 resnum 对齐 237/246（9 个非标准/parse独有残基 frac=0）
+[00:53:47]   预解析+encode 200/7886（跳过 0）
+[00:53:48]   ℹ️ 3f9sB00 resnum 对齐 131/133（2 个非标准/parse独有残基 frac=0）
+[00:53:48]   ℹ️ 1qwrB01 resnum 对齐 221/222（1 个非标准/parse独有残基 frac=0）
+[00:53:48]   ℹ️ 2vosA02 resnum 对齐 146/147（1 个非标准/parse独有残基 frac=0）
+[00:53:49]   ℹ️ 2bcoA02 resnum 对齐 62/65（3 个非标准/parse独有残基 frac=0）
+[00:53:49]   ℹ️ 1sq1A00 resnum 对齐 281/287（6 个非标准/parse独有残基 frac=0）
+[00:53:50]   ⚠️ 4v1av00 SASA 计算失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 L_add）
+[00:53:50]   ℹ️ 1wv8A00 resnum 对齐 70/71（1 个非标准/parse独有残基 frac=0）
+[00:53:51]   ℹ️ 3gpvA00 resnum 对齐 108/113（5 个非标准/parse独有残基 frac=0）
+[00:53:52]   ℹ️ 2bcoA01 resnum 对齐 271/273（2 个非标准/parse独有残基 frac=0）
+[00:53:52]   ℹ️ 2oi8A00 resnum 对齐 199/203（4 个非标准/parse独有残基 frac=0）
+[00:53:52]   ℹ️ 1vknA02 resnum 对齐 159/165（6 个非标准/parse独有残基 frac=0）
+[00:53:52]   ℹ️ 3p6lA00 resnum 对齐 250/254（4 个非标准/parse独有残基 frac=0）
+[00:53:53]   ℹ️ 1mkiA02 resnum 对齐 132/138（6 个非标准/parse独有残基 frac=0）
+[00:53:53]   ℹ️ 5hr9A01 resnum 对齐 104/106（2 个非标准/parse独有残基 frac=0）
+[00:53:54]   ℹ️ 6gs8A01 resnum 对齐 296/298（2 个非标准/parse独有残基 frac=0）
+[00:53:54]   ℹ️ 2gf4A00 resnum 对齐 85/88（3 个非标准/parse独有残基 frac=0）
+[00:53:56]   ℹ️ 4rpcA00 resnum 对齐 242/250（8 个非标准/parse独有残基 frac=0）
+[00:53:57]   ℹ️ 3dxqA01 resnum 对齐 81/83（2 个非标准/parse独有残基 frac=0）
+[00:53:58]   ℹ️ 6zd1A01 resnum 对齐 154/157（3 个非标准/parse独有残基 frac=0）
+[00:53:58]   ℹ️ 1t72A02 resnum 对齐 94/98（4 个非标准/parse独有残基 frac=0）
+[00:53:59]   ℹ️ 3be3A00 resnum 对齐 75/76（1 个非标准/parse独有残基 frac=0）

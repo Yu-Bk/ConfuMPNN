@@ -1,0 +1,12 @@
+[00:53:29] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[00:53:29] device=cuda:6  epochs=30  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=2.0  placeholder_prob=0.15  charge_temp=0.5
+[00:53:29] [v11 A-fix] 绝对 target 采样开：target ∈ Uniform[-35.0, 20.0]，与 native 无关（覆盖验证深负靶区）
+[00:53:30] backbone: MoMPNN 冻结（1.66M 参数，不更新）
+[00:53:30] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[00:53:30] 数据：7886 结构域 × 8 pH = 63088 样本（data/cath/labels_balanced_v7.npz）
+[00:53:35]   预解析+encode 200/7886（跳过 0）
+[00:53:39]   预解析+encode 400/7886（跳过 0）
+[00:53:44]   预解析+encode 600/7886（跳过 0）
+[00:53:49]   预解析+encode 800/7886（跳过 0）
+[00:53:53]   预解析+encode 1000/7886（跳过 0）
+[00:53:59]   预解析+encode 1200/7886（跳过 0）
