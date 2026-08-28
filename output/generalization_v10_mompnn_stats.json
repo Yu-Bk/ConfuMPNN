@@ -1,0 +1,873 @@
+{
+  "proteins": {
+    "1A65": {
+      "cat": "long",
+      "L": 504,
+      "mode": {
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -27,
+              "mean_charge": -54.36,
+              "std_charge": 5.13,
+              "dev": 27.36,
+              "hit": false,
+              "recovery": 0.458,
+              "pocket_recovery": null,
+              "gravy_mean": 0.145,
+              "tm_median": 0.96,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.74,
+              "plddt_median": 79.0
+            },
+            "n2": {
+              "target": -29,
+              "mean_charge": -59.66,
+              "std_charge": 4.71,
+              "dev": 30.66,
+              "hit": false,
+              "recovery": 0.449,
+              "pocket_recovery": null,
+              "gravy_mean": 0.15,
+              "tm_median": 0.957,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.84,
+              "plddt_median": 77.9
+            },
+            "p2": {
+              "target": -25,
+              "mean_charge": -48.99,
+              "std_charge": 6.11,
+              "dev": 23.99,
+              "hit": false,
+              "recovery": 0.467,
+              "pocket_recovery": null,
+              "gravy_mean": 0.142,
+              "tm_median": 0.957,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.78,
+              "plddt_median": 79.1
+            },
+            "n8": {
+              "target": -35,
+              "mean_charge": -69.79,
+              "std_charge": 6.34,
+              "dev": 34.79,
+              "hit": false,
+              "recovery": 0.426,
+              "pocket_recovery": null,
+              "gravy_mean": 0.19,
+              "tm_median": 0.943,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 2.09,
+              "plddt_median": 75.8
+            },
+            "p8": {
+              "target": -19,
+              "mean_charge": -36.86,
+              "std_charge": 5.61,
+              "dev": 17.86,
+              "hit": false,
+              "recovery": 0.484,
+              "pocket_recovery": null,
+              "gravy_mean": 0.152,
+              "tm_median": 0.963,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.73,
+              "plddt_median": 79.4
+            }
+          }
+        }
+      },
+      "native_charge": -26.85
+    },
+    "1AG0": {
+      "cat": "metal",
+      "L": 256,
+      "mode": {
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -8,
+              "mean_charge": -20.08,
+              "std_charge": 3.92,
+              "dev": 12.08,
+              "hit": false,
+              "recovery": 0.46,
+              "pocket_recovery": null,
+              "gravy_mean": 0.06,
+              "tm_median": 0.491,
+              "tm_ge070": 0.0,
+              "tm_lt050": 1.0,
+              "rmsd_median": 0.9,
+              "plddt_median": 85.9
+            },
+            "n2": {
+              "target": -10,
+              "mean_charge": -23.64,
+              "std_charge": 4.09,
+              "dev": 13.64,
+              "hit": false,
+              "recovery": 0.456,
+              "pocket_recovery": null,
+              "gravy_mean": -0.014,
+              "tm_median": 0.491,
+              "tm_ge070": 0.0,
+              "tm_lt050": 1.0,
+              "rmsd_median": 0.9,
+              "plddt_median": 85.0
+            },
+            "p2": {
+              "target": -6,
+              "mean_charge": -16.63,
+              "std_charge": 3.62,
+              "dev": 10.63,
+              "hit": false,
+              "recovery": 0.466,
+              "pocket_recovery": null,
+              "gravy_mean": 0.117,
+              "tm_median": 0.491,
+              "tm_ge070": 0.0,
+              "tm_lt050": 1.0,
+              "rmsd_median": 0.96,
+              "plddt_median": 86.6
+            },
+            "n8": {
+              "target": -16,
+              "mean_charge": -36.76,
+              "std_charge": 5.26,
+              "dev": 20.76,
+              "hit": false,
+              "recovery": 0.429,
+              "pocket_recovery": null,
+              "gravy_mean": -0.147,
+              "tm_median": 0.492,
+              "tm_ge070": 0.0,
+              "tm_lt050": 1.0,
+              "rmsd_median": 0.81,
+              "plddt_median": 84.5
+            },
+            "p8": {
+              "target": 0,
+              "mean_charge": -6.24,
+              "std_charge": 3.16,
+              "dev": 6.24,
+              "hit": false,
+              "recovery": 0.485,
+              "pocket_recovery": null,
+              "gravy_mean": 0.242,
+              "tm_median": 0.491,
+              "tm_ge070": 0.0,
+              "tm_lt050": 1.0,
+              "rmsd_median": 0.99,
+              "plddt_median": 87.3
+            }
+          }
+        }
+      },
+      "native_charge": -8.16
+    },
+    "1AS2": {
+      "cat": "rna",
+      "L": 312,
+      "mode": {
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -3,
+              "mean_charge": -10.34,
+              "std_charge": 3.77,
+              "dev": 7.34,
+              "hit": false,
+              "recovery": 0.356,
+              "pocket_recovery": null,
+              "gravy_mean": 0.459,
+              "tm_median": 0.944,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.69,
+              "plddt_median": 92.8
+            },
+            "n2": {
+              "target": -5,
+              "mean_charge": -16.46,
+              "std_charge": 4.53,
+              "dev": 11.46,
+              "hit": false,
+              "recovery": 0.353,
+              "pocket_recovery": null,
+              "gravy_mean": 0.394,
+              "tm_median": 0.946,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.62,
+              "plddt_median": 92.7
+            },
+            "p2": {
+              "target": -1,
+              "mean_charge": -4.86,
+              "std_charge": 4.1,
+              "dev": 3.86,
+              "hit": false,
+              "recovery": 0.355,
+              "pocket_recovery": null,
+              "gravy_mean": 0.496,
+              "tm_median": 0.939,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.76,
+              "plddt_median": 92.6
+            },
+            "n8": {
+              "target": -11,
+              "mean_charge": -30.18,
+              "std_charge": 5.93,
+              "dev": 19.18,
+              "hit": false,
+              "recovery": 0.341,
+              "pocket_recovery": null,
+              "gravy_mean": 0.232,
+              "tm_median": 0.947,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.62,
+              "plddt_median": 91.3
+            },
+            "p8": {
+              "target": 5,
+              "mean_charge": 4.85,
+              "std_charge": 5.05,
+              "dev": 0.15,
+              "hit": true,
+              "recovery": 0.33,
+              "pocket_recovery": null,
+              "gravy_mean": 0.521,
+              "tm_median": 0.927,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.92,
+              "plddt_median": 92.5
+            }
+          }
+        }
+      },
+      "native_charge": -2.69
+    },
+    "1AXW": {
+      "cat": "rna",
+      "L": 528,
+      "mode": {
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -18,
+              "mean_charge": -41.46,
+              "std_charge": 6.35,
+              "dev": 23.46,
+              "hit": false,
+              "recovery": 0.429,
+              "pocket_recovery": null,
+              "gravy_mean": 0.57,
+              "tm_median": 0.945,
+              "tm_ge070": 0.9,
+              "tm_lt050": 0.067,
+              "rmsd_median": 1.83,
+              "plddt_median": 81.8
+            },
+            "n2": {
+              "target": -20,
+              "mean_charge": -45.17,
+              "std_charge": 5.79,
+              "dev": 25.17,
+              "hit": false,
+              "recovery": 0.427,
+              "pocket_recovery": null,
+              "gravy_mean": 0.585,
+              "tm_median": 0.953,
+              "tm_ge070": 0.933,
+              "tm_lt050": 0.033,
+              "rmsd_median": 1.6,
+              "plddt_median": 81.7
+            },
+            "p2": {
+              "target": -16,
+              "mean_charge": -37.01,
+              "std_charge": 6.66,
+              "dev": 21.01,
+              "hit": false,
+              "recovery": 0.435,
+              "pocket_recovery": null,
+              "gravy_mean": 0.567,
+              "tm_median": 0.949,
+              "tm_ge070": 0.9,
+              "tm_lt050": 0.033,
+              "rmsd_median": 1.77,
+              "plddt_median": 82.2
+            },
+            "n8": {
+              "target": -26,
+              "mean_charge": -59.7,
+              "std_charge": 7.85,
+              "dev": 33.7,
+              "hit": false,
+              "recovery": 0.415,
+              "pocket_recovery": null,
+              "gravy_mean": 0.581,
+              "tm_median": 0.949,
+              "tm_ge070": 0.933,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.69,
+              "plddt_median": 79.2
+            },
+            "p8": {
+              "target": -10,
+              "mean_charge": -25.89,
+              "std_charge": 5.32,
+              "dev": 15.89,
+              "hit": false,
+              "recovery": 0.442,
+              "pocket_recovery": null,
+              "gravy_mean": 0.571,
+              "tm_median": 0.94,
+              "tm_ge070": 0.8,
+              "tm_lt050": 0.133,
+              "rmsd_median": 1.96,
+              "plddt_median": 82.5
+            }
+          }
+        }
+      },
+      "native_charge": -18.3
+    },
+    "1AZM": {
+      "cat": "small_mol",
+      "L": 258,
+      "mode": {
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -2,
+              "mean_charge": -3.6,
+              "std_charge": 3.72,
+              "dev": 1.6,
+              "hit": true,
+              "recovery": 0.454,
+              "pocket_recovery": null,
+              "gravy_mean": 0.156,
+              "tm_median": 0.976,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 0.97,
+              "plddt_median": 86.2
+            },
+            "n2": {
+              "target": -4,
+              "mean_charge": -7.62,
+              "std_charge": 3.49,
+              "dev": 3.62,
+              "hit": false,
+              "recovery": 0.45,
+              "pocket_recovery": null,
+              "gravy_mean": 0.087,
+              "tm_median": 0.973,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.04,
+              "plddt_median": 85.7
+            },
+            "p2": {
+              "target": 0,
+              "mean_charge": -0.84,
+              "std_charge": 2.62,
+              "dev": 0.84,
+              "hit": true,
+              "recovery": 0.448,
+              "pocket_recovery": null,
+              "gravy_mean": 0.217,
+              "tm_median": 0.976,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 0.97,
+              "plddt_median": 86.2
+            },
+            "n8": {
+              "target": -10,
+              "mean_charge": -15.7,
+              "std_charge": 3.22,
+              "dev": 5.7,
+              "hit": false,
+              "recovery": 0.428,
+              "pocket_recovery": null,
+              "gravy_mean": -0.07,
+              "tm_median": 0.974,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.04,
+              "plddt_median": 84.3
+            },
+            "p8": {
+              "target": 6,
+              "mean_charge": 2.95,
+              "std_charge": 2.83,
+              "dev": 3.05,
+              "hit": false,
+              "recovery": 0.445,
+              "pocket_recovery": null,
+              "gravy_mean": 0.239,
+              "tm_median": 0.972,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.08,
+              "plddt_median": 86.1
+            }
+          }
+        }
+      },
+      "native_charge": -1.71
+    },
+    "1BJ4": {
+      "cat": "long",
+      "L": 470,
+      "mode": {
+        "protein": {
+          "arms": {
+            "native": {
+              "target": 0,
+              "mean_charge": -0.58,
+              "std_charge": 4.24,
+              "dev": 0.58,
+              "hit": true,
+              "recovery": 0.406,
+              "pocket_recovery": null,
+              "gravy_mean": 0.837,
+              "tm_median": 0.892,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 2.6,
+              "plddt_median": 73.1
+            },
+            "n2": {
+              "target": -2,
+              "mean_charge": -6.43,
+              "std_charge": 3.98,
+              "dev": 4.43,
+              "hit": false,
+              "recovery": 0.403,
+              "pocket_recovery": null,
+              "gravy_mean": 0.775,
+              "tm_median": 0.907,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 2.36,
+              "plddt_median": 74.5
+            },
+            "p2": {
+              "target": 2,
+              "mean_charge": 3.63,
+              "std_charge": 3.96,
+              "dev": 1.63,
+              "hit": true,
+              "recovery": 0.404,
+              "pocket_recovery": null,
+              "gravy_mean": 0.845,
+              "tm_median": 0.878,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 2.57,
+              "plddt_median": 72.6
+            },
+            "n8": {
+              "target": -8,
+              "mean_charge": -24.71,
+              "std_charge": 5.39,
+              "dev": 16.71,
+              "hit": false,
+              "recovery": 0.398,
+              "pocket_recovery": null,
+              "gravy_mean": 0.464,
+              "tm_median": 0.847,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 2.95,
+              "plddt_median": 72.1
+            },
+            "p8": {
+              "target": 8,
+              "mean_charge": 13.12,
+              "std_charge": 5.26,
+              "dev": 5.12,
+              "hit": false,
+              "recovery": 0.39,
+              "pocket_recovery": null,
+              "gravy_mean": 0.731,
+              "tm_median": 0.848,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 3.12,
+              "plddt_median": 71.9
+            }
+          }
+        }
+      },
+      "native_charge": 0.42
+    },
+    "1C6O": {
+      "cat": "small_mol",
+      "L": 177,
+      "mode": {
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -14,
+              "mean_charge": -18.76,
+              "std_charge": 4.04,
+              "dev": 4.76,
+              "hit": false,
+              "recovery": 0.445,
+              "pocket_recovery": null,
+              "gravy_mean": 0.203,
+              "tm_median": 0.509,
+              "tm_ge070": 0.0,
+              "tm_lt050": 0.433,
+              "rmsd_median": 2.21,
+              "plddt_median": 81.0
+            },
+            "n2": {
+              "target": -16,
+              "mean_charge": -19.95,
+              "std_charge": 4.24,
+              "dev": 3.95,
+              "hit": false,
+              "recovery": 0.446,
+              "pocket_recovery": null,
+              "gravy_mean": 0.197,
+              "tm_median": 0.513,
+              "tm_ge070": 0.0,
+              "tm_lt050": 0.4,
+              "rmsd_median": 2.33,
+              "plddt_median": 80.2
+            },
+            "p2": {
+              "target": -12,
+              "mean_charge": -17.28,
+              "std_charge": 4.37,
+              "dev": 5.28,
+              "hit": false,
+              "recovery": 0.447,
+              "pocket_recovery": null,
+              "gravy_mean": 0.223,
+              "tm_median": 0.511,
+              "tm_ge070": 0.0,
+              "tm_lt050": 0.367,
+              "rmsd_median": 2.27,
+              "plddt_median": 82.2
+            },
+            "n8": {
+              "target": -22,
+              "mean_charge": -26.25,
+              "std_charge": 4.55,
+              "dev": 4.25,
+              "hit": false,
+              "recovery": 0.437,
+              "pocket_recovery": null,
+              "gravy_mean": 0.127,
+              "tm_median": 0.494,
+              "tm_ge070": 0.0,
+              "tm_lt050": 0.567,
+              "rmsd_median": 3.0,
+              "plddt_median": 73.1
+            },
+            "p8": {
+              "target": -6,
+              "mean_charge": -11.14,
+              "std_charge": 3.09,
+              "dev": 5.14,
+              "hit": false,
+              "recovery": 0.448,
+              "pocket_recovery": null,
+              "gravy_mean": 0.258,
+              "tm_median": 0.496,
+              "tm_ge070": 0.0,
+              "tm_lt050": 0.533,
+              "rmsd_median": 1.98,
+              "plddt_median": 83.8
+            }
+          }
+        }
+      },
+      "native_charge": -14.31
+    },
+    "1CGE": {
+      "cat": "metal",
+      "L": 162,
+      "mode": {
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -12,
+              "mean_charge": -15.44,
+              "std_charge": 3.15,
+              "dev": 3.44,
+              "hit": false,
+              "recovery": 0.471,
+              "pocket_recovery": null,
+              "gravy_mean": -0.191,
+              "tm_median": 0.952,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.19,
+              "plddt_median": 82.3
+            },
+            "n2": {
+              "target": -14,
+              "mean_charge": -17.28,
+              "std_charge": 2.71,
+              "dev": 3.28,
+              "hit": false,
+              "recovery": 0.469,
+              "pocket_recovery": null,
+              "gravy_mean": -0.245,
+              "tm_median": 0.95,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.22,
+              "plddt_median": 81.8
+            },
+            "p2": {
+              "target": -10,
+              "mean_charge": -12.97,
+              "std_charge": 3.03,
+              "dev": 2.97,
+              "hit": false,
+              "recovery": 0.476,
+              "pocket_recovery": null,
+              "gravy_mean": -0.146,
+              "tm_median": 0.954,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.23,
+              "plddt_median": 82.8
+            },
+            "n8": {
+              "target": -20,
+              "mean_charge": -22.59,
+              "std_charge": 2.72,
+              "dev": 2.59,
+              "hit": false,
+              "recovery": 0.453,
+              "pocket_recovery": null,
+              "gravy_mean": -0.269,
+              "tm_median": 0.948,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.29,
+              "plddt_median": 81.2
+            },
+            "p8": {
+              "target": -4,
+              "mean_charge": -6.44,
+              "std_charge": 2.48,
+              "dev": 2.44,
+              "hit": false,
+              "recovery": 0.49,
+              "pocket_recovery": null,
+              "gravy_mean": 0.027,
+              "tm_median": 0.955,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.21,
+              "plddt_median": 83.7
+            }
+          }
+        }
+      },
+      "native_charge": -11.66
+    },
+    "2FEO": {
+      "cat": "dna",
+      "L": 221,
+      "mode": {
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -7,
+              "mean_charge": -10.93,
+              "std_charge": 3.76,
+              "dev": 3.93,
+              "hit": false,
+              "recovery": 0.321,
+              "pocket_recovery": null,
+              "gravy_mean": 0.392,
+              "tm_median": 0.92,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.78,
+              "plddt_median": 81.7
+            },
+            "n2": {
+              "target": -9,
+              "mean_charge": -13.66,
+              "std_charge": 3.95,
+              "dev": 4.66,
+              "hit": false,
+              "recovery": 0.322,
+              "pocket_recovery": null,
+              "gravy_mean": 0.321,
+              "tm_median": 0.924,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.73,
+              "plddt_median": 80.5
+            },
+            "p2": {
+              "target": -5,
+              "mean_charge": -9.55,
+              "std_charge": 3.95,
+              "dev": 4.55,
+              "hit": false,
+              "recovery": 0.326,
+              "pocket_recovery": null,
+              "gravy_mean": 0.457,
+              "tm_median": 0.921,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.77,
+              "plddt_median": 81.1
+            },
+            "n8": {
+              "target": -15,
+              "mean_charge": -22.38,
+              "std_charge": 4.73,
+              "dev": 7.38,
+              "hit": false,
+              "recovery": 0.334,
+              "pocket_recovery": null,
+              "gravy_mean": 0.158,
+              "tm_median": 0.92,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.77,
+              "plddt_median": 79.6
+            },
+            "p8": {
+              "target": 1,
+              "mean_charge": -1.16,
+              "std_charge": 3.23,
+              "dev": 2.16,
+              "hit": false,
+              "recovery": 0.329,
+              "pocket_recovery": null,
+              "gravy_mean": 0.588,
+              "tm_median": 0.907,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.89,
+              "plddt_median": 80.1
+            }
+          }
+        }
+      },
+      "native_charge": -6.88
+    },
+    "5CQH": {
+      "cat": "dna",
+      "L": 183,
+      "mode": {
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -6,
+              "mean_charge": -12.16,
+              "std_charge": 3.18,
+              "dev": 6.16,
+              "hit": false,
+              "recovery": 0.377,
+              "pocket_recovery": null,
+              "gravy_mean": 0.229,
+              "tm_median": 0.961,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.17,
+              "plddt_median": 85.8
+            },
+            "n2": {
+              "target": -8,
+              "mean_charge": -14.59,
+              "std_charge": 3.73,
+              "dev": 6.59,
+              "hit": false,
+              "recovery": 0.378,
+              "pocket_recovery": null,
+              "gravy_mean": 0.151,
+              "tm_median": 0.961,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.14,
+              "plddt_median": 84.9
+            },
+            "p2": {
+              "target": -4,
+              "mean_charge": -9.2,
+              "std_charge": 2.99,
+              "dev": 5.2,
+              "hit": false,
+              "recovery": 0.377,
+              "pocket_recovery": null,
+              "gravy_mean": 0.332,
+              "tm_median": 0.961,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.17,
+              "plddt_median": 85.6
+            },
+            "n8": {
+              "target": -14,
+              "mean_charge": -23.55,
+              "std_charge": 4.07,
+              "dev": 9.55,
+              "hit": false,
+              "recovery": 0.38,
+              "pocket_recovery": null,
+              "gravy_mean": -0.022,
+              "tm_median": 0.954,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.27,
+              "plddt_median": 83.0
+            },
+            "p8": {
+              "target": 2,
+              "mean_charge": 0.21,
+              "std_charge": 2.8,
+              "dev": 1.79,
+              "hit": true,
+              "recovery": 0.382,
+              "pocket_recovery": null,
+              "gravy_mean": 0.458,
+              "tm_median": 0.961,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "rmsd_median": 1.16,
+              "plddt_median": 85.2
+            }
+          }
+        }
+      },
+      "native_charge": -5.53
+    }
+  },
+  "ablation": {},
+  "totals": {
+    "arms_tested": 50,
+    "h2_hit": 6,
+    "h2_hit_rate": 0.12,
+    "h1_tm_arms": 50,
+    "h1_tm_pass": 40,
+    "h1_pass_rate": 0.8
+  }
+}
