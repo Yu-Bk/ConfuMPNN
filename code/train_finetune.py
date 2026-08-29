@@ -728,7 +728,10 @@ def main():
                 frac = dom["frac_sasa"]                       # [L] numpy
                 surf = frac >= args.sasa_threshold            # [L] bool
                 nat_int = dom["S"][0].long().cpu().numpy()    # [L] native AA 索引
-                native_grav = float(KD.cpu().numpy()[nat_int[surf]].mean()) if surf.any() else 0.0
+                # 只统计标准 AA（索引<20）的表面残基；X/非标准（≥20）跳过
+                sel = nat_int[surf]
+                sel = sel[sel < 20]
+                native_grav = float(KD.cpu().numpy()[sel].mean()) if len(sel) > 0 else 0.0
                 n_v12 = 0
                 for i in range(B):
                     if mask_ph[i].item():
