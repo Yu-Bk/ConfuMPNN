@@ -42,7 +42,8 @@ from data_utils import featurize, parse_PDB  # noqa: E402
 from src.condition_embedding import make_condition_vector  # noqa: E402
 from src.conditioned_sampler import conditioned_sample  # noqa: E402
 from src.differentiable_charge import net_charge  # noqa: E402
-from run_guided import load_model, load_condition_encoder, seq_to_string  # noqa: E402
+from run_guided import (load_model, load_condition_encoder, seq_to_string,
+                        load_calibration)  # noqa: E402
 
 # Kyte-Doolittle 疏水性表（GRAVY）
 KD = {"A": 1.8, "R": -4.5, "N": -3.5, "D": -3.5, "C": 2.5, "Q": -3.5,
@@ -133,6 +134,10 @@ def main():
                     help="protein（消融）模式跑的臂子集，默认 3 臂")
     ap.add_argument("--start", type=int, default=0,
                     help="从 manifest 第几个蛋白开始（断点续跑）")
+    ap.add_argument("--calibrate", default="off", choices=["off", "auto", "global"],
+                    help="电荷校准（v12 7.1）：auto=读校准表 per-protein+全局回退；global=强制全局；off=不校准")
+    ap.add_argument("--calibration_file", default="output/charge_calibration.json",
+                    help="校准表 JSON（index/v10_repair/build_calibration.py 生成）")
     ap.add_argument("--end", type=int, default=None,
                     help="到第几个蛋白结束（None=全部）")
     args = ap.parse_args()
@@ -213,14 +218,22 @@ def main():
             summary = {"pdb": pdb, "cat": it.get("cat"), "L": L, "mode": mode,
                        "native": native, "native_charge": round(q_nat, 2),
                        "arms": {}}
+            # v12 7.1 电荷校准：tgt_eff=(tgt−intercept)/slope（per-protein 或全局）
+            cal_slope = cal_off = None
+            if args.calibrate != "off":
+                cal_slope, cal_off, _, _ = load_calibration(
+                    args.calibration_file, pdb, force_global=(args.calibrate == "global"))
             for arm in arms:
                 dq = arm_map[arm]
                 tgt = int(round(q_nat)) + dq
+                tgt_eff = tgt
+                if cal_slope is not None:
+                    tgt_eff = (tgt - cal_off) / cal_slope
                 charges, recs, pkt_recs, gravs, seqs = [], [], [], [], []
                 for k in range(args.n):
                     torch.manual_seed(args.seed_base + k)
                     fd["randn"] = torch.randn(1, L)
-                    cond_vec = make_condition_vector(args.pH, net_charge=tgt)
+                    cond_vec = make_condition_vector(args.pH, net_charge=tgt_eff)
                     out = conditioned_sample(model, enc, fd, cond_vec, device)
                     seq = seq_to_string(out["S"][0].cpu().numpy())
                     seqs.append(seq)

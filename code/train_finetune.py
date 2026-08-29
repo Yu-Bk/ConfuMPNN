@@ -100,6 +100,9 @@ from src.losses import (  # noqa: E402
 from src.v10_losses import (  # noqa: E402
     ph_aware_structure_penalty, surface_add_charge_loss,
 )
+from src.v12_losses import (  # noqa: E402
+    surface_composition_loss, surface_gravy_loss, KD,
+)
 
 # 默认生成器权重（与 run_guided.py E4 一致）
 _DEFAULT_WEIGHTS = (
@@ -178,6 +181,15 @@ def parse_args():
                         "（His/Cys/Tyr 按质子化态纳入），大额添加样本动态加强（scale_boost）")
     p.add_argument("--structure_boost", type=float, default=1.5,
                    help="C 对大额添加扰动样本的结构惩罚放大系数（scale_boost）")
+    p.add_argument("--v12_supervision", action="store_true",
+                   help="v12 训练侧监督（治删减捷径）：表面组成双计数（D/E 和 K/R 都不许掉）"
+                        "+ 表面 GRAVY（不许比 native 疏水）——堵死'删带电残基换疏水'捷径")
+    p.add_argument("--frac_floor", type=float, default=0.8,
+                   help="v12 组成监督：native 表面计数下限比例（0.8=允许温和删减但不许大幅）")
+    p.add_argument("--gravy_margin", type=float, default=0.15,
+                   help="v12 GRAVY 监督：允许的表面 GRAVY 上升量（margin）")
+    p.add_argument("--lambda_v12", type=float, default=0.3,
+                   help="v12 组成+GRAVY 总权重（λ_v12·(comp+gravy)）")
     p.add_argument("--decouple_absolute", action="store_true",
                    help="v11 A-fix：绝对 target 采样——与 native 无关，直接覆盖 [lo,hi]，"
                         "解决 v10 相对解耦±12 无法覆盖验证深负靶区（−19~−35）的问题")
@@ -361,6 +373,9 @@ def main():
               f"{args.decouple_range}]")
     if args.add_supervision:
         logln(f"[v10 B] 表面添加电荷监督开：λ_add={args.lambda_add}  SASA θ={args.sasa_threshold}")
+    if args.v12_supervision:
+        logln(f"[v12] 训练侧监督开：组成双计数(floor={args.frac_floor}) + GRAVY(margin={args.gravy_margin})"
+              f"  λ_v12={args.lambda_v12}  SASA θ={args.sasa_threshold}")
     if args.ph_aware_filter:
         logln(f"[v10 C] pH 自适应结构惩罚开：boost={args.structure_boost}")
 
@@ -472,7 +487,7 @@ def main():
             #   sasa 的 residues[] 与 dom 的 R_idx[] 做集合匹配，只取两边都有的残基号，
             #   freesasa 多出的残基忽略，parse 独有的残基（若有）frac 补 0。
             #   → 不再有"长度不匹配"，L_add 覆盖全部对齐残基（用 X/非标准位置 frac=0）。
-            if args.add_supervision:
+            if args.add_supervision or args.v12_supervision:
                 try:
                     from src.sasa import fractional_sasa
                     sasa_info = fractional_sasa(pdb_path,
@@ -704,11 +719,38 @@ def main():
                     sp_vec[i] = sp_i
                 struct_pen = sp_vec.mean()
 
+            # ---- v12 训练侧监督（--v12_supervision）：治删减捷径 ----
+            # 组成双计数（D/E 和 K/R 都不许掉）+ 表面 GRAVY（不许比 native 疏水）。
+            # 骨架固定 → surface mask 常数；native 序列已知 → 预计算 native 表面指标。
+            v12_comp = torch.zeros((), device=device)
+            v12_gravy = torch.zeros((), device=device)
+            if args.v12_supervision and dom.get("frac_sasa") is not None:
+                frac = dom["frac_sasa"]                       # [L] numpy
+                surf = frac >= args.sasa_threshold            # [L] bool
+                nat_int = dom["S"][0].long().cpu().numpy()    # [L] native AA 索引
+                native_grav = float(KD.cpu().numpy()[nat_int[surf]].mean()) if surf.any() else 0.0
+                n_v12 = 0
+                for i in range(B):
+                    if mask_ph[i].item():
+                        continue  # 占位符样本跳过（target=训练均值，非真实电荷目标）
+                    v12_comp = v12_comp + surface_composition_loss(
+                        logits[i:i+1], frac, nat_int, frac_floor=args.frac_floor,
+                        surface_threshold=args.sasa_threshold)
+                    v12_gravy = v12_gravy + surface_gravy_loss(
+                        logits[i:i+1], frac, native_grav, margin=args.gravy_margin,
+                        surface_threshold=args.sasa_threshold)
+                    n_v12 += 1
+                if n_v12 > 0:
+                    v12_comp = v12_comp / n_v12
+                    v12_gravy = v12_gravy / n_v12
+
             total = ce + args.lambda_c * cd + args.lambda_kl * kl + args.lambda_keep * keep
             if args.add_supervision:
                 total = total + args.lambda_add * add
             if args.ph_aware_filter:
                 total = total + 0.05 * struct_pen
+            if args.v12_supervision:
+                total = total + args.lambda_v12 * (v12_comp + v12_gravy)
 
             # NaN 诊断（v10 训练踩坑，收集模式）：记录 loss 分量 NaN 并跳过本 step
             if not torch.isfinite(total).all():
