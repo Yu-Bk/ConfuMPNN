@@ -1,0 +1,374 @@
+== PROPKA 1C6O/native target=-14 ==
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+Traceback (most recent call last):
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 264, in <module>
+    main()
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in main
+    results = [check_single(pdb, args.pH, args.target, workdir)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in <listcomp>
+    results = [check_single(pdb, args.pH, args.target, workdir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 193, in check_single
+    groups = run_propka(pdb_path, workdir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 119, in run_propka
+    p = subprocess.run(
+        ^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'propka3'
+== PROPKA 1C6O/n8 target=-22 ==
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+Traceback (most recent call last):
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 264, in <module>
+    main()
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in main
+    results = [check_single(pdb, args.pH, args.target, workdir)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in <listcomp>
+    results = [check_single(pdb, args.pH, args.target, workdir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 193, in check_single
+    groups = run_propka(pdb_path, workdir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 119, in run_propka
+    p = subprocess.run(
+        ^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'propka3'
+== PROPKA 1AZM/native target=-2 ==
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+Traceback (most recent call last):
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 264, in <module>
+    main()
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in main
+    results = [check_single(pdb, args.pH, args.target, workdir)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in <listcomp>
+    results = [check_single(pdb, args.pH, args.target, workdir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 193, in check_single
+    groups = run_propka(pdb_path, workdir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 119, in run_propka
+    p = subprocess.run(
+        ^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'propka3'
+== PROPKA 1AZM/n8 target=-10 ==
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+Traceback (most recent call last):
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 264, in <module>
+    main()
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in main
+    results = [check_single(pdb, args.pH, args.target, workdir)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in <listcomp>
+    results = [check_single(pdb, args.pH, args.target, workdir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 193, in check_single
+    groups = run_propka(pdb_path, workdir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 119, in run_propka
+    p = subprocess.run(
+        ^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'propka3'
+== PROPKA 1BJ4/native target=0 ==
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+Traceback (most recent call last):
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 264, in <module>
+    main()
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in main
+    results = [check_single(pdb, args.pH, args.target, workdir)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in <listcomp>
+    results = [check_single(pdb, args.pH, args.target, workdir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 193, in check_single
+    groups = run_propka(pdb_path, workdir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 119, in run_propka
+    p = subprocess.run(
+        ^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'propka3'
+== PROPKA 1BJ4/n8 target=-8 ==
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+Traceback (most recent call last):
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 264, in <module>
+    main()
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in main
+    results = [check_single(pdb, args.pH, args.target, workdir)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in <listcomp>
+    results = [check_single(pdb, args.pH, args.target, workdir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 193, in check_single
+    groups = run_propka(pdb_path, workdir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 119, in run_propka
+    p = subprocess.run(
+        ^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'propka3'
+PROPKA_CHECK_DONE
+== PROPKA 1C6O/native target=-14 ==
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge_-14_31.pdb                 177  -14.305   -13.91
+seed_2000_arm_native_target_-14_charge_-10_39.pdb 177   -10.39   -8.964
+seed_2001_arm_native_target_-14_charge_-11_19.pdb 177  -11.194  -10.004
+seed_2002_arm_native_target_-14_charge_-12_39.pdb 177   -12.39   -11.76
+seed_2003_arm_native_target_-14_charge_-19_19.pdb 177  -19.193  -19.102
+seed_2004_arm_native_target_-14_charge_-12_38.pdb 177  -12.384  -12.268
+seed_2005_arm_native_target_-14_charge_-12_16.pdb 177   -12.16  -10.762
+seed_2006_arm_native_target_-14_charge_-16_38.pdb 177  -16.381  -16.251
+seed_2007_arm_native_target_-14_charge_-15_34.pdb 177  -15.341  -15.073
+seed_2008_arm_native_target_-14_charge_-14_11.pdb 177  -14.112  -12.602
+seed_2009_arm_native_target_-14_charge_-16_38.pdb 177  -16.384    -15.2
+seed_2010_arm_native_target_-14_charge_-12_39.pdb 177  -12.393  -11.843
+seed_2011_arm_native_target_-14_charge_-14_30.pdb 177  -14.305  -13.139
+seed_2012_arm_native_target_-14_charge_-18_34.pdb 177  -18.335  -17.693
+seed_2013_arm_native_target_-14_charge_-17_12.pdb 177  -17.124  -15.624
+seed_2014_arm_native_target_-14_charge_-12_38.pdb 177  -12.383   -12.01
+seed_2015_arm_native_target_-14_charge_-12_39.pdb 177  -12.389  -12.053
+seed_2016_arm_native_target_-14_charge_-13_86.pdb 177   -13.86  -13.193
+seed_2017_arm_native_target_-14_charge_-22_52.pdb 177  -22.523  -21.919
+seed_2018_arm_native_target_-14_charge_-14_27.pdb 177  -14.275  -14.072
+seed_2019_arm_native_target_-14_charge_-13_08.pdb 177  -13.078   -12.98
+seed_2020_arm_native_target_-14_charge_-17_38.pdb 177  -17.376  -16.066
+seed_2021_arm_native_target_-14_charge_-21_27.pdb 177  -21.273  -20.851
+seed_2022_arm_native_target_-14_charge_-14_49.pdb 177  -14.493  -13.087
+seed_2023_arm_native_target_-14_charge_-11_35.pdb 177  -11.348  -10.992
+seed_2024_arm_native_target_-14_charge_-21_04.pdb 177  -21.041  -20.796
+seed_2025_arm_native_target_-14_charge_-17_38.pdb 177  -17.381  -16.005
+seed_2026_arm_native_target_-14_charge_-21_38.pdb 177  -21.382  -21.101
+seed_2027_arm_native_target_-14_charge_-14_16.pdb 177  -14.161  -14.051
+seed_2028_arm_native_target_-14_charge_-10_13.pdb 177  -10.126   -9.749
+seed_2029_arm_native_target_-14_charge_-15_43.pdb 177  -15.427  -14.224
+
+Q_phys 均值 = -14.43 ± 3.424  (Q_design 均值 = -15.126)
+H4 判定: |Q_phys − target| = 0.430 → PASS（阈值 2.0，与 H2 一致）
+== PROPKA 1C6O/n8 target=-22 ==
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge_-14_31.pdb                 177  -14.305   -13.91
+seed_2000_arm_n8_target_-22_charge_-18_11.pdb 177  -18.107  -17.233
+seed_2001_arm_n8_target_-22_charge_-17_23.pdb 177  -17.228   -15.99
+seed_2002_arm_n8_target_-22_charge_-21_37.pdb 177  -21.372  -20.513
+seed_2003_arm_n8_target_-22_charge_-20_96.pdb 177  -20.964  -17.892
+seed_2004_arm_n8_target_-22_charge_-14_16.pdb 177   -14.16  -12.891
+seed_2005_arm_n8_target_-22_charge_-14_96.pdb 177  -14.961  -13.918
+seed_2006_arm_n8_target_-22_charge_-21_38.pdb 177  -21.378  -19.796
+seed_2007_arm_n8_target_-22_charge_-22_37.pdb 177  -22.372  -22.102
+seed_2008_arm_n8_target_-22_charge_-21_11.pdb 177  -21.108  -19.505
+seed_2009_arm_n8_target_-22_charge_-18_15.pdb 177  -18.153  -17.026
+seed_2010_arm_n8_target_-22_charge_-16_20.pdb 177  -16.205  -16.088
+seed_2011_arm_n8_target_-22_charge_-19_30.pdb 177  -19.299  -18.973
+seed_2012_arm_n8_target_-22_charge_-20_92.pdb 177  -20.918  -20.767
+seed_2013_arm_n8_target_-22_charge_-26_15.pdb 177  -26.145  -25.646
+seed_2014_arm_n8_target_-22_charge_-17_15.pdb 177  -17.146  -15.892
+seed_2015_arm_n8_target_-22_charge_-16_30.pdb 177  -16.297  -15.587
+seed_2016_arm_n8_target_-22_charge_-18_89.pdb 177  -18.889  -18.526
+seed_2017_arm_n8_target_-22_charge_-22_34.pdb 177  -22.336  -20.868
+seed_2018_arm_n8_target_-22_charge_-17_16.pdb 177   -17.16  -16.987
+seed_2019_arm_n8_target_-22_charge_-15_07.pdb 177  -15.073  -14.979
+seed_2020_arm_n8_target_-22_charge_-21_37.pdb 177  -21.369  -20.032
+seed_2021_arm_n8_target_-22_charge_-25_93.pdb 177  -25.929  -25.133
+seed_2022_arm_n8_target_-22_charge_-16_49.pdb 177  -16.487  -15.129
+seed_2023_arm_n8_target_-22_charge_-16_11.pdb 177  -16.111  -15.864
+seed_2024_arm_n8_target_-22_charge_-23_84.pdb 177  -23.842  -23.005
+seed_2025_arm_n8_target_-22_charge_-26_11.pdb 177   -26.11  -25.848
+seed_2026_arm_n8_target_-22_charge_-28_37.pdb 177  -28.368  -28.079
+seed_2027_arm_n8_target_-22_charge_-21_15.pdb 177  -21.154  -21.047
+seed_2028_arm_n8_target_-22_charge_-16_89.pdb 177  -16.894  -16.309
+seed_2029_arm_n8_target_-22_charge_-23_16.pdb 177  -23.158  -22.046
+
+Q_phys 均值 = -18.954 ± 3.809  (Q_design 均值 = -19.774)
+H4 判定: |Q_phys − target| = 3.046 → FAIL（阈值 2.0，与 H2 一致）
+== PROPKA 1AZM/native target=-2 ==
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge_-1_71.pdb                  258   -1.711   -0.702
+seed_2000_arm_native_target_-2_charge__3_00.pdb 258      3.0    2.989
+seed_2001_arm_native_target_-2_charge_-4_15.pdb 258   -4.147   -4.005
+seed_2002_arm_native_target_-2_charge_-2_14.pdb 258   -2.143   -1.026
+seed_2003_arm_native_target_-2_charge_-1_04.pdb 258   -1.037   -1.012
+seed_2004_arm_native_target_-2_charge_-2_11.pdb 258   -2.111   -1.158
+seed_2005_arm_native_target_-2_charge_-2_99.pdb 258   -2.994   -2.992
+seed_2006_arm_native_target_-2_charge_-3_04.pdb 258   -3.038   -2.717
+seed_2007_arm_native_target_-2_charge_-4_04.pdb 258    -4.04   -4.009
+seed_2008_arm_native_target_-2_charge__2_96.pdb 258    2.962     3.96
+seed_2009_arm_native_target_-2_charge_-1_14.pdb 258   -1.141   -1.059
+seed_2010_arm_native_target_-2_charge__3_97.pdb 258    3.965    4.101
+seed_2011_arm_native_target_-2_charge_-4_15.pdb 258   -4.147   -3.997
+seed_2012_arm_native_target_-2_charge_-0_95.pdb 258   -0.953   -0.923
+seed_2013_arm_native_target_-2_charge__3_84.pdb 258    3.836    3.977
+seed_2014_arm_native_target_-2_charge_-1_04.pdb 258   -1.035   -1.008
+seed_2015_arm_native_target_-2_charge_-4_04.pdb 258    -4.04   -2.079
+seed_2016_arm_native_target_-2_charge_-2_15.pdb 258   -2.155    -1.88
+seed_2017_arm_native_target_-2_charge_-0_11.pdb 258   -0.111    0.004
+seed_2018_arm_native_target_-2_charge_-0_04.pdb 258    -0.04    0.128
+seed_2019_arm_native_target_-2_charge__2_95.pdb 258    2.955    2.987
+seed_2020_arm_native_target_-2_charge_-4_04.pdb 258    -4.04   -4.011
+seed_2021_arm_native_target_-2_charge__0_95.pdb 258    0.953    0.989
+seed_2022_arm_native_target_-2_charge_-4_11.pdb 258   -4.106   -1.982
+seed_2023_arm_native_target_-2_charge__1_92.pdb 258     1.92    2.025
+seed_2024_arm_native_target_-2_charge_-1_00.pdb 258   -0.998    -0.84
+seed_2025_arm_native_target_-2_charge_-0_03.pdb 258   -0.029    0.001
+seed_2026_arm_native_target_-2_charge__0_89.pdb 258    0.886    1.002
+seed_2027_arm_native_target_-2_charge__4_86.pdb 258    4.856    4.987
+seed_2028_arm_native_target_-2_charge_-0_00.pdb 258   -0.003    1.271
+seed_2029_arm_native_target_-2_charge_-1_04.pdb 258   -1.038   -0.788
+
+Q_phys 均值 = -0.251 ± 2.523  (Q_design 均值 = -0.636)
+H4 判定: |Q_phys − target| = 1.749 → PASS（阈值 2.0，与 H2 一致）
+== PROPKA 1AZM/n8 target=-10 ==
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge_-1_71.pdb                  258   -1.711   -0.702
+seed_2000_arm_n8_target_-10_charge_-7_97.pdb 258   -7.966    -7.98
+seed_2001_arm_n8_target_-10_charge_-12_00.pdb 258  -11.998  -10.384
+seed_2002_arm_n8_target_-10_charge_-9_97.pdb 258   -9.966  -10.007
+seed_2003_arm_n8_target_-10_charge_-9_04.pdb 258   -9.037   -9.011
+seed_2004_arm_n8_target_-10_charge_-5_99.pdb 258   -5.995   -5.996
+seed_2005_arm_n8_target_-10_charge_-13_11.pdb 258  -13.113  -12.988
+seed_2006_arm_n8_target_-10_charge_-13_04.pdb 258  -13.039  -12.997
+seed_2007_arm_n8_target_-10_charge_-13_00.pdb 258  -13.003  -12.976
+seed_2008_arm_n8_target_-10_charge_-3_92.pdb 258   -3.923   -3.117
+seed_2009_arm_n8_target_-10_charge_-13_04.pdb 258  -13.035  -12.997
+seed_2010_arm_n8_target_-10_charge_-2_99.pdb 258   -2.995   -2.004
+seed_2011_arm_n8_target_-10_charge_-13_04.pdb 258  -13.036  -12.327
+seed_2012_arm_n8_target_-10_charge_-7_95.pdb 258   -7.953   -7.983
+seed_2013_arm_n8_target_-10_charge_-10_01.pdb 258  -10.006  -10.022
+seed_2014_arm_n8_target_-10_charge_-7_04.pdb 258   -7.036   -5.994
+seed_2015_arm_n8_target_-10_charge_-9_03.pdb 258   -9.034   -7.996
+seed_2016_arm_n8_target_-10_charge_-8_00.pdb 258   -8.002   -6.866
+seed_2017_arm_n8_target_-10_charge_-4_99.pdb 258   -4.995   -5.011
+seed_2018_arm_n8_target_-10_charge_-8_00.pdb 258   -7.999   -7.723
+seed_2019_arm_n8_target_-10_charge_-9_04.pdb 258   -9.043   -8.006
+seed_2020_arm_n8_target_-10_charge_-11_00.pdb 258    -11.0  -10.994
+seed_2021_arm_n8_target_-10_charge_-8_04.pdb 258   -8.043   -7.998
+seed_2022_arm_n8_target_-10_charge_-13_96.pdb 258  -13.962  -12.623
+seed_2023_arm_n8_target_-10_charge_-3_88.pdb 258   -3.881   -4.412
+seed_2024_arm_n8_target_-10_charge_-15_95.pdb 258  -15.951  -15.838
+seed_2025_arm_n8_target_-10_charge_-6_99.pdb 258   -6.992   -6.927
+seed_2026_arm_n8_target_-10_charge_-7_96.pdb 258   -7.958   -7.923
+seed_2027_arm_n8_target_-10_charge_-5_95.pdb 258   -5.946   -4.019
+seed_2028_arm_n8_target_-10_charge_-3_04.pdb 258   -3.038   -3.024
+seed_2029_arm_n8_target_-10_charge_-9_04.pdb 258   -9.037   -7.373
+
+Q_phys 均值 = -8.201 ± 3.637  (Q_design 均值 = -8.668)
+H4 判定: |Q_phys − target| = 1.799 → PASS（阈值 2.0，与 H2 一致）
+== PROPKA 1BJ4/native target=0 ==
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge__0_42.pdb                  470    0.421    3.043
+seed_2000_arm_native_target__0_charge_-5_13.pdb 470   -5.127   -4.675
+seed_2001_arm_native_target__0_charge_-0_21.pdb 470   -0.215      0.1
+seed_2002_arm_native_target__0_charge__2_78.pdb 470    2.779    3.164
+seed_2003_arm_native_target__0_charge_-2_17.pdb 470    -2.17   -1.957
+seed_2004_arm_native_target__0_charge__8_00.pdb 470      8.0    8.003
+seed_2005_arm_native_target__0_charge__1_97.pdb 470    1.968    3.556
+seed_2006_arm_native_target__0_charge__1_06.pdb 470    1.058    1.113
+seed_2007_arm_native_target__0_charge__1_68.pdb 470    1.676    2.374
+seed_2008_arm_native_target__0_charge__3_01.pdb 470    3.006      3.0
+seed_2009_arm_native_target__0_charge__6_89.pdb 470    6.893    7.046
+seed_2010_arm_native_target__0_charge_-2_17.pdb 470   -2.175   -1.498
+seed_2011_arm_native_target__0_charge__6_97.pdb 470     6.97    7.074
+seed_2012_arm_native_target__0_charge__1_90.pdb 470      1.9    1.989
+seed_2013_arm_native_target__0_charge_-0_07.pdb 470    -0.07    0.375
+seed_2014_arm_native_target__0_charge__4_89.pdb 470    4.894    5.026
+seed_2015_arm_native_target__0_charge__8_00.pdb 470    8.004    9.139
+seed_2016_arm_native_target__0_charge__8_82.pdb 470    8.824   10.056
+seed_2017_arm_native_target__0_charge_-0_99.pdb 470   -0.991   -0.994
+seed_2018_arm_native_target__0_charge_-4_03.pdb 470   -4.032   -3.773
+seed_2019_arm_native_target__0_charge__3_04.pdb 470    3.044    4.069
+seed_2020_arm_native_target__0_charge_-0_18.pdb 470   -0.179    0.042
+seed_2021_arm_native_target__0_charge_-2_17.pdb 470   -2.168   -1.954
+seed_2022_arm_native_target__0_charge_-8_13.pdb 470   -8.129   -6.692
+seed_2023_arm_native_target__0_charge_-0_95.pdb 470   -0.949   -0.906
+seed_2024_arm_native_target__0_charge__1_82.pdb 470    1.821     2.11
+seed_2025_arm_native_target__0_charge__2_78.pdb 470    2.779    3.013
+seed_2026_arm_native_target__0_charge_-2_03.pdb 470   -2.035   -1.957
+seed_2027_arm_native_target__0_charge__2_67.pdb 470    2.669    2.692
+seed_2028_arm_native_target__0_charge__4_90.pdb 470    4.898    6.041
+seed_2029_arm_native_target__0_charge__2_01.pdb 470     2.01    2.269
+
+Q_phys 均值 = 1.964 ± 3.94  (Q_design 均值 = 1.464)
+H4 判定: |Q_phys − target| = 1.964 → PASS（阈值 2.0，与 H2 一致）
+== PROPKA 1BJ4/n8 target=-8 ==
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge__0_42.pdb                  470    0.421    3.043
+seed_2000_arm_n8_target_-8_charge_-13_01.pdb 470  -13.011  -12.549
+seed_2001_arm_n8_target_-8_charge_-4_17.pdb 470   -4.173   -3.891
+seed_2002_arm_n8_target_-8_charge_-3_22.pdb 470   -3.216   -2.749
+seed_2003_arm_n8_target_-8_charge_-5_18.pdb 470   -5.177    -4.78
+seed_2004_arm_n8_target_-8_charge__1_01.pdb 470    1.005    1.286
+seed_2005_arm_n8_target_-8_charge_-2_96.pdb 470   -2.956   -2.981
+seed_2006_arm_n8_target_-8_charge_-5_98.pdb 470   -5.983   -5.605
+seed_2007_arm_n8_target_-8_charge_-1_18.pdb 470    -1.18   -0.916
+seed_2008_arm_n8_target_-8_charge_-4_99.pdb 470   -4.992   -5.022
+seed_2009_arm_n8_target_-8_charge__1_01.pdb 470    1.007    1.165
+seed_2010_arm_n8_target_-8_charge_-4_18.pdb 470    -4.18   -3.576
+seed_2011_arm_n8_target_-8_charge_-2_07.pdb 470   -2.069   -1.472
+seed_2012_arm_n8_target_-8_charge_-5_94.pdb 470   -5.943   -5.937
+seed_2013_arm_n8_target_-8_charge_-13_10.pdb 470  -13.104  -12.931
+seed_2014_arm_n8_target_-8_charge_-2_11.pdb 470   -2.107   -1.907
+seed_2015_arm_n8_target_-8_charge_-0_95.pdb 470   -0.954   -0.982
+seed_2016_arm_n8_target_-8_charge_-7_13.pdb 470   -7.129   -6.019
+seed_2017_arm_n8_target_-8_charge_-6_22.pdb 470   -6.217   -5.558
+seed_2018_arm_n8_target_-8_charge_-9_03.pdb 470    -9.03   -7.752
+seed_2019_arm_n8_target_-8_charge_-4_18.pdb 470   -4.178   -3.575
+seed_2020_arm_n8_target_-8_charge_-6_14.pdb 470   -6.142   -5.916
+seed_2021_arm_n8_target_-8_charge_-3_02.pdb 470    -3.02   -2.891
+seed_2022_arm_n8_target_-8_charge_-12_98.pdb 470  -12.977  -12.817
+seed_2023_arm_n8_target_-8_charge_-5_94.pdb 470   -5.944   -5.909
+seed_2024_arm_n8_target_-8_charge_-5_21.pdb 470   -5.211   -4.484
+seed_2025_arm_n8_target_-8_charge_-10_06.pdb 470  -10.063   -8.863
+seed_2026_arm_n8_target_-8_charge_-5_04.pdb 470   -5.041   -4.802
+seed_2027_arm_n8_target_-8_charge__1_67.pdb 470    1.674    2.117
+seed_2028_arm_n8_target_-8_charge_-9_25.pdb 470   -9.253   -7.954
+seed_2029_arm_n8_target_-8_charge_-4_95.pdb 470   -4.953   -4.737
+
+Q_phys 均值 = -4.483 ± 3.915  (Q_design 均值 = -4.971)
+H4 判定: |Q_phys − target| = 3.517 → FAIL（阈值 2.0，与 H2 一致）
+PROPKA_CHECK_DONE
