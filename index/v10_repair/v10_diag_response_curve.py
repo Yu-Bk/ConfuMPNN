@@ -50,6 +50,7 @@ from src.condition_embedding import make_condition_vector  # noqa: E402
 from src.conditioned_sampler import conditioned_sample  # noqa: E402
 from src.differentiable_charge import net_charge  # noqa: E402
 from run_guided import load_model, load_condition_encoder, seq_to_string  # noqa: E402
+from run_guided import load_calibration  # noqa: E402
 
 
 def linfit(xs, ys):
@@ -87,6 +88,11 @@ def main():
     ap.add_argument("--temperature", type=float, default=0.3)
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--num_ligand_atoms", type=int, default=16)
+    ap.add_argument("--calibrate", default="off", choices=["off", "auto", "global"],
+                    help="电荷校准（v12 7.1 验证）：auto=读校准表 per-protein+全局回退，"
+                         "global=强制全局；默认 off（测原始响应）。校准后跑出的 slope 应≈1")
+    ap.add_argument("--calibration_file", default="output/charge_calibration.json",
+                    help="校准表 JSON（index/v10_repair/build_calibration.py 生成）")
     ap.add_argument("--out", required=True, help="结果 JSON 路径")
     args = ap.parse_args()
 
@@ -149,13 +155,22 @@ def main():
         tgt_list = list(targets)
         if args.include_native:
             tgt_list.append(round(q_nat))
+        # v12 7.1 校准（可选）：tgt_eff = (tgt − intercept) / slope。
+        # 校准后系统"desired target → 实际生成电荷"应≈1（验证校准抵消编码器响应增益）。
+        cal_slope = cal_off = None
+        if args.calibrate != "off":
+            cal_slope, cal_off, _, _ = load_calibration(
+                args.calibration_file, name, force_global=(args.calibrate == "global"))
         means, devs, recs = [], [], []
         for tgt in tgt_list:
+            tgt_eff = tgt
+            if cal_slope is not None:
+                tgt_eff = (tgt - cal_off) / cal_slope
             charges, rec_tmp = [], []
             for k in range(args.n):
                 torch.manual_seed(args.seed_base + k)
                 fd["randn"] = torch.randn(1, L)
-                cond_vec = make_condition_vector(args.pH, net_charge=tgt)
+                cond_vec = make_condition_vector(args.pH, net_charge=tgt_eff)
                 out = conditioned_sample(model, enc, fd, cond_vec, device)
                 seq = seq_to_string(out["S"][0].cpu().numpy())
                 charges.append(float(net_charge(seq, args.pH)))

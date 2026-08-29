@@ -56,6 +56,11 @@ _DEFAULT_WEIGHTS = (
     / "mompnn_temberture_tm_esm_6_4_4_b01.ckpt"
 )
 
+# 电荷校准表（v12 §7.1）：由 index/v10_repair/build_calibration.py 从响应曲线诊断
+# 拟合生成（生成电荷 ≈ slope·target + intercept）。推理时 target_eff=(desired−intercept)/slope
+# 抵消编码器学到的响应增益（v10/v11 诊断 slope≈1.5~2，靠它拉回 1）。
+_DEFAULT_CALIBRATION = _CODE_DIR.parent / "output" / "charge_calibration.json"
+
 import yaml  # noqa: E402
 
 from data_utils import featurize, parse_PDB, restype_int_to_str  # noqa: E402
@@ -99,6 +104,12 @@ def parse_args():
     p.add_argument("--no_calibration", action="store_true",
                    help="关闭电荷校准（默认开：按 condition_defaults.yaml 的 gain/offset 线性校准 "
                         "target_eff=(desired-offset)/gain，抵消条件注入的 ~2.57× 电荷过冲）")
+    p.add_argument("--calibrate", default="auto", choices=["auto", "global", "off"],
+                   help="电荷校准模式（v12 7.1，优先于 --no_calibration）：auto=读校准表，"
+                        "per-protein 匹配、无匹配回退全局；global=强制全局校准；off=不校准。"
+                        "校准表默认 output/charge_calibration.json")
+    p.add_argument("--calibration_file", default=str(_DEFAULT_CALIBRATION),
+                   help="校准表 JSON 路径（index/v10_repair/build_calibration.py 生成）")
     p.add_argument("--no_auto_target_charge", action="store_true",
                    help="关闭 pH-only 自动补全（v3 D1/A9）。默认：--target_charge 未给出时自动补全 "
                         "target=native_charge@pH（保持 native 电荷行为）；本开关回到旧 flag=0 语义对照")
@@ -109,6 +120,37 @@ def parse_args():
     p.add_argument("--out_dir", default=None,
                    help="输出目录（默认 code/output/guided_<pdb>_pH<pH>）")
     return p.parse_args()
+
+
+def load_calibration(path, pdb_stem, force_global=False):
+    """读取电荷校准表（v12 §7.1），返回 (slope, intercept, mode, label)。
+
+    - per-protein 优先：校准表里该蛋白有自己的 (slope, intercept)（auto 模式）；
+    - 回退 global：跨蛋白拟合的全局直线（--calibrate global 时强制走这条）；
+    - 表不存在/不可读：返回 (None, None, None, None)（调用方回退 yaml 旧式校准或不做）。
+    """
+    import json as _json
+
+    path = Path(path)
+    if not path.is_file():
+        return None, None, None, None
+    try:
+        cal = _json.load(open(path))
+    except Exception:
+        return None, None, None, None
+    per = cal.get("per_protein", {})
+    g = cal.get("global", {})
+    slope = off = None
+    mode = None
+    if not force_global and pdb_stem in per and per[pdb_stem] is not None:
+        slope, off = per[pdb_stem].get("slope"), per[pdb_stem].get("intercept")
+        mode = f"per-protein({pdb_stem})"
+    elif g:
+        slope, off = g.get("slope"), g.get("intercept")
+        mode = "global"
+    if slope is None or off is None:
+        return None, None, None, None
+    return float(slope), float(off), mode, cal.get("label", "?")
 
 
 def load_model(weights, device, model_type="auto"):
@@ -258,25 +300,35 @@ def main():
         mode = "phase3_conditioned" if args.cond_mode == "conditioned" else "phase3_baseline"
         cond_encoder = load_condition_encoder(args.cond_encoder, device)
 
-        # 电荷校准（默认开）：target_eff = (desired - offset) / gain
-        # 抵消条件注入的 ~2.57× 电荷过冲（机制见 condition_defaults.yaml）
-        # 自动补全的 native target 不做校准（native 电荷本就在训练分布内，无过冲可补偿）
+        # 电荷校准（v12 §7.1）：target_eff = (desired − intercept) / slope
+        # 抵消 ConditionEncoder 学到的响应增益（v10/v11 诊断 slope≈1.5~2，拉回 1）。
+        # 优先读校准表（per-protein + global 回退，build_calibration.py 生成）；
+        # 表不可用则回退 yaml 旧式 gain/offset；auto target 不校准（native 电荷本在训练分布内）。
         target_eff = args.target_charge
         calib_note = "（未指定 target，无校准）"
         if auto_target:
             calib_note = f"（自动补全 target={native_charge:+.2f}，跳过校准）"
-        elif args.target_charge is not None and not args.no_calibration:
-            with open(_CODE_DIR / "configs" / "condition_defaults.yaml") as f:
-                cc = yaml.safe_load(f)["condition_defaults"].get("charge_calibration", {})
-            gain, offset = cc.get("gain", 2.57), cc.get("offset", 0.16)
-            if cc.get("enabled", True):
-                target_eff = (args.target_charge - offset) / gain
+        elif args.target_charge is not None and not args.no_calibration and args.calibrate != "off":
+            pname = Path(args.pdb).stem
+            slope, offset, mode, label = load_calibration(
+                args.calibration_file, pname, force_global=(args.calibrate == "global"))
+            if slope is not None:
+                target_eff = (args.target_charge - offset) / slope
                 calib_note = (f"target {args.target_charge} → 校准后 target_eff "
-                              f"{target_eff:.2f}（gain={gain}, offset={offset}）")
+                              f"{target_eff:.2f}（{label} {mode}: slope={slope:.3f} off={offset:.3f}）")
             else:
-                calib_note = "（config 中 charge_calibration.enabled=false，未校准）"
+                # 校准表不可用 → 回退 yaml 旧式线性校准
+                with open(_CODE_DIR / "configs" / "condition_defaults.yaml") as f:
+                    cc = yaml.safe_load(f)["condition_defaults"].get("charge_calibration", {})
+                gain, offset = cc.get("gain", 2.57), cc.get("offset", 0.16)
+                if cc.get("enabled", True):
+                    target_eff = (args.target_charge - offset) / gain
+                    calib_note = (f"target {args.target_charge} → 校准后 target_eff "
+                                  f"{target_eff:.2f}（yaml gain={gain}, offset={offset}）")
+                else:
+                    calib_note = f"（校准表 {args.calibration_file} 不可用且 yaml enabled=false，未校准）"
         elif args.target_charge is not None:
-            calib_note = "（--no_calibration，未校准）"
+            calib_note = "（--no_calibration / --calibrate off，未校准）"
 
         cond_vec = make_condition_vector(args.pH, net_charge=target_eff).to(device)
         print(f"[3] 条件注入模式: cond_mode={args.cond_mode}, "
