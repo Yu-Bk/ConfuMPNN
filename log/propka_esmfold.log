@@ -1,0 +1,211 @@
+ESMFold 加载完成（cuda）
+[output/generalization_v11a_calib/protein/1C6O/pH7.4/arm_native/seqs.fa] 共 31 条序列
+  seed_2000 arm=native target=-1   L= 177  mean_pLDDT= 81.89
+  seed_2001 arm=native target=-1   L= 177  mean_pLDDT= 81.16
+  seed_2002 arm=native target=-1   L= 177  mean_pLDDT= 84.33
+  seed_2003 arm=native target=-1   L= 177  mean_pLDDT= 80.51
+  seed_2004 arm=native target=-1   L= 177  mean_pLDDT= 89.04
+  seed_2005 arm=native target=-1   L= 177  mean_pLDDT= 76.85
+  seed_2006 arm=native target=-1   L= 177  mean_pLDDT= 83.24
+  seed_2007 arm=native target=-1   L= 177  mean_pLDDT= 83.80
+  seed_2008 arm=native target=-1   L= 177  mean_pLDDT= 82.24
+  seed_2009 arm=native target=-1   L= 177  mean_pLDDT= 88.05
+  seed_2010 arm=native target=-1   L= 177  mean_pLDDT= 84.37
+  seed_2011 arm=native target=-1   L= 177  mean_pLDDT= 83.53
+  seed_2012 arm=native target=-1   L= 177  mean_pLDDT= 81.72
+  seed_2013 arm=native target=-1   L= 177  mean_pLDDT= 83.38
+  seed_2014 arm=native target=-1   L= 177  mean_pLDDT= 82.59
+  seed_2015 arm=native target=-1   L= 177  mean_pLDDT= 78.82
+  seed_2016 arm=native target=-1   L= 177  mean_pLDDT= 79.65
+  seed_2017 arm=native target=-1   L= 177  mean_pLDDT= 87.39
+  seed_2018 arm=native target=-1   L= 177  mean_pLDDT= 81.29
+  seed_2019 arm=native target=-1   L= 177  mean_pLDDT= 88.27
+  seed_2020 arm=native target=-1   L= 177  mean_pLDDT= 90.06
+  seed_2021 arm=native target=-1   L= 177  mean_pLDDT= 80.63
+  seed_2022 arm=native target=-1   L= 177  mean_pLDDT= 80.39
+  seed_2023 arm=native target=-1   L= 177  mean_pLDDT= 82.34
+  seed_2024 arm=native target=-1   L= 177  mean_pLDDT= 89.11
+  seed_2025 arm=native target=-1   L= 177  mean_pLDDT= 81.33
+  seed_2026 arm=native target=-1   L= 177  mean_pLDDT= 83.52
+  seed_2027 arm=native target=-1   L= 177  mean_pLDDT= 90.35
+  seed_2028 arm=native target=-1   L= 177  mean_pLDDT= 82.17
+  seed_2029 arm=native target=-1   L= 177  mean_pLDDT= 82.21
+  native charge=-14.31             L= 177  mean_pLDDT= 85.56
+  已写入 output/propka_prep/1C6O/native/plddt.csv
+done 1C6O/native
+ESMFold 加载完成（cuda）
+[output/generalization_v11a_calib/protein/1C6O/pH7.4/arm_n8/seqs.fa] 共 31 条序列
+  seed_2000 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 81.44
+  seed_2001 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 81.57
+  seed_2002 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 84.71
+  seed_2003 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 77.46
+  seed_2004 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 86.42
+  seed_2005 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 81.05
+  seed_2006 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 82.61
+  seed_2007 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 82.24
+  seed_2008 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 84.46
+  seed_2009 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 86.00
+  seed_2010 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 84.76
+  seed_2011 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 84.39
+  seed_2012 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 38.56
+  seed_2013 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 81.89
+  seed_2014 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 83.36
+  seed_2015 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 79.42
+  seed_2016 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 79.25
+  seed_2017 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 82.09
+  seed_2018 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 81.42
+  seed_2019 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 84.53
+  seed_2020 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 85.19
+  seed_2021 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 85.07
+  seed_2022 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 83.16
+  seed_2023 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 87.98
+  seed_2024 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 87.63
+  seed_2025 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 80.78
+  seed_2026 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 83.69
+  seed_2027 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 89.94
+  seed_2028 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 80.69
+  seed_2029 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 81.49
+  native charge=-14.31             L= 177  mean_pLDDT= 85.56
+  已写入 output/propka_prep/1C6O/n8/plddt.csv
+done 1C6O/n8
+ESMFold 加载完成（cuda）
+[output/generalization_v11a_calib/protein/1AZM/pH7.4/arm_native/seqs.fa] 共 31 条序列
+  seed_2000 arm=native target=-2   L= 258  mean_pLDDT= 86.57
+  seed_2001 arm=native target=-2   L= 258  mean_pLDDT= 87.52
+  seed_2002 arm=native target=-2   L= 258  mean_pLDDT= 86.59
+  seed_2003 arm=native target=-2   L= 258  mean_pLDDT= 88.14
+  seed_2004 arm=native target=-2   L= 258  mean_pLDDT= 86.38
+  seed_2005 arm=native target=-2   L= 258  mean_pLDDT= 85.59
+  seed_2006 arm=native target=-2   L= 258  mean_pLDDT= 88.69
+  seed_2007 arm=native target=-2   L= 258  mean_pLDDT= 87.93
+  seed_2008 arm=native target=-2   L= 258  mean_pLDDT= 88.47
+  seed_2009 arm=native target=-2   L= 258  mean_pLDDT= 88.55
+  seed_2010 arm=native target=-2   L= 258  mean_pLDDT= 86.20
+  seed_2011 arm=native target=-2   L= 258  mean_pLDDT= 85.48
+  seed_2012 arm=native target=-2   L= 258  mean_pLDDT= 88.65
+  seed_2013 arm=native target=-2   L= 258  mean_pLDDT= 88.07
+  seed_2014 arm=native target=-2   L= 258  mean_pLDDT= 87.46
+  seed_2015 arm=native target=-2   L= 258  mean_pLDDT= 86.78
+  seed_2016 arm=native target=-2   L= 258  mean_pLDDT= 87.81
+  seed_2017 arm=native target=-2   L= 258  mean_pLDDT= 86.26
+  seed_2018 arm=native target=-2   L= 258  mean_pLDDT= 86.00
+  seed_2019 arm=native target=-2   L= 258  mean_pLDDT= 84.24
+  seed_2020 arm=native target=-2   L= 258  mean_pLDDT= 86.62
+  seed_2021 arm=native target=-2   L= 258  mean_pLDDT= 86.63
+  seed_2022 arm=native target=-2   L= 258  mean_pLDDT= 86.71
+  seed_2023 arm=native target=-2   L= 258  mean_pLDDT= 88.56
+  seed_2024 arm=native target=-2   L= 258  mean_pLDDT= 83.47
+  seed_2025 arm=native target=-2   L= 258  mean_pLDDT= 86.38
+  seed_2026 arm=native target=-2   L= 258  mean_pLDDT= 87.16
+  seed_2027 arm=native target=-2   L= 258  mean_pLDDT= 89.13
+  seed_2028 arm=native target=-2   L= 258  mean_pLDDT= 86.67
+  seed_2029 arm=native target=-2   L= 258  mean_pLDDT= 87.28
+  native charge=-1.71              L= 258  mean_pLDDT= 90.17
+  已写入 output/propka_prep/1AZM/native/plddt.csv
+done 1AZM/native
+ESMFold 加载完成（cuda）
+[output/generalization_v11a_calib/protein/1AZM/pH7.4/arm_n8/seqs.fa] 共 31 条序列
+  seed_2000 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 83.96
+  seed_2001 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.23
+  seed_2002 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 88.23
+  seed_2003 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 85.51
+  seed_2004 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 84.70
+  seed_2005 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 84.11
+  seed_2006 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.01
+  seed_2007 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 87.08
+  seed_2008 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.94
+  seed_2009 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.00
+  seed_2010 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 83.82
+  seed_2011 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 80.57
+  seed_2012 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 85.61
+  seed_2013 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.68
+  seed_2014 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 84.79
+  seed_2015 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 85.44
+  seed_2016 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 87.11
+  seed_2017 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 83.75
+  seed_2018 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 85.32
+  seed_2019 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 84.97
+  seed_2020 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 82.77
+  seed_2021 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 83.26
+  seed_2022 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 84.86
+  seed_2023 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 84.50
+  seed_2024 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 84.41
+  seed_2025 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.35
+  seed_2026 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.20
+  seed_2027 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 83.12
+  seed_2028 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 83.54
+  seed_2029 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 85.68
+  native charge=-1.71              L= 258  mean_pLDDT= 90.17
+  已写入 output/propka_prep/1AZM/n8/plddt.csv
+done 1AZM/n8
+ESMFold 加载完成（cuda）
+[output/generalization_v11a_calib/protein/1BJ4/pH7.4/arm_native/seqs.fa] 共 31 条序列
+  seed_2000 arm=native target=+0   L= 470  mean_pLDDT= 74.46
+  seed_2001 arm=native target=+0   L= 470  mean_pLDDT= 79.28
+  seed_2002 arm=native target=+0   L= 470  mean_pLDDT= 79.21
+  seed_2003 arm=native target=+0   L= 470  mean_pLDDT= 70.19
+  seed_2004 arm=native target=+0   L= 470  mean_pLDDT= 79.42
+  seed_2005 arm=native target=+0   L= 470  mean_pLDDT= 73.30
+  seed_2006 arm=native target=+0   L= 470  mean_pLDDT= 75.93
+  seed_2007 arm=native target=+0   L= 470  mean_pLDDT= 81.23
+  seed_2008 arm=native target=+0   L= 470  mean_pLDDT= 67.87
+  seed_2009 arm=native target=+0   L= 470  mean_pLDDT= 70.62
+  seed_2010 arm=native target=+0   L= 470  mean_pLDDT= 74.54
+  seed_2011 arm=native target=+0   L= 470  mean_pLDDT= 77.31
+  seed_2012 arm=native target=+0   L= 470  mean_pLDDT= 77.90
+  seed_2013 arm=native target=+0   L= 470  mean_pLDDT= 81.91
+  seed_2014 arm=native target=+0   L= 470  mean_pLDDT= 74.48
+  seed_2015 arm=native target=+0   L= 470  mean_pLDDT= 75.85
+  seed_2016 arm=native target=+0   L= 470  mean_pLDDT= 74.26
+  seed_2017 arm=native target=+0   L= 470  mean_pLDDT= 81.23
+  seed_2018 arm=native target=+0   L= 470  mean_pLDDT= 77.20
+  seed_2019 arm=native target=+0   L= 470  mean_pLDDT= 79.60
+  seed_2020 arm=native target=+0   L= 470  mean_pLDDT= 78.14
+  seed_2021 arm=native target=+0   L= 470  mean_pLDDT= 71.91
+  seed_2022 arm=native target=+0   L= 470  mean_pLDDT= 77.10
+  seed_2023 arm=native target=+0   L= 470  mean_pLDDT= 80.83
+  seed_2024 arm=native target=+0   L= 470  mean_pLDDT= 74.01
+  seed_2025 arm=native target=+0   L= 470  mean_pLDDT= 76.73
+  seed_2026 arm=native target=+0   L= 470  mean_pLDDT= 78.18
+  seed_2027 arm=native target=+0   L= 470  mean_pLDDT= 75.16
+  seed_2028 arm=native target=+0   L= 470  mean_pLDDT= 74.99
+  seed_2029 arm=native target=+0   L= 470  mean_pLDDT= 78.46
+  native charge=+0.42              L= 470  mean_pLDDT= 81.98
+  已写入 output/propka_prep/1BJ4/native/plddt.csv
+done 1BJ4/native
+ESMFold 加载完成（cuda）
+[output/generalization_v11a_calib/protein/1BJ4/pH7.4/arm_n8/seqs.fa] 共 31 条序列
+  seed_2000 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 78.16
+  seed_2001 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 78.83
+  seed_2002 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 81.51
+  seed_2003 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 70.76
+  seed_2004 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 78.83
+  seed_2005 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 73.83
+  seed_2006 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 77.83
+  seed_2007 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 80.96
+  seed_2008 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 68.05
+  seed_2009 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 76.16
+  seed_2010 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 70.92
+  seed_2011 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 78.35
+  seed_2012 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 77.60
+  seed_2013 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 80.93
+  seed_2014 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 75.99
+  seed_2015 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 76.37
+  seed_2016 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 74.15
+  seed_2017 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 71.83
+  seed_2018 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 80.99
+  seed_2019 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 70.41
+  seed_2020 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 80.14
+  seed_2021 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 73.39
+  seed_2022 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 70.05
+  seed_2023 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 81.93
+  seed_2024 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 76.83
+  seed_2025 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 71.69
+  seed_2026 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 76.60
+  seed_2027 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 79.74
+  seed_2028 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 79.58
+  seed_2029 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 77.21
+  native charge=+0.42              L= 470  mean_pLDDT= 81.98
+  已写入 output/propka_prep/1BJ4/n8/plddt.csv
+done 1BJ4/n8
+PROPKA_ESMFOLD_DONE

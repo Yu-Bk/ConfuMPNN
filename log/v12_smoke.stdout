@@ -1,0 +1,10 @@
+[11:40:07] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[11:40:07] device=cuda:6  epochs=1  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[11:40:07] [v10 A] 条件解耦开：target 与 native 无关 Uniform[-12.0,12.0]
+[11:40:08] backbone: MoMPNN 冻结（1.66M 参数，不更新）
+[11:40:08] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[11:40:08] 数据：50 结构域 × 8 pH = 400 样本（data/cath/labels_balanced_v7.npz）
+[11:40:10] 预解析完成，缓存 encode 特征 ~0.19GB
+[11:40:10] 开始训练：1 epochs × 50 域/epoch = 50 steps
+[11:40:12] epoch 1/1  total=4.8141  ce=1.7933  charge=5.3699  kl=0.0137  keep=0.6703  [cd self=5.044  mild=5.905  extreme=6.336]  elapsed=0.0min
+[11:40:12] 训练完成。总耗时 0.0min。checkpoint 在 output/finetune_v12_smoke/

@@ -1,0 +1,1652 @@
+ESMFold 加载完成（cuda:4）
+批量模式：找到 50 个 seqs.fa
+[output/generalization_v12_1_calib/protein/1A65/pH7.4/arm_n2/seqs.fa] 共 31 条序列
+  seed_2000 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 80.47
+  seed_2001 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 81.13
+  seed_2002 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 81.10
+  seed_2003 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 83.64
+  seed_2004 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 80.28
+  seed_2005 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 78.70
+  seed_2006 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 80.97
+  seed_2007 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 80.91
+  seed_2008 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 81.48
+  seed_2009 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 83.04
+  seed_2010 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 83.15
+  seed_2011 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 81.29
+  seed_2012 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 81.78
+  seed_2013 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 82.39
+  seed_2014 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 82.38
+  seed_2015 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 81.40
+  seed_2016 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 81.12
+  seed_2017 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 81.39
+  seed_2018 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 82.09
+  seed_2019 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 81.32
+  seed_2020 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 82.07
+  seed_2021 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 82.21
+  seed_2022 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 78.96
+  seed_2023 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 82.26
+  seed_2024 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 78.89
+  seed_2025 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 81.87
+  seed_2026 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 81.98
+  seed_2027 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 83.18
+  seed_2028 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 81.26
+  seed_2029 arm=n2 target=-29 ch   L= 504  mean_pLDDT= 81.49
+  native charge=-26.85             L= 504  mean_pLDDT= 87.88
+  已写入 output/generalization_v12_1_calib/protein/1A65/pH7.4/arm_n2/plddt.csv
+[output/generalization_v12_1_calib/protein/1A65/pH7.4/arm_n8/seqs.fa] 共 31 条序列
+  seed_2000 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 77.75
+  seed_2001 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 80.87
+  seed_2002 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 82.27
+  seed_2003 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 82.94
+  seed_2004 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 80.33
+  seed_2005 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 77.80
+  seed_2006 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 80.15
+  seed_2007 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 81.13
+  seed_2008 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 80.66
+  seed_2009 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 83.79
+  seed_2010 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 80.99
+  seed_2011 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 79.34
+  seed_2012 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 80.58
+  seed_2013 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 81.06
+  seed_2014 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 83.33
+  seed_2015 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 81.66
+  seed_2016 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 81.28
+  seed_2017 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 81.27
+  seed_2018 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 82.54
+  seed_2019 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 82.36
+  seed_2020 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 81.94
+  seed_2021 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 79.77
+  seed_2022 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 77.56
+  seed_2023 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 81.18
+  seed_2024 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 81.22
+  seed_2025 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 81.81
+  seed_2026 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 80.59
+  seed_2027 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 83.23
+  seed_2028 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 80.07
+  seed_2029 arm=n8 target=-35 ch   L= 504  mean_pLDDT= 80.24
+  native charge=-26.85             L= 504  mean_pLDDT= 87.88
+  已写入 output/generalization_v12_1_calib/protein/1A65/pH7.4/arm_n8/plddt.csv
+[output/generalization_v12_1_calib/protein/1A65/pH7.4/arm_native/seqs.fa] 共 31 条序列
+  seed_2000 arm=native target=-2   L= 504  mean_pLDDT= 80.43
+  seed_2001 arm=native target=-2   L= 504  mean_pLDDT= 81.84
+  seed_2002 arm=native target=-2   L= 504  mean_pLDDT= 81.48
+  seed_2003 arm=native target=-2   L= 504  mean_pLDDT= 84.12
+  seed_2004 arm=native target=-2   L= 504  mean_pLDDT= 80.08
+  seed_2005 arm=native target=-2   L= 504  mean_pLDDT= 78.80
+  seed_2006 arm=native target=-2   L= 504  mean_pLDDT= 82.04
+  seed_2007 arm=native target=-2   L= 504  mean_pLDDT= 80.89
+  seed_2008 arm=native target=-2   L= 504  mean_pLDDT= 81.65
+  seed_2009 arm=native target=-2   L= 504  mean_pLDDT= 83.97
+  seed_2010 arm=native target=-2   L= 504  mean_pLDDT= 82.48
+  seed_2011 arm=native target=-2   L= 504  mean_pLDDT= 81.15
+  seed_2012 arm=native target=-2   L= 504  mean_pLDDT= 81.54
+  seed_2013 arm=native target=-2   L= 504  mean_pLDDT= 82.04
+  seed_2014 arm=native target=-2   L= 504  mean_pLDDT= 82.62
+  seed_2015 arm=native target=-2   L= 504  mean_pLDDT= 82.05
+  seed_2016 arm=native target=-2   L= 504  mean_pLDDT= 82.14
+  seed_2017 arm=native target=-2   L= 504  mean_pLDDT= 80.85
+  seed_2018 arm=native target=-2   L= 504  mean_pLDDT= 80.12
+  seed_2019 arm=native target=-2   L= 504  mean_pLDDT= 82.51
+  seed_2020 arm=native target=-2   L= 504  mean_pLDDT= 81.66
+  seed_2021 arm=native target=-2   L= 504  mean_pLDDT= 82.86
+  seed_2022 arm=native target=-2   L= 504  mean_pLDDT= 79.99
+  seed_2023 arm=native target=-2   L= 504  mean_pLDDT= 81.40
+  seed_2024 arm=native target=-2   L= 504  mean_pLDDT= 80.48
+  seed_2025 arm=native target=-2   L= 504  mean_pLDDT= 83.01
+  seed_2026 arm=native target=-2   L= 504  mean_pLDDT= 82.54
+  seed_2027 arm=native target=-2   L= 504  mean_pLDDT= 83.53
+  seed_2028 arm=native target=-2   L= 504  mean_pLDDT= 82.88
+  seed_2029 arm=native target=-2   L= 504  mean_pLDDT= 81.40
+  native charge=-26.85             L= 504  mean_pLDDT= 87.88
+  已写入 output/generalization_v12_1_calib/protein/1A65/pH7.4/arm_native/plddt.csv
+[output/generalization_v12_1_calib/protein/1A65/pH7.4/arm_p2/seqs.fa] 共 31 条序列
+  seed_2000 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 81.22
+  seed_2001 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 82.70
+  seed_2002 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 78.90
+  seed_2003 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 82.63
+  seed_2004 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 80.46
+  seed_2005 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 79.37
+  seed_2006 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 82.50
+  seed_2007 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 80.52
+  seed_2008 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 80.45
+  seed_2009 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 81.62
+  seed_2010 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 82.08
+  seed_2011 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 81.40
+  seed_2012 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 81.47
+  seed_2013 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 82.27
+  seed_2014 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 82.80
+  seed_2015 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 83.42
+  seed_2016 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 81.92
+  seed_2017 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 79.99
+  seed_2018 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 81.49
+  seed_2019 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 81.97
+  seed_2020 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 81.65
+  seed_2021 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 82.17
+  seed_2022 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 80.51
+  seed_2023 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 80.82
+  seed_2024 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 79.53
+  seed_2025 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 82.43
+  seed_2026 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 82.67
+  seed_2027 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 83.44
+  seed_2028 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 83.40
+  seed_2029 arm=p2 target=-25 ch   L= 504  mean_pLDDT= 82.93
+  native charge=-26.85             L= 504  mean_pLDDT= 87.88
+  已写入 output/generalization_v12_1_calib/protein/1A65/pH7.4/arm_p2/plddt.csv
+[output/generalization_v12_1_calib/protein/1A65/pH7.4/arm_p8/seqs.fa] 共 31 条序列
+  seed_2000 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 81.76
+  seed_2001 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 83.16
+  seed_2002 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 83.09
+  seed_2003 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 86.58
+  seed_2004 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 81.32
+  seed_2005 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 81.07
+  seed_2006 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 83.56
+  seed_2007 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 81.11
+  seed_2008 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 82.08
+  seed_2009 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 81.92
+  seed_2010 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 82.08
+  seed_2011 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 82.31
+  seed_2012 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 83.46
+  seed_2013 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 82.86
+  seed_2014 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 83.18
+  seed_2015 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 82.55
+  seed_2016 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 84.12
+  seed_2017 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 83.22
+  seed_2018 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 81.82
+  seed_2019 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 82.26
+  seed_2020 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 82.76
+  seed_2021 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 83.19
+  seed_2022 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 81.95
+  seed_2023 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 83.53
+  seed_2024 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 82.22
+  seed_2025 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 83.73
+  seed_2026 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 80.00
+  seed_2027 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 83.26
+  seed_2028 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 82.82
+  seed_2029 arm=p8 target=-19 ch   L= 504  mean_pLDDT= 84.34
+  native charge=-26.85             L= 504  mean_pLDDT= 87.88
+  已写入 output/generalization_v12_1_calib/protein/1A65/pH7.4/arm_p8/plddt.csv
+[output/generalization_v12_1_calib/protein/1AG0/pH7.4/arm_n2/seqs.fa] 共 31 条序列
+  seed_2000 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 85.95
+  seed_2001 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 84.01
+  seed_2002 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 83.71
+  seed_2003 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 86.50
+  seed_2004 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 86.22
+  seed_2005 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 85.81
+  seed_2006 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 85.49
+  seed_2007 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 85.00
+  seed_2008 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 87.79
+  seed_2009 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 85.32
+  seed_2010 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 86.90
+  seed_2011 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 86.99
+  seed_2012 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 86.69
+  seed_2013 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 85.50
+  seed_2014 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 86.53
+  seed_2015 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 81.74
+  seed_2016 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 81.26
+  seed_2017 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 87.71
+  seed_2018 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 86.68
+  seed_2019 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 85.49
+  seed_2020 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 83.45
+  seed_2021 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 84.67
+  seed_2022 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 86.38
+  seed_2023 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 85.66
+  seed_2024 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 87.53
+  seed_2025 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 85.30
+  seed_2026 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 87.42
+  seed_2027 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 86.97
+  seed_2028 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 87.18
+  seed_2029 arm=n2 target=-10 ch   L= 256  mean_pLDDT= 83.00
+  native charge=-8.16              L= 256  mean_pLDDT= 89.65
+  已写入 output/generalization_v12_1_calib/protein/1AG0/pH7.4/arm_n2/plddt.csv
+[output/generalization_v12_1_calib/protein/1AG0/pH7.4/arm_n8/seqs.fa] 共 31 条序列
+  seed_2000 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 85.74
+  seed_2001 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 84.72
+  seed_2002 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 86.27
+  seed_2003 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 85.56
+  seed_2004 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 86.32
+  seed_2005 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 85.90
+  seed_2006 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 85.37
+  seed_2007 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 85.72
+  seed_2008 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 85.28
+  seed_2009 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 85.69
+  seed_2010 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 85.84
+  seed_2011 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 86.19
+  seed_2012 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 86.89
+  seed_2013 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 86.20
+  seed_2014 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 84.93
+  seed_2015 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 82.91
+  seed_2016 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 85.84
+  seed_2017 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 84.54
+  seed_2018 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 86.44
+  seed_2019 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 83.68
+  seed_2020 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 84.67
+  seed_2021 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 84.66
+  seed_2022 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 83.66
+  seed_2023 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 86.81
+  seed_2024 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 85.87
+  seed_2025 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 85.49
+  seed_2026 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 85.78
+  seed_2027 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 89.50
+  seed_2028 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 86.33
+  seed_2029 arm=n8 target=-16 ch   L= 256  mean_pLDDT= 86.53
+  native charge=-8.16              L= 256  mean_pLDDT= 89.65
+  已写入 output/generalization_v12_1_calib/protein/1AG0/pH7.4/arm_n8/plddt.csv
+[output/generalization_v12_1_calib/protein/1AG0/pH7.4/arm_native/seqs.fa] 共 31 条序列
+  seed_2000 arm=native target=-8   L= 256  mean_pLDDT= 85.46
+  seed_2001 arm=native target=-8   L= 256  mean_pLDDT= 84.16
+  seed_2002 arm=native target=-8   L= 256  mean_pLDDT= 84.27
+  seed_2003 arm=native target=-8   L= 256  mean_pLDDT= 86.23
+  seed_2004 arm=native target=-8   L= 256  mean_pLDDT= 85.72
+  seed_2005 arm=native target=-8   L= 256  mean_pLDDT= 86.69
+  seed_2006 arm=native target=-8   L= 256  mean_pLDDT= 84.77
+  seed_2007 arm=native target=-8   L= 256  mean_pLDDT= 82.89
+  seed_2008 arm=native target=-8   L= 256  mean_pLDDT= 87.35
+  seed_2009 arm=native target=-8   L= 256  mean_pLDDT= 86.41
+  seed_2010 arm=native target=-8   L= 256  mean_pLDDT= 86.93
+  seed_2011 arm=native target=-8   L= 256  mean_pLDDT= 87.01
+  seed_2012 arm=native target=-8   L= 256  mean_pLDDT= 86.38
+  seed_2013 arm=native target=-8   L= 256  mean_pLDDT= 84.40
+  seed_2014 arm=native target=-8   L= 256  mean_pLDDT= 86.51
+  seed_2015 arm=native target=-8   L= 256  mean_pLDDT= 82.16
+  seed_2016 arm=native target=-8   L= 256  mean_pLDDT= 79.28
+  seed_2017 arm=native target=-8   L= 256  mean_pLDDT= 87.88
+  seed_2018 arm=native target=-8   L= 256  mean_pLDDT= 87.18
+  seed_2019 arm=native target=-8   L= 256  mean_pLDDT= 85.39
+  seed_2020 arm=native target=-8   L= 256  mean_pLDDT= 84.31
+  seed_2021 arm=native target=-8   L= 256  mean_pLDDT= 82.59
+  seed_2022 arm=native target=-8   L= 256  mean_pLDDT= 86.59
+  seed_2023 arm=native target=-8   L= 256  mean_pLDDT= 84.68
+  seed_2024 arm=native target=-8   L= 256  mean_pLDDT= 86.70
+  seed_2025 arm=native target=-8   L= 256  mean_pLDDT= 84.66
+  seed_2026 arm=native target=-8   L= 256  mean_pLDDT= 86.68
+  seed_2027 arm=native target=-8   L= 256  mean_pLDDT= 87.46
+  seed_2028 arm=native target=-8   L= 256  mean_pLDDT= 87.22
+  seed_2029 arm=native target=-8   L= 256  mean_pLDDT= 82.89
+  native charge=-8.16              L= 256  mean_pLDDT= 89.65
+  已写入 output/generalization_v12_1_calib/protein/1AG0/pH7.4/arm_native/plddt.csv
+[output/generalization_v12_1_calib/protein/1AG0/pH7.4/arm_p2/seqs.fa] 共 31 条序列
+  seed_2000 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 87.53
+  seed_2001 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 85.47
+  seed_2002 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 85.26
+  seed_2003 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 87.87
+  seed_2004 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 85.13
+  seed_2005 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 86.74
+  seed_2006 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 88.02
+  seed_2007 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 85.82
+  seed_2008 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 87.55
+  seed_2009 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 85.57
+  seed_2010 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 86.75
+  seed_2011 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 87.07
+  seed_2012 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 88.86
+  seed_2013 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 85.52
+  seed_2014 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 86.74
+  seed_2015 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 83.75
+  seed_2016 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 80.88
+  seed_2017 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 88.34
+  seed_2018 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 87.29
+  seed_2019 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 85.60
+  seed_2020 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 84.59
+  seed_2021 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 84.99
+  seed_2022 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 86.57
+  seed_2023 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 85.60
+  seed_2024 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 88.57
+  seed_2025 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 84.92
+  seed_2026 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 83.69
+  seed_2027 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 86.59
+  seed_2028 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 87.15
+  seed_2029 arm=p2 target=-6 cha   L= 256  mean_pLDDT= 84.50
+  native charge=-8.16              L= 256  mean_pLDDT= 89.65
+  已写入 output/generalization_v12_1_calib/protein/1AG0/pH7.4/arm_p2/plddt.csv
+[output/generalization_v12_1_calib/protein/1AG0/pH7.4/arm_p8/seqs.fa] 共 31 条序列
+  seed_2000 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 87.43
+  seed_2001 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 85.97
+  seed_2002 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 85.08
+  seed_2003 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 87.72
+  seed_2004 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 84.15
+  seed_2005 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 87.43
+  seed_2006 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 88.07
+  seed_2007 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 86.78
+  seed_2008 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 83.76
+  seed_2009 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 85.99
+  seed_2010 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 86.13
+  seed_2011 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 86.51
+  seed_2012 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 87.97
+  seed_2013 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 86.63
+  seed_2014 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 85.65
+  seed_2015 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 83.63
+  seed_2016 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 86.53
+  seed_2017 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 87.94
+  seed_2018 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 84.76
+  seed_2019 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 86.15
+  seed_2020 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 87.58
+  seed_2021 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 86.34
+  seed_2022 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 86.16
+  seed_2023 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 85.23
+  seed_2024 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 86.68
+  seed_2025 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 82.88
+  seed_2026 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 84.24
+  seed_2027 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 82.41
+  seed_2028 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 86.47
+  seed_2029 arm=p8 target=+0 cha   L= 256  mean_pLDDT= 84.57
+  native charge=-8.16              L= 256  mean_pLDDT= 89.65
+  已写入 output/generalization_v12_1_calib/protein/1AG0/pH7.4/arm_p8/plddt.csv
+[output/generalization_v12_1_calib/protein/1AS2/pH7.4/arm_n2/seqs.fa] 共 31 条序列
+  seed_2000 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 90.42
+  seed_2001 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 92.96
+  seed_2002 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 91.07
+  seed_2003 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 92.98
+  seed_2004 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 81.78
+  seed_2005 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 91.90
+  seed_2006 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 92.55
+  seed_2007 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 93.73
+  seed_2008 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 91.12
+  seed_2009 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 82.25
+  seed_2010 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 92.45
+  seed_2011 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 83.78
+  seed_2012 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 91.02
+  seed_2013 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 92.22
+  seed_2014 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 81.54
+  seed_2015 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 93.40
+  seed_2016 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 92.42
+  seed_2017 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 84.30
+  seed_2018 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 91.89
+  seed_2019 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 92.93
+  seed_2020 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 79.02
+  seed_2021 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 90.54
+  seed_2022 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 92.15
+  seed_2023 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 91.70
+  seed_2024 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 92.50
+  seed_2025 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 91.02
+  seed_2026 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 82.26
+  seed_2027 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 78.68
+  seed_2028 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 91.70
+  seed_2029 arm=n2 target=-5 cha   L= 312  mean_pLDDT= 85.71
+  native charge=-2.69              L= 312  mean_pLDDT= 83.55
+  已写入 output/generalization_v12_1_calib/protein/1AS2/pH7.4/arm_n2/plddt.csv
+[output/generalization_v12_1_calib/protein/1AS2/pH7.4/arm_n8/seqs.fa] 共 31 条序列
+  seed_2000 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 88.66
+  seed_2001 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 92.92
+  seed_2002 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 91.06
+  seed_2003 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 92.94
+  seed_2004 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 83.74
+  seed_2005 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 93.44
+  seed_2006 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 92.69
+  seed_2007 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 91.75
+  seed_2008 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 90.69
+  seed_2009 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 92.56
+  seed_2010 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 93.08
+  seed_2011 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 89.46
+  seed_2012 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 93.53
+  seed_2013 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 90.12
+  seed_2014 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 82.20
+  seed_2015 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 92.15
+  seed_2016 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 93.29
+  seed_2017 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 84.42
+  seed_2018 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 91.05
+  seed_2019 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 93.15
+  seed_2020 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 81.21
+  seed_2021 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 88.91
+  seed_2022 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 91.91
+  seed_2023 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 92.09
+  seed_2024 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 92.95
+  seed_2025 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 92.02
+  seed_2026 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 84.07
+  seed_2027 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 79.02
+  seed_2028 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 92.06
+  seed_2029 arm=n8 target=-11 ch   L= 312  mean_pLDDT= 87.18
+  native charge=-2.69              L= 312  mean_pLDDT= 83.55
+  已写入 output/generalization_v12_1_calib/protein/1AS2/pH7.4/arm_n8/plddt.csv
+[output/generalization_v12_1_calib/protein/1AS2/pH7.4/arm_native/seqs.fa] 共 31 条序列
+  seed_2000 arm=native target=-3   L= 312  mean_pLDDT= 90.06
+  seed_2001 arm=native target=-3   L= 312  mean_pLDDT= 93.29
+  seed_2002 arm=native target=-3   L= 312  mean_pLDDT= 91.39
+  seed_2003 arm=native target=-3   L= 312  mean_pLDDT= 92.46
+  seed_2004 arm=native target=-3   L= 312  mean_pLDDT= 81.92
+  seed_2005 arm=native target=-3   L= 312  mean_pLDDT= 92.38
+  seed_2006 arm=native target=-3   L= 312  mean_pLDDT= 92.97
+  seed_2007 arm=native target=-3   L= 312  mean_pLDDT= 92.74
+  seed_2008 arm=native target=-3   L= 312  mean_pLDDT= 91.09
+  seed_2009 arm=native target=-3   L= 312  mean_pLDDT= 82.67
+  seed_2010 arm=native target=-3   L= 312  mean_pLDDT= 92.29
+  seed_2011 arm=native target=-3   L= 312  mean_pLDDT= 83.25
+  seed_2012 arm=native target=-3   L= 312  mean_pLDDT= 92.17
+  seed_2013 arm=native target=-3   L= 312  mean_pLDDT= 91.77
+  seed_2014 arm=native target=-3   L= 312  mean_pLDDT= 82.24
+  seed_2015 arm=native target=-3   L= 312  mean_pLDDT= 93.01
+  seed_2016 arm=native target=-3   L= 312  mean_pLDDT= 92.77
+  seed_2017 arm=native target=-3   L= 312  mean_pLDDT= 82.65
+  seed_2018 arm=native target=-3   L= 312  mean_pLDDT= 91.02
+  seed_2019 arm=native target=-3   L= 312  mean_pLDDT= 92.78
+  seed_2020 arm=native target=-3   L= 312  mean_pLDDT= 80.16
+  seed_2021 arm=native target=-3   L= 312  mean_pLDDT= 80.91
+  seed_2022 arm=native target=-3   L= 312  mean_pLDDT= 91.46
+  seed_2023 arm=native target=-3   L= 312  mean_pLDDT= 91.64
+  seed_2024 arm=native target=-3   L= 312  mean_pLDDT= 91.93
+  seed_2025 arm=native target=-3   L= 312  mean_pLDDT= 90.83
+  seed_2026 arm=native target=-3   L= 312  mean_pLDDT= 83.00
+  seed_2027 arm=native target=-3   L= 312  mean_pLDDT= 91.14
+  seed_2028 arm=native target=-3   L= 312  mean_pLDDT= 92.22
+  seed_2029 arm=native target=-3   L= 312  mean_pLDDT= 92.37
+  native charge=-2.69              L= 312  mean_pLDDT= 83.55
+  已写入 output/generalization_v12_1_calib/protein/1AS2/pH7.4/arm_native/plddt.csv
+[output/generalization_v12_1_calib/protein/1AS2/pH7.4/arm_p2/seqs.fa] 共 31 条序列
+  seed_2000 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 89.57
+  seed_2001 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 82.45
+  seed_2002 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 91.15
+  seed_2003 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 92.93
+  seed_2004 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 83.28
+  seed_2005 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 92.74
+  seed_2006 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 92.73
+  seed_2007 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 91.73
+  seed_2008 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 90.53
+  seed_2009 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 81.99
+  seed_2010 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 92.42
+  seed_2011 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 82.56
+  seed_2012 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 92.55
+  seed_2013 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 91.59
+  seed_2014 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 81.92
+  seed_2015 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 92.64
+  seed_2016 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 91.52
+  seed_2017 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 81.44
+  seed_2018 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 91.09
+  seed_2019 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 92.62
+  seed_2020 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 78.57
+  seed_2021 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 80.93
+  seed_2022 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 91.96
+  seed_2023 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 90.73
+  seed_2024 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 91.55
+  seed_2025 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 91.20
+  seed_2026 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 93.46
+  seed_2027 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 92.13
+  seed_2028 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 92.95
+  seed_2029 arm=p2 target=-1 cha   L= 312  mean_pLDDT= 90.90
+  native charge=-2.69              L= 312  mean_pLDDT= 83.55
+  已写入 output/generalization_v12_1_calib/protein/1AS2/pH7.4/arm_p2/plddt.csv
+[output/generalization_v12_1_calib/protein/1AS2/pH7.4/arm_p8/seqs.fa] 共 31 条序列
+  seed_2000 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 90.39
+  seed_2001 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 92.49
+  seed_2002 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 91.74
+  seed_2003 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 93.05
+  seed_2004 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 81.92
+  seed_2005 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 91.42
+  seed_2006 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 93.34
+  seed_2007 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 93.67
+  seed_2008 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 91.18
+  seed_2009 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 81.03
+  seed_2010 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 92.09
+  seed_2011 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 82.87
+  seed_2012 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 93.24
+  seed_2013 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 91.56
+  seed_2014 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 81.12
+  seed_2015 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 91.47
+  seed_2016 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 91.96
+  seed_2017 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 81.10
+  seed_2018 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 91.59
+  seed_2019 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 93.11
+  seed_2020 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 79.92
+  seed_2021 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 81.09
+  seed_2022 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 92.86
+  seed_2023 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 91.02
+  seed_2024 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 91.79
+  seed_2025 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 88.68
+  seed_2026 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 93.24
+  seed_2027 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 92.66
+  seed_2028 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 93.00
+  seed_2029 arm=p8 target=+5 cha   L= 312  mean_pLDDT= 90.21
+  native charge=-2.69              L= 312  mean_pLDDT= 83.55
+  已写入 output/generalization_v12_1_calib/protein/1AS2/pH7.4/arm_p8/plddt.csv
+[output/generalization_v12_1_calib/protein/1AXW/pH7.4/arm_n2/seqs.fa] 共 31 条序列
+  seed_2000 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 65.81
+  seed_2001 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 84.08
+  seed_2002 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 83.66
+  seed_2003 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 83.50
+  seed_2004 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 84.97
+  seed_2005 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 82.48
+  seed_2006 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 85.35
+  seed_2007 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 84.62
+  seed_2008 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 70.07
+  seed_2009 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 83.17
+  seed_2010 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 83.71
+  seed_2011 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 84.08
+  seed_2012 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 83.24
+  seed_2013 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 83.61
+  seed_2014 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 77.72
+  seed_2015 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 85.50
+  seed_2016 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 83.33
+  seed_2017 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 84.70
+  seed_2018 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 83.49
+  seed_2019 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 84.66
+  seed_2020 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 83.68
+  seed_2021 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 30.85
+  seed_2022 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 83.63
+  seed_2023 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 83.70
+  seed_2024 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 86.32
+  seed_2025 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 85.15
+  seed_2026 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 85.10
+  seed_2027 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 83.21
+  seed_2028 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 83.16
+  seed_2029 arm=n2 target=-20 ch   L= 528  mean_pLDDT= 80.98
+  native charge=-18.30             L= 528  mean_pLDDT= 84.05
+  已写入 output/generalization_v12_1_calib/protein/1AXW/pH7.4/arm_n2/plddt.csv
+[output/generalization_v12_1_calib/protein/1AXW/pH7.4/arm_n8/seqs.fa] 共 31 条序列
+  seed_2000 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 69.17
+  seed_2001 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 84.44
+  seed_2002 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 84.36
+  seed_2003 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 84.13
+  seed_2004 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 82.81
+  seed_2005 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 81.54
+  seed_2006 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 84.16
+  seed_2007 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 83.56
+  seed_2008 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 33.76
+  seed_2009 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 83.37
+  seed_2010 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 82.81
+  seed_2011 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 84.92
+  seed_2012 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 82.44
+  seed_2013 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 84.03
+  seed_2014 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 82.48
+  seed_2015 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 84.27
+  seed_2016 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 78.40
+  seed_2017 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 87.18
+  seed_2018 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 82.45
+  seed_2019 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 82.94
+  seed_2020 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 83.99
+  seed_2021 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 31.43
+  seed_2022 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 81.60
+  seed_2023 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 85.33
+  seed_2024 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 84.54
+  seed_2025 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 84.55
+  seed_2026 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 85.09
+  seed_2027 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 82.58
+  seed_2028 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 82.01
+  seed_2029 arm=n8 target=-26 ch   L= 528  mean_pLDDT= 81.00
+  native charge=-18.30             L= 528  mean_pLDDT= 84.05
+  已写入 output/generalization_v12_1_calib/protein/1AXW/pH7.4/arm_n8/plddt.csv
+[output/generalization_v12_1_calib/protein/1AXW/pH7.4/arm_native/seqs.fa] 共 31 条序列
+  seed_2000 arm=native target=-1   L= 528  mean_pLDDT= 77.03
+  seed_2001 arm=native target=-1   L= 528  mean_pLDDT= 84.83
+  seed_2002 arm=native target=-1   L= 528  mean_pLDDT= 84.88
+  seed_2003 arm=native target=-1   L= 528  mean_pLDDT= 79.63
+  seed_2004 arm=native target=-1   L= 528  mean_pLDDT= 83.84
+  seed_2005 arm=native target=-1   L= 528  mean_pLDDT= 82.31
+  seed_2006 arm=native target=-1   L= 528  mean_pLDDT= 85.46
+  seed_2007 arm=native target=-1   L= 528  mean_pLDDT= 83.80
+  seed_2008 arm=native target=-1   L= 528  mean_pLDDT= 72.20
+  seed_2009 arm=native target=-1   L= 528  mean_pLDDT= 82.53
+  seed_2010 arm=native target=-1   L= 528  mean_pLDDT= 83.77
+  seed_2011 arm=native target=-1   L= 528  mean_pLDDT= 85.42
+  seed_2012 arm=native target=-1   L= 528  mean_pLDDT= 84.30
+  seed_2013 arm=native target=-1   L= 528  mean_pLDDT= 82.57
+  seed_2014 arm=native target=-1   L= 528  mean_pLDDT= 76.98
+  seed_2015 arm=native target=-1   L= 528  mean_pLDDT= 85.47
+  seed_2016 arm=native target=-1   L= 528  mean_pLDDT= 83.43
+  seed_2017 arm=native target=-1   L= 528  mean_pLDDT= 85.39
+  seed_2018 arm=native target=-1   L= 528  mean_pLDDT= 84.21
+  seed_2019 arm=native target=-1   L= 528  mean_pLDDT= 85.29
+  seed_2020 arm=native target=-1   L= 528  mean_pLDDT= 84.29
+  seed_2021 arm=native target=-1   L= 528  mean_pLDDT= 28.77
+  seed_2022 arm=native target=-1   L= 528  mean_pLDDT= 82.95
+  seed_2023 arm=native target=-1   L= 528  mean_pLDDT= 83.48
+  seed_2024 arm=native target=-1   L= 528  mean_pLDDT= 86.14
+  seed_2025 arm=native target=-1   L= 528  mean_pLDDT= 85.22
+  seed_2026 arm=native target=-1   L= 528  mean_pLDDT= 85.39
+  seed_2027 arm=native target=-1   L= 528  mean_pLDDT= 82.73
+  seed_2028 arm=native target=-1   L= 528  mean_pLDDT= 82.85
+  seed_2029 arm=native target=-1   L= 528  mean_pLDDT= 82.56
+  native charge=-18.30             L= 528  mean_pLDDT= 84.05
+  已写入 output/generalization_v12_1_calib/protein/1AXW/pH7.4/arm_native/plddt.csv
+[output/generalization_v12_1_calib/protein/1AXW/pH7.4/arm_p2/seqs.fa] 共 31 条序列
+  seed_2000 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 77.73
+  seed_2001 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 84.94
+  seed_2002 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 84.25
+  seed_2003 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 60.25
+  seed_2004 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 84.10
+  seed_2005 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 81.36
+  seed_2006 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 85.50
+  seed_2007 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 82.31
+  seed_2008 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 75.56
+  seed_2009 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 84.01
+  seed_2010 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 83.48
+  seed_2011 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 85.14
+  seed_2012 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 84.62
+  seed_2013 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 82.21
+  seed_2014 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 79.96
+  seed_2015 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 85.13
+  seed_2016 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 82.31
+  seed_2017 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 84.55
+  seed_2018 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 84.45
+  seed_2019 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 84.47
+  seed_2020 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 85.10
+  seed_2021 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 29.34
+  seed_2022 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 83.71
+  seed_2023 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 83.87
+  seed_2024 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 85.81
+  seed_2025 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 84.75
+  seed_2026 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 85.15
+  seed_2027 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 83.13
+  seed_2028 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 84.16
+  seed_2029 arm=p2 target=-16 ch   L= 528  mean_pLDDT= 82.62
+  native charge=-18.30             L= 528  mean_pLDDT= 84.05
+  已写入 output/generalization_v12_1_calib/protein/1AXW/pH7.4/arm_p2/plddt.csv
+[output/generalization_v12_1_calib/protein/1AXW/pH7.4/arm_p8/seqs.fa] 共 31 条序列
+  seed_2000 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 82.74
+  seed_2001 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 84.53
+  seed_2002 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 85.14
+  seed_2003 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 85.02
+  seed_2004 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 86.74
+  seed_2005 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 83.67
+  seed_2006 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 83.74
+  seed_2007 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 84.60
+  seed_2008 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 58.14
+  seed_2009 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 82.28
+  seed_2010 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 83.99
+  seed_2011 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 85.99
+  seed_2012 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 85.69
+  seed_2013 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 82.59
+  seed_2014 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 84.22
+  seed_2015 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 84.25
+  seed_2016 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 82.54
+  seed_2017 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 83.78
+  seed_2018 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 84.83
+  seed_2019 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 85.41
+  seed_2020 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 84.13
+  seed_2021 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 54.21
+  seed_2022 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 84.23
+  seed_2023 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 84.48
+  seed_2024 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 85.38
+  seed_2025 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 84.99
+  seed_2026 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 84.56
+  seed_2027 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 85.35
+  seed_2028 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 83.72
+  seed_2029 arm=p8 target=-10 ch   L= 528  mean_pLDDT= 80.50
+  native charge=-18.30             L= 528  mean_pLDDT= 84.05
+  已写入 output/generalization_v12_1_calib/protein/1AXW/pH7.4/arm_p8/plddt.csv
+[output/generalization_v12_1_calib/protein/1AZM/pH7.4/arm_n2/seqs.fa] 共 31 条序列
+  seed_2000 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 85.50
+  seed_2001 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 87.09
+  seed_2002 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 85.94
+  seed_2003 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 87.26
+  seed_2004 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 87.56
+  seed_2005 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 84.51
+  seed_2006 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 87.39
+  seed_2007 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 88.06
+  seed_2008 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 87.16
+  seed_2009 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 87.32
+  seed_2010 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 84.01
+  seed_2011 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 87.66
+  seed_2012 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 88.23
+  seed_2013 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 88.47
+  seed_2014 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 85.73
+  seed_2015 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 85.29
+  seed_2016 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 87.16
+  seed_2017 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 85.41
+  seed_2018 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 85.14
+  seed_2019 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 86.71
+  seed_2020 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 85.54
+  seed_2021 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 87.09
+  seed_2022 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 84.75
+  seed_2023 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 88.52
+  seed_2024 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 84.41
+  seed_2025 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 87.32
+  seed_2026 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 85.40
+  seed_2027 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 86.99
+  seed_2028 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 88.02
+  seed_2029 arm=n2 target=-4 cha   L= 258  mean_pLDDT= 86.75
+  native charge=-1.71              L= 258  mean_pLDDT= 90.17
+  已写入 output/generalization_v12_1_calib/protein/1AZM/pH7.4/arm_n2/plddt.csv
+[output/generalization_v12_1_calib/protein/1AZM/pH7.4/arm_n8/seqs.fa] 共 31 条序列
+  seed_2000 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 87.26
+  seed_2001 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.29
+  seed_2002 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 88.38
+  seed_2003 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.34
+  seed_2004 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 87.35
+  seed_2005 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.16
+  seed_2006 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.13
+  seed_2007 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 88.58
+  seed_2008 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 84.81
+  seed_2009 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.71
+  seed_2010 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 82.45
+  seed_2011 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.12
+  seed_2012 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 88.78
+  seed_2013 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 88.47
+  seed_2014 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 84.04
+  seed_2015 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 84.33
+  seed_2016 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 87.58
+  seed_2017 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 85.09
+  seed_2018 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 84.78
+  seed_2019 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 84.72
+  seed_2020 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 87.12
+  seed_2021 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 85.74
+  seed_2022 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.20
+  seed_2023 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.69
+  seed_2024 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 84.35
+  seed_2025 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 86.75
+  seed_2026 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 88.27
+  seed_2027 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 84.94
+  seed_2028 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 87.00
+  seed_2029 arm=n8 target=-10 ch   L= 258  mean_pLDDT= 85.74
+  native charge=-1.71              L= 258  mean_pLDDT= 90.17
+  已写入 output/generalization_v12_1_calib/protein/1AZM/pH7.4/arm_n8/plddt.csv
+[output/generalization_v12_1_calib/protein/1AZM/pH7.4/arm_native/seqs.fa] 共 31 条序列
+  seed_2000 arm=native target=-2   L= 258  mean_pLDDT= 86.66
+  seed_2001 arm=native target=-2   L= 258  mean_pLDDT= 85.95
+  seed_2002 arm=native target=-2   L= 258  mean_pLDDT= 85.57
+  seed_2003 arm=native target=-2   L= 258  mean_pLDDT= 88.21
+  seed_2004 arm=native target=-2   L= 258  mean_pLDDT= 86.89
+  seed_2005 arm=native target=-2   L= 258  mean_pLDDT= 84.02
+  seed_2006 arm=native target=-2   L= 258  mean_pLDDT= 85.66
+  seed_2007 arm=native target=-2   L= 258  mean_pLDDT= 89.35
+  seed_2008 arm=native target=-2   L= 258  mean_pLDDT= 87.63
+  seed_2009 arm=native target=-2   L= 258  mean_pLDDT= 86.87
+  seed_2010 arm=native target=-2   L= 258  mean_pLDDT= 85.38
+  seed_2011 arm=native target=-2   L= 258  mean_pLDDT= 87.84
+  seed_2012 arm=native target=-2   L= 258  mean_pLDDT= 88.08
+  seed_2013 arm=native target=-2   L= 258  mean_pLDDT= 87.70
+  seed_2014 arm=native target=-2   L= 258  mean_pLDDT= 86.90
+  seed_2015 arm=native target=-2   L= 258  mean_pLDDT= 85.54
+  seed_2016 arm=native target=-2   L= 258  mean_pLDDT= 88.00
+  seed_2017 arm=native target=-2   L= 258  mean_pLDDT= 87.22
+  seed_2018 arm=native target=-2   L= 258  mean_pLDDT= 85.57
+  seed_2019 arm=native target=-2   L= 258  mean_pLDDT= 86.38
+  seed_2020 arm=native target=-2   L= 258  mean_pLDDT= 85.79
+  seed_2021 arm=native target=-2   L= 258  mean_pLDDT= 86.51
+  seed_2022 arm=native target=-2   L= 258  mean_pLDDT= 84.99
+  seed_2023 arm=native target=-2   L= 258  mean_pLDDT= 88.26
+  seed_2024 arm=native target=-2   L= 258  mean_pLDDT= 84.76
+  seed_2025 arm=native target=-2   L= 258  mean_pLDDT= 85.54
+  seed_2026 arm=native target=-2   L= 258  mean_pLDDT= 86.27
+  seed_2027 arm=native target=-2   L= 258  mean_pLDDT= 87.01
+  seed_2028 arm=native target=-2   L= 258  mean_pLDDT= 85.25
+  seed_2029 arm=native target=-2   L= 258  mean_pLDDT= 87.82
+  native charge=-1.71              L= 258  mean_pLDDT= 90.17
+  已写入 output/generalization_v12_1_calib/protein/1AZM/pH7.4/arm_native/plddt.csv
+[output/generalization_v12_1_calib/protein/1AZM/pH7.4/arm_p2/seqs.fa] 共 31 条序列
+  seed_2000 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 87.08
+  seed_2001 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 87.59
+  seed_2002 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 86.26
+  seed_2003 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 88.59
+  seed_2004 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 86.82
+  seed_2005 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 84.48
+  seed_2006 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 85.17
+  seed_2007 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 88.92
+  seed_2008 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 87.07
+  seed_2009 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 86.59
+  seed_2010 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 85.17
+  seed_2011 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 89.04
+  seed_2012 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 88.85
+  seed_2013 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 86.77
+  seed_2014 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 86.19
+  seed_2015 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 83.41
+  seed_2016 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 85.98
+  seed_2017 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 86.82
+  seed_2018 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 85.18
+  seed_2019 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 86.22
+  seed_2020 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 85.30
+  seed_2021 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 85.83
+  seed_2022 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 85.49
+  seed_2023 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 88.37
+  seed_2024 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 86.87
+  seed_2025 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 86.89
+  seed_2026 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 84.68
+  seed_2027 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 86.13
+  seed_2028 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 84.98
+  seed_2029 arm=p2 target=+0 cha   L= 258  mean_pLDDT= 87.20
+  native charge=-1.71              L= 258  mean_pLDDT= 90.17
+  已写入 output/generalization_v12_1_calib/protein/1AZM/pH7.4/arm_p2/plddt.csv
+[output/generalization_v12_1_calib/protein/1AZM/pH7.4/arm_p8/seqs.fa] 共 31 条序列
+  seed_2000 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 86.29
+  seed_2001 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 85.77
+  seed_2002 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 86.16
+  seed_2003 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 87.60
+  seed_2004 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 86.41
+  seed_2005 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 84.88
+  seed_2006 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 85.08
+  seed_2007 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 86.67
+  seed_2008 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 87.42
+  seed_2009 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 86.20
+  seed_2010 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 83.71
+  seed_2011 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 85.71
+  seed_2012 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 87.50
+  seed_2013 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 87.02
+  seed_2014 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 86.23
+  seed_2015 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 85.89
+  seed_2016 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 88.88
+  seed_2017 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 85.64
+  seed_2018 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 85.83
+  seed_2019 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 84.98
+  seed_2020 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 87.84
+  seed_2021 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 86.35
+  seed_2022 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 87.96
+  seed_2023 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 86.75
+  seed_2024 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 84.80
+  seed_2025 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 86.05
+  seed_2026 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 86.43
+  seed_2027 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 86.09
+  seed_2028 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 85.57
+  seed_2029 arm=p8 target=+6 cha   L= 258  mean_pLDDT= 84.71
+  native charge=-1.71              L= 258  mean_pLDDT= 90.17
+  已写入 output/generalization_v12_1_calib/protein/1AZM/pH7.4/arm_p8/plddt.csv
+[output/generalization_v12_1_calib/protein/1BJ4/pH7.4/arm_n2/seqs.fa] 共 31 条序列
+  seed_2000 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 77.21
+  seed_2001 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 77.74
+  seed_2002 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 80.37
+  seed_2003 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 77.30
+  seed_2004 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 77.39
+  seed_2005 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 79.08
+  seed_2006 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 76.08
+  seed_2007 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 79.94
+  seed_2008 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 71.52
+  seed_2009 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 82.02
+  seed_2010 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 75.89
+  seed_2011 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 75.79
+  seed_2012 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 79.37
+  seed_2013 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 81.59
+  seed_2014 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 76.63
+  seed_2015 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 81.49
+  seed_2016 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 74.11
+  seed_2017 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 80.65
+  seed_2018 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 75.49
+  seed_2019 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 77.27
+  seed_2020 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 79.36
+  seed_2021 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 78.03
+  seed_2022 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 75.55
+  seed_2023 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 80.03
+  seed_2024 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 76.68
+  seed_2025 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 77.91
+  seed_2026 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 78.57
+  seed_2027 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 76.67
+  seed_2028 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 78.91
+  seed_2029 arm=n2 target=-2 cha   L= 470  mean_pLDDT= 76.20
+  native charge=+0.42              L= 470  mean_pLDDT= 81.98
+  已写入 output/generalization_v12_1_calib/protein/1BJ4/pH7.4/arm_n2/plddt.csv
+[output/generalization_v12_1_calib/protein/1BJ4/pH7.4/arm_n8/seqs.fa] 共 31 条序列
+  seed_2000 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 77.85
+  seed_2001 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 76.70
+  seed_2002 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 77.72
+  seed_2003 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 77.50
+  seed_2004 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 77.66
+  seed_2005 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 77.70
+  seed_2006 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 79.74
+  seed_2007 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 81.14
+  seed_2008 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 72.66
+  seed_2009 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 80.82
+  seed_2010 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 77.16
+  seed_2011 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 78.66
+  seed_2012 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 79.40
+  seed_2013 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 80.13
+  seed_2014 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 75.80
+  seed_2015 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 78.83
+  seed_2016 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 76.25
+  seed_2017 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 79.75
+  seed_2018 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 76.39
+  seed_2019 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 80.45
+  seed_2020 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 79.47
+  seed_2021 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 71.51
+  seed_2022 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 79.29
+  seed_2023 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 80.49
+  seed_2024 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 76.74
+  seed_2025 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 78.37
+  seed_2026 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 79.05
+  seed_2027 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 76.33
+  seed_2028 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 78.48
+  seed_2029 arm=n8 target=-8 cha   L= 470  mean_pLDDT= 76.61
+  native charge=+0.42              L= 470  mean_pLDDT= 81.98
+  已写入 output/generalization_v12_1_calib/protein/1BJ4/pH7.4/arm_n8/plddt.csv
+[output/generalization_v12_1_calib/protein/1BJ4/pH7.4/arm_native/seqs.fa] 共 31 条序列
+  seed_2000 arm=native target=+0   L= 470  mean_pLDDT= 77.35
+  seed_2001 arm=native target=+0   L= 470  mean_pLDDT= 77.40
+  seed_2002 arm=native target=+0   L= 470  mean_pLDDT= 80.79
+  seed_2003 arm=native target=+0   L= 470  mean_pLDDT= 78.78
+  seed_2004 arm=native target=+0   L= 470  mean_pLDDT= 77.73
+  seed_2005 arm=native target=+0   L= 470  mean_pLDDT= 77.29
+  seed_2006 arm=native target=+0   L= 470  mean_pLDDT= 76.47
+  seed_2007 arm=native target=+0   L= 470  mean_pLDDT= 79.83
+  seed_2008 arm=native target=+0   L= 470  mean_pLDDT= 70.93
+  seed_2009 arm=native target=+0   L= 470  mean_pLDDT= 81.50
+  seed_2010 arm=native target=+0   L= 470  mean_pLDDT= 77.35
+  seed_2011 arm=native target=+0   L= 470  mean_pLDDT= 74.79
+  seed_2012 arm=native target=+0   L= 470  mean_pLDDT= 78.69
+  seed_2013 arm=native target=+0   L= 470  mean_pLDDT= 80.77
+  seed_2014 arm=native target=+0   L= 470  mean_pLDDT= 77.62
+  seed_2015 arm=native target=+0   L= 470  mean_pLDDT= 80.52
+  seed_2016 arm=native target=+0   L= 470  mean_pLDDT= 75.21
+  seed_2017 arm=native target=+0   L= 470  mean_pLDDT= 80.87
+  seed_2018 arm=native target=+0   L= 470  mean_pLDDT= 78.11
+  seed_2019 arm=native target=+0   L= 470  mean_pLDDT= 76.25
+  seed_2020 arm=native target=+0   L= 470  mean_pLDDT= 79.07
+  seed_2021 arm=native target=+0   L= 470  mean_pLDDT= 77.37
+  seed_2022 arm=native target=+0   L= 470  mean_pLDDT= 76.33
+  seed_2023 arm=native target=+0   L= 470  mean_pLDDT= 80.30
+  seed_2024 arm=native target=+0   L= 470  mean_pLDDT= 77.30
+  seed_2025 arm=native target=+0   L= 470  mean_pLDDT= 77.27
+  seed_2026 arm=native target=+0   L= 470  mean_pLDDT= 79.69
+  seed_2027 arm=native target=+0   L= 470  mean_pLDDT= 76.18
+  seed_2028 arm=native target=+0   L= 470  mean_pLDDT= 79.26
+  seed_2029 arm=native target=+0   L= 470  mean_pLDDT= 76.93
+  native charge=+0.42              L= 470  mean_pLDDT= 81.98
+  已写入 output/generalization_v12_1_calib/protein/1BJ4/pH7.4/arm_native/plddt.csv
+[output/generalization_v12_1_calib/protein/1BJ4/pH7.4/arm_p2/seqs.fa] 共 31 条序列
+  seed_2000 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 77.12
+  seed_2001 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 75.97
+  seed_2002 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 81.14
+  seed_2003 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 78.55
+  seed_2004 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 76.62
+  seed_2005 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 78.22
+  seed_2006 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 77.05
+  seed_2007 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 80.24
+  seed_2008 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 72.11
+  seed_2009 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 80.55
+  seed_2010 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 77.54
+  seed_2011 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 75.34
+  seed_2012 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 78.73
+  seed_2013 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 80.37
+  seed_2014 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 77.53
+  seed_2015 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 79.92
+  seed_2016 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 74.64
+  seed_2017 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 80.73
+  seed_2018 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 77.73
+  seed_2019 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 77.21
+  seed_2020 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 79.14
+  seed_2021 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 77.37
+  seed_2022 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 74.89
+  seed_2023 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 80.69
+  seed_2024 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 74.97
+  seed_2025 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 78.23
+  seed_2026 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 79.65
+  seed_2027 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 76.27
+  seed_2028 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 80.21
+  seed_2029 arm=p2 target=+2 cha   L= 470  mean_pLDDT= 76.43
+  native charge=+0.42              L= 470  mean_pLDDT= 81.98
+  已写入 output/generalization_v12_1_calib/protein/1BJ4/pH7.4/arm_p2/plddt.csv
+[output/generalization_v12_1_calib/protein/1BJ4/pH7.4/arm_p8/seqs.fa] 共 31 条序列
+  seed_2000 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 76.56
+  seed_2001 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 77.02
+  seed_2002 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 79.61
+  seed_2003 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 76.97
+  seed_2004 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 79.33
+  seed_2005 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 77.96
+  seed_2006 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 79.17
+  seed_2007 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 80.90
+  seed_2008 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 71.11
+  seed_2009 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 78.33
+  seed_2010 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 76.08
+  seed_2011 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 76.53
+  seed_2012 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 77.89
+  seed_2013 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 79.22
+  seed_2014 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 78.18
+  seed_2015 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 79.27
+  seed_2016 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 75.43
+  seed_2017 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 80.55
+  seed_2018 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 77.32
+  seed_2019 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 78.45
+  seed_2020 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 79.18
+  seed_2021 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 77.61
+  seed_2022 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 75.99
+  seed_2023 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 80.23
+  seed_2024 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 73.12
+  seed_2025 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 79.45
+  seed_2026 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 78.67
+  seed_2027 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 77.25
+  seed_2028 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 77.96
+  seed_2029 arm=p8 target=+8 cha   L= 470  mean_pLDDT= 75.60
+  native charge=+0.42              L= 470  mean_pLDDT= 81.98
+  已写入 output/generalization_v12_1_calib/protein/1BJ4/pH7.4/arm_p8/plddt.csv
+[output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_n2/seqs.fa] 共 31 条序列
+  seed_2000 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 83.32
+  seed_2001 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 82.01
+  seed_2002 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 82.69
+  seed_2003 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 79.37
+  seed_2004 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 83.66
+  seed_2005 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 80.27
+  seed_2006 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 82.88
+  seed_2007 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 84.11
+  seed_2008 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 83.27
+  seed_2009 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 84.03
+  seed_2010 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 85.18
+  seed_2011 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 82.64
+  seed_2012 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 81.28
+  seed_2013 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 81.89
+  seed_2014 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 79.20
+  seed_2015 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 82.19
+  seed_2016 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 79.83
+  seed_2017 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 83.28
+  seed_2018 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 83.01
+  seed_2019 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 82.26
+  seed_2020 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 80.03
+  seed_2021 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 82.23
+  seed_2022 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 81.79
+  seed_2023 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 83.19
+  seed_2024 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 85.09
+  seed_2025 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 83.73
+  seed_2026 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 86.58
+  seed_2027 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 82.33
+  seed_2028 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 83.12
+  seed_2029 arm=n2 target=-16 ch   L= 177  mean_pLDDT= 79.05
+  native charge=-14.31             L= 177  mean_pLDDT= 85.56
+  已写入 output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_n2/plddt.csv
+[output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_n8/seqs.fa] 共 31 条序列
+  seed_2000 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 83.11
+  seed_2001 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 80.41
+  seed_2002 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 78.98
+  seed_2003 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 76.38
+  seed_2004 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 85.77
+  seed_2005 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 80.12
+  seed_2006 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 83.00
+  seed_2007 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 86.26
+  seed_2008 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 83.13
+  seed_2009 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 81.34
+  seed_2010 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 80.39
+  seed_2011 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 82.65
+  seed_2012 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 82.07
+  seed_2013 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 82.35
+  seed_2014 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 77.95
+  seed_2015 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 82.95
+  seed_2016 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 80.58
+  seed_2017 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 80.88
+  seed_2018 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 82.59
+  seed_2019 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 81.47
+  seed_2020 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 80.56
+  seed_2021 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 84.91
+  seed_2022 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 83.04
+  seed_2023 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 83.35
+  seed_2024 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 85.95
+  seed_2025 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 82.75
+  seed_2026 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 85.36
+  seed_2027 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 84.14
+  seed_2028 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 83.76
+  seed_2029 arm=n8 target=-22 ch   L= 177  mean_pLDDT= 77.39
+  native charge=-14.31             L= 177  mean_pLDDT= 85.56
+  已写入 output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_n8/plddt.csv
+[output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/seqs.fa] 共 31 条序列
+  seed_2000 arm=native target=-1   L= 177  mean_pLDDT= 82.22
+  seed_2001 arm=native target=-1   L= 177  mean_pLDDT= 82.62
+  seed_2002 arm=native target=-1   L= 177  mean_pLDDT= 82.42
+  seed_2003 arm=native target=-1   L= 177  mean_pLDDT= 78.90
+  seed_2004 arm=native target=-1   L= 177  mean_pLDDT= 83.37
+  seed_2005 arm=native target=-1   L= 177  mean_pLDDT= 80.89
+  seed_2006 arm=native target=-1   L= 177  mean_pLDDT= 82.62
+  seed_2007 arm=native target=-1   L= 177  mean_pLDDT= 84.62
+  seed_2008 arm=native target=-1   L= 177  mean_pLDDT= 81.56
+  seed_2009 arm=native target=-1   L= 177  mean_pLDDT= 84.67
+  seed_2010 arm=native target=-1   L= 177  mean_pLDDT= 81.17
+  seed_2011 arm=native target=-1   L= 177  mean_pLDDT= 81.46
+  seed_2012 arm=native target=-1   L= 177  mean_pLDDT= 81.30
+  seed_2013 arm=native target=-1   L= 177  mean_pLDDT= 81.37
+  seed_2014 arm=native target=-1   L= 177  mean_pLDDT= 78.61
+  seed_2015 arm=native target=-1   L= 177  mean_pLDDT= 81.37
+  seed_2016 arm=native target=-1   L= 177  mean_pLDDT= 79.88
+  seed_2017 arm=native target=-1   L= 177  mean_pLDDT= 83.60
+  seed_2018 arm=native target=-1   L= 177  mean_pLDDT= 82.71
+  seed_2019 arm=native target=-1   L= 177  mean_pLDDT= 82.94
+  seed_2020 arm=native target=-1   L= 177  mean_pLDDT= 85.53
+  seed_2021 arm=native target=-1   L= 177  mean_pLDDT= 82.58
+  seed_2022 arm=native target=-1   L= 177  mean_pLDDT= 81.76
+  seed_2023 arm=native target=-1   L= 177  mean_pLDDT= 83.00
+  seed_2024 arm=native target=-1   L= 177  mean_pLDDT= 84.76
+  seed_2025 arm=native target=-1   L= 177  mean_pLDDT= 83.75
+  seed_2026 arm=native target=-1   L= 177  mean_pLDDT= 82.39
+  seed_2027 arm=native target=-1   L= 177  mean_pLDDT= 81.63
+  seed_2028 arm=native target=-1   L= 177  mean_pLDDT= 84.85
+  seed_2029 arm=native target=-1   L= 177  mean_pLDDT= 79.30
+  native charge=-14.31             L= 177  mean_pLDDT= 85.56
+  已写入 output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/plddt.csv
+[output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_p2/seqs.fa] 共 31 条序列
+  seed_2000 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 83.11
+  seed_2001 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 81.91
+  seed_2002 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 81.92
+  seed_2003 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 79.50
+  seed_2004 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 82.40
+  seed_2005 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 81.89
+  seed_2006 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 83.07
+  seed_2007 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 86.07
+  seed_2008 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 78.23
+  seed_2009 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 83.00
+  seed_2010 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 85.48
+  seed_2011 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 82.32
+  seed_2012 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 83.26
+  seed_2013 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 80.92
+  seed_2014 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 80.30
+  seed_2015 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 81.09
+  seed_2016 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 79.03
+  seed_2017 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 80.68
+  seed_2018 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 82.71
+  seed_2019 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 83.61
+  seed_2020 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 85.79
+  seed_2021 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 85.02
+  seed_2022 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 81.58
+  seed_2023 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 82.47
+  seed_2024 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 85.33
+  seed_2025 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 83.10
+  seed_2026 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 83.99
+  seed_2027 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 86.56
+  seed_2028 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 79.47
+  seed_2029 arm=p2 target=-12 ch   L= 177  mean_pLDDT= 74.62
+  native charge=-14.31             L= 177  mean_pLDDT= 85.56
+  已写入 output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_p2/plddt.csv
+[output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_p8/seqs.fa] 共 31 条序列
+  seed_2000 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 81.68
+  seed_2001 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 84.78
+  seed_2002 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 85.20
+  seed_2003 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 79.81
+  seed_2004 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 76.66
+  seed_2005 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 81.36
+  seed_2006 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 80.12
+  seed_2007 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 84.65
+  seed_2008 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 81.55
+  seed_2009 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 83.50
+  seed_2010 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 86.61
+  seed_2011 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 83.40
+  seed_2012 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 84.61
+  seed_2013 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 86.17
+  seed_2014 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 81.46
+  seed_2015 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 84.01
+  seed_2016 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 81.11
+  seed_2017 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 81.96
+  seed_2018 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 83.65
+  seed_2019 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 89.19
+  seed_2020 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 82.78
+  seed_2021 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 85.24
+  seed_2022 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 82.22
+  seed_2023 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 81.84
+  seed_2024 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 86.48
+  seed_2025 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 81.87
+  seed_2026 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 83.98
+  seed_2027 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 82.92
+  seed_2028 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 85.52
+  seed_2029 arm=p8 target=-6 cha   L= 177  mean_pLDDT= 81.83
+  native charge=-14.31             L= 177  mean_pLDDT= 85.56
+  已写入 output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_p8/plddt.csv
+[output/generalization_v12_1_calib/protein/1CGE/pH7.4/arm_n2/seqs.fa] 共 31 条序列
+  seed_2000 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 81.88
+  seed_2001 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 85.10
+  seed_2002 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 83.44
+  seed_2003 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 82.34
+  seed_2004 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 87.82
+  seed_2005 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 86.85
+  seed_2006 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 83.26
+  seed_2007 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 82.05
+  seed_2008 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 82.34
+  seed_2009 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 83.83
+  seed_2010 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 84.14
+  seed_2011 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 82.43
+  seed_2012 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 83.27
+  seed_2013 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 86.63
+  seed_2014 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 79.22
+  seed_2015 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 85.86
+  seed_2016 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 82.83
+  seed_2017 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 83.36
+  seed_2018 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 86.27
+  seed_2019 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 83.88
+  seed_2020 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 84.15
+  seed_2021 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 80.05
+  seed_2022 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 84.64
+  seed_2023 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 83.14
+  seed_2024 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 83.68
+  seed_2025 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 83.75
+  seed_2026 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 85.50
+  seed_2027 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 85.54
+  seed_2028 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 81.85
+  seed_2029 arm=n2 target=-14 ch   L= 162  mean_pLDDT= 84.76
+  native charge=-11.66             L= 162  mean_pLDDT= 87.82
+  已写入 output/generalization_v12_1_calib/protein/1CGE/pH7.4/arm_n2/plddt.csv
+[output/generalization_v12_1_calib/protein/1CGE/pH7.4/arm_n8/seqs.fa] 共 31 条序列
+  seed_2000 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 80.90
+  seed_2001 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 83.08
+  seed_2002 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 82.94
+  seed_2003 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 82.00
+  seed_2004 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 86.00
+  seed_2005 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 85.21
+  seed_2006 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 79.38
+  seed_2007 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 81.55
+  seed_2008 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 83.70
+  seed_2009 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 82.59
+  seed_2010 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 82.67
+  seed_2011 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 80.17
+  seed_2012 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 84.35
+  seed_2013 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 86.09
+  seed_2014 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 80.24
+  seed_2015 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 83.51
+  seed_2016 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 82.69
+  seed_2017 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 81.65
+  seed_2018 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 86.92
+  seed_2019 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 84.94
+  seed_2020 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 83.88
+  seed_2021 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 80.21
+  seed_2022 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 84.47
+  seed_2023 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 83.23
+  seed_2024 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 82.07
+  seed_2025 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 84.19
+  seed_2026 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 84.42
+  seed_2027 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 85.02
+  seed_2028 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 79.53
+  seed_2029 arm=n8 target=-20 ch   L= 162  mean_pLDDT= 82.52
+  native charge=-11.66             L= 162  mean_pLDDT= 87.82
+  已写入 output/generalization_v12_1_calib/protein/1CGE/pH7.4/arm_n8/plddt.csv
+[output/generalization_v12_1_calib/protein/1CGE/pH7.4/arm_native/seqs.fa] 共 31 条序列
+  seed_2000 arm=native target=-1   L= 162  mean_pLDDT= 81.20
+  seed_2001 arm=native target=-1   L= 162  mean_pLDDT= 84.44
+  seed_2002 arm=native target=-1   L= 162  mean_pLDDT= 82.72
+  seed_2003 arm=native target=-1   L= 162  mean_pLDDT= 83.72
+  seed_2004 arm=native target=-1   L= 162  mean_pLDDT= 85.99
+  seed_2005 arm=native target=-1   L= 162  mean_pLDDT= 86.41
+  seed_2006 arm=native target=-1   L= 162  mean_pLDDT= 84.08
+  seed_2007 arm=native target=-1   L= 162  mean_pLDDT= 82.59
+  seed_2008 arm=native target=-1   L= 162  mean_pLDDT= 83.13
+  seed_2009 arm=native target=-1   L= 162  mean_pLDDT= 84.65
+  seed_2010 arm=native target=-1   L= 162  mean_pLDDT= 84.65
+  seed_2011 arm=native target=-1   L= 162  mean_pLDDT= 82.68
+  seed_2012 arm=native target=-1   L= 162  mean_pLDDT= 84.51
+  seed_2013 arm=native target=-1   L= 162  mean_pLDDT= 87.45
+  seed_2014 arm=native target=-1   L= 162  mean_pLDDT= 82.50
+  seed_2015 arm=native target=-1   L= 162  mean_pLDDT= 85.46
+  seed_2016 arm=native target=-1   L= 162  mean_pLDDT= 83.28
+  seed_2017 arm=native target=-1   L= 162  mean_pLDDT= 84.26
+  seed_2018 arm=native target=-1   L= 162  mean_pLDDT= 85.60
+  seed_2019 arm=native target=-1   L= 162  mean_pLDDT= 83.98
+  seed_2020 arm=native target=-1   L= 162  mean_pLDDT= 84.90
+  seed_2021 arm=native target=-1   L= 162  mean_pLDDT= 81.85
+  seed_2022 arm=native target=-1   L= 162  mean_pLDDT= 81.85
+  seed_2023 arm=native target=-1   L= 162  mean_pLDDT= 83.87
+  seed_2024 arm=native target=-1   L= 162  mean_pLDDT= 83.84
+  seed_2025 arm=native target=-1   L= 162  mean_pLDDT= 84.36
+  seed_2026 arm=native target=-1   L= 162  mean_pLDDT= 85.01
+  seed_2027 arm=native target=-1   L= 162  mean_pLDDT= 85.99
+  seed_2028 arm=native target=-1   L= 162  mean_pLDDT= 83.01
+  seed_2029 arm=native target=-1   L= 162  mean_pLDDT= 84.78
+  native charge=-11.66             L= 162  mean_pLDDT= 87.82
+  已写入 output/generalization_v12_1_calib/protein/1CGE/pH7.4/arm_native/plddt.csv
+[output/generalization_v12_1_calib/protein/1CGE/pH7.4/arm_p2/seqs.fa] 共 31 条序列
+  seed_2000 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 79.67
+  seed_2001 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 84.45
+  seed_2002 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 84.44
+  seed_2003 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 84.16
+  seed_2004 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 85.56
+  seed_2005 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 86.57
+  seed_2006 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 85.26
+  seed_2007 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 81.97
+  seed_2008 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 82.97
+  seed_2009 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 84.41
+  seed_2010 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 86.09
+  seed_2011 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 83.91
+  seed_2012 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 82.61
+  seed_2013 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 86.98
+  seed_2014 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 83.30
+  seed_2015 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 85.02
+  seed_2016 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 83.21
+  seed_2017 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 83.15
+  seed_2018 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 85.07
+  seed_2019 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 84.06
+  seed_2020 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 83.99
+  seed_2021 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 83.41
+  seed_2022 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 80.85
+  seed_2023 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 84.05
+  seed_2024 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 83.90
+  seed_2025 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 81.44
+  seed_2026 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 85.55
+  seed_2027 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 84.79
+  seed_2028 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 82.23
+  seed_2029 arm=p2 target=-10 ch   L= 162  mean_pLDDT= 84.94
+  native charge=-11.66             L= 162  mean_pLDDT= 87.82
+  已写入 output/generalization_v12_1_calib/protein/1CGE/pH7.4/arm_p2/plddt.csv
+[output/generalization_v12_1_calib/protein/1CGE/pH7.4/arm_p8/seqs.fa] 共 31 条序列
+  seed_2000 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 82.53
+  seed_2001 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 81.67
+  seed_2002 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 87.76
+  seed_2003 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 86.04
+  seed_2004 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 86.06
+  seed_2005 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 85.59
+  seed_2006 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 85.06
+  seed_2007 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 83.28
+  seed_2008 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 84.49
+  seed_2009 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 81.30
+  seed_2010 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 85.79
+  seed_2011 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 77.27
+  seed_2012 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 85.74
+  seed_2013 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 86.50
+  seed_2014 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 84.39
+  seed_2015 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 83.25
+  seed_2016 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 83.77
+  seed_2017 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 81.67
+  seed_2018 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 85.47
+  seed_2019 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 85.41
+  seed_2020 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 85.76
+  seed_2021 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 83.45
+  seed_2022 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 83.65
+  seed_2023 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 83.85
+  seed_2024 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 84.23
+  seed_2025 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 83.60
+  seed_2026 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 85.81
+  seed_2027 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 85.38
+  seed_2028 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 85.30
+  seed_2029 arm=p8 target=-4 cha   L= 162  mean_pLDDT= 84.26
+  native charge=-11.66             L= 162  mean_pLDDT= 87.82
+  已写入 output/generalization_v12_1_calib/protein/1CGE/pH7.4/arm_p8/plddt.csv
+[output/generalization_v12_1_calib/protein/2FEO/pH7.4/arm_n2/seqs.fa] 共 31 条序列
+  seed_2000 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 72.14
+  seed_2001 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 74.46
+  seed_2002 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 77.34
+  seed_2003 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 73.18
+  seed_2004 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 78.45
+  seed_2005 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 80.42
+  seed_2006 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 75.95
+  seed_2007 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 77.16
+  seed_2008 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 68.22
+  seed_2009 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 80.76
+  seed_2010 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 77.60
+  seed_2011 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 80.81
+  seed_2012 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 75.88
+  seed_2013 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 77.76
+  seed_2014 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 78.79
+  seed_2015 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 78.95
+  seed_2016 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 78.76
+  seed_2017 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 75.44
+  seed_2018 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 80.89
+  seed_2019 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 78.70
+  seed_2020 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 75.69
+  seed_2021 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 89.12
+  seed_2022 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 76.19
+  seed_2023 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 77.47
+  seed_2024 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 76.17
+  seed_2025 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 77.79
+  seed_2026 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 80.22
+  seed_2027 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 75.80
+  seed_2028 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 77.38
+  seed_2029 arm=n2 target=-9 cha   L= 221  mean_pLDDT= 80.04
+  native charge=-6.88              L= 221  mean_pLDDT= 83.95
+  已写入 output/generalization_v12_1_calib/protein/2FEO/pH7.4/arm_n2/plddt.csv
+[output/generalization_v12_1_calib/protein/2FEO/pH7.4/arm_n8/seqs.fa] 共 31 条序列
+  seed_2000 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 74.29
+  seed_2001 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 76.39
+  seed_2002 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 80.02
+  seed_2003 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 73.17
+  seed_2004 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 79.94
+  seed_2005 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 77.96
+  seed_2006 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 76.80
+  seed_2007 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 76.80
+  seed_2008 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 74.86
+  seed_2009 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 76.23
+  seed_2010 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 76.87
+  seed_2011 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 76.86
+  seed_2012 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 70.86
+  seed_2013 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 73.65
+  seed_2014 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 78.22
+  seed_2015 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 76.69
+  seed_2016 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 74.41
+  seed_2017 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 77.09
+  seed_2018 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 78.53
+  seed_2019 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 77.58
+  seed_2020 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 77.94
+  seed_2021 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 78.94
+  seed_2022 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 78.97
+  seed_2023 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 77.55
+  seed_2024 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 79.23
+  seed_2025 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 78.82
+  seed_2026 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 75.39
+  seed_2027 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 74.25
+  seed_2028 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 74.33
+  seed_2029 arm=n8 target=-15 ch   L= 221  mean_pLDDT= 77.19
+  native charge=-6.88              L= 221  mean_pLDDT= 83.95
+  已写入 output/generalization_v12_1_calib/protein/2FEO/pH7.4/arm_n8/plddt.csv
+[output/generalization_v12_1_calib/protein/2FEO/pH7.4/arm_native/seqs.fa] 共 31 条序列
+  seed_2000 arm=native target=-7   L= 221  mean_pLDDT= 71.92
+  seed_2001 arm=native target=-7   L= 221  mean_pLDDT= 74.70
+  seed_2002 arm=native target=-7   L= 221  mean_pLDDT= 80.33
+  seed_2003 arm=native target=-7   L= 221  mean_pLDDT= 73.92
+  seed_2004 arm=native target=-7   L= 221  mean_pLDDT= 77.90
+  seed_2005 arm=native target=-7   L= 221  mean_pLDDT= 76.45
+  seed_2006 arm=native target=-7   L= 221  mean_pLDDT= 88.96
+  seed_2007 arm=native target=-7   L= 221  mean_pLDDT= 77.30
+  seed_2008 arm=native target=-7   L= 221  mean_pLDDT= 71.30
+  seed_2009 arm=native target=-7   L= 221  mean_pLDDT= 79.23
+  seed_2010 arm=native target=-7   L= 221  mean_pLDDT= 79.46
+  seed_2011 arm=native target=-7   L= 221  mean_pLDDT= 78.64
+  seed_2012 arm=native target=-7   L= 221  mean_pLDDT= 73.73
+  seed_2013 arm=native target=-7   L= 221  mean_pLDDT= 76.61
+  seed_2014 arm=native target=-7   L= 221  mean_pLDDT= 78.45
+  seed_2015 arm=native target=-7   L= 221  mean_pLDDT= 77.96
+  seed_2016 arm=native target=-7   L= 221  mean_pLDDT= 73.05
+  seed_2017 arm=native target=-7   L= 221  mean_pLDDT= 75.09
+  seed_2018 arm=native target=-7   L= 221  mean_pLDDT= 76.85
+  seed_2019 arm=native target=-7   L= 221  mean_pLDDT= 77.57
+  seed_2020 arm=native target=-7   L= 221  mean_pLDDT= 80.09
+  seed_2021 arm=native target=-7   L= 221  mean_pLDDT= 88.69
+  seed_2022 arm=native target=-7   L= 221  mean_pLDDT= 77.11
+  seed_2023 arm=native target=-7   L= 221  mean_pLDDT= 72.98
+  seed_2024 arm=native target=-7   L= 221  mean_pLDDT= 76.83
+  seed_2025 arm=native target=-7   L= 221  mean_pLDDT= 76.61
+  seed_2026 arm=native target=-7   L= 221  mean_pLDDT= 78.24
+  seed_2027 arm=native target=-7   L= 221  mean_pLDDT= 71.02
+  seed_2028 arm=native target=-7   L= 221  mean_pLDDT= 75.84
+  seed_2029 arm=native target=-7   L= 221  mean_pLDDT= 75.88
+  native charge=-6.88              L= 221  mean_pLDDT= 83.95
+  已写入 output/generalization_v12_1_calib/protein/2FEO/pH7.4/arm_native/plddt.csv
+[output/generalization_v12_1_calib/protein/2FEO/pH7.4/arm_p2/seqs.fa] 共 31 条序列
+  seed_2000 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 71.42
+  seed_2001 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 75.19
+  seed_2002 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 80.52
+  seed_2003 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 74.75
+  seed_2004 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 80.69
+  seed_2005 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 77.78
+  seed_2006 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 75.66
+  seed_2007 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 78.49
+  seed_2008 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 70.71
+  seed_2009 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 77.96
+  seed_2010 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 75.42
+  seed_2011 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 78.88
+  seed_2012 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 77.02
+  seed_2013 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 79.41
+  seed_2014 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 79.36
+  seed_2015 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 78.69
+  seed_2016 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 75.52
+  seed_2017 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 76.08
+  seed_2018 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 76.45
+  seed_2019 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 78.50
+  seed_2020 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 80.62
+  seed_2021 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 89.09
+  seed_2022 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 79.35
+  seed_2023 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 75.90
+  seed_2024 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 77.68
+  seed_2025 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 79.94
+  seed_2026 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 79.47
+  seed_2027 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 74.11
+  seed_2028 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 74.01
+  seed_2029 arm=p2 target=-5 cha   L= 221  mean_pLDDT= 78.10
+  native charge=-6.88              L= 221  mean_pLDDT= 83.95
+  已写入 output/generalization_v12_1_calib/protein/2FEO/pH7.4/arm_p2/plddt.csv
+[output/generalization_v12_1_calib/protein/2FEO/pH7.4/arm_p8/seqs.fa] 共 31 条序列
+  seed_2000 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 67.50
+  seed_2001 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 75.17
+  seed_2002 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 78.79
+  seed_2003 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 76.43
+  seed_2004 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 79.64
+  seed_2005 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 77.84
+  seed_2006 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 74.99
+  seed_2007 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 80.86
+  seed_2008 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 72.79
+  seed_2009 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 77.09
+  seed_2010 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 74.54
+  seed_2011 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 76.01
+  seed_2012 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 76.67
+  seed_2013 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 76.94
+  seed_2014 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 77.14
+  seed_2015 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 80.15
+  seed_2016 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 76.00
+  seed_2017 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 71.22
+  seed_2018 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 75.00
+  seed_2019 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 79.73
+  seed_2020 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 80.96
+  seed_2021 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 89.74
+  seed_2022 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 80.11
+  seed_2023 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 78.70
+  seed_2024 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 78.46
+  seed_2025 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 79.88
+  seed_2026 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 78.75
+  seed_2027 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 80.55
+  seed_2028 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 76.41
+  seed_2029 arm=p8 target=+1 cha   L= 221  mean_pLDDT= 76.26
+  native charge=-6.88              L= 221  mean_pLDDT= 83.95
+  已写入 output/generalization_v12_1_calib/protein/2FEO/pH7.4/arm_p8/plddt.csv
+[output/generalization_v12_1_calib/protein/5CQH/pH7.4/arm_n2/seqs.fa] 共 31 条序列
+  seed_2000 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 82.54
+  seed_2001 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 84.44
+  seed_2002 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 84.92
+  seed_2003 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 86.15
+  seed_2004 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 83.07
+  seed_2005 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 83.82
+  seed_2006 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 83.76
+  seed_2007 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 85.22
+  seed_2008 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 86.47
+  seed_2009 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 85.95
+  seed_2010 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 85.83
+  seed_2011 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 85.98
+  seed_2012 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 86.58
+  seed_2013 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 87.07
+  seed_2014 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 81.06
+  seed_2015 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 87.01
+  seed_2016 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 84.20
+  seed_2017 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 82.69
+  seed_2018 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 84.77
+  seed_2019 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 83.23
+  seed_2020 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 86.95
+  seed_2021 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 84.81
+  seed_2022 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 83.37
+  seed_2023 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 85.99
+  seed_2024 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 83.13
+  seed_2025 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 87.52
+  seed_2026 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 83.58
+  seed_2027 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 80.70
+  seed_2028 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 85.40
+  seed_2029 arm=n2 target=-8 cha   L= 183  mean_pLDDT= 87.77
+  native charge=-5.53              L= 183  mean_pLDDT= 82.15
+  已写入 output/generalization_v12_1_calib/protein/5CQH/pH7.4/arm_n2/plddt.csv
+[output/generalization_v12_1_calib/protein/5CQH/pH7.4/arm_n8/seqs.fa] 共 31 条序列
+  seed_2000 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 84.33
+  seed_2001 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 86.53
+  seed_2002 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 84.92
+  seed_2003 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 84.89
+  seed_2004 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 80.70
+  seed_2005 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 84.29
+  seed_2006 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 82.15
+  seed_2007 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 82.96
+  seed_2008 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 79.06
+  seed_2009 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 83.99
+  seed_2010 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 84.89
+  seed_2011 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 82.70
+  seed_2012 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 83.58
+  seed_2013 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 86.76
+  seed_2014 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 80.32
+  seed_2015 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 84.27
+  seed_2016 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 84.04
+  seed_2017 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 84.88
+  seed_2018 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 86.29
+  seed_2019 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 82.88
+  seed_2020 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 85.42
+  seed_2021 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 84.16
+  seed_2022 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 84.85
+  seed_2023 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 83.92
+  seed_2024 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 85.02
+  seed_2025 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 86.82
+  seed_2026 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 86.10
+  seed_2027 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 82.66
+  seed_2028 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 81.01
+  seed_2029 arm=n8 target=-14 ch   L= 183  mean_pLDDT= 84.84
+  native charge=-5.53              L= 183  mean_pLDDT= 82.15
+  已写入 output/generalization_v12_1_calib/protein/5CQH/pH7.4/arm_n8/plddt.csv
+[output/generalization_v12_1_calib/protein/5CQH/pH7.4/arm_native/seqs.fa] 共 31 条序列
+  seed_2000 arm=native target=-6   L= 183  mean_pLDDT= 86.03
+  seed_2001 arm=native target=-6   L= 183  mean_pLDDT= 85.68
+  seed_2002 arm=native target=-6   L= 183  mean_pLDDT= 84.62
+  seed_2003 arm=native target=-6   L= 183  mean_pLDDT= 86.41
+  seed_2004 arm=native target=-6   L= 183  mean_pLDDT= 83.10
+  seed_2005 arm=native target=-6   L= 183  mean_pLDDT= 83.85
+  seed_2006 arm=native target=-6   L= 183  mean_pLDDT= 83.89
+  seed_2007 arm=native target=-6   L= 183  mean_pLDDT= 84.91
+  seed_2008 arm=native target=-6   L= 183  mean_pLDDT= 84.31
+  seed_2009 arm=native target=-6   L= 183  mean_pLDDT= 85.90
+  seed_2010 arm=native target=-6   L= 183  mean_pLDDT= 85.91
+  seed_2011 arm=native target=-6   L= 183  mean_pLDDT= 85.16
+  seed_2012 arm=native target=-6   L= 183  mean_pLDDT= 84.95
+  seed_2013 arm=native target=-6   L= 183  mean_pLDDT= 86.97
+  seed_2014 arm=native target=-6   L= 183  mean_pLDDT= 83.96
+  seed_2015 arm=native target=-6   L= 183  mean_pLDDT= 85.78
+  seed_2016 arm=native target=-6   L= 183  mean_pLDDT= 87.59
+  seed_2017 arm=native target=-6   L= 183  mean_pLDDT= 83.35
+  seed_2018 arm=native target=-6   L= 183  mean_pLDDT= 83.80
+  seed_2019 arm=native target=-6   L= 183  mean_pLDDT= 82.27
+  seed_2020 arm=native target=-6   L= 183  mean_pLDDT= 86.68
+  seed_2021 arm=native target=-6   L= 183  mean_pLDDT= 85.22
+  seed_2022 arm=native target=-6   L= 183  mean_pLDDT= 84.73
+  seed_2023 arm=native target=-6   L= 183  mean_pLDDT= 84.90
+  seed_2024 arm=native target=-6   L= 183  mean_pLDDT= 83.69
+  seed_2025 arm=native target=-6   L= 183  mean_pLDDT= 87.06
+  seed_2026 arm=native target=-6   L= 183  mean_pLDDT= 84.61
+  seed_2027 arm=native target=-6   L= 183  mean_pLDDT= 80.43
+  seed_2028 arm=native target=-6   L= 183  mean_pLDDT= 85.07
+  seed_2029 arm=native target=-6   L= 183  mean_pLDDT= 87.55
+  native charge=-5.53              L= 183  mean_pLDDT= 82.15
+  已写入 output/generalization_v12_1_calib/protein/5CQH/pH7.4/arm_native/plddt.csv
+[output/generalization_v12_1_calib/protein/5CQH/pH7.4/arm_p2/seqs.fa] 共 31 条序列
+  seed_2000 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 85.70
+  seed_2001 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 85.27
+  seed_2002 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 84.79
+  seed_2003 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 86.30
+  seed_2004 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 84.40
+  seed_2005 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 81.44
+  seed_2006 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 82.91
+  seed_2007 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 83.88
+  seed_2008 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 83.38
+  seed_2009 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 86.58
+  seed_2010 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 85.94
+  seed_2011 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 80.56
+  seed_2012 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 86.82
+  seed_2013 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 87.75
+  seed_2014 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 84.34
+  seed_2015 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 84.96
+  seed_2016 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 84.67
+  seed_2017 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 84.23
+  seed_2018 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 86.39
+  seed_2019 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 85.23
+  seed_2020 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 84.27
+  seed_2021 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 85.15
+  seed_2022 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 82.70
+  seed_2023 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 85.60
+  seed_2024 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 83.39
+  seed_2025 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 87.32
+  seed_2026 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 84.47
+  seed_2027 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 81.82
+  seed_2028 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 86.63
+  seed_2029 arm=p2 target=-4 cha   L= 183  mean_pLDDT= 86.75
+  native charge=-5.53              L= 183  mean_pLDDT= 82.15
+  已写入 output/generalization_v12_1_calib/protein/5CQH/pH7.4/arm_p2/plddt.csv
+[output/generalization_v12_1_calib/protein/5CQH/pH7.4/arm_p8/seqs.fa] 共 31 条序列
+  seed_2000 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 85.27
+  seed_2001 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 84.68
+  seed_2002 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 84.65
+  seed_2003 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 86.08
+  seed_2004 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 83.86
+  seed_2005 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 81.81
+  seed_2006 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 84.13
+  seed_2007 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 84.23
+  seed_2008 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 86.23
+  seed_2009 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 85.87
+  seed_2010 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 84.35
+  seed_2011 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 84.25
+  seed_2012 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 81.13
+  seed_2013 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 87.14
+  seed_2014 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 84.28
+  seed_2015 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 85.24
+  seed_2016 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 84.20
+  seed_2017 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 82.74
+  seed_2018 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 86.07
+  seed_2019 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 85.49
+  seed_2020 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 83.64
+  seed_2021 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 83.03
+  seed_2022 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 82.42
+  seed_2023 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 84.36
+  seed_2024 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 84.18
+  seed_2025 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 86.80
+  seed_2026 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 83.72
+  seed_2027 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 86.32
+  seed_2028 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 86.34
+  seed_2029 arm=p8 target=+2 cha   L= 183  mean_pLDDT= 82.37
+  native charge=-5.53              L= 183  mean_pLDDT= 82.15
+  已写入 output/generalization_v12_1_calib/protein/5CQH/pH7.4/arm_p8/plddt.csv

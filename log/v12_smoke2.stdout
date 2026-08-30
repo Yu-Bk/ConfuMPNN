@@ -1,0 +1,16 @@
+[11:40:44] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[11:40:44] device=cuda:6  epochs=1  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[11:40:44] [v10 A] 条件解耦开：target 与 native 无关 Uniform[-12.0,12.0]
+[11:40:44] [v12] 训练侧监督开：组成双计数(floor=0.8) + GRAVY(margin=0.15)  λ_v12=0.3  SASA θ=0.25
+[11:40:44] backbone: MoMPNN 冻结（1.66M 参数，不更新）
+[11:40:44] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[11:40:45] 数据：30 结构域 × 8 pH = 240 样本（data/cath/labels_balanced_v7.npz）
+[11:40:45]   ℹ️ 3dteA01 resnum 对齐 113/117（4 个非标准/parse独有残基 frac=0）
+[11:40:46]   ℹ️ 4ljyA02 resnum 对齐 183/188（5 个非标准/parse独有残基 frac=0）
+[11:40:46]   ℹ️ 5x4kA01 resnum 对齐 187/189（2 个非标准/parse独有残基 frac=0）
+[11:40:47]   ℹ️ 2y6uA01 resnum 对齐 332/335（3 个非标准/parse独有残基 frac=0）
+[11:40:47]   ℹ️ 3luqB00 resnum 对齐 111/114（3 个非标准/parse独有残基 frac=0）
+[11:40:47] 预解析完成，缓存 encode 特征 ~0.11GB
+[11:40:47] 开始训练：1 epochs × 30 域/epoch = 30 steps
+[11:40:49] epoch 1/1  total=5.4599  ce=1.8323  charge=6.1457  kl=0.0116  keep=0.6535  [cd self=5.644  mild=6.444  extreme=7.804]  elapsed=0.0min
+[11:40:49] 训练完成。总耗时 0.0min。checkpoint 在 output/finetune_v12_smoke/

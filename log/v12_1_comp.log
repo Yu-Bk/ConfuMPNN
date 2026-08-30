@@ -1,0 +1,17 @@
+prot       native D/K |        v12 nat        v12 n-8 |      v12.1 nat      v12.1 n-8
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+1C6O            24/10 | 39.4/25.1/64.5 47.2/22.5/69.7  | 30.9/13.2/44.1 37.7/12.3/50.0
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+1AG0            32/24 | 58.5/32.7/91.2 71.1/32.3/103.4  | 43.0/15.4/58.4 53.8/18.9/72.7
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+1BJ4            52/53 | 84.9/74.9/159.8 100.4/67.5/167.9  | 40.5/42.3/82.8 70.6/40.7/111.3
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+1A65            53/26 | 114.9/48.7/163.6 129.9/48.0/177.9  | 90.0/37.6/127.6 104.9/37.5/142.4
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+7pujA01         43/31 | 63.6/32.9/96.5 73.5/30.1/103.6  | 48.0/20.1/68.1 61.0/20.3/81.3
+==COMP_DONE==

@@ -1,0 +1,261 @@
+{
+  "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds",
+  "pH": 7.4,
+  "target": -14.0,
+  "n": 31,
+  "results": [
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/native_charge_-14_31.pdb",
+      "seq": "SADLALGKQTFEANCAACHAGGNNSVIPDHTLRKAAMEQFLQGGFNLEAITYQVENGKGAMPAWSGTLDDDEIAAVAAYVYDQASGDKWADLALGKQTFEANCAACHAGGNNSVIPDHTLRKAAMEQFLQGGFNLEAITYQVENGKGAMPAWSGTLDDDEIAAVAAYVYDQASGDKW",
+      "L": 177,
+      "q_design": -14.305,
+      "q_phys": -13.91,
+      "n_titratable_reported": 49
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2000_arm_native_target_-14_charge_-17_34.pdb",
+      "seq": "SADTLLGEQVFKAYCAPCHAGFGNSVEPELTLTKEALEKYLPGGFNYEAILEVLVNGRGEWPSLSEALTEEQLEALAEYIYQKAVNGAWADLLLGEQVFKAYCAPCHAGGGNSINPELTLTKEALEEHLPGGFNLEAIKEVLVNGWKEFPGLKGVLTEEEINSIAEYILYRAENNSW",
+      "L": 177,
+      "q_design": -17.339,
+      "q_phys": -16.795,
+      "n_titratable_reported": 55
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2001_arm_native_target_-14_charge_-12_39.pdb",
+      "seq": "SADLELGEYVFRAYCSSCHPGFGNSLVPELTLSKEALEKYLPGGFNLEAILNWLKNGRGLWPGLADLLSEEELEALARYVYLKAKSGSWADLELGEYVFRAYCSSCHAGGGNVVNPELTLTEEALKEYLPGGFNLEAILNLLRNGWGEWPSLEDVLTERELESLAQYIYYKAVNNKW",
+      "L": 177,
+      "q_design": -12.385,
+      "q_phys": -11.069,
+      "n_titratable_reported": 57
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2002_arm_native_target_-14_charge_-13_38.pdb",
+      "seq": "SANLLLGQQVFKAYCESCHEGFGNSVEPELTLTAEALAQFLPGGFNFQAILSWLKEGRGEWPALSSELSEEELEAAAAYIYERAVNGAWANLLLGQQVFKAYCESCHKGGGNSVVPEYTLRAEELENYLPGGFNLEAIYQWLVNGWKEWPGLKGVLTDEQLSSIAEYIYYLATNKLW",
+      "L": 177,
+      "q_design": -13.383,
+      "q_phys": -13.005,
+      "n_titratable_reported": 50
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2003_arm_native_target_-14_charge_-20_41.pdb",
+      "seq": "SADLLLGEQTFQAYCSPCFSGLGNSVVPELTLTPESLNANLPGGFNYEAIKRVIVNGLGSLPGLAEELSEDEINALAYYIYKLATENAWADLLLGEQTFQAYCSPCHEGGGNTVEPELTLTAEALEDYLPGGFNREAILEVLREGRGEWPALKEVLTPEELDALAQYILYRAVNDSW",
+      "L": 177,
+      "q_design": -20.415,
+      "q_phys": -18.931,
+      "n_titratable_reported": 50
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2004_arm_native_target_-14_charge_-12_35.pdb",
+      "seq": "SANTVLGEQVYKAFCEKCHKGLGNSVAPELTLTKEALEEHLPGGFNLEAILEVLKNGLGYLPGLSEKLTEEELEAAAEYIYEKAVNGAWANLVLGEQVYKAFCEKCHAGGGNSLNPEFTLQKENLEKYLPGGFNFEAIYELLKNGWGEWPSLKGVLTEEELKALAAYVLYKAENNLW",
+      "L": 177,
+      "q_design": -12.346,
+      "q_phys": -11.941,
+      "n_titratable_reported": 58
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2005_arm_native_target_-14_charge_-14_38.pdb",
+      "seq": "SADLELGEQAFRAYCSKCHENFGNTVVPELTLTKEALEAYLPGGFNLEAILNLIKNGYGYLPGLSERLNEEQLLALAEYIYQRAKNGAWADLELGEQAFRAYCSKCHEGGGNRINPELTLYKESLEEYLPGGFNLEAILEWLINGWGEWPALKGVLTPEELEAIAEYILYRATNNLW",
+      "L": 177,
+      "q_design": -14.383,
+      "q_phys": -13.904,
+      "n_titratable_reported": 58
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2006_arm_native_target_-14_charge_-14_38.pdb",
+      "seq": "SANLELGKQAYLAFCSKCHSGLGNSVVPELTLTKEALERYLPGGFNFEAILDVLVNGLGYFPPLKERLSEEQLEAIARYIYQTARSEAWANLELGKQAYLAFCSKCHAGGGNTVTPELTLEKDQLEEYLPGGFNLEAIYELLKNGFGEFPSLEGVLTEEELKAIAEYIYYLAENDLW",
+      "L": 177,
+      "q_design": -14.385,
+      "q_phys": -14.008,
+      "n_titratable_reported": 58
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2007_arm_native_target_-14_charge_-19_38.pdb",
+      "seq": "SADLELGKAVFEAYCSSCNAGLGNSIHPEWTLTKEALEKYLPGGFNLEAILEWLENGLGDFPPLSEVLSEEELKSLAEYIYLLAKSQAWADLELGKAVFEAYCSSCHKGGGNSVNPELTLSKEALEKYLPGGFNLEAILEVLRDGLGSWPSLKGVLSDEQLEAIAEYILELAENNLW",
+      "L": 177,
+      "q_design": -19.376,
+      "q_phys": -18.236,
+      "n_titratable_reported": 55
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2008_arm_native_target_-14_charge_-13_34.pdb",
+      "seq": "SANLELGQQTYKAYCAPCHENFGNTVFPEKTLDAESLEKYLPGGFNLEAILRVLREGWDAWPGLSEELSEEELESIAEYIYNRAKAKAWANLELGQQTYKAYCAPCHKGGGNTVNPEWTLTAEALAEHLPGGFNFNAIYELLRNGWGWWPGLRDVLTEEQLKALAEYILYMATNNEW",
+      "L": 177,
+      "q_design": -13.344,
+      "q_phys": -11.708,
+      "n_titratable_reported": 56
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2009_arm_native_target_-14_charge_-23_37.pdb",
+      "seq": "SANLLLGSSTYLAFCSSCHAGLGNSVEPEWTLTAEALEEYLPGGFNFEAILEVLRNGLGELPGLRELLTEEELEALALYIYELARAEAWANLLLGSSTYLAFCSSCHEGGGNSIEPELTLSAEALEKYLPGGFNLEAIYEVLKNGLGEFPSLEGVLSEEELLSIAEYILYRAENNLW",
+      "L": 177,
+      "q_design": -23.372,
+      "q_phys": -21.358,
+      "n_titratable_reported": 50
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2010_arm_native_target_-14_charge_-12_39.pdb",
+      "seq": "SANLLLGKQTFKAYCESCHAGLGNSVNPEWTLTKEALEKYLPGGFNYEAIYNVLVNGLGEWPALSEALTPEELEAAAAYLYELAVNNAWANLLLGKQTFKAYCESCHAGGGNSINPELTLRYEELAAYLPGGANFEAIYELLVNGWGEWPALKGVLSEEELRALAEYILYLARNNLW",
+      "L": 177,
+      "q_design": -12.388,
+      "q_phys": -11.268,
+      "n_titratable_reported": 51
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2011_arm_native_target_-14_charge_-16_26.pdb",
+      "seq": "SADLELGEQTFKAHCSSCHSGFGNSINPELTLSAEALEKYLPGGFNFEAILEVLKNGLGSFPPLSEKLSEEQLEAVASYIYERAVNGSWADLELGEQTFKAHCSSCHANGGNSIVPELTLTKEALEEHLPGGFNFDAIYETLVNGLGAFPSLKNVLSEEQLSSLSEYILKLAVNNLW",
+      "L": 177,
+      "q_design": -16.259,
+      "q_phys": -15.122,
+      "n_titratable_reported": 49
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2012_arm_native_target_-14_charge_-16_38.pdb",
+      "seq": "SADLLLGELGFRAYCSSCHENLGNSVNPELTLTKEALEKYLPGGFNYEAILRVIKEGWGEWPALSELLSEEELEALAEYIYRLAKSQAWADLLLGELGFRAYCSSCHAGGGNSINPEWTLTKEALEKYLPGGFNLEAILELLENGRGEWPALLGVLTPEELRAIAEYILLVAENNLW",
+      "L": 177,
+      "q_design": -16.375,
+      "q_phys": -16.059,
+      "n_titratable_reported": 55
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2013_arm_native_target_-14_charge_-19_16.pdb",
+      "seq": "SADLELGEQTFKAYCSECHDGFGNSVNPDLTLSAEALEKYLPGGFNLEAILEWLKNGLGYWPGLSDELSEEQLEAAAQYIYERAVSGAWADLELGEQTFKAYLSETHEGGGNSINPELTLQAENLKKYLPGGFNLDAILKLLKNGWKELPSLKDVLSDEQLEAIAEYIYYKAVNDLW",
+      "L": 177,
+      "q_design": -19.16,
+      "q_phys": -18.289,
+      "n_titratable_reported": 57
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2014_arm_native_target_-14_charge_-7_42.pdb",
+      "seq": "SADLRLGRQTFKAYCEKCNKNLGNSVVPELTLTKESLEKYLPGGFNYEAIKEVLVNGLGSFPGLKEELTPEEIEALARYIYEKAVSGAWADLRLGRQTFKAYCEKCHKGGGNSVNPELTLRKEELERYLPGGFNLEAIEKVLREGWGEWPSLEGVLTDEEIQALAEYILYLATNNAW",
+      "L": 177,
+      "q_design": -7.421,
+      "q_phys": -6.996,
+      "n_titratable_reported": 64
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2015_arm_native_target_-14_charge_-11_34.pdb",
+      "seq": "SADLILGKQTFKAYCESCHQNLGNSIEPELKLTKESLENYLPGGFNFEAILRLLINGRGFFPGLSEALSEEQLKALAQYVFELAENKAWADLILGKQTFKAYCESCHKGGGNSLVPELTLTKEALELHLPGGFNFEAIEEVLKNGWGLFPSLENVLTEEEIKAIAEYILYKAVNDAW",
+      "L": 177,
+      "q_design": -11.34,
+      "q_phys": -10.997,
+      "n_titratable_reported": 55
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2016_arm_native_target_-14_charge_-10_83.pdb",
+      "seq": "SADLLLGKQVFEAYLRKTHDGLGNSVYPELTLTAAALERYLPGGFNFEAILEVLVNGWGSFPALKEKLTPEELEAAAEYVYQLAVHGAWADLLLGKQVFEAYLRKVHEGGGNSVHPEWTLYKESLEEHLPGGFNLEAIYELLKNGLGEWPSLKGVLSEEELKSIAEYIYYKARNNLW",
+      "L": 177,
+      "q_design": -10.825,
+      "q_phys": -10.475,
+      "n_titratable_reported": 57
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2017_arm_native_target_-14_charge_-18_33.pdb",
+      "seq": "SADILLGEQTFKAYCEPCHKGLGNSVNPELKLTKEALEEHLPGGFNFEAILELLRHGRGSFPALRDLLSEEELEAAAEYIYLRAEEEAWADLLLGEQTFKAYCEPCNRGGGNSVVPEWTLSAEALEEFLPGGFNLEAIREVLKNGWGEWPGLKGVLTEEQIEALAEYILYLATNNKW",
+      "L": 177,
+      "q_design": -18.332,
+      "q_phys": -15.523,
+      "n_titratable_reported": 59
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2018_arm_native_target_-14_charge_-16_35.pdb",
+      "seq": "SADLLLGKQVYQAYCASCHENLGNSVNPEWTLKAEALEKYLPGGFNFDAILNLLKEGLGSWPGLSSALSEEELEALAQYIYLLATSNAWADLLLGKQVYQAYCASCHKGGGNSVVPELTLQAESLAAHLPGGFNFEAIYELLKNGLGYFPSLEGVLTEEELNAIAEYILEKAENDAW",
+      "L": 177,
+      "q_design": -16.347,
+      "q_phys": -16.055,
+      "n_titratable_reported": 50
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2019_arm_native_target_-14_charge_-13_34.pdb",
+      "seq": "SADLLLGSLTFRAFCSSCHKNGGNSIVPEKTLTAEALEEYLPGGFNLEAILNLLRNGLGEWPALNEALSEEELQAAAKYIYNLAKEGAWADLLLGSLTFRAFCSSCHSGGGNSLNPEKTLTKEALEKYLPGGFNHEAIYNWLVNGNGEWPSLSGVLSEEELNAISEYILYLAENNLW",
+      "L": 177,
+      "q_design": -13.34,
+      "q_phys": -12.166,
+      "n_titratable_reported": 47
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2020_arm_native_target_-14_charge_-14_38.pdb",
+      "seq": "SANIVLGQAVFRAYCASCHKNLGNSIVPELTLTKESLEENLPGGFNYEAILEVLRNGLGTFPPLKEALTEEELEAAAEYIYLKAVSNAWANLVLGQAVFRAYCASCHANGGNSVNPELTLYKESLEEYLPGGFNLEAIENVLVNGFGEWPALEGVLSPEEIRAIAEYILYVATNNLW",
+      "L": 177,
+      "q_design": -14.379,
+      "q_phys": -12.988,
+      "n_titratable_reported": 47
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2021_arm_native_target_-14_charge_-25_38.pdb",
+      "seq": "SANVILGELTYKAYCEGCHENLGNSVEPELTLYAEALEEYLPGGFNLEAILDVLVNGRGSWPGLSELLTEEELEALAEYIYLLAKENAWANLILGELTYKAYCEGCHAGGGNSINPELTLTAEALEEYLPGGFNFEAIYDVLKNGLGEWPALEGVLTEEELEALAEYILYKARNNAW",
+      "L": 177,
+      "q_design": -25.379,
+      "q_phys": -24.246,
+      "n_titratable_reported": 58
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2022_arm_native_target_-14_charge_-11_50.pdb",
+      "seq": "SADPLLGKATFKAYCASCHENLGNSINPELTLTKEALEKHLPGGFNYEAILKVLRNGLGELPALADKLSEEELEAAAYYIYQLAESKAWADLLLGKATFKAYCASCCAGGGNSVNPELTLTAEALEANLPGGFNFEAIKKVLVEGWGWFPSLAGVLTPEEIAAIAEYILYLATNELW",
+      "L": 177,
+      "q_design": -11.495,
+      "q_phys": -9.855,
+      "n_titratable_reported": 50
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2023_arm_native_target_-14_charge_-13_34.pdb",
+      "seq": "SADLLLGKQTFQAYCSSCHAGLGNNVAPDLTLTKEALEKYLPGGFNFEAILEVLKNGWGYLPGLSEELSEEELEALARYIYELAKNKAWADLLLGKQTFQAYCSSCHAGGQNKVVPELTLRKEELEEHLPGGFNFEAIYEVLKNGWGTFPSLEGVLSEEELKSLAEFILYLARNDLW",
+      "L": 177,
+      "q_design": -13.343,
+      "q_phys": -12.822,
+      "n_titratable_reported": 57
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2024_arm_native_target_-14_charge_-24_30.pdb",
+      "seq": "SADLLLGEQTYRAYCSSCHENLGNSIEPDWTLTKESLEEHLPGGFNLEAILELLRNGRGEWPALSEILSEEELEALAEYIFLKAEEEAWADLLLGEQTYRAYCSSCHEGGGNSILPEHTLDKESLREYLPGGFNLEAIYELLQNGLGYLPSLKGVLTEEELNALAEYILYKAENNQW",
+      "L": 177,
+      "q_design": -24.298,
+      "q_phys": -22.721,
+      "n_titratable_reported": 61
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2025_arm_native_target_-14_charge_-17_34.pdb",
+      "seq": "SADLLLGEQTFRAYCSSCHDGLGNSVVPEWKLTKESLEKYLPGGFNYEAILRVLEEGRGELPALSEELTPEELDALAQYIYELAVNEEWADLLLGEQTFRAYCSSCHAGGGNSVNPELTLTKEALEQHLPGGFNLEAIKKLLVEGWGSFPSLKGVLTPEEIEAIAEYIYYRATNNAW",
+      "L": 177,
+      "q_design": -17.34,
+      "q_phys": -16.929,
+      "n_titratable_reported": 56
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2026_arm_native_target_-14_charge_-22_30.pdb",
+      "seq": "SADLLLGNQVYLAYCSSCHDGLGNSVQPDWTLTARALEENLPGGFNFEAILELLVNGRGEIPSLSEALSKEELEAAARYIYEKAKSEAWADLLLGNQVYLAYCSSCHEGGGNSVNPELTLSAEALAEHLPGGFNFEAIYEWLVNGHGEWPSLEGVLSEEELEAIAAYILYLATNDLW",
+      "L": 177,
+      "q_design": -22.3,
+      "q_phys": -21.618,
+      "n_titratable_reported": 52
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2027_arm_native_target_-14_charge_-14_16.pdb",
+      "seq": "SANLLLGKQTFLAYCSSCFAGLGNSVNPELTLTKEALEKYLPGGFNYEAILELLVNGWGSLPPLSEILTPEELEAAAEYIFLLAENGEWANLLLGKQTFLAYLSSTHAGGGNSIDPELTLSKEALEQYLPGGFNFEAILSWLKEGHGNWPSLEGVLTEEELRAIAQYIYYKAVNNLW",
+      "L": 177,
+      "q_design": -14.159,
+      "q_phys": -14.025,
+      "n_titratable_reported": 44
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2028_arm_native_target_-14_charge_-22_30.pdb",
+      "seq": "SADLLLGELAYKAYCESCHEDLGNSVVPELTLRADALEKHLPGGFNLEAILKVLRNGLGEWPALSEELSEEELEALAEYIYEKAREGAWADLLLGELAYKAYCESCHEGGGNSLFPEHTLSAEALEKYLPGGFNLEAILQTLRNGWKELPSLEGVLTEEELEAIAQYIYYLAVNNLW",
+      "L": 177,
+      "q_design": -22.3,
+      "q_phys": -20.029,
+      "n_titratable_reported": 61
+    },
+    {
+      "pdb": "output/generalization_v12_1_calib/protein/1C6O/pH7.4/arm_native/folds/seed_2029_arm_native_target_-14_charge_-11_42.pdb",
+      "seq": "SANLLLGSLAYRAYCSSCFDNLGNSVNPEWTLTKEALERYLPGGFNLEAILELLENGLGTLPPLREKLTKEELLAVAEYIYRLAEEGAWANLLLGSLAYRAYCSSCHEGGGNTVAPELTLSEEALAQYLPGGFNLEAIRELLVNGWGYIPSLKGVLTEEEIQSLAEYIYYKAKNNLW",
+      "L": 177,
+      "q_design": -11.425,
+      "q_phys": -11.04,
+      "n_titratable_reported": 53
+    }
+  ],
+  "q_phys_mean": -14.971,
+  "q_phys_std": 4.089,
+  "q_design_mean": -15.911,
+  "h4_dev": 0.971,
+  "h4_pass": true
+}

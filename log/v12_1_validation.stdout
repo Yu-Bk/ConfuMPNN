@@ -1,0 +1,17 @@
+[11:20:49] == V1 采样 ==
+[11:20:49] V1 采样启动（protein 模式 5 臂 n=30，校准，cuda:6）...
+[11:36:22] V1 采样完成：10/50
+[11:36:23] == V2 ESMFold 回折 ==
+[11:36:23] V2 回折启动（cuda:4）...
+[13:29:32] V2 回折完成：50/50
+[13:29:32] == V3 TM-score ==
+[13:35:55] V3 TM 完成：50/50
+[13:35:55] == V4 统计 ==
+[13:35:56] V4 统计完成：output/generalization_v12_1_calib_stats.json
+[13:35:56] == V5 PROPKA 复核（4 蛋白 × native/n8）==
+SKIP (无 validation.json): 1BJ4
+SKIP (无 validation.json): 1A65
+SKIP (无 validation.json): 1AG0
+SKIP (无 validation.json): 1C6O
+[13:35:56] V5 PROPKA 完成
+[13:35:56] == v12.1 泛化验证全流程完成（H1/H2/GRAVY/H4 产物齐备）==
