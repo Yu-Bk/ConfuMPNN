@@ -106,3 +106,8 @@ v12.1 + n50 校准已达成：
 6. **v9 迁移评估**（对齐 §3.7 + `PROJECT_V9_LIGAND_PLAN.md`）：若 v12.2 效果好 → LigandMPNN 重训 `--ligand --v12_supervision` + λ_target 配体适配 + 配体模式 SASA/组成适配 + v9 配体诊断校准表 → 泛化复验
 7. 全部结果汇总 → 写验证报告 → 汇报用户
 8. **若结果需方向决策（不达标/新短板）→ 暂停，等用户决策**（此点不在自动授权内）
+
+### D. 保存纪律（用户要求 2026-08-30："过程中及时保存分析报告/项目进度/对话记录/下一步计划"）
+- **每完成一个阶段（A/B/C 每步）立即保存**：写/追加 `analysis/report/` 报告、`session/` 对话记录、memory `confumpnn-project-status.md`、本计划文档 → `git commit + push`
+- **不攒到最后一起写**——任何中断（含重大错误停下汇报）时，已完成阶段的记录都在 git 里
+- 训练/验证日志等大文件产物不 commit（`output/` 已 gitignore；`log/` 按需，训练进行中的 log 不提交）
