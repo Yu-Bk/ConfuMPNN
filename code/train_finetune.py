@@ -101,7 +101,7 @@ from src.v10_losses import (  # noqa: E402
     ph_aware_structure_penalty, surface_add_charge_loss,
 )
 from src.v12_losses import (  # noqa: E402
-    surface_composition_loss, surface_gravy_loss, KD,
+    surface_composition_loss, surface_gravy_loss, surface_charge_target_loss, KD,
 )
 
 # 默认生成器权重（与 run_guided.py E4 一致）
@@ -190,6 +190,9 @@ def parse_args():
                    help="v12 GRAVY 监督：允许的表面 GRAVY 上升量（margin）")
     p.add_argument("--lambda_v12", type=float, default=0.3,
                    help="v12 组成+GRAVY 总权重（λ_v12·(comp+gravy)）")
+    p.add_argument("--lambda_target", type=float, default=0.0,
+                   help="v12.2 表面电荷目标权重：锚定表面净电荷 = target − 核心 native 电荷"
+                        "（λ_target·|q_surf − target_surf|；0=关闭，治'无限加'上界缺失）")
     p.add_argument("--decouple_absolute", action="store_true",
                    help="v11 A-fix：绝对 target 采样——与 native 无关，直接覆盖 [lo,hi]，"
                         "解决 v10 相对解耦±12 无法覆盖验证深负靶区（−19~−35）的问题")
@@ -375,7 +378,7 @@ def main():
         logln(f"[v10 B] 表面添加电荷监督开：λ_add={args.lambda_add}  SASA θ={args.sasa_threshold}")
     if args.v12_supervision:
         logln(f"[v12] 训练侧监督开：组成双计数(floor={args.frac_floor}) + GRAVY(margin={args.gravy_margin})"
-              f"  λ_v12={args.lambda_v12}  SASA θ={args.sasa_threshold}")
+              f"  λ_v12={args.lambda_v12}  λ_target={args.lambda_target}  SASA θ={args.sasa_threshold}")
     if args.ph_aware_filter:
         logln(f"[v10 C] pH 自适应结构惩罚开：boost={args.structure_boost}")
 
@@ -747,6 +750,32 @@ def main():
                     v12_comp = v12_comp / n_v12
                     v12_gravy = v12_gravy / n_v12
 
+            # v12.2：表面电荷目标（--lambda_target>0）——锚定表面净电荷 = target − 核心 native 电荷。
+            # 核心锁死（native 非表面残基电荷固定，无梯度），表面承担全部电荷变化
+            # → 给"加 K/R"设 target 上界，治 v12 的"无限加"（上界缺失），且保留调节自由度（防欠冲）。
+            v12_ct = torch.zeros((), device=device)
+            if args.lambda_target > 0 and dom.get("frac_sasa") is not None:
+                from src.differentiable_charge import net_charge_from_logits
+                core_mask = (~surf).astype(np.float32)           # [L] 核心（非表面）残基
+                nat_onehot = F.one_hot(torch.as_tensor(nat_int).clamp(0, 19).long(),
+                                       num_classes=20).float().to(device)   # [L,20] native 侧链 one-hot
+                n_ct = 0
+                for i in range(B):
+                    if mask_ph[i].item():
+                        continue  # 同 comp/gravy，占位符样本跳过
+                    q_core = net_charge_from_logits(
+                        nat_onehot.unsqueeze(0), pH=pH_b[i],
+                        mask=torch.as_tensor(core_mask, device=device).unsqueeze(0),
+                        include_termini=False)                   # 核心侧链电荷（两端归表面侧）
+                    target_surf = charge_b[i].detach() - q_core  # target − 核心 → 表面承担全部
+                    v12_ct = v12_ct + surface_charge_target_loss(
+                        logits[i:i+1], pH=pH_b[i], target_surface_charge=target_surf,
+                        frac_sasa=frac, surface_threshold=args.sasa_threshold,
+                        temperature=args.charge_temp)
+                    n_ct += 1
+                if n_ct > 0:
+                    v12_ct = v12_ct / n_ct
+
             total = ce + args.lambda_c * cd + args.lambda_kl * kl + args.lambda_keep * keep
             if args.add_supervision:
                 total = total + args.lambda_add * add
@@ -754,6 +783,8 @@ def main():
                 total = total + 0.05 * struct_pen
             if args.v12_supervision:
                 total = total + args.lambda_v12 * (v12_comp + v12_gravy)
+                if args.lambda_target > 0:
+                    total = total + args.lambda_target * v12_ct
 
             # NaN 诊断（v10 训练踩坑，收集模式）：记录 loss 分量 NaN 并跳过本 step
             if not torch.isfinite(total).all():
