@@ -10,6 +10,7 @@
 # 用法（后台）：nohup bash code/tests/ligand_v9/run_v12_1_validation.sh > log/v12_1_validation.stdout 2>&1 &
 # 断点续跑：按产物计数（validation.json / plddt.csv / tm.csv）判断阶段是否完成。
 set -u
+export PATH="/home/baokun_yu/miniconda3/envs/confumpnn/bin:$PATH"   # nohup 环境无 PATH，propka3 等 CLI 依赖它
 ROOT="/data/nfs/IC/baokun_yu/ConfuMPNN"
 cd "$ROOT"
 PY="/home/baokun_yu/miniconda3/envs/confumpnn/bin/python"
@@ -17,16 +18,17 @@ PYE="/home/baokun_yu/miniconda3/envs/confumpnn-esmfold/bin/python"
 MANIFEST="data/validation_pdbs/validation_manifest.json"
 ENC="output/finetune_v12_1/finetune_epoch030.pt"
 W="MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt"
-CAL="output/charge_calibration_v12_1.json"
-OUT="output/generalization_v12_1_calib"
+CAL="output/charge_calibration_v12_1_n50.json"
+OUT="output/generalization_v12_1_calib_n50"
 TARGET=50   # 10 蛋白 × 5 臂
 
 log() { echo "[$(date '+%H:%M:%S')] $1"; }
 count() { find "$1" -name "$2" 2>/dev/null | wc -l; }
 
 # ================= V1: 采样（protein 模式 5 臂 n30，校准，GPU6）=================
+# 注意：validation.json 每蛋白 1 个（共 10 个），不能用 TARGET=50（那是 arm 数）
 log "== V1 采样 =="
-if [ "$(count "$OUT" validation.json)" -lt "$TARGET" ]; then
+if [ "$(count "$OUT" validation.json)" -lt 10 ]; then
   log "V1 采样启动（protein 模式 5 臂 n=30，校准，cuda:6）..."
   PYTHONPATH=code timeout 14400 "$PY" code/tests/ligand_v9/validate_generalization.py \
     --manifest "$MANIFEST" --out_dir "$OUT" --mode protein --backbone auto \
@@ -78,13 +80,13 @@ log "V4 统计完成：output/generalization_v12_1_calib_stats.json"
 log "== V5 PROPKA 复核（4 蛋白 × native/n8）=="
 PYTHONPATH=code "$PY" - <<'PYEOF'
 import json, subprocess, os
-ROOT = 'output/generalization_v12_1_calib'
+ROOT = 'output/generalization_v12_1_calib_n50'
 PY = '/home/baokun_yu/miniconda3/envs/confumpnn/bin/python'
 PROTS = ['1BJ4', '1A65', '1AG0', '1C6O']   # 覆盖最坏响应/长蛋白/中等
-outdir = 'output/propka_v12_1'
+outdir = 'output/propka_v12_1_n50'
 os.makedirs(outdir, exist_ok=True)
 for p in PROTS:
-    vj_path = f'{ROOT}/protein/{p}/pH7.4/validation.json'
+    vj_path = f'{ROOT}/protein/{p}/validation.json'
     if not os.path.exists(vj_path):
         print('SKIP (无 validation.json):', p); continue
     q = json.load(open(vj_path))['native_charge']
