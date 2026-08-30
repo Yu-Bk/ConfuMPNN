@@ -80,3 +80,29 @@ v12.1 + n50 校准已达成：
 - 评估输出：`output/holdout_eval.json`
 - Tm/Sol：`output/tm_sol_v12_1/`
 - 报告：`analysis/report/2026-08-30_v12_2_*.md`（训练 + 验证）
+
+## 6. 训练后自动执行流程（用户授权 2026-08-30 自动执行）
+
+用户明确授权：**训练完成后判断模型训练正常 → 若正常自动写分析报告+项目记录对话记录 → 完成后自动开始验证和诊断**（无需逐项等确认）。
+
+### A. 训练完成判断（收到监控通知时，先判断再汇报）
+- 训练 log：epoch 30 是否完成、有无 NaN、cd self/mild/extreme 分组监控值
+- 对照 v12.1 基准：total 3.66 / ce 1.90 / charge 2.52 / keep 0.90，cd mild 2.55 / extreme 3.06
+- checkpoint 确认：`output/finetune_v12_2/` 存在完整 epoch 权重
+- **异常（NaN / 崩溃 / 损失不收敛）→ 立即停下，汇报用户决策，不进入 B/C**
+
+### B. 报告 + 记录（自动，训练正常时）
+1. `analysis/report/2026-08-30_v12_2_training.md`：配置、收敛曲线、vs v12.1 对照、λ_target 效果
+2. `session/` 追加对话记录
+3. memory `confumpnn-project-status.md` 更新
+4. git add + commit + push（**排除训练中文件**）
+
+### C. 自动开始验证和诊断（自动，对齐 §3 执行顺序 + §4 判据）
+1. **17 蛋白响应诊断**（valid 区 slope 判据 [0.9,1.15]）
+2. **组成分析**（D/K 计数 vs native，治过度添加是否复发）
+3. **hold-out 评估**（`validate_holdout.py` 待写，在 `labels_holdout_train.npz` 上 H2/recovery——对 v12.2 是真正未见数据）
+4. **泛化验证**（复用 `run_v12_1_validation.sh` 换 checkpoint，ESMFold 回折 TM/pLDDT/RMSD + GRAVY + PROPKA H4）
+5. **Tm/Sol 补充**（对齐 §2.2：现有泛化 10 蛋白 + native + 无条件基线）
+6. **v9 迁移评估**（对齐 §3.7 + `PROJECT_V9_LIGAND_PLAN.md`）：若 v12.2 效果好 → LigandMPNN 重训 `--ligand --v12_supervision` + λ_target 配体适配 + 配体模式 SASA/组成适配 + v9 配体诊断校准表 → 泛化复验
+7. 全部结果汇总 → 写验证报告 → 汇报用户
+8. **若结果需方向决策（不达标/新短板）→ 暂停，等用户决策**（此点不在自动授权内）
