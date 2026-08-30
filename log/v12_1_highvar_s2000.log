@@ -1,0 +1,12 @@
+target 网格: [-18.0, -10.0, -7.0, 1.0]  n=50  pH=7.4  backbone=auto
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+backbone 实际类型: protein_mpnn
+
+name        L nativeQ  slope    int    r2 group    |  target→均值 示例
+2FEO      221    -6.9   1.13    4.3  1.00 pdb      | -18→-16.4 ... -7→-3.3
+1AXW      528   -18.3   0.97    5.5  0.96 pdb      | -18→-12.7 ... -18→-12.7
+
+=== 斜率汇总（按 group）===
+  pdb     : n= 2  slope 均值=1.05 ± 0.08
+
+结果已写: /tmp/highvar_n50_s2000.json

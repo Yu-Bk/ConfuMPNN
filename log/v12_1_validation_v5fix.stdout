@@ -1,0 +1,213 @@
+[20:41:31] == V1 采样 ==
+[20:41:31] V1 采样启动（protein 模式 5 臂 n=30，校准，cuda:6）...
+[20:58:11] V1 采样完成：10/50
+[20:58:11] == V2 ESMFold 回折 ==
+[20:58:11] V2 回折已完成（50/50），跳过
+[20:58:11] V2 回折完成：50/50
+[20:58:11] == V3 TM-score ==
+[20:58:11] V3 TM 完成：50/50
+[20:58:11] == V4 统计 ==
+[20:58:12] V4 统计完成：output/generalization_v12_1_calib_stats.json
+[20:58:12] == V5 PROPKA 复核（4 蛋白 × native/n8）==
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+Traceback (most recent call last):
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 264, in <module>
+    main()
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in main
+    results = [check_single(pdb, args.pH, args.target, workdir)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in <listcomp>
+    results = [check_single(pdb, args.pH, args.target, workdir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 193, in check_single
+    groups = run_propka(pdb_path, workdir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 119, in run_propka
+    p = subprocess.run(
+        ^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'propka3'
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+Traceback (most recent call last):
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 264, in <module>
+    main()
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in main
+    results = [check_single(pdb, args.pH, args.target, workdir)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in <listcomp>
+    results = [check_single(pdb, args.pH, args.target, workdir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 193, in check_single
+    groups = run_propka(pdb_path, workdir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 119, in run_propka
+    p = subprocess.run(
+        ^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'propka3'
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+Traceback (most recent call last):
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 264, in <module>
+    main()
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in main
+    results = [check_single(pdb, args.pH, args.target, workdir)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in <listcomp>
+    results = [check_single(pdb, args.pH, args.target, workdir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 193, in check_single
+    groups = run_propka(pdb_path, workdir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 119, in run_propka
+    p = subprocess.run(
+        ^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'propka3'
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+Traceback (most recent call last):
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 264, in <module>
+    main()
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in main
+    results = [check_single(pdb, args.pH, args.target, workdir)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in <listcomp>
+    results = [check_single(pdb, args.pH, args.target, workdir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 193, in check_single
+    groups = run_propka(pdb_path, workdir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 119, in run_propka
+    p = subprocess.run(
+        ^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'propka3'
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+Traceback (most recent call last):
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 264, in <module>
+    main()
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in main
+    results = [check_single(pdb, args.pH, args.target, workdir)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in <listcomp>
+    results = [check_single(pdb, args.pH, args.target, workdir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 193, in check_single
+    groups = run_propka(pdb_path, workdir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 119, in run_propka
+    p = subprocess.run(
+        ^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'propka3'
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+Traceback (most recent call last):
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 264, in <module>
+    main()
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in main
+    results = [check_single(pdb, args.pH, args.target, workdir)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in <listcomp>
+    results = [check_single(pdb, args.pH, args.target, workdir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 193, in check_single
+    groups = run_propka(pdb_path, workdir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 119, in run_propka
+    p = subprocess.run(
+        ^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'propka3'
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+Traceback (most recent call last):
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 264, in <module>
+    main()
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in main
+    results = [check_single(pdb, args.pH, args.target, workdir)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in <listcomp>
+    results = [check_single(pdb, args.pH, args.target, workdir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 193, in check_single
+    groups = run_propka(pdb_path, workdir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 119, in run_propka
+    p = subprocess.run(
+        ^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'propka3'
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+Traceback (most recent call last):
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 264, in <module>
+    main()
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in main
+    results = [check_single(pdb, args.pH, args.target, workdir)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 225, in <listcomp>
+    results = [check_single(pdb, args.pH, args.target, workdir)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 193, in check_single
+    groups = run_propka(pdb_path, workdir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/nfs/IC/baokun_yu/ConfuMPNN/code/tests/propka_charge_check.py", line 119, in run_propka
+    p = subprocess.run(
+        ^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/baokun_yu/miniconda3/envs/confumpnn/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'propka3'
+done: output/propka_v12_1_n50/1BJ4_native.json
+done: output/propka_v12_1_n50/1BJ4_n8.json
+done: output/propka_v12_1_n50/1A65_native.json
+done: output/propka_v12_1_n50/1A65_n8.json
+done: output/propka_v12_1_n50/1AG0_native.json
+done: output/propka_v12_1_n50/1AG0_n8.json
+done: output/propka_v12_1_n50/1C6O_native.json
+done: output/propka_v12_1_n50/1C6O_n8.json
+[20:58:25] V5 PROPKA 完成
+[20:58:25] == v12.1 泛化验证全流程完成（H1/H2/GRAVY/H4 产物齐备）==
