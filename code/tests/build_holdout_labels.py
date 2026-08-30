@@ -60,6 +60,10 @@ def main():
                     default="/data/nfs/IC/baokun_yu/ConfuMPNN/data/cath/labels_balanced_v7.npz")
     ap.add_argument("--n_total", type=int, default=1500, help="hold-out 目标域数（15% 量级）")
     ap.add_argument("--n_bins", type=int, default=8, help="按 native charge@7.4 分箱数")
+    ap.add_argument("--reach_lo", type=float, default=None,
+                    help="可达范围下界（默认=剩余域 charge7 实际 min）；剩余域 hold-out 只能匹配训练集在此范围内的子分布")
+    ap.add_argument("--reach_hi", type=float, default=None,
+                    help="可达范围上界（默认=剩余域 charge7 实际 max）")
     ap.add_argument("--n_pH", type=int, default=8, help="每域标签 pH 数（与训练同构）")
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--out", default="/data/nfs/IC/baokun_yu/ConfuMPNN/data/cath/labels_holdout.npz")
@@ -84,8 +88,9 @@ def main():
     files = sorted(p for p in glob.glob(os.path.join(args.dompdb, "*")) if os.path.isfile(p))
     rem_parsed = []  # (path, coords, seq, charge7)
     for i, p in enumerate(files):
-        base = os.path.basename(p).lower()
-        if base in train_ids or any(base.startswith(pfx) for pfx in EXCLUDE_PFX):
+        name = os.path.basename(p)          # CATH 文件名 = domain_id（混合大小写，如 1bj4A01）
+        base = name.lower()                 # 小写版仅用于验证蛋白前缀匹配
+        if name in train_ids or any(base.startswith(pfx) for pfx in EXCLUDE_PFX):
             continue
         coords, seq = parse_domain(p)
         if coords is None:
@@ -99,8 +104,16 @@ def main():
     if args.limit:
         print(f"    dry-run：仅处理 {len(rem_parsed)} 个", flush=True)
 
-    # ---- 3. 分层抽样：训练集 8 分位等频箱 → 每箱抽 ceil(n_total/n_bins) ----
-    qs = np.quantile(train_charge7, np.linspace(0, 1, args.n_bins + 1))
+    # ---- 3. 分层抽样：训练集（可达范围子集）8 分位等频箱 → 每箱抽 ceil(n_total/n_bins) ----
+    # 剩余域天然无高正电（charge7 最高 ~+8），只能匹配训练集在可达范围内的子分布
+    rem_c7 = np.array([c for _, _, _, c in rem_parsed])
+    reach_lo = args.reach_lo if args.reach_lo is not None else float(rem_c7.min())
+    reach_hi = args.reach_hi if args.reach_hi is not None else float(rem_c7.max())
+    sub_mask = (train_charge7 >= reach_lo) & (train_charge7 <= reach_hi)
+    train_sub = train_charge7[sub_mask]
+    print(f"\n[3] 可达范围 [{reach_lo:.1f},{reach_hi:.1f}]：训练集子集 {len(train_sub)} 域"
+          f"（mean={train_sub.mean():.2f}/std={train_sub.std():.2f}）——hold-out 匹配此子分布", flush=True)
+    qs = np.quantile(train_sub, np.linspace(0, 1, args.n_bins + 1))
     per_bin = -(-args.n_total // args.n_bins)  # ceil
     rng = random.Random(args.seed)
     selected = []
@@ -124,14 +137,14 @@ def main():
         print(f"  [{lo:+6.2f},{hi:+6.2f}): {total:5d} → {take:4d}")
     print(f"  合计 {len(selected)} 域（目标 {args.n_total}）", flush=True)
 
-    # ---- 4. 分布对比（均值/方差匹配检查）----
-    print("\n[4] 分布对比（native charge@7.4）：")
-    for name, arr in [("训练集", train_charge7), ("hold-out", charge7_sel)]:
+    # ---- 4. 分布对比（均值/方差匹配检查，vs 训练集可达子集）----
+    print("\n[4] 分布对比（native charge@7.4，vs 训练集可达子集）：")
+    for name, arr in [("训练集子集", train_sub), ("hold-out", charge7_sel)]:
         print(f"  {name:8s} mean={arr.mean():6.2f} std={arr.std():6.2f} "
               f"range=[{arr.min():6.1f},{arr.max():6.1f}] n={len(arr)}")
     print("  → mean 差 = %.2f，std 差 = %.2f（目标：同数量级，mean 差<0.5）"
-          % (charge7_sel.mean() - train_charge7.mean(),
-             charge7_sel.std() - train_charge7.std()), flush=True)
+          % (charge7_sel.mean() - train_sub.mean(),
+             charge7_sel.std() - train_sub.std()), flush=True)
 
     # ---- 5. 构建标签（与训练同构：每域 8 个随机 pH）----
     if args.limit or args.dry_run:
