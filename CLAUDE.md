@@ -5,7 +5,7 @@
 
 **当前状态（2026-08-31）**：
 - **v12.2 是当前最优模型**（MoMPNN backbone，无配体/小蛋白）：v12.1 + λ_target 表面电荷锚（治过度添加 + 正向弱）。**完整验证链达标**：诊断 slope 1.00、泛化 per-protein H2 72%、小样本现场标定 74%、Tm/Sol 无恶化（S2 0/50）、无过拟合。训练 `output/finetune_v12_2/finetune_epoch030.pt`
-- **校准三口径（使用前必读）**：① per-protein（17 蛋白校准表 `charge_calibration_v12_2.json` 内）→ 72%；② **表外蛋白先小样本现场标定**（采 50 条拟合自身 slope，`build_calibration_small.py`）→ 74%；③ 不标定用 global → 40-44%（固有上限）。**⚠️ run_guided 默认读旧 `charge_calibration.json`，用 v12.2 表必须显式 `--calibration_file`**
+- **校准三口径（使用前必读，2026-08-31 定稿）**：① per-protein（17 蛋白校准表 `charge_calibration_v12_2.json` 内）→ 72%；② **表外蛋白先小样本现场标定**（`build_calibration_small.py`，**默认 n_per=10 采 50 条**拟合自身 slope，带 LOOCV 稳定性校验）→ 74%；③ 不标定用 global → 40-44%（固有上限）。**校准自动启用**：`run_guided.py` 默认校准表已改为 `charge_calibration_v12_2.json`，`--calibrate auto`（默认）表内 per-protein、表外回退 global；无需手动 `--calibration_file`。**⚠️ 小样本 n_per 不要加大到 20**（n20 对高方差蛋白 1BJ4/2FEO 反而退化——更接近诊断真值但校准反推落到响应弯曲段→命中率降；n10 的"过度拟合"碰巧补偿弯曲）。**响应弯曲蛋白**（长蛋白极端负电区，LOOCV 大）→ 自动标记 unreliable 回退 global，不是加大 n_per
 - **v9 迁移待定**（用户暂缓）：LigandMPNN 配体模式重训（`--ligand --v12_supervision` + λ_target 配体适配 + 配体校准表）未启动。v9（配体模式）仍用旧边界：正电到 +8、负电保守到 −5、长序列需检查
 - 验证链报告：`analysis/report/2026-08-31_v12_2_{training,diag,tm_sol,summary}.md`；计划 `index/PROJECT_LOCAL_V12_2.md`（§6 自动执行流程 + §6E 无泄露补跑）
 - 权威指南：`WORKFLOW_GUIDE.md`（框架/数据流/参数/损失/为什么）；新机配置 `docs/SETUP_NEW_MACHINE.md`；数据组织 `data/README.md`

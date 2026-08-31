@@ -33,7 +33,10 @@ from src.differentiable_charge import net_charge  # noqa: E402
 from run_guided import load_model, load_condition_encoder, seq_to_string  # noqa: E402
 
 AP = argparse.ArgumentParser()
-AP.add_argument("--n_per", type=int, default=10, help="每 target 标定采样数（10 → 50 条/蛋白；好蛋白/响应线性蛋白建议升到 20 → 100 条降噪声）")
+AP.add_argument("--n_per", type=int, default=10, help="每 target 标定采样数（默认 10 → 50 条/蛋白；实测最优，2026-08-31）\n"
+                "⚠️ 不要加大到 20：n20 对高方差蛋白（1BJ4/2FEO）反而退化（更接近真值但校准反推\n"
+                "落到响应弯曲段 → 命中率降）。n10 的'过度拟合'碰巧补偿弯曲。响应弯曲蛋白用\n"
+                "LOOCV 检测 + 回退 global，不是加大 n_per。")
 AP.add_argument("--consistency_thresh", type=float, default=3.0,
                 help="小样本拟合 vs global 在 native±8 区间的最大预测偏差阈值；超过则标记 unreliable")
 AP.add_argument("--seed", type=int, default=777)
