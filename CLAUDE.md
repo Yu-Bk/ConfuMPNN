@@ -3,9 +3,11 @@
 ## 项目概述
 将蛋白质在特定 pH 环境下的理化性质（净电荷、局部电荷分布）作为条件约束，整合到基于结构的蛋白序列生成流程（LigandMPNN 逆折叠）中。核心创新：**在显式建模配体原子上下文的结构条件逆折叠模型上，首次加入 pH 感知的电荷条件控制**。
 
-**当前状态（2026-08-27）**：
-- **模型为迭代演进中**：v7（MoMPNN backbone，无配体/小蛋白）+ v9（LigandMPNN backbone，配体/大蛋白）是**阶段性成果**（2026-08-19 曾暂停训练），**不是终版**——v10（A 条件解耦 + B 表面电荷监督 + C 结构惩罚）正在设计中，见 `index/PROJECT_LOCAL.md`（v3 论文导向方案）与 `index/PROJECT_LOCAL_P1_PLAN.md`（P1 对照计划）
-- v7/v9 使用边界（当前可用版本）：`analysis/report/2026-08-18_model_charge_limits.md` §8（v9 配体模式：正电到 +8、负电保守到 −5、长序列需检查）
+**当前状态（2026-08-31）**：
+- **v12.2 是当前最优模型**（MoMPNN backbone，无配体/小蛋白）：v12.1 + λ_target 表面电荷锚（治过度添加 + 正向弱）。**完整验证链达标**：诊断 slope 1.00、泛化 per-protein H2 72%、小样本现场标定 74%、Tm/Sol 无恶化（S2 0/50）、无过拟合。训练 `output/finetune_v12_2/finetune_epoch030.pt`
+- **校准三口径（使用前必读）**：① per-protein（17 蛋白校准表 `charge_calibration_v12_2.json` 内）→ 72%；② **表外蛋白先小样本现场标定**（采 50 条拟合自身 slope，`build_calibration_small.py`）→ 74%；③ 不标定用 global → 40-44%（固有上限）。**⚠️ run_guided 默认读旧 `charge_calibration.json`，用 v12.2 表必须显式 `--calibration_file`**
+- **v9 迁移待定**（用户暂缓）：LigandMPNN 配体模式重训（`--ligand --v12_supervision` + λ_target 配体适配 + 配体校准表）未启动。v9（配体模式）仍用旧边界：正电到 +8、负电保守到 −5、长序列需检查
+- 验证链报告：`analysis/report/2026-08-31_v12_2_{training,diag,tm_sol,summary}.md`；计划 `index/PROJECT_LOCAL_V12_2.md`（§6 自动执行流程 + §6E 无泄露补跑）
 - 权威指南：`WORKFLOW_GUIDE.md`（框架/数据流/参数/损失/为什么）；新机配置 `docs/SETUP_NEW_MACHINE.md`；数据组织 `data/README.md`
 
 ## 运行环境（conda，位于 ~/miniconda3/envs/）
