@@ -52,3 +52,10 @@ PYTHONPATH=code nohup ~/miniconda3/envs/confumpnn/bin/python code/train_finetune
 - H2 dev ≤ 2.0、H1 TM≥0.7、H4 |Q_phys−target|≤2.0
 - Tm/Sol 相对无条件基线无恶化（S2）
 - 1MBN dev ≤ 2.0（v9 核心修复目标）
+
+## 训练速度诊断（2026-08-31 15:00）
+- **单 epoch 实测**：500 域 3.2min → 单域 0.38s → 4956 域 ~31min/epoch（含首 epoch 预解析额外开销 ~40min）
+- **30 epoch 预计 ~15-16h**（比 v10 配体 5.5min/epoch 慢 5.7 倍）——v12 监督（组成/GRAVY/λ_target 逐样本前向）+ 配体大蛋白（L≤500 + 16 原子上下文）固有开销
+- **不是 bug**：50域 7s / 200域 38s / 500域 3.2min 线性扩展正常；4956 域 23GB 缓存复用跨 epoch
+- **重启**：首次训练（PID 3404131）epoch1 未完成即因过慢误判杀掉（无 checkpoint 损失）；重启 PID 3521281
+- 监控：20min 间隔，log/v12_2_ligand_train.monitor；40min 后台检查 /tmp/ligand_check_40m3.out
