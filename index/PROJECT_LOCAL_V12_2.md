@@ -111,3 +111,17 @@ v12.1 + n50 校准已达成：
 - **每完成一个阶段（A/B/C 每步）立即保存**：写/追加 `analysis/report/` 报告、`session/` 对话记录、memory `confumpnn-project-status.md`、本计划文档 → `git commit + push`
 - **不攒到最后一起写**——任何中断（含重大错误停下汇报）时，已完成阶段的记录都在 git 里
 - 训练/验证日志等大文件产物不 commit（`output/` 已 gitignore；`log/` 按需，训练进行中的 log 不提交）
+
+### E. 扩大校准域 + 无泄露补跑（用户批准 2026-08-31）
+
+**背景**：① 校准表只用 17 蛋白（204 点）拟合 global，结构域太少（用户质疑）；② per-protein 校准的泛化验证（H2 72%）对评估蛋白有"响应信息泄漏"（per-protein 来自该蛋白自身诊断）——需无泄露口径。
+
+**方案**：
+1. **批量校准建表**：训练集 `labels_v12_2_train.npz`（6,710 域，v12.2 真训练域）抽样 100 域 × 5 target（native±[8,4,0,4,8]）× n10 → 500 个 (target, 生成电荷均值) 点 → 拟合 **global 校准表 `charge_calibration_v12_2_big.json`**（数据量 204→500 点，来自 100 个不同域）。**训练域模型见过且不在评估集 → 天然无泄露**（⚠️ 不可用 `labels_balanced_v7` 全量——含 hold-out 1176 域）
+2. **无泄露泛化 H2 补跑**：big 表 `--calibrate global` 重采样 10 蛋白 5 臂 n30，只算电荷（不重跑 ESMFold/TM——折叠与校准无关）
+3. **三口径对比**：per-protein 72%（已标定参照）/ big-global（无泄露）/ hold-out 40.6%（完全未见域）
+4. 写报告 → git 提交
+
+**判据**：无泄露泛化 H2 应显著优于 hold-out（40.6%）；若 big-global ≈ hold-out → 确认 global 校准对未见蛋白的固有局限（论文如实报告）
+
+**脚本**：`code/tests/build_calibration_big.py`（新建）+ `validate_generalization.py --calibrate global` 复用
