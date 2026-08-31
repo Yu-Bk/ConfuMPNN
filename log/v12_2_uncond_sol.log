@@ -1,0 +1,1700 @@
+=== output/tm_sol_v12_2/uncond/1A65/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1A65/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           58.287          0.491           0.446           7.000     
+>seed_2001           58.287          0.491           0.446           7.000     
+>seed_2002           58.287          0.491           0.446           7.000     
+>seed_2003           58.287          0.491           0.446           7.000     
+>seed_2004           58.287          0.491           0.446           7.000     
+>seed_2005           58.287          0.491           0.446           7.000     
+>seed_2006           58.287          0.491           0.446           7.000     
+>seed_2007           58.287          0.491           0.446           7.000     
+>seed_2008           58.287          0.491           0.446           7.000     
+>seed_2009           58.287          0.491           0.446           7.000     
+>seed_2010           58.287          0.491           0.446           7.000     
+>seed_2011           58.287          0.491           0.446           7.000     
+>seed_2012           58.287          0.491           0.446           7.000     
+>seed_2013           58.287          0.491           0.446           7.000     
+>seed_2014           57.875          0.488           0.446           7.000     
+>seed_2015           58.287          0.491           0.446           7.000     
+>seed_2016           57.875          0.488           0.446           7.000     
+>seed_2017           58.287          0.491           0.446           7.000     
+>seed_2018           57.875          0.488           0.446           7.000     
+>seed_2019           58.287          0.491           0.446           7.000     
+>seed_2020           58.287          0.491           0.446           7.000     
+>seed_2021           58.287          0.491           0.446           7.000     
+>seed_2022           58.287          0.491           0.446           7.000     
+>seed_2023           57.875          0.488           0.446           7.000     
+>seed_2024           58.287          0.491           0.446           7.000     
+>seed_2025           58.287          0.491           0.446           7.000     
+>seed_2026           57.875          0.488           0.446           7.000     
+>seed_2027           58.287          0.491           0.446           7.000     
+>seed_2028           58.287          0.491           0.446           7.000     
+>seed_2029           58.287          0.491           0.446           7.000     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1A65:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1AG0/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1AG0/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           71.310          0.612           0.446           7.000     
+>seed_2001           71.310          0.612           0.446           7.000     
+>seed_2002           71.310          0.612           0.446           7.000     
+>seed_2003           71.310          0.612           0.446           7.000     
+>seed_2004           71.310          0.612           0.446           7.000     
+>seed_2005           71.310          0.612           0.446           7.000     
+>seed_2006           71.310          0.612           0.446           7.000     
+>seed_2007           71.310          0.612           0.446           7.000     
+>seed_2008           71.310          0.612           0.446           7.000     
+>seed_2009           71.310          0.612           0.446           7.000     
+>seed_2010           71.310          0.612           0.446           7.000     
+>seed_2011           71.310          0.612           0.446           7.000     
+>seed_2012           71.310          0.612           0.446           7.000     
+>seed_2013           71.310          0.612           0.446           7.000     
+>seed_2014           71.310          0.612           0.446           7.000     
+>seed_2015           71.310          0.612           0.446           7.000     
+>seed_2016           70.625          0.606           0.446           7.000     
+>seed_2017           71.310          0.612           0.446           7.000     
+>seed_2018           71.310          0.612           0.446           7.000     
+>seed_2019           71.310          0.612           0.446           7.000     
+>seed_2020           71.310          0.612           0.446           7.000     
+>seed_2021           71.310          0.612           0.446           7.000     
+>seed_2022           71.310          0.612           0.446           7.000     
+>seed_2023           70.625          0.606           0.446           7.000     
+>seed_2024           71.310          0.612           0.446           7.000     
+>seed_2025           71.310          0.612           0.446           7.000     
+>seed_2026           71.310          0.612           0.446           7.000     
+>seed_2027           71.310          0.612           0.446           7.000     
+>seed_2028           71.310          0.612           0.446           7.000     
+>seed_2029           71.310          0.612           0.446           7.000     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1AG0:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1AS2/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1AS2/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           67.283          0.575           0.446           7.000     
+>seed_2001           67.283          0.575           0.446           7.000     
+>seed_2002           67.283          0.575           0.446           7.000     
+>seed_2003           67.283          0.575           0.446           7.000     
+>seed_2004           67.283          0.575           0.446           7.000     
+>seed_2005           67.283          0.575           0.446           7.000     
+>seed_2006           67.283          0.575           0.446           7.000     
+>seed_2007           67.283          0.575           0.446           7.000     
+>seed_2008           67.283          0.575           0.446           7.000     
+>seed_2009           67.283          0.575           0.446           7.000     
+>seed_2010           67.283          0.575           0.446           7.000     
+>seed_2011           67.283          0.575           0.446           7.000     
+>seed_2012           67.283          0.575           0.446           7.000     
+>seed_2013           67.283          0.575           0.446           7.000     
+>seed_2014           67.283          0.575           0.446           7.000     
+>seed_2015           67.283          0.575           0.446           7.000     
+>seed_2016           66.734          0.570           0.446           7.000     
+>seed_2017           67.283          0.575           0.446           7.000     
+>seed_2018           67.283          0.575           0.446           7.000     
+>seed_2019           67.283          0.575           0.446           7.000     
+>seed_2020           67.283          0.575           0.446           7.000     
+>seed_2021           67.283          0.575           0.446           7.000     
+>seed_2022           67.283          0.575           0.446           7.000     
+>seed_2023           66.734          0.570           0.446           7.000     
+>seed_2024           67.283          0.575           0.446           7.000     
+>seed_2025           67.283          0.575           0.446           7.000     
+>seed_2026           67.283          0.575           0.446           7.000     
+>seed_2027           67.283          0.575           0.446           7.000     
+>seed_2028           67.283          0.575           0.446           7.000     
+>seed_2029           67.283          0.575           0.446           7.000     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1AS2:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1AXW/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1AXW/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           58.287          0.491           0.446           7.000     
+>seed_2001           58.287          0.491           0.446           7.000     
+>seed_2002           58.287          0.491           0.446           7.000     
+>seed_2003           58.287          0.491           0.446           7.000     
+>seed_2004           58.287          0.491           0.446           7.000     
+>seed_2005           58.287          0.491           0.446           7.000     
+>seed_2006           58.287          0.491           0.446           7.000     
+>seed_2007           58.287          0.491           0.446           7.000     
+>seed_2008           58.287          0.491           0.446           7.000     
+>seed_2009           58.287          0.491           0.446           7.000     
+>seed_2010           58.287          0.491           0.446           7.000     
+>seed_2011           58.287          0.491           0.446           7.000     
+>seed_2012           58.287          0.491           0.446           7.000     
+>seed_2013           58.287          0.491           0.446           7.000     
+>seed_2014           58.012          0.489           0.446           7.000     
+>seed_2015           58.287          0.491           0.446           7.000     
+>seed_2016           58.012          0.489           0.446           7.000     
+>seed_2017           58.287          0.491           0.446           7.000     
+>seed_2018           57.738          0.486           0.446           7.000     
+>seed_2019           58.287          0.491           0.446           7.000     
+>seed_2020           58.287          0.491           0.446           7.000     
+>seed_2021           58.287          0.491           0.446           7.000     
+>seed_2022           58.287          0.491           0.446           7.000     
+>seed_2023           58.012          0.489           0.446           7.000     
+>seed_2024           58.287          0.491           0.446           7.000     
+>seed_2025           58.287          0.491           0.446           7.000     
+>seed_2026           58.012          0.489           0.446           7.000     
+>seed_2027           58.287          0.491           0.446           7.000     
+>seed_2028           58.287          0.491           0.446           7.000     
+>seed_2029           58.287          0.491           0.446           7.000     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1AXW:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1AZM/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1AZM/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           71.166          0.611           0.446           7.000     
+>seed_2001           71.166          0.611           0.446           7.000     
+>seed_2002           71.166          0.611           0.446           7.000     
+>seed_2003           71.166          0.611           0.446           7.000     
+>seed_2004           71.166          0.611           0.446           7.000     
+>seed_2005           71.166          0.611           0.446           7.000     
+>seed_2006           71.166          0.611           0.446           7.000     
+>seed_2007           71.166          0.611           0.446           7.000     
+>seed_2008           71.166          0.611           0.446           7.000     
+>seed_2009           71.166          0.611           0.446           7.000     
+>seed_2010           71.166          0.611           0.446           7.000     
+>seed_2011           71.166          0.611           0.446           7.000     
+>seed_2012           71.166          0.611           0.446           7.000     
+>seed_2013           71.166          0.611           0.446           7.000     
+>seed_2014           71.166          0.611           0.446           7.000     
+>seed_2015           71.166          0.611           0.446           7.000     
+>seed_2016           70.481          0.604           0.446           7.000     
+>seed_2017           71.166          0.611           0.446           7.000     
+>seed_2018           71.166          0.611           0.446           7.000     
+>seed_2019           71.166          0.611           0.446           7.000     
+>seed_2020           71.166          0.611           0.446           7.000     
+>seed_2021           71.166          0.611           0.446           7.000     
+>seed_2022           71.166          0.611           0.446           7.000     
+>seed_2023           70.481          0.604           0.446           7.000     
+>seed_2024           71.166          0.611           0.446           7.000     
+>seed_2025           71.166          0.611           0.446           7.000     
+>seed_2026           71.166          0.611           0.446           7.000     
+>seed_2027           71.166          0.611           0.446           7.000     
+>seed_2028           71.166          0.611           0.446           7.000     
+>seed_2029           71.166          0.611           0.446           7.000     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1AZM:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1BJ4/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1BJ4/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           58.287          0.491           0.446           7.000     
+>seed_2001           58.287          0.491           0.446           7.000     
+>seed_2002           58.287          0.491           0.446           7.000     
+>seed_2003           58.287          0.491           0.446           7.000     
+>seed_2004           58.287          0.491           0.446           7.000     
+>seed_2005           58.287          0.491           0.446           7.000     
+>seed_2006           58.287          0.491           0.446           7.000     
+>seed_2007           58.287          0.491           0.446           7.000     
+>seed_2008           58.287          0.491           0.446           7.000     
+>seed_2009           58.287          0.491           0.446           7.000     
+>seed_2010           58.287          0.491           0.446           7.000     
+>seed_2011           58.287          0.491           0.446           7.000     
+>seed_2012           58.287          0.491           0.446           7.000     
+>seed_2013           58.287          0.491           0.446           7.000     
+>seed_2014           57.875          0.488           0.446           7.000     
+>seed_2015           58.287          0.491           0.446           7.000     
+>seed_2016           57.875          0.488           0.446           7.000     
+>seed_2017           58.287          0.491           0.446           7.000     
+>seed_2018           57.875          0.488           0.446           7.000     
+>seed_2019           58.287          0.491           0.446           7.000     
+>seed_2020           58.287          0.491           0.446           7.000     
+>seed_2021           58.287          0.491           0.446           7.000     
+>seed_2022           58.287          0.491           0.446           7.000     
+>seed_2023           57.875          0.488           0.446           7.000     
+>seed_2024           58.287          0.491           0.446           7.000     
+>seed_2025           58.287          0.491           0.446           7.000     
+>seed_2026           57.875          0.488           0.446           7.000     
+>seed_2027           58.287          0.491           0.446           7.000     
+>seed_2028           58.287          0.491           0.446           7.000     
+>seed_2029           58.287          0.491           0.446           7.000     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1BJ4:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1C6O/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1C6O/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           75.922          0.655           0.446           7.000     
+>seed_2001           75.922          0.655           0.446           7.000     
+>seed_2002           75.922          0.655           0.446           7.000     
+>seed_2003           75.922          0.655           0.446           7.000     
+>seed_2004           75.922          0.655           0.446           7.000     
+>seed_2005           75.922          0.655           0.446           7.000     
+>seed_2006           75.922          0.655           0.446           7.000     
+>seed_2007           75.922          0.655           0.446           7.000     
+>seed_2008           75.922          0.655           0.446           7.000     
+>seed_2009           75.922          0.655           0.446           7.000     
+>seed_2010           75.922          0.655           0.446           7.000     
+>seed_2011           75.922          0.655           0.446           7.000     
+>seed_2012           75.922          0.655           0.446           7.000     
+>seed_2013           75.922          0.655           0.446           7.000     
+>seed_2014           75.922          0.655           0.446           7.000     
+>seed_2015           75.922          0.655           0.446           7.000     
+>seed_2016           74.825          0.644           0.446           7.000     
+>seed_2017           75.922          0.655           0.446           7.000     
+>seed_2018           75.922          0.655           0.446           7.000     
+>seed_2019           75.922          0.655           0.446           7.000     
+>seed_2020           75.922          0.655           0.446           7.000     
+>seed_2021           75.922          0.655           0.446           7.000     
+>seed_2022           75.922          0.655           0.446           7.000     
+>seed_2023           74.825          0.644           0.446           7.000     
+>seed_2024           75.922          0.655           0.446           7.000     
+>seed_2025           75.922          0.655           0.446           7.000     
+>seed_2026           75.922          0.655           0.446           7.000     
+>seed_2027           75.922          0.655           0.446           7.000     
+>seed_2028           75.922          0.655           0.446           7.000     
+>seed_2029           75.922          0.655           0.446           7.000     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1C6O:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1CGE/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1CGE/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           76.333          0.658           0.446           7.000     
+>seed_2001           76.333          0.658           0.446           7.000     
+>seed_2002           76.333          0.658           0.446           7.000     
+>seed_2003           76.333          0.658           0.446           7.000     
+>seed_2004           76.333          0.658           0.446           7.000     
+>seed_2005           76.333          0.658           0.446           7.000     
+>seed_2006           76.333          0.658           0.446           7.000     
+>seed_2007           76.333          0.658           0.446           7.000     
+>seed_2008           76.333          0.658           0.446           7.000     
+>seed_2009           76.333          0.658           0.446           7.000     
+>seed_2010           76.333          0.658           0.446           7.000     
+>seed_2011           76.333          0.658           0.446           7.000     
+>seed_2012           76.333          0.658           0.446           7.000     
+>seed_2013           76.333          0.658           0.446           7.000     
+>seed_2014           76.333          0.658           0.446           7.000     
+>seed_2015           76.333          0.658           0.446           7.000     
+>seed_2016           76.333          0.658           0.446           7.000     
+>seed_2017           76.333          0.658           0.446           7.000     
+>seed_2018           76.333          0.658           0.446           7.000     
+>seed_2019           76.333          0.658           0.446           7.000     
+>seed_2020           76.333          0.658           0.446           7.000     
+>seed_2021           76.333          0.658           0.446           7.000     
+>seed_2022           76.333          0.658           0.446           7.000     
+>seed_2023           75.100          0.647           0.446           7.000     
+>seed_2024           76.333          0.658           0.446           7.000     
+>seed_2025           76.333          0.658           0.446           7.000     
+>seed_2026           76.333          0.658           0.446           7.000     
+>seed_2027           76.333          0.658           0.446           7.000     
+>seed_2028           76.333          0.658           0.446           7.000     
+>seed_2029           76.333          0.658           0.446           7.000     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1CGE:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/2FEO/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/2FEO/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           73.827          0.635           0.446           7.000     
+>seed_2001           73.827          0.635           0.446           7.000     
+>seed_2002           73.827          0.635           0.446           7.000     
+>seed_2003           73.827          0.635           0.446           7.000     
+>seed_2004           73.827          0.635           0.446           7.000     
+>seed_2005           73.827          0.635           0.446           7.000     
+>seed_2006           73.827          0.635           0.446           7.000     
+>seed_2007           73.827          0.635           0.446           7.000     
+>seed_2008           73.827          0.635           0.446           7.000     
+>seed_2009           73.827          0.635           0.446           7.000     
+>seed_2010           73.827          0.635           0.446           7.000     
+>seed_2011           73.827          0.635           0.446           7.000     
+>seed_2012           73.827          0.635           0.446           7.000     
+>seed_2013           73.827          0.635           0.446           7.000     
+>seed_2014           73.827          0.635           0.446           7.000     
+>seed_2015           73.827          0.635           0.446           7.000     
+>seed_2016           73.004          0.628           0.446           7.000     
+>seed_2017           73.827          0.635           0.446           7.000     
+>seed_2018           73.827          0.635           0.446           7.000     
+>seed_2019           73.827          0.635           0.446           7.000     
+>seed_2020           73.827          0.635           0.446           7.000     
+>seed_2021           73.827          0.635           0.446           7.000     
+>seed_2022           73.827          0.635           0.446           7.000     
+>seed_2023           73.004          0.628           0.446           7.000     
+>seed_2024           73.827          0.635           0.446           7.000     
+>seed_2025           73.827          0.635           0.446           7.000     
+>seed_2026           73.827          0.635           0.446           7.000     
+>seed_2027           73.827          0.635           0.446           7.000     
+>seed_2028           73.827          0.635           0.446           7.000     
+>seed_2029           73.827          0.635           0.446           7.000     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/2FEO:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/5CQH/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/5CQH/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           76.196          0.657           0.446           7.000     
+>seed_2001           76.196          0.657           0.446           7.000     
+>seed_2002           76.196          0.657           0.446           7.000     
+>seed_2003           76.196          0.657           0.446           7.000     
+>seed_2004           76.196          0.657           0.446           7.000     
+>seed_2005           76.196          0.657           0.446           7.000     
+>seed_2006           76.196          0.657           0.446           7.000     
+>seed_2007           76.196          0.657           0.446           7.000     
+>seed_2008           76.196          0.657           0.446           7.000     
+>seed_2009           76.196          0.657           0.446           7.000     
+>seed_2010           76.196          0.657           0.446           7.000     
+>seed_2011           76.196          0.657           0.446           7.000     
+>seed_2012           76.196          0.657           0.446           7.000     
+>seed_2013           76.196          0.657           0.446           7.000     
+>seed_2014           76.196          0.657           0.446           7.000     
+>seed_2015           76.196          0.657           0.446           7.000     
+>seed_2016           75.100          0.647           0.446           7.000     
+>seed_2017           76.196          0.657           0.446           7.000     
+>seed_2018           76.196          0.657           0.446           7.000     
+>seed_2019           76.196          0.657           0.446           7.000     
+>seed_2020           76.196          0.657           0.446           7.000     
+>seed_2021           76.196          0.657           0.446           7.000     
+>seed_2022           76.196          0.657           0.446           7.000     
+>seed_2023           75.100          0.647           0.446           7.000     
+>seed_2024           76.196          0.657           0.446           7.000     
+>seed_2025           76.196          0.657           0.446           7.000     
+>seed_2026           76.196          0.657           0.446           7.000     
+>seed_2027           76.196          0.657           0.446           7.000     
+>seed_2028           76.196          0.657           0.446           7.000     
+>seed_2029           76.196          0.657           0.446           7.000     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/5CQH:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1A65/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1A65/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           42.053          0.341           0.446           9.130     
+>seed_2001           34.966          0.275           0.446           5.260     
+>seed_2002           38.013          0.304           0.446           5.940     
+>seed_2003           40.805          0.330           0.446           6.370     
+>seed_2004           41.038          0.332           0.446           9.630     
+>seed_2005           47.287          0.390           0.446           8.660     
+>seed_2006           40.330          0.325           0.446           8.590     
+>seed_2007           44.395          0.363           0.446           5.830     
+>seed_2008           45.379          0.372           0.446           5.640     
+>seed_2009           36.840          0.293           0.446           9.250     
+>seed_2010           42.166          0.342           0.446           6.890     
+>seed_2011           49.631          0.411           0.446           9.210     
+>seed_2012           39.436          0.317           0.446           9.300     
+>seed_2013           44.305          0.362           0.446           9.030     
+>seed_2014           38.509          0.308           0.446           6.830     
+>seed_2015           42.783          0.348           0.446           10.040    
+>seed_2016           40.281          0.325           0.446           6.120     
+>seed_2017           39.122          0.314           0.446           9.400     
+>seed_2018           40.833          0.330           0.446           6.250     
+>seed_2019           36.861          0.293           0.446           5.250     
+>seed_2020           34.235          0.269           0.446           7.020     
+>seed_2021           39.014          0.313           0.446           5.320     
+>seed_2022           46.585          0.383           0.446           8.130     
+>seed_2023           39.266          0.315           0.446           6.110     
+>seed_2024           36.652          0.291           0.446           8.710     
+>seed_2025           42.785          0.348           0.446           4.550     
+>seed_2026           38.586          0.309           0.446           6.260     
+>seed_2027           37.622          0.300           0.446           6.890     
+>seed_2028           43.509          0.355           0.446           6.340     
+>seed_2029           44.117          0.360           0.446           5.610     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1A65:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1AG0/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1AG0/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           51.495          0.428           0.446           7.310     
+>seed_2001           54.492          0.456           0.446           9.650     
+>seed_2002           60.377          0.511           0.446           6.350     
+>seed_2003           66.010          0.563           0.446           9.870     
+>seed_2004           80.871          0.700           0.446           4.780     
+>seed_2005           67.972          0.581           0.446           5.240     
+>seed_2006           55.803          0.468           0.446           9.560     
+>seed_2007           51.460          0.428           0.446           7.260     
+>seed_2008           48.994          0.405           0.446           6.250     
+>seed_2009           57.784          0.487           0.446           5.980     
+>seed_2010           56.440          0.474           0.446           5.690     
+>seed_2011           63.209          0.537           0.446           5.490     
+>seed_2012           59.164          0.499           0.446           5.430     
+>seed_2013           66.878          0.571           0.446           5.200     
+>seed_2014           62.569          0.531           0.446           5.640     
+>seed_2015           59.775          0.505           0.446           10.660    
+>seed_2016           62.347          0.529           0.446           6.030     
+>seed_2017           59.456          0.502           0.446           5.360     
+>seed_2018           60.484          0.512           0.446           6.750     
+>seed_2019           48.315          0.399           0.446           9.050     
+>seed_2020           60.338          0.510           0.446           6.720     
+>seed_2021           56.864          0.478           0.446           6.570     
+>seed_2022           61.823          0.524           0.446           6.140     
+>seed_2023           56.294          0.473           0.446           6.500     
+>seed_2024           66.298          0.565           0.446           5.560     
+>seed_2025           58.282          0.491           0.446           6.350     
+>seed_2026           67.760          0.579           0.446           5.400     
+>seed_2027           47.596          0.392           0.446           7.120     
+>seed_2028           58.349          0.492           0.446           6.710     
+>seed_2029           55.487          0.465           0.446           9.360     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1AG0:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1AS2/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1AS2/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           56.978          0.479           0.446           8.860     
+>seed_2001           54.831          0.459           0.446           5.420     
+>seed_2002           59.197          0.500           0.446           5.800     
+>seed_2003           60.275          0.510           0.446           10.070    
+>seed_2004           46.031          0.378           0.446           5.680     
+>seed_2005           49.527          0.410           0.446           6.200     
+>seed_2006           53.911          0.451           0.446           5.150     
+>seed_2007           51.295          0.427           0.446           6.850     
+>seed_2008           49.035          0.406           0.446           9.290     
+>seed_2009           42.285          0.343           0.446           6.460     
+>seed_2010           49.527          0.410           0.446           5.400     
+>seed_2011           64.512          0.549           0.446           4.790     
+>seed_2012           43.031          0.350           0.446           10.270    
+>seed_2013           49.035          0.406           0.446           6.220     
+>seed_2014           49.035          0.406           0.446           8.030     
+>seed_2015           60.511          0.512           0.446           10.260    
+>seed_2016           43.517          0.355           0.446           9.920     
+>seed_2017           49.892          0.414           0.446           6.860     
+>seed_2018           47.632          0.393           0.446           5.340     
+>seed_2019           46.076          0.378           0.446           7.990     
+>seed_2020           54.887          0.460           0.446           6.400     
+>seed_2021           49.892          0.414           0.446           7.580     
+>seed_2022           43.473          0.354           0.446           9.840     
+>seed_2023           53.063          0.443           0.446           9.150     
+>seed_2024           54.198          0.453           0.446           4.940     
+>seed_2025           49.035          0.406           0.446           6.410     
+>seed_2026           42.285          0.343           0.446           9.280     
+>seed_2027           44.774          0.366           0.446           9.100     
+>seed_2028           42.260          0.343           0.446           6.720     
+>seed_2029           49.035          0.406           0.446           9.600     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1AS2:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1AXW/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1AXW/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           34.871          0.275           0.446           9.610     
+>seed_2001           27.151          0.203           0.446           7.990     
+>seed_2002           32.726          0.255           0.446           6.090     
+>seed_2003           36.356          0.288           0.446           5.960     
+>seed_2004           35.604          0.281           0.446           7.030     
+>seed_2005           39.593          0.318           0.446           5.450     
+>seed_2006           33.079          0.258           0.446           9.300     
+>seed_2007           40.861          0.330           0.446           5.320     
+>seed_2008           43.478          0.354           0.446           6.170     
+>seed_2009           39.278          0.315           0.446           6.670     
+>seed_2010           31.761          0.246           0.446           7.030     
+>seed_2011           39.762          0.320           0.446           9.220     
+>seed_2012           35.735          0.283           0.446           6.370     
+>seed_2013           41.752          0.338           0.446           6.720     
+>seed_2014           35.505          0.280           0.446           6.660     
+>seed_2015           35.053          0.276           0.446           8.690     
+>seed_2016           39.445          0.317           0.446           4.900     
+>seed_2017           45.710          0.375           0.446           5.450     
+>seed_2018           45.128          0.370           0.446           5.460     
+>seed_2019           31.132          0.240           0.446           6.480     
+>seed_2020           30.706          0.236           0.446           7.020     
+>seed_2021           35.930          0.284           0.446           6.890     
+>seed_2022           35.079          0.276           0.446           6.490     
+>seed_2023           34.413          0.270           0.446           9.100     
+>seed_2024           37.822          0.302           0.446           9.420     
+>seed_2025           34.900          0.275           0.446           5.480     
+>seed_2026           33.395          0.261           0.446           7.260     
+>seed_2027           34.663          0.273           0.446           9.630     
+>seed_2028           41.210          0.333           0.446           6.450     
+>seed_2029           35.692          0.282           0.446           7.980     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1AXW:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1AZM/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1AZM/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           44.972          0.368           0.446           5.390     
+>seed_2001           46.169          0.379           0.446           6.130     
+>seed_2002           55.624          0.467           0.446           4.510     
+>seed_2003           52.004          0.433           0.446           5.410     
+>seed_2004           50.011          0.415           0.446           9.210     
+>seed_2005           50.011          0.415           0.446           8.880     
+>seed_2006           46.560          0.383           0.446           8.880     
+>seed_2007           46.333          0.381           0.446           4.800     
+>seed_2008           59.430          0.502           0.446           9.550     
+>seed_2009           51.969          0.433           0.446           6.130     
+>seed_2010           50.643          0.421           0.446           9.280     
+>seed_2011           59.243          0.500           0.446           7.150     
+>seed_2012           41.288          0.334           0.446           9.890     
+>seed_2013           50.643          0.421           0.446           5.720     
+>seed_2014           53.897          0.451           0.446           9.000     
+>seed_2015           43.285          0.352           0.446           7.570     
+>seed_2016           45.784          0.376           0.446           4.780     
+>seed_2017           54.018          0.452           0.446           9.120     
+>seed_2018           51.743          0.431           0.446           5.890     
+>seed_2019           49.671          0.412           0.446           10.370    
+>seed_2020           48.488          0.401           0.446           5.300     
+>seed_2021           62.709          0.532           0.446           5.260     
+>seed_2022           46.560          0.383           0.446           5.210     
+>seed_2023           52.216          0.435           0.446           9.850     
+>seed_2024           41.151          0.333           0.446           4.890     
+>seed_2025           45.234          0.370           0.446           9.650     
+>seed_2026           55.259          0.463           0.446           6.670     
+>seed_2027           47.921          0.395           0.446           9.550     
+>seed_2028           43.873          0.358           0.446           5.750     
+>seed_2029           46.807          0.385           0.446           9.860     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1AZM:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1BJ4/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1BJ4/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           42.569          0.346           0.446           9.610     
+>seed_2001           44.148          0.360           0.446           10.080    
+>seed_2002           42.569          0.346           0.446           9.170     
+>seed_2003           44.237          0.361           0.446           9.640     
+>seed_2004           44.148          0.360           0.446           9.980     
+>seed_2005           44.590          0.365           0.446           9.640     
+>seed_2006           40.193          0.324           0.446           9.280     
+>seed_2007           46.333          0.381           0.446           10.310    
+>seed_2008           54.877          0.460           0.446           10.860    
+>seed_2009           52.349          0.436           0.446           11.120    
+>seed_2010           40.007          0.322           0.446           9.560     
+>seed_2011           53.946          0.451           0.446           10.570    
+>seed_2012           41.128          0.332           0.446           10.230    
+>seed_2013           39.033          0.313           0.446           5.430     
+>seed_2014           48.736          0.403           0.446           10.140    
+>seed_2015           44.237          0.361           0.446           9.810     
+>seed_2016           38.678          0.310           0.446           10.220    
+>seed_2017           42.569          0.346           0.446           6.430     
+>seed_2018           41.408          0.335           0.446           9.700     
+>seed_2019           43.729          0.357           0.446           6.190     
+>seed_2020           41.408          0.335           0.446           9.650     
+>seed_2021           45.655          0.374           0.446           10.280    
+>seed_2022           44.237          0.361           0.446           6.880     
+>seed_2023           51.015          0.424           0.446           10.450    
+>seed_2024           38.099          0.304           0.446           5.520     
+>seed_2025           44.237          0.361           0.446           9.520     
+>seed_2026           44.237          0.361           0.446           9.290     
+>seed_2027           47.751          0.394           0.446           10.380    
+>seed_2028           35.560          0.281           0.446           9.830     
+>seed_2029           44.237          0.361           0.446           9.830     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1BJ4:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1C6O/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1C6O/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           57.949          0.488           0.446           6.130     
+>seed_2001           45.480          0.373           0.446           9.730     
+>seed_2002           57.949          0.488           0.446           9.020     
+>seed_2003           54.312          0.455           0.446           6.360     
+>seed_2004           49.518          0.410           0.446           6.360     
+>seed_2005           54.835          0.459           0.446           9.160     
+>seed_2006           45.471          0.373           0.446           5.970     
+>seed_2007           59.925          0.506           0.446           9.050     
+>seed_2008           58.054          0.489           0.446           11.420    
+>seed_2009           47.995          0.396           0.446           5.110     
+>seed_2010           60.551          0.512           0.446           6.200     
+>seed_2011           53.559          0.448           0.446           6.190     
+>seed_2012           64.369          0.548           0.446           4.980     
+>seed_2013           59.231          0.500           0.446           5.410     
+>seed_2014           56.766          0.477           0.446           5.980     
+>seed_2015           54.343          0.455           0.446           7.930     
+>seed_2016           48.406          0.400           0.446           6.350     
+>seed_2017           65.343          0.557           0.446           4.650     
+>seed_2018           60.883          0.515           0.446           5.290     
+>seed_2019           52.349          0.436           0.446           8.040     
+>seed_2020           45.060          0.369           0.446           9.140     
+>seed_2021           58.368          0.492           0.446           5.020     
+>seed_2022           41.354          0.335           0.446           6.650     
+>seed_2023           58.359          0.492           0.446           5.960     
+>seed_2024           49.429          0.409           0.446           5.320     
+>seed_2025           56.485          0.475           0.446           4.790     
+>seed_2026           48.406          0.400           0.446           6.360     
+>seed_2027           42.718          0.347           0.446           9.120     
+>seed_2028           45.052          0.369           0.446           6.830     
+>seed_2029           62.498          0.530           0.446           4.550     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1C6O:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/1CGE/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/1CGE/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           48.598          0.402           0.446           5.230     
+>seed_2001           48.682          0.402           0.446           9.060     
+>seed_2002           52.148          0.435           0.446           9.100     
+>seed_2003           54.789          0.459           0.446           4.980     
+>seed_2004           66.924          0.571           0.446           4.110     
+>seed_2005           71.692          0.615           0.446           4.000     
+>seed_2006           48.598          0.402           0.446           4.820     
+>seed_2007           51.348          0.427           0.446           5.060     
+>seed_2008           50.020          0.415           0.446           4.950     
+>seed_2009           58.571          0.494           0.446           4.340     
+>seed_2010           52.610          0.439           0.446           5.190     
+>seed_2011           47.144          0.388           0.446           4.960     
+>seed_2012           45.060          0.369           0.446           9.050     
+>seed_2013           53.792          0.450           0.446           4.610     
+>seed_2014           48.598          0.402           0.446           5.290     
+>seed_2015           56.747          0.477           0.446           4.480     
+>seed_2016           59.844          0.506           0.446           4.460     
+>seed_2017           49.659          0.411           0.446           4.520     
+>seed_2018           54.619          0.457           0.446           4.350     
+>seed_2019           48.833          0.404           0.446           10.080    
+>seed_2020           56.307          0.473           0.446           4.600     
+>seed_2021           45.887          0.377           0.446           7.190     
+>seed_2022           45.060          0.369           0.446           9.030     
+>seed_2023           54.312          0.455           0.446           5.730     
+>seed_2024           48.833          0.404           0.446           4.600     
+>seed_2025           57.849          0.487           0.446           4.920     
+>seed_2026           51.348          0.427           0.446           10.010    
+>seed_2027           45.060          0.369           0.446           9.410     
+>seed_2028           50.020          0.415           0.446           9.050     
+>seed_2029           64.137          0.545           0.446           4.560     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/1CGE:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/2FEO/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/2FEO/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           68.146          0.583           0.446           5.270     
+>seed_2001           70.257          0.602           0.446           10.970    
+>seed_2002           68.190          0.583           0.446           5.690     
+>seed_2003           64.283          0.547           0.446           7.550     
+>seed_2004           59.777          0.505           0.446           6.380     
+>seed_2005           59.777          0.505           0.446           5.940     
+>seed_2006           61.142          0.518           0.446           6.700     
+>seed_2007           59.777          0.505           0.446           10.110    
+>seed_2008           59.777          0.505           0.446           6.090     
+>seed_2009           60.616          0.513           0.446           10.740    
+>seed_2010           59.777          0.505           0.446           8.170     
+>seed_2011           61.142          0.518           0.446           5.640     
+>seed_2012           60.616          0.513           0.446           10.590    
+>seed_2013           72.666          0.624           0.446           5.390     
+>seed_2014           68.161          0.583           0.446           4.980     
+>seed_2015           60.616          0.513           0.446           10.200    
+>seed_2016           68.161          0.583           0.446           4.780     
+>seed_2017           75.483          0.650           0.446           5.240     
+>seed_2018           59.777          0.505           0.446           10.120    
+>seed_2019           53.639          0.448           0.446           6.120     
+>seed_2020           59.777          0.505           0.446           10.240    
+>seed_2021           64.388          0.548           0.446           5.080     
+>seed_2022           59.777          0.505           0.446           8.280     
+>seed_2023           62.704          0.532           0.446           8.220     
+>seed_2024           60.616          0.513           0.446           5.350     
+>seed_2025           74.340          0.640           0.446           4.920     
+>seed_2026           59.777          0.505           0.446           8.030     
+>seed_2027           60.616          0.513           0.446           10.590    
+>seed_2028           69.029          0.591           0.446           9.130     
+>seed_2029           59.777          0.505           0.446           9.810     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/2FEO:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+=== output/tm_sol_v12_2/uncond/5CQH/seqs.fa ===
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: output/tm_sol_v12_2/uncond/5CQH/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>seed_2000           48.938          0.405           0.446           5.820     
+>seed_2001           48.364          0.399           0.446           10.200    
+>seed_2002           56.805          0.478           0.446           5.490     
+>seed_2003           48.589          0.402           0.446           9.130     
+>seed_2004           50.508          0.419           0.446           5.750     
+>seed_2005           55.574          0.466           0.446           6.420     
+>seed_2006           45.060          0.369           0.446           9.080     
+>seed_2007           51.297          0.427           0.446           5.340     
+>seed_2008           57.949          0.488           0.446           9.580     
+>seed_2009           45.849          0.376           0.446           9.810     
+>seed_2010           60.842          0.515           0.446           5.010     
+>seed_2011           55.417          0.465           0.446           10.260    
+>seed_2012           40.158          0.324           0.446           9.160     
+>seed_2013           41.812          0.339           0.446           8.090     
+>seed_2014           49.721          0.412           0.446           10.790    
+>seed_2015           45.110          0.369           0.446           6.400     
+>seed_2016           56.778          0.477           0.446           9.780     
+>seed_2017           56.877          0.478           0.446           5.150     
+>seed_2018           55.574          0.466           0.446           7.940     
+>seed_2019           55.339          0.464           0.446           4.880     
+>seed_2020           60.464          0.511           0.446           9.740     
+>seed_2021           55.676          0.467           0.446           5.070     
+>seed_2022           43.538          0.355           0.446           5.880     
+>seed_2023           53.181          0.444           0.446           6.390     
+>seed_2024           62.724          0.532           0.446           4.920     
+>seed_2025           67.968          0.581           0.446           4.720     
+>seed_2026           48.364          0.399           0.446           10.140    
+>seed_2027           50.678          0.421           0.446           5.430     
+>seed_2028           58.737          0.495           0.446           6.120     
+>seed_2029           45.849          0.376           0.446           7.900     
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/output/tm_sol_v12_2/uncond/5CQH:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+

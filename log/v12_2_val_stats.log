@@ -1,0 +1,58 @@
+蛋白     类            L 模式     臂       目标     均值   dev  达标    rec   pkt  gravy   TM中位 TM≥0.7 TM<0.5   RMSD  pLDDT
+1A65   long       504 proteinnative -27 -26.13  0.87   ✓ 0.479  None  0.125  0.962    1.0    0.0   1.73   80.0
+1A65   long       504 proteinn2     -29 -28.61  0.39   ✓ 0.476  None  0.107  0.959    1.0    0.0   1.79   80.0
+1A65   long       504 proteinp2     -25 -24.07  0.93   ✓ 0.482  None  0.152  0.963    1.0    0.0   1.73   80.4
+1A65   long       504 proteinn8     -35 -35.44  0.44   ✓ 0.464  None  0.055  0.953    1.0    0.0    1.9   78.8
+1A65   long       504 proteinp8     -19 -17.69  1.31   ✓  0.49  None  0.204  0.963    1.0    0.0   1.72   81.8
+1AG0   metal      256 proteinnative  -8  -8.66  0.66   ✓ 0.459  None  0.016  0.491    0.0    1.0   0.92   84.9
+1AG0   metal      256 proteinn2     -10 -11.41  1.41   ✓ 0.454  None  0.017  0.492    0.0  0.967   0.91   85.0
+1AG0   metal      256 proteinp2      -6  -6.77  0.77   ✓ 0.464  None  0.001  0.491    0.0    1.0   0.89   85.5
+1AG0   metal      256 proteinn8     -16 -17.49  1.49   ✓ 0.426  None   0.01  0.492    0.0    1.0   0.89   84.3
+1AG0   metal      256 proteinp8       0  -2.08  2.08   ✗ 0.473  None -0.125  0.492    0.0    1.0   0.83   85.0
+1AS2   rna        312 proteinnative  -3  -1.83  1.17   ✓ 0.346  None  0.171  0.942    1.0    0.0   1.73   80.9
+1AS2   rna        312 proteinn2      -5   -4.2   0.8   ✓ 0.344  None   0.18  0.945    1.0    0.0   1.65   80.7
+1AS2   rna        312 proteinp2      -1  -0.29  0.71   ✓ 0.343  None  0.168  0.938    1.0    0.0   1.73   80.8
+1AS2   rna        312 proteinn8     -11 -10.27  0.73   ✓ 0.342  None  0.167  0.945    1.0    0.0   1.64   81.1
+1AS2   rna        312 proteinp8       5   4.66  0.34   ✓  0.34  None   0.13  0.942    1.0    0.0   1.73   80.4
+1AXW   rna        528 proteinnative -18 -16.09  1.91   ✓ 0.407  None  0.528  0.287  0.133  0.833   7.29   31.5
+1AXW   rna        528 proteinn2     -20 -19.11  0.89   ✓ 0.403  None  0.505  0.258    0.2  0.733   7.36   32.3
+1AXW   rna        528 proteinp2     -16 -13.15  2.85   ✗ 0.406  None  0.561  0.284    0.1    0.9   7.42   31.7
+1AXW   rna        528 proteinn8     -26 -25.57  0.43   ✓ 0.402  None  0.384  0.646  0.467  0.433   2.77   55.0
+1AXW   rna        528 proteinp8     -10  -6.27  3.73   ✗ 0.411  None  0.566  0.422  0.433    0.5   5.66   37.3
+1AZM   small_mol  258 proteinnative  -2  -1.43  0.57   ✓  0.45  None -0.051  0.977    1.0    0.0   0.94   86.4
+1AZM   small_mol  258 proteinn2      -4  -3.38  0.62   ✓ 0.451  None -0.057   0.98    1.0    0.0   0.88   86.4
+1AZM   small_mol  258 proteinp2       0   0.78  0.78   ✓  0.45  None -0.045  0.977    1.0    0.0   0.94   86.4
+1AZM   small_mol  258 proteinn8     -10 -11.35  1.35   ✓ 0.441  None -0.108  0.981    1.0    0.0   0.85   85.9
+1AZM   small_mol  258 proteinp8       6   5.72  0.28   ✓ 0.432  None -0.117  0.974    1.0    0.0   1.02   85.3
+1BJ4   long       470 proteinnative   0  -4.62  4.62   ✗ 0.406  None  0.412  0.917    1.0    0.0    2.2   77.7
+1BJ4   long       470 proteinn2      -2  -7.43  5.43   ✗ 0.405  None  0.413   0.92    1.0    0.0   2.19   78.3
+1BJ4   long       470 proteinp2       2   -2.5   4.5   ✗ 0.407  None  0.413  0.917    1.0    0.0   2.16   77.7
+1BJ4   long       470 proteinn8      -8 -12.97  4.97   ✗ 0.404  None  0.374  0.917    1.0    0.0   2.18   78.4
+1BJ4   long       470 proteinp8       8   5.17  2.83   ✗ 0.408  None   0.42  0.914    1.0    0.0   2.25   76.8
+1C6O   small_mol  177 proteinnative -14 -15.38  1.38   ✓ 0.422  None -0.038  0.491    0.0    0.6   2.27   73.2
+1C6O   small_mol  177 proteinn2     -16 -17.02  1.02   ✓ 0.418  None -0.094   0.49    0.0  0.667   2.46   71.4
+1C6O   small_mol  177 proteinp2     -12 -13.15  1.15   ✓ 0.422  None  0.026   0.49    0.0  0.667    2.5   75.2
+1C6O   small_mol  177 proteinn8     -22 -22.13  0.13   ✓ 0.407  None -0.261  0.495    0.0  0.533   3.42   67.7
+1C6O   small_mol  177 proteinp8      -6  -9.08  3.08   ✗ 0.427  None  0.179  0.491    0.0    0.7   2.29   77.6
+1CGE   metal      162 proteinnative -12 -12.41  0.41   ✓ 0.457  None -0.124   0.95    1.0    0.0   1.21   83.7
+1CGE   metal      162 proteinn2     -14 -14.04  0.04   ✓ 0.453  None -0.161   0.95    1.0    0.0   1.25   83.2
+1CGE   metal      162 proteinp2     -10 -10.54  0.54   ✓ 0.462  None -0.089  0.951    1.0    0.0   1.23   83.6
+1CGE   metal      162 proteinn8     -20 -20.04  0.04   ✓  0.45  None -0.347  0.949    1.0    0.0   1.26   82.1
+1CGE   metal      162 proteinp8      -4  -5.43  1.43   ✓ 0.478  None  -0.08  0.953    1.0    0.0   1.25   84.9
+2FEO   dna        221 proteinnative  -7  -3.22  3.78   ✗ 0.327  None  0.266   0.92    1.0    0.0   1.81   78.0
+2FEO   dna        221 proteinn2      -9  -4.63  4.37   ✗ 0.325  None  0.264  0.925    1.0    0.0   1.81   78.5
+2FEO   dna        221 proteinp2      -5  -1.32  3.68   ✗ 0.327  None  0.251  0.911    1.0    0.0   1.88   77.3
+2FEO   dna        221 proteinn8     -15 -12.19  2.81   ✗ 0.329  None  0.232  0.914    1.0    0.0   1.89   77.4
+2FEO   dna        221 proteinp8       1   3.23  2.23   ✗  0.33  None  0.172  0.913    1.0    0.0   1.87   77.2
+5CQH   dna        183 proteinnative  -6  -5.05  0.95   ✓  0.37  None  0.083  0.958    1.0    0.0   1.21   84.6
+5CQH   dna        183 proteinn2      -8  -7.52  0.48   ✓ 0.366  None  0.059  0.955    1.0    0.0   1.25   84.0
+5CQH   dna        183 proteinp2      -4  -3.22  0.78   ✓  0.37  None    0.1  0.954    1.0    0.0   1.27   84.5
+5CQH   dna        183 proteinn8     -14 -13.91  0.09   ✓ 0.369  None -0.061  0.953    1.0    0.0   1.29   82.9
+5CQH   dna        183 proteinp8       2   2.26  0.26   ✓ 0.376  None   0.04  0.957    1.0    0.0   1.22   83.3
+
+=== 配体消融对比（ligand vs protein，H2 dev / H1 TM）===
+
+H2 电荷达标: 36/50 = 0.72
+H1 TM≥0.70: 35/50 = 0.7
+
+已写 output/generalization_v12_2_calib_stats.json
