@@ -69,11 +69,11 @@ def main():
     qs = np.quantile(c7, np.linspace(0, 1, 11))
     rng = random.Random(ARGS.seed)
     sel = []
-    per = n_dom // 10
+    per_bin = ARGS.n_dom // 10   # 每箱取 n_dom/10 个（⚠️ 原 bug：取 min(n_dom//10, len) 为 n_dom//10=671 再截断 → 只取第一箱）
     for b in range(10):
         lo, hi = qs[b], qs[b + 1]
         idx = [i for i, c in enumerate(c7) if lo <= c < hi or (b == 9 and lo <= c <= hi)]
-        take = min(per, len(idx))
+        take = min(per_bin, len(idx))
         sel.extend(rng.sample(idx, take))
     sel = sorted(sel[:ARGS.n_dom])
     print(f"抽样 {len(sel)} 域（charge@7.4 范围 [{c7[sel].min():.1f},{c7[sel].max():.1f}]）", flush=True)
