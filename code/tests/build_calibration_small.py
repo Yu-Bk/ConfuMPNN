@@ -33,7 +33,9 @@ from src.differentiable_charge import net_charge  # noqa: E402
 from run_guided import load_model, load_condition_encoder, seq_to_string  # noqa: E402
 
 AP = argparse.ArgumentParser()
-AP.add_argument("--n_per", type=int, default=10, help="每 target 标定采样数（10 → 50 条/蛋白）")
+AP.add_argument("--n_per", type=int, default=10, help="每 target 标定采样数（10 → 50 条/蛋白；好蛋白/响应线性蛋白建议升到 20 → 100 条降噪声）")
+AP.add_argument("--consistency_thresh", type=float, default=3.0,
+                help="小样本拟合 vs global 在 native±8 区间的最大预测偏差阈值；超过则标记 unreliable")
 AP.add_argument("--seed", type=int, default=777)
 AP.add_argument("--temperature", type=float, default=0.3)
 AP.add_argument("--device", default="cuda:4")
@@ -98,9 +100,25 @@ def main():
             xs.append(tgt)
             ys.append(float(np.mean(charges)))
         slope, inter = linfit(xs, ys)
+        # 拟合稳定性校验（2026-08-31 用户要求：小样本对好蛋白的破坏怎么解决）。
+        # 机制：小样本 5 target×n10 拟合的 intercept 噪声可在 target 插值处放大成 dev 2+。
+        # 检测法 = LOOCV（留一交叉验证）：逐个去掉一个 target 点，用剩 4 点重拟合，
+        # 预测被去掉点的 target，算预测误差。LOOCV 误差大 → 拟合被个别点主导
+        # （响应弯曲/均值噪声大）→ 标记 unreliable，建议回退 global 或增大 --n_per。
+        loocv_errs = []
+        for i in range(len(xs)):
+            xr = xs[:i] + xs[i + 1:]
+            yr = ys[:i] + ys[i + 1:]
+            a, b = linfit(xr, yr)
+            loocv_errs.append(abs((a * xs[i] + b) - ys[i]))
+        loocv = float(sum(loocv_errs) / len(loocv_errs))
+        unreliable = loocv > ARGS.consistency_thresh
         per[name] = {"slope": round(slope, 4), "intercept": round(inter, 4),
-                     "n_calib": len(xs) * ARGS.n_per, "native_q": native_q}
-        print(f"{name:6s} L={L} native={native_q:+d} slope={slope:.3f} int={inter:.2f} | " +
+                     "n_calib": len(xs) * ARGS.n_per, "native_q": native_q,
+                     "loocv": round(loocv, 2), "unreliable": unreliable}
+        tag = " ⚠️LOOCV大(响应弯曲/噪声,建议回退global或增大n_per)" if unreliable else ""
+        print(f"{name:6s} L={L} native={native_q:+d} slope={slope:.3f} int={inter:.2f} "
+              f"| LOOCV={loocv:.2f}{tag} | " +
               " ".join(f"{t:+d}→{m:+.1f}" for t, m in zip(xs, ys)), flush=True)
 
     # global 用 big 表兜底（评估蛋白都在 per_protein 内）
@@ -108,7 +126,8 @@ def main():
     out = {"global": big["global"], "per_protein": per}
     with open(ARGS.out, "w") as f:
         json.dump(out, f, indent=2)
-    print(f"\n已写 {ARGS.out}: {len(per)} 个 per_protein（小样本标定）", flush=True)
+    n_bad = sum(1 for v in per.values() if v.get("unreliable"))
+    print(f"\n已写 {ARGS.out}: {len(per)} 个 per_protein（小样本标定），其中 {n_bad} 个与 global 不一致（unreliable）", flush=True)
 
 
 if __name__ == "__main__":

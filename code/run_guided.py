@@ -56,10 +56,14 @@ _DEFAULT_WEIGHTS = (
     / "mompnn_temberture_tm_esm_6_4_4_b01.ckpt"
 )
 
-# 电荷校准表（v12 §7.1）：由 index/v10_repair/build_calibration.py 从响应曲线诊断
-# 拟合生成（生成电荷 ≈ slope·target + intercept）。推理时 target_eff=(desired−intercept)/slope
+# 电荷校准表（v12 §7.1）：由 build_calibration.py 从响应曲线诊断拟合生成
+# （生成电荷 ≈ slope·target + intercept）。推理时 target_eff=(desired−intercept)/slope
 # 抵消编码器学到的响应增益（v10/v11 诊断 slope≈1.5~2，靠它拉回 1）。
-_DEFAULT_CALIBRATION = _CODE_DIR.parent / "output" / "charge_calibration.json"
+# 自动启用（v12.2 定稿 2026-08-31）：默认指向 v12.2 校准表——17 蛋白 per-protein
+# + global 兜底，覆盖 v12.2 主方法。旧表 charge_calibration.json 为 v11a 时代遗留。
+# 表外蛋白应先小样本标定（build_calibration_small.py 生成临时 per-protein 表，
+# 见 analysis/report/2026-08-31_v12_2_diag.md §十）。
+_DEFAULT_CALIBRATION = _CODE_DIR.parent / "output" / "charge_calibration_v12_2.json"
 
 import yaml  # noqa: E402
 
@@ -109,7 +113,7 @@ def parse_args():
                         "per-protein 匹配、无匹配回退全局；global=强制全局校准；off=不校准。"
                         "校准表默认 output/charge_calibration.json")
     p.add_argument("--calibration_file", default=str(_DEFAULT_CALIBRATION),
-                   help="校准表 JSON 路径（index/v10_repair/build_calibration.py 生成）")
+                   help="校准表 JSON 路径（默认 v12.2 表 charge_calibration_v12_2.json，自动启用）")
     p.add_argument("--no_auto_target_charge", action="store_true",
                    help="关闭 pH-only 自动补全（v3 D1/A9）。默认：--target_charge 未给出时自动补全 "
                         "target=native_charge@pH（保持 native 电荷行为）；本开关回到旧 flag=0 语义对照")
@@ -143,8 +147,17 @@ def load_calibration(path, pdb_stem, force_global=False):
     slope = off = None
     mode = None
     if not force_global and pdb_stem in per and per[pdb_stem] is not None:
-        slope, off = per[pdb_stem].get("slope"), per[pdb_stem].get("intercept")
-        mode = f"per-protein({pdb_stem})"
+        pp = per[pdb_stem]
+        # 小样本标定一致性校验（2026-08-31）：unreliable=true（该蛋白小样本拟合
+        # 与 global 偏差大，可能被 50 条拟合噪声破坏）→ 回退 global，保护好蛋白。
+        if not pp.get("unreliable", False):
+            slope, off = pp.get("slope"), pp.get("intercept")
+            mode = f"per-protein({pdb_stem})"
+        else:
+            # 标记 unreliable 但仍可显式 --calibrate global 之外…默认回退 global
+            if g:
+                slope, off = g.get("slope"), g.get("intercept")
+                mode = f"global(回退: {pdb_stem} 小样本不可靠)"
     elif g:
         slope, off = g.get("slope"), g.get("intercept")
         mode = "global"
