@@ -59,3 +59,33 @@ PYTHONPATH=code nohup ~/miniconda3/envs/confumpnn/bin/python code/train_finetune
 - **不是 bug**：50域 7s / 200域 38s / 500域 3.2min 线性扩展正常；4956 域 23GB 缓存复用跨 epoch
 - **重启**：首次训练（PID 3404131）epoch1 未完成即因过慢误判杀掉（无 checkpoint 损失）；重启 PID 3521281
 - 监控：20min 间隔，log/v12_2_ligand_train.monitor；40min 后台检查 /tmp/ligand_check_40m3.out
+
+---
+
+## 执行记录（2026-09-01 续）
+
+### ✅ 训练完成（PID 3521281）
+- epoch 30/30（08:00:21），总耗时 **992.6min ≈ 16.5h**，无 NaN/OOM
+- 末轮 loss：total 4.6196 / charge 3.5385 / cd self 3.204 / mild 3.109 / extreme 4.586
+- checkpoint：`output/finetune_ligand_v12_2/`（epoch001–030 + condition_encoder_last.pt）
+- 监控 `log/v12_2_ligand_monitor.sh` 每 30min 自查，4 类事件触发唤醒（训练期间误报 1 次：freesasa "Error: Radius" 被 grep `error:` 匹配，已收紧为只匹配 Traceback/RuntimeError/OOM/loss=nan）
+
+### 🔧 配体响应诊断三个适配（无配体 CATH 域不可用）
+1. **argparse 负值**：`--targets` 以负号开头需 `=` 形式（`--targets=-34,...`）——migration note 已有此教训，实操再踩，已用
+2. **prody 无扩展名坑**：`data/cath/S40/dompdb/<name>`（无 .pdb）prody 2.4.1 按 mmCIF 解析失败（"mmCIF file contained no atoms"）。**正确路径 = `data/cath/S40/dompdb_pdb/<name>.pdb`**（带 .pdb 副本目录，v12.2 校准日志佐证）
+3. **配体模式必须有配体原子**：CATH 域纯蛋白链无配体 → `get_nearest_neighbours` 对空配体张量 `L2_AB_nn[:,0]` IndexError 崩溃（validate_generalization.py 之前也踩过此坑）。**trainish 侧改用配体训练域 `data/ligand_train/all_pdb/`**（101M/102L/103L/105M/106M/107L/111M，均含配体 135-209 HETATM）；valid 10 蛋白全部带配体（HEM/AZM/GDP/UMP/DC/CA+ZN/CU/NAG/PLP）可直接用
+- 诊断命令（PID 后台 `beutrifrm`）：`v10_diag_response_curve.py --backbone ligand_mpnn --cond_encoder finetune_ligand_v12_2/finetune_epoch030.pt --weights ligandmpnn_v_32_010_25.pt --pdb-list log/v12_2_ligand_trainish.list --manifest validation_manifest.json --targets=-34,...,18 --include_native --n 20` → `output/v12_2_ligand_diag_response.json`
+
+### ⏳ 待办
+- 诊断完成后：valid 区内 slope 判据 [0.9,1.15] → 建配体校准表 → 泛化验证 → 迁移复验（1MBN dev≤2）
+
+### ✅ 适配已固化为共享模块 `index/v10_repair/_adapters.py`（2026-09-01，用户要求）
+三个坑已做成代码修复，以后配体诊断/校准不再报错，不影响 protein_mpnn（mompnn）：
+| 坑 | 修复函数 | 效果 |
+|---|---|---|
+| argparse 负值（`--targets -34,...` 被误判） | `fix_negative_targets()` | parse_args 前自动转 `--targets=-34,...` |
+| prody 无扩展名按 mmCIF 误判 | `resolve_pdb_path()` | 无后缀自动补 .pdb（含 dompdb→dompdb_pdb 目录映射）|
+| 配体模式无配体原子 IndexError | `safe_featurize()` | 捕获 IndexError/KeyError 跳过并提示，不崩溃 |
+- 已验证：单元测试（3 helper）+ 无配体蛋白配体模式返回 None + protein_mpnn 正常
+- 接入点：`v10_diag_response_curve.py`（import _adapters；parse_args 用 fix_negative_targets；pdbs 收集用 resolve_pdb_path；featurize 用 safe_featurize）
+- 后续 build_calibration*.py 跑配体时接入同样 helper

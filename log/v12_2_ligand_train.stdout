@@ -1,0 +1,337 @@
+[15:07:50] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[15:07:50] device=cuda:5  epochs=30  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[15:07:50] [v11 A-fix] 绝对 target 采样开：target ∈ Uniform[-35.0, 20.0]，与 native 无关（覆盖验证深负靶区）
+[15:07:50] [v12] 训练侧监督开：组成双计数(floor=0.5) + GRAVY(margin=0.4)  λ_v12=0.2  λ_target=0.2  SASA θ=0.25
+[15:07:50] [v10 C] pH 自适应结构惩罚开：boost=1.5
+[15:07:51] backbone: MoMPNN 冻结（2.62M 参数，不更新）
+[15:07:51] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[15:07:52] 数据：4957 结构域 × 8 pH = 39656 样本（data/ligand_train/labels.npz）
+[15:07:54]   ℹ️ 1EST.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:07:58]   ℹ️ 1JQZ.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[15:08:06]   ℹ️ 1RP1.pdb resnum 对齐 435/441（6 个非标准/parse独有残基 frac=0）
+[15:08:13]   ℹ️ 1O2I.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:08:15]   ℹ️ 1FQ8.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[15:08:25]   ℹ️ 1F5K.pdb resnum 对齐 227/247（20 个非标准/parse独有残基 frac=0）
+[15:08:30]   ℹ️ 1FZZ.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:08:40]   预解析+encode 200/4957（跳过 0）
+[15:08:41]   ℹ️ 1EWO.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[15:08:44]   ℹ️ 1MM9.pdb resnum 对齐 124/127（3 个非标准/parse独有残基 frac=0）
+[15:08:47]   ℹ️ 1JT5.pdb resnum 对齐 269/284（15 个非标准/parse独有残基 frac=0）
+[15:08:48]   ℹ️ 1ESO.pdb resnum 对齐 133/150（17 个非标准/parse独有残基 frac=0）
+[15:08:49]   ℹ️ 1O3H.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:08:55]   ℹ️ 1C2F.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:09:10]   ℹ️ 1KLT.pdb resnum 对齐 210/226（16 个非标准/parse独有残基 frac=0）
+[15:09:12]   ℹ️ 1IY2.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[15:09:21]   ℹ️ 1MEM.pdb resnum 对齐 203/215（12 个非标准/parse独有残基 frac=0）
+[15:09:21]   ℹ️ 1OSS.pdb resnum 对齐 202/223（21 个非标准/parse独有残基 frac=0）
+[15:09:22]   ℹ️ 1ANB.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:09:26]   预解析+encode 400/4957（跳过 0）
+[15:09:40]   ℹ️ 1EXF.pdb resnum 对齐 187/242（55 个非标准/parse独有残基 frac=0）
+[15:09:46]   ℹ️ 1C2D.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:09:48]   ℹ️ 1C2H.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:09:56]   ℹ️ 1C2I.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:09:56]   ℹ️ 1B0F.pdb resnum 对齐 197/218（21 个非标准/parse独有残基 frac=0）
+[15:10:02]   ℹ️ 1J17.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:10:08]   ℹ️ 1C2K.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:10:12]   预解析+encode 600/4957（跳过 0）
+[15:10:25]   ℹ️ 1O32.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:10:27]   ℹ️ 1L7G.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[15:10:42]   ℹ️ 1O2J.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:10:48]   ℹ️ 1O2K.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+[15:10:49]   ⚠️ 1O0E.pdb SASA 计算失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 L_add）
+[15:10:51]   ℹ️ 1EPP.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  OXT' unknown, guessing element is ' O', and radius 1.520 A
+[15:11:01]   ⚠️ 155C.pdb SASA 计算失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 L_add）
+[15:11:07]   预解析+encode 800/4957（跳过 0）
+[15:11:09]   ℹ️ 1LQE.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:11:12]   ℹ️ 1EQ9.pdb resnum 对齐 397/444（47 个非标准/parse独有残基 frac=0）
+[15:11:23]   ℹ️ 1LVY.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:11:35]   ℹ️ 1EFQ.pdb resnum 对齐 107/113（6 个非标准/parse独有残基 frac=0）
+[15:11:36]   ℹ️ 1A5Z.pdb resnum 对齐 302/309（7 个非标准/parse独有残基 frac=0）
+[15:11:37]   ℹ️ 1ENT.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[15:11:42]   ℹ️ 1O2L.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:11:52]   ℹ️ 1GVZ.pdb resnum 对齐 217/237（20 个非标准/parse独有残基 frac=0）
+[15:11:53]   ℹ️ 1F0T.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:12:01]   预解析+encode 1000/4957（跳过 0）
+[15:12:10]   ℹ️ 1BZO.pdb resnum 对齐 132/150（18 个非标准/parse独有残基 frac=0）
+[15:12:14]   ℹ️ 1OS8.pdb resnum 对齐 202/223（21 个非标准/parse独有残基 frac=0）
+[15:12:26]   ℹ️ 1L7F.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[15:12:30]   ℹ️ 1BJU.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:12:31]   ℹ️ 1NPM.pdb resnum 对齐 410/446（36 个非标准/parse独有残基 frac=0）
+[15:12:50]   预解析+encode 1200/4957（跳过 0）
+[15:12:52]   ℹ️ 1NC6.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:12:59]   ℹ️ 1O2Z.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:12:59]   ℹ️ 1O3I.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:13:00]   ℹ️ 1MMP.pdb resnum 对齐 329/332（3 个非标准/parse独有残基 frac=0）
+[15:13:08]   ℹ️ 1GJ6.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:13:14]   ℹ️ 1EPR.pdb resnum 对齐 309/329（20 个非标准/parse独有残基 frac=0）
+[15:13:18]   ℹ️ 1C2M.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:13:21]   ℹ️ 1C5R.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:13:26]   ℹ️ 1G3E.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:13:39]   预解析+encode 1400/4957（跳过 0）
+[15:13:41]   ⚠️ 跳过坏域 1OBP.pdb: index 0 is out of bounds for dimension 1 with size 0
+[15:13:43]   ℹ️ 1C1P.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:13:53]   ℹ️ 1HFZ.pdb resnum 对齐 486/491（5 个非标准/parse独有残基 frac=0）
+[15:13:57]   ℹ️ 1O2N.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:14:11]   ℹ️ 1O3D.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:14:11]   ℹ️ 1C2E.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:14:12]   ℹ️ 1J15.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:14:21]   ℹ️ 1E25.pdb resnum 对齐 269/278（9 个非标准/parse独有残基 frac=0）
+[15:14:31]   预解析+encode 1599/4957（跳过 1）
+[15:14:34]   ℹ️ 1JY0.pdb resnum 对齐 271/281（10 个非标准/parse独有残基 frac=0）
+[15:14:35]   ℹ️ 1ANC.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:14:44]   ℹ️ 1C2J.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:14:53]   ℹ️ 1GBA.pdb resnum 对齐 138/198（60 个非标准/parse独有残基 frac=0）
+[15:14:54]   ℹ️ 1BTY.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:14:57]   ℹ️ 1O2T.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:15:15]   ℹ️ 1F2C.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[15:15:23]   预解析+encode 1799/4957（跳过 1）
+[15:15:36]   ℹ️ 1O2V.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:15:40]   ℹ️ 1F92.pdb resnum 对齐 225/247（22 个非标准/parse独有残基 frac=0）
+[15:15:56]   ℹ️ 1SGT.pdb resnum 对齐 202/223（21 个非标准/parse独有残基 frac=0）
+[15:15:59]   ℹ️ 1O3K.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:15:59]   ℹ️ 1N6Y.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:16:02]   ℹ️ 1C5T.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:16:09]   ℹ️ 1FQ6.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[15:16:10]   预解析+encode 1999/4957（跳过 1）
+[15:16:20]   ℹ️ 1MTS.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:16:20]   ℹ️ 1GI5.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:16:29]   ℹ️ 1PCA.pdb resnum 对齐 393/396（3 个非标准/parse独有残基 frac=0）
+[15:16:36]   ℹ️ 1F8E.pdb resnum 对齐 386/388（2 个非标准/parse独有残基 frac=0）
+[15:16:42]   ℹ️ 1INC.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:16:46]   ℹ️ 1O3B.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:17:03]   预解析+encode 2199/4957（跳过 1）
+[15:17:03]   ℹ️ 1C2L.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:17:17]   ℹ️ 1C5P.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:17:19]   ℹ️ 1AND.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:17:24]   ℹ️ 1HJ9.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:17:28]   ℹ️ 1FXY.pdb resnum 对齐 218/227（9 个非标准/parse独有残基 frac=0）
+[15:17:29]   ℹ️ 1EAU.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:17:32]   ℹ️ 1E36.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:17:35]   ℹ️ 1GI6.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:17:41]   ℹ️ 1O2U.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:17:41]   ℹ️ 1NSA.pdb resnum 对齐 393/394（1 个非标准/parse独有残基 frac=0）
+[15:17:49]   预解析+encode 2399/4957（跳过 1）
+[15:17:56]   ℹ️ 1JT3.pdb resnum 对齐 268/285（17 个非标准/parse独有残基 frac=0）
+[15:17:57]   ℹ️ 1IXZ.pdb resnum 对齐 237/238（1 个非标准/parse独有残基 frac=0）
+[15:17:58]   ℹ️ 1M16.pdb resnum 对齐 269/284（15 个非标准/parse独有残基 frac=0）
+[15:18:00]   ℹ️ 1MWE.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[15:18:02]   ℹ️ 1IY1.pdb resnum 对齐 233/234（1 个非标准/parse独有残基 frac=0）
+[15:18:07]   ℹ️ 1C2G.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:18:07]   ℹ️ 1BJI.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[15:18:26]   ℹ️ 1C1M.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:18:38]   ℹ️ 1P63.pdb resnum 对齐 271/281（10 个非标准/parse独有残基 frac=0）
+[15:18:40]   预解析+encode 2599/4957（跳过 1）
+[15:18:43]   ℹ️ 1J14.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:18:46]   ℹ️ 1O36.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:18:57]   ℹ️ 1A5I.pdb resnum 对齐 238/262（24 个非标准/parse独有残基 frac=0）
+[15:18:59]   ℹ️ 1O2M.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:19:00]   ℹ️ 1F8C.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[15:19:31]   预解析+encode 2799/4957（跳过 1）
+[15:19:31]   ℹ️ 1BJV.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:19:35]   ℹ️ 1AMH.pdb resnum 对齐 424/446（22 个非标准/parse独有残基 frac=0）
+[15:19:36]   ℹ️ 1HJ8.pdb resnum 对齐 216/220（4 个非标准/parse独有残基 frac=0）
+[15:19:38]   ℹ️ 1IGO.pdb resnum 对齐 407/410（3 个非标准/parse独有残基 frac=0）
+[15:19:40]   ℹ️ 1E81.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[15:19:45]   ℹ️ 1FSG.pdb resnum 对齐 460/466（6 个非标准/parse独有残基 frac=0）
+[15:20:08]   ℹ️ 1K1I.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:20:09]   ℹ️ 1BTU.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:20:13]   ℹ️ 1F5L.pdb resnum 对齐 225/245（20 个非标准/parse独有残基 frac=0）
+[15:20:17]   ℹ️ 1B0E.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:20:20]   ℹ️ 1DFP.pdb resnum 对齐 417/456（39 个非标准/parse独有残基 frac=0）
+[15:20:23]   预解析+encode 2999/4957（跳过 1）
+[15:20:27]   ℹ️ 1O39.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:20:28]   ℹ️ 1O3N.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:20:34]   ℹ️ 1AYE.pdb resnum 对齐 397/399（2 个非标准/parse独有残基 frac=0）
+[15:20:34]   ℹ️ 102L.pdb resnum 对齐 162/163（1 个非标准/parse独有残基 frac=0）
+[15:20:34]   ℹ️ 103L.pdb resnum 对齐 157/159（2 个非标准/parse独有残基 frac=0）
+[15:20:41]   ℹ️ 1F2A.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[15:20:43]   ℹ️ 1O2O.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:20:48]   ℹ️ 1EWM.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[15:20:50]   ℹ️ 1CET.pdb resnum 对齐 293/305（12 个非标准/parse独有残基 frac=0）
+[15:20:55]   ℹ️ 1O3O.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:21:03]   ℹ️ 1L7H.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[15:21:14]   预解析+encode 3199/4957（跳过 1）
+[15:21:23]   ℹ️ 1GBJ.pdb resnum 对齐 138/198（60 个非标准/parse独有残基 frac=0）
+[15:21:25]   ℹ️ 1C1N.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:21:27]   ℹ️ 1HB0.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:21:38]   ℹ️ 1GI4.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:21:49]   ℹ️ 1LDG.pdb resnum 对齐 298/315（17 个非标准/parse独有残基 frac=0）
+[15:21:51]   ℹ️ 1MMR.pdb resnum 对齐 166/167（1 个非标准/parse独有残基 frac=0）
+[15:21:58]   ℹ️ 1BRA.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:21:59]   ℹ️ 1FH0.pdb resnum 对齐 439/442（3 个非标准/parse独有残基 frac=0）
+[15:22:01]   预解析+encode 3399/4957（跳过 1）
+[15:22:02]   ℹ️ 1O3A.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:22:14]   ℹ️ 1EUF.pdb resnum 对齐 210/224（14 个非标准/parse独有残基 frac=0）
+[15:22:16]   ℹ️ 1BUL.pdb resnum 对齐 263/265（2 个非标准/parse独有残基 frac=0）
+[15:22:35]   ℹ️ 1K1P.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:22:40]   ℹ️ 1O2Y.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:22:48]   ℹ️ 1CEB.pdb resnum 对齐 157/160（3 个非标准/parse独有残基 frac=0）
+[15:22:49]   ℹ️ 1C5Q.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:22:49]   ℹ️ 1LLC.pdb resnum 对齐 311/320（9 个非标准/parse独有残基 frac=0）
+[15:22:54]   预解析+encode 3599/4957（跳过 1）
+[15:23:05]   ℹ️ 1GPL.pdb resnum 对齐 419/424（5 个非标准/parse独有残基 frac=0）
+[15:23:06]   ℹ️ 1NNC.pdb resnum 对齐 386/388（2 个非标准/parse独有残基 frac=0）
+[15:23:08]   ℹ️ 1FMG.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:23:11]   ℹ️ 1C1O.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:23:11]   ℹ️ 1FQ4.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[15:23:11]   ℹ️ 1GBT.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:23:11]   ℹ️ 1C5S.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:23:16]   ℹ️ 1MTV.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:23:23]   ℹ️ 1JIR.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:23:25]   ℹ️ 1B4B.pdb resnum 对齐 214/216（2 个非标准/parse独有残基 frac=0）
+[15:23:31]   ℹ️ 1K1M.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:23:33]   ℹ️ 1EEU.pdb resnum 对齐 207/225（18 个非标准/parse独有残基 frac=0）
+[15:23:33]   预解析+encode 3799/4957（跳过 1）
+[15:23:36]   ℹ️ 1FQ7.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[15:23:44]   ℹ️ 1BQY.pdb resnum 对齐 418/468（50 个非标准/parse独有残基 frac=0）
+[15:23:45]   ℹ️ 1HOW.pdb resnum 对齐 338/346（8 个非标准/parse独有残基 frac=0）
+[15:23:48]   ℹ️ 1E38.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:23:51]   ℹ️ 1OWI.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[15:23:55]   ℹ️ 1JT4.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[15:24:02]   ℹ️ 1O2H.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:24:03]   ℹ️ 1E80.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[15:24:04]   ℹ️ 1F8B.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[15:24:07]   ℹ️ 1OVB.pdb resnum 对齐 143/159（16 个非标准/parse独有残基 frac=0）
+[15:24:16]   ℹ️ 1OWK.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[15:24:18]   预解析+encode 3999/4957（跳过 1）
+[15:24:26]   ℹ️ 1DPO.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:24:28]   ℹ️ 1C1T.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:24:31]   ℹ️ 1O3F.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:24:38]   ℹ️ 1EPN.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[15:24:39]   ℹ️ 1EPQ.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[15:24:40]   ℹ️ 1FQ5.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[15:24:43]   ℹ️ 1OWJ.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[15:24:44]   ℹ️ 1BTW.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:24:54]   ℹ️ 1EPO.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[15:24:59]   预解析+encode 4199/4957（跳过 1）
+[15:25:04]   ℹ️ 1MPP.pdb resnum 对齐 317/357（40 个非标准/parse独有残基 frac=0）
+[15:25:06]   ℹ️ 1M6D.pdb resnum 对齐 384/428（44 个非标准/parse独有残基 frac=0）
+[15:25:18]   ℹ️ 1EAX.pdb resnum 对齐 225/241（16 个非标准/parse独有残基 frac=0）
+[15:25:19]   ℹ️ 1BU8.pdb resnum 对齐 439/446（7 个非标准/parse独有残基 frac=0）
+[15:25:29]   ℹ️ 1E82.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[15:25:39]   ℹ️ 1O2W.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:25:40]   预解析+encode 4399/4957（跳过 1）
+[15:25:47]   ℹ️ 1HSL.pdb resnum 对齐 477/478（1 个非标准/parse独有残基 frac=0）
+[15:25:53]   ℹ️ 1GI3.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:25:57]   ℹ️ 1EK3.pdb resnum 对齐 210/228（18 个非标准/parse独有残基 frac=0）
+[15:26:00]   ℹ️ 1J16.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:26:05]   ℹ️ 1G3B.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:26:11]   ℹ️ 1EED.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[15:26:21]   预解析+encode 4599/4957（跳过 1）
+[15:26:40]   ℹ️ 1E5O.pdb resnum 对齐 311/330（19 个非标准/parse独有残基 frac=0）
+[15:26:46]   ℹ️ 1GI0.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:26:48]   ℹ️ 1RNE.pdb resnum 对齐 319/329（10 个非标准/parse独有残基 frac=0）
+[15:26:54]   ℹ️ 1MTW.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:26:55]   ℹ️ 1EL3.pdb resnum 对齐 315/316（1 个非标准/parse独有残基 frac=0）
+[15:26:55]   ℹ️ 1O37.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:26:57]   ℹ️ 1H1B.pdb resnum 对齐 382/436（54 个非标准/parse独有残基 frac=0）
+[15:27:00]   ℹ️ 1FQ3.pdb resnum 对齐 417/451（34 个非标准/parse独有残基 frac=0）
+[15:27:09]   ℹ️ 1N6X.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:27:09]   ℹ️ 1K1L.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:27:09]   预解析+encode 4799/4957（跳过 1）
+[15:27:15]   ℹ️ 1K1N.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:27:15]   ℹ️ 1MAY.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:27:16]   ℹ️ 1MMQ.pdb resnum 对齐 165/166（1 个非标准/parse独有残基 frac=0）
+[15:27:19]   ℹ️ 1J8A.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:27:21]   ℹ️ 1MAX.pdb resnum 对齐 213/219（6 个非标准/parse独有残基 frac=0）
+[15:27:26]   ℹ️ 1AZ8.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:27:27]   ℹ️ 1F8D.pdb resnum 对齐 383/388（5 个非标准/parse独有残基 frac=0）
+[15:27:31]   ℹ️ 1LO6.pdb resnum 对齐 216/221（5 个非标准/parse独有残基 frac=0）
+[15:27:42]   ℹ️ 1JQG.pdb resnum 对齐 394/409（15 个非标准/parse独有残基 frac=0）
+[15:27:46] ⚠️ 共跳过 1 个坏域（prody 无法解析），实际训练 4956 域
+[15:27:46] 预解析完成，缓存 encode 特征 ~23.24GB
+[15:27:46] 开始训练：30 epochs × 4956 域/epoch = 148680 steps
+[15:54:56] epoch 1/30  total=6.0076  ce=1.3891  charge=5.9190  kl=0.0779  keep=0.6333  [cd self=5.410  mild=5.154  extreme=7.551]  elapsed=27.2min
+[16:21:00] epoch 2/30  total=5.5514  ce=1.4459  charge=5.1340  kl=0.1256  keep=0.7129  [cd self=4.642  mild=4.427  extreme=6.645]  elapsed=53.2min
+[16:48:36] epoch 3/30  total=5.3855  ce=1.4790  charge=4.8263  kl=0.1515  keep=0.7527  [cd self=4.355  mild=4.517  extreme=6.203]  elapsed=80.8min
+[17:17:17] epoch 4/30  total=5.3129  ce=1.4944  charge=4.6808  kl=0.1619  keep=0.7678  [cd self=4.211  mild=4.136  extreme=6.084]  elapsed=109.5min
+[17:43:34] epoch 5/30  total=5.2250  ce=1.5114  charge=4.5276  kl=0.1758  keep=0.7932  [cd self=4.094  mild=4.046  extreme=5.864]  elapsed=135.8min
+[18:10:33] epoch 6/30  total=5.2002  ce=1.5201  charge=4.4743  kl=0.1821  keep=0.7999  [cd self=4.011  mild=3.886  extreme=5.887]  elapsed=162.8min
+[18:39:00] epoch 7/30  total=5.1588  ce=1.5260  charge=4.4057  kl=0.1870  keep=0.8050  [cd self=3.981  mild=3.720  extreme=5.728]  elapsed=191.2min
+[19:08:26] epoch 8/30  total=5.1460  ce=1.5368  charge=4.3548  kl=0.1961  keep=0.8199  [cd self=3.931  mild=3.841  extreme=5.635]  elapsed=220.7min
+[19:34:24] epoch 9/30  total=5.1069  ce=1.5385  charge=4.2951  kl=0.1973  keep=0.8210  [cd self=3.839  mild=3.864  extreme=5.655]  elapsed=246.6min
+[20:00:23] epoch 10/30  total=5.1045  ce=1.5398  charge=4.2925  kl=0.1981  keep=0.8231  [cd self=3.836  mild=3.785  extreme=5.691]  elapsed=272.6min
+[20:29:52] epoch 11/30  total=5.0299  ce=1.5463  charge=4.1709  kl=0.2039  keep=0.8302  [cd self=3.753  mild=3.730  extreme=5.444]  elapsed=302.1min
+[20:57:48] epoch 12/30  total=4.9882  ce=1.5522  charge=4.1036  kl=0.2083  keep=0.8345  [cd self=3.701  mild=3.580  extreme=5.342]  elapsed=330.0min
+[21:23:53] epoch 13/30  total=5.0129  ce=1.5541  charge=4.1475  kl=0.2103  keep=0.8365  [cd self=3.730  mild=3.538  extreme=5.448]  elapsed=356.1min
+[21:51:29] epoch 14/30  total=4.9816  ce=1.5556  charge=4.0887  kl=0.2108  keep=0.8433  [cd self=3.679  mild=3.497  extreme=5.383]  elapsed=383.7min
+[22:19:45] epoch 15/30  total=4.9448  ce=1.5590  charge=4.0263  kl=0.2138  keep=0.8482  [cd self=3.651  mild=3.469  extreme=5.231]  elapsed=412.0min
+[22:47:47] epoch 16/30  total=4.9145  ce=1.5599  charge=3.9853  kl=0.2143  keep=0.8439  [cd self=3.595  mild=3.380  extreme=5.193]  elapsed=440.0min
+[23:14:09] epoch 17/30  total=4.8995  ce=1.5645  charge=3.9524  kl=0.2188  keep=0.8517  [cd self=3.546  mild=3.525  extreme=5.194]  elapsed=466.4min
+[23:42:29] epoch 18/30  total=4.8714  ce=1.5631  charge=3.9175  kl=0.2172  keep=0.8452  [cd self=3.507  mild=3.385  extreme=5.186]  elapsed=494.7min
+[00:22:52] epoch 19/30  total=4.8233  ce=1.5648  charge=3.8557  kl=0.2189  keep=0.8533  [cd self=3.497  mild=3.317  extreme=5.009]  elapsed=535.1min
+[01:06:25] epoch 20/30  total=4.8473  ce=1.5685  charge=3.8846  kl=0.2217  keep=0.8545  [cd self=3.486  mild=3.360  extreme=5.113]  elapsed=578.6min
+[01:48:55] epoch 21/30  total=4.7965  ce=1.5696  charge=3.8056  kl=0.2229  keep=0.8476  [cd self=3.424  mild=3.440  extreme=4.925]  elapsed=621.1min
+[02:31:10] epoch 22/30  total=4.7778  ce=1.5687  charge=3.7757  kl=0.2225  keep=0.8441  [cd self=3.376  mild=3.306  extreme=4.967]  elapsed=663.4min
+[03:13:59] epoch 23/30  total=4.7604  ce=1.5712  charge=3.7545  kl=0.2242  keep=0.8507  [cd self=3.398  mild=3.231  extreme=4.852]  elapsed=706.2min
+[03:57:02] epoch 24/30  total=4.7484  ce=1.5702  charge=3.7521  kl=0.2237  keep=0.8554  [cd self=3.363  mild=3.246  extreme=4.949]  elapsed=749.3min
+[04:39:46] epoch 25/30  total=4.7248  ce=1.5758  charge=3.7065  kl=0.2284  keep=0.8544  [cd self=3.314  mild=3.310  extreme=4.877]  elapsed=792.0min
+[05:20:56] epoch 26/30  total=4.6946  ce=1.5776  charge=3.6467  kl=0.2299  keep=0.8615  [cd self=3.271  mild=3.382  extreme=4.762]  elapsed=833.2min
+[06:01:06] epoch 27/30  total=4.7060  ce=1.5720  charge=3.6791  kl=0.2254  keep=0.8536  [cd self=3.315  mild=3.220  extreme=4.797]  elapsed=873.3min
+[06:40:42] epoch 28/30  total=4.6580  ce=1.5765  charge=3.6066  kl=0.2294  keep=0.8579  [cd self=3.250  mild=3.070  extreme=4.707]  elapsed=912.9min
+[07:19:10] epoch 29/30  total=4.6448  ce=1.5768  charge=3.5858  kl=0.2295  keep=0.8541  [cd self=3.215  mild=3.200  extreme=4.682]  elapsed=951.4min
+[08:00:21] epoch 30/30  total=4.6196  ce=1.5770  charge=3.5385  kl=0.2299  keep=0.8633  [cd self=3.204  mild=3.109  extreme=4.586]  elapsed=992.6min
+[08:00:22] 训练完成。总耗时 992.6min。checkpoint 在 output/finetune_ligand_v12_2/

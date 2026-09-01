@@ -27,6 +27,13 @@
   - --include_native 时会在每个蛋白的网格里追加它自己的 native 电荷点。
   - 输出 JSON：每蛋白 {slope, intercept, r2, targets, mean_charge, dev, ...}；
     终端打印汇总表 + "训练域 vs 验证域 斜率均值±std"。
+
+  配体模式（--backbone ligand_mpnn）注意（2026-09-01 三坑已自动修复，见 _adapters.py）：
+    - --targets 可传裸负值列表（自动转 = 形式，argparse 负值坑）
+    - 无扩展名 PDB 路径自动补 .pdb（prody 2.4.1 无后缀按 mmCIF 误判坑）
+    - 配体模式必须用含配体原子（HETATM）的 PDB：纯蛋白链会在 featurize 的
+      get_nearest_neighbours 抛 IndexError，脚本会跳过该蛋白并提示。
+      配体训练域在 data/ligand_train/all_pdb/（带配体），CATH 域为纯蛋白链。
 """
 import argparse
 import json
@@ -51,6 +58,7 @@ from src.conditioned_sampler import conditioned_sample  # noqa: E402
 from src.differentiable_charge import net_charge  # noqa: E402
 from run_guided import load_model, load_condition_encoder, seq_to_string  # noqa: E402
 from run_guided import load_calibration  # noqa: E402
+import _adapters  # noqa: E402   # 配体模式三坑适配（2026-09-01，见 _adapters.py）
 
 
 def linfit(xs, ys):
@@ -94,7 +102,7 @@ def main():
     ap.add_argument("--calibration_file", default="output/charge_calibration.json",
                     help="校准表 JSON（index/v10_repair/build_calibration.py 生成）")
     ap.add_argument("--out", required=True, help="结果 JSON 路径")
-    args = ap.parse_args()
+    args = ap.parse_args(_adapters.fix_negative_targets(sys.argv[1:]))
 
     device = torch.device(args.device)
     targets = [float(x) for x in args.targets.split(",") if x.strip() != ""]
@@ -104,13 +112,15 @@ def main():
     # ---- 收集蛋白列表 ----
     pdbs = []  # [(name, path, group)]
     for p in args.pdb:
-        pdbs.append((Path(p).stem, Path(p), "pdb"))
+        rp = _adapters.resolve_pdb_path(p)
+        pdbs.append((Path(rp).stem, Path(rp), "pdb"))
     if args.pdb_list:
         with open(args.pdb_list) as f:
             for line in f:
                 line = line.strip()
                 if line:
-                    pdbs.append((Path(line).stem, Path(line), "trainish"))
+                    rp = _adapters.resolve_pdb_path(line)
+                    pdbs.append((Path(rp).stem, Path(rp), "trainish"))
     if args.manifest:
         man = json.load(open(args.manifest))
         for it in man["items"]:
@@ -146,7 +156,9 @@ def main():
         native = seq_to_string(protein_dict["S"].reshape(-1).cpu().numpy())
         q_nat = float(net_charge(native, args.pH))
         protein_dict["chain_mask"] = torch.ones(L, dtype=torch.int32)
-        fd = featurize(protein_dict, cutoff_for_score=8.0, **feats)
+        fd = _adapters.safe_featurize(protein_dict, backbone_type, name, feats)
+        if fd is None:
+            continue
         fd["batch_size"] = 1
         fd["temperature"] = args.temperature
         fd["bias"] = torch.zeros(1, L, 21)

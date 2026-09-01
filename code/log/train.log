@@ -249,3 +249,82 @@
 [21:26:37] 开始训练：1 epochs × 50 域/epoch = 50 steps
 [21:26:41] epoch 1/1  total=4.8716  ce=1.7931  charge=5.4543  kl=0.0146  keep=0.6726  [cd self=5.108  mild=5.825  extreme=6.656]  elapsed=0.1min
 [21:26:42] 训练完成。总耗时 0.1min。checkpoint 在 output/finetune_v12_1_smoke/
+[14:12:46] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[14:12:46] device=cuda:5  epochs=1  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[14:12:46] [v11 A-fix] 绝对 target 采样开：target ∈ Uniform[-35.0, 20.0]，与 native 无关（覆盖验证深负靶区）
+[14:12:46] [v12] 训练侧监督开：组成双计数(floor=0.5) + GRAVY(margin=0.4)  λ_v12=0.2  λ_target=0.2  SASA θ=0.25
+[14:12:46] [v10 C] pH 自适应结构惩罚开：boost=1.5
+[14:12:48] backbone: MoMPNN 冻结（2.62M 参数，不更新）
+[14:12:48] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[14:12:48] 数据：50 结构域 × 8 pH = 400 样本（data/ligand_train/labels.npz）
+[14:12:51]   ℹ️ 1EST.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[14:12:56]   ℹ️ 1JQZ.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[14:13:09]   ℹ️ 1RP1.pdb resnum 对齐 435/441（6 个非标准/parse独有残基 frac=0）
+[14:13:11] 预解析完成，缓存 encode 特征 ~0.24GB
+[14:13:11] 开始训练：1 epochs × 50 域/epoch = 50 steps
+[14:13:18] epoch 1/1  total=7.1451  ce=1.3375  charge=7.9103  kl=0.0084  keep=0.5122  [cd self=7.137  mild=6.824  extreme=10.158]  elapsed=0.1min
+[14:13:18] 训练完成。总耗时 0.1min。checkpoint 在 output/finetune_ligand_v12_2_smoke/
+[14:59:41] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[14:59:41] device=cuda:5  epochs=1  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[14:59:43] backbone: MoMPNN 冻结（2.62M 参数，不更新）
+[14:59:43] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[14:59:44] 数据：50 结构域 × 8 pH = 400 样本（data/ligand_train/labels.npz）
+[14:59:51] 预解析完成，缓存 encode 特征 ~0.24GB
+[14:59:51] 开始训练：1 epochs × 50 域/epoch = 50 steps
+[14:59:55] epoch 1/1  total=4.9084  ce=1.3314  charge=6.6360  kl=0.0048  keep=0.5175  [cd self=6.876  mild=6.062]  elapsed=0.1min
+[14:59:55] 训练完成。总耗时 0.1min。checkpoint 在 output/finetune_ligand_v12_2_test/
+[15:00:08] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[15:00:08] device=cuda:5  epochs=1  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[15:00:08] [v11 A-fix] 绝对 target 采样开：target ∈ Uniform[-35.0, 20.0]，与 native 无关（覆盖验证深负靶区）
+[15:00:08] [v12] 训练侧监督开：组成双计数(floor=0.5) + GRAVY(margin=0.4)  λ_v12=0.2  λ_target=0.2  SASA θ=0.25
+[15:00:08] [v10 C] pH 自适应结构惩罚开：boost=1.5
+[15:00:10] backbone: MoMPNN 冻结（2.62M 参数，不更新）
+[15:00:10] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[15:00:11] 数据：200 结构域 × 8 pH = 1600 样本（data/ligand_train/labels.npz）
+[15:00:13]   ℹ️ 1EST.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:00:17]   ℹ️ 1JQZ.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[15:00:23]   ℹ️ 1RP1.pdb resnum 对齐 435/441（6 个非标准/parse独有残基 frac=0）
+[15:00:31]   ℹ️ 1O2I.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:00:33]   ℹ️ 1FQ8.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[15:00:41]   ℹ️ 1F5K.pdb resnum 对齐 227/247（20 个非标准/parse独有残基 frac=0）
+[15:00:46]   ℹ️ 1FZZ.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:00:56]   预解析+encode 200/200（跳过 0）
+[15:00:56] 预解析完成，缓存 encode 特征 ~0.94GB
+[15:00:56] 开始训练：1 epochs × 200 域/epoch = 200 steps
+[15:01:34] epoch 1/1  total=6.4922  ce=1.3329  charge=6.9187  kl=0.0199  keep=0.5222  [cd self=6.463  mild=6.128  extreme=8.308]  elapsed=0.6min
+[15:01:35] 训练完成。总耗时 0.6min。checkpoint 在 output/finetune_ligand_v12_2_test/
+[15:02:01] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[15:02:01] device=cuda:5  epochs=1  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[15:02:01] [v11 A-fix] 绝对 target 采样开：target ∈ Uniform[-35.0, 20.0]，与 native 无关（覆盖验证深负靶区）
+[15:02:01] [v12] 训练侧监督开：组成双计数(floor=0.5) + GRAVY(margin=0.4)  λ_v12=0.2  λ_target=0.2  SASA θ=0.25
+[15:02:01] [v10 C] pH 自适应结构惩罚开：boost=1.5
+[15:02:04] backbone: MoMPNN 冻结（2.62M 参数，不更新）
+[15:02:04] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[15:02:04] 数据：500 结构域 × 8 pH = 4000 样本（data/ligand_train/labels.npz）
+[15:02:06]   ℹ️ 1EST.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:02:09]   ℹ️ 1JQZ.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[15:02:17]   ℹ️ 1RP1.pdb resnum 对齐 435/441（6 个非标准/parse独有残基 frac=0）
+[15:02:26]   ℹ️ 1O2I.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:02:28]   ℹ️ 1FQ8.pdb resnum 对齐 325/329（4 个非标准/parse独有残基 frac=0）
+[15:02:37]   ℹ️ 1F5K.pdb resnum 对齐 227/247（20 个非标准/parse独有残基 frac=0）
+[15:02:43]   ℹ️ 1FZZ.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[15:02:56]   预解析+encode 200/500（跳过 0）
+[15:02:57]   ℹ️ 1EWO.pdb resnum 对齐 196/215（19 个非标准/parse独有残基 frac=0）
+[15:03:00]   ℹ️ 1MM9.pdb resnum 对齐 124/127（3 个非标准/parse独有残基 frac=0）
+[15:03:04]   ℹ️ 1JT5.pdb resnum 对齐 269/284（15 个非标准/parse独有残基 frac=0）
+[15:03:06]   ℹ️ 1ESO.pdb resnum 对齐 133/150（17 个非标准/parse独有残基 frac=0）
+[15:03:07]   ℹ️ 1O3H.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:03:13]   ℹ️ 1C2F.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:03:29]   ℹ️ 1KLT.pdb resnum 对齐 210/226（16 个非标准/parse独有残基 frac=0）
+[15:03:31]   ℹ️ 1IY2.pdb resnum 对齐 244/245（1 个非标准/parse独有残基 frac=0）
+[15:03:42]   ℹ️ 1MEM.pdb resnum 对齐 203/215（12 个非标准/parse独有残基 frac=0）
+[15:03:42]   ℹ️ 1OSS.pdb resnum 对齐 202/223（21 个非标准/parse独有残基 frac=0）
+[15:03:43]   ℹ️ 1ANB.pdb resnum 对齐 212/223（11 个非标准/parse独有残基 frac=0）
+[15:03:47]   预解析+encode 400/500（跳过 0）
+[15:04:05]   ℹ️ 1EXF.pdb resnum 对齐 187/242（55 个非标准/parse独有残基 frac=0）
+[15:04:11]   ℹ️ 1C2D.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:04:13]   ℹ️ 1C2H.pdb resnum 对齐 217/223（6 个非标准/parse独有残基 frac=0）
+[15:04:13] 预解析完成，缓存 encode 特征 ~2.36GB
+[15:04:13] 开始训练：1 epochs × 500 域/epoch = 500 steps
+[15:07:28] epoch 1/1  total=6.2742  ce=1.3296  charge=6.5468  kl=0.0279  keep=0.5478  [cd self=5.733  mild=5.553  extreme=9.001]  elapsed=3.2min
+[15:07:28] 训练完成。总耗时 3.3min。checkpoint 在 output/finetune_ligand_v12_2_test/
