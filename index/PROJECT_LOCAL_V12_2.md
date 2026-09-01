@@ -210,3 +210,16 @@ pocket 残基**不是逐残基钉死**（那是 fix），而是**总量约束 + 
 dry-run 过（50 域 1ep 无 NaN）→ **v13 配体重训已启动**（GPU6，`output/finetune_ligand_v13/`，
 `--pocket_mode keep --pocket_cutoff 8.0 --pocket_floor 0.7 --pocket_ceil 1.3 --lambda_pocket 0.2`）。
 复验链：组成（0.7-1.3×）→ 配体 slope → 泛化 H2/H1/H4 → H3 → Tm/Sol。详见 `session/2026-09-01_v13_pocket_retrain.md`。
+
+### 7.7 v13 复验链判据修正（2026-09-01 用户决策）
+
+- **⚠️ 扩样本量**：H3 判定不能只看 n8 单臂（n30 有偶然性）——**v13 泛化采样 n 30→50（全 5 臂）**，
+  H3 基于**全臂 × n50** 统计判定（不只 n8），Tm/Sol 复测同批序列。样本量扩大不增加代码成本
+  （H3/Tm 是 CPU 轻量统计），只增加 GPU 采样时间。
+- **bias 补丁决策框架**（推理侧可选，零训练成本）：
+  - **先看 v13 复验（扩样本 H3）结果**：删减被治、聚集消失 → **不加**（多余干扰）；
+  - 全臂扩样本后仍超标 → **加推理侧 bias 补丁**：`conditioned_sample` 透传 `bias_callback`
+    （复用 Phase 1 `StructureAwareFilter`+`make_dynamic_callback`），`run_guided/validate`
+    加 `--structure_filter_strength`（0=关）。⚠️ strength 需实测平衡——过强会拉偏净电荷
+    命中（H2）、降多样性、可能动 Tm/Sol。
+  - 训练侧 C 组件（`--ph_aware_filter`）始终保留（软惩罚）；bias 补丁只作第二道防线。

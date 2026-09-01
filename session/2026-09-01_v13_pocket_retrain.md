@@ -86,12 +86,29 @@ PYTHONPATH=code nohup ~/miniconda3/envs/confumpnn/bin/python code/train_finetune
 
 1. **组成分析**：泛化 10 蛋白带电残基总数 vs native（判据 0.7-1.3×，§7.5）——**核心验证删减被治**
 2. **配体诊断 slope**（17 蛋白，校准后 valid 区内 ∈ [0.9,1.15]）
-3. **泛化 H2**（10 蛋白 × 5 臂 × n30，per-protein 校准）
-4. **H1 折叠**（ESMFold TM ≥ 0.7）+ **H4 PROPKA**
-5. **H3 双线复测**（重点 n8 臂应不再违规）
-6. **Tm/Sol 复测**（负电臂 Tm 应恢复，S2 判据）
+3. **泛化采样 n 50**（10 蛋白 × 5 臂，⚠️ 用户 2026-09-01 决策：n30→50 扩大样本量）
+4. **泛化 H2**（per-protein 校准）+ **H1 折叠**（ESMFold TM ≥ 0.7）+ **H4 PROPKA**
+5. **H3 双线复测**（**全臂 × n50 统计，不只 n8**——单臂有偶然性；判据不变 ≤ 基线+5pp）
+6. **Tm/Sol 复测**（负电臂 Tm 应恢复，S2 判据，同批 n50 序列）
 
 判定：组成健康 + slope 达标 + H2 ≥ 当前 72% + H3/Tm/Sol 全绿 → 迁移 v9 完成。
+
+## 五、决策记录（2026-09-01 用户讨论，已固化 PROJECT_LOCAL_V12_2 §7.7）
+
+**Q：条件化采样当前无结构过滤器 bias，是否严重？加 bias 补丁？**
+
+- **现状**（实证）：防聚集规则（charge_cluster/salt_bridge/core_charge/same_sign_cluster）只以
+  两种形态存在——训练侧 C 组件 `ph_aware_structure_penalty`（损失、软惩罚，v12.2/v13 都开）+
+  Phase 1 引导模式的 logit bias（`make_dynamic_callback`）。**条件化采样 `conditioned_sample`
+  不传 bias_callback → bias=0**（2026-08-29 bias 排查实证）。
+- **严重性**：不是"完全无防护"（训练侧软惩罚兜底，H3 92-96% 通过），但极端负电臂（n8）因删减
+  捷径逃逸 → 聚集违规。根因=删减，v13 A1 从训练侧堵。
+- **决策（用户确认）**：
+  ① **扩样本量**：H3 判定不只 n8（n30 有偶然性）→ v13 泛化采样 n50、全臂统计；
+  ② **bias 补丁=零成本可选保险，非必要**：先看 v13 复验扩样本 H3 结果——删减被治、聚集消失
+    则不加；全臂仍超标则加（复用 Phase 1 机制，`conditioned_sample` 透传 bias_callback +
+    `--structure_filter_strength` 开关，⚠️ strength 过强拉偏 H2/降多样性）。
+  ③ 训练侧 C 组件始终保留；bias 补丁只作第二道防线。
 
 ## 五、后台任务
 
