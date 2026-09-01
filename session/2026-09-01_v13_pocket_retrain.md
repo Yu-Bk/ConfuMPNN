@@ -105,9 +105,10 @@ PYTHONPATH=code nohup ~/miniconda3/envs/confumpnn/bin/python code/train_finetune
   捷径逃逸 → 聚集违规。根因=删减，v13 A1 从训练侧堵。
 - **决策（用户确认）**：
   ① **扩样本量**：H3 判定不只 n8（n30 有偶然性）→ v13 泛化采样 n50、全臂统计；
-  ② **bias 补丁=零成本可选保险，非必要**：先看 v13 复验扩样本 H3 结果——删减被治、聚集消失
-    则不加；全臂仍超标则加（复用 Phase 1 机制，`conditioned_sample` 透传 bias_callback +
-    `--structure_filter_strength` 开关，⚠️ strength 过强拉偏 H2/降多样性）。
+  ② **bias 补丁=零成本可选保险，⚠️ 非必选、默认不加、不进复验链**（用户强调"不是一定要用的"）：
+    只是删减根治失败时的备选方案。先看 v13 复验扩样本 H3——删减被治、聚集消失则不加（默认情形）；
+    仅当全臂仍超标才单独评估（复用 Phase 1 机制，`conditioned_sample` 透传 bias_callback +
+    `--structure_filter_strength` 开关，⚠️ strength 过强拉偏 H2/降多样性，副作用超限就放弃补丁）。
   ③ 训练侧 C 组件始终保留；bias 补丁只作第二道防线。
 
 ## 五、后台任务
