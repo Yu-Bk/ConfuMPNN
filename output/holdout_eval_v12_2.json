@@ -1,0 +1,1978 @@
+{
+  "meta": {
+    "n_dom": 30,
+    "n_per": 5,
+    "seed": 42,
+    "cal_mode": "global",
+    "enc": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_v12_2/finetune_epoch030.pt"
+  },
+  "domains": {
+    "2y3aA01": {
+      "L": 280,
+      "native_charge": -8.53,
+      "arms": {
+        "ph0_t-9": {
+          "pH": 7.56,
+          "target": -9,
+          "mean_charge": -12.59,
+          "dev": 3.59,
+          "hit": false,
+          "recovery": 0.276
+        },
+        "ph1_t-5": {
+          "pH": 6.29,
+          "target": -5,
+          "mean_charge": -10.92,
+          "dev": 5.92,
+          "hit": false,
+          "recovery": 0.28
+        },
+        "ph2_t-22": {
+          "pH": 9.82,
+          "target": -22,
+          "mean_charge": -39.6,
+          "dev": 17.6,
+          "hit": false,
+          "recovery": 0.276
+        },
+        "ph3_t-16": {
+          "pH": 9.05,
+          "target": -16,
+          "mean_charge": -33.23,
+          "dev": 17.23,
+          "hit": false,
+          "recovery": 0.289
+        },
+        "ph4_t-16": {
+          "pH": 9.03,
+          "target": -16,
+          "mean_charge": -34.57,
+          "dev": 18.57,
+          "hit": false,
+          "recovery": 0.301
+        },
+        "ph5_t-7": {
+          "pH": 6.81,
+          "target": -7,
+          "mean_charge": -12.89,
+          "dev": 5.89,
+          "hit": false,
+          "recovery": 0.29
+        },
+        "ph6_t-6": {
+          "pH": 6.49,
+          "target": -6,
+          "mean_charge": -12.46,
+          "dev": 6.46,
+          "hit": false,
+          "recovery": 0.276
+        },
+        "ph7_t-2": {
+          "pH": 5.64,
+          "target": -2,
+          "mean_charge": -5.65,
+          "dev": 3.65,
+          "hit": false,
+          "recovery": 0.284
+        }
+      }
+    },
+    "4amcA01": {
+      "L": 46,
+      "native_charge": -1.01,
+      "arms": {
+        "ph0_t-1": {
+          "pH": 6.58,
+          "target": -1,
+          "mean_charge": 1.6,
+          "dev": 2.6,
+          "hit": false,
+          "recovery": 0.257
+        },
+        "ph1_t0": {
+          "pH": 4.86,
+          "target": 0,
+          "mean_charge": -0.03,
+          "dev": 0.03,
+          "hit": true,
+          "recovery": 0.23
+        },
+        "ph2_t-2": {
+          "pH": 9.34,
+          "target": -2,
+          "mean_charge": 4.42,
+          "dev": 6.42,
+          "hit": false,
+          "recovery": 0.283
+        },
+        "ph3_t-1": {
+          "pH": 6.08,
+          "target": -1,
+          "mean_charge": 0.47,
+          "dev": 1.47,
+          "hit": true,
+          "recovery": 0.257
+        },
+        "ph4_t-1": {
+          "pH": 4.93,
+          "target": -1,
+          "mean_charge": 0.86,
+          "dev": 1.86,
+          "hit": true,
+          "recovery": 0.235
+        },
+        "ph5_t1": {
+          "pH": 4.15,
+          "target": 1,
+          "mean_charge": -0.35,
+          "dev": 1.35,
+          "hit": true,
+          "recovery": 0.252
+        },
+        "ph6_t-1": {
+          "pH": 7.87,
+          "target": -1,
+          "mean_charge": 0.76,
+          "dev": 1.76,
+          "hit": true,
+          "recovery": 0.248
+        },
+        "ph7_t-1": {
+          "pH": 7.82,
+          "target": -1,
+          "mean_charge": 1.87,
+          "dev": 2.87,
+          "hit": false,
+          "recovery": 0.283
+        }
+      }
+    },
+    "1kplA00": {
+      "L": 430,
+      "native_charge": 3.81,
+      "arms": {
+        "ph0_t-4": {
+          "pH": 9.95,
+          "target": -4,
+          "mean_charge": 6.87,
+          "dev": 10.87,
+          "hit": false,
+          "recovery": 0.387
+        },
+        "ph1_t4": {
+          "pH": 7.27,
+          "target": 4,
+          "mean_charge": 7.27,
+          "dev": 3.27,
+          "hit": false,
+          "recovery": 0.379
+        },
+        "ph2_t-3": {
+          "pH": 9.78,
+          "target": -3,
+          "mean_charge": 1.42,
+          "dev": 4.42,
+          "hit": false,
+          "recovery": 0.381
+        },
+        "ph3_t16": {
+          "pH": 4.45,
+          "target": 16,
+          "mean_charge": 12.85,
+          "dev": 3.15,
+          "hit": false,
+          "recovery": 0.401
+        },
+        "ph4_t6": {
+          "pH": 6.19,
+          "target": 6,
+          "mean_charge": 10.75,
+          "dev": 4.75,
+          "hit": false,
+          "recovery": 0.38
+        },
+        "ph5_t9": {
+          "pH": 5.35,
+          "target": 9,
+          "mean_charge": 6.57,
+          "dev": 2.43,
+          "hit": false,
+          "recovery": 0.393
+        },
+        "ph6_t10": {
+          "pH": 5.17,
+          "target": 10,
+          "mean_charge": 14.25,
+          "dev": 4.25,
+          "hit": false,
+          "recovery": 0.384
+        },
+        "ph7_t12": {
+          "pH": 4.84,
+          "target": 12,
+          "mean_charge": 11.11,
+          "dev": 0.89,
+          "hit": true,
+          "recovery": 0.394
+        }
+      }
+    },
+    "2zylA02": {
+      "L": 217,
+      "native_charge": -9.93,
+      "arms": {
+        "ph0_t-2": {
+          "pH": 5.47,
+          "target": -2,
+          "mean_charge": -5.13,
+          "dev": 3.13,
+          "hit": false,
+          "recovery": 0.234
+        },
+        "ph1_t10": {
+          "pH": 4.35,
+          "target": 10,
+          "mean_charge": 4.67,
+          "dev": 5.33,
+          "hit": false,
+          "recovery": 0.245
+        },
+        "ph2_t-7": {
+          "pH": 6.35,
+          "target": -7,
+          "mean_charge": -3.8,
+          "dev": 3.2,
+          "hit": false,
+          "recovery": 0.217
+        },
+        "ph3_t-2": {
+          "pH": 5.41,
+          "target": -2,
+          "mean_charge": -3.64,
+          "dev": 1.64,
+          "hit": true,
+          "recovery": 0.231
+        },
+        "ph4_t-1": {
+          "pH": 5.32,
+          "target": -1,
+          "mean_charge": -3.33,
+          "dev": 2.33,
+          "hit": false,
+          "recovery": 0.227
+        },
+        "ph5_t-18": {
+          "pH": 9.76,
+          "target": -18,
+          "mean_charge": -19.64,
+          "dev": 1.64,
+          "hit": true,
+          "recovery": 0.25
+        },
+        "ph6_t-10": {
+          "pH": 7.7,
+          "target": -10,
+          "mean_charge": -8.63,
+          "dev": 1.37,
+          "hit": true,
+          "recovery": 0.232
+        },
+        "ph7_t-10": {
+          "pH": 7.34,
+          "target": -10,
+          "mean_charge": -12.91,
+          "dev": 2.91,
+          "hit": false,
+          "recovery": 0.238
+        }
+      }
+    },
+    "4p1zA00": {
+      "L": 127,
+      "native_charge": 7.42,
+      "arms": {
+        "ph0_t8": {
+          "pH": 7.29,
+          "target": 8,
+          "mean_charge": 9.67,
+          "dev": 1.67,
+          "hit": true,
+          "recovery": 0.378
+        },
+        "ph1_t11": {
+          "pH": 4.4,
+          "target": 11,
+          "mean_charge": 5.47,
+          "dev": 5.53,
+          "hit": false,
+          "recovery": 0.381
+        },
+        "ph2_t4": {
+          "pH": 8.6,
+          "target": 4,
+          "mean_charge": 8.38,
+          "dev": 4.38,
+          "hit": false,
+          "recovery": 0.372
+        },
+        "ph3_t7": {
+          "pH": 7.5,
+          "target": 7,
+          "mean_charge": 7.65,
+          "dev": 0.65,
+          "hit": true,
+          "recovery": 0.361
+        },
+        "ph4_t4": {
+          "pH": 8.69,
+          "target": 4,
+          "mean_charge": 8.9,
+          "dev": 4.9,
+          "hit": false,
+          "recovery": 0.35
+        },
+        "ph5_t5": {
+          "pH": 8.51,
+          "target": 5,
+          "mean_charge": 10.06,
+          "dev": 5.06,
+          "hit": false,
+          "recovery": 0.346
+        },
+        "ph6_t4": {
+          "pH": 8.82,
+          "target": 4,
+          "mean_charge": 8.7,
+          "dev": 4.7,
+          "hit": false,
+          "recovery": 0.354
+        },
+        "ph7_t8": {
+          "pH": 7.11,
+          "target": 8,
+          "mean_charge": 10.99,
+          "dev": 2.99,
+          "hit": false,
+          "recovery": 0.351
+        }
+      }
+    },
+    "5o5jT00": {
+      "L": 85,
+      "native_charge": 14.07,
+      "arms": {
+        "ph0_t14": {
+          "pH": 7.1,
+          "target": 14,
+          "mean_charge": 12.65,
+          "dev": 1.35,
+          "hit": true,
+          "recovery": 0.202
+        },
+        "ph1_t14": {
+          "pH": 7.03,
+          "target": 14,
+          "mean_charge": 15.48,
+          "dev": 1.48,
+          "hit": true,
+          "recovery": 0.216
+        },
+        "ph2_t17": {
+          "pH": 4.9,
+          "target": 17,
+          "mean_charge": 12.29,
+          "dev": 4.71,
+          "hit": false,
+          "recovery": 0.231
+        },
+        "ph3_t18": {
+          "pH": 4.62,
+          "target": 18,
+          "mean_charge": 14.07,
+          "dev": 3.93,
+          "hit": false,
+          "recovery": 0.205
+        },
+        "ph4_t17": {
+          "pH": 4.74,
+          "target": 17,
+          "mean_charge": 11.73,
+          "dev": 5.27,
+          "hit": false,
+          "recovery": 0.214
+        },
+        "ph5_t18": {
+          "pH": 4.61,
+          "target": 18,
+          "mean_charge": 17.4,
+          "dev": 0.6,
+          "hit": true,
+          "recovery": 0.216
+        },
+        "ph6_t14": {
+          "pH": 7.66,
+          "target": 14,
+          "mean_charge": 15.77,
+          "dev": 1.77,
+          "hit": true,
+          "recovery": 0.202
+        },
+        "ph7_t16": {
+          "pH": 5.18,
+          "target": 16,
+          "mean_charge": 13.37,
+          "dev": 2.63,
+          "hit": false,
+          "recovery": 0.205
+        }
+      }
+    },
+    "2m67A00": {
+      "L": 81,
+      "native_charge": 5.99,
+      "arms": {
+        "ph0_t6": {
+          "pH": 6.42,
+          "target": 6,
+          "mean_charge": 11.66,
+          "dev": 5.66,
+          "hit": false,
+          "recovery": 0.185
+        },
+        "ph1_t6": {
+          "pH": 5.33,
+          "target": 6,
+          "mean_charge": 11.38,
+          "dev": 5.38,
+          "hit": false,
+          "recovery": 0.173
+        },
+        "ph2_t6": {
+          "pH": 7.07,
+          "target": 6,
+          "mean_charge": 5.0,
+          "dev": 1.0,
+          "hit": true,
+          "recovery": 0.207
+        },
+        "ph3_t6": {
+          "pH": 7.29,
+          "target": 6,
+          "mean_charge": 5.4,
+          "dev": 0.6,
+          "hit": true,
+          "recovery": 0.212
+        },
+        "ph4_t6": {
+          "pH": 7.23,
+          "target": 6,
+          "mean_charge": 5.8,
+          "dev": 0.2,
+          "hit": true,
+          "recovery": 0.202
+        },
+        "ph5_t6": {
+          "pH": 7.39,
+          "target": 6,
+          "mean_charge": 6.39,
+          "dev": 0.39,
+          "hit": true,
+          "recovery": 0.188
+        },
+        "ph6_t4": {
+          "pH": 9.69,
+          "target": 4,
+          "mean_charge": 1.59,
+          "dev": 2.41,
+          "hit": false,
+          "recovery": 0.242
+        },
+        "ph7_t5": {
+          "pH": 9.41,
+          "target": 5,
+          "mean_charge": 2.97,
+          "dev": 2.03,
+          "hit": false,
+          "recovery": 0.21
+        }
+      }
+    },
+    "3ephA02": {
+      "L": 72,
+      "native_charge": 1.91,
+      "arms": {
+        "ph0_t-2": {
+          "pH": 9.72,
+          "target": -2,
+          "mean_charge": 1.89,
+          "dev": 3.89,
+          "hit": false,
+          "recovery": 0.289
+        },
+        "ph1_t7": {
+          "pH": 4.32,
+          "target": 7,
+          "mean_charge": 1.11,
+          "dev": 5.89,
+          "hit": false,
+          "recovery": 0.314
+        },
+        "ph2_t1": {
+          "pH": 8.26,
+          "target": 1,
+          "mean_charge": 3.29,
+          "dev": 2.29,
+          "hit": false,
+          "recovery": 0.3
+        },
+        "ph3_t2": {
+          "pH": 7.19,
+          "target": 2,
+          "mean_charge": 3.82,
+          "dev": 1.82,
+          "hit": true,
+          "recovery": 0.289
+        },
+        "ph4_t2": {
+          "pH": 6.87,
+          "target": 2,
+          "mean_charge": 4.24,
+          "dev": 2.24,
+          "hit": false,
+          "recovery": 0.317
+        },
+        "ph5_t3": {
+          "pH": 5.34,
+          "target": 3,
+          "mean_charge": 1.47,
+          "dev": 1.53,
+          "hit": true,
+          "recovery": 0.314
+        },
+        "ph6_t1": {
+          "pH": 8.23,
+          "target": 1,
+          "mean_charge": 0.72,
+          "dev": 0.28,
+          "hit": true,
+          "recovery": 0.314
+        },
+        "ph7_t4": {
+          "pH": 5.14,
+          "target": 4,
+          "mean_charge": 0.22,
+          "dev": 3.78,
+          "hit": false,
+          "recovery": 0.286
+        }
+      }
+    },
+    "3j4uH00": {
+      "L": 140,
+      "native_charge": -2.12,
+      "arms": {
+        "ph0_t-2": {
+          "pH": 6.18,
+          "target": -2,
+          "mean_charge": -0.99,
+          "dev": 1.01,
+          "hit": true,
+          "recovery": 0.287
+        },
+        "ph1_t-5": {
+          "pH": 9.71,
+          "target": -5,
+          "mean_charge": -1.68,
+          "dev": 3.32,
+          "hit": false,
+          "recovery": 0.303
+        },
+        "ph2_t-5": {
+          "pH": 9.68,
+          "target": -5,
+          "mean_charge": 0.33,
+          "dev": 5.33,
+          "hit": false,
+          "recovery": 0.293
+        },
+        "ph3_t-1": {
+          "pH": 4.87,
+          "target": -1,
+          "mean_charge": 0.87,
+          "dev": 1.87,
+          "hit": true,
+          "recovery": 0.261
+        },
+        "ph4_t-1": {
+          "pH": 5.06,
+          "target": -1,
+          "mean_charge": 1.1,
+          "dev": 2.1,
+          "hit": false,
+          "recovery": 0.281
+        },
+        "ph5_t-4": {
+          "pH": 9.18,
+          "target": -4,
+          "mean_charge": -1.84,
+          "dev": 2.16,
+          "hit": false,
+          "recovery": 0.293
+        },
+        "ph6_t-2": {
+          "pH": 6.36,
+          "target": -2,
+          "mean_charge": 0.41,
+          "dev": 2.41,
+          "hit": false,
+          "recovery": 0.263
+        },
+        "ph7_t4": {
+          "pH": 4.03,
+          "target": 4,
+          "mean_charge": 2.31,
+          "dev": 1.69,
+          "hit": true,
+          "recovery": 0.259
+        }
+      }
+    },
+    "1rl4B00": {
+      "L": 156,
+      "native_charge": 11.02,
+      "arms": {
+        "ph0_t12": {
+          "pH": 6.55,
+          "target": 12,
+          "mean_charge": 18.37,
+          "dev": 6.37,
+          "hit": false,
+          "recovery": 0.321
+        },
+        "ph1_t3": {
+          "pH": 9.97,
+          "target": 3,
+          "mean_charge": 4.93,
+          "dev": 1.93,
+          "hit": true,
+          "recovery": 0.35
+        },
+        "ph2_t19": {
+          "pH": 4.58,
+          "target": 19,
+          "mean_charge": 12.73,
+          "dev": 6.27,
+          "hit": false,
+          "recovery": 0.369
+        },
+        "ph3_t9": {
+          "pH": 9.13,
+          "target": 9,
+          "mean_charge": 10.59,
+          "dev": 1.59,
+          "hit": true,
+          "recovery": 0.353
+        },
+        "ph4_t11": {
+          "pH": 6.88,
+          "target": 11,
+          "mean_charge": 19.26,
+          "dev": 8.26,
+          "hit": false,
+          "recovery": 0.353
+        },
+        "ph5_t9": {
+          "pH": 8.96,
+          "target": 9,
+          "mean_charge": 14.48,
+          "dev": 5.48,
+          "hit": false,
+          "recovery": 0.35
+        },
+        "ph6_t9": {
+          "pH": 8.9,
+          "target": 9,
+          "mean_charge": 13.21,
+          "dev": 4.21,
+          "hit": false,
+          "recovery": 0.356
+        },
+        "ph7_t7": {
+          "pH": 9.5,
+          "target": 7,
+          "mean_charge": 10.29,
+          "dev": 3.29,
+          "hit": false,
+          "recovery": 0.364
+        }
+      }
+    },
+    "1jb7B00": {
+      "L": 207,
+      "native_charge": 3.06,
+      "arms": {
+        "ph0_t22": {
+          "pH": 4.03,
+          "target": 22,
+          "mean_charge": 18.01,
+          "dev": 3.99,
+          "hit": false,
+          "recovery": 0.304
+        },
+        "ph1_t22": {
+          "pH": 4.0,
+          "target": 22,
+          "mean_charge": 21.4,
+          "dev": 0.6,
+          "hit": true,
+          "recovery": 0.321
+        },
+        "ph2_t4": {
+          "pH": 6.83,
+          "target": 4,
+          "mean_charge": 2.17,
+          "dev": 1.83,
+          "hit": true,
+          "recovery": 0.312
+        },
+        "ph3_t20": {
+          "pH": 4.18,
+          "target": 20,
+          "mean_charge": 20.82,
+          "dev": 0.82,
+          "hit": true,
+          "recovery": 0.309
+        },
+        "ph4_t-5": {
+          "pH": 9.85,
+          "target": -5,
+          "mean_charge": -3.79,
+          "dev": 1.21,
+          "hit": true,
+          "recovery": 0.3
+        },
+        "ph5_t9": {
+          "pH": 5.33,
+          "target": 9,
+          "mean_charge": 7.8,
+          "dev": 1.2,
+          "hit": true,
+          "recovery": 0.302
+        },
+        "ph6_t4": {
+          "pH": 6.84,
+          "target": 4,
+          "mean_charge": 0.97,
+          "dev": 3.03,
+          "hit": false,
+          "recovery": 0.294
+        },
+        "ph7_t17": {
+          "pH": 4.37,
+          "target": 17,
+          "mean_charge": 14.52,
+          "dev": 2.48,
+          "hit": false,
+          "recovery": 0.316
+        }
+      }
+    },
+    "3m92A01": {
+      "L": 66,
+      "native_charge": -3.89,
+      "arms": {
+        "ph0_t-4": {
+          "pH": 7.49,
+          "target": -4,
+          "mean_charge": -1.61,
+          "dev": 2.39,
+          "hit": false,
+          "recovery": 0.342
+        },
+        "ph1_t-4": {
+          "pH": 8.77,
+          "target": -4,
+          "mean_charge": 0.07,
+          "dev": 4.07,
+          "hit": false,
+          "recovery": 0.348
+        },
+        "ph2_t-3": {
+          "pH": 6.58,
+          "target": -3,
+          "mean_charge": -0.3,
+          "dev": 2.7,
+          "hit": false,
+          "recovery": 0.324
+        },
+        "ph3_t-3": {
+          "pH": 6.72,
+          "target": -3,
+          "mean_charge": 0.05,
+          "dev": 3.05,
+          "hit": false,
+          "recovery": 0.327
+        },
+        "ph4_t-5": {
+          "pH": 9.28,
+          "target": -5,
+          "mean_charge": -2.7,
+          "dev": 2.3,
+          "hit": false,
+          "recovery": 0.37
+        },
+        "ph5_t-5": {
+          "pH": 9.38,
+          "target": -5,
+          "mean_charge": -7.11,
+          "dev": 2.11,
+          "hit": false,
+          "recovery": 0.342
+        },
+        "ph6_t-1": {
+          "pH": 5.43,
+          "target": -1,
+          "mean_charge": -1.25,
+          "dev": 0.25,
+          "hit": true,
+          "recovery": 0.358
+        },
+        "ph7_t0": {
+          "pH": 5.2,
+          "target": 0,
+          "mean_charge": -0.78,
+          "dev": 0.78,
+          "hit": true,
+          "recovery": 0.364
+        }
+      }
+    },
+    "2eo6A01": {
+      "L": 108,
+      "native_charge": 6.02,
+      "arms": {
+        "ph0_t14": {
+          "pH": 4.43,
+          "target": 14,
+          "mean_charge": 12.15,
+          "dev": 1.85,
+          "hit": true,
+          "recovery": 0.265
+        },
+        "ph1_t8": {
+          "pH": 6.0,
+          "target": 8,
+          "mean_charge": 7.32,
+          "dev": 0.68,
+          "hit": true,
+          "recovery": 0.272
+        },
+        "ph2_t16": {
+          "pH": 4.11,
+          "target": 16,
+          "mean_charge": 11.83,
+          "dev": 4.17,
+          "hit": false,
+          "recovery": 0.274
+        },
+        "ph3_t5": {
+          "pH": 8.5,
+          "target": 5,
+          "mean_charge": 7.98,
+          "dev": 2.98,
+          "hit": false,
+          "recovery": 0.254
+        },
+        "ph4_t6": {
+          "pH": 7.84,
+          "target": 6,
+          "mean_charge": 9.77,
+          "dev": 3.77,
+          "hit": false,
+          "recovery": 0.263
+        },
+        "ph5_t14": {
+          "pH": 4.38,
+          "target": 14,
+          "mean_charge": 11.02,
+          "dev": 2.98,
+          "hit": false,
+          "recovery": 0.25
+        },
+        "ph6_t1": {
+          "pH": 9.79,
+          "target": 1,
+          "mean_charge": 1.5,
+          "dev": 0.5,
+          "hit": true,
+          "recovery": 0.302
+        },
+        "ph7_t15": {
+          "pH": 4.14,
+          "target": 15,
+          "mean_charge": 12.3,
+          "dev": 2.7,
+          "hit": false,
+          "recovery": 0.27
+        }
+      }
+    },
+    "4ow8A02": {
+      "L": 185,
+      "native_charge": 5.18,
+      "arms": {
+        "ph0_t4": {
+          "pH": 9.02,
+          "target": 4,
+          "mean_charge": 7.09,
+          "dev": 3.09,
+          "hit": false,
+          "recovery": 0.509
+        },
+        "ph1_t18": {
+          "pH": 4.09,
+          "target": 18,
+          "mean_charge": 10.02,
+          "dev": 7.98,
+          "hit": false,
+          "recovery": 0.488
+        },
+        "ph2_t2": {
+          "pH": 9.73,
+          "target": 2,
+          "mean_charge": 4.87,
+          "dev": 2.87,
+          "hit": false,
+          "recovery": 0.489
+        },
+        "ph3_t5": {
+          "pH": 8.67,
+          "target": 5,
+          "mean_charge": 10.81,
+          "dev": 5.81,
+          "hit": false,
+          "recovery": 0.516
+        },
+        "ph4_t5": {
+          "pH": 8.61,
+          "target": 5,
+          "mean_charge": 7.78,
+          "dev": 2.78,
+          "hit": false,
+          "recovery": 0.514
+        },
+        "ph5_t14": {
+          "pH": 4.49,
+          "target": 14,
+          "mean_charge": 6.54,
+          "dev": 7.46,
+          "hit": false,
+          "recovery": 0.494
+        },
+        "ph6_t10": {
+          "pH": 5.4,
+          "target": 10,
+          "mean_charge": 5.34,
+          "dev": 4.66,
+          "hit": false,
+          "recovery": 0.509
+        },
+        "ph7_t2": {
+          "pH": 9.77,
+          "target": 2,
+          "mean_charge": 2.32,
+          "dev": 0.32,
+          "hit": true,
+          "recovery": 0.491
+        }
+      }
+    },
+    "2zkzC00": {
+      "L": 87,
+      "native_charge": 5.99,
+      "arms": {
+        "ph0_t1": {
+          "pH": 9.86,
+          "target": 1,
+          "mean_charge": 3.38,
+          "dev": 2.38,
+          "hit": false,
+          "recovery": 0.299
+        },
+        "ph1_t5": {
+          "pH": 8.5,
+          "target": 5,
+          "mean_charge": 7.39,
+          "dev": 2.39,
+          "hit": false,
+          "recovery": 0.31
+        },
+        "ph2_t8": {
+          "pH": 5.71,
+          "target": 8,
+          "mean_charge": 4.53,
+          "dev": 3.47,
+          "hit": false,
+          "recovery": 0.276
+        },
+        "ph3_t7": {
+          "pH": 6.52,
+          "target": 7,
+          "mean_charge": 7.31,
+          "dev": 0.31,
+          "hit": true,
+          "recovery": 0.299
+        },
+        "ph4_t7": {
+          "pH": 6.31,
+          "target": 7,
+          "mean_charge": 11.92,
+          "dev": 4.92,
+          "hit": false,
+          "recovery": 0.29
+        },
+        "ph5_t4": {
+          "pH": 9.11,
+          "target": 4,
+          "mean_charge": 3.84,
+          "dev": 0.16,
+          "hit": true,
+          "recovery": 0.308
+        },
+        "ph6_t5": {
+          "pH": 8.63,
+          "target": 5,
+          "mean_charge": 5.78,
+          "dev": 0.78,
+          "hit": true,
+          "recovery": 0.297
+        },
+        "ph7_t6": {
+          "pH": 7.53,
+          "target": 6,
+          "mean_charge": 9.24,
+          "dev": 3.24,
+          "hit": false,
+          "recovery": 0.264
+        }
+      }
+    },
+    "5b3kA00": {
+      "L": 150,
+      "native_charge": -10.89,
+      "arms": {
+        "ph0_t-14": {
+          "pH": 9.91,
+          "target": -14,
+          "mean_charge": -10.71,
+          "dev": 3.29,
+          "hit": false,
+          "recovery": 0.5
+        },
+        "ph1_t-13": {
+          "pH": 9.62,
+          "target": -13,
+          "mean_charge": -6.8,
+          "dev": 6.2,
+          "hit": false,
+          "recovery": 0.495
+        },
+        "ph2_t-9": {
+          "pH": 6.14,
+          "target": -9,
+          "mean_charge": -7.35,
+          "dev": 1.65,
+          "hit": true,
+          "recovery": 0.52
+        },
+        "ph3_t-10": {
+          "pH": 6.4,
+          "target": -10,
+          "mean_charge": -6.56,
+          "dev": 3.44,
+          "hit": false,
+          "recovery": 0.541
+        },
+        "ph4_t-11": {
+          "pH": 8.48,
+          "target": -11,
+          "mean_charge": -5.72,
+          "dev": 5.28,
+          "hit": false,
+          "recovery": 0.536
+        },
+        "ph5_t-4": {
+          "pH": 4.8,
+          "target": -4,
+          "mean_charge": -7.93,
+          "dev": 3.93,
+          "hit": false,
+          "recovery": 0.523
+        },
+        "ph6_t-9": {
+          "pH": 5.88,
+          "target": -9,
+          "mean_charge": -9.2,
+          "dev": 0.2,
+          "hit": true,
+          "recovery": 0.52
+        },
+        "ph7_t-3": {
+          "pH": 4.71,
+          "target": -3,
+          "mean_charge": -4.65,
+          "dev": 1.65,
+          "hit": true,
+          "recovery": 0.521
+        }
+      }
+    },
+    "4ezeB00": {
+      "L": 287,
+      "native_charge": -5.2,
+      "arms": {
+        "ph0_t-4": {
+          "pH": 7.27,
+          "target": -4,
+          "mean_charge": -2.48,
+          "dev": 1.52,
+          "hit": true,
+          "recovery": 0.393
+        },
+        "ph1_t-3": {
+          "pH": 6.61,
+          "target": -3,
+          "mean_charge": -0.12,
+          "dev": 2.88,
+          "hit": false,
+          "recovery": 0.412
+        },
+        "ph2_t-3": {
+          "pH": 6.71,
+          "target": -3,
+          "mean_charge": -0.77,
+          "dev": 2.23,
+          "hit": false,
+          "recovery": 0.396
+        },
+        "ph3_t-3": {
+          "pH": 6.4,
+          "target": -3,
+          "mean_charge": 0.04,
+          "dev": 3.04,
+          "hit": false,
+          "recovery": 0.411
+        },
+        "ph4_t-10": {
+          "pH": 9.51,
+          "target": -10,
+          "mean_charge": -6.05,
+          "dev": 3.95,
+          "hit": false,
+          "recovery": 0.385
+        },
+        "ph5_t-2": {
+          "pH": 6.16,
+          "target": -2,
+          "mean_charge": 1.42,
+          "dev": 3.42,
+          "hit": false,
+          "recovery": 0.411
+        },
+        "ph6_t-8": {
+          "pH": 9.14,
+          "target": -8,
+          "mean_charge": -4.01,
+          "dev": 3.99,
+          "hit": false,
+          "recovery": 0.392
+        },
+        "ph7_t-10": {
+          "pH": 9.42,
+          "target": -10,
+          "mean_charge": -3.17,
+          "dev": 6.83,
+          "hit": false,
+          "recovery": 0.409
+        }
+      }
+    },
+    "4nftC00": {
+      "L": 178,
+      "native_charge": 11.25,
+      "arms": {
+        "ph0_t12": {
+          "pH": 6.84,
+          "target": 12,
+          "mean_charge": 13.29,
+          "dev": 1.29,
+          "hit": true,
+          "recovery": 0.338
+        },
+        "ph1_t16": {
+          "pH": 5.72,
+          "target": 16,
+          "mean_charge": 16.22,
+          "dev": 0.22,
+          "hit": true,
+          "recovery": 0.347
+        },
+        "ph2_t9": {
+          "pH": 9.36,
+          "target": 9,
+          "mean_charge": 16.09,
+          "dev": 7.09,
+          "hit": false,
+          "recovery": 0.362
+        },
+        "ph3_t19": {
+          "pH": 5.09,
+          "target": 19,
+          "mean_charge": 19.07,
+          "dev": 0.07,
+          "hit": true,
+          "recovery": 0.346
+        },
+        "ph4_t12": {
+          "pH": 6.75,
+          "target": 12,
+          "mean_charge": 11.75,
+          "dev": 0.25,
+          "hit": true,
+          "recovery": 0.347
+        },
+        "ph5_t11": {
+          "pH": 7.53,
+          "target": 11,
+          "mean_charge": 14.86,
+          "dev": 3.86,
+          "hit": false,
+          "recovery": 0.357
+        },
+        "ph6_t12": {
+          "pH": 7.08,
+          "target": 12,
+          "mean_charge": 13.95,
+          "dev": 1.95,
+          "hit": true,
+          "recovery": 0.351
+        },
+        "ph7_t10": {
+          "pH": 8.98,
+          "target": 10,
+          "mean_charge": 19.39,
+          "dev": 9.39,
+          "hit": false,
+          "recovery": 0.346
+        }
+      }
+    },
+    "1oipA02": {
+      "L": 49,
+      "native_charge": -9.08,
+      "arms": {
+        "ph0_t-10": {
+          "pH": 8.28,
+          "target": -10,
+          "mean_charge": -8.46,
+          "dev": 1.54,
+          "hit": true,
+          "recovery": 0.265
+        },
+        "ph1_t-7": {
+          "pH": 5.18,
+          "target": -7,
+          "mean_charge": -7.03,
+          "dev": 0.03,
+          "hit": true,
+          "recovery": 0.249
+        },
+        "ph2_t-6": {
+          "pH": 4.78,
+          "target": -6,
+          "mean_charge": -7.41,
+          "dev": 1.41,
+          "hit": true,
+          "recovery": 0.265
+        },
+        "ph3_t-8": {
+          "pH": 6.02,
+          "target": -8,
+          "mean_charge": -2.47,
+          "dev": 5.53,
+          "hit": false,
+          "recovery": 0.241
+        },
+        "ph4_t-10": {
+          "pH": 8.63,
+          "target": -10,
+          "mean_charge": -2.91,
+          "dev": 7.09,
+          "hit": false,
+          "recovery": 0.229
+        },
+        "ph5_t-5": {
+          "pH": 4.64,
+          "target": -5,
+          "mean_charge": -3.53,
+          "dev": 1.47,
+          "hit": true,
+          "recovery": 0.29
+        },
+        "ph6_t-7": {
+          "pH": 5.38,
+          "target": -7,
+          "mean_charge": -5.42,
+          "dev": 1.58,
+          "hit": true,
+          "recovery": 0.241
+        },
+        "ph7_t-2": {
+          "pH": 4.05,
+          "target": -2,
+          "mean_charge": -2.63,
+          "dev": 0.63,
+          "hit": true,
+          "recovery": 0.29
+        }
+      }
+    },
+    "1nj1A02": {
+      "L": 104,
+      "native_charge": -1.04,
+      "arms": {
+        "ph0_t-1": {
+          "pH": 6.63,
+          "target": -1,
+          "mean_charge": -0.79,
+          "dev": 0.21,
+          "hit": true,
+          "recovery": 0.34
+        },
+        "ph1_t-1": {
+          "pH": 7.38,
+          "target": -1,
+          "mean_charge": -0.04,
+          "dev": 0.96,
+          "hit": true,
+          "recovery": 0.337
+        },
+        "ph2_t1": {
+          "pH": 5.77,
+          "target": 1,
+          "mean_charge": 1.25,
+          "dev": 0.25,
+          "hit": true,
+          "recovery": 0.344
+        },
+        "ph3_t1": {
+          "pH": 5.82,
+          "target": 1,
+          "mean_charge": 2.23,
+          "dev": 1.23,
+          "hit": true,
+          "recovery": 0.329
+        },
+        "ph4_t0": {
+          "pH": 6.55,
+          "target": 0,
+          "mean_charge": 1.61,
+          "dev": 1.61,
+          "hit": true,
+          "recovery": 0.35
+        },
+        "ph5_t1": {
+          "pH": 5.88,
+          "target": 1,
+          "mean_charge": -0.24,
+          "dev": 1.24,
+          "hit": true,
+          "recovery": 0.325
+        },
+        "ph6_t-3": {
+          "pH": 9.49,
+          "target": -3,
+          "mean_charge": 1.31,
+          "dev": 4.31,
+          "hit": false,
+          "recovery": 0.304
+        },
+        "ph7_t10": {
+          "pH": 4.25,
+          "target": 10,
+          "mean_charge": 5.91,
+          "dev": 4.09,
+          "hit": false,
+          "recovery": 0.379
+        }
+      }
+    },
+    "4yosA02": {
+      "L": 160,
+      "native_charge": 5.61,
+      "arms": {
+        "ph0_t3": {
+          "pH": 8.37,
+          "target": 3,
+          "mean_charge": 2.21,
+          "dev": 0.79,
+          "hit": true,
+          "recovery": 0.271
+        },
+        "ph1_t8": {
+          "pH": 6.13,
+          "target": 8,
+          "mean_charge": 4.96,
+          "dev": 3.04,
+          "hit": false,
+          "recovery": 0.281
+        },
+        "ph2_t4": {
+          "pH": 8.0,
+          "target": 4,
+          "mean_charge": 0.63,
+          "dev": 3.37,
+          "hit": false,
+          "recovery": 0.294
+        },
+        "ph3_t14": {
+          "pH": 4.73,
+          "target": 14,
+          "mean_charge": 6.16,
+          "dev": 7.84,
+          "hit": false,
+          "recovery": 0.307
+        },
+        "ph4_t4": {
+          "pH": 8.23,
+          "target": 4,
+          "mean_charge": 1.23,
+          "dev": 2.77,
+          "hit": false,
+          "recovery": 0.296
+        },
+        "ph5_t-4": {
+          "pH": 9.83,
+          "target": -4,
+          "mean_charge": -1.4,
+          "dev": 2.6,
+          "hit": false,
+          "recovery": 0.29
+        },
+        "ph6_t19": {
+          "pH": 4.26,
+          "target": 19,
+          "mean_charge": 11.25,
+          "dev": 7.75,
+          "hit": false,
+          "recovery": 0.306
+        },
+        "ph7_t16": {
+          "pH": 4.56,
+          "target": 16,
+          "mean_charge": 9.59,
+          "dev": 6.41,
+          "hit": false,
+          "recovery": 0.318
+        }
+      }
+    },
+    "1z19A01": {
+      "L": 100,
+      "native_charge": 6.1,
+      "arms": {
+        "ph0_t14": {
+          "pH": 4.17,
+          "target": 14,
+          "mean_charge": 2.24,
+          "dev": 11.76,
+          "hit": false,
+          "recovery": 0.298
+        },
+        "ph1_t14": {
+          "pH": 4.24,
+          "target": 14,
+          "mean_charge": 5.43,
+          "dev": 8.57,
+          "hit": false,
+          "recovery": 0.272
+        },
+        "ph2_t12": {
+          "pH": 4.48,
+          "target": 12,
+          "mean_charge": 3.71,
+          "dev": 8.29,
+          "hit": false,
+          "recovery": 0.27
+        },
+        "ph3_t8": {
+          "pH": 5.66,
+          "target": 8,
+          "mean_charge": 3.14,
+          "dev": 4.86,
+          "hit": false,
+          "recovery": 0.314
+        },
+        "ph4_t8": {
+          "pH": 5.83,
+          "target": 8,
+          "mean_charge": 1.74,
+          "dev": 6.26,
+          "hit": false,
+          "recovery": 0.278
+        },
+        "ph5_t7": {
+          "pH": 6.4,
+          "target": 7,
+          "mean_charge": 3.24,
+          "dev": 3.76,
+          "hit": false,
+          "recovery": 0.29
+        },
+        "ph6_t7": {
+          "pH": 6.43,
+          "target": 7,
+          "mean_charge": 6.92,
+          "dev": 0.08,
+          "hit": true,
+          "recovery": 0.284
+        },
+        "ph7_t6": {
+          "pH": 8.63,
+          "target": 6,
+          "mean_charge": 2.42,
+          "dev": 3.58,
+          "hit": false,
+          "recovery": 0.278
+        }
+      }
+    },
+    "3k0xA00": {
+      "L": 99,
+      "native_charge": 5.58,
+      "arms": {
+        "ph0_t3": {
+          "pH": 8.55,
+          "target": 3,
+          "mean_charge": 2.85,
+          "dev": 0.15,
+          "hit": true,
+          "recovery": 0.317
+        },
+        "ph1_t7": {
+          "pH": 5.86,
+          "target": 7,
+          "mean_charge": 5.31,
+          "dev": 1.69,
+          "hit": true,
+          "recovery": 0.295
+        },
+        "ph2_t4": {
+          "pH": 8.31,
+          "target": 4,
+          "mean_charge": 4.11,
+          "dev": 0.11,
+          "hit": true,
+          "recovery": 0.305
+        },
+        "ph3_t7": {
+          "pH": 5.17,
+          "target": 7,
+          "mean_charge": 6.44,
+          "dev": 0.56,
+          "hit": true,
+          "recovery": 0.287
+        },
+        "ph4_t6": {
+          "pH": 6.45,
+          "target": 6,
+          "mean_charge": 4.9,
+          "dev": 1.1,
+          "hit": true,
+          "recovery": 0.301
+        },
+        "ph5_t3": {
+          "pH": 8.84,
+          "target": 3,
+          "mean_charge": 1.72,
+          "dev": 1.28,
+          "hit": true,
+          "recovery": 0.297
+        },
+        "ph6_t5": {
+          "pH": 7.67,
+          "target": 5,
+          "mean_charge": 5.05,
+          "dev": 0.05,
+          "hit": true,
+          "recovery": 0.317
+        },
+        "ph7_t2": {
+          "pH": 8.95,
+          "target": 2,
+          "mean_charge": 3.57,
+          "dev": 1.57,
+          "hit": true,
+          "recovery": 0.343
+        }
+      }
+    },
+    "3rpfC00": {
+      "L": 72,
+      "native_charge": -4.19,
+      "arms": {
+        "ph0_t-4": {
+          "pH": 6.29,
+          "target": -4,
+          "mean_charge": -0.7,
+          "dev": 3.3,
+          "hit": false,
+          "recovery": 0.392
+        },
+        "ph1_t-3": {
+          "pH": 5.88,
+          "target": -3,
+          "mean_charge": -1.08,
+          "dev": 1.92,
+          "hit": true,
+          "recovery": 0.433
+        },
+        "ph2_t-7": {
+          "pH": 9.48,
+          "target": -7,
+          "mean_charge": -2.92,
+          "dev": 4.08,
+          "hit": false,
+          "recovery": 0.394
+        },
+        "ph3_t2": {
+          "pH": 4.29,
+          "target": 2,
+          "mean_charge": -0.88,
+          "dev": 2.88,
+          "hit": false,
+          "recovery": 0.422
+        },
+        "ph4_t-4": {
+          "pH": 6.88,
+          "target": -4,
+          "mean_charge": -2.21,
+          "dev": 1.79,
+          "hit": true,
+          "recovery": 0.397
+        },
+        "ph5_t-4": {
+          "pH": 6.75,
+          "target": -4,
+          "mean_charge": -1.8,
+          "dev": 2.2,
+          "hit": false,
+          "recovery": 0.389
+        },
+        "ph6_t-1": {
+          "pH": 4.88,
+          "target": -1,
+          "mean_charge": -1.66,
+          "dev": 0.66,
+          "hit": true,
+          "recovery": 0.419
+        },
+        "ph7_t-4": {
+          "pH": 6.37,
+          "target": -4,
+          "mean_charge": -2.38,
+          "dev": 1.62,
+          "hit": true,
+          "recovery": 0.414
+        }
+      }
+    },
+    "6cngA03": {
+      "L": 128,
+      "native_charge": 4.65,
+      "arms": {
+        "ph0_t0": {
+          "pH": 9.46,
+          "target": 0,
+          "mean_charge": 2.26,
+          "dev": 2.26,
+          "hit": false,
+          "recovery": 0.344
+        },
+        "ph1_t5": {
+          "pH": 7.23,
+          "target": 5,
+          "mean_charge": 6.4,
+          "dev": 1.4,
+          "hit": true,
+          "recovery": 0.334
+        },
+        "ph2_t5": {
+          "pH": 6.12,
+          "target": 5,
+          "mean_charge": 3.34,
+          "dev": 1.66,
+          "hit": true,
+          "recovery": 0.322
+        },
+        "ph3_t3": {
+          "pH": 8.31,
+          "target": 3,
+          "mean_charge": 3.3,
+          "dev": 0.3,
+          "hit": true,
+          "recovery": 0.309
+        },
+        "ph4_t4": {
+          "pH": 7.72,
+          "target": 4,
+          "mean_charge": 4.96,
+          "dev": 0.96,
+          "hit": true,
+          "recovery": 0.331
+        },
+        "ph5_t5": {
+          "pH": 5.84,
+          "target": 5,
+          "mean_charge": 4.67,
+          "dev": 0.33,
+          "hit": true,
+          "recovery": 0.338
+        },
+        "ph6_t5": {
+          "pH": 5.79,
+          "target": 5,
+          "mean_charge": 2.39,
+          "dev": 2.61,
+          "hit": false,
+          "recovery": 0.347
+        },
+        "ph7_t5": {
+          "pH": 6.37,
+          "target": 5,
+          "mean_charge": 5.0,
+          "dev": 0.0,
+          "hit": true,
+          "recovery": 0.327
+        }
+      }
+    },
+    "4j0xA00": {
+      "L": 365,
+      "native_charge": 12.53,
+      "arms": {
+        "ph0_t4": {
+          "pH": 9.24,
+          "target": 4,
+          "mean_charge": 17.42,
+          "dev": 13.42,
+          "hit": false,
+          "recovery": 0.42
+        },
+        "ph1_t13": {
+          "pH": 7.26,
+          "target": 13,
+          "mean_charge": 20.31,
+          "dev": 7.31,
+          "hit": false,
+          "recovery": 0.396
+        },
+        "ph2_t14": {
+          "pH": 6.63,
+          "target": 14,
+          "mean_charge": 22.14,
+          "dev": 8.14,
+          "hit": false,
+          "recovery": 0.4
+        },
+        "ph3_t7": {
+          "pH": 8.86,
+          "target": 7,
+          "mean_charge": 17.39,
+          "dev": 10.39,
+          "hit": false,
+          "recovery": 0.414
+        },
+        "ph4_t19": {
+          "pH": 5.46,
+          "target": 19,
+          "mean_charge": 23.39,
+          "dev": 4.39,
+          "hit": false,
+          "recovery": 0.418
+        },
+        "ph5_t5": {
+          "pH": 9.16,
+          "target": 5,
+          "mean_charge": 15.32,
+          "dev": 10.32,
+          "hit": false,
+          "recovery": 0.421
+        },
+        "ph6_t13": {
+          "pH": 7.23,
+          "target": 13,
+          "mean_charge": 19.81,
+          "dev": 6.81,
+          "hit": false,
+          "recovery": 0.402
+        },
+        "ph7_t3": {
+          "pH": 9.4,
+          "target": 3,
+          "mean_charge": 16.13,
+          "dev": 13.13,
+          "hit": false,
+          "recovery": 0.427
+        }
+      }
+    },
+    "4ncbA01": {
+      "L": 146,
+      "native_charge": 5.92,
+      "arms": {
+        "ph0_t6": {
+          "pH": 6.86,
+          "target": 6,
+          "mean_charge": 5.3,
+          "dev": 0.7,
+          "hit": true,
+          "recovery": 0.419
+        },
+        "ph1_t7": {
+          "pH": 6.17,
+          "target": 7,
+          "mean_charge": 7.05,
+          "dev": 0.05,
+          "hit": true,
+          "recovery": 0.419
+        },
+        "ph2_t4": {
+          "pH": 9.48,
+          "target": 4,
+          "mean_charge": 9.23,
+          "dev": 5.23,
+          "hit": false,
+          "recovery": 0.389
+        },
+        "ph3_t6": {
+          "pH": 7.95,
+          "target": 6,
+          "mean_charge": 4.18,
+          "dev": 1.82,
+          "hit": true,
+          "recovery": 0.412
+        },
+        "ph4_t7": {
+          "pH": 6.16,
+          "target": 7,
+          "mean_charge": 5.1,
+          "dev": 1.9,
+          "hit": true,
+          "recovery": 0.43
+        },
+        "ph5_t7": {
+          "pH": 6.15,
+          "target": 7,
+          "mean_charge": 3.98,
+          "dev": 3.02,
+          "hit": false,
+          "recovery": 0.415
+        },
+        "ph6_t6": {
+          "pH": 7.02,
+          "target": 6,
+          "mean_charge": 6.14,
+          "dev": 0.14,
+          "hit": true,
+          "recovery": 0.432
+        },
+        "ph7_t16": {
+          "pH": 4.2,
+          "target": 16,
+          "mean_charge": 11.69,
+          "dev": 4.31,
+          "hit": false,
+          "recovery": 0.432
+        }
+      }
+    },
+    "1dxeA00": {
+      "L": 253,
+      "native_charge": -4.89,
+      "arms": {
+        "ph0_t-11": {
+          "pH": 9.94,
+          "target": -11,
+          "mean_charge": -8.92,
+          "dev": 2.08,
+          "hit": false,
+          "recovery": 0.391
+        },
+        "ph1_t-6": {
+          "pH": 8.87,
+          "target": -6,
+          "mean_charge": -8.6,
+          "dev": 2.6,
+          "hit": false,
+          "recovery": 0.406
+        },
+        "ph2_t-7": {
+          "pH": 9.14,
+          "target": -7,
+          "mean_charge": -6.83,
+          "dev": 0.17,
+          "hit": true,
+          "recovery": 0.389
+        },
+        "ph3_t-1": {
+          "pH": 5.88,
+          "target": -1,
+          "mean_charge": -4.86,
+          "dev": 3.86,
+          "hit": false,
+          "recovery": 0.395
+        },
+        "ph4_t-2": {
+          "pH": 5.97,
+          "target": -2,
+          "mean_charge": -4.26,
+          "dev": 2.26,
+          "hit": false,
+          "recovery": 0.411
+        },
+        "ph5_t-5": {
+          "pH": 7.09,
+          "target": -5,
+          "mean_charge": -4.19,
+          "dev": 0.81,
+          "hit": true,
+          "recovery": 0.416
+        },
+        "ph6_t-5": {
+          "pH": 7.79,
+          "target": -5,
+          "mean_charge": -5.74,
+          "dev": 0.74,
+          "hit": true,
+          "recovery": 0.414
+        },
+        "ph7_t-6": {
+          "pH": 8.37,
+          "target": -6,
+          "mean_charge": -5.1,
+          "dev": 0.9,
+          "hit": true,
+          "recovery": 0.406
+        }
+      }
+    }
+  },
+  "summary": {
+    "n_domains_ok": 28,
+    "n_arms": 224,
+    "hit_rate": 0.406,
+    "mean_dev": 3.293,
+    "mean_recovery": 0.333
+  }
+}

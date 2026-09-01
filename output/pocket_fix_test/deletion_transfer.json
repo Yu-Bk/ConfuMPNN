@@ -1,0 +1,113 @@
+{
+  "2FEO": {
+    "\u6df1\u90e8fix": {
+      "native": 10,
+      "no_fix": 1.4,
+      "no_fix_ratio": 0.14,
+      "with_fix": 10.0,
+      "with_fix_ratio": 1.0
+    },
+    "\u53e3\u888b\u8868\u9762\u5e26": {
+      "native": 2,
+      "no_fix": 0.4,
+      "no_fix_ratio": 0.2,
+      "with_fix": 0.4,
+      "with_fix_ratio": 0.18
+    },
+    "\u53e3\u888b\u5176\u4ed6": {
+      "native": 1,
+      "no_fix": 1.2,
+      "no_fix_ratio": 1.17,
+      "with_fix": 1.1,
+      "with_fix_ratio": 1.13
+    },
+    "\u53e3\u888b\u5916\u8868\u9762": {
+      "native": 39,
+      "no_fix": 27.2,
+      "no_fix_ratio": 0.7,
+      "with_fix": 26.6,
+      "with_fix_ratio": 0.68
+    },
+    "\u53e3\u888b\u5916\u6df1\u90e8": {
+      "native": 5,
+      "no_fix": 0.5,
+      "no_fix_ratio": 0.1,
+      "with_fix": 0.6,
+      "with_fix_ratio": 0.13
+    }
+  },
+  "1AXW": {
+    "\u6df1\u90e8fix": {
+      "native": 10,
+      "no_fix": 2.0,
+      "no_fix_ratio": 0.2,
+      "with_fix": 10.0,
+      "with_fix_ratio": 1.0
+    },
+    "\u53e3\u888b\u8868\u9762\u5e26": {
+      "native": 13,
+      "no_fix": 5.6,
+      "no_fix_ratio": 0.43,
+      "with_fix": 6.0,
+      "with_fix_ratio": 0.46
+    },
+    "\u53e3\u888b\u5176\u4ed6": {
+      "native": 3,
+      "no_fix": 2.9,
+      "no_fix_ratio": 0.98,
+      "with_fix": 3.2,
+      "with_fix_ratio": 1.07
+    },
+    "\u53e3\u888b\u5916\u8868\u9762": {
+      "native": 38,
+      "no_fix": 25.7,
+      "no_fix_ratio": 0.68,
+      "with_fix": 24.8,
+      "with_fix_ratio": 0.65
+    },
+    "\u53e3\u888b\u5916\u6df1\u90e8": {
+      "native": 54,
+      "no_fix": 33.3,
+      "no_fix_ratio": 0.62,
+      "with_fix": 34.1,
+      "with_fix_ratio": 0.63
+    }
+  },
+  "1C6O": {
+    "\u6df1\u90e8fix": {
+      "native": 4,
+      "no_fix": 2.0,
+      "no_fix_ratio": 0.5,
+      "with_fix": 4.0,
+      "with_fix_ratio": 1.0
+    },
+    "\u53e3\u888b\u8868\u9762\u5e26": {
+      "native": 4,
+      "no_fix": 2.4,
+      "no_fix_ratio": 0.61,
+      "with_fix": 2.4,
+      "with_fix_ratio": 0.61
+    },
+    "\u53e3\u888b\u5176\u4ed6": {
+      "native": 2,
+      "no_fix": 11.3,
+      "no_fix_ratio": 5.63,
+      "with_fix": 11.7,
+      "with_fix_ratio": 5.85
+    },
+    "\u53e3\u888b\u5916\u8868\u9762": {
+      "native": 11,
+      "no_fix": 7.9,
+      "no_fix_ratio": 0.72,
+      "with_fix": 8.2,
+      "with_fix_ratio": 0.74
+    },
+    "\u53e3\u888b\u5916\u6df1\u90e8": {
+      "native": 13,
+      "no_fix": 10.6,
+      "no_fix_ratio": 0.82,
+      "with_fix": 12.0,
+      "with_fix_ratio": 0.92
+    }
+  }
+}

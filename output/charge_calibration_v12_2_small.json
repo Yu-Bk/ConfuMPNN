@@ -1,0 +1,70 @@
+{
+  "global": {
+    "slope": 1.4587,
+    "intercept": -0.7518,
+    "n_point": 460,
+    "n_domains": 92
+  },
+  "per_protein": {
+    "1C6O": {
+      "slope": 0.7962,
+      "intercept": -5.0125,
+      "n_calib": 50,
+      "native_q": -14
+    },
+    "1AZM": {
+      "slope": 1.2022,
+      "intercept": -3.5503,
+      "n_calib": 50,
+      "native_q": -2
+    },
+    "1AS2": {
+      "slope": 1.8947,
+      "intercept": -3.4818,
+      "n_calib": 50,
+      "native_q": -3
+    },
+    "1AXW": {
+      "slope": 1.0927,
+      "intercept": -10.9782,
+      "n_calib": 50,
+      "native_q": -18
+    },
+    "2FEO": {
+      "slope": 1.3914,
+      "intercept": -3.6463,
+      "n_calib": 50,
+      "native_q": -7
+    },
+    "5CQH": {
+      "slope": 1.2892,
+      "intercept": -2.4631,
+      "n_calib": 50,
+      "native_q": -6
+    },
+    "1CGE": {
+      "slope": 0.972,
+      "intercept": -4.2777,
+      "n_calib": 50,
+      "native_q": -12
+    },
+    "1AG0": {
+      "slope": 1.8898,
+      "intercept": -5.8028,
+      "n_calib": 50,
+      "native_q": -8
+    },
+    "1A65": {
+      "slope": 1.6041,
+      "intercept": 1.7042,
+      "n_calib": 50,
+      "native_q": -27
+    },
+    "1BJ4": {
+      "slope": 3.0068,
+      "intercept": 3.3069,
+      "n_calib": 50,
+      "native_q": 0
+    }
+  }
+}

@@ -1,0 +1,1574 @@
+{
+  "proteins": {
+    "1A65": {
+      "cat": "long",
+      "L": 504,
+      "mode": {
+        "ligand": {
+          "arms": {
+            "native": {
+              "target": -27,
+              "mean_charge": -21.76,
+              "std_charge": 4.36,
+              "dev": 5.24,
+              "hit": false,
+              "recovery": 0.571,
+              "pocket_recovery": 0.531,
+              "gravy_mean": 0.106,
+              "tm_median": 0.971,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 84.0
+            },
+            "n2": {
+              "target": -29,
+              "mean_charge": -24.31,
+              "std_charge": 4.03,
+              "dev": 4.69,
+              "hit": false,
+              "recovery": 0.569,
+              "pocket_recovery": 0.526,
+              "gravy_mean": 0.083,
+              "tm_median": 0.971,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 83.8
+            },
+            "p2": {
+              "target": -25,
+              "mean_charge": -19.11,
+              "std_charge": 3.34,
+              "dev": 5.89,
+              "hit": false,
+              "recovery": 0.57,
+              "pocket_recovery": 0.535,
+              "gravy_mean": 0.132,
+              "tm_median": 0.972,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 84.2
+            },
+            "n8": {
+              "target": -35,
+              "mean_charge": -30.03,
+              "std_charge": 4.19,
+              "dev": 4.97,
+              "hit": false,
+              "recovery": 0.564,
+              "pocket_recovery": 0.51,
+              "gravy_mean": 0.021,
+              "tm_median": 0.972,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 83.5
+            },
+            "p8": {
+              "target": -19,
+              "mean_charge": -12.33,
+              "std_charge": 4.67,
+              "dev": 6.67,
+              "hit": false,
+              "recovery": 0.568,
+              "pocket_recovery": 0.544,
+              "gravy_mean": 0.205,
+              "tm_median": 0.97,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 83.5
+            }
+          }
+        },
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -27,
+              "mean_charge": -26.46,
+              "std_charge": 4.95,
+              "dev": 0.54,
+              "hit": true,
+              "recovery": 0.542,
+              "pocket_recovery": null,
+              "gravy_mean": 0.034,
+              "tm_median": 0.971,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 83.2
+            },
+            "n8": {
+              "target": -35,
+              "mean_charge": -34.27,
+              "std_charge": 4.7,
+              "dev": 0.73,
+              "hit": true,
+              "recovery": 0.542,
+              "pocket_recovery": null,
+              "gravy_mean": -0.05,
+              "tm_median": 0.971,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 82.7
+            },
+            "p8": {
+              "target": -19,
+              "mean_charge": -15.75,
+              "std_charge": 3.96,
+              "dev": 3.25,
+              "hit": false,
+              "recovery": 0.539,
+              "pocket_recovery": null,
+              "gravy_mean": 0.113,
+              "tm_median": 0.97,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 83.6
+            }
+          }
+        }
+      },
+      "native_charge": -26.85
+    },
+    "1AG0": {
+      "cat": "metal",
+      "L": 256,
+      "mode": {
+        "ligand": {
+          "arms": {
+            "native": {
+              "target": -8,
+              "mean_charge": -6.85,
+              "std_charge": 3.79,
+              "dev": 1.15,
+              "hit": true,
+              "recovery": 0.488,
+              "pocket_recovery": 0.642,
+              "gravy_mean": 0.33,
+              "tm_median": 0.495,
+              "tm_ge070": 0.0,
+              "tm_lt050": 1.0,
+              "plddt_median": 87.7
+            },
+            "n2": {
+              "target": -10,
+              "mean_charge": -9.27,
+              "std_charge": 4.17,
+              "dev": 0.73,
+              "hit": true,
+              "recovery": 0.494,
+              "pocket_recovery": 0.644,
+              "gravy_mean": 0.322,
+              "tm_median": 0.495,
+              "tm_ge070": 0.0,
+              "tm_lt050": 1.0,
+              "plddt_median": 88.5
+            },
+            "p2": {
+              "target": -6,
+              "mean_charge": -5.1,
+              "std_charge": 2.81,
+              "dev": 0.9,
+              "hit": true,
+              "recovery": 0.482,
+              "pocket_recovery": 0.62,
+              "gravy_mean": 0.323,
+              "tm_median": 0.494,
+              "tm_ge070": 0.0,
+              "tm_lt050": 1.0,
+              "plddt_median": 87.4
+            },
+            "n8": {
+              "target": -16,
+              "mean_charge": -16.86,
+              "std_charge": 4.39,
+              "dev": 0.86,
+              "hit": true,
+              "recovery": 0.514,
+              "pocket_recovery": 0.655,
+              "gravy_mean": 0.223,
+              "tm_median": 0.494,
+              "tm_ge070": 0.0,
+              "tm_lt050": 1.0,
+              "plddt_median": 87.4
+            },
+            "p8": {
+              "target": 0,
+              "mean_charge": -0.3,
+              "std_charge": 1.34,
+              "dev": 0.3,
+              "hit": true,
+              "recovery": 0.463,
+              "pocket_recovery": 0.576,
+              "gravy_mean": 0.268,
+              "tm_median": 0.494,
+              "tm_ge070": 0.0,
+              "tm_lt050": 1.0,
+              "plddt_median": 87.2
+            }
+          }
+        },
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -8,
+              "mean_charge": -8.14,
+              "std_charge": 3.75,
+              "dev": 0.14,
+              "hit": true,
+              "recovery": 0.465,
+              "pocket_recovery": null,
+              "gravy_mean": 0.199,
+              "tm_median": 0.483,
+              "tm_ge070": 0.0,
+              "tm_lt050": 1.0,
+              "plddt_median": 73.6
+            },
+            "n8": {
+              "target": -16,
+              "mean_charge": -19.37,
+              "std_charge": 3.71,
+              "dev": 3.37,
+              "hit": false,
+              "recovery": 0.477,
+              "pocket_recovery": null,
+              "gravy_mean": 0.098,
+              "tm_median": 0.492,
+              "tm_ge070": 0.0,
+              "tm_lt050": 1.0,
+              "plddt_median": 84.5
+            },
+            "p8": {
+              "target": 0,
+              "mean_charge": -0.29,
+              "std_charge": 1.79,
+              "dev": 0.29,
+              "hit": true,
+              "recovery": 0.442,
+              "pocket_recovery": null,
+              "gravy_mean": 0.109,
+              "tm_median": 0.369,
+              "tm_ge070": 0.0,
+              "tm_lt050": 1.0,
+              "plddt_median": 53.7
+            }
+          }
+        }
+      },
+      "native_charge": -8.16
+    },
+    "1AS2": {
+      "cat": "rna",
+      "L": 312,
+      "mode": {
+        "ligand": {
+          "arms": {
+            "native": {
+              "target": -3,
+              "mean_charge": -1.44,
+              "std_charge": 3.4,
+              "dev": 1.56,
+              "hit": true,
+              "recovery": 0.355,
+              "pocket_recovery": 0.362,
+              "gravy_mean": 0.348,
+              "tm_median": 0.931,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 82.9
+            },
+            "n2": {
+              "target": -5,
+              "mean_charge": -3.46,
+              "std_charge": 3.9,
+              "dev": 1.54,
+              "hit": true,
+              "recovery": 0.356,
+              "pocket_recovery": 0.352,
+              "gravy_mean": 0.329,
+              "tm_median": 0.935,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 83.0
+            },
+            "p2": {
+              "target": -1,
+              "mean_charge": 0.73,
+              "std_charge": 2.67,
+              "dev": 1.73,
+              "hit": true,
+              "recovery": 0.359,
+              "pocket_recovery": 0.378,
+              "gravy_mean": 0.369,
+              "tm_median": 0.938,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 82.8
+            },
+            "n8": {
+              "target": -11,
+              "mean_charge": -8.67,
+              "std_charge": 4.28,
+              "dev": 2.33,
+              "hit": false,
+              "recovery": 0.366,
+              "pocket_recovery": 0.362,
+              "gravy_mean": 0.256,
+              "tm_median": 0.942,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 82.2
+            },
+            "p8": {
+              "target": 5,
+              "mean_charge": 5.85,
+              "std_charge": 2.68,
+              "dev": 0.85,
+              "hit": true,
+              "recovery": 0.36,
+              "pocket_recovery": 0.393,
+              "gravy_mean": 0.39,
+              "tm_median": 0.939,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 82.8
+            }
+          }
+        },
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -3,
+              "mean_charge": -1.32,
+              "std_charge": 3.6,
+              "dev": 1.68,
+              "hit": true,
+              "recovery": 0.349,
+              "pocket_recovery": null,
+              "gravy_mean": 0.286,
+              "tm_median": 0.92,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 82.5
+            },
+            "n8": {
+              "target": -11,
+              "mean_charge": -10.41,
+              "std_charge": 5.21,
+              "dev": 0.59,
+              "hit": true,
+              "recovery": 0.361,
+              "pocket_recovery": null,
+              "gravy_mean": 0.202,
+              "tm_median": 0.941,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 82.7
+            },
+            "p8": {
+              "target": 5,
+              "mean_charge": 6.04,
+              "std_charge": 3.36,
+              "dev": 1.04,
+              "hit": true,
+              "recovery": 0.351,
+              "pocket_recovery": null,
+              "gravy_mean": 0.32,
+              "tm_median": 0.922,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 82.4
+            }
+          }
+        }
+      },
+      "native_charge": -2.69
+    },
+    "1AXW": {
+      "cat": "rna",
+      "L": 528,
+      "mode": {
+        "ligand": {
+          "arms": {
+            "native": {
+              "target": -18,
+              "mean_charge": -19.9,
+              "std_charge": 5.49,
+              "dev": 1.9,
+              "hit": true,
+              "recovery": 0.495,
+              "pocket_recovery": 0.456,
+              "gravy_mean": 0.34,
+              "tm_median": 0.515,
+              "tm_ge070": 0.333,
+              "tm_lt050": 0.233,
+              "plddt_median": 81.0
+            },
+            "n2": {
+              "target": -20,
+              "mean_charge": -22.27,
+              "std_charge": 5.62,
+              "dev": 2.27,
+              "hit": false,
+              "recovery": 0.501,
+              "pocket_recovery": 0.463,
+              "gravy_mean": 0.31,
+              "tm_median": 0.512,
+              "tm_ge070": 0.333,
+              "tm_lt050": 0.333,
+              "plddt_median": 80.7
+            },
+            "p2": {
+              "target": -16,
+              "mean_charge": -16.72,
+              "std_charge": 4.7,
+              "dev": 0.72,
+              "hit": true,
+              "recovery": 0.488,
+              "pocket_recovery": 0.449,
+              "gravy_mean": 0.375,
+              "tm_median": 0.51,
+              "tm_ge070": 0.333,
+              "tm_lt050": 0.433,
+              "plddt_median": 81.2
+            },
+            "n8": {
+              "target": -26,
+              "mean_charge": -29.09,
+              "std_charge": 4.93,
+              "dev": 3.09,
+              "hit": false,
+              "recovery": 0.519,
+              "pocket_recovery": 0.489,
+              "gravy_mean": 0.227,
+              "tm_median": 0.827,
+              "tm_ge070": 0.533,
+              "tm_lt050": 0.1,
+              "plddt_median": 81.3
+            },
+            "p8": {
+              "target": -10,
+              "mean_charge": -8.61,
+              "std_charge": 4.17,
+              "dev": 1.39,
+              "hit": true,
+              "recovery": 0.475,
+              "pocket_recovery": 0.439,
+              "gravy_mean": 0.444,
+              "tm_median": 0.522,
+              "tm_ge070": 0.467,
+              "tm_lt050": 0.367,
+              "plddt_median": 81.3
+            }
+          }
+        },
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -18,
+              "mean_charge": -18.28,
+              "std_charge": 4.95,
+              "dev": 0.28,
+              "hit": true,
+              "recovery": 0.472,
+              "pocket_recovery": null,
+              "gravy_mean": 0.316,
+              "tm_median": 0.513,
+              "tm_ge070": 0.433,
+              "tm_lt050": 0.267,
+              "plddt_median": 79.7
+            },
+            "n8": {
+              "target": -26,
+              "mean_charge": -29.52,
+              "std_charge": 4.84,
+              "dev": 3.52,
+              "hit": false,
+              "recovery": 0.492,
+              "pocket_recovery": null,
+              "gravy_mean": 0.185,
+              "tm_median": 0.939,
+              "tm_ge070": 0.633,
+              "tm_lt050": 0.1,
+              "plddt_median": 80.1
+            },
+            "p8": {
+              "target": -10,
+              "mean_charge": -7.82,
+              "std_charge": 4.45,
+              "dev": 2.18,
+              "hit": false,
+              "recovery": 0.453,
+              "pocket_recovery": null,
+              "gravy_mean": 0.431,
+              "tm_median": 0.897,
+              "tm_ge070": 0.567,
+              "tm_lt050": 0.367,
+              "plddt_median": 80.3
+            }
+          }
+        }
+      },
+      "native_charge": -18.3
+    },
+    "1AZM": {
+      "cat": "small_mol",
+      "L": 258,
+      "mode": {
+        "ligand": {
+          "arms": {
+            "native": {
+              "target": -2,
+              "mean_charge": -0.37,
+              "std_charge": 1.26,
+              "dev": 1.63,
+              "hit": true,
+              "recovery": 0.49,
+              "pocket_recovery": 0.647,
+              "gravy_mean": 0.058,
+              "tm_median": 0.984,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 89.6
+            },
+            "n2": {
+              "target": -4,
+              "mean_charge": -1.89,
+              "std_charge": 2.02,
+              "dev": 2.11,
+              "hit": false,
+              "recovery": 0.492,
+              "pocket_recovery": 0.648,
+              "gravy_mean": 0.08,
+              "tm_median": 0.985,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 89.4
+            },
+            "p2": {
+              "target": 0,
+              "mean_charge": 0.86,
+              "std_charge": 1.31,
+              "dev": 0.86,
+              "hit": true,
+              "recovery": 0.488,
+              "pocket_recovery": 0.647,
+              "gravy_mean": 0.038,
+              "tm_median": 0.986,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 89.8
+            },
+            "n8": {
+              "target": -10,
+              "mean_charge": -8.56,
+              "std_charge": 2.8,
+              "dev": 1.44,
+              "hit": true,
+              "recovery": 0.501,
+              "pocket_recovery": 0.632,
+              "gravy_mean": 0.066,
+              "tm_median": 0.985,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 89.0
+            },
+            "p8": {
+              "target": 6,
+              "mean_charge": 5.24,
+              "std_charge": 2.18,
+              "dev": 0.76,
+              "hit": true,
+              "recovery": 0.491,
+              "pocket_recovery": 0.644,
+              "gravy_mean": -0.002,
+              "tm_median": 0.984,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 88.9
+            }
+          }
+        },
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -2,
+              "mean_charge": -0.19,
+              "std_charge": 1.4,
+              "dev": 1.81,
+              "hit": true,
+              "recovery": 0.473,
+              "pocket_recovery": null,
+              "gravy_mean": 0.096,
+              "tm_median": 0.983,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 89.0
+            },
+            "n8": {
+              "target": -10,
+              "mean_charge": -8.06,
+              "std_charge": 2.84,
+              "dev": 1.94,
+              "hit": true,
+              "recovery": 0.477,
+              "pocket_recovery": null,
+              "gravy_mean": 0.084,
+              "tm_median": 0.985,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 88.7
+            },
+            "p8": {
+              "target": 6,
+              "mean_charge": 5.15,
+              "std_charge": 2.04,
+              "dev": 0.85,
+              "hit": true,
+              "recovery": 0.473,
+              "pocket_recovery": null,
+              "gravy_mean": 0.024,
+              "tm_median": 0.984,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 88.4
+            }
+          }
+        }
+      },
+      "native_charge": -1.71
+    },
+    "1BJ4": {
+      "cat": "long",
+      "L": 470,
+      "mode": {
+        "ligand": {
+          "arms": {
+            "native": {
+              "target": 0,
+              "mean_charge": 2.3,
+              "std_charge": 2.51,
+              "dev": 2.3,
+              "hit": false,
+              "recovery": 0.431,
+              "pocket_recovery": 0.343,
+              "gravy_mean": 0.551,
+              "tm_median": 0.916,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 79.9
+            },
+            "n2": {
+              "target": -2,
+              "mean_charge": 0.05,
+              "std_charge": 3.02,
+              "dev": 2.05,
+              "hit": false,
+              "recovery": 0.431,
+              "pocket_recovery": 0.347,
+              "gravy_mean": 0.524,
+              "tm_median": 0.915,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 79.3
+            },
+            "p2": {
+              "target": 2,
+              "mean_charge": 4.18,
+              "std_charge": 2.15,
+              "dev": 2.18,
+              "hit": false,
+              "recovery": 0.431,
+              "pocket_recovery": 0.333,
+              "gravy_mean": 0.562,
+              "tm_median": 0.916,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 79.8
+            },
+            "n8": {
+              "target": -8,
+              "mean_charge": -11.16,
+              "std_charge": 4.28,
+              "dev": 3.16,
+              "hit": false,
+              "recovery": 0.442,
+              "pocket_recovery": 0.339,
+              "gravy_mean": 0.4,
+              "tm_median": 0.934,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 80.6
+            },
+            "p8": {
+              "target": 8,
+              "mean_charge": 14.0,
+              "std_charge": 3.32,
+              "dev": 6.0,
+              "hit": false,
+              "recovery": 0.446,
+              "pocket_recovery": 0.38,
+              "gravy_mean": 0.445,
+              "tm_median": 0.933,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 80.5
+            }
+          }
+        },
+        "protein": {
+          "arms": {
+            "native": {
+              "target": 0,
+              "mean_charge": 2.77,
+              "std_charge": 2.29,
+              "dev": 2.77,
+              "hit": false,
+              "recovery": 0.422,
+              "pocket_recovery": null,
+              "gravy_mean": 0.518,
+              "tm_median": 0.915,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 79.5
+            },
+            "n8": {
+              "target": -8,
+              "mean_charge": -11.65,
+              "std_charge": 4.7,
+              "dev": 3.65,
+              "hit": false,
+              "recovery": 0.432,
+              "pocket_recovery": null,
+              "gravy_mean": 0.357,
+              "tm_median": 0.931,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 80.3
+            },
+            "p8": {
+              "target": 8,
+              "mean_charge": 16.91,
+              "std_charge": 3.49,
+              "dev": 8.91,
+              "hit": false,
+              "recovery": 0.434,
+              "pocket_recovery": null,
+              "gravy_mean": 0.448,
+              "tm_median": 0.925,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 78.8
+            }
+          }
+        }
+      },
+      "native_charge": 0.42
+    },
+    "1C6O": {
+      "cat": "small_mol",
+      "L": 177,
+      "mode": {
+        "ligand": {
+          "arms": {
+            "native": {
+              "target": -14,
+              "mean_charge": -9.86,
+              "std_charge": 3.27,
+              "dev": 4.14,
+              "hit": false,
+              "recovery": 0.569,
+              "pocket_recovery": 0.598,
+              "gravy_mean": 0.326,
+              "tm_median": 0.512,
+              "tm_ge070": 0.0,
+              "tm_lt050": 0.333,
+              "plddt_median": 86.4
+            },
+            "n2": {
+              "target": -16,
+              "mean_charge": -11.43,
+              "std_charge": 3.16,
+              "dev": 4.57,
+              "hit": false,
+              "recovery": 0.572,
+              "pocket_recovery": 0.6,
+              "gravy_mean": 0.299,
+              "tm_median": 0.512,
+              "tm_ge070": 0.0,
+              "tm_lt050": 0.3,
+              "plddt_median": 86.7
+            },
+            "p2": {
+              "target": -12,
+              "mean_charge": -8.91,
+              "std_charge": 3.45,
+              "dev": 3.09,
+              "hit": false,
+              "recovery": 0.566,
+              "pocket_recovery": 0.593,
+              "gravy_mean": 0.348,
+              "tm_median": 0.515,
+              "tm_ge070": 0.0,
+              "tm_lt050": 0.267,
+              "plddt_median": 86.2
+            },
+            "n8": {
+              "target": -22,
+              "mean_charge": -14.36,
+              "std_charge": 2.4,
+              "dev": 7.64,
+              "hit": false,
+              "recovery": 0.573,
+              "pocket_recovery": 0.595,
+              "gravy_mean": 0.166,
+              "tm_median": 0.514,
+              "tm_ge070": 0.0,
+              "tm_lt050": 0.2,
+              "plddt_median": 87.1
+            },
+            "p8": {
+              "target": -6,
+              "mean_charge": -2.02,
+              "std_charge": 1.74,
+              "dev": 3.98,
+              "hit": false,
+              "recovery": 0.558,
+              "pocket_recovery": 0.595,
+              "gravy_mean": 0.384,
+              "tm_median": 0.512,
+              "tm_ge070": 0.0,
+              "tm_lt050": 0.3,
+              "plddt_median": 87.0
+            }
+          }
+        },
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -14,
+              "mean_charge": -10.7,
+              "std_charge": 3.49,
+              "dev": 3.3,
+              "hit": false,
+              "recovery": 0.505,
+              "pocket_recovery": null,
+              "gravy_mean": 0.236,
+              "tm_median": 0.505,
+              "tm_ge070": 0.0,
+              "tm_lt050": 0.433,
+              "plddt_median": 79.8
+            },
+            "n8": {
+              "target": -22,
+              "mean_charge": -15.09,
+              "std_charge": 2.88,
+              "dev": 6.91,
+              "hit": false,
+              "recovery": 0.5,
+              "pocket_recovery": null,
+              "gravy_mean": 0.097,
+              "tm_median": 0.504,
+              "tm_ge070": 0.0,
+              "tm_lt050": 0.4,
+              "plddt_median": 79.8
+            },
+            "p8": {
+              "target": -6,
+              "mean_charge": -2.68,
+              "std_charge": 1.75,
+              "dev": 3.32,
+              "hit": false,
+              "recovery": 0.502,
+              "pocket_recovery": null,
+              "gravy_mean": 0.268,
+              "tm_median": 0.503,
+              "tm_ge070": 0.0,
+              "tm_lt050": 0.5,
+              "plddt_median": 81.1
+            }
+          }
+        }
+      },
+      "native_charge": -14.31
+    },
+    "1CGE": {
+      "cat": "metal",
+      "L": 162,
+      "mode": {
+        "ligand": {
+          "arms": {
+            "native": {
+              "target": -12,
+              "mean_charge": -11.21,
+              "std_charge": 2.51,
+              "dev": 0.79,
+              "hit": true,
+              "recovery": 0.563,
+              "pocket_recovery": 0.658,
+              "gravy_mean": -0.006,
+              "tm_median": 0.967,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 87.5
+            },
+            "n2": {
+              "target": -14,
+              "mean_charge": -12.34,
+              "std_charge": 2.57,
+              "dev": 1.66,
+              "hit": true,
+              "recovery": 0.561,
+              "pocket_recovery": 0.655,
+              "gravy_mean": -0.026,
+              "tm_median": 0.968,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 87.6
+            },
+            "p2": {
+              "target": -10,
+              "mean_charge": -9.98,
+              "std_charge": 2.36,
+              "dev": 0.02,
+              "hit": true,
+              "recovery": 0.562,
+              "pocket_recovery": 0.657,
+              "gravy_mean": 0.007,
+              "tm_median": 0.969,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 87.2
+            },
+            "n8": {
+              "target": -20,
+              "mean_charge": -16.47,
+              "std_charge": 3.03,
+              "dev": 3.53,
+              "hit": false,
+              "recovery": 0.559,
+              "pocket_recovery": 0.66,
+              "gravy_mean": -0.077,
+              "tm_median": 0.971,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 87.8
+            },
+            "p8": {
+              "target": -4,
+              "mean_charge": -4.44,
+              "std_charge": 2.4,
+              "dev": 0.44,
+              "hit": true,
+              "recovery": 0.552,
+              "pocket_recovery": 0.633,
+              "gravy_mean": 0.027,
+              "tm_median": 0.969,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 87.9
+            }
+          }
+        },
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -12,
+              "mean_charge": -9.94,
+              "std_charge": 2.61,
+              "dev": 2.06,
+              "hit": false,
+              "recovery": 0.525,
+              "pocket_recovery": null,
+              "gravy_mean": 0.051,
+              "tm_median": 0.961,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 85.1
+            },
+            "n8": {
+              "target": -20,
+              "mean_charge": -14.96,
+              "std_charge": 2.59,
+              "dev": 5.04,
+              "hit": false,
+              "recovery": 0.521,
+              "pocket_recovery": null,
+              "gravy_mean": -0.038,
+              "tm_median": 0.964,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 85.1
+            },
+            "p8": {
+              "target": -4,
+              "mean_charge": -2.35,
+              "std_charge": 2.08,
+              "dev": 1.65,
+              "hit": true,
+              "recovery": 0.508,
+              "pocket_recovery": null,
+              "gravy_mean": 0.109,
+              "tm_median": 0.956,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 84.8
+            }
+          }
+        }
+      },
+      "native_charge": -11.66
+    },
+    "2FEO": {
+      "cat": "dna",
+      "L": 221,
+      "mode": {
+        "ligand": {
+          "arms": {
+            "native": {
+              "target": -7,
+              "mean_charge": -5.29,
+              "std_charge": 3.26,
+              "dev": 1.71,
+              "hit": true,
+              "recovery": 0.335,
+              "pocket_recovery": 0.344,
+              "gravy_mean": 0.595,
+              "tm_median": 0.91,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 78.0
+            },
+            "n2": {
+              "target": -9,
+              "mean_charge": -7.52,
+              "std_charge": 3.54,
+              "dev": 1.48,
+              "hit": true,
+              "recovery": 0.338,
+              "pocket_recovery": 0.346,
+              "gravy_mean": 0.555,
+              "tm_median": 0.91,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 77.6
+            },
+            "p2": {
+              "target": -5,
+              "mean_charge": -2.54,
+              "std_charge": 2.43,
+              "dev": 2.46,
+              "hit": false,
+              "recovery": 0.335,
+              "pocket_recovery": 0.342,
+              "gravy_mean": 0.67,
+              "tm_median": 0.9,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 79.1
+            },
+            "n8": {
+              "target": -15,
+              "mean_charge": -15.04,
+              "std_charge": 4.06,
+              "dev": 0.04,
+              "hit": true,
+              "recovery": 0.347,
+              "pocket_recovery": 0.365,
+              "gravy_mean": 0.435,
+              "tm_median": 0.919,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 78.1
+            },
+            "p8": {
+              "target": 1,
+              "mean_charge": 1.15,
+              "std_charge": 2.26,
+              "dev": 0.15,
+              "hit": true,
+              "recovery": 0.334,
+              "pocket_recovery": 0.352,
+              "gravy_mean": 0.903,
+              "tm_median": 0.9,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 79.2
+            }
+          }
+        },
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -7,
+              "mean_charge": -4.52,
+              "std_charge": 3.01,
+              "dev": 2.48,
+              "hit": false,
+              "recovery": 0.324,
+              "pocket_recovery": null,
+              "gravy_mean": 0.61,
+              "tm_median": 0.906,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 78.7
+            },
+            "n8": {
+              "target": -15,
+              "mean_charge": -15.66,
+              "std_charge": 4.3,
+              "dev": 0.66,
+              "hit": true,
+              "recovery": 0.333,
+              "pocket_recovery": null,
+              "gravy_mean": 0.403,
+              "tm_median": 0.91,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 77.6
+            },
+            "p8": {
+              "target": 1,
+              "mean_charge": 0.96,
+              "std_charge": 2.13,
+              "dev": 0.04,
+              "hit": true,
+              "recovery": 0.328,
+              "pocket_recovery": null,
+              "gravy_mean": 0.874,
+              "tm_median": 0.89,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 78.4
+            }
+          }
+        }
+      },
+      "native_charge": -6.88
+    },
+    "5CQH": {
+      "cat": "dna",
+      "L": 183,
+      "mode": {
+        "ligand": {
+          "arms": {
+            "native": {
+              "target": -6,
+              "mean_charge": -4.56,
+              "std_charge": 2.3,
+              "dev": 1.44,
+              "hit": true,
+              "recovery": 0.452,
+              "pocket_recovery": 0.462,
+              "gravy_mean": 0.159,
+              "tm_median": 0.964,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 86.2
+            },
+            "n2": {
+              "target": -8,
+              "mean_charge": -6.72,
+              "std_charge": 2.44,
+              "dev": 1.28,
+              "hit": true,
+              "recovery": 0.457,
+              "pocket_recovery": 0.47,
+              "gravy_mean": 0.159,
+              "tm_median": 0.964,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 85.7
+            },
+            "p2": {
+              "target": -4,
+              "mean_charge": -3.14,
+              "std_charge": 1.92,
+              "dev": 0.86,
+              "hit": true,
+              "recovery": 0.446,
+              "pocket_recovery": 0.451,
+              "gravy_mean": 0.151,
+              "tm_median": 0.965,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 86.1
+            },
+            "n8": {
+              "target": -14,
+              "mean_charge": -11.75,
+              "std_charge": 3.88,
+              "dev": 2.25,
+              "hit": false,
+              "recovery": 0.472,
+              "pocket_recovery": 0.497,
+              "gravy_mean": 0.128,
+              "tm_median": 0.965,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 86.2
+            },
+            "p8": {
+              "target": 2,
+              "mean_charge": 0.44,
+              "std_charge": 1.19,
+              "dev": 1.56,
+              "hit": true,
+              "recovery": 0.434,
+              "pocket_recovery": 0.418,
+              "gravy_mean": 0.159,
+              "tm_median": 0.966,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 85.5
+            }
+          }
+        },
+        "protein": {
+          "arms": {
+            "native": {
+              "target": -6,
+              "mean_charge": -4.41,
+              "std_charge": 2.17,
+              "dev": 1.59,
+              "hit": true,
+              "recovery": 0.439,
+              "pocket_recovery": null,
+              "gravy_mean": 0.155,
+              "tm_median": 0.959,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 85.6
+            },
+            "n8": {
+              "target": -14,
+              "mean_charge": -11.64,
+              "std_charge": 3.39,
+              "dev": 2.36,
+              "hit": false,
+              "recovery": 0.453,
+              "pocket_recovery": null,
+              "gravy_mean": 0.11,
+              "tm_median": 0.964,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 86.1
+            },
+            "p8": {
+              "target": 2,
+              "mean_charge": 0.23,
+              "std_charge": 1.25,
+              "dev": 1.77,
+              "hit": true,
+              "recovery": 0.426,
+              "pocket_recovery": null,
+              "gravy_mean": 0.197,
+              "tm_median": 0.962,
+              "tm_ge070": 1.0,
+              "tm_lt050": 0.0,
+              "plddt_median": 84.5
+            }
+          }
+        }
+      },
+      "native_charge": -5.53
+    }
+  },
+  "ablation": {
+    "1A65": {
+      "native": {
+        "ligand_dev": 5.24,
+        "protein_dev": 0.54,
+        "dev_delta": -4.7,
+        "ligand_tm": 0.971,
+        "protein_tm": 0.971,
+        "ligand_recovery": 0.571,
+        "protein_recovery": 0.542
+      },
+      "n8": {
+        "ligand_dev": 4.97,
+        "protein_dev": 0.73,
+        "dev_delta": -4.24,
+        "ligand_tm": 0.972,
+        "protein_tm": 0.971,
+        "ligand_recovery": 0.564,
+        "protein_recovery": 0.542
+      },
+      "p8": {
+        "ligand_dev": 6.67,
+        "protein_dev": 3.25,
+        "dev_delta": -3.42,
+        "ligand_tm": 0.97,
+        "protein_tm": 0.97,
+        "ligand_recovery": 0.568,
+        "protein_recovery": 0.539
+      }
+    },
+    "1AG0": {
+      "native": {
+        "ligand_dev": 1.15,
+        "protein_dev": 0.14,
+        "dev_delta": -1.01,
+        "ligand_tm": 0.495,
+        "protein_tm": 0.483,
+        "ligand_recovery": 0.488,
+        "protein_recovery": 0.465
+      },
+      "n8": {
+        "ligand_dev": 0.86,
+        "protein_dev": 3.37,
+        "dev_delta": 2.51,
+        "ligand_tm": 0.494,
+        "protein_tm": 0.492,
+        "ligand_recovery": 0.514,
+        "protein_recovery": 0.477
+      },
+      "p8": {
+        "ligand_dev": 0.3,
+        "protein_dev": 0.29,
+        "dev_delta": -0.01,
+        "ligand_tm": 0.494,
+        "protein_tm": 0.369,
+        "ligand_recovery": 0.463,
+        "protein_recovery": 0.442
+      }
+    },
+    "1AS2": {
+      "native": {
+        "ligand_dev": 1.56,
+        "protein_dev": 1.68,
+        "dev_delta": 0.12,
+        "ligand_tm": 0.931,
+        "protein_tm": 0.92,
+        "ligand_recovery": 0.355,
+        "protein_recovery": 0.349
+      },
+      "n8": {
+        "ligand_dev": 2.33,
+        "protein_dev": 0.59,
+        "dev_delta": -1.74,
+        "ligand_tm": 0.942,
+        "protein_tm": 0.941,
+        "ligand_recovery": 0.366,
+        "protein_recovery": 0.361
+      },
+      "p8": {
+        "ligand_dev": 0.85,
+        "protein_dev": 1.04,
+        "dev_delta": 0.19,
+        "ligand_tm": 0.939,
+        "protein_tm": 0.922,
+        "ligand_recovery": 0.36,
+        "protein_recovery": 0.351
+      }
+    },
+    "1AXW": {
+      "native": {
+        "ligand_dev": 1.9,
+        "protein_dev": 0.28,
+        "dev_delta": -1.62,
+        "ligand_tm": 0.515,
+        "protein_tm": 0.513,
+        "ligand_recovery": 0.495,
+        "protein_recovery": 0.472
+      },
+      "n8": {
+        "ligand_dev": 3.09,
+        "protein_dev": 3.52,
+        "dev_delta": 0.43,
+        "ligand_tm": 0.827,
+        "protein_tm": 0.939,
+        "ligand_recovery": 0.519,
+        "protein_recovery": 0.492
+      },
+      "p8": {
+        "ligand_dev": 1.39,
+        "protein_dev": 2.18,
+        "dev_delta": 0.79,
+        "ligand_tm": 0.522,
+        "protein_tm": 0.897,
+        "ligand_recovery": 0.475,
+        "protein_recovery": 0.453
+      }
+    },
+    "1AZM": {
+      "native": {
+        "ligand_dev": 1.63,
+        "protein_dev": 1.81,
+        "dev_delta": 0.18,
+        "ligand_tm": 0.984,
+        "protein_tm": 0.983,
+        "ligand_recovery": 0.49,
+        "protein_recovery": 0.473
+      },
+      "n8": {
+        "ligand_dev": 1.44,
+        "protein_dev": 1.94,
+        "dev_delta": 0.5,
+        "ligand_tm": 0.985,
+        "protein_tm": 0.985,
+        "ligand_recovery": 0.501,
+        "protein_recovery": 0.477
+      },
+      "p8": {
+        "ligand_dev": 0.76,
+        "protein_dev": 0.85,
+        "dev_delta": 0.09,
+        "ligand_tm": 0.984,
+        "protein_tm": 0.984,
+        "ligand_recovery": 0.491,
+        "protein_recovery": 0.473
+      }
+    },
+    "1BJ4": {
+      "native": {
+        "ligand_dev": 2.3,
+        "protein_dev": 2.77,
+        "dev_delta": 0.47,
+        "ligand_tm": 0.916,
+        "protein_tm": 0.915,
+        "ligand_recovery": 0.431,
+        "protein_recovery": 0.422
+      },
+      "n8": {
+        "ligand_dev": 3.16,
+        "protein_dev": 3.65,
+        "dev_delta": 0.49,
+        "ligand_tm": 0.934,
+        "protein_tm": 0.931,
+        "ligand_recovery": 0.442,
+        "protein_recovery": 0.432
+      },
+      "p8": {
+        "ligand_dev": 6.0,
+        "protein_dev": 8.91,
+        "dev_delta": 2.91,
+        "ligand_tm": 0.933,
+        "protein_tm": 0.925,
+        "ligand_recovery": 0.446,
+        "protein_recovery": 0.434
+      }
+    },
+    "1C6O": {
+      "native": {
+        "ligand_dev": 4.14,
+        "protein_dev": 3.3,
+        "dev_delta": -0.84,
+        "ligand_tm": 0.512,
+        "protein_tm": 0.505,
+        "ligand_recovery": 0.569,
+        "protein_recovery": 0.505
+      },
+      "n8": {
+        "ligand_dev": 7.64,
+        "protein_dev": 6.91,
+        "dev_delta": -0.73,
+        "ligand_tm": 0.514,
+        "protein_tm": 0.504,
+        "ligand_recovery": 0.573,
+        "protein_recovery": 0.5
+      },
+      "p8": {
+        "ligand_dev": 3.98,
+        "protein_dev": 3.32,
+        "dev_delta": -0.66,
+        "ligand_tm": 0.512,
+        "protein_tm": 0.503,
+        "ligand_recovery": 0.558,
+        "protein_recovery": 0.502
+      }
+    },
+    "1CGE": {
+      "native": {
+        "ligand_dev": 0.79,
+        "protein_dev": 2.06,
+        "dev_delta": 1.27,
+        "ligand_tm": 0.967,
+        "protein_tm": 0.961,
+        "ligand_recovery": 0.563,
+        "protein_recovery": 0.525
+      },
+      "n8": {
+        "ligand_dev": 3.53,
+        "protein_dev": 5.04,
+        "dev_delta": 1.51,
+        "ligand_tm": 0.971,
+        "protein_tm": 0.964,
+        "ligand_recovery": 0.559,
+        "protein_recovery": 0.521
+      },
+      "p8": {
+        "ligand_dev": 0.44,
+        "protein_dev": 1.65,
+        "dev_delta": 1.21,
+        "ligand_tm": 0.969,
+        "protein_tm": 0.956,
+        "ligand_recovery": 0.552,
+        "protein_recovery": 0.508
+      }
+    },
+    "2FEO": {
+      "native": {
+        "ligand_dev": 1.71,
+        "protein_dev": 2.48,
+        "dev_delta": 0.77,
+        "ligand_tm": 0.91,
+        "protein_tm": 0.906,
+        "ligand_recovery": 0.335,
+        "protein_recovery": 0.324
+      },
+      "n8": {
+        "ligand_dev": 0.04,
+        "protein_dev": 0.66,
+        "dev_delta": 0.62,
+        "ligand_tm": 0.919,
+        "protein_tm": 0.91,
+        "ligand_recovery": 0.347,
+        "protein_recovery": 0.333
+      },
+      "p8": {
+        "ligand_dev": 0.15,
+        "protein_dev": 0.04,
+        "dev_delta": -0.11,
+        "ligand_tm": 0.9,
+        "protein_tm": 0.89,
+        "ligand_recovery": 0.334,
+        "protein_recovery": 0.328
+      }
+    },
+    "5CQH": {
+      "native": {
+        "ligand_dev": 1.44,
+        "protein_dev": 1.59,
+        "dev_delta": 0.15,
+        "ligand_tm": 0.964,
+        "protein_tm": 0.959,
+        "ligand_recovery": 0.452,
+        "protein_recovery": 0.439
+      },
+      "n8": {
+        "ligand_dev": 2.25,
+        "protein_dev": 2.36,
+        "dev_delta": 0.11,
+        "ligand_tm": 0.965,
+        "protein_tm": 0.964,
+        "ligand_recovery": 0.472,
+        "protein_recovery": 0.453
+      },
+      "p8": {
+        "ligand_dev": 1.56,
+        "protein_dev": 1.77,
+        "dev_delta": 0.21,
+        "ligand_tm": 0.966,
+        "protein_tm": 0.962,
+        "ligand_recovery": 0.434,
+        "protein_recovery": 0.426
+      }
+    }
+  },
+  "totals": {
+    "arms_tested": 80,
+    "h2_hit": 44,
+    "h2_hit_rate": 0.55,
+    "h1_tm_arms": 80,
+    "h1_tm_pass": 59,
+    "h1_pass_rate": 0.738
+  }
+}

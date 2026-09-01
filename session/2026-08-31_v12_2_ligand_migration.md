@@ -207,3 +207,11 @@ PYTHONPATH=code nohup ~/miniconda3/envs/confumpnn/bin/python code/train_finetune
 5. 1C6O 口袋带电增加（+57%增）→ 配体先验方向与配体类型相关（小分子 vs 核酸）
 
 **工具完善**：① 修 level 判定——深部带电+强接触残基（2FEO A18/A132）曾不在默认 fix 列表，深部带电优先后 2FEO fix 8→10；② 对比脚本显示修正（>1 标"+%增"）；③ validate_generalization 加 `--fixed_residues`（默认 None 不影响 mompnn）。报告 `analysis/report/2026-09-01_pocket_fix_test.md`。
+
+### ✅ 配体验证链全部完成（2026-09-01，报告 `analysis/report/2026-09-01_v12_2_ligand_validation.md`）
+- **H1 折叠 37/50=74%**：8 健康蛋白 7 个全臂 TM≥0.92 完美折叠（1A65/1AS2/1AZM/1BJ4/1CGE/2FEO/5CQH）；1AXW 部分臂中等（RNA 大蛋白）；1AG0/1C6O 为**已知 ESMFold 工具限制蛋白**（native 自身 TM~0.5，判据不适用，与 mompnn 一致）
+- **H2 电荷 36/50=72%**（与 mompnn 持平）：1AG0/1CGE/2FEO/5CQH 5/5；**新短板 1AS2 全臂 fail**（dev 2.8-4.2，RNA 蛋白，可能与删减耦合）；1BJ4/1C6O 极端负电欠冲
+- **H4 PROPKA 7/8 PASS**：Q_design≈Q_phys（差<1）验证简化计算可靠；唯一 FAIL 1C6O_n8（2.12 略超）
+- **遗留短板**：① 组成删减仍 0.53-0.65×（主要问题）② 1AS2 电荷 fail ③ 1AXW 部分折叠
+- **V3 踩坑**：`cut -d/ -f3` off-by-one → ref 路径错成 `ref/pH7.4_ref.pdb` → USalign 全 NA；修复 f2 后 NA=0（教训：ligand 结构 `ligand/<pdb>/...` 蛋白名在 f2）
+- **结果清单**：`index/RESULTS_MANIFEST.md`（全部数值结果 json/csv 分类 + 绘图映射）

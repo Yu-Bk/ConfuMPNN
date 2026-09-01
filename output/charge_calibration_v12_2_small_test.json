@@ -1,0 +1,18 @@
+{
+  "global": {
+    "slope": 1.4587,
+    "intercept": -0.7518,
+    "n_point": 460,
+    "n_domains": 92
+  },
+  "per_protein": {
+    "1AZM": {
+      "slope": 1.218,
+      "intercept": -3.0248,
+      "n_calib": 100,
+      "native_q": -2,
+      "loocv": 0.66,
+      "unreliable": false
+    }
+  }
+}

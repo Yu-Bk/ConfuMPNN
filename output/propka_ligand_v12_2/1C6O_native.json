@@ -1,0 +1,261 @@
+{
+  "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds",
+  "pH": 7.4,
+  "target": -14.0,
+  "n": 31,
+  "results": [
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/native_charge_-14_31.pdb",
+      "seq": "SADLALGKQTFEANCAACHAGGNNSVIPDHTLRKAAMEQFLQGGFNLEAITYQVENGKGAMPAWSGTLDDDEIAAVAAYVYDQASGDKWADLALGKQTFEANCAACHAGGNNSVIPDHTLRKAAMEQFLQGGFNLEAITYQVENGKGAMPAWSGTLDDDEIAAVAAYVYDQASGDKW",
+      "L": 177,
+      "q_design": -14.305,
+      "q_phys": -13.91,
+      "n_titratable_reported": 49
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2000_arm_native_target_-14_charge_-15_38.pdb",
+      "seq": "SANQLLGKVTFKAYCASCHAGGGNEVEPDKALDKQALEQYLNGGFNLEAIKNLIINGQDEMPSFAETLNDDQIEAVASYVYQTAENEAWANLLLGKVTFKAYCASCHAGGENVVIPEKQLTAEALEQYLPGGFNLEAITNLITNGQGEMPAFQGILSDQAINAVAAYVYNQAENEAW",
+      "L": 177,
+      "q_design": -15.383,
+      "q_phys": -15.028,
+      "n_titratable_reported": 46
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2001_arm_native_target_-14_charge_-13_39.pdb",
+      "seq": "SANLILGKYTFQAYCKQCHAGGGNTVKPEKTLTADAMEEYLPGGFNLAAITNIIINGQDEFPAFADTLNEQAIAATAAYVYKTAEAESWANLILGEYTFQAYCAQCHAGGQNVVEPDKTLTEDALEEYLEGGFNLAAITNLIKNGAGEMPAFENVLTDQAIEALSQYVYYKAQNNKW",
+      "L": 177,
+      "q_design": -13.39,
+      "q_phys": -13.064,
+      "n_titratable_reported": 49
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2002_arm_native_target_-14_charge_-16_30.pdb",
+      "seq": "SANLLLGALTFQAHCAACHEGGQNTVEPEKQLTAEALAQFLEGGFNEQAILELIINGRDEMPAFASELNDKALNAVAAYVYQRATADAWANLLLGRLTFQAHCEACHAGGSNTVVPEKTLEADAMENYLEGGFNLKAILQQIKNGEGEMPAFQGVLTDEQLNAVAEYVYSKAENEAW",
+      "L": 177,
+      "q_design": -16.296,
+      "q_phys": -14.909,
+      "n_titratable_reported": 47
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2003_arm_native_target_-14_charge_-15_38.pdb",
+      "seq": "SPDLLLGRVTFQAYCAACHAGGGNNVVPEKTLTAEAMNEYLEGGFNLEAITRLIIDGQDEMPAFASTLNKDAINATAAFVYSQATNDAWADLLLGRVTFQAYCAACHEGGANTVKPNKTLTAEALEDYLNGGFNREAILDLIKNGQGEMPAFAEVLTDQELDAVAQYVYDRATNDAW",
+      "L": 177,
+      "q_design": -15.38,
+      "q_phys": -14.995,
+      "n_titratable_reported": 49
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2004_arm_native_target_-14_charge_-19_60.pdb",
+      "seq": "SPDLLLGRCTFAAYCEACHKAGGNTVKPEKTLDAEALEQYLNGGFNLEAITELIVNGEDEMPAFSEKLNEKEINAVAAYVYETATNQAWADLLLGRCTFAAYCEACHAGGGNTVIPAKTLTAEAMENYLEGGFNLDAIENLIANGAGEMPAFQGILTEKELAAVSAYVLDQAEGDQW",
+      "L": 177,
+      "q_design": -19.6,
+      "q_phys": -18.984,
+      "n_titratable_reported": 53
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2005_arm_native_target_-14_charge_-17_60.pdb",
+      "seq": "SPNQLLGECTFKAYCAECHENGGNTVVPDKTLTANAMEAYLDGGFNLEAILNLIKNGQDEMPAFNEQLNEQALNAVAAYVYNTANNEGWANLLLGKCTFKAYCEECHEGGGNVVQPQKTLTLDAIEEFLEGGANLQAILEQIINGAGEMPAFAGILTQQALTAVAEYVYNQATNDAW",
+      "L": 177,
+      "q_design": -17.602,
+      "q_phys": -17.037,
+      "n_titratable_reported": 45
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2006_arm_native_target_-14_charge_-14_38.pdb",
+      "seq": "SPNLLLGKLTYAAYCEECHAGGGNTVKPEKALTADAMERYLPGGFNFEAILDQIKNGENEMPSFEERLNETSLNATAAYVYQTARNEAWANLLLGKLTFAAYCAECHAGGGNTVQPELTLEADALEEYLPGGFNLEAITNLIKNGQGAMPAFADVLTDAAINAVAEYVYEKARNDAW",
+      "L": 177,
+      "q_design": -14.382,
+      "q_phys": -13.987,
+      "n_titratable_reported": 52
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2007_arm_native_target_-14_charge_-16_30.pdb",
+      "seq": "SPNLLLGKHTFEAYCASCHEGGGNKIKPDKTLTAEAMETYLEGGFNLNAILDLIKNGQDEMPAFAQTLNDSALNSVAEYVYTTAQDQAWANLLLGRHTFEAYCASCHEGGANTVVPEKTLEAEAMTEYLNGGFNLEAITNLIKDGAGEMPAFEGILTDQEINAVAAYVYERAAGNLW",
+      "L": 177,
+      "q_design": -16.304,
+      "q_phys": -15.929,
+      "n_titratable_reported": 51
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2008_arm_native_target_-14_charge_-10_35.pdb",
+      "seq": "SANLVLGRYTFKAYCAACHENGKNTVEPQKTLTAQAMEEYLEGGFNLEAILKQIINGQDAMPAFNEELNDQALNSVAAYVYNRASAEAWANLVLGKYTFKAYCAACHEGGGNTVKPEKTLEANALEQHLPGGFNLNAITNLIKNGEGEMPAFADVLTDQGINAVAEYVFNQSTGNEW",
+      "L": 177,
+      "q_design": -10.346,
+      "q_phys": -9.904,
+      "n_titratable_reported": 48
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2009_arm_native_target_-14_charge_-13_38.pdb",
+      "seq": "SPNLLLGAATFKAYCATCHAGGGNTVKPDKALTAEAMEQFLPGGFNLDAILTIIKNGRDEMPAFEQTLNNEALNATAAYVYERAQAEAWANLLLGNATFKAYCATCHEGGSNTVKPEKTLEAEALEKYLDGGFNLEAIKELIKNGAGEMPAFEGVLTDEEITSVANYVYDRAENEGW",
+      "L": 177,
+      "q_design": -13.38,
+      "q_phys": -12.997,
+      "n_titratable_reported": 53
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2010_arm_native_target_-14_charge_-15_38.pdb",
+      "seq": "SPNLLLGAYTFKAYCETCHANGGNDVKPEKELTAEAMEKYLEGGFNLEAIQNLIINGEGAMPAFNEKLNQEAIEAVAAYVYERAQADAWANLLLGKYTFKAYCETCHAGGENEVVPELTLKEKALEAYLEGGFNLEAITELIINGAGEMPAFANVLTPEGINAISQYVLEQARNNAW",
+      "L": 177,
+      "q_design": -15.381,
+      "q_phys": -14.91,
+      "n_titratable_reported": 52
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2011_arm_native_target_-14_charge_-26_29.pdb",
+      "seq": "SPNLTLGEVTFKAHCAACHEGGGNTIVPEKTLTEEAMEQYLEGGFNLDAILQQIKEGENEMPAFADTLNDEQLAAVAAYVYEQAENEEWANLTLGEVTFKAHCEACHANGGNTVVPEKTLEEEALEQYLEGGFNLDAIKNQIINGENEMPAFKNILTEEQINAVAEYVYKQATDEQW",
+      "L": 177,
+      "q_design": -26.293,
+      "q_phys": -25.866,
+      "n_titratable_reported": 57
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2012_arm_native_target_-14_charge_-17_38.pdb",
+      "seq": "SADLLLGKYTFAAYCASCHEGGENSVKEEETLTAAAMEKYLNGGFNLEAILTLIKEGQDEMPAFAETLNEEALNAVSEYVYNTAQGQNWADLLLGRYTFAAYCASCHAGGGNAVVPDKTLELDALTKYLQGGANLEAILQLIANGQGAMPAFLGVLTPEALDATAEYVYNQSENNGW",
+      "L": 177,
+      "q_design": -17.384,
+      "q_phys": -17.098,
+      "n_titratable_reported": 48
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2013_arm_native_target_-14_charge_-18_38.pdb",
+      "seq": "SPDLLLGQVTFKAYCAECHEGGGNTVKPDKELTAQAMETYLTGGFNLEAIQALIINGQGEMPAFGDTLNDREIEAVAAYVYETARNEAWADLLLGEVTFKAYCAECHEGGKNTVKPDKTLEADALQQYLEGGFNLDAILKLIKNGEGEMPAFNDILTDEALTAVAEYVYTKAQNDAW",
+      "L": 177,
+      "q_design": -18.381,
+      "q_phys": -17.859,
+      "n_titratable_reported": 57
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2014_arm_native_target_-14_charge_-10_49.pdb",
+      "seq": "SPNLLLGRFTFQAYCAACHANGENVIKPEKQLTAAALERYLDGGFNLEAITELIVNGQDEMPAFGEELNTKAINAVAAYVYQTAQQEAWANLLLGKFTFQAYCAACHEGGGNTVKPEKTLEEAAMQRYLPGGLNLNAITNLIQNGQGEMPSFEGILTDQAIDACSNYVLTQSLNNAW",
+      "L": 177,
+      "q_design": -10.493,
+      "q_phys": -10.415,
+      "n_titratable_reported": 43
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2015_arm_native_target_-14_charge_-15_34.pdb",
+      "seq": "SPDLLLGRYTFKAYCESCHQDGGNQIKPEKQLTKNAMENYLEGGFNLEAILQLIIDGQGEMPAFAETLNEKALNAVAAYVFETAENENWADLLLGEYTFKAYCESCHAGGGNKVVPAKTLTKEAMELHLDGGFNLEAIANLIKNGAGAMPAFENVLTEQAINAVAEYVLSQAENDAW",
+      "L": 177,
+      "q_design": -15.341,
+      "q_phys": -15.0,
+      "n_titratable_reported": 52
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2016_arm_native_target_-14_charge_-15_52.pdb",
+      "seq": "SADLLLGRCTFEAYCAACHEGGGNEIKENKTLTAAALQQYLEGGFNLESIKTIIINGENEMPAFNKTLNEQAVNAVAQYVYETATHEAWADLLLGQCTFEAYCAACHEGGANAVVPEKTLTETALQEHLPGGFNLQAITNLIENGAGEMPAFAGILTDKEINAVAEYVYSQARNNGW",
+      "L": 177,
+      "q_design": -15.525,
+      "q_phys": -15.323,
+      "n_titratable_reported": 48
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2017_arm_native_target_-14_charge_-23_38.pdb",
+      "seq": "SPDLLLGRQTFAAYCEACHAGGGNTVLPDKELNKEAMERYLPGGFNLQAITELIINGQDEMPAFDDTLNEEAINAVAEYVYTEAEGEEWADLLLGRQTFAAYCEACHAGGQNTVVPEKTLEANALEEFLNGGFNLEAITNLIKNGQGEMPAFADILTDQQIDATAEYVYYLAQNEKW",
+      "L": 177,
+      "q_design": -23.375,
+      "q_phys": -22.899,
+      "n_titratable_reported": 54
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2018_arm_native_target_-14_charge_-19_38.pdb",
+      "seq": "SADLLLGKVTFQAYCASCHEEGGNQIKPEKTLKADAMEEYLTGGFNLDAILNLIKEGLDEMPAFSSTLNDQQLNAVAQYVYNQATNENWADLLLGRVTFQAYCASCHEGGGNTVVPEKTLQEDALEAFLPGGFNLEAILQLIKNGEGEMPAFANVLTDKELNATAEYVYEQAENDAW",
+      "L": 177,
+      "q_design": -19.378,
+      "q_phys": -19.01,
+      "n_titratable_reported": 51
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2019_arm_native_target_-14_charge_-18_34.pdb",
+      "seq": "SPDLLLGELTFQAYCAACHKNGGNNIVTNKTLTAEAMEEYLDGGFNLEAITNLIINGQDEMPAFNSTLNERAINAVAAYVYNTANEEAWADLLLGSLTFQAYCAACHTGGGNAVVPEKTLTEEAMENYLEGGFNLEAIENLIVNGQGEMPAFEGVLSPQAINATSEYVYHKAQNNQW",
+      "L": 177,
+      "q_design": -18.34,
+      "q_phys": -17.863,
+      "n_titratable_reported": 44
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2020_arm_native_target_-14_charge_-10_38.pdb",
+      "seq": "SPDQLLGAATFAAYCAACHKNGENIIVPEKTLTAEAMQEYLPGGFNLEAITELIINGQDEMPAFKQQLTQAQINAVSNYVYNTAQNNAWADLLLGQATFAAYCAACHAGGGNTVLPEKTLTAAALEQYLQGGFNLTAIENLIKNGKGAMPAFEDVLTPKAIAAVAEFVLNQATNEAW",
+      "L": 177,
+      "q_design": -10.382,
+      "q_phys": -9.976,
+      "n_titratable_reported": 37
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2021_arm_native_target_-14_charge_-20_38.pdb",
+      "seq": "SPNLILGELTFKAYCEECHEGGGNTVKPDKQLTATALEQYLEGGFNLEAIRDVIINGRDEMPAFEETLNDQAINAVAAYVYQTAKDEAWANLILGRLTFKAYCEECHAGGGNTVQPEKTLELEAIEEYLPGGANLEAIQDLIKNGEGEMPAFQDILTDAAIGATAEYVYNKATNNEW",
+      "L": 177,
+      "q_design": -20.377,
+      "q_phys": -19.988,
+      "n_titratable_reported": 57
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2022_arm_native_target_-14_charge_-14_23.pdb",
+      "seq": "SPDLLLGAYTFKAYCAACHENGENNIVHEKTLTAKAMEQHLEGGFNFEAILTLIKNGKDEMPAFADTLNEQALNAVAAYVFQTAQAQAWADLLLGKYTFKAYCAACHAGGGNTVKEDQTLTLEAIEAHLEGGANLEAITNLIINGAGEMPAFAGILSPKAINAVSEYVYHLAENEEW",
+      "L": 177,
+      "q_design": -14.228,
+      "q_phys": -13.462,
+      "n_titratable_reported": 50
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2023_arm_native_target_-14_charge_-12_75.pdb",
+      "seq": "SADLLLGKCTYQAYCAACHAGGGNNVLPDKQLTAEALEKYLNGGFNLTAITQLIKNGEDEMPAFNETLNEKQIDACAAYVYETATQAAWADLLLGRCTFQAYCAACHAGGQNKVVEEKTLQAEALQSHLPGGLNLEAITTLIKNGQGEMPAFEDILTEKEINACSNFVLHQAQNDAW",
+      "L": 177,
+      "q_design": -12.751,
+      "q_phys": -12.824,
+      "n_titratable_reported": 51
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2024_arm_native_target_-14_charge_-24_34.pdb",
+      "seq": "SPDLLLGKYTFEAYCASCHEGGGNTIEPDKQLTAEAMEEHLEGGFNLEAILQLIRNGSDAMPAFEEILNEKQLNAVAAYVYTTAEEEQWADLLLGEYTFEAYCASCHAGGNNTVLPNRTLEKKALREYLEGGFNLDAITELIQGGQGEMPAFEGVLTEQEINATAAYVYEQAENDAW",
+      "L": 177,
+      "q_design": -24.337,
+      "q_phys": -24.079,
+      "n_titratable_reported": 57
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2025_arm_native_target_-14_charge_-10_38.pdb",
+      "seq": "SADLLLGEVTFRAYCAACHEGGGNTVVPEKKLTADAMEKYLDGGFNLEAILRLVEEGQDEMPAFGKQLNNAQLAAVAAYVYEQATNDEWADLLLGRVTFRAYCAACHAGGGNTVQPNKTLTANAMEQYLPGGFNLEAITNLIINGRGEMPAFAEILTPKAIEATAEYVYNRATNNAW",
+      "L": 177,
+      "q_design": -10.382,
+      "q_phys": -9.986,
+      "n_titratable_reported": 49
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2026_arm_native_target_-14_charge_-21_45.pdb",
+      "seq": "SPDLLLGNVTYQAYCAACHAGGGNTVQPDKELTARAMEEYLEGGFNLEAIKKQIIEGEDEMPAFAQTLNDSAINAVAAYVYEEATLEAWADLLLGEVTFQAYCAACHEGGGNAVKPEKTLQKDAIEEHLEGGCNLEAITNLITEGQGEMPAFAGVLTPAQINAVAAYVYTTAENDAW",
+      "L": 177,
+      "q_design": -21.451,
+      "q_phys": -20.297,
+      "n_titratable_reported": 52
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2027_arm_native_target_-14_charge_-14_35.pdb",
+      "seq": "SPNLLLGQYTFLAYCAACHAGGGNNVKPNKQLTADAMEQYLNGGFNLEAILNLIVNGQDEMPAFADILNDEALEAVAAYVYDTATAENWANLLLGQYTFLAYCAACHAGGANKVIPEKTLEAEALKQYLPGGFNLEAITDQIKAGEGEMPAFENILTEEAIRAVAQYVHTQATNNQW",
+      "L": 177,
+      "q_design": -14.346,
+      "q_phys": -13.98,
+      "n_titratable_reported": 45
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2028_arm_native_target_-14_charge_-6_36.pdb",
+      "seq": "SPNLLLGEYTFKAYCESCHEDGGNTVKPEKTLRADALEQHLPGGFNLNAIEKIVINGKDEMPAFSDQLNDTAIAAVAAYVYNTAAEEAWANLLLGKYTFKAYCASCHEGGGNKVKPAKTLTEDALNKYLNGGFNLKAIEQTIKNGQGAMPAFEGILTDEAITAVAQYVYYKAVNNQW",
+      "L": 177,
+      "q_design": -6.355,
+      "q_phys": -6.018,
+      "n_titratable_reported": 54
+    },
+    {
+      "pdb": "output/generalization_ligand_v12_2/ligand/1C6O/pH7.4/arm_native/folds/seed_2029_arm_native_target_-14_charge_-16_38.pdb",
+      "seq": "SPNQLLGKLTFQAYCAACHQGGENTVKPEKQLTAEAMERYLEGGFNLEAITELIENGRNEMPSFTDTLNNEAINAVAEYVYNTAEAQAWANLLLGSLTFQAYCAACHAGGENTVEPEKTLERDAMEQYLDGGFNLQAITELIKNGQGAMPAFQNVLDEEAIQAVAQYVYDKANNNAW",
+      "L": 177,
+      "q_design": -16.379,
+      "q_phys": -16.02,
+      "n_titratable_reported": 49
+    }
+  ],
+  "q_phys_mean": -15.601,
+  "q_phys_std": 4.249,
+  "q_design_mean": -16.04,
+  "h4_dev": 1.601,
+  "h4_pass": true
+}

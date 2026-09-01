@@ -1,0 +1,2402 @@
+{
+  "global": {
+    "slope": 1.4587,
+    "intercept": -0.7518,
+    "n_point": 460,
+    "n_domains": 92
+  },
+  "per_protein": {
+    "1rv9A00": {
+      "L": 242,
+      "native_q": -6,
+      "arms": {
+        "-8": {
+          "target": -14,
+          "mean_charge": -16.42
+        },
+        "-4": {
+          "target": -10,
+          "mean_charge": -11.65
+        },
+        "0": {
+          "target": -6,
+          "mean_charge": -6.77
+        },
+        "4": {
+          "target": -2,
+          "mean_charge": -0.83
+        },
+        "8": {
+          "target": 2,
+          "mean_charge": 3.89
+        }
+      }
+    },
+    "4r2bA01": {
+      "L": 197,
+      "native_q": -11,
+      "arms": {
+        "-8": {
+          "target": -19,
+          "mean_charge": -22.04
+        },
+        "-4": {
+          "target": -15,
+          "mean_charge": -16.81
+        },
+        "0": {
+          "target": -11,
+          "mean_charge": -13.29
+        },
+        "4": {
+          "target": -7,
+          "mean_charge": -5.84
+        },
+        "8": {
+          "target": -3,
+          "mean_charge": 0.75
+        }
+      }
+    },
+    "3efoB04": {
+      "L": 245,
+      "native_q": -9,
+      "arms": {
+        "-8": {
+          "target": -17,
+          "mean_charge": -25.99
+        },
+        "-4": {
+          "target": -13,
+          "mean_charge": -18.17
+        },
+        "0": {
+          "target": -9,
+          "mean_charge": -10.19
+        },
+        "4": {
+          "target": -5,
+          "mean_charge": -4.3
+        },
+        "8": {
+          "target": -1,
+          "mean_charge": -2.24
+        }
+      }
+    },
+    "3we0A03": {
+      "L": 137,
+      "native_q": -9,
+      "arms": {
+        "-8": {
+          "target": -17,
+          "mean_charge": -33.26
+        },
+        "-4": {
+          "target": -13,
+          "mean_charge": -25.46
+        },
+        "0": {
+          "target": -9,
+          "mean_charge": -15.36
+        },
+        "4": {
+          "target": -5,
+          "mean_charge": -8.55
+        },
+        "8": {
+          "target": -1,
+          "mean_charge": -3.77
+        }
+      }
+    },
+    "3aa0B01": {
+      "L": 84,
+      "native_q": -8,
+      "arms": {
+        "-8": {
+          "target": -16,
+          "mean_charge": -27.42
+        },
+        "-4": {
+          "target": -12,
+          "mean_charge": -21.58
+        },
+        "0": {
+          "target": -8,
+          "mean_charge": -17.7
+        },
+        "4": {
+          "target": -4,
+          "mean_charge": -10.08
+        },
+        "8": {
+          "target": 0,
+          "mean_charge": -1.88
+        }
+      }
+    },
+    "1woqA01": {
+      "L": 112,
+      "native_q": -1,
+      "arms": {
+        "-8": {
+          "target": -9,
+          "mean_charge": -8.31
+        },
+        "-4": {
+          "target": -5,
+          "mean_charge": -4.92
+        },
+        "0": {
+          "target": -1,
+          "mean_charge": -2.9
+        },
+        "4": {
+          "target": 3,
+          "mean_charge": 0.7
+        },
+        "8": {
+          "target": 7,
+          "mean_charge": 3.5
+        }
+      }
+    },
+    "4r2qA00": {
+      "L": 87,
+      "native_q": 12,
+      "arms": {
+        "-8": {
+          "target": 4,
+          "mean_charge": 4.97
+        },
+        "-4": {
+          "target": 8,
+          "mean_charge": 13.06
+        },
+        "0": {
+          "target": 12,
+          "mean_charge": 21.46
+        },
+        "4": {
+          "target": 16,
+          "mean_charge": 31.56
+        },
+        "8": {
+          "target": 20,
+          "mean_charge": 35.55
+        }
+      }
+    },
+    "2qenA03": {
+      "L": 70,
+      "native_q": 3,
+      "arms": {
+        "-8": {
+          "target": -5,
+          "mean_charge": -6.08
+        },
+        "-4": {
+          "target": -1,
+          "mean_charge": -0.08
+        },
+        "0": {
+          "target": 3,
+          "mean_charge": 4.52
+        },
+        "4": {
+          "target": 7,
+          "mean_charge": 11.44
+        },
+        "8": {
+          "target": 11,
+          "mean_charge": 16.55
+        }
+      }
+    },
+    "1r9fA01": {
+      "L": 109,
+      "native_q": 3,
+      "arms": {
+        "-8": {
+          "target": -5,
+          "mean_charge": -8.69
+        },
+        "-4": {
+          "target": -1,
+          "mean_charge": -4.27
+        },
+        "0": {
+          "target": 3,
+          "mean_charge": 1.25
+        },
+        "4": {
+          "target": 7,
+          "mean_charge": 5.54
+        },
+        "8": {
+          "target": 11,
+          "mean_charge": 14.14
+        }
+      }
+    },
+    "6pz0A01": {
+      "L": 160,
+      "native_q": 8,
+      "arms": {
+        "-8": {
+          "target": 0,
+          "mean_charge": -1.59
+        },
+        "-4": {
+          "target": 4,
+          "mean_charge": 5.33
+        },
+        "0": {
+          "target": 8,
+          "mean_charge": 13.93
+        },
+        "4": {
+          "target": 12,
+          "mean_charge": 22.52
+        },
+        "8": {
+          "target": 16,
+          "mean_charge": 29.63
+        }
+      }
+    },
+    "6ei1A01": {
+      "L": 253,
+      "native_q": 10,
+      "arms": {
+        "-8": {
+          "target": 2,
+          "mean_charge": 2.55
+        },
+        "-4": {
+          "target": 6,
+          "mean_charge": 8.72
+        },
+        "0": {
+          "target": 10,
+          "mean_charge": 13.54
+        },
+        "4": {
+          "target": 14,
+          "mean_charge": 24.53
+        },
+        "8": {
+          "target": 18,
+          "mean_charge": 31.38
+        }
+      }
+    },
+    "7nazA01": {
+      "L": 274,
+      "native_q": -16,
+      "arms": {
+        "-8": {
+          "target": -24,
+          "mean_charge": -53.08
+        },
+        "-4": {
+          "target": -20,
+          "mean_charge": -46.28
+        },
+        "0": {
+          "target": -16,
+          "mean_charge": -42.2
+        },
+        "4": {
+          "target": -12,
+          "mean_charge": -29.94
+        },
+        "8": {
+          "target": -8,
+          "mean_charge": -21.43
+        }
+      }
+    },
+    "6ue9L02": {
+      "L": 122,
+      "native_q": 0,
+      "arms": {
+        "-8": {
+          "target": -8,
+          "mean_charge": -15.3
+        },
+        "-4": {
+          "target": -4,
+          "mean_charge": -8.9
+        },
+        "0": {
+          "target": 0,
+          "mean_charge": -4.19
+        },
+        "4": {
+          "target": 4,
+          "mean_charge": 4.19
+        },
+        "8": {
+          "target": 8,
+          "mean_charge": 10.79
+        }
+      }
+    },
+    "5d84A01": {
+      "L": 173,
+      "native_q": -8,
+      "arms": {
+        "-8": {
+          "target": -16,
+          "mean_charge": -24.3
+        },
+        "-4": {
+          "target": -12,
+          "mean_charge": -19.24
+        },
+        "0": {
+          "target": -8,
+          "mean_charge": -12.02
+        },
+        "4": {
+          "target": -4,
+          "mean_charge": -5.67
+        },
+        "8": {
+          "target": 0,
+          "mean_charge": -0.34
+        }
+      }
+    },
+    "3c9fA01": {
+      "L": 312,
+      "native_q": -5,
+      "arms": {
+        "-8": {
+          "target": -13,
+          "mean_charge": -24.46
+        },
+        "-4": {
+          "target": -9,
+          "mean_charge": -19.41
+        },
+        "0": {
+          "target": -5,
+          "mean_charge": -14.24
+        },
+        "4": {
+          "target": -1,
+          "mean_charge": -8.02
+        },
+        "8": {
+          "target": 3,
+          "mean_charge": -3.76
+        }
+      }
+    },
+    "1nkgA01": {
+      "L": 251,
+      "native_q": -12,
+      "arms": {
+        "-8": {
+          "target": -20,
+          "mean_charge": -26.57
+        },
+        "-4": {
+          "target": -16,
+          "mean_charge": -21.6
+        },
+        "0": {
+          "target": -12,
+          "mean_charge": -15.27
+        },
+        "4": {
+          "target": -8,
+          "mean_charge": -9.25
+        },
+        "8": {
+          "target": -4,
+          "mean_charge": -1.91
+        }
+      }
+    },
+    "1ca1A02": {
+      "L": 120,
+      "native_q": -1,
+      "arms": {
+        "-8": {
+          "target": -9,
+          "mean_charge": -12.97
+        },
+        "-4": {
+          "target": -5,
+          "mean_charge": -8.28
+        },
+        "0": {
+          "target": -1,
+          "mean_charge": -2.6
+        },
+        "4": {
+          "target": 3,
+          "mean_charge": 2.54
+        },
+        "8": {
+          "target": 7,
+          "mean_charge": 6.94
+        }
+      }
+    },
+    "3b0xA03": {
+      "L": 104,
+      "native_q": 4,
+      "arms": {
+        "-8": {
+          "target": -4,
+          "mean_charge": -4.52
+        },
+        "-4": {
+          "target": 0,
+          "mean_charge": 0.46
+        },
+        "0": {
+          "target": 4,
+          "mean_charge": 3.89
+        },
+        "4": {
+          "target": 8,
+          "mean_charge": 8.89
+        },
+        "8": {
+          "target": 12,
+          "mean_charge": 15.32
+        }
+      }
+    },
+    "5cr9A01": {
+      "L": 119,
+      "native_q": -11,
+      "arms": {
+        "-8": {
+          "target": -19,
+          "mean_charge": -23.99
+        },
+        "-4": {
+          "target": -15,
+          "mean_charge": -19.09
+        },
+        "0": {
+          "target": -11,
+          "mean_charge": -14.71
+        },
+        "4": {
+          "target": -7,
+          "mean_charge": -10.89
+        },
+        "8": {
+          "target": -3,
+          "mean_charge": -4.28
+        }
+      }
+    },
+    "2mh3A00": {
+      "L": 70,
+      "native_q": 11,
+      "arms": {
+        "-8": {
+          "target": 3,
+          "mean_charge": 2.51
+        },
+        "-4": {
+          "target": 7,
+          "mean_charge": 9.91
+        },
+        "0": {
+          "target": 11,
+          "mean_charge": 18.2
+        },
+        "4": {
+          "target": 15,
+          "mean_charge": 24.01
+        },
+        "8": {
+          "target": 19,
+          "mean_charge": 31.3
+        }
+      }
+    },
+    "4g59B00": {
+      "L": 163,
+      "native_q": -4,
+      "arms": {
+        "-8": {
+          "target": -12,
+          "mean_charge": -20.06
+        },
+        "-4": {
+          "target": -8,
+          "mean_charge": -14.18
+        },
+        "0": {
+          "target": -4,
+          "mean_charge": -6.78
+        },
+        "4": {
+          "target": 0,
+          "mean_charge": 0.72
+        },
+        "8": {
+          "target": 4,
+          "mean_charge": 5.32
+        }
+      }
+    },
+    "3pieC05": {
+      "L": 167,
+      "native_q": 5,
+      "arms": {
+        "-8": {
+          "target": -3,
+          "mean_charge": -9.15
+        },
+        "-4": {
+          "target": 1,
+          "mean_charge": 0.96
+        },
+        "0": {
+          "target": 5,
+          "mean_charge": 9.03
+        },
+        "4": {
+          "target": 9,
+          "mean_charge": 21.26
+        },
+        "8": {
+          "target": 13,
+          "mean_charge": 30.47
+        }
+      }
+    },
+    "2qkpD00": {
+      "L": 132,
+      "native_q": -2,
+      "arms": {
+        "-8": {
+          "target": -10,
+          "mean_charge": -20.09
+        },
+        "-4": {
+          "target": -6,
+          "mean_charge": -13.32
+        },
+        "0": {
+          "target": -2,
+          "mean_charge": -5.96
+        },
+        "4": {
+          "target": 2,
+          "mean_charge": 0.92
+        },
+        "8": {
+          "target": 6,
+          "mean_charge": 6.16
+        }
+      }
+    },
+    "1uswA00": {
+      "L": 260,
+      "native_q": -21,
+      "arms": {
+        "-8": {
+          "target": -29,
+          "mean_charge": -30.37
+        },
+        "-4": {
+          "target": -25,
+          "mean_charge": -26.38
+        },
+        "0": {
+          "target": -21,
+          "mean_charge": -24.96
+        },
+        "4": {
+          "target": -17,
+          "mean_charge": -20.87
+        },
+        "8": {
+          "target": -13,
+          "mean_charge": -16.37
+        }
+      }
+    },
+    "2g3aA01": {
+      "L": 31,
+      "native_q": -3,
+      "arms": {
+        "-8": {
+          "target": -11,
+          "mean_charge": -9.59
+        },
+        "-4": {
+          "target": -7,
+          "mean_charge": -6.39
+        },
+        "0": {
+          "target": -3,
+          "mean_charge": -2.38
+        },
+        "4": {
+          "target": 1,
+          "mean_charge": -0.69
+        },
+        "8": {
+          "target": 5,
+          "mean_charge": 3.0
+        }
+      }
+    },
+    "3zeuB01": {
+      "L": 171,
+      "native_q": -5,
+      "arms": {
+        "-8": {
+          "target": -13,
+          "mean_charge": -16.86
+        },
+        "-4": {
+          "target": -9,
+          "mean_charge": -10.28
+        },
+        "0": {
+          "target": -5,
+          "mean_charge": -6.74
+        },
+        "4": {
+          "target": -1,
+          "mean_charge": -1.83
+        },
+        "8": {
+          "target": 3,
+          "mean_charge": 0.15
+        }
+      }
+    },
+    "3bb7A02": {
+      "L": 108,
+      "native_q": -5,
+      "arms": {
+        "-8": {
+          "target": -13,
+          "mean_charge": -20.87
+        },
+        "-4": {
+          "target": -9,
+          "mean_charge": -16.33
+        },
+        "0": {
+          "target": -5,
+          "mean_charge": -9.99
+        },
+        "4": {
+          "target": -1,
+          "mean_charge": -2.71
+        },
+        "8": {
+          "target": 3,
+          "mean_charge": 3.94
+        }
+      }
+    },
+    "1gq8A00": {
+      "L": 314,
+      "native_q": 5,
+      "arms": {
+        "-8": {
+          "target": -3,
+          "mean_charge": -6.04
+        },
+        "-4": {
+          "target": 1,
+          "mean_charge": -1.35
+        },
+        "0": {
+          "target": 5,
+          "mean_charge": 2.14
+        },
+        "4": {
+          "target": 9,
+          "mean_charge": 3.47
+        },
+        "8": {
+          "target": 13,
+          "mean_charge": 11.38
+        }
+      }
+    },
+    "3cdjA02": {
+      "L": 21,
+      "native_q": 2,
+      "arms": {
+        "-8": {
+          "target": -6,
+          "mean_charge": -2.9
+        },
+        "-4": {
+          "target": -2,
+          "mean_charge": -0.79
+        },
+        "0": {
+          "target": 2,
+          "mean_charge": 1.6
+        },
+        "4": {
+          "target": 6,
+          "mean_charge": 4.51
+        },
+        "8": {
+          "target": 10,
+          "mean_charge": 7.3
+        }
+      }
+    },
+    "4cgrB00": {
+      "L": 191,
+      "native_q": 6,
+      "arms": {
+        "-8": {
+          "target": -2,
+          "mean_charge": -2.76
+        },
+        "-4": {
+          "target": 2,
+          "mean_charge": 1.55
+        },
+        "0": {
+          "target": 6,
+          "mean_charge": 8.65
+        },
+        "4": {
+          "target": 10,
+          "mean_charge": 12.55
+        },
+        "8": {
+          "target": 14,
+          "mean_charge": 18.56
+        }
+      }
+    },
+    "3htaC00": {
+      "L": 189,
+      "native_q": -6,
+      "arms": {
+        "-8": {
+          "target": -14,
+          "mean_charge": -25.46
+        },
+        "-4": {
+          "target": -10,
+          "mean_charge": -18.24
+        },
+        "0": {
+          "target": -6,
+          "mean_charge": -10.27
+        },
+        "4": {
+          "target": -2,
+          "mean_charge": -3.11
+        },
+        "8": {
+          "target": 2,
+          "mean_charge": 0.99
+        }
+      }
+    },
+    "2i6xA01": {
+      "L": 130,
+      "native_q": -8,
+      "arms": {
+        "-8": {
+          "target": -16,
+          "mean_charge": -20.68
+        },
+        "-4": {
+          "target": -12,
+          "mean_charge": -14.38
+        },
+        "0": {
+          "target": -8,
+          "mean_charge": -12.27
+        },
+        "4": {
+          "target": -4,
+          "mean_charge": -6.16
+        },
+        "8": {
+          "target": 0,
+          "mean_charge": -1.39
+        }
+      }
+    },
+    "1yf2A02": {
+      "L": 107,
+      "native_q": 8,
+      "arms": {
+        "-8": {
+          "target": 0,
+          "mean_charge": -0.98
+        },
+        "-4": {
+          "target": 4,
+          "mean_charge": 3.01
+        },
+        "0": {
+          "target": 8,
+          "mean_charge": 5.21
+        },
+        "4": {
+          "target": 12,
+          "mean_charge": 13.81
+        },
+        "8": {
+          "target": 16,
+          "mean_charge": 19.31
+        }
+      }
+    },
+    "1gd9A02": {
+      "L": 223,
+      "native_q": -10,
+      "arms": {
+        "-8": {
+          "target": -18,
+          "mean_charge": -23.5
+        },
+        "-4": {
+          "target": -14,
+          "mean_charge": -16.82
+        },
+        "0": {
+          "target": -10,
+          "mean_charge": -14.37
+        },
+        "4": {
+          "target": -6,
+          "mean_charge": -6.99
+        },
+        "8": {
+          "target": -2,
+          "mean_charge": -3.0
+        }
+      }
+    },
+    "3rq4A02": {
+      "L": 133,
+      "native_q": -3,
+      "arms": {
+        "-8": {
+          "target": -11,
+          "mean_charge": -14.51
+        },
+        "-4": {
+          "target": -7,
+          "mean_charge": -9.82
+        },
+        "0": {
+          "target": -3,
+          "mean_charge": -5.39
+        },
+        "4": {
+          "target": 1,
+          "mean_charge": -0.47
+        },
+        "8": {
+          "target": 5,
+          "mean_charge": 5.87
+        }
+      }
+    },
+    "2wvxA02": {
+      "L": 163,
+      "native_q": -8,
+      "arms": {
+        "-8": {
+          "target": -16,
+          "mean_charge": -21.34
+        },
+        "-4": {
+          "target": -12,
+          "mean_charge": -13.93
+        },
+        "0": {
+          "target": -8,
+          "mean_charge": -8.02
+        },
+        "4": {
+          "target": -4,
+          "mean_charge": -4.15
+        },
+        "8": {
+          "target": 0,
+          "mean_charge": -1.67
+        }
+      }
+    },
+    "1zrxA00": {
+      "L": 42,
+      "native_q": 6,
+      "arms": {
+        "-8": {
+          "target": -2,
+          "mean_charge": -2.08
+        },
+        "-4": {
+          "target": 2,
+          "mean_charge": 1.01
+        },
+        "0": {
+          "target": 6,
+          "mean_charge": 3.1
+        },
+        "4": {
+          "target": 10,
+          "mean_charge": 5.99
+        },
+        "8": {
+          "target": 14,
+          "mean_charge": 7.4
+        }
+      }
+    },
+    "1howA02": {
+      "L": 255,
+      "native_q": -15,
+      "arms": {
+        "-8": {
+          "target": -23,
+          "mean_charge": -28.03
+        },
+        "-4": {
+          "target": -19,
+          "mean_charge": -21.61
+        },
+        "0": {
+          "target": -15,
+          "mean_charge": -18.46
+        },
+        "4": {
+          "target": -11,
+          "mean_charge": -14.41
+        },
+        "8": {
+          "target": -7,
+          "mean_charge": -10.19
+        }
+      }
+    },
+    "2xppA00": {
+      "L": 137,
+      "native_q": 5,
+      "arms": {
+        "-8": {
+          "target": -3,
+          "mean_charge": -4.61
+        },
+        "-4": {
+          "target": 1,
+          "mean_charge": 1.0
+        },
+        "0": {
+          "target": 5,
+          "mean_charge": 7.53
+        },
+        "4": {
+          "target": 9,
+          "mean_charge": 12.53
+        },
+        "8": {
+          "target": 13,
+          "mean_charge": 22.74
+        }
+      }
+    },
+    "2imzA00": {
+      "L": 142,
+      "native_q": -1,
+      "arms": {
+        "-8": {
+          "target": -9,
+          "mean_charge": -13.69
+        },
+        "-4": {
+          "target": -5,
+          "mean_charge": -9.78
+        },
+        "0": {
+          "target": -1,
+          "mean_charge": -4.48
+        },
+        "4": {
+          "target": 3,
+          "mean_charge": 2.39
+        },
+        "8": {
+          "target": 7,
+          "mean_charge": 6.4
+        }
+      }
+    },
+    "2awnC01": {
+      "L": 208,
+      "native_q": 5,
+      "arms": {
+        "-8": {
+          "target": -3,
+          "mean_charge": -7.74
+        },
+        "-4": {
+          "target": 1,
+          "mean_charge": -3.24
+        },
+        "0": {
+          "target": 5,
+          "mean_charge": 1.96
+        },
+        "4": {
+          "target": 9,
+          "mean_charge": 7.04
+        },
+        "8": {
+          "target": 13,
+          "mean_charge": 13.73
+        }
+      }
+    },
+    "1h8lA01": {
+      "L": 301,
+      "native_q": -13,
+      "arms": {
+        "-8": {
+          "target": -21,
+          "mean_charge": -22.34
+        },
+        "-4": {
+          "target": -17,
+          "mean_charge": -16.74
+        },
+        "0": {
+          "target": -13,
+          "mean_charge": -12.15
+        },
+        "4": {
+          "target": -9,
+          "mean_charge": -12.04
+        },
+        "8": {
+          "target": -5,
+          "mean_charge": -9.3
+        }
+      }
+    },
+    "4rhiA00": {
+      "L": 316,
+      "native_q": -5,
+      "arms": {
+        "-8": {
+          "target": -13,
+          "mean_charge": -17.68
+        },
+        "-4": {
+          "target": -9,
+          "mean_charge": -10.35
+        },
+        "0": {
+          "target": -5,
+          "mean_charge": -4.96
+        },
+        "4": {
+          "target": -1,
+          "mean_charge": 2.06
+        },
+        "8": {
+          "target": 3,
+          "mean_charge": 5.77
+        }
+      }
+    },
+    "2nvmA00": {
+      "L": 101,
+      "native_q": -4,
+      "arms": {
+        "-8": {
+          "target": -12,
+          "mean_charge": -15.01
+        },
+        "-4": {
+          "target": -8,
+          "mean_charge": -10.73
+        },
+        "0": {
+          "target": -4,
+          "mean_charge": -5.14
+        },
+        "4": {
+          "target": 0,
+          "mean_charge": 0.24
+        },
+        "8": {
+          "target": 4,
+          "mean_charge": 5.64
+        }
+      }
+    },
+    "3hdcA01": {
+      "L": 128,
+      "native_q": 8,
+      "arms": {
+        "-8": {
+          "target": 0,
+          "mean_charge": -0.52
+        },
+        "-4": {
+          "target": 4,
+          "mean_charge": 2.87
+        },
+        "0": {
+          "target": 8,
+          "mean_charge": 7.02
+        },
+        "4": {
+          "target": 12,
+          "mean_charge": 11.44
+        },
+        "8": {
+          "target": 16,
+          "mean_charge": 15.68
+        }
+      }
+    },
+    "2hz7A04": {
+      "L": 91,
+      "native_q": 0,
+      "arms": {
+        "-8": {
+          "target": -8,
+          "mean_charge": -9.39
+        },
+        "-4": {
+          "target": -4,
+          "mean_charge": -4.09
+        },
+        "0": {
+          "target": 0,
+          "mean_charge": -0.3
+        },
+        "4": {
+          "target": 4,
+          "mean_charge": 4.52
+        },
+        "8": {
+          "target": 8,
+          "mean_charge": 9.9
+        }
+      }
+    },
+    "2yrrA01": {
+      "L": 111,
+      "native_q": 6,
+      "arms": {
+        "-8": {
+          "target": -2,
+          "mean_charge": -0.68
+        },
+        "-4": {
+          "target": 2,
+          "mean_charge": 5.31
+        },
+        "0": {
+          "target": 6,
+          "mean_charge": 10.61
+        },
+        "4": {
+          "target": 10,
+          "mean_charge": 16.52
+        },
+        "8": {
+          "target": 14,
+          "mean_charge": 21.29
+        }
+      }
+    },
+    "7zh0A01": {
+      "L": 400,
+      "native_q": 9,
+      "arms": {
+        "-8": {
+          "target": 1,
+          "mean_charge": 4.32
+        },
+        "-4": {
+          "target": 5,
+          "mean_charge": 6.87
+        },
+        "0": {
+          "target": 9,
+          "mean_charge": 14.34
+        },
+        "4": {
+          "target": 13,
+          "mean_charge": 13.81
+        },
+        "8": {
+          "target": 17,
+          "mean_charge": 13.19
+        }
+      }
+    },
+    "2mahA00": {
+      "L": 128,
+      "native_q": 3,
+      "arms": {
+        "-8": {
+          "target": -5,
+          "mean_charge": -9.47
+        },
+        "-4": {
+          "target": -1,
+          "mean_charge": -3.87
+        },
+        "0": {
+          "target": 3,
+          "mean_charge": 1.61
+        },
+        "4": {
+          "target": 7,
+          "mean_charge": 6.68
+        },
+        "8": {
+          "target": 11,
+          "mean_charge": 11.62
+        }
+      }
+    },
+    "1qunI01": {
+      "L": 104,
+      "native_q": 4,
+      "arms": {
+        "-8": {
+          "target": -4,
+          "mean_charge": -7.48
+        },
+        "-4": {
+          "target": 0,
+          "mean_charge": 1.29
+        },
+        "0": {
+          "target": 4,
+          "mean_charge": 6.18
+        },
+        "4": {
+          "target": 8,
+          "mean_charge": 12.86
+        },
+        "8": {
+          "target": 12,
+          "mean_charge": 21.4
+        }
+      }
+    },
+    "2fqxA02": {
+      "L": 182,
+      "native_q": -5,
+      "arms": {
+        "-8": {
+          "target": -13,
+          "mean_charge": -13.04
+        },
+        "-4": {
+          "target": -9,
+          "mean_charge": -9.46
+        },
+        "0": {
+          "target": -5,
+          "mean_charge": -5.37
+        },
+        "4": {
+          "target": -1,
+          "mean_charge": -1.65
+        },
+        "8": {
+          "target": 3,
+          "mean_charge": 0.26
+        }
+      }
+    },
+    "1tkjA00": {
+      "L": 277,
+      "native_q": -5,
+      "arms": {
+        "-8": {
+          "target": -13,
+          "mean_charge": -14.68
+        },
+        "-4": {
+          "target": -9,
+          "mean_charge": -13.3
+        },
+        "0": {
+          "target": -5,
+          "mean_charge": -8.86
+        },
+        "4": {
+          "target": -1,
+          "mean_charge": -6.71
+        },
+        "8": {
+          "target": 3,
+          "mean_charge": -2.17
+        }
+      }
+    },
+    "1rhfA02": {
+      "L": 85,
+      "native_q": 0,
+      "arms": {
+        "-8": {
+          "target": -8,
+          "mean_charge": -10.2
+        },
+        "-4": {
+          "target": -4,
+          "mean_charge": -6.03
+        },
+        "0": {
+          "target": 0,
+          "mean_charge": -2.1
+        },
+        "4": {
+          "target": 4,
+          "mean_charge": 2.11
+        },
+        "8": {
+          "target": 8,
+          "mean_charge": 6.8
+        }
+      }
+    },
+    "2cw7A02": {
+      "L": 146,
+      "native_q": 8,
+      "arms": {
+        "-8": {
+          "target": 0,
+          "mean_charge": -0.26
+        },
+        "-4": {
+          "target": 4,
+          "mean_charge": 5.16
+        },
+        "0": {
+          "target": 8,
+          "mean_charge": 10.07
+        },
+        "4": {
+          "target": 12,
+          "mean_charge": 19.98
+        },
+        "8": {
+          "target": 16,
+          "mean_charge": 30.25
+        }
+      }
+    },
+    "1xneA00": {
+      "L": 113,
+      "native_q": 10,
+      "arms": {
+        "-8": {
+          "target": 2,
+          "mean_charge": 0.12
+        },
+        "-4": {
+          "target": 6,
+          "mean_charge": 4.22
+        },
+        "0": {
+          "target": 10,
+          "mean_charge": 12.82
+        },
+        "4": {
+          "target": 14,
+          "mean_charge": 20.42
+        },
+        "8": {
+          "target": 18,
+          "mean_charge": 24.31
+        }
+      }
+    },
+    "2kvtA00": {
+      "L": 71,
+      "native_q": -2,
+      "arms": {
+        "-8": {
+          "target": -10,
+          "mean_charge": -14.7
+        },
+        "-4": {
+          "target": -6,
+          "mean_charge": -9.92
+        },
+        "0": {
+          "target": -2,
+          "mean_charge": -2.4
+        },
+        "4": {
+          "target": 2,
+          "mean_charge": 2.84
+        },
+        "8": {
+          "target": 6,
+          "mean_charge": 8.31
+        }
+      }
+    },
+    "1cxzB00": {
+      "L": 86,
+      "native_q": 1,
+      "arms": {
+        "-8": {
+          "target": -7,
+          "mean_charge": -11.26
+        },
+        "-4": {
+          "target": -3,
+          "mean_charge": -6.76
+        },
+        "0": {
+          "target": 1,
+          "mean_charge": -0.76
+        },
+        "4": {
+          "target": 5,
+          "mean_charge": 2.24
+        },
+        "8": {
+          "target": 9,
+          "mean_charge": 5.95
+        }
+      }
+    },
+    "5oesA04": {
+      "L": 124,
+      "native_q": -4,
+      "arms": {
+        "-8": {
+          "target": -12,
+          "mean_charge": -21.94
+        },
+        "-4": {
+          "target": -8,
+          "mean_charge": -14.74
+        },
+        "0": {
+          "target": -4,
+          "mean_charge": -7.64
+        },
+        "4": {
+          "target": 0,
+          "mean_charge": -3.46
+        },
+        "8": {
+          "target": 4,
+          "mean_charge": 1.34
+        }
+      }
+    },
+    "6gedA01": {
+      "L": 282,
+      "native_q": 10,
+      "arms": {
+        "-8": {
+          "target": 2,
+          "mean_charge": 0.88
+        },
+        "-4": {
+          "target": 6,
+          "mean_charge": 6.79
+        },
+        "0": {
+          "target": 10,
+          "mean_charge": 11.55
+        },
+        "4": {
+          "target": 14,
+          "mean_charge": 19.32
+        },
+        "8": {
+          "target": 18,
+          "mean_charge": 26.2
+        }
+      }
+    },
+    "4hl6A02": {
+      "L": 92,
+      "native_q": 0,
+      "arms": {
+        "-8": {
+          "target": -8,
+          "mean_charge": -6.19
+        },
+        "-4": {
+          "target": -4,
+          "mean_charge": -3.61
+        },
+        "0": {
+          "target": 0,
+          "mean_charge": 0.34
+        },
+        "4": {
+          "target": 4,
+          "mean_charge": 3.89
+        },
+        "8": {
+          "target": 8,
+          "mean_charge": 10.74
+        }
+      }
+    },
+    "2ia2A01": {
+      "L": 68,
+      "native_q": 4,
+      "arms": {
+        "-8": {
+          "target": -4,
+          "mean_charge": -7.16
+        },
+        "-4": {
+          "target": 0,
+          "mean_charge": -2.45
+        },
+        "0": {
+          "target": 4,
+          "mean_charge": 4.05
+        },
+        "4": {
+          "target": 8,
+          "mean_charge": 8.06
+        },
+        "8": {
+          "target": 12,
+          "mean_charge": 13.95
+        }
+      }
+    },
+    "1qr0A02": {
+      "L": 103,
+      "native_q": -4,
+      "arms": {
+        "-8": {
+          "target": -12,
+          "mean_charge": -23.68
+        },
+        "-4": {
+          "target": -8,
+          "mean_charge": -15.81
+        },
+        "0": {
+          "target": -4,
+          "mean_charge": -8.42
+        },
+        "4": {
+          "target": 0,
+          "mean_charge": -1.9
+        },
+        "8": {
+          "target": 4,
+          "mean_charge": 5.5
+        }
+      }
+    },
+    "2kcoA01": {
+      "L": 76,
+      "native_q": 6,
+      "arms": {
+        "-8": {
+          "target": -2,
+          "mean_charge": -3.69
+        },
+        "-4": {
+          "target": 2,
+          "mean_charge": 1.79
+        },
+        "0": {
+          "target": 6,
+          "mean_charge": 6.4
+        },
+        "4": {
+          "target": 10,
+          "mean_charge": 10.4
+        },
+        "8": {
+          "target": 14,
+          "mean_charge": 16.2
+        }
+      }
+    },
+    "4y5tB00": {
+      "L": 285,
+      "native_q": -6,
+      "arms": {
+        "-8": {
+          "target": -14,
+          "mean_charge": -24.03
+        },
+        "-4": {
+          "target": -10,
+          "mean_charge": -18.09
+        },
+        "0": {
+          "target": -6,
+          "mean_charge": -12.74
+        },
+        "4": {
+          "target": -2,
+          "mean_charge": -5.32
+        },
+        "8": {
+          "target": 2,
+          "mean_charge": -0.9
+        }
+      }
+    },
+    "2iusD01": {
+      "L": 98,
+      "native_q": 5,
+      "arms": {
+        "-8": {
+          "target": -3,
+          "mean_charge": -3.36
+        },
+        "-4": {
+          "target": 1,
+          "mean_charge": 0.23
+        },
+        "0": {
+          "target": 5,
+          "mean_charge": 4.82
+        },
+        "4": {
+          "target": 9,
+          "mean_charge": 10.73
+        },
+        "8": {
+          "target": 13,
+          "mean_charge": 16.83
+        }
+      }
+    },
+    "1jj2A03": {
+      "L": 78,
+      "native_q": 15,
+      "arms": {
+        "-8": {
+          "target": 7,
+          "mean_charge": 9.64
+        },
+        "-4": {
+          "target": 11,
+          "mean_charge": 18.23
+        },
+        "0": {
+          "target": 15,
+          "mean_charge": 27.26
+        },
+        "4": {
+          "target": 19,
+          "mean_charge": 37.07
+        },
+        "8": {
+          "target": 23,
+          "mean_charge": 41.14
+        }
+      }
+    },
+    "6k8nA01": {
+      "L": 158,
+      "native_q": 7,
+      "arms": {
+        "-8": {
+          "target": -1,
+          "mean_charge": -4.36
+        },
+        "-4": {
+          "target": 3,
+          "mean_charge": 2.63
+        },
+        "0": {
+          "target": 7,
+          "mean_charge": 8.12
+        },
+        "4": {
+          "target": 11,
+          "mean_charge": 16.04
+        },
+        "8": {
+          "target": 15,
+          "mean_charge": 24.0
+        }
+      }
+    },
+    "7zd5C01": {
+      "L": 317,
+      "native_q": 9,
+      "arms": {
+        "-8": {
+          "target": 1,
+          "mean_charge": 3.02
+        },
+        "-4": {
+          "target": 5,
+          "mean_charge": 13.24
+        },
+        "0": {
+          "target": 9,
+          "mean_charge": 17.97
+        },
+        "4": {
+          "target": 13,
+          "mean_charge": 27.5
+        },
+        "8": {
+          "target": 17,
+          "mean_charge": 34.15
+        }
+      }
+    },
+    "2wdqA03": {
+      "L": 117,
+      "native_q": -6,
+      "arms": {
+        "-8": {
+          "target": -14,
+          "mean_charge": -28.75
+        },
+        "-4": {
+          "target": -10,
+          "mean_charge": -21.53
+        },
+        "0": {
+          "target": -6,
+          "mean_charge": -11.06
+        },
+        "4": {
+          "target": -2,
+          "mean_charge": -1.54
+        },
+        "8": {
+          "target": 2,
+          "mean_charge": 4.35
+        }
+      }
+    },
+    "3o6qA02": {
+      "L": 114,
+      "native_q": -8,
+      "arms": {
+        "-8": {
+          "target": -16,
+          "mean_charge": -26.83
+        },
+        "-4": {
+          "target": -12,
+          "mean_charge": -22.13
+        },
+        "0": {
+          "target": -8,
+          "mean_charge": -16.87
+        },
+        "4": {
+          "target": -4,
+          "mean_charge": -9.57
+        },
+        "8": {
+          "target": 0,
+          "mean_charge": -2.67
+        }
+      }
+    },
+    "3dg6A01": {
+      "L": 114,
+      "native_q": -2,
+      "arms": {
+        "-8": {
+          "target": -10,
+          "mean_charge": -16.15
+        },
+        "-4": {
+          "target": -6,
+          "mean_charge": -8.88
+        },
+        "0": {
+          "target": -2,
+          "mean_charge": -3.67
+        },
+        "4": {
+          "target": 2,
+          "mean_charge": 0.33
+        },
+        "8": {
+          "target": 6,
+          "mean_charge": 5.93
+        }
+      }
+    },
+    "2ze0A03": {
+      "L": 79,
+      "native_q": 5,
+      "arms": {
+        "-8": {
+          "target": -3,
+          "mean_charge": -5.51
+        },
+        "-4": {
+          "target": 1,
+          "mean_charge": -0.52
+        },
+        "0": {
+          "target": 5,
+          "mean_charge": 3.27
+        },
+        "4": {
+          "target": 9,
+          "mean_charge": 7.47
+        },
+        "8": {
+          "target": 13,
+          "mean_charge": 13.49
+        }
+      }
+    },
+    "6ldiF01": {
+      "L": 96,
+      "native_q": 9,
+      "arms": {
+        "-8": {
+          "target": 1,
+          "mean_charge": -0.5
+        },
+        "-4": {
+          "target": 5,
+          "mean_charge": 5.64
+        },
+        "0": {
+          "target": 9,
+          "mean_charge": 11.95
+        },
+        "4": {
+          "target": 13,
+          "mean_charge": 15.45
+        },
+        "8": {
+          "target": 17,
+          "mean_charge": 20.75
+        }
+      }
+    },
+    "1vjxA00": {
+      "L": 148,
+      "native_q": -11,
+      "arms": {
+        "-8": {
+          "target": -19,
+          "mean_charge": -23.66
+        },
+        "-4": {
+          "target": -15,
+          "mean_charge": -19.04
+        },
+        "0": {
+          "target": -11,
+          "mean_charge": -14.03
+        },
+        "4": {
+          "target": -7,
+          "mean_charge": -7.99
+        },
+        "8": {
+          "target": -3,
+          "mean_charge": -2.89
+        }
+      }
+    },
+    "2kaeA00": {
+      "L": 56,
+      "native_q": 11,
+      "arms": {
+        "-8": {
+          "target": 3,
+          "mean_charge": 1.37
+        },
+        "-4": {
+          "target": 7,
+          "mean_charge": 8.64
+        },
+        "0": {
+          "target": 11,
+          "mean_charge": 14.78
+        },
+        "4": {
+          "target": 15,
+          "mean_charge": 17.98
+        },
+        "8": {
+          "target": 19,
+          "mean_charge": 26.78
+        }
+      }
+    },
+    "1vx7M00": {
+      "L": 132,
+      "native_q": 9,
+      "arms": {
+        "-8": {
+          "target": 1,
+          "mean_charge": 1.89
+        },
+        "-4": {
+          "target": 5,
+          "mean_charge": 6.69
+        },
+        "0": {
+          "target": 9,
+          "mean_charge": 15.51
+        },
+        "4": {
+          "target": 13,
+          "mean_charge": 21.02
+        },
+        "8": {
+          "target": 17,
+          "mean_charge": 25.53
+        }
+      }
+    },
+    "4lflB00": {
+      "L": 172,
+      "native_q": -11,
+      "arms": {
+        "-8": {
+          "target": -19,
+          "mean_charge": -31.4
+        },
+        "-4": {
+          "target": -15,
+          "mean_charge": -26.11
+        },
+        "0": {
+          "target": -11,
+          "mean_charge": -22.41
+        },
+        "4": {
+          "target": -7,
+          "mean_charge": -16.0
+        },
+        "8": {
+          "target": -3,
+          "mean_charge": -8.69
+        }
+      }
+    },
+    "4kb2A01": {
+      "L": 109,
+      "native_q": -6,
+      "arms": {
+        "-8": {
+          "target": -14,
+          "mean_charge": -40.97
+        },
+        "-4": {
+          "target": -10,
+          "mean_charge": -27.67
+        },
+        "0": {
+          "target": -6,
+          "mean_charge": -15.88
+        },
+        "4": {
+          "target": -2,
+          "mean_charge": -5.79
+        },
+        "8": {
+          "target": 2,
+          "mean_charge": 0.61
+        }
+      }
+    },
+    "2nujA01": {
+      "L": 143,
+      "native_q": -3,
+      "arms": {
+        "-8": {
+          "target": -11,
+          "mean_charge": -17.76
+        },
+        "-4": {
+          "target": -7,
+          "mean_charge": -12.39
+        },
+        "0": {
+          "target": -3,
+          "mean_charge": -4.67
+        },
+        "4": {
+          "target": 1,
+          "mean_charge": 0.06
+        },
+        "8": {
+          "target": 5,
+          "mean_charge": 5.0
+        }
+      }
+    },
+    "2qs9A00": {
+      "L": 192,
+      "native_q": -6,
+      "arms": {
+        "-8": {
+          "target": -14,
+          "mean_charge": -14.47
+        },
+        "-4": {
+          "target": -10,
+          "mean_charge": -9.08
+        },
+        "0": {
+          "target": -6,
+          "mean_charge": -2.53
+        },
+        "4": {
+          "target": -2,
+          "mean_charge": 0.13
+        },
+        "8": {
+          "target": 2,
+          "mean_charge": 3.21
+        }
+      }
+    },
+    "7b7pA01": {
+      "L": 263,
+      "native_q": 0,
+      "arms": {
+        "-8": {
+          "target": -8,
+          "mean_charge": -13.08
+        },
+        "-4": {
+          "target": -4,
+          "mean_charge": -9.72
+        },
+        "0": {
+          "target": 0,
+          "mean_charge": -4.11
+        },
+        "4": {
+          "target": 4,
+          "mean_charge": 0.41
+        },
+        "8": {
+          "target": 8,
+          "mean_charge": 5.71
+        }
+      }
+    },
+    "4hn9A03": {
+      "L": 100,
+      "native_q": -5,
+      "arms": {
+        "-8": {
+          "target": -13,
+          "mean_charge": -14.84
+        },
+        "-4": {
+          "target": -9,
+          "mean_charge": -10.58
+        },
+        "0": {
+          "target": -5,
+          "mean_charge": -5.9
+        },
+        "4": {
+          "target": -1,
+          "mean_charge": -1.38
+        },
+        "8": {
+          "target": 3,
+          "mean_charge": 2.87
+        }
+      }
+    },
+    "4gwmA02": {
+      "L": 164,
+      "native_q": -7,
+      "arms": {
+        "-8": {
+          "target": -15,
+          "mean_charge": -19.99
+        },
+        "-4": {
+          "target": -11,
+          "mean_charge": -13.11
+        },
+        "0": {
+          "target": -7,
+          "mean_charge": -9.55
+        },
+        "4": {
+          "target": -3,
+          "mean_charge": -5.55
+        },
+        "8": {
+          "target": 1,
+          "mean_charge": -2.68
+        }
+      }
+    },
+    "1sr9B03": {
+      "L": 46,
+      "native_q": 0,
+      "arms": {
+        "-8": {
+          "target": -8,
+          "mean_charge": -9.99
+        },
+        "-4": {
+          "target": -4,
+          "mean_charge": -5.78
+        },
+        "0": {
+          "target": 0,
+          "mean_charge": -2.77
+        },
+        "4": {
+          "target": 4,
+          "mean_charge": 1.62
+        },
+        "8": {
+          "target": 8,
+          "mean_charge": 6.93
+        }
+      }
+    },
+    "4pmxA00": {
+      "L": 306,
+      "native_q": -8,
+      "arms": {
+        "-8": {
+          "target": -16,
+          "mean_charge": -20.7
+        },
+        "-4": {
+          "target": -12,
+          "mean_charge": -17.06
+        },
+        "0": {
+          "target": -8,
+          "mean_charge": -12.75
+        },
+        "4": {
+          "target": -4,
+          "mean_charge": -8.7
+        },
+        "8": {
+          "target": 0,
+          "mean_charge": -1.84
+        }
+      }
+    },
+    "1ej8A00": {
+      "L": 140,
+      "native_q": -1,
+      "arms": {
+        "-8": {
+          "target": -9,
+          "mean_charge": -16.14
+        },
+        "-4": {
+          "target": -5,
+          "mean_charge": -7.79
+        },
+        "0": {
+          "target": -1,
+          "mean_charge": -4.0
+        },
+        "4": {
+          "target": 3,
+          "mean_charge": 2.1
+        },
+        "8": {
+          "target": 7,
+          "mean_charge": 8.9
+        }
+      }
+    },
+    "5azsC01": {
+      "L": 358,
+      "native_q": 1,
+      "arms": {
+        "-8": {
+          "target": -7,
+          "mean_charge": -11.51
+        },
+        "-4": {
+          "target": -3,
+          "mean_charge": -4.81
+        },
+        "0": {
+          "target": 1,
+          "mean_charge": 3.54
+        },
+        "4": {
+          "target": 5,
+          "mean_charge": 9.03
+        },
+        "8": {
+          "target": 9,
+          "mean_charge": 17.76
+        }
+      }
+    },
+    "1t6cA01": {
+      "L": 125,
+      "native_q": 3,
+      "arms": {
+        "-8": {
+          "target": -5,
+          "mean_charge": -14.38
+        },
+        "-4": {
+          "target": -1,
+          "mean_charge": -3.71
+        },
+        "0": {
+          "target": 3,
+          "mean_charge": 2.41
+        },
+        "4": {
+          "target": 7,
+          "mean_charge": 13.23
+        },
+        "8": {
+          "target": 11,
+          "mean_charge": 24.53
+        }
+      }
+    },
+    "2hjsA02": {
+      "L": 174,
+      "native_q": -8,
+      "arms": {
+        "-8": {
+          "target": -16,
+          "mean_charge": -26.61
+        },
+        "-4": {
+          "target": -12,
+          "mean_charge": -21.86
+        },
+        "0": {
+          "target": -8,
+          "mean_charge": -13.93
+        },
+        "4": {
+          "target": -4,
+          "mean_charge": -7.72
+        },
+        "8": {
+          "target": 0,
+          "mean_charge": -1.02
+        }
+      }
+    },
+    "8axiA01": {
+      "L": 359,
+      "native_q": 8,
+      "arms": {
+        "-8": {
+          "target": 0,
+          "mean_charge": 0.42
+        },
+        "-4": {
+          "target": 4,
+          "mean_charge": 6.21
+        },
+        "0": {
+          "target": 8,
+          "mean_charge": 13.54
+        },
+        "4": {
+          "target": 12,
+          "mean_charge": 20.58
+        },
+        "8": {
+          "target": 16,
+          "mean_charge": 31.19
+        }
+      }
+    },
+    "3b9wA00": {
+      "L": 358,
+      "native_q": -5,
+      "arms": {
+        "-8": {
+          "target": -13,
+          "mean_charge": -18.48
+        },
+        "-4": {
+          "target": -9,
+          "mean_charge": -9.47
+        },
+        "0": {
+          "target": -5,
+          "mean_charge": -6.14
+        },
+        "4": {
+          "target": -1,
+          "mean_charge": -2.82
+        },
+        "8": {
+          "target": 3,
+          "mean_charge": 2.4
+        }
+      }
+    },
+    "1id3G00": {
+      "L": 108,
+      "native_q": 10,
+      "arms": {
+        "-8": {
+          "target": 2,
+          "mean_charge": 1.31
+        },
+        "-4": {
+          "target": 6,
+          "mean_charge": 9.21
+        },
+        "0": {
+          "target": 10,
+          "mean_charge": 21.2
+        },
+        "4": {
+          "target": 14,
+          "mean_charge": 32.11
+        },
+        "8": {
+          "target": 18,
+          "mean_charge": 41.19
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "1BC8_chainC": {
+    "L": 93,
+    "native": "MDSAITLWQFLLQLLQKPQNKHMICWTSNDGQFKLLQAEEVARLWGIRKNKPNMNYDKLSRALRYYYVKNIIKKVNGQKFVYKFVSYPEILNM",
+    "pH_arms": {
+      "5": {
+        "target": 11,
+        "native_charge": 10.63,
+        "mean_charge": 11.42,
+        "std_charge": 3.16,
+        "dev": 0.42,
+        "recovery": 0.386,
+        "tm_median": 0.857,
+        "tm_ge070": 0.941,
+        "tm_lt050": 0.0,
+        "plddt_median": 79.5,
+        "recovery_baseline": 0.488
+      },
+      "7.4": {
+        "target": 9,
+        "native_charge": 8.9,
+        "mean_charge": 8.81,
+        "std_charge": 2.98,
+        "dev": 0.19,
+        "recovery": 0.386,
+        "tm_median": 0.862,
+        "tm_ge070": 0.922,
+        "tm_lt050": 0.0,
+        "plddt_median": 80.5,
+        "recovery_baseline": 0.488
+      },
+      "9": {
+        "target": 7,
+        "native_charge": 7.22,
+        "mean_charge": 6.28,
+        "std_charge": 2.35,
+        "dev": 0.72,
+        "recovery": 0.386,
+        "tm_median": 0.862,
+        "tm_ge070": 0.98,
+        "tm_lt050": 0.0,
+        "plddt_median": 80.3,
+        "recovery_baseline": 0.488
+      }
+    }
+  },
+  "1FQG": {
+    "L": 263,
+    "native": "HPETLVKVKDAEDQLGARVGYIELDLNSGKILESFRPEERFPMMSTFKVLLCGAVLSRVDAGQEQLGRRIHYSQNDLVEYSPVTEKHLTDGMTVRELCSAAITMSDNTAANLLLTTIGGPKELTAFLHNMGDHVTRLDRWNPELNEAIPNDERDTTMPAAMATTLRKLLTGELLTLASRQQLIDWMEADKVAGPLLRSALPAGWFIADKSGAGERGSRGIIAALGPDGKPSRIVVIYTTGSQATMDERNRQIAEIGASLIKHW",
+    "pH_arms": {
+      "5": {
+        "target": 4,
+        "native_charge": 3.79,
+        "mean_charge": 2.72,
+        "std_charge": 2.45,
+        "dev": 1.28,
+        "recovery": 0.398,
+        "tm_median": 0.984,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "plddt_median": 90.2,
+        "recovery_baseline": 0.472
+      },
+      "7.4": {
+        "target": -6,
+        "native_charge": -6.0,
+        "mean_charge": -8.65,
+        "std_charge": 3.08,
+        "dev": 2.65,
+        "recovery": 0.385,
+        "tm_median": 0.977,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "plddt_median": 90.7,
+        "recovery_baseline": 0.472
+      },
+      "9": {
+        "target": -8,
+        "native_charge": -8.46,
+        "mean_charge": -11.24,
+        "std_charge": 3.15,
+        "dev": 3.24,
+        "recovery": 0.381,
+        "tm_median": 0.975,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "plddt_median": 91.5,
+        "recovery_baseline": 0.472
+      }
+    }
+  },
+  "1UBQ": {
+    "L": 76,
+    "native": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG",
+    "pH_arms": {
+      "5": {
+        "target": 2,
+        "native_charge": 2.28,
+        "mean_charge": 0.0,
+        "std_charge": 1.68,
+        "dev": 2.0,
+        "recovery": 0.438,
+        "tm_median": 0.957,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "plddt_median": 89.3,
+        "recovery_baseline": 0.522
+      },
+      "7.4": {
+        "target": 0,
+        "native_charge": 0.03,
+        "mean_charge": -0.76,
+        "std_charge": 1.68,
+        "dev": 0.76,
+        "recovery": 0.434,
+        "tm_median": 0.956,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "plddt_median": 89.3,
+        "recovery_baseline": 0.522
+      },
+      "9": {
+        "target": 0,
+        "native_charge": -0.45,
+        "mean_charge": -0.49,
+        "std_charge": 1.87,
+        "dev": 0.49,
+        "recovery": 0.436,
+        "tm_median": 0.953,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "plddt_median": 88.7,
+        "recovery_baseline": 0.522
+      }
+    }
+  }
+}

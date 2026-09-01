@@ -1,0 +1,177 @@
+{
+  "1LYZ": {
+    "L": 129,
+    "mode": "protein",
+    "native": "KVFGRCELAAAMKRHGLDNYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTDYGILQINSRWWCNDGRTPGSRNLCNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQAWIRGCRL",
+    "pH_arms": {
+      "7.4": {
+        "target": 7,
+        "native_charge": 7.13,
+        "mean_charge": 5.58,
+        "std_charge": 1.11,
+        "dev": 1.42,
+        "recovery": 0.319,
+        "uncond_mean_charge": -1.8,
+        "mompnn_cond_mean_charge": null,
+        "tm_median": 0.785,
+        "tm_ge070": 0.545,
+        "tm_lt050": 0.364,
+        "plddt_median": 53.8
+      },
+      "5.0": {
+        "target": 10,
+        "native_charge": 9.75,
+        "mean_charge": 7.02,
+        "std_charge": 1.82,
+        "dev": 2.98,
+        "recovery": 0.329,
+        "uncond_mean_charge": -1.8,
+        "mompnn_cond_mean_charge": null,
+        "tm_median": 0.882,
+        "tm_ge070": 0.727,
+        "tm_lt050": 0.273,
+        "plddt_median": 74.6
+      }
+    }
+  },
+  "1MBN": {
+    "L": 153,
+    "mode": "ligand",
+    "native": "VLSEGEWQLVLHVWAKVEADVAGHGQDILIRLFKSHPETLEKFDRFKHLKTEAEMKASEDLKKHGVTVLTALGAILKKKGHHEAELKPLAQSHATKHKIPIKYLEFISEAIIHVLHSRHPGDFGADAQGAMNKALELFRKDIAAKYKELGYQG",
+    "pH_arms": {
+      "7.4": {
+        "target": 2,
+        "native_charge": 2.45,
+        "mean_charge": -12.05,
+        "std_charge": 3.32,
+        "dev": 14.05,
+        "recovery": 0.284,
+        "uncond_mean_charge": -7.17,
+        "mompnn_cond_mean_charge": -0.59,
+        "tm_median": 0.961,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "plddt_median": 80.6
+      },
+      "9.0": {
+        "target": 1,
+        "native_charge": 1.04,
+        "mean_charge": -7.92,
+        "std_charge": 2.58,
+        "dev": 8.92,
+        "recovery": 0.284,
+        "uncond_mean_charge": -7.17,
+        "mompnn_cond_mean_charge": null,
+        "tm_median": 0.96,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "plddt_median": 79.9
+      }
+    }
+  },
+  "1TIM_chainA": {
+    "L": 247,
+    "mode": "protein",
+    "native": "APRKFFVGGNWKMNGKRKSLGELIHTLDGAKLSADTEVVCGAPSIYLDFARQKLDAKIGVAAQNCYKVPKGAFTGEISPAMIKDIGAAWVILGHSERRHVFGESDELIGQKVAHALAEGLGVIACIGEKLDEREAGITEKVVFQETKAIADNVKDWSKVVLAYEPVWAIGTGKTATPQQAQEVHEKLRGWLKTHVSDAVAVQSRIIYGGSVTGGNCKELASQHDVDGFLVGGASLKPEFVDIINAKH",
+    "pH_arms": {
+      "7.4": {
+        "target": 0,
+        "native_charge": -0.15,
+        "mean_charge": -1.87,
+        "std_charge": 2.51,
+        "dev": 1.87,
+        "recovery": 0.232,
+        "uncond_mean_charge": -8.89,
+        "mompnn_cond_mean_charge": null,
+        "tm_median": 0.925,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "plddt_median": 78.6
+      },
+      "5.0": {
+        "target": 11,
+        "native_charge": 11.06,
+        "mean_charge": 3.73,
+        "std_charge": 1.43,
+        "dev": 7.27,
+        "recovery": 0.237,
+        "uncond_mean_charge": -8.89,
+        "mompnn_cond_mean_charge": null,
+        "tm_median": 0.929,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "plddt_median": 77.8
+      }
+    }
+  },
+  "4DFR_chainA": {
+    "L": 159,
+    "mode": "ligand",
+    "native": "MISLIAALAVDRVIGMENAMPWNLPADLAWFKRNTLDKPVIMGRHTWESIGRPLPGRKNIILSSQPGTDDRVTWVKSVDEAIAACGDVPEIMVIGGGRVYEQFLPKAQKLYLTHIDAEVEGDTHFPDYEPDDWESVFSEFHDADAQNSHSYCFKILERR",
+    "pH_arms": {
+      "7.4": {
+        "target": -9,
+        "native_charge": -9.04,
+        "mean_charge": -11.71,
+        "std_charge": 2.49,
+        "dev": 2.71,
+        "recovery": 0.409,
+        "uncond_mean_charge": -0.38,
+        "mompnn_cond_mean_charge": -14.9,
+        "tm_median": 0.958,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "plddt_median": 82.0
+      },
+      "5.0": {
+        "target": -2,
+        "native_charge": -1.59,
+        "mean_charge": -7.39,
+        "std_charge": 4.11,
+        "dev": 5.39,
+        "recovery": 0.439,
+        "uncond_mean_charge": -0.38,
+        "mompnn_cond_mean_charge": -2.79,
+        "tm_median": 0.954,
+        "tm_ge070": 1.0,
+        "tm_lt050": 0.0,
+        "plddt_median": 81.6
+      }
+    }
+  },
+  "5HVX": {
+    "L": 256,
+    "mode": "ligand",
+    "native": "SHMSRKIRDLIESKRFQNVITAIIVLNGAVLGLLTDTTLSASSQNLLERVDQLCLTIFIVEISLKIYAYGVRGFFRSGWNLFDFVIVAIALMPRTFRIFRVMRLVSVIPTMRRVVQGMLLALPGVGSVAALLTVVFYIAAVMATNLYGATFPEWFGDLSKSLYTLFQVMTLESWSMGIVRPVMNVHPNAWVFFIPFIMLTTFTVLNLFIGIIVDAMAITKEQEEEAKTGHHQEPISQTLLHLGDRLDRIEKQLAQN",
+    "pH_arms": {
+      "7.4": {
+        "target": 3,
+        "native_charge": 3.07,
+        "mean_charge": -3.29,
+        "std_charge": 6.6,
+        "dev": 6.29,
+        "recovery": 0.304,
+        "uncond_mean_charge": 9.93,
+        "mompnn_cond_mean_charge": 6.26,
+        "tm_median": 0.412,
+        "tm_ge070": 0.091,
+        "tm_lt050": 0.818,
+        "plddt_median": 56.9
+      },
+      "9.0": {
+        "target": 1,
+        "native_charge": 1.42,
+        "mean_charge": 10.37,
+        "std_charge": 5.65,
+        "dev": 9.37,
+        "recovery": 0.33,
+        "uncond_mean_charge": 9.93,
+        "mompnn_cond_mean_charge": null,
+        "tm_median": 0.344,
+        "tm_ge070": 0.091,
+        "tm_lt050": 0.909,
+        "plddt_median": 44.0
+      }
+    }
+  }
+}
