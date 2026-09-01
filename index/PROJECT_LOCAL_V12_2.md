@@ -138,3 +138,69 @@ v12.1 + n50 校准已达成：
 **判据**：无泄露泛化 H2 应显著优于 hold-out（40.6%）；若 big-global ≈ hold-out → 确认 global 校准对未见蛋白的固有局限（论文如实报告）
 
 **脚本**：`code/tests/build_calibration_big.py`（新建）+ `validate_generalization.py --calibrate global` 复用
+
+---
+
+## 7. 配体模式删减根治设计（A1+A2+keep/free 开关，2026-09-01）
+
+> **背景**：配体泛化 H2 72% 达标但组成系统性删减（8/10 蛋白 0.53-0.65×，定向配体口袋），根因 =
+> 监督逃逸×配体疏水先验×v12 微调放大（`2026-09-01_v12_2_ligand_comp_analysis.md`）。
+> 口袋 fix 是推理侧补丁（钉死残基），不治本且造成 2FEO 电荷失配。本节为**训练侧根治设计**。
+> **执行决策**：取决于配体 Tm/Sol 物化验证——无恶化 → 降级为"论文如实报告 + fix 缓解"；
+> 恶化 → 按本节重训。设计本身不受结果影响。
+
+### 7.1 核心思想：三块互斥残基分区（解决 pocket vs core 矛盾 bug）
+
+**v12 现状的矛盾点**：`surface_charge_target_loss` 用 `core_mask=(~surf)` 锁死核心
+（q_core 用 native one-hot 算，不可微）。而深部口袋（frac_sasa<0.25）被划入"核心"。
+若 A2 直接把口袋并入表面 mask，同一残基既在 q_core（**native 值**、锁死）又在 q_surf
+（**生成值**、监督）→ **双算 → 模型改了口袋残基时总电荷 drift 且监督看不见**（矛盾 bug）。
+
+**解法：残基空间三块互斥，每残基只属一块**：
+
+| 分区 | 定义 | 行为 |
+|------|------|------|
+| **core（锁死）** | frac_sasa<0.25 **且** 距配体≥8Å | 保持 v12 现状：q_core = native one-hot 锁死 |
+| **pocket（温和改）** | 距配体<8Å（**无论 frac_sasa**） | 纳入监督视野：净电荷锚 + A1 双向计数 |
+| **surface（温和改）** | frac_sasa≥0.25 且非口袋 | 现状表面监督 |
+
+三块无重叠 → q_core 不再含任何口袋残基 → pocket 残基的生成电荷全部进入 q_surf 监督
+→ 总电荷恒 = target（无 drift、无双算）。
+
+### 7.2 "温和更改"的量化定义（保量不保位，≠fix）
+
+pocket 残基**不是逐残基钉死**（那是 fix），而是**总量约束 + 放行具体位置**：
+
+1. **净电荷**：pocket∪surface 生成净电荷锚到 `target − q_core`（`surface_charge_target_loss`
+   mask 从 surface 扩展为 surface∪pocket）。
+2. **总数（A1 双向计数，防成对删 + 防成对加）**：
+   `pocket_count_loss = relu(N_p·floor − gen) + relu(gen − N_p·ceil)`，D/E 与 K/R 双计数。
+   - floor ≈ 0.7（堵配体删减 0.53-0.65 触发）
+   - ceil ≈ 1.3（防成对加——**v12 只设下限无上限 → 过度添加 1.5-2× 的教训**）
+3. **具体位置**：完全自由（softmax 采样）。
+
+### 7.3 keep/free 开关（结合 vs 疏远配体，设计意图二分）
+
+| 模式 | 语义 | 实现 |
+|------|------|------|
+| `--pocket_mode keep`（默认）| 保/加强配体结合：pocket 带电总数+净电荷受保护 | 训练侧 A1 + charge 锚（7.2）|
+| `--pocket_mode free`（可选）| 疏远配体：允许自由改口袋 | 一期：推理侧不传保护（模型默认倾向 = 原版配体疏水先验，**零训练成本**）；二期：训练注入 pocket 保护占位符 flag（类 S3 占位符），模型学会 keep/free 双语义 |
+
+### 7.4 改动清单
+
+1. `code/src/v12_losses.py`：新增 `pocket_count_loss`（双向计数，可传 mask）；`surface_charge_target_loss` mask 扩展为 surface∪pocket
+2. `code/train_finetune.py`：每域算三块互斥 mask（距配体 8Å 由 PDB HETATM 在线算）；传 pocket 参数
+3. 数据：pocket mask 随训练在线计算（ligand_train PDB 含配体原子），无需新数据
+4. 推理：`run_guided.py` / `validate_generalization.py` 加 `--pocket_mode keep|free`
+5. 复验：重训 → 配体诊断 slope → 组成分析（target 0.7-1.3×）→ 泛化复验（H2/H1/H4/Tm/Sol）
+
+### 7.5 超参消融（防重蹈 v12 过度添加）
+
+- 单一变量：floor（0.6/0.7/0.8）× ceil（1.2/1.3）× λ（0.1/0.2）
+- **floor 与 ceil 必须同时设**（v12 教训：只设下限 → 成对加逃逸）
+- 判据：组成倍率 ∈ [0.7, 1.3]、slope ∈ [0.9, 1.15]、H2 ≥ 当前 72%
+
+### 7.6 执行前提
+
+- 配体 Tm/Sol 物化验证结果出来后再定是否重训（见 §7 开头决策）
+- 重训前 dry-run 冒烟（50 域 1ep 确认 `pocket_count_loss` 生效无 NaN）
