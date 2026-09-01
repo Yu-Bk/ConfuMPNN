@@ -140,6 +140,9 @@ def main():
                     help="校准表 JSON（index/v10_repair/build_calibration.py 生成）")
     ap.add_argument("--end", type=int, default=None,
                     help="到第几个蛋白结束（None=全部）")
+    ap.add_argument("--fixed_residues", default=None,
+                    help="空格分隔的固定残基列表（如 'A42 A45'），chain_mask=0 强制保持 native。"
+                         "默认 None=不固定（不影响 mompnn 现有流程）；用于口袋 fix 对比实验")
     args = ap.parse_args()
 
     device = torch.device(args.device)
@@ -168,7 +171,7 @@ def main():
     for it in items:
         pdb = it["pdb"]
         pdb_path = Path(it["path"])
-        protein_dict, *_ = parse_PDB(str(pdb_path))
+        protein_dict, _, _, icodes, _ = parse_PDB(str(pdb_path))
         L = protein_dict["X"].shape[0]
         native = seq_to_string(protein_dict["S"].reshape(-1).cpu().numpy())
         q_nat = float(net_charge(native, args.pH))
@@ -209,6 +212,18 @@ def main():
                              number_of_ligand_atoms=args.num_ligand_atoms)
             pocket_cur = None if mode == "protein" else pocket
             protein_dict["chain_mask"] = torch.ones(L, dtype=torch.int32)
+            if args.fixed_residues:
+                R_idx = list(protein_dict["R_idx"].cpu().numpy())
+                chain_letters = list(protein_dict["chain_letters"])
+                encoded = [str(chain_letters[i]) + str(R_idx[i]) + icodes[i]
+                           for i in range(L)]
+                fixed_set = set(args.fixed_residues.split())
+                n_fix = 0
+                for i, name in enumerate(encoded):
+                    if name in fixed_set:
+                        protein_dict["chain_mask"][i] = 0
+                        n_fix += 1
+                print(f"    固定残基 {n_fix} 个（共指定 {len(fixed_set)}）", flush=True)
             fd = featurize(protein_dict, cutoff_for_score=8.0, **feats)
             fd["batch_size"] = 1
             fd["temperature"] = 0.3

@@ -150,12 +150,15 @@ def main():
         is_surf = frac_i >= args.sasa_threshold
         charged = aa in CHARGED
         in_contact = int(i) in contact_set
+        # 深部带电优先：无论是否强接触，都进"建议fix"（强接触深部带电 2FEO A18/A132
+        # 曾因 level 优先"人工fix"而不在默认 pocket_fix.txt，被漏掉 → 仍可被删减）
         if in_contact:
-            level = "人工fix(强接触)"
             n_contact += 1
-        elif (not is_surf) and charged:
+        if (not is_surf) and charged:
             level = "建议fix(深部带电)"
             n_deep_charged += 1
+        elif in_contact:
+            level = "人工fix(强接触)"
         elif is_surf and charged:
             level = "可选fix(表面带电)"
             n_surf_charged += 1
