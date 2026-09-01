@@ -161,6 +161,7 @@ PYTHONPATH=code nohup ~/miniconda3/envs/confumpnn/bin/python code/train_finetune
   - `pocket_fix.txt`：**深部带电残基建议 fix 列表**，可直接 `--fixed_residues "$(cat 文件)"`
   - `contact_residues.txt`：强接触残基（骨架原子近似，人工 PLIP 交叉验证参考）
 - 分级建议：人工fix(强接触<4.5Å) / 建议fix(深部带电) / 可选fix(表面带电) / 无需
+- **强接触定义**（`--contact-cutoff` 默认 4.5Å）：残基**任一骨架原子（N/Cα/C/O）到配体任一原子最近距离 <4.5Å** → 标强接触。4.5Å=重原子非键接触上界（氢键 2.7-3.3 / 盐桥 3-4 / 范德华 3.5-4.5）。强接触 ⊆ 口袋（Cα 是骨架原子之一）。⚠️ 局限：① 只含骨架原子不含侧链（parse_PDB 无侧链）→ 侧链介导的相互作用（多数盐桥/氢键）**漏检**；② 无方向性判据 → 是"距离接近"粗筛，真实功能接触需 PLIP/人工确认
 - **生成时保护，不动模型**：复用 run_guided 原生 `--fixed_residues`（chain_mask=0 强制 native）
 - 10 蛋白汇总：
   | 蛋白 | L | 口袋 | 深部带电(建议fix) | 表面带电(可选) |
