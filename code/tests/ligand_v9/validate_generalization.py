@@ -73,11 +73,18 @@ def pocket_residues(protein_dict, cutoff=8.0):
     return np.where(d.min(axis=1) < cutoff)[0]
 
 
-def write_ref_skeleton(protein_dict, path):
-    """从 parse_PDB 的 X 坐标写纯蛋白链骨架 PDB（供 TM-score 参考）。"""
-    X = protein_dict["X"].cpu().numpy()
+def write_ref_skeleton(protein_dict, path, icodes=None):
+    """从 parse_PDB 的 X 坐标写纯蛋白链骨架 PDB（供 TM-score 参考）。
+
+    ⚠️ 残基号用 parse_PDB 的 R_idx（真实值），有 insertion code 的蛋白（如 1C6O）
+    需把 CA_icodes 一并写入（否则重复 resnum 仍不唯一）。早期版本硬编码
+    `A{4:4d}`（残基号恒为 4）——对 TM-score（只比坐标）无害，但任何按残基号
+    解析的下游（如 LigandMPNN parse_PDB 的 CA_dict）会塌缩。2026-09-01 修正。
+    """
+    X = protein_dict["X"].cpu().numpy()                      # [L, 4, 3]
     from data_utils import restype_int_to_str
-    S = protein_dict["S"].cpu().numpy().reshape(-1)
+    S = protein_dict["S"].cpu().numpy().reshape(-1)          # [L]
+    R_idx = protein_dict["R_idx"].cpu().numpy().reshape(-1)  # [L] 真实残基号
     lines = []
     atom_i = 1
     for i, aa in enumerate(S):
@@ -86,10 +93,15 @@ def write_ref_skeleton(protein_dict, path):
                 "M": "MET", "N": "ASN", "P": "PRO", "Q": "GLN", "R": "ARG",
                 "S": "SER", "T": "THR", "V": "VAL", "W": "TRP", "Y": "TYR",
                 "X": "UNK"}.get(restype_int_to_str[int(aa)], "UNK")
+        resid = int(R_idx[i]) if i < len(R_idx) else i + 1
+        icode = ""
+        if icodes is not None and i < len(icodes):
+            c = str(icodes[i]).strip()
+            icode = c[0] if c else ""
         for j, name in enumerate(("N", "CA", "C")):
             x = X[i, j]
             lines.append(
-                f"ATOM  {atom_i:5d} {name:^4s} {res3:>3s} A{4:4d}    "
+                f"ATOM  {atom_i:5d} {name:^4s} {res3:>3s} A{resid:4d}{icode:1s}   "
                 f"{x[0]:8.3f}{x[1]:8.3f}{x[2]:8.3f}  1.00 20.00          "
                 f"{name[0]:>2s}")
             atom_i += 1
@@ -188,7 +200,7 @@ def main():
         ref_dir = out_root / "ref"
         ref_dir.mkdir(parents=True, exist_ok=True)
         ref_pdb = ref_dir / f"{pdb}_ref.pdb"
-        write_ref_skeleton(protein_dict, ref_pdb)
+        write_ref_skeleton(protein_dict, ref_pdb, icodes=icodes)
 
         modes = {"ligand": ["ligand"], "protein": ["protein"],
                  "both": ["ligand", "protein"]}[args.mode]
