@@ -16,12 +16,19 @@
 - output/tm_sol_ligand_v12_2/tm_sol_summary.json
 - 判据 S2：各臂 vs 无条件基线的 Tm Δ、%sol Δ（明显恶化=ΔTm<-5 或 Δ%sol<-10）
 """
+import argparse
 import csv
 import json
 import re
 from pathlib import Path
 
 _PROJECT_DIR = Path("/data/nfs/IC/baokun_yu/ConfuMPNN")
+# 路径参数化（v12.2 与 v13 共用，--xxx-root 指定各自根）：
+# 默认 = v12.2（向后兼容）。v13 示例：
+#   --gen-root output/generalization_ligand_v13/ligand \
+#   --tm-seqs-root output/tm_sol_ligand_v13/seqs \
+#   --ref-native-root output/tm_sol_ligand_v13/ref_native \
+#   --uncond-root output/tm_sol_ligand_v13/uncond --out output/tm_sol_ligand_v13/tm_sol_summary.json
 GEN = _PROJECT_DIR / "output/generalization_ligand_v12_2/ligand"
 TM_SEQS = _PROJECT_DIR / "output/tm_sol_ligand_v12_2/seqs"
 REF_NATIVE = _PROJECT_DIR / "output/tm_sol_ligand_v12_2/ref_native"
@@ -69,6 +76,18 @@ def mean(vals):
 
 
 def main():
+    global GEN, TM_SEQS, REF_NATIVE, UNCOND, OUT_JSON
+    ap = argparse.ArgumentParser(description="配体 Tm/Sol 汇总（v12.2/v13 共用，路径参数化）")
+    ap.add_argument("--gen-root", default=str(GEN), help="泛化验证根（ligand/ 层）")
+    ap.add_argument("--tm-seqs-root", default=str(TM_SEQS), help="Tm seqs 根（tm_sol_*_vNN/seqs）")
+    ap.add_argument("--ref-native-root", default=str(REF_NATIVE), help="native_ref fasta 目录")
+    ap.add_argument("--uncond-root", default=str(UNCOND), help="无条件基线 fasta 目录")
+    ap.add_argument("--out", default=str(OUT_JSON), help="汇总 JSON 输出路径")
+    args = ap.parse_args()
+    GEN = Path(args.gen_root); TM_SEQS = Path(args.tm_seqs_root)
+    REF_NATIVE = Path(args.ref_native_root); UNCOND = Path(args.uncond_root)
+    OUT_JSON = Path(args.out)
+
     summary = {"proteins": {}}
     print(f"{'蛋白':6s} {'臂':8s} {'Tm':>7s} {'TmΔu':>6s} {'%sol':>6s} {'solΔu':>7s}")
     print("  （Δu = vs 无条件基线）")

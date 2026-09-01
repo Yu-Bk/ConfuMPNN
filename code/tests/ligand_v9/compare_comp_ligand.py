@@ -2,20 +2,26 @@
 
 治删减捷径（模型无差别删带电残基）与过度添加。与 mompnn compare_comp_v12_2.py
 口径一致（带电残基总数 = D/E + K/R），但直接读泛化验证已生成的 native 臂序列
-（output/generalization_ligand_v12_2/ligand/<pdb>/pH7.4/arm_native/seqs.fa），
-不重新采样。target=native 臂即"target 条件=自身 native 电荷"的生成。
+（<gen-root>/<pdb>/pH7.4/arm_native/seqs.fa），不重新采样。target=native 臂即
+"target 条件=自身 native 电荷"的生成。
+
+v12.2 与 v13 共用（路径参数化）：--gen-root 指定泛化验证根（ligand/ 层），
+--out 指定输出 JSON。
 
 用法（项目根）：
-  /home/baokun_yu/miniconda3/envs/confumpnn/bin/python code/tests/ligand_v9/compare_comp_ligand.py
-输出：终端表 + output/v12_2_ligand_comp.json
+  PYTHONPATH=code python code/tests/ligand_v9/compare_comp_ligand.py \
+      --gen-root output/generalization_ligand_v12_2/ligand --out output/v12_2_ligand_comp.json
+  # v13
+  PYTHONPATH=code python code/tests/ligand_v9/compare_comp_ligand.py \
+      --gen-root output/generalization_ligand_v13/ligand --out output/v13_ligand_comp.json
 """
+import argparse
 import json
 import sys
 from pathlib import Path
 
 _PROJECT_DIR = Path("/data/nfs/IC/baokun_yu/ConfuMPNN")
 MANIFEST = _PROJECT_DIR / "data/validation_pdbs/validation_manifest.json"
-GEN_ROOT = _PROJECT_DIR / "output/generalization_ligand_v12_2/ligand"
 
 
 def count_dk(seq):
@@ -43,6 +49,13 @@ def read_seqfa(fa):
 
 
 def main():
+    ap = argparse.ArgumentParser(description="配体模式组成分析（v12.2/v13 共用）")
+    ap.add_argument("--gen-root", default=str(_PROJECT_DIR / "output/generalization_ligand_v12_2" / "ligand"),
+                    help="泛化验证根（ligand/ 层，含 <pdb>/pH7.4/arm_native/seqs.fa）")
+    ap.add_argument("--out", default=str(_PROJECT_DIR / "output" / "v12_2_ligand_comp.json"),
+                    help="输出 JSON 路径")
+    args = ap.parse_args()
+    gen_root = Path(args.gen_root)
     man = json.load(open(MANIFEST))
     items = man["items"]
     print(f"{'name':7s} {'L':>4s} {'native_DK':>9s} {'gen_DK':>8s} {'倍率':>5s} "
@@ -50,7 +63,7 @@ def main():
     results = {}
     for it in items:
         name = it["pdb"]
-        fa = GEN_ROOT / name / "pH7.4" / "arm_native" / "seqs.fa"
+        fa = gen_root / name / "pH7.4" / "arm_native" / "seqs.fa"
         if not fa.exists():
             print(f"  !! {name} 无 native 臂 seqs.fa", flush=True)
             continue
@@ -86,9 +99,9 @@ def main():
                          "gen_de": round(m_de, 1), "gen_kr": round(m_kr, 1),
                          "ratio": round(ratio, 2), "n_gen": len(gen)}
 
-    with open(_PROJECT_DIR / "output/v12_2_ligand_comp.json", "w") as f:
+    with open(args.out, "w") as f:
         json.dump(results, f, indent=2)
-    print("\n已写 output/v12_2_ligand_comp.json", flush=True)
+    print(f"\n已写 {args.out}", flush=True)
 
 
 if __name__ == "__main__":
