@@ -639,15 +639,21 @@ python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 \
   --fixed_residues "A12 C15"
 ```
 
-### 7.6 完整验证打分管线
+### 7.6 完整验证打分管线（v12.2 现状，2026-09-01）
 
 ```bash
 # 1. ESMFold 回折（confumpnn-esmfold 环境）
-python code/tests/esmfold_score.py --fasta <seqs.fa> --out <dir> --device cuda:0
-# 2. US-align TM-score（对照参考骨架）
-python code/tests/tm_score.py <ref.pdb> <pred.pdb>
-# 3. 判定（H1/H2/H3）→ 见 index/DESIGN_CRITERIA.md
+python code/tests/esmfold_score.py --input-dir <gen_root> --device cuda:4
+# 2. US-align TM-score（对照参考骨架 ref/<pdb>_ref.pdb）
+python code/tests/tm_score.py --folds <arm_dir>/folds --ref <ref.pdb> --out <arm_dir>/tm.csv
+# 3. 判定（H1/H2/H3/H4）→ 见 index/DESIGN_CRITERIA.md
+# 4. H3 电荷聚集合法性（2026-09-01 采纳，复用 structure_aware_filter 4 规则事后统计）
+python code/tests/h3_charge_legality.py   # 条件臂 vs native_ref vs 无条件基线，违规率 ≤ 基线+5pp
+# 5. H4 PROPKA 物理复核
+python code/tests/propka_charge_check.py --pdb <folds> --pH 7.4 --target <q> --out <json>
 ```
+
+**完整验证链（v12.2）**：训练 → 17 蛋白响应诊断（slope 校准后 ∈[0.9,1.15]）→ 组成分析（D/K vs native，防删减/过度添加）→ hold-out 评估（未见域 H2）→ 泛化验证（ESMFold H1 + 电荷 H2 + PROPKA H4）→ 无泄露 big-global 补跑 → 小样本现场标定 → Tm/Sol（S2 不恶化）→ **H3 电荷聚集合法性（新增）** → v9 配体迁移。**关键坑**：① 无条件基线必须用训练均值占位 `net_charge=1.4243`（`None` → poly-G 退化）；② USalign 需 `export PATH=.../confumpnn/bin`；③ ligand 泛化目录 `ligand/<pdb>/...` 蛋白名在 cut -f2。
 
 ---
 

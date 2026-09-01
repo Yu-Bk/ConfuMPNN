@@ -54,6 +54,18 @@ v12.1 + n50 校准已达成：
 若 v12.2 验证体系建立，对 **v7 / v9 / v10 / v11** 补跑 2.1+2.2（hold-out 评估 + Tm/Sol），看能否得到新结论。
 - **补充直接在对应版本的脚本和实验数据分析报告中**（`code/tests/` + `analysis/report/`），不新建分支
 
+### 2.4 H3 电荷聚集合法性（2026-09-01 采纳，方案见 `PROJECT_SUPPLEMENT_H3_REVIEW.md` §1）
+
+**背景**：H3 是 DESIGN_CRITERIA 四大硬判据**唯一空置**的——"条件臂序列在结构过滤器规则下违规率 ≤ 基线 + 5pp"（证明电荷条件化不产生物理不可能的电荷布局，审稿人必问）。
+
+**执行方案（复用现有规则，零新增）**：
+- **脚本**：`code/tests/h3_charge_legality.py`（新写）——把 `structure_aware_filter.py` 的 4 条规则（charge_cluster / salt_bridge / core_charge / same_sign_cluster）改成**事后统计**模式（全序列已解码，只统计不干预）
+- **输入**：泛化生成 PDB（`output/generalization_*/`）+ 基线① native_ref + 基线② 无条件基线（**必须用训练均值占位 net_charge=1.4243**，`None` 会 poly-G 退化）
+- **方法**：坐标=采样用骨干 PDB（Cα 距离矩阵），逐规则统计"触发位置数/总长"，4 规则并集去重，按 pH 分臂（`pH_adaptive_charged_aa`），输出每蛋白每臂违规率表
+- **判据**：条件臂违规率 ≤ max(native, 无条件) + 5pp → PASS（先取证后定标）
+- **覆盖**：**mompnn + ligand 两条线**都要跑（配体删减捷径下 H3 尤其重要——验证"成对删"是否产生电荷聚集）
+- **额外价值**：顺带回答"`--preset` 解码时 structure_filter 引导是否真约束住最终序列"（事后违规率高 → `--strength` 不足）
+
 ---
 
 ## 3. 执行顺序（今晚流程不变，仅扩展验证部分）
@@ -104,6 +116,7 @@ v12.1 + n50 校准已达成：
 4. **泛化验证**（复用 `run_v12_1_validation.sh` 换 checkpoint，ESMFold 回折 TM/pLDDT/RMSD + GRAVY + PROPKA H4）
 5. **Tm/Sol 补充**（对齐 §2.2：现有泛化 10 蛋白 + native + 无条件基线）
 6. **v9 迁移评估**（对齐 §3.7 + `PROJECT_V9_LIGAND_PLAN.md`）：若 v12.2 效果好 → LigandMPNN 重训 `--ligand --v12_supervision` + λ_target 配体适配 + 配体模式 SASA/组成适配 + v9 配体诊断校准表 → 泛化复验
+6.5. **H3 电荷聚集合法性**（§2.4，`h3_charge_legality.py`）——**mompnn + ligand 两条线**都跑：泛化生成 PDB vs native_ref vs 无条件基线，4 规则事后统计违规率，判据 ≤ 基线+5pp
 7. 全部结果汇总 → 写验证报告 → 汇报用户
 8. **若结果需方向决策（不达标/新短板）→ 暂停，等用户决策**（此点不在自动授权内）
 
