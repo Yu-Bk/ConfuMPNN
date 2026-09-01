@@ -85,17 +85,44 @@ def surface_gravy_loss(logits, frac_sasa, native_gravy_surface,
 
 
 def surface_charge_target_loss(logits, pH, target_surface_charge, frac_sasa,
-                               surface_threshold=0.25, temperature=1.0):
+                               surface_threshold=0.25, temperature=1.0, extra_mask=None):
     """表面电荷密度目标：表面净电荷 → target_surface_charge。
 
-    用 net_charge_from_logits 的 mask 只统计表面残基电荷（含两端电荷，
+    用 net_charge_from_logits 的 mask 只统计监督残基电荷（含两端电荷，
     但 mask 下两端贡献按 has_residue 计入，值小可忽略）。
     target_surface_charge = 目标净电荷 − 核心 native 电荷（调用方预计算，核心锁死）。
-    返回: 标量 |表面电荷 − 目标|。
+    extra_mask（A2，2026-09-01）：把 pocket 残基并入监督 mask（mask = surface ∪ extra_mask）。
+    三块互斥分区下 core 已不含 pocket → 总电荷恒 = target（无双算、无 drift）。
+    返回: 标量 |监督电荷 − 目标|。
     """
     from .differentiable_charge import net_charge_from_logits
-    smask = _surface_mask(frac_sasa, surface_threshold, logits.device, logits.dtype)
+    smask = _surface_mask(frac_sasa, surface_threshold, logits.device, logits.dtype)  # [1, L]
+    if extra_mask is not None:
+        extra = torch.as_tensor(extra_mask, dtype=logits.dtype, device=logits.device).float().unsqueeze(0)
+        smask = torch.clamp(smask + extra, max=1.0)
     B = logits.shape[0]
     q_surf = net_charge_from_logits(logits, pH, mask=smask.expand(B, -1),
                                     temperature=temperature)
     return (q_surf - target_surface_charge).abs().mean()
+
+
+def pocket_count_loss(logits, pocket_mask, native_pocket_counts,
+                      floor=0.7, ceil=1.3):
+    """A1 pocket 双向计数（保量不保位，≠fix）：D/E 与 K/R 期望计数都 ∈ [N_p·floor, N_p·ceil]。
+
+    根治删减捷径（v12 监督逃逸：成对删 K+D 净电荷不变但总数降）：
+      - floor≈0.7 堵配体删减（实测 0.53-0.65× 触发）；
+      - ceil≈1.3 防成对加（v12 只设下限无上限 → 过度添加 1.5-2× 的教训）。
+    pocket_mask: [L] float（pocket 残基 1/0，Cα-配体<8Å 口径，define_pocket.py）
+    native_pocket_counts: (n_neg, n_pos) native 序列 pocket 内 D/E 与 K/R 数
+    返回: 标量（四个 relu 之和的均值）。
+    """
+    probs = _probs(logits)                             # [B, L, 20]
+    pmask = torch.as_tensor(pocket_mask, dtype=logits.dtype, device=logits.device).float()  # [L]
+    n_neg = float(native_pocket_counts[0]) + 1e-6
+    n_pos = float(native_pocket_counts[1]) + 1e-6
+    gen_neg = ((probs[..., D_IDX] + probs[..., E_IDX]) * pmask).sum(-1)   # [B]
+    gen_pos = ((probs[..., K_IDX] + probs[..., R_IDX]) * pmask).sum(-1)
+    loss = (torch.relu(n_neg * floor - gen_neg) + torch.relu(gen_neg - n_neg * ceil) +
+            torch.relu(n_pos * floor - gen_pos) + torch.relu(gen_pos - n_pos * ceil)).mean()
+    return loss

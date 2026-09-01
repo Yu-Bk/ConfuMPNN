@@ -101,7 +101,8 @@ from src.v10_losses import (  # noqa: E402
     ph_aware_structure_penalty, surface_add_charge_loss,
 )
 from src.v12_losses import (  # noqa: E402
-    surface_composition_loss, surface_gravy_loss, surface_charge_target_loss, KD,
+    surface_composition_loss, surface_gravy_loss, surface_charge_target_loss,
+    pocket_count_loss, KD, D_IDX, E_IDX, K_IDX, R_IDX,
 )
 
 # 默认生成器权重（与 run_guided.py E4 一致）
@@ -193,6 +194,18 @@ def parse_args():
     p.add_argument("--lambda_target", type=float, default=0.0,
                    help="v12.2 表面电荷目标权重：锚定表面净电荷 = target − 核心 native 电荷"
                         "（λ_target·|q_surf − target_surf|；0=关闭，治'无限加'上界缺失）")
+    # A1+A2（配体删减根治，2026-09-01，PROJECT_LOCAL_V12_2 §7）：三块互斥分区 + pocket 双向计数
+    p.add_argument("--pocket_mode", choices=["keep", "free"], default="keep",
+                   help="配体口袋保护模式：keep=训练侧 A1 双向计数 + pocket 纳入电荷锚（§7.2，本次实现）；"
+                        "free=一期仅推理侧不传保护（模型默认疏水先验），二期训练注入 flag 学双语义")
+    p.add_argument("--pocket_cutoff", type=float, default=8.0,
+                   help="口袋范围（Cα-配体最近距离 < cutoff Å，与 define_pocket.py / 验证口径一致）")
+    p.add_argument("--pocket_floor", type=float, default=0.7,
+                   help="A1 下限倍率：pocket 带电残基总数 ≥ native×floor（堵配体删减 0.53-0.65×）")
+    p.add_argument("--pocket_ceil", type=float, default=1.3,
+                   help="A1 上限倍率：pocket 带电残基总数 ≤ native×ceil（防成对加，v12 只设下限的教训）")
+    p.add_argument("--lambda_pocket", type=float, default=0.2,
+                   help="A1 pocket 双向计数损失权重（λ_pocket）")
     p.add_argument("--decouple_absolute", action="store_true",
                    help="v11 A-fix：绝对 target 采样——与 native 无关，直接覆盖 [lo,hi]，"
                         "解决 v10 相对解耦±12 无法覆盖验证深负靶区（−19~−35）的问题")
@@ -513,9 +526,35 @@ def main():
                     dom["frac_sasa"] = aligned
                     if n_aligned < L:
                         logln(f"  ℹ️ {did} resnum 对齐 {n_aligned}/{L}（{L-n_aligned} 个非标准/parse独有残基 frac=0）")
+                    # A1+A2（配体删减根治，PROJECT_LOCAL_V12_2 §7.1）：三块互斥残基分区。
+                    # pocket = Cα-配体最近距离 < pocket_cutoff（define_pocket.py 口径，2026-09-01）；
+                    # 三块无重叠：pocket（距配体<8Å，无论 frac）/ core（frac<0.25 且非 pocket）/
+                    #   surface（frac≥0.25 且非 pocket）。
+                    # charge 监督 mask = surface ∪ pocket → pocket 生成电荷全部进入监督，
+                    # core 不再含 pocket → 无"双算/总电荷 drift"矛盾 bug（§7.1 核心）。
+                    if args.pocket_mode == "keep":
+                        Y = dom.get("Y")
+                        # ⚠️ dom["X"] shape [1, L, 4, 3]（样本, 残基, N/CA/C/O, xyz）
+                        # Cα = X[0, :, 1]（所有残基的第 1 个原子 CA），不是 X[0, 1]
+                        CA = dom["X"][0, :, 1].cpu().numpy()       # [L,3] Cα
+                        if Y is not None and Y.numel() > 0:
+                            Yc = Y.reshape(-1, 3).cpu().numpy()
+                            dmin = np.linalg.norm(
+                                CA[:, None, :] - Yc[None, :, :], axis=-1).min(axis=1)  # [L]
+                            pocket = (dmin < args.pocket_cutoff).astype(np.float32)
+                        else:
+                            pocket = np.zeros(L, dtype=np.float32)  # 无配体 → 全非口袋
+                        surf = aligned >= args.sasa_threshold       # [L] bool
+                        core = ((~surf) & (pocket == 0)).astype(np.float32)
+                        dom["pocket_mask"] = pocket
+                        dom["core_mask"] = core
+                        dom["charge_surf_mask"] = np.clip(
+                            surf.astype(np.float32) + pocket, 0.0, 1.0)
+                        logln(f"  ℹ️ {did} 分区 pocket={int(pocket.sum())}/{L}"
+                              f" core={int(core.sum())} surface={int(surf.sum())}")
                 except Exception as e:
                     dom["frac_sasa"] = None
-                    logln(f"  ⚠️ {did} SASA 计算失败: {e}（跳过 L_add）")
+                    logln(f"  ⚠️ {did} SASA/pocket 分区失败: {e}（跳过 v12 监督）")
             # 该域 8 个 (pH, charge) 条件（按已接受域数索引，跳过坏域不错位）
             idx0 = n_ok * n_pH
             dom["pH"] = pH_arr[idx0:idx0 + n_pH]
@@ -756,7 +795,12 @@ def main():
             v12_ct = torch.zeros((), device=device)
             if args.lambda_target > 0 and dom.get("frac_sasa") is not None:
                 from src.differentiable_charge import net_charge_from_logits
-                core_mask = (~surf).astype(np.float32)           # [L] 核心（非表面）残基
+                if args.pocket_mode == "keep" and dom.get("core_mask") is not None:
+                    core_mask = dom["core_mask"]       # 核心 = 非表面 且 非口袋（三块互斥，A2）
+                    charge_mask = dom["charge_surf_mask"]  # 监督 = surface ∪ pocket
+                else:
+                    core_mask = (~surf).astype(np.float32)   # [L] 核心（非表面）残基
+                    charge_mask = None                       # 默认 surface
                 nat_onehot = F.one_hot(torch.as_tensor(nat_int).clamp(0, 19).long(),
                                        num_classes=20).float().to(device)   # [L,20] native 侧链 one-hot
                 n_ct = 0
@@ -766,15 +810,37 @@ def main():
                     q_core = net_charge_from_logits(
                         nat_onehot.unsqueeze(0), pH=pH_b[i],
                         mask=torch.as_tensor(core_mask, device=device).unsqueeze(0),
-                        include_termini=False)                   # 核心侧链电荷（两端归表面侧）
-                    target_surf = charge_b[i].detach() - q_core  # target − 核心 → 表面承担全部
+                        include_termini=False)                   # 核心侧链电荷（两端归监督侧）
+                    target_surf = charge_b[i].detach() - q_core  # target − 核心 → 监督侧承担全部
                     v12_ct = v12_ct + surface_charge_target_loss(
                         logits[i:i+1], pH=pH_b[i], target_surface_charge=target_surf,
                         frac_sasa=frac, surface_threshold=args.sasa_threshold,
-                        temperature=args.charge_temp)
+                        temperature=args.charge_temp, extra_mask=charge_mask)
                     n_ct += 1
                 if n_ct > 0:
                     v12_ct = v12_ct / n_ct
+
+            # A1 pocket 双向计数（--pocket_mode keep，配体删减根治 §7.2）：
+            # D/E 与 K/R 的 pocket 生成期望计数 ∈ [native×floor, native×ceil]。
+            # 保量不保位（≠fix）：不钉死具体位置，只约束带电残基总量，允许侧链重排。
+            v12_pocket = torch.zeros((), device=device)
+            if (args.pocket_mode == "keep" and args.lambda_pocket > 0
+                    and dom.get("pocket_mask") is not None
+                    and dom.get("frac_sasa") is not None):
+                pmask = dom["pocket_mask"].astype(bool)          # [L] pocket 位置
+                nat_int_p = dom["S"][0].long().cpu().numpy()
+                nat_neg = int(((nat_int_p == D_IDX) | (nat_int_p == E_IDX))[pmask].sum())
+                nat_pos = int(((nat_int_p == K_IDX) | (nat_int_p == R_IDX))[pmask].sum())
+                n_p = 0
+                for i in range(B):
+                    if mask_ph[i].item():
+                        continue  # 同 comp/gravy，占位符样本跳过
+                    v12_pocket = v12_pocket + pocket_count_loss(
+                        logits[i:i+1], dom["pocket_mask"], (nat_neg, nat_pos),
+                        floor=args.pocket_floor, ceil=args.pocket_ceil)
+                    n_p += 1
+                if n_p > 0:
+                    v12_pocket = v12_pocket / n_p
 
             total = ce + args.lambda_c * cd + args.lambda_kl * kl + args.lambda_keep * keep
             if args.add_supervision:
@@ -785,6 +851,8 @@ def main():
                 total = total + args.lambda_v12 * (v12_comp + v12_gravy)
                 if args.lambda_target > 0:
                     total = total + args.lambda_target * v12_ct
+            if args.pocket_mode == "keep" and args.lambda_pocket > 0:
+                total = total + args.lambda_pocket * v12_pocket
 
             # NaN 诊断（v10 训练踩坑，收集模式）：记录 loss 分量 NaN 并跳过本 step
             if not torch.isfinite(total).all():
@@ -803,6 +871,7 @@ def main():
                     "domain": dname, "step": "loss",
                     "ce": _s(ce), "charge": _s(cd), "kl": _s(kl),
                     "keep": _s(keep), "add": _s(add), "struct": _s(struct_pen),
+                    "pocket": _s(v12_pocket), "ct": _s(v12_ct),
                     "frac_nan": _nans(dom.get('frac_sasa')),
                     "offset0": off0, "pH0": ph0,
                 })
@@ -879,6 +948,12 @@ def main():
             "sasa_threshold": args.sasa_threshold,
             "ph_aware_filter": args.ph_aware_filter,
             "structure_boost": args.structure_boost,
+            # A1+A2（配体删减根治，2026-09-01，PROJECT_LOCAL_V12_2 §7）
+            "pocket_mode": args.pocket_mode,
+            "pocket_cutoff": args.pocket_cutoff,
+            "pocket_floor": args.pocket_floor,
+            "pocket_ceil": args.pocket_ceil,
+            "lambda_pocket": args.lambda_pocket,
         }, ckpt_path)
         # 保留最新一份 alias，方便推理时加载
         torch.save(enc.state_dict(), out_dir / "condition_encoder_last.pt")

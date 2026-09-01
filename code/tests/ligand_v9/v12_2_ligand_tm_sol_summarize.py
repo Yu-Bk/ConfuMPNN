@@ -34,14 +34,17 @@ PDBS = ["1C6O", "1AZM", "1AS2", "1AXW", "2FEO", "5CQH", "1CGE", "1AG0", "1A65", 
 SOL_RE = re.compile(r"SEQUENCE PREDICTIONS,>\S+?,([-\d.]+),")
 
 
-def read_tm_csv(path):
-    """返回 [(name, mean_tm), ...]；只统计 seed_ 开头的生成序列（排除 native 参考行）。"""
+def read_tm_csv(path, seed_only=True):
+    """返回 [(name, mean_tm), ...]；seed_only=True 只统计 seed_ 开头（排除 native 参考行）。
+
+    native_ref 的 csv 行名是 "<PDB>_native L=<L>"（非 seed_ 开头），须 seed_only=False 全读。
+    """
     rows = []
     if not path.exists():
         return rows
     for line in open(path):
         parts = line.strip().split(",")
-        if len(parts) >= 3 and parts[0] != "name" and parts[0].startswith("seed_"):
+        if len(parts) >= 3 and parts[0] != "name" and (not seed_only or parts[0].startswith("seed_")):
             try:
                 rows.append((parts[0], float(parts[2])))
             except ValueError:
@@ -78,7 +81,7 @@ def main():
         tm_seqs_pdb = TM_SEQS / pdb
         native_tm_csv = tm_seqs_pdb / "arm_native_ref" / "seqs.fa.tm.csv"
         native_sol_txt = native_fa.with_name(native_fa.name + "-protein_sol_prediction.txt")
-        ref_tm = mean([r[1] for r in read_tm_csv(native_tm_csv)])
+        ref_tm = mean([r[1] for r in read_tm_csv(native_tm_csv, seed_only=False)])
         ref_sol = read_sol(native_sol_txt)
         per["native_ref"] = {"tm": ref_tm, "sol": ref_sol}
 

@@ -39,14 +39,17 @@ from scipy.sparse.csgraph import connected_components
 
 import sys
 
-_PROJECT_DIR = Path(__file__).resolve().parents[1]
+_PROJECT_DIR = next(p for p in Path(__file__).resolve().parents
+                    if (p / "code").is_dir() and (p / "LigandMPNN").is_dir())
 _CODE_DIR = _PROJECT_DIR / "code"
 if str(_CODE_DIR) not in sys.path:
     sys.path.insert(0, str(_CODE_DIR))
+# data_utils.py 位于 LigandMPNN/（LigandMPNN 源码），需加入 path
+if str(_PROJECT_DIR / "LigandMPNN") not in sys.path:
+    sys.path.insert(0, str(_PROJECT_DIR / "LigandMPNN"))
 
 from src.structure_aware_filter import default_config, pH_adaptive_charged_aa  # noqa: E402
 from src.pka import AA_TO_IDX  # noqa: E402
-from data_utils import parse_PDB  # noqa: E402
 
 ARMS = ["native", "n2", "p2", "n8", "p8"]
 PDBS = ["1C6O", "1AZM", "1AS2", "1AXW", "2FEO", "5CQH", "1CGE", "1AG0", "1A65", "1BJ4"]
@@ -137,10 +140,18 @@ def count_violations(coords, seq_int, pos_aa, neg_aa, cfg):
 
 
 def ca_coords_from_pdb(pdb_path):
-    """ref PDB → Cα 坐标 [L, 3]（LigandMPNN parse_PDB 的 X[:, 1, :]）。"""
-    protein_dict, *_ = parse_PDB(str(pdb_path))
-    X = np.asarray(protein_dict["X"])  # [L, 4, 3]（N/Cα/C/O）
-    return X[:, 1, :].astype(np.float64)
+    """ref PDB → Cα 坐标 [L, 3]。
+
+    ⚠️ 不能用 LigandMPNN parse_PDB：ref 骨架文件（REMARK "reference skeleton
+    from parse_PDB"）写入时残基号全部被归一化成 4，CA_dict（依赖 resnum 唯一性）
+    会塌缩为 1 个残基 → get_aligned_coordinates 越界。文件原子顺序即残基顺序，
+    直接按行序提取 name==CA 的坐标即可（几何正确，2026-09-01 实证）。
+    """
+    coords = []
+    for line in open(pdb_path):
+        if line.startswith("ATOM") and line[12:16].strip() == "CA":
+            coords.append([float(line[30:38]), float(line[38:46]), float(line[46:54])])
+    return np.asarray(coords, dtype=np.float64)
 
 
 def main():
