@@ -204,3 +204,9 @@ pocket 残基**不是逐残基钉死**（那是 fix），而是**总量约束 + 
 
 - 配体 Tm/Sol 物化验证结果出来后再定是否重训（见 §7 开头决策）
 - 重训前 dry-run 冒烟（50 域 1ep 确认 `pocket_count_loss` 生效无 NaN）
+
+**✅ 执行状态（2026-09-01）**：物化验证**恶化**（负电臂 Tm 9/50 Δu<−5 + H3 n8 失败）→ 用户确认走路径 B。
+实现 commit `1b93e87`（`pocket_count_loss` + 三块互斥分区 + `surface_charge_target_loss` extra_mask），
+dry-run 过（50 域 1ep 无 NaN）→ **v13 配体重训已启动**（GPU6，`output/finetune_ligand_v13/`，
+`--pocket_mode keep --pocket_cutoff 8.0 --pocket_floor 0.7 --pocket_ceil 1.3 --lambda_pocket 0.2`）。
+复验链：组成（0.7-1.3×）→ 配体 slope → 泛化 H2/H1/H4 → H3 → Tm/Sol。详见 `session/2026-09-01_v13_pocket_retrain.md`。
