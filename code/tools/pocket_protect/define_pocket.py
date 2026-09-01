@@ -9,30 +9,28 @@
   1. 口袋定义：配体原子 8Å 内残基（Cα 距离，与验证脚本口径一致）
   2. 每个口袋残基分类：最近配体距离 / frac_sasa / 表面或深部 / 是否带电 / 保护建议
   3. 输出建议 fix 列表（深部带电残基，可直接传给 run_guided --fixed_residues）
-  4. 输出强接触残基数据列（骨架原子 <4.5Å，近似），供人工结构分析参考
+  4. 输出近配体残基距离数据列（骨架原子 <4.5Å，仅距离计算，不含侧链、不预测
+     相互作用种类），供人工结构分析参考
 
-强接触定义（--contact-cutoff 默认 4.5Å）：
-  残基的**任一骨架原子（N/Cα/C/O 四个主链原子）到配体的任一原子，最近距离 < cutoff
-  → 标记为"强接触"**（contact_distances）。4.5Å 是典型重原子非键接触上界：
-  氢键 2.7-3.3Å / 盐桥 3-4Å / 范德华接触 3.5-4.5Å——最近原子对 <4.5Å 说明残基与配体
-  有原子级直接接触的潜力。强接触 ⊆ 口袋（Cα 是骨架原子之一，任一骨架原子 <4.5Å 则
-  Cα 必 <4.5Å < 8Å）。
+近配体残基距离（--contact-cutoff 默认 4.5Å）——**本工具是"残基-配体距离"计算工具**：
+  判据 = 残基任一骨架原子（N/Cα/C/O 主链原子）到配体任一原子的最近距离 < cutoff。
+  用途 = 给出"哪些残基距配体很近"的**距离数据**，供人工结构分析参考（level 标注
+  "人工fix(近配体)"= 建议人工决定是否 fix，本工具不做决定）。
+  4.5Å 是典型重原子非键接触上界（氢键 2.7-3.3 / 盐桥 3-4 / 范德华 3.5-4.5）。
+  近配体 ⊆ 口袋（Cα 是骨架原子之一，任一骨架原子 <4.5Å 则 Cα 必 <4.5Å < 8Å）。
 
-  ⚠️ 强接触判据的两个局限（务必阅读）：
-  1. 只用骨架原子（N/Cα/C/O），**不含侧链原子**（parse_PDB 只给主链坐标）。而真实
-     相互作用大多靠侧链贡献（盐桥=Glu/Asp 侧链羧基 + Lys/Arg 侧链氨基/胍基；
-     氢键也常由侧链供受体承担）→ 依赖侧链的相互作用会被**漏检**（侧链伸进接触区但
-     骨架在 4.5Å 外则不标强接触）。
-  2. 只是"距离接近"的粗筛，**非真实化学相互作用**——氢键/盐桥需要方向性判据
-     （供体-受体键角），本判据只有距离。因此"强接触"是**候选接触**，真实功能接触
-     需用 PLIP 或人工结构分析确认。
+  ⚠️ 明确边界（务必阅读）：
+  1. **不含侧链原子**（parse_PDB 只有主链坐标）——真实功能相互作用（盐桥、氢键等）
+     多由侧链贡献，本距离判据会漏检依赖侧链的接触。
+  2. **不预测相互作用种类**——本工具只计算距离，不判定氢键/盐桥/金属配位等
+     相互作用类型；"近配体"≠"有相互作用"。真实功能接触需 PLIP 或人工结构分析确认。
+  3. 深部/表面分类（frac_sasa）基于 freesasa（含侧链原子），是独立的准确信息；
+     近配体距离只是骨架原子距离，两者不混为一谈。
 
   边界（用户定，2026-09-01）：
   - 不做"强相互作用"结构分析（那是设计前的人工结构调研/PLIP 工作），
     本工具只输出数据列辅助人工判断。
   - 不修改任何训练脚本/模型；不退役 q_core；核心残基不额外自动 fix。
-  - 深部/表面分类基于 freesasa（含侧链原子），准确；接触距离基于骨架原子
-    （N/CA/C/O），未含侧链原子，是近似值，仅作参考列。
 
 边界（用户定，2026-09-01）：
   - 不做"强相互作用"结构分析（那是设计前的人工结构调研/PLIP 工作），
@@ -48,8 +46,8 @@
 输出：output/pocket_protect/<pdb名>/
   - pocket_table.txt         逐残基分类表（人读）
   - pocket_table.json        同内容机器可读
-  - pocket_fix.txt           建议 fix 残基（默认=深部带电；--include-contact 追加强接触）
-  - contact_residues.txt     强接触残基（数据列，人工结构分析参考）
+  - pocket_fix.txt           建议 fix 残基（默认=深部带电；--include-contact 追加近配体）
+  - contact_residues.txt     近配体残基距离数据列（人工结构分析参考）
 """
 import argparse
 import json
@@ -83,12 +81,12 @@ def pocket_distances(protein_dict, cutoff):
 
 
 def contact_distances(protein_dict, cutoff):
-    """强接触 = 残基任一骨架原子（N/CA/C/O）到配体任一原子 < cutoff Å（近似，无侧链）。
+    """近配体距离 = 残基任一骨架原子（N/CA/C/O）到配体任一原子 < cutoff Å（仅距离，无侧链）。
 
-    定义（2026-09-01）：最近骨架原子-配体距离 < cutoff（默认 4.5Å）→ 强接触。
+    定义（2026-09-01）：最近骨架原子-配体距离 < cutoff（默认 4.5Å）→ 标记近配体。
     4.5Å = 典型重原子非键接触上界（氢键 2.7-3.3 / 盐桥 3-4 / 范德华 3.5-4.5）。
     局限：① 不含侧链原子（parse_PDB 只有主链）→ 侧链介导的相互作用漏检；
-    ② 无方向性判据（非氢键/盐桥判定），是"距离接近"粗筛，真实功能接触
+    ② 只算距离、不预测相互作用种类（氢键/盐桥等），真实功能接触
     需 PLIP/人工结构分析确认。
     """
     Y = protein_dict.get("Y")
@@ -109,13 +107,13 @@ def main():
     ap.add_argument("--pocket-cutoff", type=float, default=8.0,
                     help="口袋范围（Cα-配体 距离 Å，默认 8，与验证脚本口径一致）")
     ap.add_argument("--contact-cutoff", type=float, default=4.5,
-                    help="强接触=残基任一骨架原子(N/CA/C/O)到配体任一原子<该距离Å "
+                    help="近配体=残基任一骨架原子(N/CA/C/O)到配体任一原子<该距离Å "
                          "(默认 4.5=重原子非键接触上界)。仅骨架原子、无方向性判据，"
                          "是近似参考列，真实功能接触需 PLIP 确认")
     ap.add_argument("--sasa-threshold", type=float, default=0.25,
                     help="表面/深部阈值（frac_sasa，默认 0.25，与 v12 损失一致）")
     ap.add_argument("--include-contact", action="store_true",
-                    help="把强接触残基也加入 pocket_fix.txt（默认只含深部带电）")
+                    help="把近配体残基也加入 pocket_fix.txt（默认只含深部带电）")
     ap.add_argument("--outdir", default=None,
                     help="输出目录（默认 output/pocket_protect/<pdb名>/）")
     args = ap.parse_args()
@@ -182,7 +180,7 @@ def main():
         is_surf = frac_i >= args.sasa_threshold
         charged = aa in CHARGED
         in_contact = int(i) in contact_set
-        # 深部带电优先：无论是否强接触，都进"建议fix"（强接触深部带电 2FEO A18/A132
+        # 深部带电优先：无论是否近配体，都进"建议fix"（近配体深部带电 2FEO A18/A132
         # 曾因 level 优先"人工fix"而不在默认 pocket_fix.txt，被漏掉 → 仍可被删减）
         if in_contact:
             n_contact += 1
@@ -190,7 +188,7 @@ def main():
             level = "建议fix(深部带电)"
             n_deep_charged += 1
         elif in_contact:
-            level = "人工fix(强接触)"
+            level = "人工fix(近配体)"
         elif is_surf and charged:
             level = "可选fix(表面带电)"
             n_surf_charged += 1
@@ -211,7 +209,7 @@ def main():
     # fix 列表：深部带电（默认），可选追加强接触
     fix = [r["resname"] for r in rows if r["level"] == "建议fix(深部带电)"]
     if args.include_contact:
-        fix += [r["resname"] for r in rows if r["level"] == "人工fix(强接触)"]
+        fix += [r["resname"] for r in rows if r["level"] == "人工fix(近配体)"]
     fix = sorted(set(fix))
     contact_list = sorted(set(resnames[i] for i in contact))
 
@@ -219,7 +217,7 @@ def main():
     rows.sort(key=lambda r: r["idx"])
     print(f"\n===== 口袋范围定义: {name} (L={L}) =====", flush=True)
     print(f"口袋残基(≤{args.pocket_cutoff}Å Cα): {len(pocket)}  "
-          f"强接触(≤{args.contact_cutoff}Å 骨架,近似): {n_contact}  "
+          f"近配体(≤{args.contact_cutoff}Å 骨架距离): {n_contact}  "
           f"深部带电(建议fix): {n_deep_charged}  表面带电(可选): {n_surf_charged}", flush=True)
     print(f"\n{'残基':8s} {'AA':>3s} {'Cα-配体Å':>8s} {'骨架接触Å':>8s} {'fracSASA':>8s} "
           f"{'区':>4s} {'带电':>3s} {'建议'}", flush=True)
@@ -232,7 +230,7 @@ def main():
     # 6. 写文件
     with open(outdir / "pocket_table.txt", "w") as f:
         f.write(f"# 口袋范围定义 {name} (L={L})\n")
-        f.write(f"# 口径: 口袋≤{args.pocket_cutoff}Å Cα; 强接触≤{args.contact_cutoff}Å 骨架原子(近似); "
+        f.write(f"# 口径: 口袋≤{args.pocket_cutoff}Å Cα; 近配体≤{args.contact_cutoff}Å 骨架原子(仅距离); "
                 f"表面≥frac_sasa {args.sasa_threshold}\n")
         f.write(f"{'残基':8s} {'AA':>3s} {'Cα-配体Å':>8s} {'骨架接触Å':>8s} {'fracSASA':>8s} "
                 f"{'区':>4s} {'带电':>3s} {'建议'}\n")
@@ -258,7 +256,8 @@ def main():
         f.write("\n".join(fix) + ("\n" if fix else ""))
 
     with open(outdir / "contact_residues.txt", "w") as f:
-        f.write("# 强接触残基（骨架原子近似，供人工结构分析/PLIP 交叉验证）\n")
+        f.write("# 近配体残基距离（骨架原子到配体<cutoffÅ）——仅距离数据，不含侧链、\n"
+                "# 不预测相互作用种类；真实功能接触需 PLIP/人工分析确认\n")
         f.write("\n".join(contact_list) + ("\n" if contact_list else ""))
 
     print(f"\n已写 {outdir}/", flush=True)
