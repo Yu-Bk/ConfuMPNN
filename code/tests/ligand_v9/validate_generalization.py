@@ -93,11 +93,11 @@ def write_ref_skeleton(protein_dict, path, icodes=None):
                 "M": "MET", "N": "ASN", "P": "PRO", "Q": "GLN", "R": "ARG",
                 "S": "SER", "T": "THR", "V": "VAL", "W": "TRP", "Y": "TYR",
                 "X": "UNK"}.get(restype_int_to_str[int(aa)], "UNK")
-        resid = int(R_idx[i]) if i < len(R_idx) else i + 1
-        icode = ""
-        if icodes is not None and i < len(icodes):
-            c = str(icodes[i]).strip()
-            icode = c[0] if c else ""
+        resid = i + 1   # TM 参考骨架：resSeq 强制连续 1..L（2026-09-02）
+                        # 原 PDB 有重复 resSeq / insertion code（1C6O/1AXW/1AG0），
+                        # 用 R_idx 会写出重复 resSeq → US-align 按 resSeq 对齐错位 → TM 崩（native 也 <0.6）。
+                        # TM-score 只比坐标；连续 resSeq 与 ESMFold folds 输出一致，最安全。
+        icode = ""      # 连续 resSeq 已保证唯一，无需 icode
         for j, name in enumerate(("N", "CA", "C")):
             x = X[i, j]
             lines.append(
@@ -140,7 +140,7 @@ def main():
     ap.add_argument("--pH", type=float, default=7.4)
     ap.add_argument("--seed_base", type=int, default=2000)
     ap.add_argument("--device", default="cuda:3")
-    ap.add_argument("--num_ligand_atoms", type=int, default=16)
+    ap.add_argument("--num_ligand_atoms", type=int, default=25)
     ap.add_argument("--arms", default="native,n2,p2,n8,p8")
     ap.add_argument("--protein_arms", default="native,n8,p8",
                     help="protein（消融）模式跑的臂子集，默认 3 臂")

@@ -107,22 +107,42 @@ def surface_charge_target_loss(logits, pH, target_surface_charge, frac_sasa,
 
 
 def pocket_count_loss(logits, pocket_mask, native_pocket_counts,
-                      floor=0.7, ceil=1.3):
-    """A1 pocket 双向计数（保量不保位，≠fix）：D/E 与 K/R 期望计数都 ∈ [N_p·floor, N_p·ceil]。
+                      floor=0.7, ceil=1.3, min_abs_cap=2.0, normalize=False):
+    """A1 双向计数（保量不保位，≠fix）：D/E 与 K/R 期望计数都 ∈ [N·floor, N·ceil]。
 
     根治删减捷径（v12 监督逃逸：成对删 K+D 净电荷不变但总数降）：
       - floor≈0.7 堵配体删减（实测 0.53-0.65× 触发）；
       - ceil≈1.3 防成对加（v12 只设下限无上限 → 过度添加 1.5-2× 的教训）。
-    pocket_mask: [L] float（pocket 残基 1/0，Cα-配体<8Å 口径，define_pocket.py）
-    native_pocket_counts: (n_neg, n_pos) native 序列 pocket 内 D/E 与 K/R 数
-    返回: 标量（四个 relu 之和的均值）。
+    mask 可以是 pocket（v13 原 A1，keep 模式）或 charge_surf_mask=surface∪pocket
+    （A1 全局化，--pocket_mode global）：mask 覆盖哪些"温和改"残基，counts 就按该
+    mask 的 native 数。keep 模式传原始量级（v13 复现）；global 模式 normalize=True
+    （除以 native 计数 → 分数化，区域大小不随蛋白长度膨胀，λ 可跨域可比）。
+    min_abs_cap：某方向 native 计数 N≈0 时，ceil 方向给绝对允许量（默认 2，允许加少量
+    带电残基达成电荷 target），floor 方向无 native 可护 → 不罚（防 N=0 死锁）。
+    返回: 标量（四个 relu 的均值）。
     """
     probs = _probs(logits)                             # [B, L, 20]
     pmask = torch.as_tensor(pocket_mask, dtype=logits.dtype, device=logits.device).float()  # [L]
-    n_neg = float(native_pocket_counts[0]) + 1e-6
-    n_pos = float(native_pocket_counts[1]) + 1e-6
+    n_neg = float(native_pocket_counts[0])
+    n_pos = float(native_pocket_counts[1])
     gen_neg = ((probs[..., D_IDX] + probs[..., E_IDX]) * pmask).sum(-1)   # [B]
     gen_pos = ((probs[..., K_IDX] + probs[..., R_IDX]) * pmask).sum(-1)
-    loss = (torch.relu(n_neg * floor - gen_neg) + torch.relu(gen_neg - n_neg * ceil) +
-            torch.relu(n_pos * floor - gen_pos) + torch.relu(gen_pos - n_pos * ceil)).mean()
+
+    def _one_direction(n, gen):
+        if n > 0.5:
+            if normalize:
+                floor_loss = torch.relu(floor - gen / n)
+                ceil_loss = torch.relu(gen / n - ceil)
+            else:
+                floor_loss = torch.relu(n * floor - gen)
+                ceil_loss = torch.relu(gen - n * ceil)
+        else:
+            floor_loss = torch.zeros_like(gen)
+            if normalize:
+                ceil_loss = torch.relu(gen - min_abs_cap) / min_abs_cap
+            else:
+                ceil_loss = torch.relu(gen - min_abs_cap)
+        return floor_loss + ceil_loss
+
+    loss = (_one_direction(n_neg, gen_neg) + _one_direction(n_pos, gen_pos)).mean()
     return loss

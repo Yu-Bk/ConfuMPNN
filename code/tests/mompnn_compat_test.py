@@ -56,7 +56,7 @@ for f in FILES:
         res_a = f"FAIL: missing={len(list(miss))} unexpected={len(list(unexp))} | {str(e)[:50]}"
 
     # ---- B) ligand_mpnn 模式：strict=False 统计差异 ----
-    m2 = build("ligand_mpnn", atom_context_num=16)
+    m2 = build("ligand_mpnn", atom_context_num=25)
     miss, unexp = m2.load_state_dict(sd, strict=False)
     miss, unexp = list(miss), list(unexp)
 

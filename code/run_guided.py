@@ -176,7 +176,7 @@ def load_model(weights, device, model_type="auto"):
             else "protein_mpnn"
         )
     atom_context_num = (
-        0 if model_type == "protein_mpnn" else int(checkpoint.get("atom_context_num", 16))
+        0 if model_type == "protein_mpnn" else int(checkpoint.get("atom_context_num", 25))
     )
     model = ProteinMPNN(
         node_features=128,
@@ -284,7 +284,7 @@ def main():
     feature_dict = featurize(
         protein_dict, cutoff_for_score=8.0,
         use_atom_context=use_atom_context,
-        number_of_ligand_atoms=(16 if use_atom_context else 0),
+        number_of_ligand_atoms=(25 if use_atom_context else 0),
         model_type=mt,
     )
     L = feature_dict["X"].shape[1]

@@ -62,7 +62,7 @@ def main():
         protein_dict,
         cutoff_for_score=8.0,
         use_atom_context=True,
-        number_of_ligand_atoms=16,
+        number_of_ligand_atoms=25,
         model_type="ligand_mpnn",
     )
     L = feature_dict["X"].shape[1]

@@ -1,6 +1,6 @@
 # PROJECT_LOCAL_V12_2 — v12.2 深化训练 + 完整验证计划（2026-08-30）
 
-> **状态**：**v12.2 完整验证链已完成并收尾（2026-08-31）**——训练→诊断（slope 1.00 达标）→组成→hold-out（40.6%）→泛化 per-protein（72%）→小样本现场标定（74%）→无泄露（44%）→Tm/Sol（S2 0/50 恶化）→无过拟合。**v9 迁移待定（用户暂缓，2026-08-31）**。详见 `analysis/report/2026-08-31_v12_2_{training,diag,tm_sol,summary}.md`。
+> **状态**：**v12.2 蛋白模式 = 当前最优交付物（2026-09-02 决策 D，用户定）**——完整验证链达标：训练→诊断（slope 1.00）→组成健康→hold-out（40.6%）→泛化 per-protein（72%）→小样本现场标定（74%）→无泄露（44%）→Tm/Sol（S2 0/50）→无过拟合。**v9/v12.2 配体迁移已停止（决策 D）**：配体模式（v12.2 配体/v13）删减捷径**未根治**（v13 A1+A2 pocket 保护后 surface 仍删 8/10 0.55-0.69×、Tm/Sol 恶化 17/50），如实报告为已知局限 + `define_pocket.py` fix 缓解，**不再重训**。v13 终判见 §7.8 + `analysis/report/2026-09-02_v13_ligand_validation.md`。
 > **关联**：v3 方案 `index/PROJECT_LOCAL.md`；v12/v12.1 训练 `session/2026-08-29_v11_ablation.md` §9-§13；闭环+泛化报告 `analysis/report/2026-08-30_v12_1_validation.md`。
 
 ---
@@ -225,3 +225,68 @@ dry-run 过（50 域 1ep 无 NaN）→ **v13 配体重训已启动**（GPU6，`o
     加 `--structure_filter_strength`（0=关）。⚠️ strength 需实测平衡——过强会拉偏净电荷
     命中（H2）、降多样性、可能动 Tm/Sol；副作用超限则放弃补丁方案。
   - 训练侧 C 组件（`--ph_aware_filter`）始终保留（软惩罚）；bias 补丁只作第二道防线，非必须。
+
+### 7.8 v13 复验终判 + 决策 D：停止配体迁移（2026-09-02 用户决策）
+
+**v13（A1+A2 口袋保护）复验结果**（报告 `analysis/report/2026-09-02_v13_ligand_validation.md`）：
+- 校准后 slope **1.00±0.04** ✅（配体模式 per-protein 校准机制可靠，未校准 1.30→校准后线性化）
+- H1 单链 7/7 蛋白 35/35 臂全过 ✅（A1+A2 监督未伤折叠）
+- H2 **70%**（35/50，差 1 臂判据 72%）⚠️——1AS2/1BJ4 小电荷区系统性负偏
+- **组成 8/10 仍删减 0.55-0.69×** ❌——A1 `pocket_count_loss` 只护 pocket（Cα-配体<8Å），**非口袋 surface 仍删**（`frac_floor 0.5` 允许删一半）
+- H3 45/50 ⚠️（1A65 4 臂聚集）；H4 1C6O_n8 PASS
+- **Tm/Sol S2 17/50 恶化** ❌（v12.2 配体 9/50；uncond 基线两版一致±2 非假象）——pocket 保护促使删减集中在 surface → 表面极性破坏：1AS2 全臂新增 TmΔu−6~−7、5CQH 4 臂、1A65 过度添加 sol 全臂−10~−18
+
+**假异常澄清（均非 v13/模型问题）**：
+- **1C6O/1AXW/1AG0 = 同源二聚体**（89×2/265×2/128×2），native 序列=两单体串联，ESMFold 单链折叠无法重现二聚体 → native 回折 TM 恒定 0.5046（**v9/v10_mompnn/v12_1 全一致**）→ **H1 双链 3 蛋白应排除**（数据缺陷，从 v9 潜伏），非折叠失败
+- `write_ref_skeleton` resSeq 重复（原 PDB 双份 resSeq）→ 已改连续 1..L（消除真实重复，对 TM 无额外影响）
+- ⑨ Tm 符号链接相对路径 bug → 改绝对路径重跑 50/50；汇总脚本格式化 bug 已修
+
+**决策 D → 停止 v9/v12.2 配体迁移**：
+- **v12.2 蛋白模式 = 当前最优交付物**（诊断 slope 1.00 / H2 72% / Tm/Sol S2 0/50 / 校准三口径成熟）
+- 配体模式（v12.2 配体 / v13）**删减捷径未根治 = 已知局限**，论文如实报告；缓解 = `define_pocket.py` fix（100% 保住深部带电、口袋删减大幅缓解）+ 表外蛋白小样本现场标定
+- **不再重训配体**（A/B/C 扩展选项放弃）；A1+A2 代码保留可复用，若未来重启配体线参考 §7 设计（注意须扩展 A1 到全 surface + frac_floor 配合）
+- 配体模式保守使用边界：正电到 +8、负电保守到 −5、长序列需检查（沿用 v9 边界）
+
+---
+
+## 8. v12.3 蛋白模式扩长蛋白重训（2026-09-02 执行中，GPU6）
+
+> **背景**：v12.2 蛋白模式最优但长蛋白训练量不足（6710 域 L>400 仅 132 = 2%；验证 1BJ4/470、1A65/504 长度 OOD，H2 失败）。v12.3 = 补 S40 长域重训，**不改 v12.2 超参（单一变量=加长数据）**。
+
+- **可行性**：S40 34653 域实测 L>400 617 / L>450 311 / L>500 154 / max 1202；全部单链（多链=0）；非标残基域 37（长候选命中 4，剔除）。池充足。
+- **采样**：保留原 6710 + 追加 S40 中 L≥400 且未入 v12.2 train/holdout 的 455 域 → **7165 域**，L>400 2%→**8.1%**（S40 未用长池硬上限 ~9.5%，略低于建议 10% 在论证范围）；CATH class 1/2/3 比例基本保持（26.0/20.4/49.9）。
+- **产物**：`data/cath/labels_v12_3_train.npz`（7165×8pH）；脚本 `code/tests/build_v12_3_augment.py`；dry-run 50 长域 1-epoch 0 NaN；新增 455 域 parse 预检全过（skip=0 无段错位风险）。
+- **训练**：PID 1400836，GPU6，30ep，命令超参 = v12.2（`--decouple_perturb --decouple_range 12.0 --v12_supervision --frac_floor 0.5 --gravy_margin 0.4 --lambda_v12 0.2 --lambda_target 0.2 --sasa_threshold 0.25 --ph_aware_filter --structure_boost 1.5`），`output/finetune_v12_3/`，日志 `log/v12_3_train_mompnn.{log,stdout}`。v12.2 权重已备份 `/tmp/v12_2_backup/`。
+- **验证集重构**：`data/validation_pdbs/validation_manifest_v12_3.json`（删 1C6O/1AXW/1AG0 二聚体；保 7 单体；新增 13BB/1CDG 长蛋白 560/686）。
+- **完整执行记录**：`session/2026-09-02_v12_3_long_retrain.md`。训练监控/验证链跑法见该记录"后续"。
+
+## 9. v14 配体重启：RNA/DNA 数据扩充 + A1 全局化（2026-09-02 executor）
+
+> **背景**：决策 D 曾停配体迁移，用户重启配体线。方向 = 补 RNA/DNA 结合蛋白数据 + 让 A1 起作用/全局化 + 重训。
+> 完整记录：`session/2026-09-02_v14_rna_data_a1_global.md` + `analysis/report/2026-09-02_v14_rna_data_a1_global.md`。
+
+### 9.1 number_of_ligand_atoms 16→25（全脚本修正）
+权重 `ligandmpnn_v_32_010_25.pt` atom_context_num=25（原版 LigandMPNN 预训练即 25）；项目代码写 16
+与权重不匹配（可能是配体 context 不足隐藏因素）。已改 train_finetune/run_guided/validate_generalization/
+transfer_validation/smoke_guided/sample_unconditioned_ligand/raw_ligandmpnn_pocket/ligand_pocket_validation/
+mompnn_compat_test。protein 模式 0 不动。
+
+### 9.2 数据扩充（RNA/DNA 结合蛋白，191 唯一域）
+- **核糖体主源**：4V4T(46)/9RVC(44)/4YBB(95，2拷贝) 70S 拆链，每条核糖体蛋白单独 PDB + 15Å rRNA。
+- **补充**：核小体/CRISPR/核酸酶/tRNA 修饰/SRP/retron 等 16 复合物。
+- 拆链 `split_nucleic_complex.py`（蛋白链 A + 15Å 非蛋白配体 Z，QC parse_PDB）；序列精确去重（跨结构核糖体、组蛋白）。
+- 产物：`labels_rna_v14.npz`（191×8）→ 合并 → `labels_v14_merged.npz`（**5148 域 × 8 = 41184**）；all_pdb +191 symlink。
+
+### 9.3 A1 全局化（--pocket_mode global）
+- 计数锚从 pocket 扩到 **charge_surf_mask=surface∪pocket**（绕开 frac_sasa 盲区，直接锚带电残基总数）。
+- `pocket_count_loss` 加 `normalize`（分数化）+ `min_abs_cap`（N=0 死锁保护）。
+- **超参：floor 0.8 / ceil 1.3 / λ_pocket 0.3 / cutoff 8**；keep 模式保留 v13 语义。
+- dry-run 50 域（20旧+30RNA）0 NaN、0 分区失败。
+
+### 9.4 训练（进行中）
+- `output/finetune_ligand_v14_rna/`，GPU4，**epochs 50**（v13 30ep 未收敛 + RNA 新类型 + 25 原子首次）。
+- 超参 = v13 基础 + global；日志 `log/v14_ligand_train.log`。
+
+### 9.5 验证集（v14 配体模式）
+`validation_manifest_v14_ligand.json`：保留单体 1AZM/1AS2/2FEO/5CQH/1CGE/1A65/1BJ4；删二聚体
+1C6O/1AXW/1AG0；新增 held-out 核酸结合 21KL_A/3MXB_A/4GDF_A/5ZR1_B/8DR1_A/9DWG_L（无泄漏）。

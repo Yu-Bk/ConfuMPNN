@@ -63,7 +63,7 @@ def main():
                     help="无条件模式（不注入条件）：作 backbone 基线电荷偏好对照")
     ap.add_argument("--out_dir", required=True)
     ap.add_argument("--device", default="cuda:3")
-    ap.add_argument("--num_ligand_atoms", type=int, default=16)
+    ap.add_argument("--num_ligand_atoms", type=int, default=25)
     args = ap.parse_args()
 
     device = torch.device(args.device)

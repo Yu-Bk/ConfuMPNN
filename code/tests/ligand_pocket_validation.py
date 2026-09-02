@@ -107,7 +107,7 @@ def main():
     protein_dict["chain_mask"] = torch.ones(
         protein_dict["X"].shape[0], dtype=torch.int32)
     fd = featurize(protein_dict, cutoff_for_score=8.0, use_atom_context=True,
-                   number_of_ligand_atoms=16, model_type="ligand_mpnn")
+                   number_of_ligand_atoms=25, model_type="ligand_mpnn")
     L = fd["X"].shape[1]
     fd["batch_size"] = 1
     fd["temperature"] = 0.3

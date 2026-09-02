@@ -71,7 +71,7 @@ def main():
         native = seq_to_string(protein_dict["S"].reshape(-1).cpu().numpy())
         protein_dict["chain_mask"] = torch.ones(L, dtype=torch.int32)
         fd = featurize(protein_dict, cutoff_for_score=8.0, model_type="ligand_mpnn",
-                       use_atom_context=True, number_of_ligand_atoms=16)
+                       use_atom_context=True, number_of_ligand_atoms=25)
         fd["batch_size"] = 1
         fd["temperature"] = args.temperature
         fd["bias"] = torch.zeros(1, L, 21)

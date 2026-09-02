@@ -7,7 +7,7 @@
 - 无条件基线：net_charge=训练均值 1.4243（make_condition_vector has_charge=1+均值；
   ⚠️ 不能用 net_charge=None——分布外输入导致 poly-G 退化，2026-08-31 实证）
 - 配体上下文：与 validate_generalization.py --mode ligand 同配置
-  （model_type="ligand_mpnn", use_atom_context=True, number_of_ligand_atoms=16）
+  （model_type="ligand_mpnn", use_atom_context=True, number_of_ligand_atoms=25）
 - 与配体泛化验证同 checkpoint/weights/backbone/temperature/seed_base
 
 输出：output/tm_sol_ligand_v12_2/uncond/<PDB>/seqs.fa（n 条，>seed_XXXX 头）
@@ -74,7 +74,7 @@ def main():
         # 配体模式：与 validate_generalization --mode ligand 同配置
         fd = featurize(protein_dict, cutoff_for_score=8.0,
                        model_type="ligand_mpnn", use_atom_context=True,
-                       number_of_ligand_atoms=16)
+                       number_of_ligand_atoms=25)
         fd["batch_size"] = 1
         fd["temperature"] = args.temperature
         fd["bias"] = torch.zeros(1, L, 21)
