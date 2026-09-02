@@ -87,3 +87,33 @@ PYTHONPATH=code nohup setsid ~/miniconda3/envs/confumpnn/bin/python code/train_f
    - 泛化验证：`run_v12_1_validation.sh` 换 `--manifest validation_manifest_v12_3.json` + v12.3 checkpoint（9 蛋白 × 5 臂 × n30）。
    - H1 折叠（ESMFold TM，长蛋白尤其看 1A65/1BJ4/13BB/1CDG）、H2 电荷、H4 PROPKA、Tm/Sol。
 3. **对比口径**：v12.3 vs v12.2 长蛋白（1A65/1BJ4）H2 是否改进 = 本轮核心结论。
+
+---
+
+## 训练修正记录（重要，2026-09-02 第二次启动）
+
+### 第一次启动失败：labels 含 585 个不可解析域 → 标签段错位
+- **现象**：首次启动（PID 1400836，30ep）预解析中途 `跳过坏域 8ooyA03/8ow4B01/9antA00...`。
+- **根因**：v12.2 的 labels_v12_2_train.npz（= labels_balanced_v7 85%）**尾部含 585 个外部碱性域**
+  （ext_basic，非 S40，PDB 不在 `S40/dompdb` → prody parse 失败）。v12.2 训练实际跳过这 585 个
+  坏域、只训 6125 个 S40 域——**空洞在数据末尾所以 v12.2 无错位**（log 证实：`共跳过 585 个坏域，实际训练 6125 域`）。
+- **v12.3 为何致命**：把 455 个新增长域 append 在含 585 空洞的 base 之后 → 空洞使**全部 455 新增域
+  pH/charge 标签整体错位**（train_finetune 按"成功域计数"取标签段，skip 后续全错位）。
+- **修复**：从 `labels_v12_3_train.npz` 剔除全部 585 个不可解析域（v12.2 log skip 名单）
+  + 新增 455 不动 → **6580 域**（6125 干净 base S40 + 455 长域）。全量预检 `ok=6580/fail=0`。
+  - L>400 = 581（**8.8%**）、L>450 = 287、L>500 = 144、max 1202；class 1/2/3 = 25.7/20.2/50.6%。
+- **教训固化**：labels 只应含可 parse 域（train_finetune 的 pH/charge 段索引按成功域计数，**任何 skip 都会让其后所有域标签错位**）；v12.2 实际训练集 = 6125 域而非 6710（585 ext 从未被训）。
+
+### epoch 决策（coordinator/用户 2026-09-02）
+- 用户定 **40-50 epoch**；执行取 **40**。
+- 理由：① 数据 6580 域/epoch（vs v12.2 实际 6125），长蛋白新类型 455 域占 6.9%（新分布补入，
+  ConditionEncoder 需更多轮适应长蛋白响应）；② 40ep×~19min≈13h 在预算内；③ 记录 epoch30/40 收敛
+  对比——若 30→40 仍明显下降说明新数据需更多轮，plateau 则与 v12.2(30ep 已收敛，log 末 3 ep
+  total 4.211→4.199→4.198) 对照公平（均收敛态）。
+
+### 第二次启动（当前，PID 1526600）
+- 命令同 §D 但 `--epochs 40`；labels = 干净 6580 版。
+- 确认：进程存活、预解析完成（缓存 ~29.3GB，无 skip）、**epoch 1/40 完成无 NaN**：
+  total=4.9237 ce=1.8516 charge=3.6367 kl=0.1055 keep=0.8058（cd self/mild/extreme=3.44/3.61/4.43）。
+- **速度**：epoch1 elapsed 19.4min（GPU6 被他人进程占 util 99% 拖慢 ~1.8×；v12.2 无竞争时 ~10.9min）。
+  40ep 预计 ~13h + 预解析 15min ≈ 13.3h。若后续 GPU6 竞争缓解会更快。
