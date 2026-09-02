@@ -111,3 +111,11 @@ v13 A1 只护 pocket（Cα-配体<8Å），非 pocket surface 仍删（frac_floo
   21KL_A(RNA/DNA)/3MXB_A(DNA meganuclease)/4GDF_A(DNA,497)/5ZR1_B(DNA,374)/
   8DR1_A(DNA junction,493)/9DWG_L(DNA Polβ,323)
 - 验证链待训练完成后跑：组成 → slope → 泛化(H2/H1/H4) → H3 → Tm/Sol
+
+## 七、训练启动确认（2026-09-02 16:33 更新）
+- 预解析完成：**5147 域**（1 坏域跳过，prody 无法解析），缓存 encode ~23.69GB
+- **epoch 1/50 完成：0 NaN**，total=6.27 ce=1.42 charge=6.02 kl=0.09 keep=0.66
+  （v13 末 3ep charge 3.6-3.67 缓降 → 本轮 50ep 目标收敛）
+- 节奏：~16 min/epoch → 50ep ≈ 13-14h；GPU4 显存 ~30GB
+- RNA 域（4V4T/9RVC/4YBB 等）预解析分区全部正常（如 9RVC_x pocket=26/65 core=9 surface=42）
+- 全程警告 4 条（旧小分子域含 UNK 触发 freesasa 失败 → 跳过 v12 监督，v13 同行为，不致命）
