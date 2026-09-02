@@ -227,3 +227,8 @@ v13 A1 只护 pocket（Cα-配体<8Å），非 pocket surface 仍删（frac_floo
 - **训练重启（第 3 次）**：GPU4 cuda:4，PID **1959542**，`output/finetune_ligand_v14_rna/`，
   50 epochs，`labels_v14_final.npz`（5371 域），日志 `log/v14_ligand_train.log`（append）
   超参同前（global floor0.8/ceil1.3/λ0.3 + v12 全套 + 25 配体原子）。预解析 5371 域预计 ~45min，首 epoch ~16-18min
+
+### 9.6 首 epoch 确认（2026-09-02 19:21）
+- 预解析完成：**5370 域**（1 坏域跳过，prody 无法解析），缓存 ~24.7GB
+- **epoch 1/50：0 NaN**，total=6.22 ce=1.45 charge=5.88 kl=0.11 keep=0.70；~16.9 min/ep → 50ep ≈ 14h
+- GPU4 显存 ~25GB；进程 PID 1959542
