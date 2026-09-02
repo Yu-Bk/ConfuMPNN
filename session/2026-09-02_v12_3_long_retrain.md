@@ -117,3 +117,32 @@ PYTHONPATH=code nohup setsid ~/miniconda3/envs/confumpnn/bin/python code/train_f
   total=4.9237 ce=1.8516 charge=3.6367 kl=0.1055 keep=0.8058（cd self/mild/extreme=3.44/3.61/4.43）。
 - **速度**：epoch1 elapsed 19.4min（GPU6 被他人进程占 util 99% 拖慢 ~1.8×；v12.2 无竞争时 ~10.9min）。
   40ep 预计 ~13h + 预解析 15min ≈ 13.3h。若后续 GPU6 竞争缓解会更快。
+
+---
+
+## 验证链执行记录（2026-09-03 续）
+
+### ① 诊断完成 + ② 校准表
+- 16 蛋白诊断（7 trainish + 9 valid）→ `output/v12_3_diag_response.json`。
+- **未校准 valid slope 均值 1.496±0.40（v12.2: 1.562）**——共同 7 单体全降（1BJ4 2.49→2.05、1AS2 2.09→1.83、2FEO 1.48→1.18…），补长蛋白+40ep 改善响应增益。
+- 校准表 `output/charge_calibration_v12_3.json`：global slope 1.471 / intercept −5.935（192 点）+ per_protein 16。报告 `analysis/report/2026-09-02_v12_3_diag.md`。
+
+### ③ 泛化 V1（per-protein 校准）H2 = 49%（22/45）⚠️ 低于 v12.2 72%
+- **1BJ4（长蛋白 470）v12.2[0/5] → v12.3[5/5] 治愈**（校准后 dev ≤1.5）——长蛋白治疗核心证据。
+- **1A65 v12.2[5/5] → v12.3[1/5] 恶化**（native dev +5.4 欠冲偏正）；2FEO 0/5（同 v12.2）；新增 13BB 0/5、1CDG 0/5。
+- 1AS2/1BJ4/1CGE 全过；1AZM 3/5、5CQH 4/5 轻微退化。
+- **根因（诊断）**：长蛋白（1A65/2FEO/13BB/1CDG/1BJ4）未校准响应为 **S 形弯曲**（-34~-25 过冲负、-15~-5 陡、0 附近平），
+  全靶线性拟合 slope 被极端区拉高 → per-protein 校准把温和 target 反推到响应低斜率区 → 欠冲偏正。
+  v12.2 的 1A65 命中是因 intercept 不同恰好反推到陡区（碰巧）；v12.3 intercept −9.6 → native −27 反推内部 −12.2（平区）→ 欠冲。
+- **判定**：v12.3 模型长蛋白未校准响应确实改善（1BJ4 slope 2.49→2.05 且校准后全过）；H2 偏低主要是**线性校准表对 S 弯曲响应的固有局限**（非模型退化）。
+- 进行中：global 校准口径重采样（`output/generalization_v12_3_global`，GPU3）对比，判断最优校准口径。
+
+### 响应弯曲根因分析 + H2 三档（2026-09-03）
+- **curvature 分析**（`output/v12_3_response_curvature_analysis.json` + `analysis/report/2026-09-02_v12_3_curvature_analysis.md`）：
+  **v12.3 全部 14 蛋白响应更 S 弯曲**（bend 全面升 Δ+0.4~1.0、RMSE 除 1BJ4 外全升、intercept 更负）。
+  唯一例外 1BJ4（RMSE 3.00→2.86 更线性、intercept +5.2→−2.7 居中）→ 解释其校准命中 0/5→5/5。
+  机理：455 长蛋白（负电富集）+ 40ep → ConditionEncoder 极端区响应增强、中区偏弱 → 非线性更强 → 线性校准失效。
+- **H2 三档**：per-protein 22/45=49%；global 18/45=40%；去掉最弯 3 valid（1AS2/1A65/2FEO）per 16/30=53%、global 9/30=30%。
+  → H2 偏低是普遍性（非少数蛋白），v12.3 多数蛋白更弯。
+- **决策记录（coordinator 2026-09-03）**：A 方向批准——H1/ESMFold+V3-V5+H3+Tm/Sol 全部跑完；电荷 H2 如实记录
+  禁止二次/分段校准救 H2；最终交付判断由 coordinator 转用户（候选：交付 v12.3/回退 v12.2/深入诊断/混合）。
