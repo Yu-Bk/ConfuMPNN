@@ -119,3 +119,65 @@ v13 A1 只护 pocket（Cα-配体<8Å），非 pocket surface 仍删（frac_floo
 - 节奏：~16 min/epoch → 50ep ≈ 13-14h；GPU4 显存 ~30GB
 - RNA 域（4V4T/9RVC/4YBB 等）预解析分区全部正常（如 9RVC_x pocket=26/65 core=9 surface=42）
 - 全程警告 4 条（旧小分子域含 UNK 触发 freesasa 失败 → 跳过 v12 监督，v13 同行为，不致命）
+
+## 八、验证集修订 + 一致性分析 + 数据充分性（2026-09-02 下午，用户新策略）
+
+> v14 训练（epoch1/2）被主 session 暂停作废。按用户策略重构数据 + 验证集后重启。
+
+### 8.1 数据充分性评估（Q3，实测）
+候选池（RCSB 蛋白+核酸复合物，779 下载/570 可用复合物）1468 条可用单链：
+- **DNA 1057 / RNA 364 / hybrid 47**
+- 去重 + 排除当前训练序列后：**可用未见链 939** = RNA 232 / DNA 676 / hybrid 31
+  L 覆盖 80-500，>300：RNA 93 / DNA 173 / hybrid 13；median ~201
+- 结论：**数量充足，无需外部数据库**。训练补充直接从内部池取（免下载）。
+
+### 8.2 训练集变更（Q3 执行）
+在旧 4957 + RNA/DNA 209 基础上（见 §8.5 规模），新补充 = 209 中净增 18（相对 §2.3 的 191）：
+- 转训练 DNA(3)：**4GDF_A(L497)/8DR1_A(L493)/5ZR1_B(L374)**——3 个最长、大复合物 DNA 结合
+- DNA 补充（同复合物其他亚基，免新拆）：8DR1_B/C/D/E/F/G/H（RFC/PCNA 亚基）+ 5ZR1_A/D/E/F（ORC 亚基）→ 共 14 条不同 DNA 结合蛋白
+- RNA 补充（非核糖体，新拆）：1G59_A（glutamyl-tRNA synthetase，L468）、5W5H_A/C（NSun6/tRNA，L451/446）、8VIV_A（FBF-2 Pumilio，L401）
+- 拆链脚本同 `split_nucleic_complex.py`，QC 全过
+
+### 8.3 验证集重构（Q1+Q3，最终 11 蛋白）
+`data/validation_pdbs/validation_manifest_v14_final.json`
+- **删**：1C6O/1AXW/1AG0（同源二聚体）；1AZM（泄漏：序列=训练 `1HCB.pdb` 完全一致）
+- **替换 1AZM → 6D2O**：beta 碳酸酐酶 + 4-methylimidazole（有机小分子），L209，表外（RCSB 现下），
+  序列核对不在 labels_v14_final（Q1 确认；人类 CAII 成熟序列 1AM6/1BNN 等全泄漏，故选异源 beta-CA）
+- **核酸 4**：RNA = 21KL_A(hybrid,L237) + 2E9R_X(FMDV RdRp 纯 RNA,L476)；DNA = 3MXB_A(meganuclease,L153) + 9DWG_L(Polβ,L323)
+- **非核酸 7**：6D2O/1AS2/2FEO/5CQH/1CGE/1A65/1BJ4
+- **11 个验证蛋白序列全部 leak=False**（对 labels_v14_final 重跑核对，§8.6 表格）
+
+### 8.4 训练/验证种类与长度一致性（Q2）
+训练集 labels_v14_final（5166 域 = 旧 4957 + RNA/DNA 209）：
+- 类别（按 all_pdb symlink 源）：small_mol 4145 / metal 564 / 旧 rna(核苷酸辅因子) 242 / 旧 dna 6 / rna_pdbs(真核酸链) 209
+- 长度：旧 L 20-500 median 297；RNA/DNA 209 域 L 50-497 median 122，>300 有 26
+- RNA/DNA 真核酸链域占比 **4.0%**
+验证集 11 蛋白：small_mol 1 / nucleotide 3 / metal 1 / long 2 / RNA 2 / DNA 2；L 153-504 median 237；核酸占 **36%**
+
+**判断**：验证集对 RNA/DNA 的 36% 远高于训练集 4%，是**有意的"新能力过采样"**——合理：
+1) 目的就是检验新增 RNA/DNA 结合能力是否真正学会，若按训练比例（~0.5 个核酸蛋白≈0）则完全测不到；
+2) 但 4.0% 训练占比意味着 RNA/DNA 能力仍是小样本（尤其 DNA 域 ~25，远小于 ribosome RNA ~150），
+   验证可能暴露 DNA 欠拟合——这正是本轮要测的，失败即为"数据不足"信号（可用 §8.1 的 939 未见链补训）。
+3) 所以这个验证集应解读为"能力 check"，不是总体命中率估计；RNA/DNA 判据单独看。
+
+### 8.5 重建标签（label 段错位 bug 教训）
+- 不 append：在 `rna_pdbs/`（279 split 文件，含原 260 + 新 19）上**整体重跑** `build_rna_v14_labels.py`
+  → `labels_rna_v14_sup.npz`（209 唯一域 ×8 = 1672 样本，去重+排旧集自动完成）
+- 合并旧 `labels.npz`(4957) → **`labels_v14_final.npz`（5166 域 ×8 = 41328 样本）**
+- sanity：pH/charge 长度 = 8×域数 ✓；collision=0 ✓；all_pdb +18 symlink（现 5181）
+
+### 8.6 最终验证蛋白泄漏核对（对 labels_v14_final）
+| 蛋白 | L | leak | | 蛋白 | L | leak |
+|---|---|---|---|---|---|---|
+| 6D2O | 209 | False | | 1A65 | 504 | False |
+| 1AS2 | 312 | False | | 1BJ4 | 470 | False |
+| 2FEO | 221 | False | | 21KL_A | 237 | False |
+| 5CQH | 183 | False | | 2E9R_X | 476 | False |
+| 1CGE | 162 | False | | 3MXB_A | 153 | False |
+| | | | | 9DWG_L | 323 | False |
+
+### 8.7 dry-run + 重启训练
+- dry-run（`labels_smoke_v14_final.npz` 50 域=25旧+25RNA/DNA，global）：**0 NaN、0 分区失败**，checkpoint 生成
+- **训练重启**：GPU4 cuda:4，`output/finetune_ligand_v14_rna/`（原 epoch1/2 已清），50 epochs，
+  超参同前（pocket_mode global floor0.8/ceil1.3/λ0.3 + v12 全套），`labels_v14_final.npz`（5166域），
+  日志 `log/v14_ligand_train.log`（append，含两次启动标记）

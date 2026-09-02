@@ -1,3 +1,5 @@
+> ⚠️ **更新（2026-09-02 下午）**：首次 v14 训练（labels_v14_merged, 5148 域）epoch1/2 已作废。用户重构数据/验证集后重启：训练集 **labels_v14_final.npz（5166 域）**，验证集 11 蛋白（validation_manifest_v14_final.json），详见 `session/2026-09-02_v14_rna_data_a1_global.md` §8。
+
 # v14 配体重启：RNA/DNA 数据扩充 + A1 全局化报告（2026-09-02）
 
 > **执行**：配体线 executor（session/2026-09-02_v14_rna_data_a1_global.md）
