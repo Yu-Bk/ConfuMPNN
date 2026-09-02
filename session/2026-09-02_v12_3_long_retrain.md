@@ -146,3 +146,11 @@ PYTHONPATH=code nohup setsid ~/miniconda3/envs/confumpnn/bin/python code/train_f
   → H2 偏低是普遍性（非少数蛋白），v12.3 多数蛋白更弯。
 - **决策记录（coordinator 2026-09-03）**：A 方向批准——H1/ESMFold+V3-V5+H3+Tm/Sol 全部跑完；电荷 H2 如实记录
   禁止二次/分段校准救 H2；最终交付判断由 coordinator 转用户（候选：交付 v12.3/回退 v12.2/深入诊断/混合）。
+
+### ④ H3 + ⑤ Tm/Sol 执行（2026-09-03 续）
+- **H3 电荷聚集合法性：45/45 PASS（100%）**——v12.3 条件化无非法电荷布局（per-protein 口径生成序列）。
+  脚本 `code/tests/h3_charge_legality_v12_3.py`（PDBS 改 v12.3 9 单体），产物 `output/h3_protein_v12_3.json`。
+- **Tm（TemBERTure）**：gen 54 arm（45 gen arm + 9 native_ref）+ uncond 9，后台跑（input 用 --dirs-file 真实目录，
+  glob 不 follow symlink 的坑已避开）。预计 ~1h。
+- **Sol（Protein-Sol）**：63 文件全完成（45 gen arm + 9 native_ref + 9 uncond）。
+- **H1/ESMFold（③ V2）**：GPU6 跑 7/45，长蛋白每 arm ~10-20min，预计总 6-8h → V3-TM/V4-stats/V5-PROPKA 自动。
