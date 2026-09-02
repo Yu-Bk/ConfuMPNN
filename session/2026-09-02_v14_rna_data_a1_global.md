@@ -181,3 +181,49 @@ v13 A1 只护 pocket（Cα-配体<8Å），非 pocket surface 仍删（frac_floo
 - **训练重启**：GPU4 cuda:4，`output/finetune_ligand_v14_rna/`（原 epoch1/2 已清），50 epochs，
   超参同前（pocket_mode global floor0.8/ceil1.3/λ0.3 + v12 全套），`labels_v14_final.npz`（5166域），
   日志 `log/v14_ligand_train.log`（append，含两次启动标记）
+
+## 九、核酸数据大规模扩充 + v14 二次重启（2026-09-02 用户决策）
+
+> v14 训练（第 2 次，epoch≈0）被暂停。用户：既然候选池储备充足（939 未见链），应趁损失≈0
+> 补齐 RNA/DNA 短板（DNA 35→≥100；非核糖体 RNA 补足）再训，避免 13h 后欠拟合再重训。
+
+### 9.1 扩充选择（实测，来自 923 未见唯一链）
+自动化精选（按类型/分辨率≤3.5/家族多样性，排除核小体组蛋白冗余、核糖体、验证同源家族 meganuclease&Polβ/X-family 标题）
+- **DNA 120 候选链**（155 复合物→拆出后按序列去重），功能覆盖：EcoRV/BamHI/PvuII/McrBC 限制酶、
+  Cre 重组酶、IS608/ISDra2/Mos1 转座酶、MutH/AlkB/TDG/MutY/AGOG/AlkD 等 DNA 修复酶、
+  聚合酶 eta/iota/Rev1(Y 家族)、Pif1/NS3 解旋酶、M.TaqI/DRM2/CpG 甲基转移酶、p53/CTCF/Smad4
+  转录因子、UP1/端粒、Argonaute/Piwi、FEN1/Artemis/ExoI 核酸酶 等
+- **RNA 85 候选链**（非核糖体），功能覆盖：RNase III/RNase E/RNase T/NSP15(CoV2) 核糖核酸酶、
+  tRNA 合成酶(1B23)/tRNA 修饰酶(NSun6/SepSecS/RlmJ/PUS1)/CCA-adding、Dengue/ZIKV NS3 解旋酶、
+  MS2/TMV/SM 衣壳蛋白、Pumilio/FBF-2/Dicer/ADAR、CRISPR(Cascade/Cas12k/Csm)、HIV-RT 等
+- 全部经 split_nucleic_complex.py 拆链（单链 A + 15Å 核酸配体 Z）+ QC（150/150 复合物，0 真失败）
+- 序列精确去重 + 与当前训练集精确去重 → **RNA/DNA 唯一域 209 → 414**（净增 205）
+
+### 9.2 最终 RNA/DNA 414 构成（实测）
+- **DNA 155**（含 hybrid 3；L med 255，>300 = 61）
+- **RNA 非核糖体 108**（L med 276，>300 = 50）
+- RNA 核糖体 148（4V4T/9RVC/4YBB）
+- 来源 Top：4YBB 58 / 4V4T 46 / 9RVC 44 / 8DR1 8 / 5AVC 7 / 5VVL 6 / 6IFL 6 / 5ZR1 5 / 9ASH 5 ...
+
+### 9.3 标签重建（不 append，整体重跑）
+- rna_pdbs 现 484 个拆链文件 → 整体重跑 build_rna_v14_labels.py → `labels_rna_v14_sup2.npz`（414 域 ×8）
+- 合并旧 4957 → **`labels_v14_final.npz`（5371 域 ×8 = 42968 样本；RNA/DNA 占比 7.7%）**
+- sanity：pH/charge 长度 = 8×域数 ✓；collision=0 ✓；all_pdb 补 205 symlink（现 5386）
+- 全部 414 新域 parse 预检通过（build 即 parse QC）
+
+### 9.4 验证集 11 蛋白泄漏核对（对 labels_v14_final 5371）
+| 蛋白 | 新训练含验证序列? | | 蛋白 | 新训练含验证序列? |
+|---|---|---|---|---|
+| 6D2O | False | | 1A65 | False |
+| 1AS2 | False | | 1BJ4 | False |
+| 2FEO | False | | 21KL_A | False |
+| 5CQH | False | | 2E9R_X | False |
+| 1CGE | False | | 3MXB_A | False |
+| | | | 9DWG_L | False |
+→ **11 个验证蛋白全部 held-out（无任何新训练域与之同序列）**
+
+### 9.5 dry-run + 训练重启
+- dry-run（`labels_smoke_v14_final2.npz` 25 旧+25 新核酸，global）：**0 NaN、0 分区失败**，checkpoint 生成
+- **训练重启（第 3 次）**：GPU4 cuda:4，PID **1959542**，`output/finetune_ligand_v14_rna/`，
+  50 epochs，`labels_v14_final.npz`（5371 域），日志 `log/v14_ligand_train.log`（append）
+  超参同前（global floor0.8/ceil1.3/λ0.3 + v12 全套 + 25 配体原子）。预解析 5371 域预计 ~45min，首 epoch ~16-18min
