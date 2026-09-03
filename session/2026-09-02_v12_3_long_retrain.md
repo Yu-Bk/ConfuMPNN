@@ -154,3 +154,10 @@ PYTHONPATH=code nohup setsid ~/miniconda3/envs/confumpnn/bin/python code/train_f
   glob 不 follow symlink 的坑已避开）。预计 ~1h。
 - **Sol（Protein-Sol）**：63 文件全完成（45 gen arm + 9 native_ref + 9 uncond）。
 - **H1/ESMFold（③ V2）**：GPU6 跑 7/45，长蛋白每 arm ~10-20min，预计总 6-8h → V3-TM/V4-stats/V5-PROPKA 自动。
+
+### ⑤ Tm/Sol 完成（S2 0/45 无恶化，2026-09-03）
+- Protein-Sol 63/63、TemBERTure 63/63（45 gen arm + 9 native_ref + 9 uncond）全齐。
+- 汇总 `code/tests/v12_3_tm_sol_summarize.py` → `output/tm_sol_v12_3/tm_sol_summary.json`。
+- **S2 判据（vs 无条件基线，ΔTm<-5 或 Δ%sol<-10 算恶化）：0/45**——与 v12.2 (0/50) 一致，电荷条件化未牺牲热稳定/溶解性。
+- 长蛋白：1A65 native Tm 67.2(Δu+6.8)/%sol 49.9(+6.9)；1BJ4 71.2(-0.5)/43.7(-0.5)；13BB 69.7(-2.5)/46.5(+1.7)；1CDG 62.0(-0.3)/37.9(-0.1)——全部无恶化。
+- ⚠️ 踩坑：TemBERTure glob 不 follow symlink → 用 --dirs-file 真实目录；Tm seqs symlink 需绝对路径（相对少一级会断）。
