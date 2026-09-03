@@ -170,3 +170,23 @@ PYTHONPATH=code nohup setsid ~/miniconda3/envs/confumpnn/bin/python code/train_f
 - 小样本局部 slope（vs 全靶 diag slope）：1A65 1.09 vs 1.43（局部 native 区更线性！）、1CGE 0.94、1AZM 0.95；
   1BJ4 2.07、13BB 2.11、1CDG 2.49（长蛋白高 slope 但 LOOCV 稳）。
 - 泛化重采样（小样本表 auto）GPU3 → `output/generalization_v12_3_calib_small/`（9×5×n30，仅电荷 H2，不重跑 ESMFold）。
+
+### coverage in/boundary/out 分组（用户原则 2026-09-03，coverage_check.py）
+- v12.3 覆盖（相对 6580 训练）：in = 1AZM/1AS2/2FEO/5CQH/1CGE（5，达标判据）；boundary = 1BJ4(96)/13BB(44)（长蛋白改进检验）；out = 1A65/1CDG（分布外）。
+- **v12.2 覆盖（相对 6710 训练，实测）**：in = 1C6O/1AG0/1AS2/1AZM/1CGE/2FEO/5CQH；out = 1A65(4)/1AXW(7)/**1BJ4(20)**。
+- **补长蛋白效果坐实：1BJ4 n_close 20(out)→96(boundary)**；13BB/1CDG 为 v12.3 新引入边界/分布外检验。
+- v12.2 两口径基准：small 37/50=74%（1BJ4 5/5、2FEO 5/5 被小样本救活，1A65 0/5 标定救不了）；global 22/50=44%。
+
+### v12.3 小样本标定 H2 = 73% + H1 折叠 45/45（2026-09-03 关键结果）
+- **小样本现场标定（9 蛋白 n_per=10）→ H2 33/45 = 73%**（v12.2 同口径 74%）——**标定能救 v12.3，两版基本持平**。
+  按 coverage：in 20/25=80%（1AZM 4/1AS2 4/2FEO 3/5CQH 4/1CGE 5）、boundary 6/10=60%（1BJ4 5/5、13BB 1/5）、out 7/10=70%（1A65 3/5、1CDG 4/5）。
+  **1A65 small 3/5（v12.2 small 0/5 改进）**；1BJ4 5/5（同 v12.2）；13BB 1/5 边界失败。
+- **H1 ESMFold 折叠 45/45 TM≥0.7（100%）**（9 单体，tm_median 0.90-0.97）——补长蛋白+40ep 未伤折叠
+  （v12.2 H1 70% 含 3 二聚体工具限制蛋白；v12.3 无二聚体后全过）。长蛋白 1A65/1BJ4/13BB/1CDG tm 全过。
+- 产物：output/generalization_v12_3_calib_stats.json（V4）、output/generalization_v12_3_calib_small/。
+
+### 最终报告填充（2026-09-03）
+- `analysis/report/2026-09-03_validation_standards.md` §4.1（v12.3：小样本 73%、H1 45/45、Tm-Sol 0/45）、
+  §4.3（v12.2 同标准对照：共同 7 蛋白小样本 80% vs 80% 打平，1A65 0/5→3/5 改进）、§5.2（旧错误数据备份）已填。
+- big-global 纯训练域表（charge_calibration_v12_3_big.json）构建中（GPU6，100 域×5×n10=5000 序列，print 不 flush 致 log 停滞假象），
+  §4.1/4.3 的 big-global 列待其完成后补填。
