@@ -190,3 +190,11 @@ PYTHONPATH=code nohup setsid ~/miniconda3/envs/confumpnn/bin/python code/train_f
   §4.3（v12.2 同标准对照：共同 7 蛋白小样本 80% vs 80% 打平，1A65 0/5→3/5 改进）、§5.2（旧错误数据备份）已填。
 - big-global 纯训练域表（charge_calibration_v12_3_big.json）构建中（GPU6，100 域×5×n10=5000 序列，print 不 flush 致 log 停滞假象），
   §4.1/4.3 的 big-global 列待其完成后补填。
+
+### 最终定稿（2026-09-03, commit fc6425c + 后）
+- big-global 纯训练域表 `charge_calibration_v12_3_big.json` 完成（100 训练域×5×n10，slope 1.452/int −3.372，resume 版脚本 /tmp/build_big_resume.py）。
+- **in 5 蛋白两口径 v12.3 均退步**：小样本 20/25=80% vs v12.2 23/25=92%（−12pp）；big-global 15/25=60% vs 17/25=68%（−8pp）。
+- 收益在边界/out 长蛋白：1A65 small 0/5→2/5、1BJ4 覆盖扩展 + H4_n8 3.5→1.04。
+- 组成删减加重（native 臂 D/K 全 <0.9；1A65 1.2/1.27→0.86/0.73）——待诊断。
+- 推荐（场景化）：覆盖内常规应用倾向 v12.2；深负长尾/超长外推 v12.3 有价值；不直接全线升级，需先诊断组成。
+- ⚠️ GPU 环境反复中断长任务（build_big ×4、validate ×5 被杀），4 长蛋白 big-global 列与 small 批 H1 ESMFold 未完成 → 已标注近似/待 GPU 空档补。
