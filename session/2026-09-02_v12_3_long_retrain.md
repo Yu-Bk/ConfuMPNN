@@ -198,3 +198,8 @@ PYTHONPATH=code nohup setsid ~/miniconda3/envs/confumpnn/bin/python code/train_f
 - 组成删减加重（native 臂 D/K 全 <0.9；1A65 1.2/1.27→0.86/0.73）——待诊断。
 - 推荐（场景化）：覆盖内常规应用倾向 v12.2；深负长尾/超长外推 v12.3 有价值；不直接全线升级，需先诊断组成。
 - ⚠️ GPU 环境反复中断长任务（build_big ×4、validate ×5 被杀），4 长蛋白 big-global 列与 small 批 H1 ESMFold 未完成 → 已标注近似/待 GPU 空档补。
+
+### big-global 9 蛋白补齐（2026-09-03 后台任务 bu441zrci 完成）
+- 4 长蛋白 big-global 补跑完成：1A65 1/5、1BJ4 1/5、13BB 4/5、1CDG 3/5 → **总 24/45=53%**（in 60%/boundary 50%/out 40%）。
+- 共同 7 蛋白 big-global：v12.2 18/35=51% vs v12.3 17/35=49%（≈）；in 5：v12.2 68% vs v12.3 60%（1CGE 4→1 主因）。
+- 报告 `2026-09-03_v12_3_vs_v12_2_final.md` §一/§八 已定稿（big-global 列齐全）。
