@@ -1,0 +1,9 @@
+[09-03 14:16:05] A 小样本标定启动（4 蛋白 × 5 target × n_per10，cuda:3）...
+[09-03 14:23:58] A 小样本标定完成：output/paper_gap1_v122_long/charge_calibration_v12_2_long_small.json
+[09-03 14:23:58] == 口径 A：小样本现场标定 resample ==
+[09-03 14:23:58] 小样本 resample 启动（cuda:3）...
+[09-03 14:44:05] 小样本 resample 完成：4/4
+[09-03 14:44:06] == 口径 B：big-global resample ==
+[09-03 14:44:06] big-global resample 启动（cuda:3）...
+[09-03 15:06:07] big-global resample 完成：4/4
+[09-03 15:06:07] == v12.2 4 长蛋白两口径补测全部完成 ==

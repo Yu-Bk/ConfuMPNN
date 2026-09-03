@@ -1,0 +1,8 @@
+4 个 valid 蛋白，小样本标定（5 target × 10 = 50 条/蛋白）
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+1A65   L=504 native=-27 slope=1.604 int=1.70 | LOOCV=2.74 | -35→-56.1 -31→-48.1 -27→-37.6 -23→-36.4 -19→-29.9
+1BJ4   L=470 native=+0 slope=3.007 int=3.31 | LOOCV=0.82 | -8→-20.1 -4→-9.2 +0→+2.7 +4→+15.6 +8→+27.6
+13BB   L=552 native=-13 slope=1.587 int=-2.53 | LOOCV=2.35 | -21→-34.3 -17→-32.1 -13→-23.4 -9→-15.1 -5→-11.0
+1CDG   L=686 native=-9 slope=2.470 int=-2.91 | LOOCV=2.73 | -17→-42.9 -13→-36.1 -9→-27.9 -5→-14.3 -1→-4.4
+
+已写 output/paper_gap1_v122_long/charge_calibration_v12_2_long_small.json: 4 个 per_protein（小样本标定），其中 0 个与 global 不一致（unreliable）
