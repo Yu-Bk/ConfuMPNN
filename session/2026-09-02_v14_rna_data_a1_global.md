@@ -232,3 +232,14 @@ v13 A1 只护 pocket（Cα-配体<8Å），非 pocket surface 仍删（frac_floo
 - 预解析完成：**5370 域**（1 坏域跳过，prody 无法解析），缓存 ~24.7GB
 - **epoch 1/50：0 NaN**，total=6.22 ce=1.45 charge=5.88 kl=0.11 keep=0.70；~16.9 min/ep → 50ep ≈ 14h
 - GPU4 显存 ~25GB；进程 PID 1959542
+
+## 十、v14 验证链执行进展（2026-09-03，主报告 §4.2 中间版已填）
+- 训练：epoch50/50 完成（08:57，832.8min，0 NaN），ckpt `output/finetune_ligand_v14_rna/finetune_epoch050.pt`
+- ① diag：valid 10 slope 均值 **1.49±0.40**；global cal slope 1.50/inter −1.76
+- ② 校准口径：big-global（纯训练 60 域/300 点，slope 1.52/inter −0.86）`charge_calibration_v14_big.json`；
+  small（现场标定 10 蛋白，3 unreliable: 2E9R_X/9DWG_L/+）`charge_calibration_v14_small.json`
+- ③ H2（in 10×5 臂，dev≤2）：**big-global 22/50=44%、small-sample 36/50=72%、per-protein表内 42/50=84%（参考）**
+- boundary 1A65（big-global）：**0/5**（native −27→−24.5，dev 2.0–3.3 欠冲）
+- ④ 组成：**in(10) 全删减未根治**（ratio 0.43–0.69；21KL_A 0.61/2E9R_X 0.44/3MXB_A 0.69）→ A1-global 未奏效
+- ⑤ H1/H3/Tm-Sol：ESMFold 回折进行中（~21/50 臂，长蛋白 476aa 慢，ETA 数小时）；链 bash (PID 3739064) 存活会自动续 TM→H3→Tm/Sol；主报告 §4.2 待补
+- 已知坑：独立跑的 validate_generalization 多次被外部终止（疑似与 v12.3 agent 抢占 GPU），链内 esmfold 未受影响
