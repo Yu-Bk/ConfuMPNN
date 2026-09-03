@@ -73,14 +73,16 @@
 | 组 | 蛋白 | H2 小样本 | H2 big-global(纯训练域) | H1 TM≥0.7 | 备注 |
 |---|---|---|---|---|---|
 | in(5) | 1AZM/1AS2/2FEO/5CQH/1CGE | **20/25 = 80%** | 待 big 表补 | 25/25 | 标准验证集（1CGE 5/5、1AS2 4/5、1AZM 4/5、5CQH 4/5、2FEO 3/5）|
-| boundary(2) | 1BJ4(L470)、13BB(L552) | 6/10 = 60% | 待补 | 10/10 | 长蛋白改进检验：**1BJ4 5/5（v12.2 small 也 5/5）**；13BB 1/5 边界失败（native +2.6 略欠）|
-| out(2) | 1A65(native−26.9)、1CDG(L686) | 7/10 = 70% | 待补 | 10/10 | 分布外：**1A65 3/5（v12.2 small 0/5 改进）**、1CDG 4/5 |
-| **合计** | 9 蛋白 | **33/45 = 73%** | 待补 | **45/45 = 100%** | 小样本口径 ≈ v12.2(74%) |
+| boundary(2) | 1BJ4(L470)、13BB(L552) | 6/10 = 60% | 待补 | 10/10 | 长蛋白改进检验：**1BJ4 5/5（v12.2 small 也 5/5）**；13BB 1/5 欠负失败（native−12.8 臂 dev2.7、n2 dev2.9、n8 dev4.3 全欠负超阈值，仅 p8 命中）|
+| out(2) | 1A65(native−26.9)、1CDG(L686) | 6/10 = 60% | 待补 | 10/10 | 分布外：**1A65 2/5（v12.2 small 0/5 改进）**、1CDG 4/5 |
+| **合计** | 9 蛋白 | **32/45 = 71%** | 待补 | **45/45 = 100%** | 小样本口径略低于 v12.2(74%)，差异在单臂边界噪声内 |
 
 - **H1 折叠：45/45 TM≥0.7（100%）**——9 单体（无二聚体），长蛋白 1A65/1BJ4/13BB/1CDG tm_median 0.90–0.97 全过。补长蛋白+40ep 未伤折叠。
 - **Tm/Sol：S2 0/45 恶化**（vs 无条件基线；v12.2 0/50 同口径一致）。长蛋白 native 臂全部无恶化（1A65 ΔTm+6.8/Δsol+6.9、13BB −2.5/+1.7、1CDG −0.3/−0.1、1BJ4 −0.5/−0.5）。
-- **小样本口径小结**：小样本现场标定能救 v12.3（73% vs v12.2 74%），深负长尾 1A65 较 v12.2 有改进（0/5→3/5）。
-- 数据来源：`output/generalization_v12_3_calib_small/`（小样本 H2）、`output/generalization_v12_3_calib_stats.json`（H1）、`output/tm_sol_v12_3/tm_sol_summary.json`。
+- **小样本口径小结**：小样本现场标定能救 v12.3（32/45=71% vs v12.2 37/50=74%，差 1 臂边界噪声），深负长尾 1A65 较 v12.2 有改进（0/5→2/5）。
+- ⚠️ **口径注**：H2 数据基于 **calib_small 批**（小样本标定）；**H1/Tm-Sol 基于旧 calib 批**（`generalization_v12_3_calib`，小样本批未重跑 ESMFold/Tm-Sol）——两批 recovery/GRAVY 一致（±0.01–0.03），折叠结论可平移，但严格应在 small 批复测。已通知 agent 补测（见 §7 待办）。
+- ⚠️ **H2 计数修正**：agent 初报 33/45=73%（1A65 3/5）为误——其统计把混入 seqs.fa 的 native 序列计入 1A65 p2 臂（dev 2.13→1.999 虚翻命中）。权威口径（validation.json dev 或 seqs.fa 去 native）恒为 **32/45**。已核验 45/45 中仅此 1 臂受影响，其余 in/boundary 全组一致。
+- 数据来源：`output/generalization_v12_3_calib_small/`（小样本 H2）、`output/generalization_v12_3_calib_stats.json`（H1，旧批）、`output/tm_sol_v12_3/tm_sol_summary.json`（旧批）。
 
 ### 4.2 v14 配体模式（对 5371 域训练集）
 | 组 | 蛋白 |
@@ -104,13 +106,13 @@
 | 2FEO | 5/5 | 3/5 | −2 |
 | 5CQH | 5/5 | 4/5 | −1 |
 | 1CGE | 5/5 | 5/5 | = |
-| 1A65 | 0/5 | 3/5 | **+3（深负长尾改进）** |
+| 1A65 | 0/5 | 2/5 | **+2（深负长尾改进）** |
 | 1BJ4 | 5/5 | 5/5 | = |
-| 小计 | 28/35=80% | 28/35=80% | = |
+| 小计 | 28/35=80% | 27/35=77% | −1（1 臂边界噪声：1A65 p2 dev2.13 差一点） |
 
 **big-global（纯训练域）**：v12.2 同 7 蛋白 18/35=51%（1A65 0、1BJ4 1、2FEO 3…）；v12.3 big 表构建中 → 补填。
 - 新增（仅 v12.3 有）：13BB small 1/5、1CDG small 4/5（均训练外/边界）。
-- **结论（覆盖内小样本同口径）**：v12.3 与 v12.2 打平（共同 7 蛋白 80% vs 80%），v12.3 的增量收益在**深负长尾 1A65（0/5→3/5）**。
+- **结论（覆盖内小样本同口径）**：v12.3 共同 7 蛋白 77% vs v12.2 80%，**略降 1 臂**（1A65 p2 边界臂 dev2.13 未命中；若取 8 分位内差异属噪声）；v12.3 的增量收益在**深负长尾 1A65（0/5→2/5）**，代价是 in 组 2FEO/1AS2/5CQH 各降 1-2 臂。
 
 ---
 
@@ -135,3 +137,13 @@
 > 按用户要求：**所有任务完成后再做**，统一标注哪些历史结论受旧验证集/旧校准表影响。
 
 （待 §四数据齐全后执行）
+
+---
+
+## 七、待办（v12.3 agent 2026-09-03）
+1. **calib_small 批补测 H1 ESMFold + Tm/Sol**（§4.1 口径注）：
+   - Tm（TemBERTure 45 arm）+ Sol（Protein-Sol 45 arm）已启动（log `v12_3_tm_small.log`/`v12_3_sol_small.log`）；uncond/native 基线复用 `tm_sol_v12_3/`（同模型同 manifest，跨批一致）。
+   - ESMFold H1（45 arm）等 GPU 空档补跑（`esmfold_score.py --input-dir generalization_v12_3_calib_small`），产物 plddt.csv → tm_score → 更新 §4.1 H1 列为 calib_small 批权威值。
+   - 若两批结果一致（预期，recovery/GRAVY 已证可平移）则保留旧批结论并标注已验证。
+2. **big-global 纯训练域表**：`charge_calibration_v12_3_big.json`（100 训练域×5×n10）GPU6 构建中 → 用其 resample 9 蛋白 global 口径 H2（**判命中用 validation.json dev 或 seqs 去 native，勿混入 native**）→ 补 §4.1/4.3 big-global 列。
+3. H2 统计统一规范：**seqs.fa 末尾含 native 参考行，统计前必须跳过（name.startswith('seed_') 或读 validation.json dev）**——1A65 p2 曾因混入 native 虚翻命中 1 臂（33/45→权威 32/45）。
