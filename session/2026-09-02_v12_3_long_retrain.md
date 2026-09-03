@@ -161,3 +161,12 @@ PYTHONPATH=code nohup setsid ~/miniconda3/envs/confumpnn/bin/python code/train_f
 - **S2 判据（vs 无条件基线，ΔTm<-5 或 Δ%sol<-10 算恶化）：0/45**——与 v12.2 (0/50) 一致，电荷条件化未牺牲热稳定/溶解性。
 - 长蛋白：1A65 native Tm 67.2(Δu+6.8)/%sol 49.9(+6.9)；1BJ4 71.2(-0.5)/43.7(-0.5)；13BB 69.7(-2.5)/46.5(+1.7)；1CDG 62.0(-0.3)/37.9(-0.1)——全部无恶化。
 - ⚠️ 踩坑：TemBERTure glob 不 follow symlink → 用 --dirs-file 真实目录；Tm seqs symlink 需绝对路径（相对少一级会断）。
+
+### v12.3 小样本现场标定（用户方法论决策后，2026-09-03）
+- 用户剔除 per-protein 表内校准（乐观口径），保留 global + 小样本现场标定两口径（v12.2 基准 global 44% / 小样本 74%）。
+- `code/tests/build_calibration_small.py`（v12.3 ckpt，manifest v12_3，n_per=10，5 target native±[8,4,0,4,8] = 50 条/蛋白）
+  → `output/charge_calibration_v12_3_small.json`（9 蛋白 per slope，global 兜底 = charge_calibration_v12_3 global 1.471）。
+- **2 个 unreliable（LOOCV>3，回退 global）**：2FEO（LOOCV 3.47）、1A65（3.45）。
+- 小样本局部 slope（vs 全靶 diag slope）：1A65 1.09 vs 1.43（局部 native 区更线性！）、1CGE 0.94、1AZM 0.95；
+  1BJ4 2.07、13BB 2.11、1CDG 2.49（长蛋白高 slope 但 LOOCV 稳）。
+- 泛化重采样（小样本表 auto）GPU3 → `output/generalization_v12_3_calib_small/`（9×5×n30，仅电荷 H2，不重跑 ESMFold）。
