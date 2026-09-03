@@ -84,13 +84,34 @@
 - ⚠️ **H2 计数修正**：agent 初报 33/45=73%（1A65 3/5）为误——其统计把混入 seqs.fa 的 native 序列计入 1A65 p2 臂（dev 2.13→1.999 虚翻命中）。权威口径（validation.json dev 或 seqs.fa 去 native）恒为 **32/45**。已核验 45/45 中仅此 1 臂受影响，其余 in/boundary 全组一致。
 - 数据来源：`output/generalization_v12_3_calib_small/`（小样本 H2）、`output/generalization_v12_3_calib_stats.json`（H1，旧批）、`output/tm_sol_v12_3/tm_sol_summary.json`（旧批）。
 
-### 4.2 v14 配体模式（对 5371 域训练集）
+### 4.2 v14 配体模式（对 5371 域训练集，RNA/DNA 占 7.7%）
 | 组 | 蛋白 |
 |---|---|
 | in(10) | 6D2O/1AS2/2FEO/5CQH/1CGE/1BJ4/21KL_A/2E9R_X/3MXB_A/9DWG_L |
 | boundary(1) | 1A65（L504 超训练 max500 + 深负） |
 
-【验证链结果：待配体 agent 跑完填】
+**① 配体诊断 slope（未校准）**：valid 10 蛋白 slope 均值 **1.49 ± 0.40**（响应增益，需校准）；
+trainish 8 域同网格（供对照）。global 线性校准（216 点）：slope 1.500 / intercept −1.764。
+
+**② H2（per-arm |dev|≤2，in 10 × 5 臂）——按口径分列**：
+| 口径 | H2 | 说明 |
+|---|---|---|
+| **big-global**（纯训练域 60 域 300 点，开箱） | **22/50 = 44%** | 与 v12.2 蛋白 big-global 44% 一致；成功蛋白 6D2O/1AS2/3MXB_A 5/5；RNA 蛋白 21KL_A/2E9R_X 0/5（开箱欠拟合） |
+| **小样本现场标定**（5 target×n10 拟合，n30 测） | **36/50 = 72%** | 2E9R_X 全败 + 9DWG_L 4/5 败（LOOCV-unreliable 长/深负蛋白）；其余 8 蛋白 31/35 |
+| per-protein 表内（诊断网格，剔除出达标） | 42/50 = 84% | 仅参考 |
+
+**③ boundary 1A65（big-global 开箱，单列）**：**0/5**（native −27→−24.5，dev 2.0–3.3，深负长蛋白欠冲 2–3 电荷）。native_q −26.85 落在训练 q 分布 2.8% 分位 + L504 超训练 max500 → 边界预期。
+
+**④ 组成（native 臂带电总数倍率 gen/native，0.7–1.3 判据）——❌ A1-global 未根治删减**：
+| 蛋白 | 6D2O | 1AS2 | 2FEO | 5CQH | 1CGE | 1BJ4 | 21KL_A | 2E9R_X | 3MXB_A | 9DWG_L |
+|---|---|---|---|---|---|---|---|---|---|---|
+| ratio | 0.56 | 0.46 | 0.46 | 0.43 | 0.60 | 0.46 | 0.61 | 0.44 | 0.69 | 0.47 |
+in(10) 全部 0.43–0.69，**系统性删减未解除**（与 v13 0.55–0.69 同级甚至略低）；RNA/DNA 蛋白亦删（21KL_A 0.61 / 2E9R_X 0.44 / 3MXB_A 0.69）。
+→ A1 全局化（floor0.8/λ0.3/normalize）**未奏效**：期望计数监督 vs 离散采样 gap + 删减先验仍主导；Tm/Sol 需警惕（与 v13 同因）。
+
+**⑤ H1/H3/Tm-Sol**：⏳ ESMFold 回折运行中（partial ~20/50 臂），H3/Tm-Sol 待链推进，完成后补填。数据源：`output/generalization_ligand_v14{,_big,_small}/`、`output/v14_ligand_diag_response.json`、`output/charge_calibration_v14_{big,small}.json`、`output/v14_ligand_comp.json`、`output/v14_ligand_gen_stats{,_big,_small}.json`。
+
+> ⚠️ H2 计数口径：一律读 validation.json 的 dev 字段（seqs.fa 已含 1 条 native，不直接对全 seqs.fa 求均值）。H1/Tm 用 per-protein 批（OUT）序列。
 
 ### 4.3 v12.2 同标准对照
 - **v12.2 覆盖（相对 v12.2 训练 6710，实测 coverage_check）**：in = 1C6O/1AG0/1AS2/1AZM/1CGE/2FEO/5CQH（7）；out = 1A65(n_close 4)/1AXW(7)/**1BJ4(n_close 20)**。
