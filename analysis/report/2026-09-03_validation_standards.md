@@ -87,29 +87,33 @@
 ### 4.2 v14 配体模式（对 5371 域训练集，RNA/DNA 占 7.7%）
 | 组 | 蛋白 |
 |---|---|
-| in(10) | 6D2O/1AS2/2FEO/5CQH/1CGE/1BJ4/21KL_A/2E9R_X/3MXB_A/9DWG_L |
+| in(10) | 6D2O/1AS2/2FEO/5CQH/1CGE/1BJ4/21KL_A/**5O60_E**/3MXB_A/9DWG_L |
 | boundary(1) | 1A65（L504 超训练 max500 + 深负） |
 
-**① 配体诊断 slope（未校准）**：valid 10 蛋白 slope 均值 **1.49 ± 0.40**（响应增益，需校准）；
-trainish 8 域同网格（供对照）。global 线性校准（216 点）：slope 1.500 / intercept −1.764。
+> 🔄 **2026-09-03 晚方法学修正（2E9R_X 归档 → 5O60_E 替换）**：2E9R_X（FMDV RdRp, L476, native −10.1）不具 RNA"结合蛋白"代表性——核糖体 RNA 结合蛋白天然正电，2E9R_X 却是长负聚合酶，验证中系统性过冲（target −10 → 生成 −18.1，dev 8.1）。用户判定其属"**长×大电荷变化可设计性有限**"档（与蛋白模式 1A65 同类），**已从标准验证集移除归档**（数据保留：`output/generalization_ligand_v14{,_big,_small}/ligand/2E9R_X/` + `charge_calibration_v14_small.json` per 条目，新 manifest 统计自动排除）。**5O60_E（核糖体蛋白 E, L209, native +11.18, coverage=in n_close151, 训练集无 5O60 域=held-out）替换加入**作 RNA 结合蛋白典型代表。证据汇总见 `analysis/report/2026-09-03_long_neg_charge_limitation.md`。
+> **计数注**：in 为 1:1 置换仍 10 项；任务文本的"in-9 参考值"= 剔除 2E9R_X、尚未计入 5O60_E 的中间口径（big 22/45=49% / small 36/45=80% / per 40/45=89%），下表中同时给出。in manifest = `validation_manifest_v14_in.json`（10 项含 5O60_E）。
 
-**② H2（per-arm |dev|≤2，in 10 × 5 臂）——按口径分列**：
-| 口径 | H2 | 说明 |
-|---|---|---|
-| **big-global**（纯训练域 60 域 300 点，开箱） | **22/50 = 44%** | 与 v12.2 蛋白 big-global 44% 一致；成功蛋白 6D2O/1AS2/3MXB_A 5/5；RNA 蛋白 21KL_A/2E9R_X 0/5（开箱欠拟合） |
-| **小样本现场标定**（5 target×n10 拟合，n30 测） | **36/50 = 72%** | 2E9R_X 全败 + 9DWG_L 4/5 败（LOOCV-unreliable 长/深负蛋白）；其余 8 蛋白 31/35 |
-| per-protein 表内（诊断网格，剔除出达标） | 42/50 = 84% | 仅参考 |
+**① 配体诊断 slope（未校准）**：valid 10 蛋白 slope 均值 **1.49 ± 0.40**（响应增益，需校准）；
+trainish 8 域同网格（供对照）。global 线性校准（216 点）：slope 1.500 / intercept −1.764。（诊断网格基于原 in-10，未含 5O60_E）
+
+**② H2（per-arm |dev|≤2，in 10 × 5 臂）——按口径分列（5O60_E 两口径均 4/5）**：
+| 口径 | H2（in 10 含 5O60_E） | in-9 中间口径（剔 2E9R_X） | 说明 |
+|---|---|---|---|
+| **big-global**（纯训练域 60 域 300 点，开箱） | **26/50 = 52%** | 22/45 = 49% | 成功蛋白 6D2O/1AS2/3MXB_A 5/5；**RNA 代表 5O60_E 4/5**（天然正电开箱即好，仅 p8 target+19 过冲 dev 3.3）；21KL_A 0/5（正电过冲）；1CGE/5CQH/1BJ4/9DWG_L 各 1/5 |
+| **小样本现场标定**（5 target×n10 拟合，n30 测） | **40/50 = 80%** | 36/45 = 80% | 5O60_E 4/5（仅 p8 dev 2.7）；剔除 2E9R_X 后无全败项；9DWG_L 1/5 仍弱（LOOCV-unreliable） |
+| per-protein 表内（诊断网格，剔除出达标） | 40/45 = 89%（9 网格蛋白；5O60_E 无诊断 per 条目，不入此口径） | 40/45 = 89% | 仅参考 |
 
 **③ boundary 1A65（big-global 开箱，单列）**：**0/5**（native −27→−24.5，dev 2.0–3.3，深负长蛋白欠冲 2–3 电荷）。native_q −26.85 落在训练 q 分布 2.8% 分位 + L504 超训练 max500 → 边界预期。
 
-**④ 组成（native 臂带电总数倍率 gen/native，0.7–1.3 判据）——❌ A1-global 未根治删减**：
-| 蛋白 | 6D2O | 1AS2 | 2FEO | 5CQH | 1CGE | 1BJ4 | 21KL_A | 2E9R_X | 3MXB_A | 9DWG_L |
-|---|---|---|---|---|---|---|---|---|---|---|
-| ratio | 0.56 | 0.46 | 0.46 | 0.43 | 0.60 | 0.46 | 0.61 | 0.44 | 0.69 | 0.47 |
-in(10) 全部 0.43–0.69，**系统性删减未解除**（与 v13 0.55–0.69 同级甚至略低）；RNA/DNA 蛋白亦删（21KL_A 0.61 / 2E9R_X 0.44 / 3MXB_A 0.69）。
+**④ 组成（native 臂带电总数倍率 gen/native，0.7–1.3 判据）——❌ A1-global 未根治删减（2E9R_X 已归档剔除）**：
+| 蛋白 | 6D2O | 1AS2 | 2FEO | 5CQH | 1CGE | 1BJ4 | 21KL_A | 3MXB_A | 9DWG_L |
+|---|---|---|---|---|---|---|---|---|---|
+| ratio | 0.56 | 0.46 | 0.46 | 0.43 | 0.60 | 0.46 | 0.61 | 0.69 | 0.47 |
+in(9，原数据) 0.43–0.69，**系统性删减未解除**（与 v13 0.55–0.69 同级甚至略低）；RNA/DNA 蛋白亦删（21KL_A 0.61 / 3MXB_A 0.69；2E9R_X 0.44 随归档剔除）。
 → A1 全局化（floor0.8/λ0.3/normalize）**未奏效**：期望计数监督 vs 离散采样 gap + 删减先验仍主导；Tm/Sol 需警惕（与 v13 同因）。
+> ⏳ 5O60_E 组成/H1/Tm-Sol 未在本替换任务内重跑（其 per 口径采样与 ESMFold 链属后续验证推进），现仅有 big/small 两口径 native 臂生成序列（`generalization_ligand_v14_{big,small}/ligand/5O60_E/`）。
 
-**⑤ H1/H3/Tm-Sol**：⏳ ESMFold 回折运行中（partial ~20/50 臂），H3/Tm-Sol 待链推进，完成后补填。数据源：`output/generalization_ligand_v14{,_big,_small}/`、`output/v14_ligand_diag_response.json`、`output/charge_calibration_v14_{big,small}.json`、`output/v14_ligand_comp.json`、`output/v14_ligand_gen_stats{,_big,_small}.json`。
+**⑤ H1/H3/Tm-Sol**：⏳ ESMFold 回折运行中（partial ~20/50 臂），H3/Tm-Sol 待链推进，完成后补填（注：新 in manifest 含 5O60_E，H1/Tm 链需对 5O60_E 补跑，其两口径采样产物已在 `generalization_ligand_v14_{big,small}/ligand/5O60_E/`）。数据源：`output/generalization_ligand_v14{,_big,_small}/`、`output/v14_ligand_diag_response.json`、`output/charge_calibration_v14_{big,small,small_v2}.json`、`output/charge_calibration_v14_5O60E_only.json`、`output/v14_ligand_comp.json`、`output/v14_ligand_gen_stats{,_big,_small}.json`。
 
 > ⚠️ H2 计数口径：一律读 validation.json 的 dev 字段（seqs.fa 已含 1 条 native，不直接对全 seqs.fa 求均值）。H1/Tm 用 per-protein 批（OUT）序列。
 
