@@ -1,0 +1,94 @@
+    条件编码器已加载: finetune_epoch050.pt  (epoch=50, n_tokens=4, token_dim=128)
+Task2 fix-binding: 处理 10 蛋白，臂=['native', 'n2', 'p2', 'n8', 'p8']，n=40，pH=7.4，cutoff=8.0Å
+
+=== 6D2O cat=small_mol L=209 native_charge@7.4=-6.22 binding=18 (8.6%) ===
+    校准: per-protein(6D2O) (slope=1.633 intercept=-1.326)
+  [native] target=  -6 mean= -6.15 dev=0.15 rec=0.437 fixed_mm=0
+  [n2] target=  -8 mean= -7.74 dev=0.26 rec=0.438 fixed_mm=0
+  [p2] target=  -4 mean= -4.12 dev=0.12 rec=0.436 fixed_mm=0
+  [n8] target= -14 mean=-14.46 dev=0.46 rec=0.439 fixed_mm=0
+  [p8] target=   2 mean= +0.88 dev=1.12 rec=0.436 fixed_mm=0
+  已写 6D2O 结果
+
+=== 1AS2 cat=nucleotide L=312 native_charge@7.4=-2.69 binding=40 (12.8%) ===
+    校准: per-protein(1AS2) (slope=1.447 intercept=0.488)
+  [native] target=  -3 mean= -2.72 dev=0.28 rec=0.436 fixed_mm=0
+  [n2] target=  -5 mean= -4.74 dev=0.26 rec=0.437 fixed_mm=0
+  [p2] target=  -1 mean= -0.77 dev=0.23 rec=0.436 fixed_mm=0
+  [n8] target= -11 mean=-11.05 dev=0.05 rec=0.441 fixed_mm=0
+  [p8] target=   5 mean= +4.33 dev=0.67 rec=0.434 fixed_mm=0
+  已写 1AS2 结果
+
+=== 2FEO cat=nucleotide L=221 native_charge@7.4=-6.88 binding=40 (18.1%) ===
+    校准: per-protein(2FEO) (slope=0.935 intercept=-5.082)
+  [native] target=  -7 mean= -1.92 dev=5.08 rec=0.450 fixed_mm=0
+  [n2] target=  -9 mean= -4.00 dev=5.00 rec=0.449 fixed_mm=0
+  [p2] target=  -5 mean= +0.53 dev=5.53 rec=0.449 fixed_mm=0
+  [n8] target= -15 mean=-11.22 dev=3.78 rec=0.454 fixed_mm=0
+  [p8] target=   1 mean= +7.80 dev=6.80 rec=0.448 fixed_mm=0
+  已写 2FEO 结果
+
+=== 5CQH cat=nucleotide L=183 native_charge@7.4=-5.53 binding=55 (30.1%) ===
+    校准: per-protein(5CQH) (slope=1.053 intercept=-2.037)
+  [native] target=  -6 mean= -7.61 dev=1.61 rec=0.613 fixed_mm=0
+  [n2] target=  -8 mean= -8.98 dev=0.98 rec=0.611 fixed_mm=0
+  [p2] target=  -4 mean= -6.20 dev=2.20 rec=0.614 fixed_mm=0
+  [n8] target= -14 mean=-13.93 dev=0.07 rec=0.608 fixed_mm=0
+  [p8] target=   2 mean= -2.01 dev=4.01 rec=0.609 fixed_mm=0
+  已写 5CQH 结果
+
+=== 1CGE cat=metal L=162 native_charge@7.4=-11.66 binding=53 (32.7%) ===
+    校准: per-protein(1CGE) (slope=0.983 intercept=-2.349)
+  [native] target= -12 mean=-16.55 dev=4.55 rec=0.659 fixed_mm=0
+  [n2] target= -14 mean=-18.30 dev=4.30 rec=0.658 fixed_mm=0
+  [p2] target= -10 mean=-14.53 dev=4.53 rec=0.658 fixed_mm=0
+  [n8] target= -20 mean=-23.28 dev=3.28 rec=0.654 fixed_mm=0
+  [p8] target=  -4 mean= -9.36 dev=5.36 rec=0.655 fixed_mm=0
+  已写 1CGE 结果
+
+=== 1BJ4 cat=long L=470 native_charge@7.4=+0.42 binding=29 (6.2%) ===
+    校准: per-protein(1BJ4) (slope=2.179 intercept=-4.111)
+  [native] target=   0 mean= +0.79 dev=0.79 rec=0.470 fixed_mm=0
+  [n2] target=  -2 mean= -1.01 dev=0.99 rec=0.469 fixed_mm=0
+  [p2] target=   2 mean= +2.93 dev=0.93 rec=0.470 fixed_mm=0
+  [n8] target=  -8 mean= -6.33 dev=1.67 rec=0.469 fixed_mm=0
+  [p8] target=   8 mean= +8.62 dev=0.62 rec=0.470 fixed_mm=0
+  已写 1BJ4 结果
+
+=== 21KL_A cat=RNA L=237 native_charge@7.4=+10.02 binding=128 (54.0%) ===
+    校准: per-protein(21KL_A) (slope=1.735 intercept=3.139)
+  [native] target=  10 mean=+17.40 dev=7.40 rec=0.691 fixed_mm=0
+  [n2] target=   8 mean=+16.55 dev=8.55 rec=0.690 fixed_mm=0
+  [p2] target=  12 mean=+18.79 dev=6.79 rec=0.693 fixed_mm=0
+  [n8] target=   2 mean=+13.01 dev=11.01 rec=0.687 fixed_mm=0
+  [p8] target=  18 mean=+22.98 dev=4.98 rec=0.695 fixed_mm=0
+  已写 21KL_A 结果
+
+=== 5O60_E cat=RNA L=209 native_charge@7.4=+11.18 binding=112 (53.6%) ===
+    校准: per-protein(5O60_E) (slope=1.780 intercept=-0.705)
+  [native] target=  11 mean=+22.78 dev=11.78 rec=0.706 fixed_mm=0
+  [n2] target=   9 mean=+21.78 dev=12.78 rec=0.707 fixed_mm=0
+  [p2] target=  13 mean=+23.38 dev=10.38 rec=0.707 fixed_mm=0
+  [n8] target=   3 mean=+19.48 dev=16.48 rec=0.703 fixed_mm=0
+  [p8] target=  19 mean=+25.26 dev=6.26 rec=0.708 fixed_mm=0
+  已写 5O60_E 结果
+
+=== 3MXB_A cat=DNA L=153 native_charge@7.4=+7.94 binding=73 (47.7%) ===
+    校准: per-protein(3MXB_A) (slope=1.238 intercept=0.744)
+  [native] target=   8 mean=+14.71 dev=6.71 rec=0.764 fixed_mm=0
+  [n2] target=   6 mean=+13.39 dev=7.39 rec=0.765 fixed_mm=0
+  [p2] target=  10 mean=+16.04 dev=6.04 rec=0.763 fixed_mm=0
+  [n8] target=   0 mean=+10.28 dev=10.28 rec=0.765 fixed_mm=0
+  [p8] target=  16 mean=+19.63 dev=3.63 rec=0.764 fixed_mm=0
+  已写 3MXB_A 结果
+
+=== 9DWG_L cat=DNA L=323 native_charge@7.4=+3.98 binding=43 (13.3%) ===
+    校准: per-protein(9DWG_L) (slope=1.753 intercept=-4.575)
+  [native] target=   4 mean= +6.37 dev=2.37 rec=0.454 fixed_mm=0
+  [n2] target=   2 mean= +4.74 dev=2.74 rec=0.453 fixed_mm=0
+  [p2] target=   6 mean= +8.72 dev=2.72 rec=0.457 fixed_mm=0
+  [n8] target=  -4 mean= -0.04 dev=3.96 rec=0.450 fixed_mm=0
+  [p8] target=  12 mean=+15.96 dev=3.96 rec=0.464 fixed_mm=0
+  已写 9DWG_L 结果
+
+=== Task2 fix-binding 采样完成 ===
