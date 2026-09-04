@@ -40,3 +40,11 @@
 
 ## 归档
 每任务完成 → 主会话汇总报告 → git commit+push → 记入记忆。
+
+## v13 in-10 全链权威对照（2026-09-04 用户批准；等 Task2/Task3 空出 GPU 后串行执行）
+- 背景：v13 全套在旧测试集/旧协议 → 与 v14-clean 严格对照须在**新 in-10** 用**同协议**重跑 v13。
+- 做法：v14 clean 驱动参数化为 v13 变体（encoder `finetune_ligand_v13/finetune_epoch030.pt`、v13 自建 in-10 diag→cal、输出 `generalization_ligand_v13_in10/`）。
+- Phase A（GPU 采样+CPU）：①in-10 diag→cal ②采样 n50×10蛋白(per-protein cal) ③H2 ④组成 10/10 ⑥H3。
+- Phase B（重链）：⑤H1 ESMFold+TM ⑦PROPKA ⑧Tm/Sol S2 ★1A65。
+- ⚠️ RNA/DNA 成员(5O60_E/21KL_A/9DWG_L/6D2O 等)对 v13=out-of-domain → 预期偏弱并注明，作为"数据扩充收益"论据。
+- 旧 v13 结果归档保留（`generalization_ligand_v13`），新 in-10 版作权威对照。
