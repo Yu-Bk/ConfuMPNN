@@ -22,15 +22,20 @@ env/
 
 # ===== 输出结果 =====
 code/output/
-output/
+# 输出目录整体忽略，但 output/ 顶层的“结果型 JSON”（诊断/校准/统计等论文关键数据）入库
+output/*
+!output/*.json
 results/
 # 注：log/ 与 code/log/ 不再忽略——训练/验证日志纳入版本管理，方便多机查看与论文复现。
 
 # ===== 外部数据集（大文件不提交）=====
 data/*
-# 但保留数据说明文档与校验清单（git 跟踪）
+# 但保留数据说明文档、校验清单、以及验证集 manifest JSON（论文/重部署关键，体量小）
 !data/README.md
 !data/SHA256SUMS.txt
+!data/validation_pdbs/
+data/validation_pdbs/*
+!data/validation_pdbs/*.json
 
 # ===== 系统 / 编辑器 =====
 .DS_Store
