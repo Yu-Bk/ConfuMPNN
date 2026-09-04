@@ -29,7 +29,7 @@
 - 蛋白：从 v12.3 蛋白训练域（6580，含长蛋白）**分层抽 25%**（保 L/电荷分布）→ `labels_ablate_prot.npz`。
 - 配体：从 `labels_v14_final.npz`(5371) 分层抽 25%（**保 RNA/DNA 7.7%**）→ `labels_ablate_lig.npz`。
 - 基座/超参：完全照该族正式版命令（蛋白 MoMPNN + v12.2 全套 flag；配体 LigandMPNN + v14 flag、atom25）；只改 labels 子集 + epochs + out_dir。
-- 每次训练落 `output/ablate_{prot,lig}/run_{tag}/` + log；共享同一 backbone 权重（不重训 backbone，只训 ConditionEncoder——与正式一致）。
+- 每次训练落 `ablation/runs/{prot,lig}/run_{tag}/` + log（用户 2026-09-05 目录约定：消融收 `ablation/`：plan.md/data/runs/report/figure）；共享同一 backbone 权重（不重训 backbone，只训 ConditionEncoder——与正式一致）。对比实验收 `compare/`。
 
 ### 1.4 评估（轻量、与全量可比口径）
 - 每个 run 用**前向 val-loss 回放**（`val_loss_curve.py` 同法）在对应族验证集（蛋白 1199 / 配体 805）上给最终 epoch 的 ce/cd/total。
