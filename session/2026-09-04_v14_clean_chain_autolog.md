@@ -4,10 +4,10 @@
 > 权威口径判据见 `analysis/report/2026-09-03_validation_standards.md`（coverage in/boundary/out；两口径 big-global + 小样本；H2 单臂 |dev|≤2）。
 
 ## 一、为什么重跑（背景，勿误读旧链）
-- 旧 v14 链 ③ 采样基于旧 manifest（含 2E9R_X、无 5O60_E）→ 组成/统计/回折基于废弃验证集；
+- 旧 v14 链 ③ 采样基于替换前的 manifest（缺 5O60_E）→ 组成/统计/回折基于废弃验证集；
 - ⑦⑧⑨ 曾瞬时 Permission denied + DONE 被无条件 touch = 假完成；
 - 5O60_E（核糖体 RNA 结合代表，held-out）的 组成/H1/Tm-Sol 从未干净跑过。
-- → 本链用**新 in-10 manifest（validation_manifest_v14_in.json：10 in 含 5O60_E、无 2E9R_X）** + boundary 1A65，从头一致重算。
+- → 本链用**新 in-10 manifest（validation_manifest_v14_in.json：10 in 含 5O60_E）** + boundary 1A65，从头一致重算。
 
 ## 二、运行参数
 - 脚本：`/tmp/run_v14_ligand_validation_clean.sh`（207 行，每步产物检查，DONE 只在全链成功时写）

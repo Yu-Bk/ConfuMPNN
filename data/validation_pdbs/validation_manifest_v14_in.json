@@ -1,8 +1,6 @@
 {
-  "note": "v14 \u914d\u4f53\u6a21\u5f0f\u9a8c\u8bc1\u96c6\uff082026-09-03 \u8986\u76d6\u6838\u67e5\u91cd\u6784, \u5de5\u5177 code/tests/coverage_check.py\uff09\u3002coverage=in \u4e3a\u6807\u51c6\u9a8c\u8bc1\u96c6(H2/H1/Tm-Sol\u5224\u636e), boundary \u957f\u86cb\u767d(1A65)\u5355\u72ec\u62a5\u544a, \u5747\u76f8\u5bf9 labels_v14_final \u8986\u76d6\u5224\u5b9a\u3002leak 11/11 False\u3002 in-group\uff082E9R_X \u5df2\u5f52\u6863\u7f6e\u6362\u4e3a 5O60_E\uff0c\u89c1 final manifest archived\uff09",
-  "archived": [
-    "2E9R_X(FMDV RdRp, L476, native-10.1): \u4e0d\u5177\u4ee3\u8868\u6027RNA\u7ed1\u5408\u86cb\u767d\u4ee3\u8868, \u5f52\u5165'\u957f\u00d7\u5927\u7535\u8377\u53d8\u5316\u53ef\u8bbe\u8ba1\u6027\u6709\u9650'\u6863, 2026-09-03 \u5f52\u6863"
-  ],
+  "note": "v14 \u914d\u4f53\u6a21\u5f0f\u9a8c\u8bc1\u96c6\uff082026-09-03 \u8986\u76d6\u6838\u67e5\u91cd\u6784, \u5de5\u5177 code/tests/coverage_check.py\uff09\u3002coverage=in \u4e3a\u6807\u51c6\u9a8c\u8bc1\u96c6(H2/H1/Tm-Sol\u5224\u636e), boundary \u957f\u86cb\u767d(1A65)\u5355\u72ec\u62a5\u544a, \u5747\u76f8\u5bf9 labels_v14_final \u8986\u76d6\u5224\u5b9a\u3002leak 11/11 False\u3002",
+  "archived": [],
   "removed": [
     "1C6O(\u4e8c\u805a\u4f53)",
     "1AXW(\u4e8c\u805a\u4f53)",
@@ -10,8 +8,7 @@
     "1AZM(\u5e8f\u5217=\u8bad\u7ec31HCB,\u6cc4\u6f0f)"
   ],
   "replaced": {
-    "1AZM": "6D2O(beta-CA + 4MZ, \u8868\u5916CA, L209, \u975e\u6cc4\u6f0f)",
-    "2E9R_X": "5O60_E(\u6838\u7cd6\u4f53\u86cb\u767dE, L209, native+11.18, coverage=in n_close151, held-out)"
+    "1AZM": "6D2O(beta-CA + 4MZ, \u8868\u5916CA, L209, \u975e\u6cc4\u6f0f)"
   },
   "training_data_note": "labels_v14_final.npz (5371\u57df=\u65e74957 + RNA/DNA 414, 2026-09-03 Agent B \u6700\u7ec8\u7248); RNA/DNA \u53607.7%",
   "items": [
