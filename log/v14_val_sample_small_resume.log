@@ -1,0 +1,4 @@
+    条件编码器已加载: finetune_epoch050.pt  (epoch=50, n_tokens=4, token_dim=128)
+处理 3 个蛋白（7-10），臂 ligand=['native', 'n2', 'p2', 'n8', 'p8'] protein=['native', 'n8', 'p8']，n=30，pH=7.4
+
+=== 2E9R_X cat=RNA L=476 native=GLIVDTRDVEERVHVMRKTKLAPTV... charge@7.4=-10.12 口袋残基=101

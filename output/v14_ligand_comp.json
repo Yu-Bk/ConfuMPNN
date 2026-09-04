@@ -1,0 +1,125 @@
+{
+  "6D2O": {
+    "L": 209,
+    "native_dk": 42,
+    "native_de": 24,
+    "native_kr": 18,
+    "gen_dk": 23.6,
+    "gen_de": 14.1,
+    "gen_kr": 9.5,
+    "ratio": 0.56,
+    "n_gen": 50,
+    "coverage": "in"
+  },
+  "1AS2": {
+    "L": 312,
+    "native_dk": 84,
+    "native_de": 43,
+    "native_kr": 41,
+    "gen_dk": 38.6,
+    "gen_de": 20.4,
+    "gen_kr": 18.1,
+    "ratio": 0.46,
+    "n_gen": 50,
+    "coverage": "in"
+  },
+  "2FEO": {
+    "L": 221,
+    "native_dk": 57,
+    "native_de": 32,
+    "native_kr": 25,
+    "gen_dk": 26.2,
+    "gen_de": 14.9,
+    "gen_kr": 11.3,
+    "ratio": 0.46,
+    "n_gen": 50,
+    "coverage": "in"
+  },
+  "5CQH": {
+    "L": 183,
+    "native_dk": 43,
+    "native_de": 24,
+    "native_kr": 19,
+    "gen_dk": 18.5,
+    "gen_de": 11.3,
+    "gen_kr": 7.2,
+    "ratio": 0.43,
+    "n_gen": 50,
+    "coverage": "in"
+  },
+  "1CGE": {
+    "L": 162,
+    "native_dk": 36,
+    "native_de": 24,
+    "native_kr": 12,
+    "gen_dk": 21.6,
+    "gen_de": 16.5,
+    "gen_kr": 5.1,
+    "ratio": 0.6,
+    "n_gen": 50,
+    "coverage": "in"
+  },
+  "1A65": {
+    "err": "no seqs.fa"
+  },
+  "1BJ4": {
+    "L": 470,
+    "native_dk": 105,
+    "native_de": 52,
+    "native_kr": 53,
+    "gen_dk": 48.2,
+    "gen_de": 23.8,
+    "gen_kr": 24.3,
+    "ratio": 0.46,
+    "n_gen": 50,
+    "coverage": "in"
+  },
+  "21KL_A": {
+    "L": 237,
+    "native_dk": 62,
+    "native_de": 26,
+    "native_kr": 36,
+    "gen_dk": 38.0,
+    "gen_de": 14.6,
+    "gen_kr": 23.4,
+    "ratio": 0.61,
+    "n_gen": 50,
+    "coverage": "in"
+  },
+  "2E9R_X": {
+    "L": 476,
+    "native_dk": 116,
+    "native_de": 63,
+    "native_kr": 53,
+    "gen_dk": 51.3,
+    "gen_de": 29.4,
+    "gen_kr": 21.9,
+    "ratio": 0.44,
+    "n_gen": 50,
+    "coverage": "in"
+  },
+  "3MXB_A": {
+    "L": 153,
+    "native_dk": 38,
+    "native_de": 15,
+    "native_kr": 23,
+    "gen_dk": 26.2,
+    "gen_de": 8.7,
+    "gen_kr": 17.5,
+    "ratio": 0.69,
+    "n_gen": 50,
+    "coverage": "in"
+  },
+  "9DWG_L": {
+    "L": 323,
+    "native_dk": 98,
+    "native_de": 47,
+    "native_kr": 51,
+    "gen_dk": 46.3,
+    "gen_de": 21.1,
+    "gen_kr": 25.2,
+    "ratio": 0.47,
+    "n_gen": 50,
+    "coverage": "in"
+  }
+}

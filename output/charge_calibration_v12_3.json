@@ -1,0 +1,75 @@
+{
+  "label": "v12_3",
+  "source_diag": "output/v12_3_diag_response.json",
+  "note": "生成电荷 ≈ slope*target + intercept；校准 target_eff=(desired−intercept)/slope",
+  "global": {
+    "slope": 1.471390672080027,
+    "intercept": -5.9353913244189105
+  },
+  "per_protein": {
+    "7pujA01": {
+      "slope": 1.274,
+      "intercept": -6.55
+    },
+    "1d5yB03": {
+      "slope": 1.492,
+      "intercept": -4.496
+    },
+    "6jixA02": {
+      "slope": 1.157,
+      "intercept": -4.726
+    },
+    "1l3eB00": {
+      "slope": 1.431,
+      "intercept": -2.295
+    },
+    "2d3yA00": {
+      "slope": 0.966,
+      "intercept": -2.351
+    },
+    "8etcb01": {
+      "slope": 1.686,
+      "intercept": -10.487
+    },
+    "2uv8A05": {
+      "slope": 2.012,
+      "intercept": -12.114
+    },
+    "1AZM": {
+      "slope": 1.174,
+      "intercept": -4.134
+    },
+    "1AS2": {
+      "slope": 1.833,
+      "intercept": -4.112
+    },
+    "2FEO": {
+      "slope": 1.183,
+      "intercept": -7.586
+    },
+    "5CQH": {
+      "slope": 1.093,
+      "intercept": -5.549
+    },
+    "1CGE": {
+      "slope": 0.925,
+      "intercept": -2.639
+    },
+    "1A65": {
+      "slope": 1.433,
+      "intercept": -9.573
+    },
+    "1BJ4": {
+      "slope": 2.046,
+      "intercept": -2.74
+    },
+    "13BB": {
+      "slope": 1.79,
+      "intercept": -5.282
+    },
+    "1CDG": {
+      "slope": 1.985,
+      "intercept": -10.683
+    }
+  }
+}

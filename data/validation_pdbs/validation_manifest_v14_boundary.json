@@ -1,0 +1,24 @@
+{
+  "note": "v14 \u914d\u4f53\u6a21\u5f0f\u9a8c\u8bc1\u96c6\uff082026-09-03 \u8986\u76d6\u6838\u67e5\u91cd\u6784, \u5de5\u5177 code/tests/coverage_check.py\uff09\u3002coverage=in \u4e3a\u6807\u51c6\u9a8c\u8bc1\u96c6(H2/H1/Tm-Sol\u5224\u636e), boundary \u957f\u86cb\u767d(1A65)\u5355\u72ec\u62a5\u544a, \u5747\u76f8\u5bf9 labels_v14_final \u8986\u76d6\u5224\u5b9a\u3002leak 11/11 False\u3002 boundary",
+  "removed": [
+    "1C6O(\u4e8c\u805a\u4f53)",
+    "1AXW(\u4e8c\u805a\u4f53)",
+    "1AG0(\u4e8c\u805a\u4f53)",
+    "1AZM(\u5e8f\u5217=\u8bad\u7ec31HCB,\u6cc4\u6f0f)"
+  ],
+  "replaced": {
+    "1AZM": "6D2O(beta-CA + 4MZ, \u8868\u5916CA, L209, \u975e\u6cc4\u6f0f)"
+  },
+  "training_data_note": "labels_v14_final.npz (5371\u57df=\u65e74957 + RNA/DNA 414, 2026-09-03 Agent B \u6700\u7ec8\u7248); RNA/DNA \u53607.7%",
+  "items": [
+    {
+      "pdb": "1A65",
+      "path": "data/validation_pdbs/1A65.pdb",
+      "cat": "long",
+      "ligand": "NAG",
+      "L": 504,
+      "coverage": "boundary",
+      "coverage_note": "L504\u8d85\u8bad\u7ec3max500+native-26.9(\u914d\u4f53\u8bad\u7ec3q2.8%\u5206\u4f4d), \u76f8\u8fd1\u57df53\u2192boundary \u914d\u4f53\u957f\u86cb\u767d\u8fb9\u754c\u68c0\u9a8c"
+    }
+  ]
+}

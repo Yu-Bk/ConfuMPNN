@@ -1,0 +1,43 @@
+{
+ "note": "v12.2 蛋白模式 4 长蛋白补测清单（2026-09-03，paper gap1 v12.2 基线）。用途：用 v12.2 权重对 4 长蛋白（1A65/1BJ4/13BB/1CDG）跑小样本现场标定 + big-global 两口径泛化 H2，与 v12.3 同口径形成对照。条目格式对齐 validation_manifest_v12_3.json 中 4 长蛋白（cat/L/ligand/coverage/coverage_note 一致）。全部蛋白不在 v12.2 训练集（S40 6710+455 域）。native 电荷@7.4：1A65 -26.85/L504、1BJ4 +0.42/L470、13BB -12.80/L552、1CDG -8.94/L686。",
+ "items": [
+  {
+   "pdb": "1A65",
+   "path": "data/validation_pdbs/1A65.pdb",
+   "cat": "long",
+   "L": 504,
+   "ligand": "NAG(糖),CU",
+   "coverage": "out",
+   "coverage_note": "native-26.9=训练q1.1%分位(深负长尾), 相近域24→out 分布外(泛化外推讨论)"
+  },
+  {
+   "pdb": "1BJ4",
+   "path": "data/validation_pdbs/1BJ4.pdb",
+   "cat": "long",
+   "L": 470,
+   "ligand": "PLP(吡哆醛磷酸)",
+   "coverage": "boundary",
+   "coverage_note": "L470长蛋白,native+0.4(51%分位), 相近域96→boundary 覆盖内长蛋白检验"
+  },
+  {
+   "pdb": "13BB",
+   "path": "data/validation_pdbs/13BB.pdb",
+   "cat": "small_mol",
+   "L": 560,
+   "ligand": "TPP+MG",
+   "note": "v12.3 新增长蛋白（v12.2 未见）",
+   "coverage": "boundary",
+   "coverage_note": "L552(训练L99%分位),native-12.8(9%分位), 相近域44→boundary 覆盖边界长蛋白检验"
+  },
+  {
+   "pdb": "1CDG",
+   "path": "data/validation_pdbs/1CDG.pdb",
+   "cat": "small_mol",
+   "L": 686,
+   "ligand": "GLC+CA",
+   "note": "v12.3 新增长蛋白（v12.2 未见）",
+   "coverage": "out",
+   "coverage_note": "L686超长(训练>600仅0.6%), 相近域7→out 分布外(超长外推)"
+  }
+ ]
+}

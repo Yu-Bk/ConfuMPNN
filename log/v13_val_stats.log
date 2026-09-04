@@ -1,0 +1,8 @@
+蛋白     类            L 模式     臂       目标     均值   dev  达标    rec   pkt  gravy   TM中位 TM≥0.7 TM<0.5   RMSD  pLDDT
+
+=== 配体消融对比（ligand vs protein，H2 dev / H1 TM）===
+
+H2 电荷达标: 0/0 = None
+H1 TM≥0.70: 0/0 = None
+
+已写 output/v13_ligand_gen_stats.json

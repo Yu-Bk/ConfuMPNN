@@ -1,0 +1,20 @@
+done 5AVC: ok 8 fail 0 elapsed 2s
+done 3WVK: ok 4 fail 0 elapsed 1s
+done 1BP7: ok 4 fail 0 elapsed 0s
+done 8ZDR: ok 1 fail 0 elapsed 1s
+done 5VVL: ok 6 fail 0 elapsed 2s
+done 2V3C: ok 4 fail 0 elapsed 1s
+done 2ZZN: ok 2 fail 0 elapsed 1s
+done 3ADB: ok 2 fail 0 elapsed 1s
+done 5GIN: ok 9 fail 0 elapsed 2s
+done 7V9X: ok 3 fail 0 elapsed 1s
+done 9FB4: ok 6 fail 0 elapsed 2s
+done 3HOT: ok 2 fail 0 elapsed 1s
+done 4NOD: ok 4 fail 0 elapsed 1s
+  fail 7OUH_C: chain C 配体原子 0 < 20
+  fail 7OUH_F: chain F 配体原子 0 < 20
+done 7OUH: ok 4 fail 2 elapsed 2s
+  fail 6IFL_A: chain A L=691 超范围
+done 6IFL: ok 7 fail 1 elapsed 2s
+  fail 9ASH_A: chain A L=753 超范围
+done 9ASH: ok 9 fail 1 elapsed 2s

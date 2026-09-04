@@ -1,0 +1,28 @@
+    条件编码器已加载: finetune_epoch050.pt  (epoch=50, n_tokens=4, token_dim=128)
+处理 3 个蛋白（7-10），臂 ligand=['native', 'n2', 'p2', 'n8', 'p8'] protein=['native', 'n8', 'p8']，n=30，pH=7.4
+
+=== 2E9R_X cat=RNA L=476 native=GLIVDTRDVEERVHVMRKTKLAPTV... charge@7.4=-10.12 口袋残基=101
+  [ligand/native] target= -10 mean=-18.09 dev=8.09 rec=0.358 pkt=0.318 gravy=-0.184
+  [ligand/n2] target= -12 mean=-21.31 dev=9.31 rec=0.359 pkt=0.319 gravy=-0.182
+  [ligand/p2] target=  -8 mean=-15.19 dev=7.19 rec=0.357 pkt=0.317 gravy=-0.167
+  [ligand/n8] target= -18 mean=-30.36 dev=12.36 rec=0.362 pkt=0.324 gravy=-0.172
+  [ligand/p8] target=  -2 mean= -7.33 dev=5.33 rec=0.353 pkt=0.314 gravy=-0.150
+  已写 2E9R_X 结果
+
+=== 3MXB_A cat=DNA L=153 native=NTKYNKKFLLYLAGFVDGDGSIIAQ... charge@7.4=+7.94 口袋残基=73
+  [ligand/native] target=   8 mean= +8.40 dev=0.40 rec=0.494 pkt=0.459 gravy=-0.536
+  [ligand/n2] target=   6 mean= +6.69 dev=0.69 rec=0.490 pkt=0.447 gravy=-0.525
+  [ligand/p2] target=  10 mean=+10.57 dev=0.57 rec=0.497 pkt=0.463 gravy=-0.551
+  [ligand/n8] target=   0 mean= +1.62 dev=1.62 rec=0.488 pkt=0.445 gravy=-0.500
+  [ligand/p8] target=  16 mean=+17.30 dev=1.30 rec=0.505 pkt=0.483 gravy=-0.594
+  已写 3MXB_A 结果
+
+=== 9DWG_L cat=DNA L=323 native=LNGGITDMLTELANFEKNVSQAIHK... charge@7.4=+3.98 口袋残基=43
+  [ligand/native] target=   4 mean= -0.40 dev=4.40 rec=0.371 pkt=0.404 gravy=-0.371
+  [ligand/n2] target=   2 mean= -2.86 dev=4.86 rec=0.368 pkt=0.403 gravy=-0.375
+  [ligand/p2] target=   6 mean= +2.40 dev=3.60 rec=0.372 pkt=0.403 gravy=-0.383
+  [ligand/n8] target=  -4 mean= -8.90 dev=4.90 rec=0.366 pkt=0.405 gravy=-0.383
+  [ligand/p8] target=  12 mean=+10.61 dev=1.39 rec=0.380 pkt=0.403 gravy=-0.423
+  已写 9DWG_L 结果
+
+=== 全部完成 ===

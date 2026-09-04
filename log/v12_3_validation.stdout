@@ -1,0 +1,317 @@
+[05:54:06] == V1 采样 ==
+[05:54:06] V1 采样启动（protein 模式 5 臂 n=30，校准，cuda:6）...
+[06:21:56] V1 采样完成：9/9
+[06:21:56] == V2 ESMFold 回折 ==
+[06:21:56] V2 回折启动（cuda:6）...
+[10:28:16] V2 回折完成：45/45
+[10:28:16] == V3 TM-score ==
+[10:38:31] V3 TM 完成：45/45
+[10:38:31] == V4 统计 ==
+[10:38:31] V4 统计完成：output/generalization_v12_3_calib_stats.json
+[10:38:31] == V5 PROPKA 复核（4 长蛋白 × native/n8）==
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge__0_42.pdb                  470    0.421    3.043
+seed_2000_arm_native_target__0_charge_-10_12.pdb 470  -10.117   -9.177
+seed_2001_arm_native_target__0_charge_-4_20.pdb 470   -4.203   -3.843
+seed_2002_arm_native_target__0_charge_-0_13.pdb 470   -0.127    0.104
+seed_2003_arm_native_target__0_charge__8_87.pdb 470    8.872    9.062
+seed_2004_arm_native_target__0_charge__8_01.pdb 470    8.008    8.012
+seed_2005_arm_native_target__0_charge__7_02.pdb 470    7.017    8.812
+seed_2006_arm_native_target__0_charge__1_95.pdb 470    1.951    2.103
+seed_2007_arm_native_target__0_charge__2_88.pdb 470     2.88    4.057
+seed_2008_arm_native_target__0_charge__6_06.pdb 470     6.06    6.764
+seed_2009_arm_native_target__0_charge__4_98.pdb 470    4.981    5.232
+seed_2010_arm_native_target__0_charge_-0_09.pdb 470   -0.095    0.554
+seed_2011_arm_native_target__0_charge__12_86.pdb 470    12.86   13.094
+seed_2012_arm_native_target__0_charge_-3_16.pdb 470   -3.164   -3.005
+seed_2013_arm_native_target__0_charge_-4_10.pdb 470   -4.095   -2.916
+seed_2014_arm_native_target__0_charge__5_99.pdb 470    5.987    6.113
+seed_2015_arm_native_target__0_charge_-0_01.pdb 470   -0.007    0.105
+seed_2016_arm_native_target__0_charge__5_84.pdb 470     5.84    6.288
+seed_2017_arm_native_target__0_charge_-5_02.pdb 470   -5.016   -4.976
+seed_2018_arm_native_target__0_charge_-3_24.pdb 470   -3.244   -3.161
+seed_2019_arm_native_target__0_charge__3_11.pdb 470    3.107    3.224
+seed_2020_arm_native_target__0_charge_-1_08.pdb 470   -1.085    0.162
+seed_2021_arm_native_target__0_charge__4_91.pdb 470    4.908    6.098
+seed_2022_arm_native_target__0_charge_-12_04.pdb 470  -12.037  -10.147
+seed_2023_arm_native_target__0_charge__6_87.pdb 470    6.867    7.066
+seed_2024_arm_native_target__0_charge_-1_27.pdb 470   -1.269   -1.113
+seed_2025_arm_native_target__0_charge_-1_17.pdb 470   -1.167    0.084
+seed_2026_arm_native_target__0_charge_-3_90.pdb 470   -3.904   -3.648
+seed_2027_arm_native_target__0_charge_-1_25.pdb 470   -1.246   -1.047
+seed_2028_arm_native_target__0_charge__7_90.pdb 470    7.902   12.082
+seed_2029_arm_native_target__0_charge__3_87.pdb 470    3.872     4.14
+
+Q_phys 均值 = 2.038 ± 5.616  (Q_design 均值 = 1.315)
+H4 判定: |Q_phys − target| = 2.038 → FAIL（阈值 2.0，与 H2 一致）
+已写 output/propka_v12_3/1BJ4_native.json
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge__0_42.pdb                  470    0.421    3.043
+seed_2000_arm_n8_target_-8_charge_-4_28.pdb 470   -4.276   -1.952
+seed_2001_arm_n8_target_-8_charge_-1_13.pdb 470   -1.127   -0.644
+seed_2002_arm_n8_target_-8_charge_-11_12.pdb 470  -11.118  -10.852
+seed_2003_arm_n8_target_-8_charge_-2_25.pdb 470   -2.246   -1.958
+seed_2004_arm_n8_target_-8_charge_-2_10.pdb 470   -2.097   -0.974
+seed_2005_arm_n8_target_-8_charge_-8_88.pdb 470   -8.875   -7.946
+seed_2006_arm_n8_target_-8_charge_-15_12.pdb 470  -15.117  -14.527
+seed_2007_arm_n8_target_-8_charge_-9_17.pdb 470   -9.167   -8.895
+seed_2008_arm_n8_target_-8_charge_-5_05.pdb 470   -5.046    -4.82
+seed_2009_arm_n8_target_-8_charge_-1_13.pdb 470   -1.125   -0.372
+seed_2010_arm_n8_target_-8_charge_-16_17.pdb 470  -16.166  -14.402
+seed_2011_arm_n8_target_-8_charge__2_86.pdb 470    2.865    3.095
+seed_2012_arm_n8_target_-8_charge_-8_12.pdb 470   -8.123   -7.959
+seed_2013_arm_n8_target_-8_charge_-17_05.pdb 470  -17.045  -15.067
+seed_2014_arm_n8_target_-8_charge_-10_01.pdb 470  -10.014   -8.752
+seed_2015_arm_n8_target_-8_charge_-6_01.pdb 470   -6.009   -5.848
+seed_2016_arm_n8_target_-8_charge_-9_34.pdb 470   -9.343   -7.404
+seed_2017_arm_n8_target_-8_charge_-17_23.pdb 470  -17.231  -14.704
+seed_2018_arm_n8_target_-8_charge_-14_28.pdb 470   -14.28  -14.269
+seed_2019_arm_n8_target_-8_charge_-8_20.pdb 470   -8.196   -6.895
+seed_2020_arm_n8_target_-8_charge_-18_19.pdb 470  -18.193  -17.739
+seed_2021_arm_n8_target_-8_charge_-8_13.pdb 470   -8.128   -7.086
+seed_2022_arm_n8_target_-8_charge_-24_04.pdb 470  -24.036  -23.697
+seed_2023_arm_n8_target_-8_charge_-5_17.pdb 470   -5.168   -4.923
+seed_2024_arm_n8_target_-8_charge_-8_16.pdb 470   -8.159   -7.964
+seed_2025_arm_n8_target_-8_charge_-5_13.pdb 470   -5.131   -4.348
+seed_2026_arm_n8_target_-8_charge_-6_02.pdb 470   -6.018   -4.416
+seed_2027_arm_n8_target_-8_charge_-3_25.pdb 470    -3.25     -3.0
+seed_2028_arm_n8_target_-8_charge_-3_40.pdb 470   -3.399   -2.144
+seed_2029_arm_n8_target_-8_charge__0_98.pdb 470    0.982    1.773
+
+Q_phys 均值 = -6.956 ± 6.279  (Q_design 均值 = -7.865)
+H4 判定: |Q_phys − target| = 1.044 → PASS（阈值 2.0，与 H2 一致）
+已写 output/propka_v12_3/1BJ4_n8.json
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge_-26_85.pdb                 504  -26.846  -22.682
+seed_2000_arm_native_target_-27_charge_-17_89.pdb 504  -17.891  -15.314
+seed_2001_arm_native_target_-27_charge_-30_72.pdb 504  -30.718  -30.498
+seed_2002_arm_native_target_-27_charge_-22_72.pdb 504  -22.721  -22.144
+seed_2003_arm_native_target_-27_charge_-14_73.pdb 504  -14.727  -14.554
+seed_2004_arm_native_target_-27_charge_-23_48.pdb 504  -23.483  -21.559
+seed_2005_arm_native_target_-27_charge_-19_52.pdb 504   -19.52  -18.883
+seed_2006_arm_native_target_-27_charge_-18_35.pdb 504  -18.354  -15.987
+seed_2007_arm_native_target_-27_charge_-17_61.pdb 504  -17.609  -17.331
+seed_2008_arm_native_target_-27_charge_-14_45.pdb 504  -14.453  -13.408
+seed_2009_arm_native_target_-27_charge_-23_68.pdb 504  -23.676  -22.535
+seed_2010_arm_native_target_-27_charge_-22_68.pdb 504  -22.681  -22.813
+seed_2011_arm_native_target_-27_charge_-13_67.pdb 504  -13.675   -12.94
+seed_2012_arm_native_target_-27_charge_-18_64.pdb 504  -18.641  -18.744
+seed_2013_arm_native_target_-27_charge_-15_76.pdb 504  -15.761    -15.7
+seed_2014_arm_native_target_-27_charge_-21_49.pdb 504  -21.492  -21.136
+seed_2015_arm_native_target_-27_charge_-17_72.pdb 504  -17.722  -17.756
+seed_2016_arm_native_target_-27_charge_-23_74.pdb 504  -23.742  -23.205
+seed_2017_arm_native_target_-27_charge_-18_85.pdb 504  -18.849  -18.808
+seed_2018_arm_native_target_-27_charge_-23_64.pdb 504   -23.64  -23.693
+seed_2019_arm_native_target_-27_charge_-26_79.pdb 504  -26.793  -25.182
+seed_2020_arm_native_target_-27_charge_-32_68.pdb 504  -32.677  -30.537
+seed_2021_arm_native_target_-27_charge_-20_61.pdb 504  -20.612  -19.779
+seed_2022_arm_native_target_-27_charge_-19_41.pdb 504  -19.408  -19.567
+seed_2023_arm_native_target_-27_charge_-21_13.pdb 504  -21.133  -19.067
+seed_2024_arm_native_target_-27_charge_-20_56.pdb 504   -20.56   -19.13
+seed_2025_arm_native_target_-27_charge_-21_76.pdb 504  -21.757  -20.123
+seed_2026_arm_native_target_-27_charge_-28_25.pdb 504  -28.249  -26.063
+seed_2027_arm_native_target_-27_charge_-24_56.pdb 504  -24.564  -22.992
+seed_2028_arm_native_target_-27_charge_-23_85.pdb 504  -23.852  -21.801
+seed_2029_arm_native_target_-27_charge_-23_72.pdb 504  -23.724  -21.038
+
+Q_phys 均值 = -20.483 ± 4.183  (Q_design 均值 = -21.598)
+H4 判定: |Q_phys − target| = 6.517 → FAIL（阈值 2.0，与 H2 一致）
+已写 output/propka_v12_3/1A65_native.json
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge_-26_85.pdb                 504  -26.846  -22.682
+seed_2000_arm_n8_target_-35_charge_-35_77.pdb 504   -35.77  -32.612
+seed_2001_arm_n8_target_-35_charge_-42_75.pdb 504  -42.753  -41.763
+seed_2002_arm_n8_target_-35_charge_-37_56.pdb 504  -37.556  -35.635
+seed_2003_arm_n8_target_-35_charge_-27_61.pdb 504  -27.607  -27.204
+seed_2004_arm_n8_target_-35_charge_-43_46.pdb 504  -43.464  -42.191
+seed_2005_arm_n8_target_-35_charge_-32_47.pdb 504  -32.472  -29.769
+seed_2006_arm_n8_target_-35_charge_-26_35.pdb 504  -26.349   -23.93
+seed_2007_arm_n8_target_-35_charge_-33_72.pdb 504  -33.717  -33.441
+seed_2008_arm_n8_target_-35_charge_-32_36.pdb 504  -32.365  -30.222
+seed_2009_arm_n8_target_-35_charge_-30_67.pdb 504  -30.673  -28.036
+seed_2010_arm_n8_target_-35_charge_-33_52.pdb 504  -33.521  -32.813
+seed_2011_arm_n8_target_-35_charge_-25_78.pdb 504  -25.782  -24.465
+seed_2012_arm_n8_target_-35_charge_-27_52.pdb 504  -27.523  -27.927
+seed_2013_arm_n8_target_-35_charge_-37_55.pdb 504  -37.553  -35.448
+seed_2014_arm_n8_target_-35_charge_-38_52.pdb 504  -38.518  -39.182
+seed_2015_arm_n8_target_-35_charge_-30_60.pdb 504  -30.599  -29.427
+seed_2016_arm_n8_target_-35_charge_-33_84.pdb 504  -33.843  -33.335
+seed_2017_arm_n8_target_-35_charge_-29_53.pdb 504  -29.527   -29.31
+seed_2018_arm_n8_target_-35_charge_-39_62.pdb 504  -39.623  -39.212
+seed_2019_arm_n8_target_-35_charge_-38_66.pdb 504  -38.661  -37.126
+seed_2020_arm_n8_target_-35_charge_-39_70.pdb 504  -39.703  -38.366
+seed_2021_arm_n8_target_-35_charge_-40_52.pdb 504  -40.519  -38.742
+seed_2022_arm_n8_target_-35_charge_-36_39.pdb 504  -36.392  -36.017
+seed_2023_arm_n8_target_-35_charge_-38_94.pdb 504  -38.936  -38.437
+seed_2024_arm_n8_target_-35_charge_-33_40.pdb 504  -33.403  -32.772
+seed_2025_arm_n8_target_-35_charge_-49_82.pdb 504  -49.821  -49.612
+seed_2026_arm_n8_target_-35_charge_-36_39.pdb 504  -36.394  -35.309
+seed_2027_arm_n8_target_-35_charge_-40_47.pdb 504  -40.475  -38.212
+seed_2028_arm_n8_target_-35_charge_-42_58.pdb 504  -42.584  -41.212
+seed_2029_arm_n8_target_-35_charge_-37_37.pdb 504  -37.369  -35.607
+
+Q_phys 均值 = -34.194 ± 5.95  (Q_design 均值 = -35.494)
+H4 判定: |Q_phys − target| = 0.806 → PASS（阈值 2.0，与 H2 一致）
+已写 output/propka_v12_3/1A65_n8.json
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge_-12_80.pdb                 552  -12.804  -12.055
+seed_2000_arm_native_target_-13_charge__0_65.pdb 552     0.65    1.638
+seed_2001_arm_native_target_-13_charge_-9_26.pdb 552   -9.261    -8.85
+seed_2002_arm_native_target_-13_charge_-13_28.pdb 552  -13.278   -12.68
+seed_2003_arm_native_target_-13_charge_-7_12.pdb 552    -7.12   -6.622
+seed_2004_arm_native_target_-13_charge_-9_23.pdb 552   -9.234   -8.455
+seed_2005_arm_native_target_-13_charge_-10_12.pdb 552  -10.115    -9.46
+seed_2006_arm_native_target_-13_charge_-3_15.pdb 552   -3.148   -2.335
+seed_2007_arm_native_target_-13_charge_-12_19.pdb 552  -12.189   -11.66
+seed_2008_arm_native_target_-13_charge_-6_19.pdb 552   -6.191   -5.684
+seed_2009_arm_native_target_-13_charge_-9_22.pdb 552   -9.225   -8.596
+seed_2010_arm_native_target_-13_charge_-15_30.pdb 552  -15.305  -13.944
+seed_2011_arm_native_target_-13_charge_-3_05.pdb 552   -3.053   -3.503
+seed_2012_arm_native_target_-13_charge_-0_15.pdb 552    -0.15   -0.749
+seed_2013_arm_native_target_-13_charge_-7_12.pdb 552   -7.117    -6.35
+seed_2014_arm_native_target_-13_charge_-5_00.pdb 552   -5.003   -3.885
+seed_2015_arm_native_target_-13_charge_-0_16.pdb 552   -0.158    2.155
+seed_2016_arm_native_target_-13_charge_-4_46.pdb 552   -4.459   -3.498
+seed_2017_arm_native_target_-13_charge_-14_27.pdb 552  -14.268  -12.395
+seed_2018_arm_native_target_-13_charge_-9_16.pdb 552   -9.158   -7.684
+seed_2019_arm_native_target_-13_charge_-13_23.pdb 552  -13.232  -11.865
+seed_2020_arm_native_target_-13_charge_-16_30.pdb 552  -16.299  -16.317
+seed_2021_arm_native_target_-13_charge_-2_23.pdb 552   -2.229   -1.866
+seed_2022_arm_native_target_-13_charge_-8_30.pdb 552   -8.304   -7.703
+seed_2023_arm_native_target_-13_charge_-8_27.pdb 552   -8.269   -6.843
+seed_2024_arm_native_target_-13_charge_-15_00.pdb 552  -15.002  -13.331
+seed_2025_arm_native_target_-13_charge_-6_20.pdb 552   -6.198   -5.921
+seed_2026_arm_native_target_-13_charge_-8_16.pdb 552   -8.165   -7.857
+seed_2027_arm_native_target_-13_charge_-2_16.pdb 552   -2.159   -0.859
+seed_2028_arm_native_target_-13_charge_-7_22.pdb 552   -7.222   -5.051
+seed_2029_arm_native_target_-13_charge_-6_12.pdb 552   -6.117   -5.299
+
+Q_phys 均值 = -7.017 ± 4.582  (Q_design 均值 = -7.864)
+H4 判定: |Q_phys − target| = 5.983 → FAIL（阈值 2.0，与 H2 一致）
+已写 output/propka_v12_3/13BB_native.json
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge_-12_80.pdb                 552  -12.804  -12.055
+seed_2000_arm_n8_target_-21_charge_-9_12.pdb 552   -9.116    -8.85
+seed_2001_arm_n8_target_-21_charge_-11_96.pdb 552  -11.957  -11.463
+seed_2002_arm_n8_target_-21_charge_-21_89.pdb 552  -21.894  -20.145
+seed_2003_arm_n8_target_-21_charge_-7_38.pdb 552   -7.385   -6.834
+seed_2004_arm_n8_target_-21_charge_-17_05.pdb 552  -17.047  -15.456
+seed_2005_arm_n8_target_-21_charge_-21_11.pdb 552  -21.108  -20.365
+seed_2006_arm_n8_target_-21_charge_-16_15.pdb 552  -16.148  -15.526
+seed_2007_arm_n8_target_-21_charge_-20_26.pdb 552  -20.257  -19.636
+seed_2008_arm_n8_target_-21_charge_-3_09.pdb 552   -3.085   -2.802
+seed_2009_arm_n8_target_-21_charge_-13_38.pdb 552  -13.377   -11.77
+seed_2010_arm_n8_target_-21_charge_-21_11.pdb 552  -21.111  -20.428
+seed_2011_arm_n8_target_-21_charge_-21_96.pdb 552  -21.961  -21.006
+seed_2012_arm_n8_target_-21_charge_-11_10.pdb 552  -11.102   -9.845
+seed_2013_arm_n8_target_-21_charge_-12_07.pdb 552  -12.074  -11.786
+seed_2014_arm_n8_target_-21_charge_-13_77.pdb 552  -13.768  -13.325
+seed_2015_arm_n8_target_-21_charge_-6_93.pdb 552   -6.926   -5.091
+seed_2016_arm_n8_target_-21_charge_-12_26.pdb 552  -12.259  -11.435
+seed_2017_arm_n8_target_-21_charge_-16_07.pdb 552  -16.069  -16.148
+seed_2018_arm_n8_target_-21_charge_-20_93.pdb 552  -20.925  -19.607
+seed_2019_arm_n8_target_-21_charge_-19_19.pdb 552  -19.186  -18.344
+seed_2020_arm_n8_target_-21_charge_-15_37.pdb 552  -15.372  -15.045
+seed_2021_arm_n8_target_-21_charge_-10_14.pdb 552  -10.144   -9.786
+seed_2022_arm_n8_target_-21_charge_-11_00.pdb 552  -10.998  -10.189
+seed_2023_arm_n8_target_-21_charge_-13_12.pdb 552  -13.115   -11.38
+seed_2024_arm_n8_target_-21_charge_-18_70.pdb 552  -18.695  -16.506
+seed_2025_arm_n8_target_-21_charge_-16_22.pdb 552  -16.222  -16.657
+seed_2026_arm_n8_target_-21_charge_-12_09.pdb 552  -12.085  -11.724
+seed_2027_arm_n8_target_-21_charge_-10_00.pdb 552   -9.995   -9.427
+seed_2028_arm_n8_target_-21_charge_-19_11.pdb 552  -19.108  -16.675
+seed_2029_arm_n8_target_-21_charge_-16_97.pdb 552  -16.971  -15.438
+
+Q_phys 均值 = -13.701 ± 4.659  (Q_design 均值 = -14.589)
+H4 判定: |Q_phys − target| = 7.299 → FAIL（阈值 2.0，与 H2 一致）
+已写 output/propka_v12_3/13BB_n8.json
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge_-8_94.pdb                  686   -8.943   -5.344
+seed_2000_arm_native_target_-9_charge_-2_98.pdb 686   -2.978   -1.948
+seed_2001_arm_native_target_-9_charge_-7_01.pdb 686   -7.013    -3.26
+seed_2002_arm_native_target_-9_charge__6_03.pdb 686    6.028    5.764
+seed_2003_arm_native_target_-9_charge__4_15.pdb 686    4.148    4.465
+seed_2004_arm_native_target_-9_charge__2_88.pdb 686    2.875    4.564
+seed_2005_arm_native_target_-9_charge__1_15.pdb 686    1.147    3.456
+seed_2006_arm_native_target_-9_charge_-10_15.pdb 686  -10.151   -7.335
+seed_2007_arm_native_target_-9_charge_-0_71.pdb 686   -0.712     0.92
+seed_2008_arm_native_target_-9_charge__1_99.pdb 686    1.992    3.777
+seed_2009_arm_native_target_-9_charge_-3_07.pdb 686    -3.07    -2.38
+seed_2010_arm_native_target_-9_charge_-8_07.pdb 686   -8.071   -7.587
+seed_2011_arm_native_target_-9_charge_-17_62.pdb 686  -17.622  -14.577
+seed_2012_arm_native_target_-9_charge_-12_88.pdb 686  -12.881  -12.362
+seed_2013_arm_native_target_-9_charge_-0_17.pdb 686   -0.165    0.488
+seed_2014_arm_native_target_-9_charge__7_01.pdb 686    7.006    7.021
+seed_2015_arm_native_target_-9_charge_-5_89.pdb 686   -5.894   -2.764
+seed_2016_arm_native_target_-9_charge_-7_82.pdb 686   -7.815   -6.235
+seed_2017_arm_native_target_-9_charge_-6_93.pdb 686   -6.927   -4.666
+seed_2018_arm_native_target_-9_charge_-8_96.pdb 686   -8.964   -7.855
+seed_2019_arm_native_target_-9_charge_-4_00.pdb 686   -4.002   -2.514
+seed_2020_arm_native_target_-9_charge_-4_74.pdb 686   -4.745   -4.717
+seed_2021_arm_native_target_-9_charge_-4_12.pdb 686   -4.119   -2.754
+seed_2022_arm_native_target_-9_charge_-9_91.pdb 686   -9.906   -9.661
+seed_2023_arm_native_target_-9_charge_-6_71.pdb 686    -6.71   -5.334
+seed_2024_arm_native_target_-9_charge_-2_05.pdb 686   -2.047   -1.344
+seed_2025_arm_native_target_-9_charge__5_81.pdb 686    5.806    9.559
+seed_2026_arm_native_target_-9_charge__3_27.pdb 686    3.273    5.148
+seed_2027_arm_native_target_-9_charge_-8_00.pdb 686   -8.005   -5.254
+seed_2028_arm_native_target_-9_charge_-1_74.pdb 686    -1.74    0.696
+seed_2029_arm_native_target_-9_charge__0_33.pdb 686     0.33      0.8
+
+Q_phys 均值 = -1.975 ± 5.655  (Q_design 均值 = -3.544)
+H4 判定: |Q_phys − target| = 7.025 → FAIL（阈值 2.0，与 H2 一致）
+已写 output/propka_v12_3/1CDG_native.json
+PROPKA 复核: 目录 folds（31 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge_-8_94.pdb                  686   -8.943   -5.344
+seed_2000_arm_n8_target_-17_charge_-10_89.pdb 686  -10.892   -9.741
+seed_2001_arm_n8_target_-17_charge_-8_97.pdb 686   -8.972   -7.473
+seed_2002_arm_n8_target_-17_charge__0_14.pdb 686     0.14   -0.742
+seed_2003_arm_n8_target_-17_charge__1_15.pdb 686    1.145    0.989
+seed_2004_arm_n8_target_-17_charge_-5_23.pdb 686    -5.23   -4.647
+seed_2005_arm_n8_target_-17_charge_-9_82.pdb 686   -9.824   -9.952
+seed_2006_arm_n8_target_-17_charge_-17_00.pdb 686  -17.002  -14.682
+seed_2007_arm_n8_target_-17_charge_-14_93.pdb 686  -14.932  -13.855
+seed_2008_arm_n8_target_-17_charge_-7_12.pdb 686   -7.119    -5.91
+seed_2009_arm_n8_target_-17_charge_-6_01.pdb 686   -6.006   -4.693
+seed_2010_arm_n8_target_-17_charge_-12_04.pdb 686  -12.044  -10.134
+seed_2011_arm_n8_target_-17_charge_-14_64.pdb 686  -14.637  -11.131
+seed_2012_arm_n8_target_-17_charge_-13_85.pdb 686   -13.85  -11.722
+seed_2013_arm_n8_target_-17_charge_-10_09.pdb 686  -10.089   -8.618
+seed_2014_arm_n8_target_-17_charge_-7_98.pdb 686   -7.984   -8.301
+seed_2015_arm_n8_target_-17_charge_-7_16.pdb 686    -7.16   -5.141
+seed_2016_arm_n8_target_-17_charge_-11_15.pdb 686  -11.155   -8.699
+seed_2017_arm_n8_target_-17_charge_-8_94.pdb 686   -8.942   -6.452
+seed_2018_arm_n8_target_-17_charge_-13_01.pdb 686   -13.01  -11.707
+seed_2019_arm_n8_target_-17_charge_-12_97.pdb 686  -12.972  -13.251
+seed_2020_arm_n8_target_-17_charge_-14_64.pdb 686  -14.642  -13.929
+seed_2021_arm_n8_target_-17_charge_-12_13.pdb 686  -12.128  -11.948
+seed_2022_arm_n8_target_-17_charge_-9_92.pdb 686   -9.916   -8.649
+seed_2023_arm_n8_target_-17_charge_-10_67.pdb 686  -10.674  -10.789
+seed_2024_arm_n8_target_-17_charge_-13_05.pdb 686  -13.048  -12.263
+seed_2025_arm_n8_target_-17_charge_-5_05.pdb 686   -5.048   -4.536
+seed_2026_arm_n8_target_-17_charge__0_29.pdb 686    0.286    1.934
+seed_2027_arm_n8_target_-17_charge_-11_32.pdb 686  -11.318   -8.187
+seed_2028_arm_n8_target_-17_charge_-9_80.pdb 686   -9.795   -9.415
+seed_2029_arm_n8_target_-17_charge_-5_63.pdb 686   -5.634    -5.76
+
+Q_phys 均值 = -8.218 ± 4.125  (Q_design 均值 = -9.4)
+H4 判定: |Q_phys − target| = 8.782 → FAIL（阈值 2.0，与 H2 一致）
+已写 output/propka_v12_3/1CDG_n8.json
+done: output/propka_v12_3/1BJ4_native.json
+done: output/propka_v12_3/1BJ4_n8.json
+done: output/propka_v12_3/1A65_native.json
+done: output/propka_v12_3/1A65_n8.json
+done: output/propka_v12_3/13BB_native.json
+done: output/propka_v12_3/13BB_n8.json
+done: output/propka_v12_3/1CDG_native.json
+done: output/propka_v12_3/1CDG_n8.json
+[10:41:41] V5 PROPKA 完成
+[10:41:41] == v12.3 泛化验证全流程完成（H1/H2/GRAVY/H4 产物齐备）==

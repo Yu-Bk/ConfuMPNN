@@ -1,0 +1,13 @@
+9 个 valid 蛋白，小样本标定（5 target × 10 = 50 条/蛋白）
+    条件编码器已加载: finetune_epoch040.pt  (epoch=40, n_tokens=4, token_dim=128)
+1AZM   L=258 native=-2 slope=0.947 int=-4.10 | LOOCV=0.53 | -10→-13.8 -6→-9.5 -2→-6.2 +2→-1.8 +6→+1.3
+1AS2   L=312 native=-3 slope=1.419 int=-4.53 | LOOCV=2.33 | -11→-21.9 -7→-13.3 -3→-7.2 +1→-2.8 +5→+1.3
+2FEO   L=221 native=-7 slope=1.214 int=-4.38 | LOOCV=3.47 ⚠️LOOCV大(响应弯曲/噪声,建议回退global或增大n_per) | -15→-24.7 -11→-16.7 -7→-10.9 -3→-6.5 +1→-5.5
+5CQH   L=183 native=-6 slope=1.260 int=-2.83 | LOOCV=2.37 | -14→-21.7 -10→-15.5 -6→-8.3 -2→-4.3 +2→-2.1
+1CGE   L=162 native=-12 slope=0.937 int=-3.37 | LOOCV=2.37 | -20→-23.9 -16→-17.0 -12→-12.6 -8→-11.8 -4→-7.8
+1A65   L=504 native=-27 slope=1.090 int=-20.66 | LOOCV=3.45 ⚠️LOOCV大(响应弯曲/噪声,建议回退global或增大n_per) | -35→-56.7 -31→-55.0 -27→-52.8 -23→-47.0 -19→-39.0
+1BJ4   L=470 native=+0 slope=2.069 int=-2.22 | LOOCV=1.33 | -8→-18.3 -4→-12.2 +0→-0.7 +4→+6.1 +8→+13.9
+13BB   L=552 native=-13 slope=2.105 int=-0.38 | LOOCV=1.62 | -21→-44.2 -17→-37.7 -13→-26.6 -9→-18.4 -5→-11.8
+1CDG   L=686 native=-9 slope=2.488 int=-1.52 | LOOCV=2.60 | -17→-45.4 -13→-31.8 -9→-24.4 -5→-12.5 -1→-5.3
+
+已写 output/charge_calibration_v12_3_small.json: 9 个 per_protein（小样本标定），其中 2 个与 global 不一致（unreliable）

@@ -144,13 +144,15 @@ def main():
                 bad += 1
     print(f"\n明显恶化臂数：{bad}/50")
     print("\n== 参考：native_ref 基线 vs 无条件 ==")
+    def f_or_dash(v):
+        return f"{v:7.2f}" if isinstance(v, (int, float)) else "     -"
     for pdb in PDBS:
         ref = summary["proteins"][pdb]["native_ref"]
         u = summary["proteins"][pdb]["uncond"]
-        print(f"  {pdb:6s} native_ref Tm={ref['tm'] if ref['tm'] else '-':>7.2f} "
-              f"uncond Tm={u['tm'] if u['tm'] else '-':>7.2f} | "
-              f"native_ref %sol={ref['sol'] if ref['sol'] else '-':>7.2f} "
-              f"uncond %sol={u['sol'] if u['sol'] else '-':>7.2f}")
+        print(f"  {pdb:6s} native_ref Tm={f_or_dash(ref['tm'])} "
+              f"uncond Tm={f_or_dash(u['tm'])} | "
+              f"native_ref %sol={f_or_dash(ref['sol'])} "
+              f"uncond %sol={f_or_dash(u['sol'])}")
 
     summary["s2_worse_arms"] = bad
     with open(OUT_JSON, "w") as f:

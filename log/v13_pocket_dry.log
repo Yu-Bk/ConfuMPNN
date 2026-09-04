@@ -1,0 +1,130 @@
+[18:40:01] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[18:40:01] device=cuda:6  epochs=1  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[18:40:01] [v11 A-fix] 绝对 target 采样开：target ∈ Uniform[-35.0, 20.0]，与 native 无关（覆盖验证深负靶区）
+[18:40:01] [v12] 训练侧监督开：组成双计数(floor=0.5) + GRAVY(margin=0.4)  λ_v12=0.2  λ_target=0.2  SASA θ=0.25
+[18:40:01] [v10 C] pH 自适应结构惩罚开：boost=1.5
+[18:40:02] backbone: MoMPNN 冻结（2.62M 参数，不更新）
+[18:40:02] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[18:40:03] 数据：50 结构域 × 8 pH = 400 样本（data/ligand_train/labels.npz）
+[18:40:03]   ⚠️ 1JCG.pdb SASA 计算失败: operands could not be broadcast together with shapes (335,) (4,) （跳过 L_add）
+[18:40:04]   ⚠️ 1OE7.pdb SASA 计算失败: operands could not be broadcast together with shapes (407,) (4,) （跳过 L_add）
+[18:40:04]   ⚠️ 1PM7.pdb SASA 计算失败: operands could not be broadcast together with shapes (398,) (4,) （跳过 L_add）
+[18:40:04]   ⚠️ 1GRB.pdb SASA 计算失败: operands could not be broadcast together with shapes (461,) (4,) （跳过 L_add）
+[18:40:05]   ℹ️ 1EST.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[18:40:05]   ⚠️ 1EST.pdb SASA 计算失败: operands could not be broadcast together with shapes (240,) (4,) （跳过 L_add）
+[18:40:05]   ⚠️ 1EYI.pdb SASA 计算失败: operands could not be broadcast together with shapes (331,) (4,) （跳过 L_add）
+[18:40:05]   ⚠️ 1DZT.pdb SASA 计算失败: operands could not be broadcast together with shapes (366,) (4,) （跳过 L_add）
+[18:40:05]   ⚠️ 1CHC.pdb SASA 计算失败: operands could not be broadcast together with shapes (68,) (4,) （跳过 L_add）
+[18:40:05]   ⚠️ 1CML.pdb SASA 计算失败: operands could not be broadcast together with shapes (389,) (4,) （跳过 L_add）
+[18:40:05]   ⚠️ 1ITO.pdb SASA 计算失败: operands could not be broadcast together with shapes (251,) (4,) （跳过 L_add）
+[18:40:05]   ⚠️ 1MHU.pdb SASA 计算失败: operands could not be broadcast together with shapes (31,) (4,) （跳过 L_add）
+[18:40:06]   ⚠️ 1QZY.pdb SASA 计算失败: operands could not be broadcast together with shapes (355,) (4,) （跳过 L_add）
+[18:40:06]   ⚠️ 1OQ9.pdb SASA 计算失败: operands could not be broadcast together with shapes (338,) (4,) （跳过 L_add）
+[18:40:06]   ⚠️ 1EXM.pdb SASA 计算失败: operands could not be broadcast together with shapes (403,) (4,) （跳过 L_add）
+[18:40:06]   ⚠️ 1ARV.pdb SASA 计算失败: operands could not be broadcast together with shapes (336,) (4,) （跳过 L_add）
+[18:40:07]   ⚠️ 1NGI.pdb SASA 计算失败: operands could not be broadcast together with shapes (378,) (4,) （跳过 L_add）
+[18:40:07]   ℹ️ 1JQZ.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[18:40:07]   ⚠️ 1JQZ.pdb SASA 计算失败: operands could not be broadcast together with shapes (282,) (4,) （跳过 L_add）
+[18:40:07]   ⚠️ 1D1G.pdb SASA 计算失败: operands could not be broadcast together with shapes (328,) (4,) （跳过 L_add）
+[18:40:07]   ⚠️ 1A9U.pdb SASA 计算失败: operands could not be broadcast together with shapes (345,) (4,) （跳过 L_add）
+[18:40:07]   ⚠️ 1IOZ.pdb SASA 计算失败: operands could not be broadcast together with shapes (162,) (4,) （跳过 L_add）
+[18:40:07]   ⚠️ 1AKK.pdb SASA 计算失败: operands could not be broadcast together with shapes (104,) (4,) （跳过 L_add）
+[18:40:08]   ⚠️ 1AL8.pdb SASA 计算失败: operands could not be broadcast together with shapes (344,) (4,) （跳过 L_add）
+[18:40:08]   ⚠️ 1P1M.pdb SASA 计算失败: operands could not be broadcast together with shapes (405,) (4,) （跳过 L_add）
+[18:40:08]   ⚠️ 1CA2.pdb SASA 计算失败: operands could not be broadcast together with shapes (256,) (4,) （跳过 L_add）
+[18:40:08]   ⚠️ 1DZJ.pdb SASA 计算失败: operands could not be broadcast together with shapes (296,) (4,) （跳过 L_add）
+[18:40:08]   ⚠️ 1ASC.pdb SASA 计算失败: operands could not be broadcast together with shapes (396,) (4,) （跳过 L_add）
+[18:40:08]   ⚠️ 1RDJ.pdb SASA 计算失败: operands could not be broadcast together with shapes (223,) (4,) （跳过 L_add）
+[18:40:09]   ⚠️ 1DF7.pdb SASA 计算失败: operands could not be broadcast together with shapes (159,) (4,) （跳过 L_add）
+[18:40:09]   ⚠️ 1KTG.pdb SASA 计算失败: operands could not be broadcast together with shapes (269,) (4,) （跳过 L_add）
+[18:40:09]   ⚠️ 1A6L.pdb SASA 计算失败: operands could not be broadcast together with shapes (106,) (4,) （跳过 L_add）
+[18:40:09]   ⚠️ 1ADL.pdb SASA 计算失败: operands could not be broadcast together with shapes (129,) (4,) （跳过 L_add）
+[18:40:09]   ⚠️ 1R3Q.pdb SASA 计算失败: operands could not be broadcast together with shapes (357,) (4,) （跳过 L_add）
+[18:40:09]   ⚠️ 1BQE.pdb SASA 计算失败: operands could not be broadcast together with shapes (295,) (4,) （跳过 L_add）
+[18:40:09]   ⚠️ 1DD7.pdb SASA 计算失败: operands could not be broadcast together with shapes (295,) (4,) （跳过 L_add）
+[18:40:10]   ⚠️ 1NDD.pdb SASA 计算失败: operands could not be broadcast together with shapes (296,) (4,) （跳过 L_add）
+[18:40:10]   ⚠️ 1NG1.pdb SASA 计算失败: operands could not be broadcast together with shapes (294,) (4,) （跳过 L_add）
+[18:40:10]   ⚠️ 1P0E.pdb SASA 计算失败: operands could not be broadcast together with shapes (363,) (4,) （跳过 L_add）
+[18:40:10]   ⚠️ 1GOO.pdb SASA 计算失败: operands could not be broadcast together with shapes (301,) (4,) （跳过 L_add）
+[18:40:10]   ⚠️ 1HYB.pdb SASA 计算失败: operands could not be broadcast together with shapes (161,) (4,) （跳过 L_add）
+[18:40:11]   ⚠️ 1CP4.pdb SASA 计算失败: operands could not be broadcast together with shapes (405,) (4,) （跳过 L_add）
+[18:40:11]   ⚠️ 1GP5.pdb SASA 计算失败: operands could not be broadcast together with shapes (346,) (4,) （跳过 L_add）
+[18:40:11]   ⚠️ 1QD9.pdb SASA 计算失败: operands could not be broadcast together with shapes (372,) (4,) （跳过 L_add）
+[18:40:11]   ⚠️ 1RLJ.pdb SASA 计算失败: operands could not be broadcast together with shapes (135,) (4,) （跳过 L_add）
+[18:40:11]   ⚠️ 1BCD.pdb SASA 计算失败: operands could not be broadcast together with shapes (258,) (4,) （跳过 L_add）
+[18:40:11]   ⚠️ 1M4M.pdb SASA 计算失败: operands could not be broadcast together with shapes (112,) (4,) （跳过 L_add）
+[18:40:12]   ℹ️ 1RP1.pdb resnum 对齐 435/441（6 个非标准/parse独有残基 frac=0）
+[18:40:12]   ⚠️ 1RP1.pdb SASA 计算失败: operands could not be broadcast together with shapes (441,) (4,) （跳过 L_add）
+[18:40:12]   ⚠️ 1OSE.pdb SASA 计算失败: operands could not be broadcast together with shapes (495,) (4,) （跳过 L_add）
+[18:40:12]   ⚠️ 1RKD.pdb SASA 计算失败: operands could not be broadcast together with shapes (306,) (4,) （跳过 L_add）
+[18:40:12]   ⚠️ 1L69.pdb SASA 计算失败: operands could not be broadcast together with shapes (162,) (4,) （跳过 L_add）
+[18:40:13]   ⚠️ 1H7R.pdb SASA 计算失败: operands could not be broadcast together with shapes (342,) (4,) （跳过 L_add）
+[18:40:13] 预解析完成，缓存 encode 特征 ~0.24GB
+[18:40:13] 开始训练：1 epochs × 50 域/epoch = 50 steps
+[18:40:17] epoch 1/1  total=5.4022  ce=1.3382  charge=7.6144  kl=0.0085  keep=0.5127  [cd self=6.916  mild=6.220  extreme=9.709]  elapsed=0.1min
+[18:40:17] 训练完成。总耗时 0.1min。checkpoint 在 output/finetune_ligand_v13_dry/
+[18:40:58] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[18:40:58] device=cuda:6  epochs=1  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[18:40:58] [v11 A-fix] 绝对 target 采样开：target ∈ Uniform[-35.0, 20.0]，与 native 无关（覆盖验证深负靶区）
+[18:40:58] [v12] 训练侧监督开：组成双计数(floor=0.5) + GRAVY(margin=0.4)  λ_v12=0.2  λ_target=0.2  SASA θ=0.25
+[18:40:58] [v10 C] pH 自适应结构惩罚开：boost=1.5
+[18:41:01] backbone: MoMPNN 冻结（2.62M 参数，不更新）
+[18:41:01] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[18:41:01] 数据：50 结构域 × 8 pH = 400 样本（data/ligand_train/labels.npz）
+[18:41:02]   ℹ️ 1JCG.pdb 分区 pocket=53/335 core=140 surface=153
+[18:41:03]   ℹ️ 1OE7.pdb 分区 pocket=46/407 core=179 surface=199
+[18:41:03]   ℹ️ 1PM7.pdb 分区 pocket=49/398 core=193 surface=168
+[18:41:04]   ℹ️ 1GRB.pdb 分区 pocket=87/461 core=182 surface=226
+[18:41:04]   ℹ️ 1EST.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[18:41:04]   ℹ️ 1EST.pdb 分区 pocket=27/240 core=127 surface=103
+[18:41:05]   ℹ️ 1EYI.pdb 分区 pocket=43/331 core=155 surface=148
+[18:41:05]   ℹ️ 1DZT.pdb 分区 pocket=101/366 core=146 surface=162
+[18:41:05]   ℹ️ 1CHC.pdb 分区 pocket=30/68 core=6 surface=49
+[18:41:05]   ℹ️ 1CML.pdb 分区 pocket=59/389 core=190 surface=165
+[18:41:05]   ℹ️ 1ITO.pdb 分区 pocket=26/251 core=119 surface=116
+[18:41:06]   ℹ️ 1MHU.pdb 分区 pocket=29/31 core=0 surface=23
+[18:41:06]   ℹ️ 1QZY.pdb 分区 pocket=51/355 core=163 surface=155
+[18:41:06]   ℹ️ 1OQ9.pdb 分区 pocket=22/338 core=164 surface=156
+[18:41:07]   ℹ️ 1EXM.pdb 分区 pocket=35/403 core=201 surface=177
+[18:41:07]   ℹ️ 1ARV.pdb 分区 pocket=90/336 core=119 surface=147
+[18:41:07]   ℹ️ 1NGI.pdb 分区 pocket=49/378 core=165 surface=174
+[18:41:08]   ℹ️ 1JQZ.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[18:41:08]   ℹ️ 1JQZ.pdb 分区 pocket=39/282 core=146 surface=116
+[18:41:08]   ℹ️ 1D1G.pdb 分区 pocket=117/328 core=110 surface=156
+[18:41:08]   ℹ️ 1A9U.pdb 分区 pocket=33/345 core=155 surface=168
+[18:41:08]   ℹ️ 1IOZ.pdb 分区 pocket=34/162 core=60 surface=83
+[18:41:09]   ℹ️ 1AKK.pdb 分区 pocket=42/104 core=15 surface=67
+[18:41:09]   ℹ️ 1AL8.pdb 分区 pocket=58/344 core=150 surface=152
+[18:41:09]   ℹ️ 1P1M.pdb 分区 pocket=8/405 core=233 surface=164
+[18:41:09]   ℹ️ 1CA2.pdb 分区 pocket=22/256 core=121 surface=117
+[18:41:10]   ℹ️ 1DZJ.pdb 分区 pocket=59/296 core=94 surface=154
+[18:41:10]   ℹ️ 1ASC.pdb 分区 pocket=30/396 core=187 surface=183
+[18:41:10]   ℹ️ 1RDJ.pdb 分区 pocket=40/223 core=94 surface=109
+[18:41:10]   ℹ️ 1DF7.pdb 分区 pocket=83/159 core=29 surface=82
+[18:41:11]   ℹ️ 1KTG.pdb 分区 pocket=52/269 core=102 surface=136
+[18:41:11]   ℹ️ 1A6L.pdb 分区 pocket=46/106 core=17 surface=60
+[18:41:11]   ℹ️ 1ADL.pdb 分区 pocket=62/129 core=17 surface=87
+[18:41:11]   ℹ️ 1R3Q.pdb 分区 pocket=44/357 core=177 surface=149
+[18:41:11]   ℹ️ 1BQE.pdb 分区 pocket=41/295 core=122 surface=149
+[18:41:12]   ℹ️ 1DD7.pdb 分区 pocket=47/295 core=116 surface=152
+[18:41:12]   ℹ️ 1NDD.pdb 分区 pocket=60/296 core=107 surface=145
+[18:41:12]   ℹ️ 1NG1.pdb 分区 pocket=101/294 core=101 surface=138
+[18:41:13]   ℹ️ 1P0E.pdb 分区 pocket=42/363 core=176 surface=154
+[18:41:13]   ℹ️ 1GOO.pdb 分区 pocket=36/301 core=148 surface=128
+[18:41:13]   ℹ️ 1HYB.pdb 分区 pocket=35/161 core=56 surface=87
+[18:41:13]   ℹ️ 1CP4.pdb 分区 pocket=60/405 core=188 surface=169
+[18:41:14]   ℹ️ 1GP5.pdb 分区 pocket=67/346 core=135 surface=171
+[18:41:14]   ℹ️ 1QD9.pdb 分区 pocket=84/372 core=178 surface=144
+[18:41:14]   ℹ️ 1RLJ.pdb 分区 pocket=53/135 core=41 surface=69
+[18:41:14]   ℹ️ 1BCD.pdb 分区 pocket=34/258 core=110 surface=119
+[18:41:14]   ℹ️ 1M4M.pdb 分区 pocket=24/112 core=25 surface=71
+[18:41:15]   ℹ️ 1RP1.pdb resnum 对齐 435/441（6 个非标准/parse独有残基 frac=0）
+[18:41:15]   ℹ️ 1RP1.pdb 分区 pocket=26/441 core=241 surface=188
+[18:41:15]   ℹ️ 1OSE.pdb 分区 pocket=80/495 core=243 surface=199
+[18:41:15]   ℹ️ 1RKD.pdb 分区 pocket=66/306 core=123 surface=141
+[18:41:16]   ℹ️ 1L69.pdb 分区 pocket=18/162 core=66 surface=88
+[18:41:16]   ℹ️ 1H7R.pdb 分区 pocket=29/342 core=155 surface=159
+[18:41:16] 预解析完成，缓存 encode 特征 ~0.24GB
+[18:41:16] 开始训练：1 epochs × 50 域/epoch = 50 steps
+[18:41:47] epoch 1/1  total=7.2598  ce=1.3376  charge=7.7934  kl=0.0085  keep=0.5126  [cd self=7.077  mild=6.580  extreme=9.908]  elapsed=0.5min
+[18:41:47] 训练完成。总耗时 0.5min。checkpoint 在 output/finetune_ligand_v13_dry/

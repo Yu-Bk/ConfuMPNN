@@ -1,0 +1,123 @@
+{
+ "note": "v14 配体模式验证集（2026-09-03 覆盖核查重构, 工具 code/tests/coverage_check.py）。coverage=in 为标准验证集(H2/H1/Tm-Sol判据), boundary 长蛋白(1A65)单独报告, 均相对 labels_v14_final 覆盖判定。leak 11/11 False。2026-09-03 晚方法学修正: 2E9R_X 从标准集移除归档(见 archived), 替换加入 5O60_E。",
+ "archived": [
+  "2E9R_X(FMDV RdRp, L476, native-10.1): 不具代表性的RNA'结合蛋白'代表——核糖体RNA结合蛋白天然正电, 2E9R_X 为长负聚合酶, 验证系统性过冲(target-10→生成-18.1, big/small 0/5)。归入'长×大电荷变化可设计性有限'档(与蛋白模式1A65同类)。2026-09-03 归档, 数据仍在 output/generalization_ligand_v14{,_big,_small}/ligand/2E9R_X/ 与 output/charge_calibration_v14_small.json, 统计用新 manifest 即自动排除。详见 analysis/report/2026-09-03_long_neg_charge_limitation.md。"
+ ],
+ "removed": [
+  "1C6O(二聚体)",
+  "1AXW(二聚体)",
+  "1AG0(二聚体)",
+  "1AZM(序列=训练1HCB,泄漏)"
+ ],
+ "replaced": {
+  "1AZM": "6D2O(beta-CA + 4MZ, 表外CA, L209, 非泄漏)",
+  "2E9R_X": "5O60_E(核糖体蛋白E, L209, native+11.18, coverage=in n_close151, 训练集无5O60域=held-out, 天然正电RNA结合代表)"
+ },
+ "training_data_note": "labels_v14_final.npz (5371域=旧4957 + RNA/DNA 414, 2026-09-03 Agent B 最终版); RNA/DNA 占7.7%",
+ "items": [
+  {
+   "pdb": "6D2O",
+   "path": "data/validation_pdbs/6D2O.pdb",
+   "cat": "small_mol",
+   "ligand": "4MZ(4-methylimidazole)+ZN",
+   "L": 209,
+   "replace": "1AZM",
+   "coverage": "in",
+   "coverage_note": "相近域249"
+  },
+  {
+   "pdb": "1AS2",
+   "path": "data/validation_pdbs/1AS2.pdb",
+   "cat": "nucleotide",
+   "ligand": "GDP",
+   "L": 312,
+   "coverage": "in",
+   "coverage_note": "391"
+  },
+  {
+   "pdb": "2FEO",
+   "path": "data/validation_pdbs/2FEO.pdb",
+   "cat": "nucleotide",
+   "ligand": "DC",
+   "L": 221,
+   "coverage": "in",
+   "coverage_note": "230"
+  },
+  {
+   "pdb": "5CQH",
+   "path": "data/validation_pdbs/5CQH.pdb",
+   "cat": "nucleotide",
+   "ligand": "DC",
+   "L": 183,
+   "coverage": "in",
+   "coverage_note": "272"
+  },
+  {
+   "pdb": "1CGE",
+   "path": "data/validation_pdbs/1CGE.pdb",
+   "cat": "metal",
+   "ligand": "CA+ZN",
+   "L": 162,
+   "coverage": "in",
+   "coverage_note": "100"
+  },
+  {
+   "pdb": "1A65",
+   "path": "data/validation_pdbs/1A65.pdb",
+   "cat": "long",
+   "ligand": "NAG",
+   "L": 504,
+   "coverage": "boundary",
+   "coverage_note": "L504超训练max500+native-26.9(配体训练q2.8%分位), 相近域53→boundary 配体长蛋白边界检验"
+  },
+  {
+   "pdb": "1BJ4",
+   "path": "data/validation_pdbs/1BJ4.pdb",
+   "cat": "long",
+   "ligand": "PLP",
+   "L": 470,
+   "coverage": "in",
+   "coverage_note": "195"
+  },
+  {
+   "pdb": "21KL_A",
+   "path": "data/validation_pdbs/21KL_A.pdb",
+   "cat": "RNA",
+   "ligand": "RNA/DNA hybrid",
+   "L": 237,
+   "note": "RNA类",
+   "coverage": "in",
+   "coverage_note": "196"
+  },
+  {
+   "pdb": "5O60_E",
+   "path": "data/validation_pdbs/5O60_E.pdb",
+   "cat": "RNA",
+   "ligand": "rRNA",
+   "L": 209,
+   "note": "5O60核糖体蛋白E,天然正电(+11.2), RNA结合蛋白典型代表",
+   "coverage": "in",
+   "coverage_note": "151"
+  },
+  {
+   "pdb": "3MXB_A",
+   "path": "data/validation_pdbs/3MXB_A.pdb",
+   "cat": "DNA",
+   "ligand": "DNA",
+   "L": 153,
+   "note": "meganuclease",
+   "coverage": "in",
+   "coverage_note": "343"
+  },
+  {
+   "pdb": "9DWG_L",
+   "path": "data/validation_pdbs/9DWG_L.pdb",
+   "cat": "DNA",
+   "ligand": "DNA",
+   "L": 323,
+   "note": "DNA Pol beta",
+   "coverage": "in",
+   "coverage_note": "271"
+  }
+ ]
+}

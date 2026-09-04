@@ -1,0 +1,11 @@
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+1C6O   L=177 -> output/tm_sol_ligand_v13/uncond/1C6O/seqs.fa（30 条无条件）
+1AZM   L=258 -> output/tm_sol_ligand_v13/uncond/1AZM/seqs.fa（30 条无条件）
+1AS2   L=312 -> output/tm_sol_ligand_v13/uncond/1AS2/seqs.fa（30 条无条件）
+1AXW   L=528 -> output/tm_sol_ligand_v13/uncond/1AXW/seqs.fa（30 条无条件）
+2FEO   L=221 -> output/tm_sol_ligand_v13/uncond/2FEO/seqs.fa（30 条无条件）
+5CQH   L=183 -> output/tm_sol_ligand_v13/uncond/5CQH/seqs.fa（30 条无条件）
+1CGE   L=162 -> output/tm_sol_ligand_v13/uncond/1CGE/seqs.fa（30 条无条件）
+1AG0   L=256 -> output/tm_sol_ligand_v13/uncond/1AG0/seqs.fa（30 条无条件）
+1A65   L=504 -> output/tm_sol_ligand_v13/uncond/1A65/seqs.fa（30 条无条件）
+1BJ4   L=470 -> output/tm_sol_ligand_v13/uncond/1BJ4/seqs.fa（30 条无条件）

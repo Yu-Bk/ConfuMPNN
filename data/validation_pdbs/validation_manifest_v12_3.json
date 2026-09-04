@@ -1,0 +1,88 @@
+{
+ "note": "v12.3 蛋白模式（MoMPNN）验证清单重构（2026-09-02）。变更：① 删除同源二聚体 1C6O/1AXW/1AG0（H1 无法单链折叠评估，native 回折 TM~0.5 为工具限制）；② 保留 7 单体（含长蛋白 1A65/1BJ4 作 v12.3 长蛋白改进检验）；③ 新增 2 个未训练单链长蛋白 13BB/1CDG（L 560/686，扩展长蛋白 OOD 长度覆盖）。蛋白模式验证不需配体，PDB 仅用蛋白链 A。全部蛋白不在 v12.3 训练集（S40 6710+455 域）且 leak=False。 | 2026-09-03 覆盖核查重构(工具 coverage_check.py): coverage=in 标准验证集, boundary 长蛋白单独检, out 分布外泛化讨论。",
+ "items": [
+  {
+   "pdb": "1AZM",
+   "path": "data/validation_pdbs/1AZM.pdb",
+   "cat": "small_mol",
+   "L": 258,
+   "ligand": "AZM(乙酰唑胺)",
+   "coverage": "in",
+   "coverage_note": "相近域179"
+  },
+  {
+   "pdb": "1AS2",
+   "path": "data/validation_pdbs/1AS2.pdb",
+   "cat": "rna",
+   "L": 315,
+   "ligand": "GDP",
+   "coverage": "in",
+   "coverage_note": "111"
+  },
+  {
+   "pdb": "2FEO",
+   "path": "data/validation_pdbs/2FEO.pdb",
+   "cat": "dna",
+   "L": 221,
+   "ligand": "DC(脱氧胞苷)",
+   "coverage": "in",
+   "coverage_note": "331"
+  },
+  {
+   "pdb": "5CQH",
+   "path": "data/validation_pdbs/5CQH.pdb",
+   "cat": "dna",
+   "L": 186,
+   "ligand": "DC(脱氧胞苷)",
+   "coverage": "in",
+   "coverage_note": "525"
+  },
+  {
+   "pdb": "1CGE",
+   "path": "data/validation_pdbs/1CGE.pdb",
+   "cat": "metal",
+   "L": 162,
+   "ligand": "CA+ZN",
+   "coverage": "in",
+   "coverage_note": "317"
+  },
+  {
+   "pdb": "1A65",
+   "path": "data/validation_pdbs/1A65.pdb",
+   "cat": "long",
+   "L": 504,
+   "ligand": "NAG(糖),CU",
+   "coverage": "out",
+   "coverage_note": "native-26.9=训练q1.1%分位(深负长尾), 相近域24→out 分布外(泛化外推讨论)"
+  },
+  {
+   "pdb": "1BJ4",
+   "path": "data/validation_pdbs/1BJ4.pdb",
+   "cat": "long",
+   "L": 470,
+   "ligand": "PLP(吡哆醛磷酸)",
+   "coverage": "boundary",
+   "coverage_note": "L470长蛋白,native+0.4(51%分位), 相近域96→boundary 覆盖内长蛋白检验"
+  },
+  {
+   "pdb": "13BB",
+   "path": "data/validation_pdbs/13BB.pdb",
+   "cat": "small_mol",
+   "L": 560,
+   "ligand": "TPP+MG",
+   "note": "v12.3 新增长蛋白",
+   "coverage": "boundary",
+   "coverage_note": "L552(训练L99%分位),native-12.8(9%分位), 相近域44→boundary 覆盖边界长蛋白检验"
+  },
+  {
+   "pdb": "1CDG",
+   "path": "data/validation_pdbs/1CDG.pdb",
+   "cat": "small_mol",
+   "L": 686,
+   "ligand": "GLC+CA",
+   "note": "v12.3 新增长蛋白",
+   "coverage": "out",
+   "coverage_note": "L686超长(训练>600仅0.6%), 相近域7→out 分布外(超长外推)"
+  }
+ ]
+}

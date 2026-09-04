@@ -1,0 +1,18 @@
+{
+  "global": {
+    "slope": 1.5195,
+    "intercept": -0.8555,
+    "n_point": 300,
+    "n_domains": 60
+  },
+  "per_protein": {
+    "5O60_E": {
+      "slope": 1.4327,
+      "intercept": 0.8561,
+      "n_calib": 50,
+      "native_q": 11,
+      "loocv": 2.73,
+      "unreliable": false
+    }
+  }
+}

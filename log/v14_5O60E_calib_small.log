@@ -1,0 +1,4 @@
+    条件编码器已加载: finetune_epoch050.pt  (epoch=50, n_tokens=4, token_dim=128)
+backbone=ligand_mpnn enc=finetune_epoch050.pt
+5O60_E   L=209 nq=+11 slope=1.433 int=0.86 LOOCV=2.73 | +3→+5.4 +7→+8.3 +11→+19.3 +15→+23.6 +19→+26.4
+已写 output/charge_calibration_v14_5O60E_only.json: 1 个 per_protein（现场标定），0 unreliable

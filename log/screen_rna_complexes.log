@@ -1,0 +1,7 @@
+  150/779  elapsed 105s
+  300/779  elapsed 164s
+  450/779  elapsed 255s
+  600/779  elapsed 348s
+  750/779  elapsed 497s
+done 779 files -> 570 PDB with usable chain, 1509 chain candidates
+written data/ligand_train/rna_complex_raw/_screen.json

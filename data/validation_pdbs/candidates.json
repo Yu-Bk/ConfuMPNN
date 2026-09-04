@@ -1,0 +1,8128 @@
+{
+  "rows": [
+    {
+      "pdb": "1B5L",
+      "ext": ".pdb",
+      "L": 152,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BKW",
+      "ext": ".pdb",
+      "L": 391,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FAD', 'PHB']",
+      "ligand": [
+        "FAD",
+        "PHB"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14WQ",
+      "ext": ".pdb",
+      "L": 614,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'WKV']",
+      "ligand": [
+        "PO4",
+        "WKV"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14GS",
+      "ext": ".pdb",
+      "L": 388,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MES']",
+      "ligand": [
+        "MES"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "13YR",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'LJA']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "LJA",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BK0",
+      "ext": ".pdb",
+      "L": 329,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'ACV']",
+      "ligand": [
+        "SO4",
+        "FE",
+        "ACV"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B9V",
+      "ext": ".pdb",
+      "L": 390,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'RA2']",
+      "ligand": [
+        "NAG",
+        "CA",
+        "RA2"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BKM",
+      "ext": ".pdb",
+      "L": 102,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['1C5']",
+      "ligand": [
+        "1C5"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C6D",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'KR', 'BME']",
+      "ligand": [
+        "CL",
+        "KR",
+        "BME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AS8",
+      "ext": ".pdb",
+      "L": 1008,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NO2']",
+      "ligand": [
+        "CU",
+        "NO2"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AYV",
+      "ext": ".pdb",
+      "L": 215,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IN6']",
+      "ligand": [
+        "IN6"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ABF",
+      "ext": ".pdb",
+      "L": 305,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FCA', 'FCB']",
+      "ligand": [
+        "FCA",
+        "FCB"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "127L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13YH",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'YDX']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "YDX",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13ZK",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'WL7']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "WL7",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AMR",
+      "ext": ".pdb",
+      "L": 396,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PMP', 'MAE']",
+      "ligand": [
+        "PMP",
+        "MAE"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B09",
+      "ext": ".pdb",
+      "L": 1030,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PC']",
+      "ligand": [
+        "CA",
+        "PC"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AU4",
+      "ext": ".pdb",
+      "L": 215,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['INP']",
+      "ligand": [
+        "INP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13SL",
+      "ext": ".pdb",
+      "L": 315,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['JHP']",
+      "ligand": [
+        "ZN",
+        "JHP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BH3",
+      "ext": ".pdb",
+      "L": 289,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['C8E']",
+      "ligand": [
+        "C8E"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B6P",
+      "ext": ".pdb",
+      "L": 198,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ABA', 'SO4', 'PI7']",
+      "ligand": [
+        "ABA",
+        "SO4",
+        "PI7"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BEP",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CCH']",
+      "ligand": [
+        "CCH"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CFB",
+      "ext": ".pdb",
+      "L": 205,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'SO4']",
+      "ligand": [
+        "NAG",
+        "SO4",
+        "NA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AB1",
+      "ext": ".pdb",
+      "L": 49,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['EOH']",
+      "ligand": [
+        "EOH"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "13YL",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'Q4L']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "Q4L",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AF6",
+      "ext": ".pdb",
+      "L": 1263,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GLC', 'FRU']",
+      "ligand": [
+        "GLC",
+        "FRU",
+        "MG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AYO",
+      "ext": ".pdb",
+      "L": 260,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG']",
+      "ligand": [
+        "NAG",
+        "CA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14WW",
+      "ext": ".pdb",
+      "L": 692,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'RZJ']",
+      "ligand": [
+        "PO4",
+        "RZJ"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BU8",
+      "ext": ".pdb",
+      "L": 446,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG']",
+      "ligand": [
+        "NAG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C3H",
+      "ext": ".pdb",
+      "L": 822,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA']",
+      "ligand": [
+        "CA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "109M",
+      "ext": ".pdb",
+      "L": 154,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM', 'ENC']",
+      "ligand": [
+        "SO4",
+        "HEM",
+        "ENC"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BNW",
+      "ext": ".pdb",
+      "L": 256,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['TPD']",
+      "ligand": [
+        "HG",
+        "ZN",
+        "TPD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BTY",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BEN']",
+      "ligand": [
+        "CA",
+        "BEN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13PI",
+      "ext": ".pdb",
+      "L": 314,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MLI', 'SLS']",
+      "ligand": [
+        "ZN",
+        "MLI",
+        "SLS"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BE8",
+      "ext": ".pdb",
+      "L": 274,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['TCA']",
+      "ligand": [
+        "CA",
+        "TCA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ABN",
+      "ext": ".pdb",
+      "L": 301,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NDP']",
+      "ligand": [
+        "NDP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "199L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CD8",
+      "ext": ".pdb",
+      "L": 114,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13YA",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'SZE']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "SZE",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BOQ",
+      "ext": ".pdb",
+      "L": 198,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "192L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'HED']",
+      "ligand": [
+        "CL",
+        "HED"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CFZ",
+      "ext": ".pdb",
+      "L": 972,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CD']",
+      "ligand": [
+        "CD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "125L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A65",
+      "ext": ".pdb",
+      "L": 504,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'PYE', 'O']",
+      "ligand": [
+        "NAG",
+        "PYE",
+        "CU",
+        "O"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A3D",
+      "ext": ".pdb",
+      "L": 119,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['NA']",
+      "ligand": [
+        "NA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C0B",
+      "ext": ".pdb",
+      "L": 124,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A0F",
+      "ext": ".pdb",
+      "L": 402,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GTS']",
+      "ligand": [
+        "GTS"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B0F",
+      "ext": ".pdb",
+      "L": 218,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'FUC', 'SEI']",
+      "ligand": [
+        "NAG",
+        "FUC",
+        "SEI"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14VU",
+      "ext": ".pdb",
+      "L": 628,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'X0S']",
+      "ligand": [
+        "PO4",
+        "X0S"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BU3",
+      "ext": ".pdb",
+      "L": 108,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACE']",
+      "ligand": [
+        "ACE",
+        "CA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "10TX",
+      "ext": ".pdb",
+      "L": 1927,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'BMA', 'MAN', 'FUC']",
+      "ligand": [
+        "NAG",
+        "BMA",
+        "MAN",
+        "FUC",
+        "NA",
+        "POP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BJ5",
+      "ext": ".pdb",
+      "L": 582,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MYR']",
+      "ligand": [
+        "MYR"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AH4",
+      "ext": ".pdb",
+      "L": 314,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['AYA', 'NAP']",
+      "ligand": [
+        "AYA",
+        "NAP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ARG",
+      "ext": ".pdb",
+      "L": 792,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PPD']",
+      "ligand": [
+        "PPD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C8Y",
+      "ext": ".pdb",
+      "L": 265,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['ZN']",
+      "ligand": [
+        "ZN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A5W",
+      "ext": ".pdb",
+      "L": 146,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['Y3']",
+      "ligand": [
+        "Y3"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "11KM",
+      "ext": ".pdb",
+      "L": 646,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['COA', 'PRX']",
+      "ligand": [
+        "COA",
+        "PRX"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1ASQ",
+      "ext": ".pdb",
+      "L": 1104,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'OH', 'AZI']",
+      "ligand": [
+        "NAG",
+        "CU",
+        "OH",
+        "AZI"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BXO",
+      "ext": ".pdb",
+      "L": 326,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MAN', 'SO4', 'PP7', 'GOL']",
+      "ligand": [
+        "MAN",
+        "SO4",
+        "PP7",
+        "GOL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B47",
+      "ext": ".pdb",
+      "L": 912,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA']",
+      "ligand": [
+        "CA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B2O",
+      "ext": ".pdb",
+      "L": 108,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['FE']",
+      "ligand": [
+        "FE"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C5V",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA', 'MG']",
+      "ligand": [
+        "CA",
+        "MG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C2D",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BAK']",
+      "ligand": [
+        "CA",
+        "MG",
+        "ZN",
+        "BAK"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A3W",
+      "ext": ".pdb",
+      "L": 981,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PGA', 'FBP']",
+      "ligand": [
+        "PGA",
+        "FBP",
+        "MN",
+        "K"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AX0",
+      "ext": ".pdb",
+      "L": 240,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'BMA', 'XYP', 'MAN']",
+      "ligand": [
+        "NAG",
+        "BMA",
+        "XYP",
+        "MAN",
+        "FUC",
+        "A2G"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BF3",
+      "ext": ".pdb",
+      "L": 391,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FAD', 'PHB']",
+      "ligand": [
+        "FAD",
+        "PHB"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "11DR",
+      "ext": ".pdb",
+      "L": 762,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['AR6']",
+      "ligand": [
+        "AR6"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "10UQ",
+      "ext": ".pdb",
+      "L": 2329,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B85",
+      "ext": ".pdb",
+      "L": 693,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM']",
+      "ligand": [
+        "CA",
+        "HEM"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BQ4",
+      "ext": ".pdb",
+      "L": 938,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'BHC']",
+      "ligand": [
+        "SO4",
+        "BHC"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14XT",
+      "ext": ".pdb",
+      "L": 671,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'GOV']",
+      "ligand": [
+        "PO4",
+        "GOV"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C1N",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'BEN']",
+      "ligand": [
+        "CA",
+        "ZN",
+        "SO4",
+        "BEN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CEL",
+      "ext": ".pdb",
+      "L": 866,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PCA', 'NAG', 'BGC', 'IBZ']",
+      "ligand": [
+        "PCA",
+        "NAG",
+        "BGC",
+        "CA",
+        "IBZ",
+        "GLC"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C2R",
+      "ext": ".pdb",
+      "L": 232,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEC']",
+      "ligand": [
+        "HEC"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "12JZ",
+      "ext": ".pdb",
+      "L": 2961,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG']",
+      "ligand": [
+        "NAG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1CCA",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM']",
+      "ligand": [
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CCJ",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM']",
+      "ligand": [
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AFW",
+      "ext": ".pdb",
+      "L": 783,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MRD']",
+      "ligand": [
+        "MRD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B4X",
+      "ext": ".pdb",
+      "L": 396,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLP', 'MAE']",
+      "ligand": [
+        "PLP",
+        "MAE"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BYB",
+      "ext": ".pdb",
+      "L": 490,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GLC', 'SO4']",
+      "ligand": [
+        "GLC",
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A47",
+      "ext": ".pdb",
+      "L": 683,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GLC', 'G6D', 'ADH']",
+      "ligand": [
+        "GLC",
+        "G6D",
+        "ADH",
+        "CA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "13PP",
+      "ext": ".pdb",
+      "L": 313,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['3C5']",
+      "ligand": [
+        "ZN",
+        "3C5"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A4M",
+      "ext": ".pdb",
+      "L": 1396,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PRH']",
+      "ligand": [
+        "ZN",
+        "PRH"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A2Q",
+      "ext": ".pdb",
+      "L": 276,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MIS', 'ACN']",
+      "ligand": [
+        "MIS",
+        "CA",
+        "ACN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B98",
+      "ext": ".pdb",
+      "L": 216,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL']",
+      "ligand": [
+        "CL"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14VZ",
+      "ext": ".pdb",
+      "L": 639,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'GOJ']",
+      "ligand": [
+        "PO4",
+        "GOJ"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BEQ",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM', 'MES']",
+      "ligand": [
+        "HEM",
+        "MES"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BBP",
+      "ext": ".pdb",
+      "L": 692,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BLV']",
+      "ligand": [
+        "BLV"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B6K",
+      "ext": ".pdb",
+      "L": 194,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ABA', 'SO4', 'PI5']",
+      "ligand": [
+        "ABA",
+        "SO4",
+        "PI5"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B0Y",
+      "ext": ".pdb",
+      "L": 85,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SF4']",
+      "ligand": [
+        "SF4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B4W",
+      "ext": ".pdb",
+      "L": 488,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BOG']",
+      "ligand": [
+        "BOG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AQY",
+      "ext": ".pdb",
+      "L": 563,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['A3P']",
+      "ligand": [
+        "A3P"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BJ4",
+      "ext": ".pdb",
+      "L": 470,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLP']",
+      "ligand": [
+        "PLP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1CG3",
+      "ext": ".pdb",
+      "L": 431,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['GDP']",
+      "ligand": [
+        "MG",
+        "HDA",
+        "IMO",
+        "GDP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13PQ",
+      "ext": ".pdb",
+      "L": 314,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['RZN']",
+      "ligand": [
+        "ZN",
+        "RZN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AHE",
+      "ext": ".pdb",
+      "L": 792,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'PLP']",
+      "ligand": [
+        "SO4",
+        "PLP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A5Z",
+      "ext": ".pdb",
+      "L": 312,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FBP', 'OXM', 'NAD']",
+      "ligand": [
+        "FBP",
+        "CD",
+        "OXM",
+        "NAD"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14WF",
+      "ext": ".pdb",
+      "L": 625,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'W0A']",
+      "ligand": [
+        "PO4",
+        "W0A"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B5M",
+      "ext": ".pdb",
+      "L": 84,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM']",
+      "ligand": [
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BCW",
+      "ext": ".pdb",
+      "L": 318,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "CA",
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ATJ",
+      "ext": ".pdb",
+      "L": 1836,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM']",
+      "ligand": [
+        "CA",
+        "HEM"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BC1",
+      "ext": ".pdb",
+      "L": 318,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "CA",
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "164L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BZL",
+      "ext": ".pdb",
+      "L": 969,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FAD', 'GCG']",
+      "ligand": [
+        "FAD",
+        "GCG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BPI",
+      "ext": ".pdb",
+      "L": 58,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4']",
+      "ligand": [
+        "PO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BQE",
+      "ext": ".pdb",
+      "L": 295,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'FAD']",
+      "ligand": [
+        "SO4",
+        "FAD"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "110L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13ZD",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'GX4']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "GX4",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BWN",
+      "ext": ".pdb",
+      "L": 327,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['4IP']",
+      "ligand": [
+        "ZN",
+        "4IP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CEV",
+      "ext": ".pdb",
+      "L": 1794,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['MN']",
+      "ligand": [
+        "MN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BTW",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['0ZW']",
+      "ligand": [
+        "0ZW",
+        "CA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14ZV",
+      "ext": ".pdb",
+      "L": 644,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'B0A']",
+      "ligand": [
+        "PO4",
+        "B0A"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A8J",
+      "ext": ".pdb",
+      "L": 430,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PCA', 'PME']",
+      "ligand": [
+        "PCA",
+        "PME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14WB",
+      "ext": ".pdb",
+      "L": 746,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'TE8', 'ZTQ']",
+      "ligand": [
+        "PO4",
+        "TE8",
+        "ZTQ"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AV7",
+      "ext": ".pdb",
+      "L": 273,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SBL']",
+      "ligand": [
+        "SBL",
+        "NA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C4A",
+      "ext": ".pdb",
+      "L": 574,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HC1', 'SF4', 'FES']",
+      "ligand": [
+        "HC1",
+        "SF4",
+        "FES"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BHN",
+      "ext": ".pdb",
+      "L": 906,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['GDP']",
+      "ligand": [
+        "35G",
+        "GDP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14ZT",
+      "ext": ".pdb",
+      "L": 659,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'UR7']",
+      "ligand": [
+        "PO4",
+        "UR7"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B7L",
+      "ext": ".pdb",
+      "L": 130,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['NA']",
+      "ligand": [
+        "NA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AM6",
+      "ext": ".pdb",
+      "L": 258,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HAE']",
+      "ligand": [
+        "HG",
+        "ZN",
+        "HAE"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A82",
+      "ext": ".pdb",
+      "L": 224,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['ATP']",
+      "ligand": [
+        "MG",
+        "DNN",
+        "ATP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C5T",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ESP']",
+      "ligand": [
+        "CA",
+        "ESP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B5V",
+      "ext": ".pdb",
+      "L": 130,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL']",
+      "ligand": [
+        "NA",
+        "CL"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AH3",
+      "ext": ".pdb",
+      "L": 314,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['AYA', 'NAP', 'TOL']",
+      "ligand": [
+        "AYA",
+        "NAP",
+        "TOL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14VV",
+      "ext": ".pdb",
+      "L": 607,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'AXG']",
+      "ligand": [
+        "PO4",
+        "AXG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1CG1",
+      "ext": ".pdb",
+      "L": 431,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['GDP']",
+      "ligand": [
+        "MG",
+        "HDA",
+        "IMO",
+        "GDP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BL7",
+      "ext": ".pdb",
+      "L": 351,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SB4']",
+      "ligand": [
+        "SB4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CEB",
+      "ext": ".pdb",
+      "L": 160,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['AMH']",
+      "ligand": [
+        "AMH"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ARS",
+      "ext": ".pdb",
+      "L": 396,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLP']",
+      "ligand": [
+        "PLP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BLH",
+      "ext": ".pdb",
+      "L": 257,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FOS']",
+      "ligand": [
+        "FOS"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AXZ",
+      "ext": ".pdb",
+      "L": 239,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'BMA', 'XYP', 'MAN']",
+      "ligand": [
+        "NAG",
+        "BMA",
+        "XYP",
+        "MAN",
+        "FUC",
+        "GLA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AD4",
+      "ext": ".pdb",
+      "L": 499,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HH2']",
+      "ligand": [
+        "MN",
+        "K",
+        "HH2"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C6O",
+      "ext": ".pdb",
+      "L": 178,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM']",
+      "ligand": [
+        "HEM"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AXW",
+      "ext": ".pdb",
+      "L": 528,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['UMP']",
+      "ligand": [
+        "FMT",
+        "UMP",
+        "MTX"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A8F",
+      "ext": ".pdb",
+      "L": 329,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CO3']",
+      "ligand": [
+        "CO3",
+        "FE"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A3X",
+      "ext": ".pdb",
+      "L": 974,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PGA']",
+      "ligand": [
+        "PGA",
+        "MN",
+        "K"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C8N",
+      "ext": ".pdb",
+      "L": 597,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA']",
+      "ligand": [
+        "CA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AN9",
+      "ext": ".pdb",
+      "L": 680,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FAD', 'BE2']",
+      "ligand": [
+        "FAD",
+        "BE2"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1ALA",
+      "ext": ".pdb",
+      "L": 316,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA']",
+      "ligand": [
+        "CA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "121P",
+      "ext": ".pdb",
+      "L": 166,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GCP']",
+      "ligand": [
+        "MG",
+        "GCP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BNL",
+      "ext": ".pdb",
+      "L": 712,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['ZN']",
+      "ligand": [
+        "ZN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "10UW",
+      "ext": ".pdb",
+      "L": 611,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GOL', 'SO4']",
+      "ligand": [
+        "GOL",
+        "SO4",
+        "MG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C27",
+      "ext": ".pdb",
+      "L": 262,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NLP']",
+      "ligand": [
+        "CO",
+        "NA",
+        "NLP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13BB",
+      "ext": ".pdb",
+      "L": 560,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['TPP', 'EDO']",
+      "ligand": [
+        "TPP",
+        "EDO",
+        "MG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B3Z",
+      "ext": ".pdb",
+      "L": 301,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PCA', 'XYP', 'XYS']",
+      "ligand": [
+        "PCA",
+        "XYP",
+        "XYS"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13PJ",
+      "ext": ".pdb",
+      "L": 313,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MLI', '2O8']",
+      "ligand": [
+        "ZN",
+        "MLI",
+        "2O8"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BSJ",
+      "ext": ".pdb",
+      "L": 166,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'MLN']",
+      "ligand": [
+        "CO",
+        "PO4",
+        "MLN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BAP",
+      "ext": ".pdb",
+      "L": 305,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ARA', 'ARB']",
+      "ligand": [
+        "ARA",
+        "ARB"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CF2",
+      "ext": ".pdb",
+      "L": 1344,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'NAP']",
+      "ligand": [
+        "SO4",
+        "NAP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AZM",
+      "ext": ".pdb",
+      "L": 258,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['AZM']",
+      "ligand": [
+        "ZN",
+        "AZM"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "11BA",
+      "ext": ".pdb",
+      "L": 255,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'UPA']",
+      "ligand": [
+        "SO4",
+        "UPA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A6R",
+      "ext": ".pdb",
+      "L": 459,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A6G",
+      "ext": ".pdb",
+      "L": 152,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM', 'CMO']",
+      "ligand": [
+        "SO4",
+        "HEM",
+        "CMO"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AZL",
+      "ext": ".pdb",
+      "L": 147,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FMN']",
+      "ligand": [
+        "FMN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AI3",
+      "ext": ".pdb",
+      "L": 414,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NDO', 'ICT']",
+      "ligand": [
+        "NDO",
+        "ICT",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AQI",
+      "ext": ".pdb",
+      "L": 764,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SAH']",
+      "ligand": [
+        "SAH"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1ASU",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['EPE']",
+      "ligand": [
+        "EPE"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C24",
+      "ext": ".pdb",
+      "L": 262,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MPJ']",
+      "ligand": [
+        "CO",
+        "NA",
+        "MPJ"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "10DC",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GNP']",
+      "ligand": [
+        "GNP",
+        "MG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C6B",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'XE', 'BME']",
+      "ligand": [
+        "CL",
+        "XE",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BI3",
+      "ext": ".pdb",
+      "L": 347,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CSS', 'SO4']",
+      "ligand": [
+        "CSS",
+        "ZN",
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13GS",
+      "ext": ".pdb",
+      "L": 418,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GSH', 'SAS', 'MES']",
+      "ligand": [
+        "GSH",
+        "SAS",
+        "MES"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BB6",
+      "ext": ".pdb",
+      "L": 129,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['UMG']",
+      "ligand": [
+        "UMG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ARH",
+      "ext": ".pdb",
+      "L": 792,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PPD']",
+      "ligand": [
+        "PPD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BMD",
+      "ext": ".pdb",
+      "L": 654,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAD']",
+      "ligand": [
+        "NAD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C9N",
+      "ext": ".pdb",
+      "L": 269,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'PMS']",
+      "ligand": [
+        "SO4",
+        "CA",
+        "PMS"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BPJ",
+      "ext": ".pdb",
+      "L": 316,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['UMP']",
+      "ligand": [
+        "K",
+        "UMP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B5P",
+      "ext": ".pdb",
+      "L": 764,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'PLP']",
+      "ligand": [
+        "PO4",
+        "PLP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1CCK",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM']",
+      "ligand": [
+        "HEM"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1CGE",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA', 'ZN']",
+      "ligand": [
+        "ZN",
+        "CA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14YC",
+      "ext": ".pdb",
+      "L": 623,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'K9N']",
+      "ligand": [
+        "PO4",
+        "K9N"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1ADY",
+      "ext": ".pdb",
+      "L": 1680,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HAM']",
+      "ligand": [
+        "SO4",
+        "HAM"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AG0",
+      "ext": ".pdb",
+      "L": 256,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CU']",
+      "ligand": [
+        "CU"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "105M",
+      "ext": ".pdb",
+      "L": 153,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM', 'NBN']",
+      "ligand": [
+        "SO4",
+        "HEM",
+        "NBN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BIB",
+      "ext": ".pdb",
+      "L": 294,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BTN']",
+      "ligand": [
+        "BTN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C47",
+      "ext": ".pdb",
+      "L": 1122,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['G16']",
+      "ligand": [
+        "G16",
+        "CD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BHQ",
+      "ext": ".pdb",
+      "L": 378,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACE']",
+      "ligand": [
+        "CD",
+        "ACE"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AMF",
+      "ext": ".pdb",
+      "L": 231,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MOO']",
+      "ligand": [
+        "MOO"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BOB",
+      "ext": ".pdb",
+      "L": 306,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACO']",
+      "ligand": [
+        "CA",
+        "ACO"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AMY",
+      "ext": ".pdb",
+      "L": 403,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA']",
+      "ligand": [
+        "CA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "12SS",
+      "ext": ".pdb",
+      "L": 1175,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['EDO', 'PEG']",
+      "ligand": [
+        "MN",
+        "EDO",
+        "PEG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C3J",
+      "ext": ".pdb",
+      "L": 333,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['UDP']",
+      "ligand": [
+        "UDP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B3R",
+      "ext": ".pdb",
+      "L": 1712,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAD']",
+      "ligand": [
+        "NAD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14YM",
+      "ext": ".pdb",
+      "L": 660,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'VVY']",
+      "ligand": [
+        "PO4",
+        "VVY"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BZA",
+      "ext": ".pdb",
+      "L": 257,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B5E",
+      "ext": ".pdb",
+      "L": 482,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['DCM']",
+      "ligand": [
+        "DCM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C3W",
+      "ext": ".pdb",
+      "L": 222,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['LI1', 'SQU', 'RET']",
+      "ligand": [
+        "LI1",
+        "SQU",
+        "RET"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C9E",
+      "ext": ".pdb",
+      "L": 306,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MP1']",
+      "ligand": [
+        "MG",
+        "MP1"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CEA",
+      "ext": ".pdb",
+      "L": 160,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACA']",
+      "ligand": [
+        "ACA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C6F",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'AR', 'BME']",
+      "ligand": [
+        "CL",
+        "AR",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A53",
+      "ext": ".pdb",
+      "L": 247,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IGP']",
+      "ligand": [
+        "IGP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BOF",
+      "ext": ".pdb",
+      "L": 324,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['GDP']",
+      "ligand": [
+        "SO4",
+        "MG",
+        "GDP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ART",
+      "ext": ".pdb",
+      "L": 396,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLP', '0A0']",
+      "ligand": [
+        "PLP",
+        "0A0"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BQS",
+      "ext": ".pdb",
+      "L": 209,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG']",
+      "ligand": [
+        "NAG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AQM",
+      "ext": ".pdb",
+      "L": 452,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'TRS']",
+      "ligand": [
+        "CA",
+        "CL",
+        "TRS"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "102L",
+      "ext": ".pdb",
+      "L": 163,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AZU",
+      "ext": ".pdb",
+      "L": 126,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CU']",
+      "ligand": [
+        "CU"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "163L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AKU",
+      "ext": ".pdb",
+      "L": 147,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'FMN']",
+      "ligand": [
+        "SO4",
+        "FMN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13FR",
+      "ext": ".pdb",
+      "L": 854,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GOL', 'CLR']",
+      "ligand": [
+        "GOL",
+        "CLR"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A40",
+      "ext": ".pdb",
+      "L": 321,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4']",
+      "ligand": [
+        "PO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BXW",
+      "ext": ".pdb",
+      "L": 172,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['C8E']",
+      "ligand": [
+        "C8E"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CC2",
+      "ext": ".pdb",
+      "L": 498,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FAD']",
+      "ligand": [
+        "FAD"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13ZY",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'B0V']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "B0V",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "112L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "141L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C80",
+      "ext": ".pdb",
+      "L": 382,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['GTP']",
+      "ligand": [
+        "PO4",
+        "GTP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CBM",
+      "ext": ".pdb",
+      "L": 584,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM', 'CMO']",
+      "ligand": [
+        "SO4",
+        "HEM",
+        "CMO"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "11TE",
+      "ext": ".pdb",
+      "L": 215,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'CL', 'GOL']",
+      "ligand": [
+        "SO4",
+        "CL",
+        "GOL"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BJF",
+      "ext": ".pdb",
+      "L": 362,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA']",
+      "ligand": [
+        "CA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AKL",
+      "ext": ".pdb",
+      "L": 470,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA', 'ZN']",
+      "ligand": [
+        "ZN",
+        "CA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BVD",
+      "ext": ".pdb",
+      "L": 153,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BLA']",
+      "ligand": [
+        "BLA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BO7",
+      "ext": ".pdb",
+      "L": 316,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['U5P']",
+      "ligand": [
+        "U5P"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AQV",
+      "ext": ".pdb",
+      "L": 418,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['0HG', 'MES']",
+      "ligand": [
+        "0HG",
+        "MES"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BP1",
+      "ext": ".pdb",
+      "L": 456,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PC1']",
+      "ligand": [
+        "PC1"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B7Z",
+      "ext": ".pdb",
+      "L": 689,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['OXL']",
+      "ligand": [
+        "FE",
+        "OXL"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AJ6",
+      "ext": ".pdb",
+      "L": 194,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NOV']",
+      "ligand": [
+        "NOV"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ASL",
+      "ext": ".pdb",
+      "L": 792,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLA']",
+      "ligand": [
+        "PLA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C7G",
+      "ext": ".pdb",
+      "L": 1824,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLP']",
+      "ligand": [
+        "PLP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AQE",
+      "ext": ".pdb",
+      "L": 110,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM']",
+      "ligand": [
+        "SO4",
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B0O",
+      "ext": ".pdb",
+      "L": 161,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLM']",
+      "ligand": [
+        "PLM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ABS",
+      "ext": ".pdb",
+      "L": 154,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM', 'CMO']",
+      "ligand": [
+        "SO4",
+        "HEM",
+        "CMO"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C2T",
+      "ext": ".pdb",
+      "L": 418,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NHS', 'GAR']",
+      "ligand": [
+        "NHS",
+        "GAR"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BNC",
+      "ext": ".pdb",
+      "L": 857,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4']",
+      "ligand": [
+        "PO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1CBU",
+      "ext": ".pdb",
+      "L": 539,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BCZ",
+      "ext": ".pdb",
+      "L": 318,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "CA",
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BGO",
+      "ext": ".pdb",
+      "L": 215,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['I10']",
+      "ligand": [
+        "I10"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14ZN",
+      "ext": ".pdb",
+      "L": 635,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'JOV']",
+      "ligand": [
+        "PO4",
+        "JOV"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C6Q",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'KR', 'BME']",
+      "ligand": [
+        "CL",
+        "KR",
+        "BME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B9B",
+      "ext": ".pdb",
+      "L": 507,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1CE2",
+      "ext": ".pdb",
+      "L": 689,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CO3']",
+      "ligand": [
+        "FE",
+        "CO3"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A52",
+      "ext": ".pdb",
+      "L": 482,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['EST']",
+      "ligand": [
+        "EST",
+        "AU"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AED",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM', 'DTI']",
+      "ligand": [
+        "HEM",
+        "DTI"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AOE",
+      "ext": ".pdb",
+      "L": 384,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NDP', 'GW3']",
+      "ligand": [
+        "NDP",
+        "GW3"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AFK",
+      "ext": ".pdb",
+      "L": 248,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PAP']",
+      "ligand": [
+        "PAP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14UM",
+      "ext": ".pdb",
+      "L": 670,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'OK7']",
+      "ligand": [
+        "PO4",
+        "OK7"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "11BG",
+      "ext": ".pdb",
+      "L": 248,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'U2G']",
+      "ligand": [
+        "SO4",
+        "U2G"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "195L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AYF",
+      "ext": ".pdb",
+      "L": 214,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FES', 'GOL']",
+      "ligand": [
+        "FES",
+        "GOL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ASW",
+      "ext": ".pdb",
+      "L": 148,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MSE', 'EPE', 'IPA']",
+      "ligand": [
+        "MSE",
+        "EPE",
+        "IPA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AYL",
+      "ext": ".pdb",
+      "L": 532,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['ATP']",
+      "ligand": [
+        "OXL",
+        "MG",
+        "ATP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1CDG",
+      "ext": ".pdb",
+      "L": 686,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GLC']",
+      "ligand": [
+        "GLC",
+        "CA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "10AC",
+      "ext": ".pdb",
+      "L": 1206,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA']",
+      "ligand": [
+        "CA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "11EG",
+      "ext": ".pdb",
+      "L": 1011,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL']",
+      "ligand": [
+        "CL",
+        "NA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BFU",
+      "ext": ".pdb",
+      "L": 274,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['DIO']",
+      "ligand": [
+        "CA",
+        "DIO"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B4E",
+      "ext": ".pdb",
+      "L": 323,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'SHF', 'GOL']",
+      "ligand": [
+        "SO4",
+        "ZN",
+        "SHF",
+        "GOL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "113L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "10PA",
+      "ext": ".pdb",
+      "L": 317,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['EDO', 'CL']",
+      "ligand": [
+        "EDO",
+        "CA",
+        "CL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "17GS",
+      "ext": ".pdb",
+      "L": 418,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GTX', 'MES']",
+      "ligand": [
+        "GTX",
+        "MES"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BYF",
+      "ext": ".pdb",
+      "L": 246,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACT', 'GOL']",
+      "ligand": [
+        "CA",
+        "ZN",
+        "ACT",
+        "GOL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ANV",
+      "ext": ".pdb",
+      "L": 314,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IUM']",
+      "ligand": [
+        "ZN",
+        "IUM"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14WX",
+      "ext": ".pdb",
+      "L": 636,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'K2G']",
+      "ligand": [
+        "PO4",
+        "K2G"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B92",
+      "ext": ".pdb",
+      "L": 148,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CAC', 'SO4']",
+      "ligand": [
+        "CAC",
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AKE",
+      "ext": ".pdb",
+      "L": 428,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['AP5']",
+      "ligand": [
+        "AP5"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13XY",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'UR1']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "UR1",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C0I",
+      "ext": ".pdb",
+      "L": 363,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FAD', 'BE2']",
+      "ligand": [
+        "FAD",
+        "BE2"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13NE",
+      "ext": ".pdb",
+      "L": 313,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MLI', '0OL']",
+      "ligand": [
+        "ZN",
+        "MLI",
+        "0OL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BIF",
+      "ext": ".pdb",
+      "L": 432,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'AGS', 'GOL']",
+      "ligand": [
+        "MG",
+        "PO4",
+        "AGS",
+        "GOL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AVM",
+      "ext": ".pdb",
+      "L": 402,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['AZI']",
+      "ligand": [
+        "FE",
+        "AZI"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AWD",
+      "ext": ".pdb",
+      "L": 94,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FES']",
+      "ligand": [
+        "FES"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AIQ",
+      "ext": ".pdb",
+      "L": 526,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['UMP']",
+      "ligand": [
+        "CXM",
+        "UMP",
+        "CB3"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "145L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BME']",
+      "ligand": [
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BRP",
+      "ext": ".pdb",
+      "L": 174,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['RTL']",
+      "ligand": [
+        "RTL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BX8",
+      "ext": ".pdb",
+      "L": 49,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BU4",
+      "ext": ".pdb",
+      "L": 104,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['2GP']",
+      "ligand": [
+        "CA",
+        "2GP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A96",
+      "ext": ".pdb",
+      "L": 590,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BO3', 'PCP', 'XAN']",
+      "ligand": [
+        "BO3",
+        "MG",
+        "PCP",
+        "XAN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "129L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CC8",
+      "ext": ".pdb",
+      "L": 72,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BEN']",
+      "ligand": [
+        "HG",
+        "BEN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B7S",
+      "ext": ".pdb",
+      "L": 130,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['NA']",
+      "ligand": [
+        "NA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ADF",
+      "ext": ".pdb",
+      "L": 374,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['TAD']",
+      "ligand": [
+        "ZN",
+        "TAD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A2N",
+      "ext": ".pdb",
+      "L": 418,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['TET']",
+      "ligand": [
+        "TET"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AC4",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM', 'TMT']",
+      "ligand": [
+        "HEM",
+        "TMT"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A9R",
+      "ext": ".pdb",
+      "L": 282,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HPA']",
+      "ligand": [
+        "SO4",
+        "HPA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AHY",
+      "ext": ".pdb",
+      "L": 792,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLP', 'MAE']",
+      "ligand": [
+        "PLP",
+        "MAE"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C8Z",
+      "ext": ".pdb",
+      "L": 284,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4']",
+      "ligand": [
+        "PO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "10YY",
+      "ext": ".pdb",
+      "L": 184,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL']",
+      "ligand": [
+        "CL"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B9I",
+      "ext": ".pdb",
+      "L": 384,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PXG']",
+      "ligand": [
+        "PXG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B7B",
+      "ext": ".pdb",
+      "L": 1228,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B67",
+      "ext": ".pdb",
+      "L": 133,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "118L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A8P",
+      "ext": ".pdb",
+      "L": 257,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FAD']",
+      "ligand": [
+        "FAD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BIX",
+      "ext": ".pdb",
+      "L": 275,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['PT', 'SM']",
+      "ligand": [
+        "SM",
+        "PT"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "197L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BTE",
+      "ext": ".pdb",
+      "L": 186,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG']",
+      "ligand": [
+        "NAG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "139L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BX0",
+      "ext": ".pdb",
+      "L": 296,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'SO4', 'FAD']",
+      "ligand": [
+        "PO4",
+        "SO4",
+        "FAD"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CBR",
+      "ext": ".pdb",
+      "L": 272,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['REA']",
+      "ligand": [
+        "REA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AF4",
+      "ext": ".pdb",
+      "L": 274,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['DIO']",
+      "ligand": [
+        "CA",
+        "DIO"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C6A",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'KR', 'BME']",
+      "ligand": [
+        "CL",
+        "KR",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BXU",
+      "ext": ".pdb",
+      "L": 91,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CU']",
+      "ligand": [
+        "CU"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AHF",
+      "ext": ".pdb",
+      "L": 792,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLP', 'IOP', 'SO4']",
+      "ligand": [
+        "PLP",
+        "IOP",
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AEO",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM', '2AP']",
+      "ligand": [
+        "HEM",
+        "2AP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ASN",
+      "ext": ".pdb",
+      "L": 792,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'PLP']",
+      "ligand": [
+        "SO4",
+        "PLP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "12IS",
+      "ext": ".pdb",
+      "L": 137,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PEG', 'CL']",
+      "ligand": [
+        "PEG",
+        "ZN",
+        "CL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "10XE",
+      "ext": ".pdb",
+      "L": 211,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4']",
+      "ligand": [
+        "PO4",
+        "K"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B71",
+      "ext": ".pdb",
+      "L": 191,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['FE', 'ZN']",
+      "ligand": [
+        "FE",
+        "ZN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ARW",
+      "ext": ".pdb",
+      "L": 336,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'CYN', 'HEM']",
+      "ligand": [
+        "NAG",
+        "CYN",
+        "CA",
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "10FV",
+      "ext": ".pdb",
+      "L": 154,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CME', 'SO4', 'GOL', 'FLC']",
+      "ligand": [
+        "CME",
+        "SO4",
+        "GOL",
+        "FLC"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1CES",
+      "ext": ".pdb",
+      "L": 446,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['ZN']",
+      "ligand": [
+        "ZN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BN5",
+      "ext": ".pdb",
+      "L": 355,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['TBU']",
+      "ligand": [
+        "CO",
+        "TBU"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13ZS",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'NX7']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "NX7",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A95",
+      "ext": ".pdb",
+      "L": 590,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BO3', 'PCP', 'GUN']",
+      "ligand": [
+        "BO3",
+        "MG",
+        "PCP",
+        "GUN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BXQ",
+      "ext": ".pdb",
+      "L": 323,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MAN', 'SO4', 'ACT', 'PP8']",
+      "ligand": [
+        "MAN",
+        "SO4",
+        "ACT",
+        "PP8",
+        "GOL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AJZ",
+      "ext": ".pdb",
+      "L": 282,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13XX",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'Z5C']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "Z5C",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C84",
+      "ext": ".pdb",
+      "L": 297,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['761']",
+      "ligand": [
+        "761"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BYC",
+      "ext": ".pdb",
+      "L": 490,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BGC', 'GLC', 'SO4']",
+      "ligand": [
+        "BGC",
+        "GLC",
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A5X",
+      "ext": ".pdb",
+      "L": 146,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['Y3']",
+      "ligand": [
+        "Y3"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "103M",
+      "ext": ".pdb",
+      "L": 154,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM', 'NBN']",
+      "ligand": [
+        "SO4",
+        "HEM",
+        "NBN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A7G",
+      "ext": ".pdb",
+      "L": 82,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14VW",
+      "ext": ".pdb",
+      "L": 637,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'LL0']",
+      "ligand": [
+        "PO4",
+        "LL0"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BRK",
+      "ext": ".pdb",
+      "L": 323,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['ZN']",
+      "ligand": [
+        "ZN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BRR",
+      "ext": ".pdb",
+      "L": 692,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PCA', 'GLC', 'MAN', 'SGA']",
+      "ligand": [
+        "PCA",
+        "GLC",
+        "MAN",
+        "SGA",
+        "RET",
+        "ARC"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AG6",
+      "ext": ".pdb",
+      "L": 99,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CU']",
+      "ligand": [
+        "CU"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14XL",
+      "ext": ".pdb",
+      "L": 640,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'ONQ']",
+      "ligand": [
+        "PO4",
+        "ONQ"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C0L",
+      "ext": ".pdb",
+      "L": 363,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FLA', 'FAD']",
+      "ligand": [
+        "FLA",
+        "FAD"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BE4",
+      "ext": ".pdb",
+      "L": 453,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PCG']",
+      "ligand": [
+        "PCG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BJA",
+      "ext": ".pdb",
+      "L": 190,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BRJ",
+      "ext": ".pdb",
+      "L": 322,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['ZN']",
+      "ligand": [
+        "ZN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AT9",
+      "ext": ".pdb",
+      "L": 230,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['RET']",
+      "ligand": [
+        "RET"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B87",
+      "ext": ".pdb",
+      "L": 181,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACO']",
+      "ligand": [
+        "ACO"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BHO",
+      "ext": ".pdb",
+      "L": 378,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACE']",
+      "ligand": [
+        "ACE",
+        "MG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AKN",
+      "ext": ".pdb",
+      "L": 547,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG']",
+      "ligand": [
+        "NAG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "13OZ",
+      "ext": ".pdb",
+      "L": 313,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HX8']",
+      "ligand": [
+        "ZN",
+        "HX8"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "13YF",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'M0J']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "M0J",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "112M",
+      "ext": ".pdb",
+      "L": 154,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM', 'NPN']",
+      "ligand": [
+        "SO4",
+        "HEM",
+        "NPN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AX9",
+      "ext": ".pdb",
+      "L": 527,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['EDR']",
+      "ligand": [
+        "EDR"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BJV",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'DMS', 'GP8']",
+      "ligand": [
+        "CA",
+        "SO4",
+        "DMS",
+        "GP8"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ARZ",
+      "ext": ".pdb",
+      "L": 1081,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'NAI', 'PDC']",
+      "ligand": [
+        "PO4",
+        "K",
+        "NAI",
+        "PDC"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C1Q",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'BAI']",
+      "ligand": [
+        "CA",
+        "MG",
+        "SO4",
+        "BAI"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BLS",
+      "ext": ".pdb",
+      "L": 718,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPP']",
+      "ligand": [
+        "IPP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "111M",
+      "ext": ".pdb",
+      "L": 154,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM', 'NBN']",
+      "ligand": [
+        "SO4",
+        "HEM",
+        "NBN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "10XC",
+      "ext": ".pdb",
+      "L": 104,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL']",
+      "ligand": [
+        "CL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AXY",
+      "ext": ".pdb",
+      "L": 239,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'BMA', 'XYP', 'MAN']",
+      "ligand": [
+        "NAG",
+        "BMA",
+        "XYP",
+        "MAN",
+        "FUC",
+        "MN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AJC",
+      "ext": ".pdb",
+      "L": 895,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['MG', 'ZN']",
+      "ligand": [
+        "ZN",
+        "MG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AMK",
+      "ext": ".pdb",
+      "L": 250,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PGA']",
+      "ligand": [
+        "PGA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AQN",
+      "ext": ".pdb",
+      "L": 277,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['UNX', 'IPA']",
+      "ligand": [
+        "CA",
+        "UNX",
+        "IPA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "111L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL']",
+      "ligand": [
+        "CL"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AMZ",
+      "ext": ".pdb",
+      "L": 435,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MLT', 'NMX']",
+      "ligand": [
+        "MLT",
+        "NMX"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AZF",
+      "ext": ".pdb",
+      "L": 129,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BR']",
+      "ligand": [
+        "BR"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B9O",
+      "ext": ".pdb",
+      "L": 123,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA']",
+      "ligand": [
+        "CA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "13ZP",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'X0S']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "X0S",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A8S",
+      "ext": ".pdb",
+      "L": 273,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'PPI']",
+      "ligand": [
+        "SO4",
+        "PPI"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AVE",
+      "ext": ".pdb",
+      "L": 246,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG']",
+      "ligand": [
+        "NAG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AX4",
+      "ext": ".pdb",
+      "L": 1856,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['LLP']",
+      "ligand": [
+        "LLP",
+        "K"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AZD",
+      "ext": ".pdb",
+      "L": 948,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA', 'MN']",
+      "ligand": [
+        "CA",
+        "MN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "10SE",
+      "ext": ".pdb",
+      "L": 180,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NH2', 'OCA']",
+      "ligand": [
+        "NH2",
+        "OCA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B2V",
+      "ext": ".pdb",
+      "L": 173,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM']",
+      "ligand": [
+        "CA",
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "11NQ",
+      "ext": ".pdb",
+      "L": 185,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PEG', 'ACT']",
+      "ligand": [
+        "PEG",
+        "ACT"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AAZ",
+      "ext": ".pdb",
+      "L": 174,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CD']",
+      "ligand": [
+        "CD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B7P",
+      "ext": ".pdb",
+      "L": 130,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['NA']",
+      "ligand": [
+        "NA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C6R",
+      "ext": ".pdb",
+      "L": 88,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM']",
+      "ligand": [
+        "CD",
+        "HEM"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AUX",
+      "ext": ".pdb",
+      "L": 584,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['AGS']",
+      "ligand": [
+        "CA",
+        "AGS"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AP6",
+      "ext": ".pdb",
+      "L": 396,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['MN']",
+      "ligand": [
+        "MN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14VN",
+      "ext": ".pdb",
+      "L": 868,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'W0D']",
+      "ligand": [
+        "PO4",
+        "W0D"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B93",
+      "ext": ".pdb",
+      "L": 443,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FMT', 'PO4']",
+      "ligand": [
+        "FMT",
+        "PO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CE5",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'SO4', 'BEN']",
+      "ligand": [
+        "CA",
+        "CL",
+        "SO4",
+        "BEN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BT1",
+      "ext": ".pdb",
+      "L": 672,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['C2O']",
+      "ligand": [
+        "C2O"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C7O",
+      "ext": ".pdb",
+      "L": 3152,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PPG']",
+      "ligand": [
+        "PPG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BZR",
+      "ext": ".pdb",
+      "L": 154,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM', 'CMO']",
+      "ligand": [
+        "SO4",
+        "HEM",
+        "CMO"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B63",
+      "ext": ".pdb",
+      "L": 333,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['EDO', 'ANP']",
+      "ligand": [
+        "MG",
+        "EDO",
+        "ANP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14YP",
+      "ext": ".pdb",
+      "L": 632,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'O2A']",
+      "ligand": [
+        "PO4",
+        "O2A"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AGS",
+      "ext": ".pdb",
+      "L": 442,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GTX']",
+      "ligand": [
+        "GTX"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BPT",
+      "ext": ".pdb",
+      "L": 56,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4']",
+      "ligand": [
+        "PO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BMT",
+      "ext": ".pdb",
+      "L": 492,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['COB']",
+      "ligand": [
+        "COB"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AH0",
+      "ext": ".pdb",
+      "L": 315,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACE', 'NAP', 'SBI']",
+      "ligand": [
+        "ACE",
+        "NAP",
+        "SBI"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B38",
+      "ext": ".pdb",
+      "L": 290,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['ATP']",
+      "ligand": [
+        "ACE",
+        "MG",
+        "ATP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AUJ",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PPB']",
+      "ligand": [
+        "CA",
+        "PPB"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "12JS",
+      "ext": ".pdb",
+      "L": 121,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PEG']",
+      "ligand": [
+        "PEG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "11GS",
+      "ext": ".pdb",
+      "L": 416,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GSH', 'EAA', 'MES']",
+      "ligand": [
+        "GSH",
+        "EAA",
+        "MES"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ARM",
+      "ext": ".pdb",
+      "L": 307,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['TRS']",
+      "ligand": [
+        "HG",
+        "CU",
+        "TRS"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13XW",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'R60']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "R60",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AMT",
+      "ext": ".pdb",
+      "L": 33,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACE', 'AIB', 'PHL', 'CCN']",
+      "ligand": [
+        "ACE",
+        "AIB",
+        "PHL",
+        "CCN",
+        "MOH"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BP6",
+      "ext": ".pdb",
+      "L": 316,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['UMP']",
+      "ligand": [
+        "K",
+        "UMP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A1Q",
+      "ext": ".pdb",
+      "L": 531,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['ZN']",
+      "ligand": [
+        "ZN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BR2",
+      "ext": ".pdb",
+      "L": 4038,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['ADP']",
+      "ligand": [
+        "MG",
+        "ALF",
+        "ADP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14AA",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A4I",
+      "ext": ".pdb",
+      "L": 580,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NDP']",
+      "ligand": [
+        "NDP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C4O",
+      "ext": ".pdb",
+      "L": 504,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BOG', 'SO4']",
+      "ligand": [
+        "BOG",
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BZM",
+      "ext": ".pdb",
+      "L": 260,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MZM']",
+      "ligand": [
+        "ZN",
+        "MZM"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AS2",
+      "ext": ".pdb",
+      "L": 315,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['GDP']",
+      "ligand": [
+        "PO4",
+        "GDP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BEZ",
+      "ext": ".pdb",
+      "L": 310,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACY']",
+      "ligand": [
+        "ACY"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14YU",
+      "ext": ".pdb",
+      "L": 608,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'A9E']",
+      "ligand": [
+        "PO4",
+        "A9E"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B15",
+      "ext": ".pdb",
+      "L": 508,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAE']",
+      "ligand": [
+        "NAE"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B7D",
+      "ext": ".pdb",
+      "L": 61,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4']",
+      "ligand": [
+        "PO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C63",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B8V",
+      "ext": ".pdb",
+      "L": 327,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAD']",
+      "ligand": [
+        "NAD"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ASX",
+      "ext": ".pdb",
+      "L": 152,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4']",
+      "ligand": [
+        "PO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B8F",
+      "ext": ".pdb",
+      "L": 506,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MDO', 'SO4', 'GOL']",
+      "ligand": [
+        "MDO",
+        "SO4",
+        "GOL"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "13NJ",
+      "ext": ".pdb",
+      "L": 313,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MLI', 'XZT']",
+      "ligand": [
+        "ZN",
+        "MLI",
+        "XZT"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CC3",
+      "ext": ".pdb",
+      "L": 260,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CU']",
+      "ligand": [
+        "CU"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "12YI",
+      "ext": ".pdb",
+      "L": 1134,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACE', 'PO4']",
+      "ligand": [
+        "ACE",
+        "PO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BKY",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SAH', '1MC']",
+      "ligand": [
+        "SAH",
+        "1MC"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C61",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'KR', 'BME']",
+      "ligand": [
+        "CL",
+        "KR",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CCI",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['DMI', 'HEM']",
+      "ligand": [
+        "DMI",
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14WK",
+      "ext": ".pdb",
+      "L": 693,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'M25']",
+      "ligand": [
+        "PO4",
+        "M25"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B0J",
+      "ext": ".pdb",
+      "L": 753,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SF4', 'ICT']",
+      "ligand": [
+        "SF4",
+        "ICT"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "13XR",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'S7J']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "S7J",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BHC",
+      "ext": ".pdb",
+      "L": 560,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SCN']",
+      "ligand": [
+        "SCN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A0D",
+      "ext": ".pdb",
+      "L": 1748,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['MN']",
+      "ligand": [
+        "MN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "13SU",
+      "ext": ".pdb",
+      "L": 317,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['B1A', 'DMS']",
+      "ligand": [
+        "ZN",
+        "B1A",
+        "DMS"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BCH",
+      "ext": ".pdb",
+      "L": 462,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['A2G', 'CL', 'NGA']",
+      "ligand": [
+        "A2G",
+        "CA",
+        "CL",
+        "NGA",
+        "NA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B4T",
+      "ext": ".pdb",
+      "L": 153,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL']",
+      "ligand": [
+        "CU",
+        "ZN",
+        "CL"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14VT",
+      "ext": ".pdb",
+      "L": 613,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'TEK']",
+      "ligand": [
+        "PO4",
+        "TEK"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AMS",
+      "ext": ".pdb",
+      "L": 396,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['GUA']",
+      "ligand": [
+        "PMP",
+        "GUA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C2I",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BAK', 'DMS']",
+      "ligand": [
+        "CA",
+        "CL",
+        "ZN",
+        "BAK",
+        "DMS"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C62",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'XE', 'BME']",
+      "ligand": [
+        "CL",
+        "XE",
+        "BME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "10XO",
+      "ext": ".pdb",
+      "L": 87,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'GOL']",
+      "ligand": [
+        "CL",
+        "GOL"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1CCB",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM']",
+      "ligand": [
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B4V",
+      "ext": ".pdb",
+      "L": 498,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FAD']",
+      "ligand": [
+        "FAD"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BWF",
+      "ext": ".pdb",
+      "L": 988,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ATF', 'GOL']",
+      "ligand": [
+        "MG",
+        "ATF",
+        "GOL"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14WT",
+      "ext": ".pdb",
+      "L": 680,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'UR1']",
+      "ligand": [
+        "PO4",
+        "UR1"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "10TZ",
+      "ext": ".pdb",
+      "L": 1928,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['ATP']",
+      "ligand": [
+        "NAG",
+        "BMA",
+        "MAN",
+        "FUC",
+        "ATP",
+        "ZN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "106M",
+      "ext": ".pdb",
+      "L": 154,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM', 'ENC']",
+      "ligand": [
+        "SO4",
+        "HEM",
+        "ENC"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "187L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'HED', 'PXY']",
+      "ligand": [
+        "CL",
+        "HED",
+        "PXY"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B56",
+      "ext": ".pdb",
+      "L": 133,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLM']",
+      "ligand": [
+        "PLM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14VP",
+      "ext": ".pdb",
+      "L": 636,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'K3P']",
+      "ligand": [
+        "PO4",
+        "K3P"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C39",
+      "ext": ".pdb",
+      "L": 304,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'MAN', 'M6P']",
+      "ligand": [
+        "NAG",
+        "MAN",
+        "M6P",
+        "MN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AEK",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM', 'IDM']",
+      "ligand": [
+        "HEM",
+        "IDM"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1ASP",
+      "ext": ".pdb",
+      "L": 1104,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'OH', 'PEO']",
+      "ligand": [
+        "NAG",
+        "CU",
+        "OH",
+        "PEO"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BFF",
+      "ext": ".pdb",
+      "L": 129,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'BME']",
+      "ligand": [
+        "PO4",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AD2",
+      "ext": ".pdb",
+      "L": 224,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'MRD']",
+      "ligand": [
+        "SO4",
+        "HG",
+        "MRD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AU3",
+      "ext": ".pdb",
+      "L": 215,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PCM']",
+      "ligand": [
+        "PCM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C3B",
+      "ext": ".pdb",
+      "L": 716,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BZB']",
+      "ligand": [
+        "BZB"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C2G",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BAH', 'DMS']",
+      "ligand": [
+        "CA",
+        "MG",
+        "ZN",
+        "BAH",
+        "DMS"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BU5",
+      "ext": ".pdb",
+      "L": 294,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'RBF']",
+      "ligand": [
+        "SO4",
+        "RBF"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BD4",
+      "ext": ".pdb",
+      "L": 896,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['URA']",
+      "ligand": [
+        "PO4",
+        "URA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1ASA",
+      "ext": ".pdb",
+      "L": 396,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLP', 'MAE']",
+      "ligand": [
+        "PLP",
+        "MAE"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "10QQ",
+      "ext": ".pdb",
+      "L": 8820,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['ADP']",
+      "ligand": [
+        "ADP",
+        "MG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C6J",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'KR', 'BME']",
+      "ligand": [
+        "CL",
+        "KR",
+        "BME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AXN",
+      "ext": ".pdb",
+      "L": 323,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA']",
+      "ligand": [
+        "CA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ASS",
+      "ext": ".pdb",
+      "L": 152,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4']",
+      "ligand": [
+        "NA",
+        "PO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1ADC",
+      "ext": ".pdb",
+      "L": 748,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PAD', 'EOH']",
+      "ligand": [
+        "ZN",
+        "PAD",
+        "EOH"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "10SW",
+      "ext": ".pdb",
+      "L": 1639,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['GDP']",
+      "ligand": [
+        "GDP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14ZG",
+      "ext": ".pdb",
+      "L": 641,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'T6J']",
+      "ligand": [
+        "PO4",
+        "T6J"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A44",
+      "ext": ".pdb",
+      "L": 185,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACT']",
+      "ligand": [
+        "ACT"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BQ8",
+      "ext": ".pdb",
+      "L": 54,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['FE']",
+      "ligand": [
+        "FE"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A2Z",
+      "ext": ".pdb",
+      "L": 880,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "13XQ",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'HWH']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "HWH",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C5R",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FLC', 'SO4', 'ESI']",
+      "ligand": [
+        "FLC",
+        "CA",
+        "SO4",
+        "ESI"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BU6",
+      "ext": ".pdb",
+      "L": 1992,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'GOL']",
+      "ligand": [
+        "SO4",
+        "GOL"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B8S",
+      "ext": ".pdb",
+      "L": 498,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FAD']",
+      "ligand": [
+        "FAD"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A2G",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM']",
+      "ligand": [
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AU1",
+      "ext": ".pdb",
+      "L": 329,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BGC', 'G6D']",
+      "ligand": [
+        "BGC",
+        "G6D",
+        "ZN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BTL",
+      "ext": ".pdb",
+      "L": 263,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B37",
+      "ext": ".pdb",
+      "L": 1383,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'MAN', 'FCA', 'FAD']",
+      "ligand": [
+        "NAG",
+        "MAN",
+        "FCA",
+        "FAD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BTN",
+      "ext": ".pdb",
+      "L": 106,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['I3P']",
+      "ligand": [
+        "I3P"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A9U",
+      "ext": ".pdb",
+      "L": 351,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SB2']",
+      "ligand": [
+        "SB2"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "10LI",
+      "ext": ".pdb",
+      "L": 502,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['LLP', 'PUT', 'EDO', 'DMS']",
+      "ligand": [
+        "LLP",
+        "PUT",
+        "EDO",
+        "DMS",
+        "ACT",
+        "AG2"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "184L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'HED', 'I4B']",
+      "ligand": [
+        "CL",
+        "HED",
+        "I4B"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A9T",
+      "ext": ".pdb",
+      "L": 284,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['R1P', 'HPA']",
+      "ligand": [
+        "R1P",
+        "HPA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BPM",
+      "ext": ".pdb",
+      "L": 481,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['MG', 'ZN']",
+      "ligand": [
+        "MG",
+        "ZN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C5K",
+      "ext": ".pdb",
+      "L": 397,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['YB']",
+      "ligand": [
+        "YB"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CCR",
+      "ext": ".pdb",
+      "L": 109,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACE', 'M3L', 'HEC']",
+      "ligand": [
+        "ACE",
+        "M3L",
+        "HEC"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CDT",
+      "ext": ".pdb",
+      "L": 120,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4']",
+      "ligand": [
+        "PO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "131L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A6K",
+      "ext": ".pdb",
+      "L": 151,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM']",
+      "ligand": [
+        "SO4",
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AID",
+      "ext": ".pdb",
+      "L": 198,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'THK']",
+      "ligand": [
+        "CL",
+        "THK"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13YP",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'TT3']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "TT3",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13SM",
+      "ext": ".pdb",
+      "L": 316,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GW1']",
+      "ligand": [
+        "ZN",
+        "GW1"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AH7",
+      "ext": ".pdb",
+      "L": 245,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['ZN']",
+      "ligand": [
+        "ZN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A26",
+      "ext": ".pdb",
+      "L": 351,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CNA']",
+      "ligand": [
+        "CNA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CAM",
+      "ext": ".pdb",
+      "L": 258,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BCT']",
+      "ligand": [
+        "ZN",
+        "BCT"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13YQ",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'O1M']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "O1M",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C1H",
+      "ext": ".pdb",
+      "L": 310,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MMP']",
+      "ligand": [
+        "MG",
+        "MMP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A8E",
+      "ext": ".pdb",
+      "L": 329,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CO3']",
+      "ligand": [
+        "CO3",
+        "FE"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "173L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BME']",
+      "ligand": [
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CD2",
+      "ext": ".pdb",
+      "L": 206,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAP', 'FOL']",
+      "ligand": [
+        "NAP",
+        "FOL"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1CAQ",
+      "ext": ".pdb",
+      "L": 168,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'DPS']",
+      "ligand": [
+        "ZN",
+        "CA",
+        "SO4",
+        "DPS"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A29",
+      "ext": ".pdb",
+      "L": 144,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['TFP']",
+      "ligand": [
+        "CA",
+        "TFP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B5Q",
+      "ext": ".pdb",
+      "L": 1383,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'MAN', 'FCA', 'FAD']",
+      "ligand": [
+        "NAG",
+        "MAN",
+        "FCA",
+        "FAD",
+        "MD2"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C6M",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'KR', 'BME']",
+      "ligand": [
+        "CL",
+        "KR",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A8G",
+      "ext": ".pdb",
+      "L": 198,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['2Z4']",
+      "ligand": [
+        "2Z4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BAI",
+      "ext": ".pdb",
+      "L": 248,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['0Q4']",
+      "ligand": [
+        "0Q4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BUP",
+      "ext": ".pdb",
+      "L": 378,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['ADP']",
+      "ligand": [
+        "MG",
+        "K",
+        "CL",
+        "PO4",
+        "ADP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "182L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'HED', 'BZF']",
+      "ligand": [
+        "CL",
+        "HED",
+        "BZF"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "10NH",
+      "ext": ".pdb",
+      "L": 1874,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IMD', 'HEZ']",
+      "ligand": [
+        "ZN",
+        "IMD",
+        "HEZ"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C6Z",
+      "ext": ".pdb",
+      "L": 198,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ROC']",
+      "ligand": [
+        "ROC"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BPQ",
+      "ext": ".pdb",
+      "L": 123,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA']",
+      "ligand": [
+        "CA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C3X",
+      "ext": ".pdb",
+      "L": 798,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', '8IG']",
+      "ligand": [
+        "PO4",
+        "8IG",
+        "CA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AXE",
+      "ext": ".pdb",
+      "L": 748,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAD', 'ETF']",
+      "ligand": [
+        "ZN",
+        "NAD",
+        "ETF"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BNU",
+      "ext": ".pdb",
+      "L": 256,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['AL3']",
+      "ligand": [
+        "HG",
+        "ZN",
+        "AL3"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "138L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C69",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ADW",
+      "ext": ".pdb",
+      "L": 246,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CU']",
+      "ligand": [
+        "CU"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A0J",
+      "ext": ".pdb",
+      "L": 892,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'BEN']",
+      "ligand": [
+        "CA",
+        "SO4",
+        "BEN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BRU",
+      "ext": ".pdb",
+      "L": 241,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['1NB']",
+      "ligand": [
+        "1NB"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AE5",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG']",
+      "ligand": [
+        "NAG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B0M",
+      "ext": ".pdb",
+      "L": 753,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FLC', 'SF4']",
+      "ligand": [
+        "FLC",
+        "SF4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1ANE",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BEN']",
+      "ligand": [
+        "BEN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BSP",
+      "ext": ".pdb",
+      "L": 555,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4']",
+      "ligand": [
+        "PO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C67",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'KR', 'BME']",
+      "ligand": [
+        "CL",
+        "KR",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BXA",
+      "ext": ".pdb",
+      "L": 105,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CU1']",
+      "ligand": [
+        "CU1"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BUU",
+      "ext": ".pdb",
+      "L": 149,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['HO']",
+      "ligand": [
+        "HO"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BS1",
+      "ext": ".pdb",
+      "L": 224,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['ADP']",
+      "ligand": [
+        "MG",
+        "ADP",
+        "DAA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BVB",
+      "ext": ".pdb",
+      "L": 211,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'HEM']",
+      "ligand": [
+        "PO4",
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "103L",
+      "ext": ".pdb",
+      "L": 159,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AOP",
+      "ext": ".pdb",
+      "L": 460,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'SF4', 'SRM']",
+      "ligand": [
+        "PO4",
+        "K",
+        "SF4",
+        "SRM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ARP",
+      "ext": ".pdb",
+      "L": 336,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'HEM']",
+      "ligand": [
+        "NAG",
+        "CA",
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B99",
+      "ext": ".pdb",
+      "L": 900,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FUP', 'POP']",
+      "ligand": [
+        "FUP",
+        "POP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A42",
+      "ext": ".pdb",
+      "L": 256,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BZU']",
+      "ligand": [
+        "HG",
+        "ZN",
+        "BZU"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ADG",
+      "ext": ".pdb",
+      "L": 374,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SAD']",
+      "ligand": [
+        "ZN",
+        "SAD"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "11EE",
+      "ext": ".pdb",
+      "L": 729,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['DQV']",
+      "ligand": [
+        "DQV"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B8J",
+      "ext": ".pdb",
+      "L": 898,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'VO4']",
+      "ligand": [
+        "ZN",
+        "SO4",
+        "MG",
+        "VO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BY2",
+      "ext": ".pdb",
+      "L": 112,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG']",
+      "ligand": [
+        "NAG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B3E",
+      "ext": ".pdb",
+      "L": 330,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CO3']",
+      "ligand": [
+        "FE",
+        "CO3"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BDB",
+      "ext": ".pdb",
+      "L": 267,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAD']",
+      "ligand": [
+        "NAD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BLZ",
+      "ext": ".pdb",
+      "L": 327,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACV', 'NO']",
+      "ligand": [
+        "FE",
+        "ACV",
+        "NO"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CBQ",
+      "ext": ".pdb",
+      "L": 137,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'RE9']",
+      "ligand": [
+        "PO4",
+        "RE9"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14YQ",
+      "ext": ".pdb",
+      "L": 666,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'U1V']",
+      "ligand": [
+        "PO4",
+        "U1V"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AMW",
+      "ext": ".pdb",
+      "L": 213,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['ADP']",
+      "ligand": [
+        "ADP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14ZI",
+      "ext": ".pdb",
+      "L": 611,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'S0V']",
+      "ligand": [
+        "PO4",
+        "S0V"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C7Z",
+      "ext": ".pdb",
+      "L": 382,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'G3H']",
+      "ligand": [
+        "PO4",
+        "G3H"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A9C",
+      "ext": ".pdb",
+      "L": 3315,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['GTP']",
+      "ligand": [
+        "GTP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "16PK",
+      "ext": ".pdb",
+      "L": 415,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BIS', 'EPE']",
+      "ligand": [
+        "BIS",
+        "EPE"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BVC",
+      "ext": ".pdb",
+      "L": 153,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'BLA']",
+      "ligand": [
+        "PO4",
+        "BLA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14YG",
+      "ext": ".pdb",
+      "L": 780,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'VVG']",
+      "ligand": [
+        "PO4",
+        "VVG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BMA",
+      "ext": ".pdb",
+      "L": 240,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', '0QH']",
+      "ligand": [
+        "CA",
+        "SO4",
+        "0QH"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BUX",
+      "ext": ".pdb",
+      "L": 450,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PPS']",
+      "ligand": [
+        "PPS"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ABA",
+      "ext": ".pdb",
+      "L": 87,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MES']",
+      "ligand": [
+        "MES"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B8L",
+      "ext": ".pdb",
+      "L": 108,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CO3']",
+      "ligand": [
+        "CO3",
+        "CA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BT4",
+      "ext": ".pdb",
+      "L": 361,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLP']",
+      "ligand": [
+        "PLP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B20",
+      "ext": ".pdb",
+      "L": 326,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['ZN']",
+      "ligand": [
+        "ZN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AVD",
+      "ext": ".pdb",
+      "L": 247,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'BTN']",
+      "ligand": [
+        "NAG",
+        "BTN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A94",
+      "ext": ".pdb",
+      "L": 396,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['0Q4']",
+      "ligand": [
+        "0Q4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ASF",
+      "ext": ".pdb",
+      "L": 396,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'PLP']",
+      "ligand": [
+        "SO4",
+        "PLP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "101M",
+      "ext": ".pdb",
+      "L": 154,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM', 'NBN']",
+      "ligand": [
+        "SO4",
+        "HEM",
+        "NBN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14YX",
+      "ext": ".pdb",
+      "L": 618,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'JHS']",
+      "ligand": [
+        "PO4",
+        "JHS"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14XO",
+      "ext": ".pdb",
+      "L": 638,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'LQV']",
+      "ligand": [
+        "PO4",
+        "LQV"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C7N",
+      "ext": ".pdb",
+      "L": 3152,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLP']",
+      "ligand": [
+        "PLP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BIL",
+      "ext": ".pdb",
+      "L": 667,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['0IU']",
+      "ligand": [
+        "0IU"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AXA",
+      "ext": ".pdb",
+      "L": 198,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['U0E']",
+      "ligand": [
+        "U0E"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C0N",
+      "ext": ".pdb",
+      "L": 404,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLP', 'ACY']",
+      "ligand": [
+        "PLP",
+        "ACY"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B7E",
+      "ext": ".pdb",
+      "L": 372,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['TPT']",
+      "ligand": [
+        "TPT"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "15AA",
+      "ext": ".pdb",
+      "L": 594,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4']",
+      "ligand": [
+        "PO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AHP",
+      "ext": ".pdb",
+      "L": 1592,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['GLC', 'SO4', 'GOL', 'PLP']",
+      "ligand": [
+        "GLC",
+        "SO4",
+        "GOL",
+        "PLP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BJG",
+      "ext": ".pdb",
+      "L": 263,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CXM', 'UFP', 'TMF']",
+      "ligand": [
+        "CXM",
+        "UFP",
+        "TMF"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AEM",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM', 'MPI']",
+      "ligand": [
+        "HEM",
+        "MPI"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BV9",
+      "ext": ".pdb",
+      "L": 198,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['XV6']",
+      "ligand": [
+        "XV6"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AND",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BEN']",
+      "ligand": [
+        "CU",
+        "BEN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AIR",
+      "ext": ".pdb",
+      "L": 352,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C88",
+      "ext": ".pdb",
+      "L": 297,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['OTA']",
+      "ligand": [
+        "OTA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14XI",
+      "ext": ".pdb",
+      "L": 728,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'AYV']",
+      "ligand": [
+        "PO4",
+        "AYV"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AO0",
+      "ext": ".pdb",
+      "L": 1820,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['ADP']",
+      "ligand": [
+        "MG",
+        "SF4",
+        "5GP",
+        "ADP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B4P",
+      "ext": ".pdb",
+      "L": 217,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'GPS']",
+      "ligand": [
+        "SO4",
+        "GPS"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BQ6",
+      "ext": ".pdb",
+      "L": 402,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CSD', 'SO4', 'COA']",
+      "ligand": [
+        "CSD",
+        "SO4",
+        "COA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "190L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BTP",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA']",
+      "ligand": [
+        "CA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BQR",
+      "ext": ".pdb",
+      "L": 124,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CU']",
+      "ligand": [
+        "CU"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14ZK",
+      "ext": ".pdb",
+      "L": 645,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'S9S']",
+      "ligand": [
+        "PO4",
+        "S9S"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BZ6",
+      "ext": ".pdb",
+      "L": 158,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM']",
+      "ligand": [
+        "SO4",
+        "HEM"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1CCZ",
+      "ext": ".pdb",
+      "L": 171,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG']",
+      "ligand": [
+        "NAG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BGQ",
+      "ext": ".pdb",
+      "L": 214,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['RDC']",
+      "ligand": [
+        "RDC"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "10UR",
+      "ext": ".pdb",
+      "L": 224,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['MG']",
+      "ligand": [
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CBO",
+      "ext": ".pdb",
+      "L": 498,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FAD']",
+      "ligand": [
+        "FAD"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C14",
+      "ext": ".pdb",
+      "L": 512,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAD', 'TCL']",
+      "ligand": [
+        "NAD",
+        "TCL"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B14",
+      "ext": ".pdb",
+      "L": 508,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAD']",
+      "ligand": [
+        "NAD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "11GN",
+      "ext": ".pdb",
+      "L": 741,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['2BA', 'EDO']",
+      "ligand": [
+        "2BA",
+        "EDO"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AG9",
+      "ext": ".pdb",
+      "L": 350,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'FMN', 'BTB']",
+      "ligand": [
+        "CA",
+        "CL",
+        "NA",
+        "FMN",
+        "BTB"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AA4",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM']",
+      "ligand": [
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B49",
+      "ext": ".pdb",
+      "L": 482,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4']",
+      "ligand": [
+        "PO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AW9",
+      "ext": ".pdb",
+      "L": 216,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CD']",
+      "ligand": [
+        "CD"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13SC",
+      "ext": ".pdb",
+      "L": 322,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['WNM']",
+      "ligand": [
+        "ZN",
+        "WNM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A6N",
+      "ext": ".pdb",
+      "L": 151,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM']",
+      "ligand": [
+        "SO4",
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ALH",
+      "ext": ".pdb",
+      "L": 892,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'SO4']",
+      "ligand": [
+        "ZN",
+        "PO4",
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BEH",
+      "ext": ".pdb",
+      "L": 367,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CAC']",
+      "ligand": [
+        "CAC"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "147L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "108M",
+      "ext": ".pdb",
+      "L": 154,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'HEM', 'NBN']",
+      "ligand": [
+        "SO4",
+        "HEM",
+        "NBN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ACC",
+      "ext": ".pdb",
+      "L": 665,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA']",
+      "ligand": [
+        "CA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AOF",
+      "ext": ".pdb",
+      "L": 1074,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM', 'DHE', 'SO2']",
+      "ligand": [
+        "HEM",
+        "DHE",
+        "SO2"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AHN",
+      "ext": ".pdb",
+      "L": 169,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FMN']",
+      "ligand": [
+        "CA",
+        "FMN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BSZ",
+      "ext": ".pdb",
+      "L": 504,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['2PE', 'SO4']",
+      "ligand": [
+        "FE",
+        "2PE",
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1ATK",
+      "ext": ".pdb",
+      "L": 215,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['E64']",
+      "ligand": [
+        "E64"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AGN",
+      "ext": ".pdb",
+      "L": 1492,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ACT', 'NAD']",
+      "ligand": [
+        "ZN",
+        "ACT",
+        "NAD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B62",
+      "ext": ".pdb",
+      "L": 331,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['ADP']",
+      "ligand": [
+        "MG",
+        "ADP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BRH",
+      "ext": ".pdb",
+      "L": 324,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['ZN']",
+      "ligand": [
+        "ZN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ATS",
+      "ext": ".pdb",
+      "L": 382,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['ADP']",
+      "ligand": [
+        "MG",
+        "ADP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AZI",
+      "ext": ".pdb",
+      "L": 153,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'AZI', 'HEM']",
+      "ligand": [
+        "SO4",
+        "AZI",
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14ZY",
+      "ext": ".pdb",
+      "L": 648,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'WLS']",
+      "ligand": [
+        "PO4",
+        "WLS"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AEN",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM', '25T']",
+      "ligand": [
+        "HEM",
+        "25T"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B1B",
+      "ext": ".pdb",
+      "L": 140,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "ZN",
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AMQ",
+      "ext": ".pdb",
+      "L": 396,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PMP']",
+      "ligand": [
+        "PMP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ACO",
+      "ext": ".pdb",
+      "L": 753,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['TRA', 'SF4']",
+      "ligand": [
+        "TRA",
+        "SF4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C9O",
+      "ext": ".pdb",
+      "L": 132,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['TRS']",
+      "ligand": [
+        "NA",
+        "TRS"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AEV",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM', 'AMT']",
+      "ligand": [
+        "HEM",
+        "AMT"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "13PH",
+      "ext": ".pdb",
+      "L": 313,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['8K2']",
+      "ligand": [
+        "ZN",
+        "8K2"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AJ2",
+      "ext": ".pdb",
+      "L": 282,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', '2PH']",
+      "ligand": [
+        "SO4",
+        "2PH"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AFA",
+      "ext": ".pdb",
+      "L": 462,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MBG', 'CL']",
+      "ligand": [
+        "MBG",
+        "CA",
+        "CL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14WU",
+      "ext": ".pdb",
+      "L": 655,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'O0J']",
+      "ligand": [
+        "PO4",
+        "O0J"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AOX",
+      "ext": ".pdb",
+      "L": 402,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['MG']",
+      "ligand": [
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AKC",
+      "ext": ".pdb",
+      "L": 401,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PPE']",
+      "ligand": [
+        "PPE"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B3X",
+      "ext": ".pdb",
+      "L": 301,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PCA', 'XYP']",
+      "ligand": [
+        "PCA",
+        "XYP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AEG",
+      "ext": ".pdb",
+      "L": 291,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM', '4AP']",
+      "ligand": [
+        "HEM",
+        "4AP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "11JC",
+      "ext": ".pdb",
+      "L": 762,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['AR6']",
+      "ligand": [
+        "AR6"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "14XM",
+      "ext": ".pdb",
+      "L": 638,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'NY4']",
+      "ligand": [
+        "PO4",
+        "NY4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "13ZO",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'UXJ']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "UXJ",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1914",
+      "ext": ".pdb",
+      "L": 171,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'BME']",
+      "ligand": [
+        "PO4",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "155L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ARV",
+      "ext": ".pdb",
+      "L": 336,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'CYN', 'HEM']",
+      "ligand": [
+        "NAG",
+        "CYN",
+        "CA",
+        "HEM"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C6N",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'XE', 'BME']",
+      "ligand": [
+        "CL",
+        "XE",
+        "BME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "13ZH",
+      "ext": ".pdb",
+      "L": 457,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['IPA', 'PEG', 'GOL', 'SZX']",
+      "ligand": [
+        "IPA",
+        "PEG",
+        "GOL",
+        "SZX",
+        "MG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A6L",
+      "ext": ".pdb",
+      "L": 106,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SF4', 'F3S']",
+      "ligand": [
+        "SF4",
+        "F3S"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CBJ",
+      "ext": ".pdb",
+      "L": 302,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CU', 'ZN']",
+      "ligand": [
+        "CU",
+        "ZN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BZ5",
+      "ext": ".pdb",
+      "L": 280,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AA5",
+      "ext": ".pdb",
+      "L": 2,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MLU', 'OMZ', 'GHP', 'OMY']",
+      "ligand": [
+        "MLU",
+        "OMZ",
+        "GHP",
+        "OMY",
+        "3FG",
+        "BGC"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A97",
+      "ext": ".pdb",
+      "L": 581,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BO3', '5GP']",
+      "ligand": [
+        "BO3",
+        "5GP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "181L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'HED', 'BNZ']",
+      "ligand": [
+        "CL",
+        "HED",
+        "BNZ"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AS0",
+      "ext": ".pdb",
+      "L": 313,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'GSP']",
+      "ligand": [
+        "MG",
+        "SO4",
+        "GSP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AHU",
+      "ext": ".pdb",
+      "L": 1110,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FAA']",
+      "ligand": [
+        "FAA"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AAC",
+      "ext": ".pdb",
+      "L": 106,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CU']",
+      "ligand": [
+        "CU"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "11AF",
+      "ext": ".pdb",
+      "L": 345,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['ZN']",
+      "ligand": [
+        "ZN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "13TB",
+      "ext": ".pdb",
+      "L": 302,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['W3M']",
+      "ligand": [
+        "ZN",
+        "W3M"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AB8",
+      "ext": ".pdb",
+      "L": 353,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FOK']",
+      "ligand": [
+        "FOK"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A7D",
+      "ext": ".pdb",
+      "L": 118,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'CFO']",
+      "ligand": [
+        "CL",
+        "CFO"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BX6",
+      "ext": ".pdb",
+      "L": 337,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['TPO', 'SEP', 'BA1']",
+      "ligand": [
+        "TPO",
+        "SEP",
+        "BA1"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AWB",
+      "ext": ".pdb",
+      "L": 544,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'IPD']",
+      "ligand": [
+        "CA",
+        "CL",
+        "IPD"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A69",
+      "ext": ".pdb",
+      "L": 707,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'FMB']",
+      "ligand": [
+        "SO4",
+        "FMB"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BT0",
+      "ext": ".pdb",
+      "L": 73,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['EDO']",
+      "ligand": [
+        "ZN",
+        "EDO"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "109L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'BME']",
+      "ligand": [
+        "CL",
+        "BME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A2A",
+      "ext": ".pdb",
+      "L": 976,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL']",
+      "ligand": [
+        "CL"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C3R",
+      "ext": ".pdb",
+      "L": 744,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['TSN']",
+      "ligand": [
+        "ZN",
+        "TSN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A7E",
+      "ext": ".pdb",
+      "L": 118,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'OFO']",
+      "ligand": [
+        "CL",
+        "OFO"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CAL",
+      "ext": ".pdb",
+      "L": 258,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['ZN']",
+      "ligand": [
+        "ZN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BC2",
+      "ext": ".pdb",
+      "L": 432,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "ZN",
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ASB",
+      "ext": ".pdb",
+      "L": 396,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLP', 'MAE']",
+      "ligand": [
+        "PLP",
+        "MAE"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B0E",
+      "ext": ".pdb",
+      "L": 240,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SEI']",
+      "ligand": [
+        "CA",
+        "SEI"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BYH",
+      "ext": ".pdb",
+      "L": 214,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BGC', 'NBU']",
+      "ligand": [
+        "BGC",
+        "CA",
+        "NBU"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AKT",
+      "ext": ".pdb",
+      "L": 147,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FMN']",
+      "ligand": [
+        "FMN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C6T",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'XE', 'BME']",
+      "ligand": [
+        "CL",
+        "XE",
+        "BME"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "14WL",
+      "ext": ".pdb",
+      "L": 685,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PO4', 'K0S']",
+      "ligand": [
+        "PO4",
+        "K0S"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AE4",
+      "ext": ".pdb",
+      "L": 324,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAP', 'TOL']",
+      "ligand": [
+        "NAP",
+        "TOL"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BTK",
+      "ext": ".pdb",
+      "L": 329,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['NA', 'ZN']",
+      "ligand": [
+        "ZN",
+        "NA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A7A",
+      "ext": ".pdb",
+      "L": 831,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MSE', 'NAD', 'ADC']",
+      "ligand": [
+        "MSE",
+        "NAD",
+        "ADC"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "191L",
+      "ext": ".pdb",
+      "L": 162,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'HED']",
+      "ligand": [
+        "CL",
+        "HED"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1A8U",
+      "ext": ".pdb",
+      "L": 554,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4', 'BEZ']",
+      "ligand": [
+        "SO4",
+        "BEZ"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C0R",
+      "ext": ".pdb",
+      "L": 2,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['MLU', 'OMZ', 'GHP', 'OMY']",
+      "ligand": [
+        "MLU",
+        "OMZ",
+        "GHP",
+        "OMY",
+        "3FG",
+        "BGC"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1AI2",
+      "ext": ".pdb",
+      "L": 414,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAP', 'ICT']",
+      "ligand": [
+        "NAP",
+        "ICT",
+        "CA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BIK",
+      "ext": ".pdb",
+      "L": 110,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG', 'SO4']",
+      "ligand": [
+        "NAG",
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C96",
+      "ext": ".pdb",
+      "L": 753,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FLC', 'SF4', 'O']",
+      "ligand": [
+        "FLC",
+        "SF4",
+        "O"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1A7X",
+      "ext": ".pdb",
+      "L": 214,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FKA']",
+      "ligand": [
+        "FKA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AZ1",
+      "ext": ".pdb",
+      "L": 314,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAP', 'ALR']",
+      "ligand": [
+        "NAP",
+        "ALR"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AUQ",
+      "ext": ".pdb",
+      "L": 208,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CD']",
+      "ligand": [
+        "CD"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BL4",
+      "ext": ".pdb",
+      "L": 214,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['AP1']",
+      "ligand": [
+        "AP1"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "11QC",
+      "ext": ".pdb",
+      "L": 1278,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NAG']",
+      "ligand": [
+        "NAG"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C6X",
+      "ext": ".pdb",
+      "L": 198,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['3IN']",
+      "ligand": [
+        "3IN"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1AHB",
+      "ext": ".pdb",
+      "L": 246,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FMP']",
+      "ligand": [
+        "FMP"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1B5Y",
+      "ext": ".pdb",
+      "L": 130,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['NA']",
+      "ligand": [
+        "NA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B9H",
+      "ext": ".pdb",
+      "L": 384,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['PLP']",
+      "ligand": [
+        "PLP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "170L",
+      "ext": ".pdb",
+      "L": 164,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BME']",
+      "ligand": [
+        "BME"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1C0K",
+      "ext": ".pdb",
+      "L": 363,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['FAD', 'LAC']",
+      "ligand": [
+        "FAD",
+        "LAC"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BSW",
+      "ext": ".pdb",
+      "L": 197,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CA', 'ZN']",
+      "ligand": [
+        "ZN",
+        "CA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "16VP",
+      "ext": ".pdb",
+      "L": 311,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['SO4']",
+      "ligand": [
+        "SO4"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "194L",
+      "ext": ".pdb",
+      "L": 129,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL']",
+      "ligand": [
+        "CL",
+        "NA"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C2K",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CL', 'ABI']",
+      "ligand": [
+        "CA",
+        "CL",
+        "ZN",
+        "ABI"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CA7",
+      "ext": ".pdb",
+      "L": 342,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['EN1']",
+      "ligand": [
+        "EN1"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1ABE",
+      "ext": ".pdb",
+      "L": 305,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ARA', 'ARB']",
+      "ligand": [
+        "ARA",
+        "ARB"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BQ5",
+      "ext": ".pdb",
+      "L": 333,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['CU']",
+      "ligand": [
+        "CU"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BG0",
+      "ext": ".pdb",
+      "L": 356,
+      "cat": "rna",
+      "reason": "RNA\u6838\u82f7\u9178 ['ADP']",
+      "ligand": [
+        "NO3",
+        "MG",
+        "ADP",
+        "DAR"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1C2H",
+      "ext": ".pdb",
+      "L": 223,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['BAK']",
+      "ligand": [
+        "CA",
+        "MG",
+        "ZN",
+        "BAK"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1BXM",
+      "ext": ".pdb",
+      "L": 99,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['ERG']",
+      "ligand": [
+        "ERG"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "10YN",
+      "ext": ".pdb",
+      "L": 802,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['LLP', 'SO4']",
+      "ligand": [
+        "LLP",
+        "SO4"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BFK",
+      "ext": ".pdb",
+      "L": 274,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CCN']",
+      "ligand": [
+        "CA",
+        "CCN"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BNN",
+      "ext": ".pdb",
+      "L": 257,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['AL1']",
+      "ligand": [
+        "HG",
+        "ZN",
+        "AL1"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "10SG",
+      "ext": ".pdb",
+      "L": 138,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['NH2', 'DAO']",
+      "ligand": [
+        "NH2",
+        "DAO"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1CFM",
+      "ext": ".pdb",
+      "L": 753,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM']",
+      "ligand": [
+        "HEM"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BFR",
+      "ext": ".pdb",
+      "L": 3792,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM']",
+      "ligand": [
+        "MN",
+        "HEM"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "10JX",
+      "ext": ".pdb",
+      "L": 301,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['HEM', 'IMD', 'PO4', 'CL']",
+      "ligand": [
+        "HEM",
+        "IMD",
+        "PO4",
+        "CL",
+        "PG4",
+        "EDO"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B3O",
+      "ext": ".pdb",
+      "L": 714,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['CPR', 'SAE', 'UNX']",
+      "ligand": [
+        "CPR",
+        "SAE",
+        "UNX"
+      ],
+      "leak": false
+    },
+    {
+      "pdb": "1BPE",
+      "ext": ".pdb",
+      "L": 284,
+      "cat": "small_mol",
+      "reason": "\u6709\u673a ['DTP']",
+      "ligand": [
+        "DTP"
+      ],
+      "leak": true
+    },
+    {
+      "pdb": "1B8C",
+      "ext": ".pdb",
+      "L": 216,
+      "cat": "metal",
+      "reason": "\u7eaf\u91d1\u5c5e ['MG']",
+      "ligand": [
+        "MG"
+      ],
+      "leak": false
+    }
+  ],
+  "stats": {
+    "by_cat": {
+      "small_mol": 580,
+      "metal": 62,
+      "rna": 28
+    },
+    "long": 245
+  }
+}

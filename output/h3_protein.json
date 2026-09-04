@@ -1,0 +1,740 @@
+{
+  "pH": 7.4,
+  "charged_aa": {
+    "pos": [
+      "K",
+      "R"
+    ],
+    "neg": [
+      "D",
+      "E"
+    ]
+  },
+  "proteins": {
+    "1C6O": {
+      "L": 177,
+      "native_ref": 0.192090395480226,
+      "uncond": 0.1177024482109228,
+      "arms": {
+        "native": {
+          "viol_rate": 0.2045,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.5,
+            "salt_bridge": 0.1,
+            "core_charge": 0.0,
+            "same_sign_cluster": 36.2
+          },
+          "baseline": 0.1921,
+          "baseline_thresh": 0.2421,
+          "pass": true
+        },
+        "n2": {
+          "viol_rate": 0.2281,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 1.3,
+            "salt_bridge": 0.17,
+            "core_charge": 0.0,
+            "same_sign_cluster": 40.37
+          },
+          "baseline": 0.1921,
+          "baseline_thresh": 0.2421,
+          "pass": true
+        },
+        "p2": {
+          "viol_rate": 0.1797,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.2,
+            "salt_bridge": 0.07,
+            "core_charge": 0.0,
+            "same_sign_cluster": 31.8
+          },
+          "baseline": 0.1921,
+          "baseline_thresh": 0.2421,
+          "pass": true
+        },
+        "n8": {
+          "viol_rate": 0.2968,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 6.07,
+            "salt_bridge": 0.4,
+            "core_charge": 0.0,
+            "same_sign_cluster": 52.53
+          },
+          "baseline": 0.1921,
+          "baseline_thresh": 0.2421,
+          "pass": false
+        },
+        "p8": {
+          "viol_rate": 0.1226,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 21.7
+          },
+          "baseline": 0.1921,
+          "baseline_thresh": 0.2421,
+          "pass": true
+        }
+      }
+    },
+    "1AZM": {
+      "L": 258,
+      "native_ref": 0.20155038759689922,
+      "uncond": 0.09883720930232562,
+      "arms": {
+        "native": {
+          "viol_rate": 0.0984,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 25.4
+          },
+          "baseline": 0.2016,
+          "baseline_thresh": 0.2516,
+          "pass": true
+        },
+        "n2": {
+          "viol_rate": 0.1,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 25.8
+          },
+          "baseline": 0.2016,
+          "baseline_thresh": 0.2516,
+          "pass": true
+        },
+        "p2": {
+          "viol_rate": 0.107,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 27.6
+          },
+          "baseline": 0.2016,
+          "baseline_thresh": 0.2516,
+          "pass": true
+        },
+        "n8": {
+          "viol_rate": 0.128,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 33.03
+          },
+          "baseline": 0.2016,
+          "baseline_thresh": 0.2516,
+          "pass": true
+        },
+        "p8": {
+          "viol_rate": 0.1518,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.13,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 39.17
+          },
+          "baseline": 0.2016,
+          "baseline_thresh": 0.2516,
+          "pass": true
+        }
+      }
+    },
+    "1AS2": {
+      "L": 312,
+      "native_ref": 0.2692307692307692,
+      "uncond": 0.16164529914529915,
+      "arms": {
+        "native": {
+          "viol_rate": 0.1612,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 50.3
+          },
+          "baseline": 0.2692,
+          "baseline_thresh": 0.3192,
+          "pass": true
+        },
+        "n2": {
+          "viol_rate": 0.1594,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.03,
+            "core_charge": 0.0,
+            "same_sign_cluster": 49.73
+          },
+          "baseline": 0.2692,
+          "baseline_thresh": 0.3192,
+          "pass": true
+        },
+        "p2": {
+          "viol_rate": 0.1607,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.07,
+            "core_charge": 0.0,
+            "same_sign_cluster": 50.13
+          },
+          "baseline": 0.2692,
+          "baseline_thresh": 0.3192,
+          "pass": true
+        },
+        "n8": {
+          "viol_rate": 0.185,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.03,
+            "salt_bridge": 0.07,
+            "core_charge": 0.0,
+            "same_sign_cluster": 57.73
+          },
+          "baseline": 0.2692,
+          "baseline_thresh": 0.3192,
+          "pass": true
+        },
+        "p8": {
+          "viol_rate": 0.1797,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.03,
+            "core_charge": 0.0,
+            "same_sign_cluster": 56.07
+          },
+          "baseline": 0.2692,
+          "baseline_thresh": 0.3192,
+          "pass": true
+        }
+      }
+    },
+    "1AXW": {
+      "L": 528,
+      "native_ref": 0.22348484848484848,
+      "uncond": 0.10246212121212123,
+      "arms": {
+        "native": {
+          "viol_rate": 0.1273,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.07,
+            "salt_bridge": 0.07,
+            "core_charge": 0.03,
+            "same_sign_cluster": 67.23
+          },
+          "baseline": 0.2235,
+          "baseline_thresh": 0.2735,
+          "pass": true
+        },
+        "n2": {
+          "viol_rate": 0.1441,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.17,
+            "salt_bridge": 0.1,
+            "core_charge": 0.03,
+            "same_sign_cluster": 76.1
+          },
+          "baseline": 0.2235,
+          "baseline_thresh": 0.2735,
+          "pass": true
+        },
+        "p2": {
+          "viol_rate": 0.1144,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.07,
+            "core_charge": 0.03,
+            "same_sign_cluster": 60.4
+          },
+          "baseline": 0.2235,
+          "baseline_thresh": 0.2735,
+          "pass": true
+        },
+        "n8": {
+          "viol_rate": 0.192,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.67,
+            "salt_bridge": 0.33,
+            "core_charge": 0.27,
+            "same_sign_cluster": 101.37
+          },
+          "baseline": 0.2235,
+          "baseline_thresh": 0.2735,
+          "pass": true
+        },
+        "p8": {
+          "viol_rate": 0.1009,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 53.3
+          },
+          "baseline": 0.2235,
+          "baseline_thresh": 0.2735,
+          "pass": true
+        }
+      }
+    },
+    "2FEO": {
+      "L": 221,
+      "native_ref": 0.2579185520361991,
+      "uncond": 0.191553544494721,
+      "arms": {
+        "native": {
+          "viol_rate": 0.1944,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.13,
+            "salt_bridge": 0.13,
+            "core_charge": 0.0,
+            "same_sign_cluster": 42.97
+          },
+          "baseline": 0.2579,
+          "baseline_thresh": 0.3079,
+          "pass": true
+        },
+        "n2": {
+          "viol_rate": 0.2038,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.4,
+            "salt_bridge": 0.1,
+            "core_charge": 0.0,
+            "same_sign_cluster": 45.03
+          },
+          "baseline": 0.2579,
+          "baseline_thresh": 0.3079,
+          "pass": true
+        },
+        "p2": {
+          "viol_rate": 0.1879,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.13,
+            "salt_bridge": 0.23,
+            "core_charge": 0.0,
+            "same_sign_cluster": 41.53
+          },
+          "baseline": 0.2579,
+          "baseline_thresh": 0.3079,
+          "pass": true
+        },
+        "n8": {
+          "viol_rate": 0.24,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 1.13,
+            "salt_bridge": 0.4,
+            "core_charge": 0.0,
+            "same_sign_cluster": 53.03
+          },
+          "baseline": 0.2579,
+          "baseline_thresh": 0.3079,
+          "pass": true
+        },
+        "p8": {
+          "viol_rate": 0.2035,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.57,
+            "salt_bridge": 0.7,
+            "core_charge": 0.0,
+            "same_sign_cluster": 44.97
+          },
+          "baseline": 0.2579,
+          "baseline_thresh": 0.3079,
+          "pass": true
+        }
+      }
+    },
+    "5CQH": {
+      "L": 183,
+      "native_ref": 0.23497267759562843,
+      "uncond": 0.1347905282331512,
+      "arms": {
+        "native": {
+          "viol_rate": 0.143,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 26.17
+          },
+          "baseline": 0.235,
+          "baseline_thresh": 0.285,
+          "pass": true
+        },
+        "n2": {
+          "viol_rate": 0.1581,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 28.93
+          },
+          "baseline": 0.235,
+          "baseline_thresh": 0.285,
+          "pass": true
+        },
+        "p2": {
+          "viol_rate": 0.1364,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.03,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 24.97
+          },
+          "baseline": 0.235,
+          "baseline_thresh": 0.285,
+          "pass": true
+        },
+        "n8": {
+          "viol_rate": 0.2129,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.17,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 38.97
+          },
+          "baseline": 0.235,
+          "baseline_thresh": 0.285,
+          "pass": true
+        },
+        "p8": {
+          "viol_rate": 0.147,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 26.9
+          },
+          "baseline": 0.235,
+          "baseline_thresh": 0.285,
+          "pass": true
+        }
+      }
+    },
+    "1CGE": {
+      "L": 162,
+      "native_ref": 0.2222222222222222,
+      "uncond": 0.12304526748971194,
+      "arms": {
+        "native": {
+          "viol_rate": 0.17,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.9,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 27.53
+          },
+          "baseline": 0.2222,
+          "baseline_thresh": 0.2722,
+          "pass": true
+        },
+        "n2": {
+          "viol_rate": 0.1916,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 1.47,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 31.03
+          },
+          "baseline": 0.2222,
+          "baseline_thresh": 0.2722,
+          "pass": true
+        },
+        "p2": {
+          "viol_rate": 0.1502,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.57,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 24.33
+          },
+          "baseline": 0.2222,
+          "baseline_thresh": 0.2722,
+          "pass": true
+        },
+        "n8": {
+          "viol_rate": 0.2632,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 4.63,
+            "salt_bridge": 0.2,
+            "core_charge": 0.03,
+            "same_sign_cluster": 42.63
+          },
+          "baseline": 0.2222,
+          "baseline_thresh": 0.2722,
+          "pass": true
+        },
+        "p8": {
+          "viol_rate": 0.1206,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.1,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 19.53
+          },
+          "baseline": 0.2222,
+          "baseline_thresh": 0.2722,
+          "pass": true
+        }
+      }
+    },
+    "1AG0": {
+      "L": 256,
+      "native_ref": 0.21875,
+      "uncond": 0.13229166666666667,
+      "arms": {
+        "native": {
+          "viol_rate": 0.1296,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.03,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 33.17
+          },
+          "baseline": 0.2188,
+          "baseline_thresh": 0.2687,
+          "pass": true
+        },
+        "n2": {
+          "viol_rate": 0.1371,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.03,
+            "salt_bridge": 0.03,
+            "core_charge": 0.0,
+            "same_sign_cluster": 35.1
+          },
+          "baseline": 0.2188,
+          "baseline_thresh": 0.2687,
+          "pass": true
+        },
+        "p2": {
+          "viol_rate": 0.1262,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 32.3
+          },
+          "baseline": 0.2188,
+          "baseline_thresh": 0.2687,
+          "pass": true
+        },
+        "n8": {
+          "viol_rate": 0.168,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.27,
+            "salt_bridge": 0.03,
+            "core_charge": 0.0,
+            "same_sign_cluster": 43.0
+          },
+          "baseline": 0.2188,
+          "baseline_thresh": 0.2687,
+          "pass": true
+        },
+        "p8": {
+          "viol_rate": 0.1355,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.0,
+            "salt_bridge": 0.07,
+            "core_charge": 0.0,
+            "same_sign_cluster": 34.7
+          },
+          "baseline": 0.2188,
+          "baseline_thresh": 0.2687,
+          "pass": true
+        }
+      }
+    },
+    "1A65": {
+      "L": 504,
+      "native_ref": 0.15674603174603174,
+      "uncond": 0.09609788359788361,
+      "arms": {
+        "native": {
+          "viol_rate": 0.1923,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 1.2,
+            "salt_bridge": 1.03,
+            "core_charge": 0.0,
+            "same_sign_cluster": 96.9
+          },
+          "baseline": 0.1567,
+          "baseline_thresh": 0.2067,
+          "pass": true
+        },
+        "n2": {
+          "viol_rate": 0.1985,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 1.63,
+            "salt_bridge": 1.23,
+            "core_charge": 0.0,
+            "same_sign_cluster": 100.03
+          },
+          "baseline": 0.1567,
+          "baseline_thresh": 0.2067,
+          "pass": true
+        },
+        "p2": {
+          "viol_rate": 0.1845,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 1.0,
+            "salt_bridge": 0.73,
+            "core_charge": 0.0,
+            "same_sign_cluster": 93.0
+          },
+          "baseline": 0.1567,
+          "baseline_thresh": 0.2067,
+          "pass": true
+        },
+        "n8": {
+          "viol_rate": 0.2166,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 3.57,
+            "salt_bridge": 1.63,
+            "core_charge": 0.0,
+            "same_sign_cluster": 109.17
+          },
+          "baseline": 0.1567,
+          "baseline_thresh": 0.2067,
+          "pass": false
+        },
+        "p8": {
+          "viol_rate": 0.1616,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.33,
+            "salt_bridge": 0.37,
+            "core_charge": 0.0,
+            "same_sign_cluster": 81.43
+          },
+          "baseline": 0.1567,
+          "baseline_thresh": 0.2067,
+          "pass": true
+        }
+      }
+    },
+    "1BJ4": {
+      "L": 470,
+      "native_ref": 0.22340425531914893,
+      "uncond": 0.1375177304964539,
+      "arms": {
+        "native": {
+          "viol_rate": 0.1361,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.03,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 63.97
+          },
+          "baseline": 0.2234,
+          "baseline_thresh": 0.2734,
+          "pass": true
+        },
+        "n2": {
+          "viol_rate": 0.1373,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.07,
+            "salt_bridge": 0.03,
+            "core_charge": 0.0,
+            "same_sign_cluster": 64.53
+          },
+          "baseline": 0.2234,
+          "baseline_thresh": 0.2734,
+          "pass": true
+        },
+        "p2": {
+          "viol_rate": 0.1343,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.03,
+            "salt_bridge": 0.0,
+            "core_charge": 0.0,
+            "same_sign_cluster": 63.13
+          },
+          "baseline": 0.2234,
+          "baseline_thresh": 0.2734,
+          "pass": true
+        },
+        "n8": {
+          "viol_rate": 0.1472,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.03,
+            "salt_bridge": 0.1,
+            "core_charge": 0.0,
+            "same_sign_cluster": 69.17
+          },
+          "baseline": 0.2234,
+          "baseline_thresh": 0.2734,
+          "pass": true
+        },
+        "p8": {
+          "viol_rate": 0.1381,
+          "n_seq": 30,
+          "rules": {
+            "charge_cluster": 0.23,
+            "salt_bridge": 0.03,
+            "core_charge": 0.0,
+            "same_sign_cluster": 64.9
+          },
+          "baseline": 0.2234,
+          "baseline_thresh": 0.2734,
+          "pass": true
+        }
+      }
+    }
+  },
+  "pass": {
+    "n": 48,
+    "total": 50,
+    "rate": 0.96
+  }
+}

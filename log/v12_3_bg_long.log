@@ -1,0 +1,36 @@
+    条件编码器已加载: finetune_epoch040.pt  (epoch=40, n_tokens=4, token_dim=128)
+处理 4 个蛋白（5-9），臂 ligand=['native', 'n2', 'p2', 'n8', 'p8'] protein=['native', 'n2', 'p2', 'n8', 'p8']，n=30，pH=7.4
+
+=== 1A65 cat=long L=504 native=QIVNSVDTMTLTNANVSPDGFTRAG... charge@7.4=-26.85 口袋残基=49
+  [protein/native] target= -27 mean=-31.62 dev=4.62 rec=0.493 pkt=nan gravy=0.046
+  [protein/n2] target= -29 mean=-35.55 dev=6.55 rec=0.491 pkt=nan gravy=0.030
+  [protein/p2] target= -25 mean=-28.06 dev=3.06 rec=0.496 pkt=nan gravy=0.065
+  [protein/n8] target= -35 mean=-43.88 dev=8.88 rec=0.483 pkt=nan gravy=-0.016
+  [protein/p8] target= -19 mean=-18.13 dev=0.87 rec=0.502 pkt=nan gravy=0.124
+  已写 1A65 结果
+
+=== 1BJ4 cat=long L=470 native=DADLWSSHDKMLAQPLKDSDVEVYN... charge@7.4=+0.42 口袋残基=29
+  [protein/native] target=   0 mean= +3.32 dev=3.32 rec=0.409 pkt=nan gravy=0.464
+  [protein/n2] target=  -2 mean= +0.27 dev=2.27 rec=0.410 pkt=nan gravy=0.492
+  [protein/p2] target=   2 mean= +6.41 dev=4.41 rec=0.407 pkt=nan gravy=0.444
+  [protein/n8] target=  -8 mean= -9.97 dev=1.97 rec=0.405 pkt=nan gravy=0.467
+  [protein/p8] target=   8 mean=+14.82 dev=6.82 rec=0.407 pkt=nan gravy=0.343
+  已写 1BJ4 结果
+
+=== 13BB cat=small_mol L=552 native=SAPANTSEQLVNALADEGVEYVFGI... charge@7.4=-12.80 口袋残基=55
+  [protein/native] target= -13 mean=-11.55 dev=1.45 rec=0.442 pkt=nan gravy=0.642
+  [protein/n2] target= -15 mean=-14.11 dev=0.89 rec=0.442 pkt=nan gravy=0.619
+  [protein/p2] target= -11 mean= -8.88 dev=2.12 rec=0.442 pkt=nan gravy=0.665
+  [protein/n8] target= -21 mean=-21.01 dev=0.01 rec=0.437 pkt=nan gravy=0.539
+  [protein/p8] target=  -5 mean= -3.91 dev=1.09 rec=0.447 pkt=nan gravy=0.697
+  已写 13BB 结果
+
+=== 1CDG cat=small_mol L=686 native=APDTSVSNKQNFSTDVIYQIFTDRF... charge@7.4=-8.94 口袋残基=73
+  [protein/native] target=  -9 mean=-10.46 dev=1.46 rec=0.488 pkt=nan gravy=0.270
+  [protein/n2] target= -11 mean=-13.61 dev=2.61 rec=0.484 pkt=nan gravy=0.281
+  [protein/p2] target=  -7 mean= -8.39 dev=1.39 rec=0.492 pkt=nan gravy=0.264
+  [protein/n8] target= -17 mean=-22.61 dev=5.61 rec=0.475 pkt=nan gravy=0.267
+  [protein/p8] target=  -1 mean= -2.48 dev=1.48 rec=0.494 pkt=nan gravy=0.277
+  已写 1CDG 结果
+
+=== 全部完成 ===

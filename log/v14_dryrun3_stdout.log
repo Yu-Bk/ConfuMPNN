@@ -1,0 +1,65 @@
+[17:53:28] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[17:53:28] device=cuda:4  epochs=1  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[17:53:28] [v11 A-fix] 绝对 target 采样开：target ∈ Uniform[-35.0, 20.0]，与 native 无关（覆盖验证深负靶区）
+[17:53:28] [v12] 训练侧监督开：组成双计数(floor=0.5) + GRAVY(margin=0.4)  λ_v12=0.2  λ_target=0.2  SASA θ=0.25
+[17:53:28] [v10 C] pH 自适应结构惩罚开：boost=1.5
+[17:53:28] [A1 global] 计数锚覆盖 surface∪pocket：floor=0.8 ceil=1.3 λ_pocket=0.3 cutoff=8.0
+[17:53:29] backbone: MoMPNN 冻结（2.62M 参数，不更新）
+[17:53:29] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[17:53:29] 数据：50 结构域 × 8 pH = 400 样本（data/ligand_train/labels_smoke_v14_final2.npz）
+[17:53:30]   ℹ️ 1JCG.pdb 分区 pocket=53/335 core=140 surface=153
+[17:53:31]   ℹ️ 1OE7.pdb 分区 pocket=46/407 core=179 surface=199
+[17:53:31]   ℹ️ 1PM7.pdb 分区 pocket=67/398 core=182 surface=168
+[17:53:31]   ℹ️ 1GRB.pdb 分区 pocket=87/461 core=182 surface=226
+[17:53:32]   ℹ️ 1EST.pdb resnum 对齐 228/240（12 个非标准/parse独有残基 frac=0）
+[17:53:32]   ℹ️ 1EST.pdb 分区 pocket=27/240 core=127 surface=103
+[17:53:32]   ℹ️ 1EYI.pdb 分区 pocket=43/331 core=155 surface=148
+[17:53:33]   ℹ️ 1DZT.pdb 分区 pocket=101/366 core=146 surface=162
+[17:53:35]   ℹ️ 1CHC.pdb 分区 pocket=30/68 core=6 surface=49
+[17:53:36]   ℹ️ 1CML.pdb 分区 pocket=59/389 core=190 surface=165
+[17:53:37]   ℹ️ 1ITO.pdb 分区 pocket=26/251 core=119 surface=116
+[17:53:37]   ℹ️ 1MHU.pdb 分区 pocket=29/31 core=0 surface=23
+[17:53:38]   ℹ️ 1QZY.pdb 分区 pocket=51/355 core=163 surface=155
+[17:53:38]   ℹ️ 1OQ9.pdb 分区 pocket=22/338 core=164 surface=156
+[17:53:39]   ℹ️ 1EXM.pdb 分区 pocket=35/403 core=201 surface=177
+[17:53:40]   ℹ️ 1ARV.pdb 分区 pocket=90/336 core=119 surface=147
+[17:53:41]   ℹ️ 1NGI.pdb 分区 pocket=49/378 core=165 surface=174
+[17:53:42]   ℹ️ 1JQZ.pdb resnum 对齐 270/282（12 个非标准/parse独有残基 frac=0）
+[17:53:42]   ℹ️ 1JQZ.pdb 分区 pocket=39/282 core=146 surface=116
+[17:53:42]   ℹ️ 1D1G.pdb 分区 pocket=117/328 core=110 surface=156
+[17:53:43]   ℹ️ 1A9U.pdb 分区 pocket=33/345 core=155 surface=168
+[17:53:44]   ℹ️ 1IOZ.pdb 分区 pocket=34/162 core=60 surface=83
+[17:53:46]   ℹ️ 1AKK.pdb 分区 pocket=42/104 core=15 surface=67
+[17:53:47]   ℹ️ 1AL8.pdb 分区 pocket=58/344 core=150 surface=152
+[17:53:47]   ℹ️ 1P1M.pdb 分区 pocket=8/405 core=233 surface=164
+[17:53:50]   ℹ️ 1CA2.pdb 分区 pocket=22/256 core=121 surface=117
+[17:53:51]   ℹ️ 1DZJ.pdb 分区 pocket=59/296 core=94 surface=154
+[17:53:51]   ℹ️ 1B23_P.pdb 分区 pocket=110/405 core=170 surface=163
+[17:53:52]   ℹ️ 1B95_A.pdb 分区 pocket=50/244 core=88 surface=122
+[17:53:53]   ℹ️ 1B97_A.pdb 分区 pocket=48/244 core=89 surface=123
+[17:53:53]   ℹ️ 1BHM_A.pdb 分区 pocket=48/198 core=74 surface=98
+[17:53:54]   ℹ️ 1BHM_B.pdb 分区 pocket=46/208 core=81 surface=99
+[17:53:55]   ℹ️ 1BP7_A.pdb 分区 pocket=63/152 core=43 surface=70
+[17:53:56]   ℹ️ 1G59_A.pdb 分区 pocket=108/468 core=200 surface=195
+[17:53:57]   ℹ️ 1I6J_A.pdb 分区 pocket=17/256 core=108 surface=138
+[17:54:00]   ℹ️ 1KBU_A.pdb 分区 pocket=63/324 core=109 surface=189
+[17:54:00]   ℹ️ 1KBU_B.pdb 分区 pocket=108/319 core=87 surface=166
+[17:54:01]   ℹ️ 1ORP_A.pdb 分区 pocket=69/213 core=70 surface=93
+[17:54:03]   ℹ️ 1RGU_A.pdb 分区 pocket=56/425 core=215 surface=170
+[17:54:05]   ℹ️ 1RGU_B.pdb 分区 pocket=40/429 core=220 surface=176
+[17:54:06]   ℹ️ 1STX_A.pdb 分区 pocket=58/244 core=85 surface=123
+[17:54:06]   ℹ️ 1U1N_A.pdb 分区 pocket=37/183 core=56 surface=103
+[17:54:07]   ℹ️ 1YZ9_A.pdb 分区 pocket=56/220 core=75 surface=123
+[17:54:08]   ℹ️ 1YZ9_B.pdb 分区 pocket=10/218 core=85 surface=130
+[17:54:09]   ℹ️ 2AOR_A.pdb 分区 pocket=62/220 core=75 surface=102
+[17:54:10]   ℹ️ 2AOR_B.pdb 分区 pocket=62/221 core=74 surface=104
+[17:54:11]   ℹ️ 2BAM_A.pdb 分区 pocket=61/207 core=76 surface=100
+[17:54:12]   ℹ️ 2BAM_B.pdb 分区 pocket=46/210 core=85 surface=98
+[17:54:13]   ℹ️ 2BX2_L.pdb 分区 pocket=50/500 core=204 surface=271
+[17:54:15]   ℹ️ 2C51_A.pdb 分区 pocket=22/129 core=17 surface=99
+[17:54:16]   ℹ️ 2DVI_A.pdb 分区 pocket=94/431 core=157 surface=207
+[17:54:17]   ℹ️ 2FVR_A.pdb 分区 pocket=8/255 core=115 surface=135
+[17:54:17] 预解析完成，缓存 encode 特征 ~0.24GB
+[17:54:18] 开始训练：1 epochs × 50 域/epoch = 50 steps
+[17:54:26] epoch 1/1  total=7.7145  ce=1.3911  charge=8.4619  kl=0.0084  keep=0.5383  [cd self=7.459  mild=8.615  extreme=11.164]  elapsed=0.1min
+[17:54:28] 训练完成。总耗时 0.2min。checkpoint 在 output/finetune_ligand_v14_dryrun3/

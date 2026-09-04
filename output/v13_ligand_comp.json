@@ -1,0 +1,112 @@
+{
+  "1C6O": {
+    "L": 177,
+    "native_dk": 34,
+    "native_de": 24,
+    "native_kr": 10,
+    "gen_dk": 35.5,
+    "gen_de": 25.1,
+    "gen_kr": 10.4,
+    "ratio": 1.04,
+    "n_gen": 50
+  },
+  "1AZM": {
+    "L": 258,
+    "native_dk": 52,
+    "native_de": 27,
+    "native_kr": 25,
+    "gen_dk": 30.6,
+    "gen_de": 16.6,
+    "gen_kr": 13.9,
+    "ratio": 0.59,
+    "n_gen": 50
+  },
+  "1AS2": {
+    "L": 312,
+    "native_dk": 84,
+    "native_de": 43,
+    "native_kr": 41,
+    "gen_dk": 58.3,
+    "gen_de": 32.4,
+    "gen_kr": 25.9,
+    "ratio": 0.69,
+    "n_gen": 50
+  },
+  "1AXW": {
+    "L": 528,
+    "native_dk": 118,
+    "native_de": 68,
+    "native_kr": 50,
+    "gen_dk": 80.3,
+    "gen_de": 48.9,
+    "gen_kr": 31.4,
+    "ratio": 0.68,
+    "n_gen": 50
+  },
+  "2FEO": {
+    "L": 221,
+    "native_dk": 57,
+    "native_de": 32,
+    "native_kr": 25,
+    "gen_dk": 31.5,
+    "gen_de": 18.8,
+    "gen_kr": 12.7,
+    "ratio": 0.55,
+    "n_gen": 50
+  },
+  "5CQH": {
+    "L": 183,
+    "native_dk": 43,
+    "native_de": 24,
+    "native_kr": 19,
+    "gen_dk": 25.0,
+    "gen_de": 15.2,
+    "gen_kr": 9.8,
+    "ratio": 0.58,
+    "n_gen": 50
+  },
+  "1CGE": {
+    "L": 162,
+    "native_dk": 36,
+    "native_de": 24,
+    "native_kr": 12,
+    "gen_dk": 24.9,
+    "gen_de": 18.5,
+    "gen_kr": 6.4,
+    "ratio": 0.69,
+    "n_gen": 50
+  },
+  "1AG0": {
+    "L": 256,
+    "native_dk": 56,
+    "native_de": 32,
+    "native_kr": 24,
+    "gen_dk": 38.9,
+    "gen_de": 22.1,
+    "gen_kr": 16.8,
+    "ratio": 0.69,
+    "n_gen": 50
+  },
+  "1A65": {
+    "L": 504,
+    "native_dk": 79,
+    "native_de": 53,
+    "native_kr": 26,
+    "gen_dk": 106.5,
+    "gen_de": 66.6,
+    "gen_kr": 39.9,
+    "ratio": 1.35,
+    "n_gen": 50
+  },
+  "1BJ4": {
+    "L": 470,
+    "native_dk": 105,
+    "native_de": 52,
+    "native_kr": 53,
+    "gen_dk": 63.9,
+    "gen_de": 33.1,
+    "gen_kr": 30.8,
+    "ratio": 0.61,
+    "n_gen": 50
+  }
+}

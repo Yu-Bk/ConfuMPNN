@@ -1,0 +1,12 @@
+    条件编码器已加载: finetune_epoch050.pt  (epoch=50, n_tokens=4, token_dim=128)
+处理 1 个蛋白（0-1），臂 ligand=['native', 'n2', 'p2', 'n8', 'p8'] protein=['native', 'n8', 'p8']，n=30，pH=7.4
+
+=== 5O60_E cat=RNA L=209 native=TLKVDVKTPAGKTDGSVELPAELFD... charge@7.4=+11.18 口袋残基=112
+  [ligand/native] target=  11 mean=+11.93 dev=0.93 rec=0.394 pkt=0.425 gravy=-0.299
+  [ligand/n2] target=   9 mean= +9.71 dev=0.71 rec=0.389 pkt=0.418 gravy=-0.297
+  [ligand/p2] target=  13 mean=+14.80 dev=1.80 rec=0.397 pkt=0.432 gravy=-0.317
+  [ligand/n8] target=   3 mean= +4.24 dev=1.24 rec=0.377 pkt=0.405 gravy=-0.305
+  [ligand/p8] target=  19 mean=+22.34 dev=3.34 rec=0.405 pkt=0.443 gravy=-0.374
+  已写 5O60_E 结果
+
+=== 全部完成 ===

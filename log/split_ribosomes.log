@@ -1,0 +1,13 @@
+  fail 4V4T_AU: chain AU L=24 超范围
+  fail 4V4T_B7: chain B7 L=46 超范围
+  fail 4V4T_B9: chain B9 L=35 超范围
+done 4V4T: ok 46 fail 3 elapsed 146s
+  fail 9RVC_0: chain 0 L=49 超范围
+  fail 9RVC_1: chain 1 L=44 超范围
+  fail 9RVC_3: chain 3 L=37 超范围
+done 9RVC: ok 44 fail 3 elapsed 231s
+  fail 4YBB_C3: chain C3 L=46 超范围
+  fail 4YBB_C5: chain C5 L=38 超范围
+  fail 4YBB_D3: chain D3 L=46 超范围
+  fail 4YBB_D5: chain D5 L=38 超范围
+done 4YBB: ok 95 fail 4 elapsed 603s

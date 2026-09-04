@@ -1,0 +1,7 @@
+    条件编码器已加载: finetune_epoch040.pt  (epoch=40, n_tokens=4, token_dim=128)
+处理 1 个蛋白（5-6），臂 ligand=['native', 'n2', 'p2', 'n8', 'p8'] protein=['native', 'n2', 'p2', 'n8', 'p8']，n=30，pH=7.4
+
+=== 1A65 cat=long L=504 native=QIVNSVDTMTLTNANVSPDGFTRAG... charge@7.4=-26.85 口袋残基=49
+  [protein/native] target= -27 mean=-31.62 dev=4.62 rec=0.493 pkt=nan gravy=0.046
+  [protein/n2] target= -29 mean=-35.55 dev=6.55 rec=0.491 pkt=nan gravy=0.030
+  [protein/p2] target= -25 mean=-28.06 dev=3.06 rec=0.496 pkt=nan gravy=0.065

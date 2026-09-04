@@ -1,0 +1,5 @@
+resume OUT_small (start=7)
+small resume exit 0
+boundary 1A65 (big-global n50)
+boundary exit 0
+DONE

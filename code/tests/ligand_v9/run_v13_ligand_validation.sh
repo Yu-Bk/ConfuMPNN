@@ -38,10 +38,11 @@ if [ ! -f "$DIAG" ]; then
     --backbone ligand_mpnn --cond_encoder "$ENC" --weights "$W" \
     --pdb-list log/v12_2_ligand_trainish.list --manifest "$MANIFEST" \
     --targets=-34,-30,-25,-20,-15,-10,-5,0,5,10,18 --include_native --n 20 \
-    --out "$DIAG" > log/v13_ligand_diag.log 2>&1
+    --device cuda:6 --out "$DIAG" > log/v13_ligand_diag.log 2>&1
 else
   log "① 诊断已有，跳过"
 fi
+[ -f "$DIAG" ] || { log "❌ ① 诊断失败（无 $DIAG），见 log/v13_ligand_diag.log"; exit 1; }
 
 # ============ ② 校准表 ============
 if [ ! -f "$CAL" ]; then
@@ -49,6 +50,7 @@ if [ ! -f "$CAL" ]; then
   PYTHONPATH=code "$PY" index/v10_repair/build_calibration.py \
     --diag "$DIAG" --label v13_ligand --out "$CAL"
 fi
+[ -f "$CAL" ] || { log "❌ ② 校准失败（无 $CAL）"; exit 1; }
 
 # ============ ③ 泛化采样 n50（配体模式 per-protein 校准）============
 if [ "$(count "$OUT/ligand" validation.json)" -lt 10 ]; then
@@ -60,7 +62,9 @@ if [ "$(count "$OUT/ligand" validation.json)" -lt 10 ]; then
     --calibrate auto --calibration_file "$CAL" \
     > log/v13_val_sample.log 2>&1
 fi
-log "③ 采样完成：$(count "$OUT/ligand" validation.json)/10"
+NVAL=$(count "$OUT/ligand" validation.json)
+[ "$NVAL" -ge 10 ] || { log "❌ ③ 泛化采样未完成（validation.json $NVAL/10），见 log/v13_val_sample.log"; exit 1; }
+log "③ 采样完成：$NVAL/10"
 
 # ============ ④ 组成分析（判据 0.7-1.3×）============
 log "④ 组成分析..."
@@ -87,7 +91,7 @@ done
 # ============ ⑥ H2 统计 ============
 log "⑥ 统计（H2/GRAVY/RMSD）..."
 PYTHONPATH=code "$PY" code/tests/ligand_v9/generalization_stats.py \
-  --root "$OUT/ligand" --manifest "$MANIFEST" --out output/v13_ligand_gen_stats.json \
+  --root "$OUT" --manifest "$MANIFEST" --out output/v13_ligand_gen_stats.json \
   > log/v13_val_stats.log 2>&1
 
 # ============ ⑦ H4 PROPKA（4 蛋白 × native/n8）============

@@ -1,0 +1,31 @@
+    条件编码器已加载: finetune_epoch040.pt  (epoch=40, n_tokens=4, token_dim=128)
+处理 9 个蛋白（0-9），臂 ligand=['native', 'n2', 'p2', 'n8', 'p8'] protein=['native', 'n2', 'p2', 'n8', 'p8']，n=30，pH=7.4
+
+=== 1AZM cat=small_mol L=258 native=PDWGYDDKNGPEQWSKLYPIANGNN... charge@7.4=-1.71 口袋残基=25
+  [protein/native] target=  -2 mean= -1.19 dev=0.81 rec=0.448 pkt=nan gravy=-0.088
+  [protein/n2] target=  -4 mean= -2.92 dev=1.08 rec=0.450 pkt=nan gravy=-0.108
+  [protein/p2] target=   0 mean= -0.13 dev=0.13 rec=0.449 pkt=nan gravy=-0.091
+  [protein/n8] target= -10 mean= -7.89 dev=2.11 rec=0.444 pkt=nan gravy=-0.163
+  [protein/p8] target=   6 mean= +2.59 dev=3.41 rec=0.435 pkt=nan gravy=-0.125
+  已写 1AZM 结果
+
+=== 1AS2 cat=rna L=312 native=REVKLLLLGAVESGKSTIVKQMKII... charge@7.4=-2.69 口袋残基=40
+  [protein/native] target=  -3 mean= -3.68 dev=0.68 rec=0.341 pkt=nan gravy=0.182
+  [protein/n2] target=  -5 mean= -6.17 dev=1.17 rec=0.341 pkt=nan gravy=0.157
+  [protein/p2] target=  -1 mean= -2.02 dev=1.02 rec=0.342 pkt=nan gravy=0.166
+  [protein/n8] target= -11 mean=-13.30 dev=2.30 rec=0.338 pkt=nan gravy=0.120
+  [protein/p8] target=   5 mean= +5.89 dev=0.89 rec=0.337 pkt=nan gravy=0.078
+  已写 1AS2 结果
+
+=== 2FEO cat=dna L=221 native=AIAPVITIDGPSGAGKGTLCKAMAE... charge@7.4=-6.88 口袋残基=40
+  [protein/native] target=  -7 mean= -6.88 dev=0.12 rec=0.330 pkt=nan gravy=0.230
+  [protein/n2] target=  -9 mean= -8.35 dev=0.65 rec=0.328 pkt=nan gravy=0.225
+  [protein/p2] target=  -5 mean= -5.75 dev=0.75 rec=0.328 pkt=nan gravy=0.246
+  [protein/n8] target= -15 mean=-13.91 dev=1.09 rec=0.327 pkt=nan gravy=0.184
+  [protein/p8] target=   1 mean= -1.11 dev=2.11 rec=0.331 pkt=nan gravy=0.192
+  已写 2FEO 结果
+
+=== 5CQH cat=dna L=183 native=LRYLMDPDTFTSNFNNDPLVLRRRQ... charge@7.4=-5.53 口袋残基=55
+  [protein/native] target=  -6 mean= -6.12 dev=0.12 rec=0.369 pkt=nan gravy=0.070
+  [protein/n2] target=  -8 mean= -7.47 dev=0.53 rec=0.369 pkt=nan gravy=0.022
+  [protein/p2] target=  -4 mean= -4.24 dev=0.24 rec=0.370 pkt=nan gravy=0.084

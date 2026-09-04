@@ -1,0 +1,15 @@
+{
+  "note": "v9 泛化验证蛋白清单（10 个，全部不在训练集 4972 复合物、不在验证蛋白 1mbn/4dfr/1fqg/5hvx/3t0f 中）",
+  "items": [
+    {"pdb": "1C6O", "path": "data/validation_pdbs/1C6O.pdb", "cat": "small_mol", "ligand": "HEM(血红素)"},
+    {"pdb": "1AZM", "path": "data/validation_pdbs/1AZM.pdb", "cat": "small_mol", "ligand": "AZM(乙酰唑胺)"},
+    {"pdb": "1AS2", "path": "data/validation_pdbs/1AS2.pdb", "cat": "rna", "ligand": "GDP"},
+    {"pdb": "1AXW", "path": "data/validation_pdbs/1AXW.pdb", "cat": "rna", "ligand": "UMP"},
+    {"pdb": "2FEO", "path": "data/validation_pdbs/2FEO.pdb", "cat": "dna", "ligand": "DC(脱氧胞苷)"},
+    {"pdb": "5CQH", "path": "data/validation_pdbs/5CQH.pdb", "cat": "dna", "ligand": "DC(脱氧胞苷)"},
+    {"pdb": "1CGE", "path": "data/validation_pdbs/1CGE.pdb", "cat": "metal", "ligand": "CA+ZN"},
+    {"pdb": "1AG0", "path": "data/validation_pdbs/1AG0.pdb", "cat": "metal", "ligand": "CU"},
+    {"pdb": "1A65", "path": "data/validation_pdbs/1A65.pdb", "cat": "long", "ligand": "NAG(糖)"},
+    {"pdb": "1BJ4", "path": "data/validation_pdbs/1BJ4.pdb", "cat": "long", "ligand": "PLP(吡哆醛磷酸)"}
+  ]
+}
