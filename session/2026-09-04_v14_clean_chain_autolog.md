@@ -34,7 +34,8 @@
 | 终 | DONE | `log/v14_ligand_validation_clean.DONE` | ✅ | 全链完成（resume PID 2030311） |
 
 ## 四、检查点时间戳记录
-> 归档游标：`archived_stage = 4`（每归档完成一个阶段就 +1；检查点据此判断"是否有新阶段完成、要不要 push"）
+> 归档游标：`archived_stage = 终(DONE)` —— 全链 ①-⑨★DONE 已整链归档（commit 301936f，2026-09-04），
+> 权威报告 `analysis/report/2026-09-04_v14_clean_validation.md` 已出并已暂停待用户决策（v12.4/组成删减/论文口径）。检查点勿重跑。
 
 （仅在某阶段完成时追加一行：时间 / 阶段 / 关键数值 / 观测；阶段进行中不写不 push）
 - 10:57 ①完成：valid n=10 slope 均值 1.473（未校准响应增益，与 §4.2 旧值 1.49±0.40 一致）
