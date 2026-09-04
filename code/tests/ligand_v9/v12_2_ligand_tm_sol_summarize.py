@@ -83,10 +83,19 @@ def main():
     ap.add_argument("--ref-native-root", default=str(REF_NATIVE), help="native_ref fasta 目录")
     ap.add_argument("--uncond-root", default=str(UNCOND), help="无条件基线 fasta 目录")
     ap.add_argument("--out", default=str(OUT_JSON), help="汇总 JSON 输出路径")
+    # 可选 manifest 覆盖（2026-09-04：clean 链须用新 in-10 manifest；默认 PDBS 为旧 10，缺
+    # 6D2O/21KL_A/5O60_E/3MXB_A/9DWG_L、含已删 1C6O/1AZM/1AXW/1AG0）
+    ap.add_argument("--manifest", default=None, help="validation manifest json（items[].pdb）覆盖 PDBS")
     args = ap.parse_args()
     GEN = Path(args.gen_root); TM_SEQS = Path(args.tm_seqs_root)
     REF_NATIVE = Path(args.ref_native_root); UNCOND = Path(args.uncond_root)
     OUT_JSON = Path(args.out)
+    global PDBS  # noqa: PLW0603  使 PDBS 可被 manifest 覆盖
+    if args.manifest:
+        _man = json.load(open(args.manifest))
+        _items = _man["items"] if isinstance(_man, dict) and "items" in _man else _man
+        PDBS = [it["pdb"] for it in _items if it.get("pdb")]
+        print(f"tm_sol 汇总使用 manifest 蛋白清单（{len(PDBS)} 个）：{PDBS}", flush=True)
 
     summary = {"proteins": {}}
     print(f"{'蛋白':6s} {'臂':8s} {'Tm':>7s} {'TmΔu':>6s} {'%sol':>6s} {'solΔu':>7s}")

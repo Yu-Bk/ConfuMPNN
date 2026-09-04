@@ -1,0 +1,363 @@
+tag=v12_2 mode=protein  device=cuda:6
+epochs to replay: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+backbone loaded: mompnn_temberture_tm_esm_6_4_4_b01.ckpt  (mode=protein)
+  !! 1b8mA00 找不到 PDB，跳过
+  !! 1cvoA00 找不到 PDB，跳过
+  !! 1ee8B01 找不到 PDB，跳过
+  !! 1fd4E00 找不到 PDB，跳过
+  !! 1hsmA00 找不到 PDB，跳过
+  !! 1kb6B00 找不到 PDB，跳过
+  !! 1kbuA01 找不到 PDB，跳过
+  !! 1mh3A03 找不到 PDB，跳过
+  !! 1n1yA02 找不到 PDB，跳过
+  !! 1o4xB00 找不到 PDB，跳过
+  !! 1oj8A00 找不到 PDB，跳过
+  !! 1onvA00 找不到 PDB，跳过
+  !! 1rl4A00 找不到 PDB，跳过
+  !! 1smyF01 找不到 PDB，跳过
+  !! 1stwA00 找不到 PDB，跳过
+  !! 1u63C01 找不到 PDB，跳过
+  !! 1vx1Q00 找不到 PDB，跳过
+  !! 1vx4R02 找不到 PDB，跳过
+  !! 1yn4A00 找不到 PDB，跳过
+  !! 2aqfA00 找不到 PDB，跳过
+  !! 2dftC00 找不到 PDB，跳过
+  !! 2jfoB02 找不到 PDB，跳过
+  !! 2kluA00 找不到 PDB，跳过
+  !! 2n1uA00 找不到 PDB，跳过
+  !! 2qogA00 找不到 PDB，跳过
+  !! 2qquA02 找不到 PDB，跳过
+  !! 2rtuA00 找不到 PDB，跳过
+  !! 2yvlC01 找不到 PDB，跳过
+  !! 2yywA00 找不到 PDB，跳过
+  !! 3bdcA00 找不到 PDB，跳过
+  !! 3cf5Q00 找不到 PDB，跳过
+  !! 3hdeB00 找不到 PDB，跳过
+  !! 3ktwA00 找不到 PDB，跳过
+  !! 3o1yB00 找不到 PDB，跳过
+  !! 3oqmC01 找不到 PDB，跳过
+  !! 3ubtB02 找不到 PDB，跳过
+  !! 3v6xH01 找不到 PDB，跳过
+  !! 4a1dC00 找不到 PDB，跳过
+  !! 4c2mP08 找不到 PDB，跳过
+  !! 4dhcW00 找不到 PDB，跳过
+  !! 4flvA04 找不到 PDB，跳过
+  !! 4fqmG02 找不到 PDB，跳过
+  !! 4gasG00 找不到 PDB，跳过
+  !! 4i6hA01 找不到 PDB，跳过
+  !! 4iqhA00 找不到 PDB，跳过
+  !! 4kbvP00 找不到 PDB，跳过
+  !! 4kj3J00 找不到 PDB，跳过
+  !! 4kjbT00 找不到 PDB，跳过
+  !! 4m44C02 找不到 PDB，跳过
+  !! 4obqB02 找不到 PDB，跳过
+  !! 4ondA00 找不到 PDB，跳过
+  !! 4pniA02 找不到 PDB，跳过
+  !! 4pw7B01 找不到 PDB，跳过
+  !! 4qlcC00 找不到 PDB，跳过
+  !! 4r2aA00 找不到 PDB，跳过
+  !! 4tp1K00 找不到 PDB，跳过
+  !! 4u67H00 找不到 PDB，跳过
+  !! 4ujoB00 找不到 PDB，跳过
+  !! 4uk0D01 找不到 PDB，跳过
+  !! 4uk1C00 找不到 PDB，跳过
+  !! 4ultQ00 找不到 PDB，跳过
+  !! 4xreA00 找不到 PDB，跳过
+  !! 5bq8A00 找不到 PDB，跳过
+  !! 5c2tC00 找不到 PDB，跳过
+  !! 5c76A02 找不到 PDB，跳过
+  !! 5h1sP00 找不到 PDB，跳过
+  !! 5j12B02 找不到 PDB，跳过
+  !! 5kfhA04 找不到 PDB，跳过
+  !! 5nrg200 找不到 PDB，跳过
+  !! 5tsrA00 找不到 PDB，跳过
+  !! 5vypL00 找不到 PDB，跳过
+  !! 6aj9A00 找不到 PDB，跳过
+  !! 6al3B00 找不到 PDB，跳过
+  !! 6az1C02 找不到 PDB，跳过
+  !! 6bkrA01 找不到 PDB，跳过
+  !! 6c1uF00 找不到 PDB，跳过
+  !! 6d8aA01 找不到 PDB，跳过
+  !! 6fzsB00 找不到 PDB，跳过
+  !! 6g18I03 找不到 PDB，跳过
+  !! 6muwV00 找不到 PDB，跳过
+  !! 6mxdD00 找不到 PDB，跳过
+  !! 6ra4B00 找不到 PDB，跳过
+  !! 6spbS00 找不到 PDB，跳过
+  !! 6twuB04 找不到 PDB，跳过
+  !! 6vsoC00 找不到 PDB，跳过
+  !! 6wmwM01 找不到 PDB，跳过
+  !! 6xbyH01 找不到 PDB，跳过
+  !! 6xvyC00 找不到 PDB，跳过
+  !! 6yale00 找不到 PDB，跳过
+  !! 7c7aG01 找不到 PDB，跳过
+  !! 7f2jB01 找不到 PDB，跳过
+  !! 7tmqM01 找不到 PDB，跳过
+  !! 8a57V01 找不到 PDB，跳过
+  !! 8dr0E01 找不到 PDB，跳过
+  !! 8gzqA01 找不到 PDB，跳过
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+  ⚠️ 1gw5B00 SASA/pocket 分区失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 v12 监督项）
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+  ⚠️ 3opbA02 SASA/pocket 分区失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 v12 监督项）
+预解析成功 1104/1199 域
+预解析 1104 域 耗时 4.5min
+    条件编码器已加载: finetune_epoch001.pt  (epoch=1, n_tokens=4, token_dim=128)
+epoch   1: ce=1.8539 cd=4.4292 rec=0.4220 total=5.6162 (n_dom=1104)

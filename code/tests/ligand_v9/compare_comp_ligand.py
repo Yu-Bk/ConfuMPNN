@@ -54,9 +54,13 @@ def main():
                     help="泛化验证根（ligand/ 层，含 <pdb>/pH7.4/arm_native/seqs.fa）")
     ap.add_argument("--out", default=str(_PROJECT_DIR / "output" / "v12_2_ligand_comp.json"),
                     help="输出 JSON 路径")
+    # 可选 manifest 覆盖（2026-09-04 修复：clean 链须用新 in-10 manifest，
+    # 默认旧 validation_manifest.json 缺 6D2O/21KL_A/5O60_E/3MXB_A/9DWG_L）
+    ap.add_argument("--manifest", default=str(MANIFEST),
+                    help="验证 manifest json（items[].pdb），默认 validation_manifest.json")
     args = ap.parse_args()
     gen_root = Path(args.gen_root)
-    man = json.load(open(MANIFEST))
+    man = json.load(open(args.manifest))
     items = man["items"]
     print(f"{'name':7s} {'L':>4s} {'native_DK':>9s} {'gen_DK':>8s} {'倍率':>5s} "
           f"{'native_DE/KR':>13s} {'gen_DE/KR':>12s}", flush=True)

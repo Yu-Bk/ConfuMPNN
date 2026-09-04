@@ -1,0 +1,15 @@
+抽样域：base=30 supp=0 合计=30
+parse 成功 30/30
+backbone 已加载: ligandmpnn_v_32_010_25.pt
+    条件编码器已加载: finetune_epoch001.pt  (epoch=1, n_tokens=4, token_dim=128)
+epoch   1: H2=0.296 dev=5.332 rec=0.463 (arms=240)
+    条件编码器已加载: finetune_epoch004.pt  (epoch=4, n_tokens=4, token_dim=128)
+epoch   4: H2=0.296 dev=4.738 rec=0.428 (arms=240)
+    条件编码器已加载: finetune_epoch007.pt  (epoch=7, n_tokens=4, token_dim=128)
+epoch   7: H2=0.392 dev=4.299 rec=0.429 (arms=240)
+    条件编码器已加载: finetune_epoch010.pt  (epoch=10, n_tokens=4, token_dim=128)
+epoch  10: H2=0.4 dev=3.996 rec=0.43 (arms=240)
+    条件编码器已加载: finetune_epoch013.pt  (epoch=13, n_tokens=4, token_dim=128)
+epoch  13: H2=0.346 dev=4.546 rec=0.433 (arms=240)
+    条件编码器已加载: finetune_epoch016.pt  (epoch=16, n_tokens=4, token_dim=128)
+epoch  16: H2=0.442 dev=3.2 rec=0.431 (arms=240)

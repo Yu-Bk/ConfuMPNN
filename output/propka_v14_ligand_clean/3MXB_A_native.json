@@ -1,0 +1,421 @@
+{
+  "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds",
+  "pH": 7.4,
+  "target": 7.94,
+  "n": 51,
+  "results": [
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/native_charge__7_94.pdb",
+      "seq": "NTKYNKKFLLYLAGFVDGDGSIIAQINPNQSSKFKHRLRLTFYVTQKTQRRWFLDKLVDEIGVGYVRDSGSVSQYVLSEIKPLHNFLTQLQPFLKLKQKQANLVLKIIEQLPSAKESPDKFLEVCTWVDQIAALNDSKTRKTTSETVRAVLDS",
+      "L": 153,
+      "q_design": 7.945,
+      "q_phys": 8.077,
+      "n_titratable_reported": 47
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2000_arm_native_target__8_charge__5_87.pdb",
+      "seq": "ETQLNQAFLEQFAEQLNRNGSIIASLKPAPSARFGFELELTLYYTQNTKQEKKLKRLVAQLGVGYVYQNGEVAQFVLNQTQPLQALLQQLAPYLKKLRQQAQLVLQIIASLPRSQQSPSQFLEVCRLVDQVAQLNNSKTRKTTAETVQQSLQS",
+      "L": 153,
+      "q_design": 5.874,
+      "q_phys": 6.002,
+      "n_titratable_reported": 33
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2001_arm_native_target__8_charge__13_87.pdb",
+      "seq": "AKRYRTQFLQQLAQEINNNGSIIAQLRPDPSAKFGFRIELSLYITKNNKQEKKLEKLVQQIGSGWVYKNGEVSQFILTETKPLENFLRQLVPYLKELQQQAQLVLNIIKSLPQAQKSASQFLNVCKLVDQVNKQNKSKNRKTTSETVQKSLQK",
+      "L": 153,
+      "q_design": 13.868,
+      "q_phys": 14.982,
+      "n_titratable_reported": 41
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2002_arm_native_target__8_charge__10_02.pdb",
+      "seq": "QKQFNQKFLQQFAIELNNDGSIIASLQPDPTAQFKYRFELTLYYTQNNSKKQELQLLVKKIGHGYVVENGQVSQFILQQTQPLQNFLQQLSPYLKKQQNQAQLVLKIIQELPIAKKSPQRFIQVAKLVDKVAELNESKNLKTTSKTVQNSLKS",
+      "L": 153,
+      "q_design": 10.016,
+      "q_phys": 11.023,
+      "n_titratable_reported": 36
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2003_arm_native_target__8_charge__6_99.pdb",
+      "seq": "KKQLNQQFLQQLAEEIDQNGSIIAQLKPDRSAKFSYRLELTLFVTENNQKREQLESLVDQIGAGRVVQNGSVSQFILQQLKPLQNFLQQLQPYLKKSQNQAQLVLKIINNLEEAQQSPEKFLQVAKLVNRVNQLNNSQNRKTTSATVQQRLQT",
+      "L": 153,
+      "q_design": 6.99,
+      "q_phys": 7.996,
+      "n_titratable_reported": 33
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2004_arm_native_target__8_charge__9_87.pdb",
+      "seq": "QKQLAQSFLQSFATELNNNGSIVASLQPNPTAQFQFEIDLTLYYTQKNKKSKKLKELVKKIGTGSVFQNGNVSQFVLSQTQPLQNFLRQLAPYLKKLQAQAELVLQIIQALPQSKESPSKFLEVCKLVDKVNELNQSKNRTTTSKTVQQVLNQ",
+      "L": 153,
+      "q_design": 9.87,
+      "q_phys": 9.994,
+      "n_titratable_reported": 33
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2005_arm_native_target__8_charge__4_98.pdb",
+      "seq": "QTQLPRQFLQELAKQIDNDGSIVASLQQNKSAQFSYTLVLSLFYTQNNQKKAELQQLVQELGAGYVYRNGKVSQYVLTQTLPLQAFLKQLQPYLRRQQQQAQLVLQIIDQLPQAQDSPEAFLRVARLVDQVQQLNNSKNAKTTSQTVQQTLAQ",
+      "L": 153,
+      "q_design": 4.981,
+      "q_phys": 4.993,
+      "n_titratable_reported": 30
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2006_arm_native_target__8_charge__6_87.pdb",
+      "seq": "AQQYPRQFLQQLANEINNNGSIIAQLQPNKEAKFNYQISLVLYVTQNTEKQEELQQLVEQLGAGRVFRNGKVSQFILSQTQPLENFLAQLTPYLKTKQKQAQLVLQIIQSLKQSKESPEAFLNVCQLVDQVAKMNASKTRKTTSETVQKTLNK",
+      "L": 153,
+      "q_design": 6.872,
+      "q_phys": 6.982,
+      "n_titratable_reported": 35
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2007_arm_native_target__8_charge__6_80.pdb",
+      "seq": "QLRLNQQFLQQLAKKIDQNGSIIAQLQPNQSAQFKYQLSLTLYVTQNCNQQNELLKLVQQLGHGAVYQNGQVCQFVLSQTTPLQAFLAQLAPYLKQSQLQAKLVLEIIQQLPEAQQSPSLFLQVAKLVDQVSQANSSKTRKTTAQTVQKVLQQ",
+      "L": 153,
+      "q_design": 6.797,
+      "q_phys": 7.016,
+      "n_titratable_reported": 25
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2008_arm_native_target__8_charge__13_98.pdb",
+      "seq": "ALQLNQQFLQKLATLVNNNGSIIAQLQPNQQAKFSYQIVLRLFITQNNQKKKKLQKLVKELGVGYVIQNGKVSQFVLTQQSPLQNFLQQLQPYLKQSQEQAKLVLQILAQLPQTSQSPQQFLQAAKLVDQVAELNKSKTRKTTSETVRQTLKS",
+      "L": 153,
+      "q_design": 13.98,
+      "q_phys": 13.98,
+      "n_titratable_reported": 28
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2009_arm_native_target__8_charge__3_77.pdb",
+      "seq": "AQQFPRSFLKSFAVQLNNNGSIVAQLQQDPTARFSFRVSLTLYLTQKAQEREQLQKLVQEIGVGYVVRNGDVCQYVLNQSAPLQEFLSQLQPYLKEKQEQAQLVLQILEQLPQSKQSPQRFLQVCKLVDKVNELNASKTRKTTSETVEESLRS",
+      "L": 153,
+      "q_design": 3.765,
+      "q_phys": 3.974,
+      "n_titratable_reported": 39
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2010_arm_native_target__8_charge_-1_01.pdb",
+      "seq": "ALQLETQFLEQFAQALNNNGSIVASLKPDPEARFAYRLELSLYYTQNNRKRSQLEQLVQQLGNGYVFQNGQVSQFVLTQTSPLYNFLRQLQPYLKKLQQQAQLVLQIISSLPQAQQSPEQFLEVAELVDQVAELNESKVKKTTSQTVAETLQQ",
+      "L": 153,
+      "q_design": -1.013,
+      "q_phys": -1.004,
+      "n_titratable_reported": 32
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2011_arm_native_target__8_charge__4_98.pdb",
+      "seq": "QQQLPQAFLQELAQQVNEDGSIIAQLQPSPTAQFSYELQLTLYYTRKNSQKKQLEKLVQEIGAGYVIQQGNVSQFVLEKTQPLQNFLQQLAPYLKQKQAQAQLVLKIIEQLQSAKQSSQEFLQVAKLVDQVNQLNASKTRKTTSQTVQAVLSR",
+      "L": 153,
+      "q_design": 4.982,
+      "q_phys": 4.985,
+      "n_titratable_reported": 31
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2012_arm_native_target__8_charge__7_92.pdb",
+      "seq": "AKQLPTQFLQELAQLIDQNGSIIAQLQPDPEAQFGYRIELTLFVHQKNRKRARLQRLVQQLGAGYVFQNGNVCQYVLSQQRPLQNFLRQLAPFLKAQRRQAQLVLTMIAALPQARQSPQAFLQLARLVDEVNKLNNSKTLKTTAETVEEQLQS",
+      "L": 153,
+      "q_design": 7.916,
+      "q_phys": 8.012,
+      "n_titratable_reported": 34
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2013_arm_native_target__8_charge__4_76.pdb",
+      "seq": "QLQLPNQFLKQLAEKINENGSIVASLQPNPSSQFGYSFTLSLFITQNCKQKQELQQLVQQLGVGYVYENGQVCQYVLTQLQPLQNLLQQLTPYLKKQQESAQLVLQIIQNQPKSKKSPDEFLQAATLVDKVAEQNKSKTRKTTAKTVQESLQQ",
+      "L": 153,
+      "q_design": 4.757,
+      "q_phys": 5.994,
+      "n_titratable_reported": 32
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2014_arm_native_target__8_charge__1_65.pdb",
+      "seq": "QQQLNQQFLKELATEINNNGSIIAQLQPDPTAQFGFEIKLTLFITRKCQKKNELEQLVEQLGVGYVYQNGQVCQFVLQQTKPLENLLKQLAPYLKQLRQQAQLVLEIISSLPQARNSPQEFLQICRLVDEVQKNNNSKTTTTTSSTVQQQLQQ",
+      "L": 153,
+      "q_design": 1.654,
+      "q_phys": 2.967,
+      "n_titratable_reported": 32
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2015_arm_native_target__8_charge__10_87.pdb",
+      "seq": "ALKLPRQFLAKFATQLNNNGSLIAQLQPNPQARFQFEIELSLYVTQKNQQRQRLEKLVQQLGAGRVYQNGQVAQFVLSQTKPLQNFLQQLQPYLQKKQQQAQLILQIINSLEKAQDSPSEFLQVCRLVDQVAQLNKSKTRKTTSQTVQQSLQQ",
+      "L": 153,
+      "q_design": 10.873,
+      "q_phys": 11.972,
+      "n_titratable_reported": 29
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2016_arm_native_target__8_charge__12_87.pdb",
+      "seq": "QLQLPVSFLQQLAQQINQNGSIIASLQPNKQAKFGYRIQLTLYITQNLQQREELNLLVKQLGYGRVIENGKVAQFILTQTQPLENFLKQLQPYLKRLQKQAKLVLQIIQELPQAKKSPEAFLRVCKLINQVTQLNNSKTRKTTAETVQKQLQS",
+      "L": 153,
+      "q_design": 12.87,
+      "q_phys": 13.988,
+      "n_titratable_reported": 32
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2017_arm_native_target__8_charge__8_76.pdb",
+      "seq": "QKQYNRQFLQKLAEQVNQDGSIVAQLQPDPQAKFQYRIDLTLFITRNCQQKQELQQLVEQIGSGRVYQNGQVCQYILTQTTPLQNFLQQLQPYLQQLQKQARLVLQIIRQLPSAKKSQQKFLELAQLVNQVARENKSQTRKTTASTVEQSLQT",
+      "L": 153,
+      "q_design": 8.759,
+      "q_phys": 8.945,
+      "n_titratable_reported": 35
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2018_arm_native_target__8_charge__10_86.pdb",
+      "seq": "ELQLPQQFLQELAQEINNNGSIVAQLIPNKTAQFGYTIQLTLYYTQQIQQKSKLQKLVQQLGQGYVIKQGKIAQFVLNQVKPLQNFLKQLQPYLKKSQSQARLVLKIINSLPSAKKSPQQFLQVCQLVDQVQEANNSKNQKTTSQTVQQALQS",
+      "L": 153,
+      "q_design": 10.865,
+      "q_phys": 10.956,
+      "n_titratable_reported": 27
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2019_arm_native_target__8_charge__11_91.pdb",
+      "seq": "QKRLNQSFLQQFAKTLNNNGSIVAQIRQNRTAKFQHELRLTLYITQKNEQKQKLQQLVEQLGTGYVVQNGQVAQYILSQTQPLQQLLRQLQPYLRQQQQQAQLVLQIIELLPKAKKSPQEFLEVCQLVDQVSRNNASQTRKTTSQTVQNVLKS",
+      "L": 153,
+      "q_design": 11.91,
+      "q_phys": 12.038,
+      "n_titratable_reported": 33
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2020_arm_native_target__8_charge__13_90.pdb",
+      "seq": "KQQLNNAFLQEFATQLDSDGSIIATLQKNQTAQFGYVLKLTLFYTEKNQKRSKLQQLVQRLGHGFVYQNGQVCQFVLTQLTPLENFLKQLTPYLQKLQKQAQLVLQIIETQPQAKLSPQEFLKVAKLVDQVNKNNKSKTRKTTSKTVQAQLKR",
+      "L": 153,
+      "q_design": 13.904,
+      "q_phys": 14.025,
+      "n_titratable_reported": 37
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2021_arm_native_target__8_charge__3_88.pdb",
+      "seq": "EKQFPSQFLQQFAQELNQNGSIIATLRPNPTAKFGFELELTLYITQQNQRRKQLQQLVQQLGNGRVYQNGKVSQFVLSQTTPLQDFLQQLSPYLKESQQQAQLVLQIIAQLPQAQQSPQEFIKVCQLVDEVAKLNDSKTRKTTSETVKQALQQ",
+      "L": 153,
+      "q_design": 3.877,
+      "q_phys": 3.992,
+      "n_titratable_reported": 31
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2022_arm_native_target__8_charge__1_88.pdb",
+      "seq": "GRQLNSGFLAQLATEINQNGSIIAQLQEDQSSQFGYQIKLSLYYTQNNQQKQRLKQLVEQLGAGRVYTNGKVSQYVLTQTAPLENLLRQLTPFLEASRQAAQLVLEIIKSLEQVNESPQQFLEACELVDQVNQLNQSKNRKTTSATVQQSLKN",
+      "L": 153,
+      "q_design": 1.875,
+      "q_phys": 2.001,
+      "n_titratable_reported": 33
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2023_arm_native_target__8_charge__0_65.pdb",
+      "seq": "QQRLPTQFLQQLAVQVNQNGSIVAELQADPTAQFGYEIELSLYITENCQKQNELQELVRQLGVGFVYQQGSVCQYVLQKQKPLQQLLSQLTPYLTEKQQQAKLVLQILSQLDQAQQSPNEFLQVCRLVDKVAQLNASKTRKTTSQTVQQSLQA",
+      "L": 153,
+      "q_design": 0.651,
+      "q_phys": 0.988,
+      "n_titratable_reported": 32
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2024_arm_native_target__8_charge__5_87.pdb",
+      "seq": "AKRYPQQFLQQFARLLNQNGSLIAQLIPSPTAQFSYRIELSLYVTAQNKQRRRLEELVKQLSEGYVYQQGDVSQYVLQQIKPLQNFLKQLAPYLVKQQIQAQLILSIIDQLPSSQKSEQEFLRVCQLVDQVQQANQSQTKKTTSQTVAETLQQ",
+      "L": 153,
+      "q_design": 5.869,
+      "q_phys": 5.991,
+      "n_titratable_reported": 35
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2025_arm_native_target__8_charge__19_75.pdb",
+      "seq": "QLTLKQKFLKQFAEELNDNGSIIAQLQPDKTAKFKYRITLTLYITQNCQKKQRLKRLVQQIGSGYVIQKGKVCQFVLTQTQPLKNFLQQLQPYLRQKQQEAQLVLEIIKSLPTAKKSSQQFLKVAQLVDRVNQLNRSQTRKTTSETVKKTLKS",
+      "L": 153,
+      "q_design": 19.752,
+      "q_phys": 19.943,
+      "n_titratable_reported": 43
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2026_arm_native_target__8_charge__8_68.pdb",
+      "seq": "QQQLNQKFLQQFARELDNNGSIVASLNPNKTAQFSYYLQLTLYYTQKCQKKQELLQLVQQLGVGYVVQNGEVCQFILSQLQPLQNLLSQLAPYLNRLSAQAHLVLEIIQSLPRAQESPQAFLKLCKLVDQVQKLNQSKTRKTTSRTVQKSLSN",
+      "L": 153,
+      "q_design": 8.682,
+      "q_phys": 9.203,
+      "n_titratable_reported": 34
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2027_arm_native_target__8_charge__7_80.pdb",
+      "seq": "QQQLPSQFLRALARQVNQNGSIIAQLQPNPTAQFSFRIKLTLYYTQNCQQRQKLQQLVQQIGNGYVFENGNVCQFVLSQTEPLQNFLQQLAPYLEKKQKQAQLVLQIIDSLPESEKSPAKFIHAAKLVDQVNALNASKTRKTTSKTVEQVLQS",
+      "L": 153,
+      "q_design": 7.798,
+      "q_phys": 7.988,
+      "n_titratable_reported": 32
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2028_arm_native_target__8_charge__11_99.pdb",
+      "seq": "QKVLPRGFLQQFAEQLNNNGSIIAQLKPNPSAQFQFSIRLTLYYTQNVQQRQQLEQLVQQLGNGRVVQNGDVAQFILSQTQPLQQLLQQLAPFLKKKQQQAQLVLQIIQNLPKAQQSPQKFLEVARLVDRVNKLNNSQTRKTTSQTVAKTLQQ",
+      "L": 153,
+      "q_design": 11.986,
+      "q_phys": 11.984,
+      "n_titratable_reported": 25
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2029_arm_native_target__8_charge__8_87.pdb",
+      "seq": "QLQLNKSFLKQFATKLNQNGSLIGQLEPNQTAQFSFRIELTLYYTQKNQKRNKLKKLVQQLGTGYVYQNGTVSQFVLNQTQPLQNFLKQLTPYLKKQQEQAQLILQIIESLPEAQQSPRLFLKVCEYIDQIAQLNNSQNRQTTSETVQKVLQS",
+      "L": 153,
+      "q_design": 8.867,
+      "q_phys": 8.995,
+      "n_titratable_reported": 33
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2030_arm_native_target__8_charge__9_98.pdb",
+      "seq": "QKQFKERFLKQLAKQINENGSIIAQLQPNPTAQFGFQLQLTLYVTQNTQQRQQLQELVQQLGVGYVYQQGQVSQYVLSQTLPLQNFLQQLAPYLQAKQEQANLVLQIIESLPQAKNSPQKFLKVAKLVNQVNKLNNSKTRKTTAETVQKYLKE",
+      "L": 153,
+      "q_design": 9.977,
+      "q_phys": 9.979,
+      "n_titratable_reported": 31
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2031_arm_native_target__8_charge__6_76.pdb",
+      "seq": "QKRLPVQFLQKLAQLINDNGSIVAQLRPDPTAQFSYRIQLTLYYTQQCKQQQELLNLVKQLGTGFVYQNGQVCQFVLSQTQPLQQFLQQLTPYLKKSQSQAQLVLQIIDSLPQAKQSPQEFIQVAKLVDQVNALNESQTRKTTSETVQRALRQ",
+      "L": 153,
+      "q_design": 6.759,
+      "q_phys": 6.967,
+      "n_titratable_reported": 31
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2032_arm_native_target__8_charge__8_65.pdb",
+      "seq": "ALQLPQAFLKQLAQQVNADGSLVAALQPNPSAKFGYRITLTLYVTQNCQQQQELQNLVQQLGVGRVYQNGQVCQYVLSQLQPLENFLQQLQPYLQKLQQQAQLILEIIRQLPQARKSPEAFLKICRLVDKVNQLNASKTRKTTSQTVRQALKE",
+      "L": 153,
+      "q_design": 8.647,
+      "q_phys": 8.945,
+      "n_titratable_reported": 32
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2033_arm_native_target__8_charge__0_88.pdb",
+      "seq": "SRQLNSQFLQQLAQQVNQDGSIIAQLQPDPTAQFSYRIRLSLFITDKQSKKQRLQKLVQEIGAGYVYNNGNVCQFVLSQTQPLSNFLSQLQPYLEQLQQQAELVLQIIQSLPQSKQSPQEFLEVAELVDQVAELNNSKNRKTTSQTIQQVLQQ",
+      "L": 153,
+      "q_design": 0.876,
+      "q_phys": 1.011,
+      "n_titratable_reported": 29
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2034_arm_native_target__8_charge__13_97.pdb",
+      "seq": "QRQLPVTFLQQFAQLLNNNGSIVASLQPNPTAQFSYRLSLRLYYTRKTQEQKQLKNLVKQLGTGYVIKNGSVSQYVLQQTQPLQQLLSQLVPYLKKQQKQAQLVLQIISQQPEAKKSPDKFLQVATLVDQVAQQNASQNRKTTSQTVQQTLKQ",
+      "L": 153,
+      "q_design": 13.975,
+      "q_phys": 13.981,
+      "n_titratable_reported": 29
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2035_arm_native_target__8_charge__6_75.pdb",
+      "seq": "QQQLPQQFLQKLAQEINNNGSIIAQLQPNPSAQFGFQLKLTLYYTQKCEKQKKLLQLVQQLGAGYVYQNGNVCQYVLSQTEPLENLLSQLQPYLQKQQEQASLVLQIINSLPQSKESPQKFLQVAKLVDRVNELNNSKTRKTTSATVQQALQK",
+      "L": 153,
+      "q_design": 6.755,
+      "q_phys": 6.964,
+      "n_titratable_reported": 32
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2036_arm_native_target__8_charge__12_90.pdb",
+      "seq": "QKKYPEQFLQKLAQQIDKNGSIIASLSPDPTAQFGYRIRLTLFITQKVNKQKQLQELVKQIGAGYVFKNGKVAQYVLQQSQPLQNFLKQLQPYLKKQQEQAQLVLQILASLPQAKQSAAEFLRVCKYVDEVNKLNESKTQKTTSKTVAQHLQS",
+      "L": 153,
+      "q_design": 12.9,
+      "q_phys": 13.032,
+      "n_titratable_reported": 40
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2037_arm_native_target__8_charge__12_02.pdb",
+      "seq": "SVQLPQEFLQQLAQSINQNGSIIASLQPDPTAQFSFQISLTLYIHQNNQKRNKLLSLVQQLGSGYVFQNGQVSQYVLSKTIPLQNFLRQLQPYLTKLQRQAQLVLQIIQSLPNAKKSPQDFLKVAKLVDQVAKLNNSKTRKTTSETVQKVLQK",
+      "L": 153,
+      "q_design": 12.018,
+      "q_phys": 12.0,
+      "n_titratable_reported": 28
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2038_arm_native_target__8_charge__6_87.pdb",
+      "seq": "QTKLPEKFLQQLAQVVNDDGSIIAQLQPARTAQFGYRIDLTLYITQNTEEKEQLQKLVKQLGVGYVVQNGEVSQYILSEIKPLYNFLQQLAPYLKKLQQQALLVLQIIKQLPQAKQSPQQFLQVCQLVDKVAQNNKSQTRKTTSQTVQKALQT",
+      "L": 153,
+      "q_design": 6.866,
+      "q_phys": 6.993,
+      "n_titratable_reported": 35
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2039_arm_native_target__8_charge__8_87.pdb",
+      "seq": "EKQLPQDFLRAFAQKLNQNGSIVASLIPDPTAQFSYQINLTLYYTQNNQRKKELQQLVQQLGAGYVIQNGNVAQYVLSQTTPLKTLLEQLQPYLQEQQQAASLVLKIINKLPKARKSPEEFIEICKLVDQVAKLNNSKTRKTTSKTVEKTLSK",
+      "L": 153,
+      "q_design": 8.866,
+      "q_phys": 8.984,
+      "n_titratable_reported": 39
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2040_arm_native_target__8_charge__6_98.pdb",
+      "seq": "QQQFPVKFLKQLAEQLNNDGSIVAQLIPDPTAKFSYRVLLTLYITKNRAQKKKLLLLVKEIGAGYVYENGNVAQFVLQKLTPLQNFLQQLAPYLQKLQQQAQLVLQIIQSLPKAQQSPQEFLAVARLVDQVAQLNDSKNLKTTSETVQQSLQS",
+      "L": 153,
+      "q_design": 6.98,
+      "q_phys": 6.991,
+      "n_titratable_reported": 31
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2041_arm_native_target__8_charge__9_98.pdb",
+      "seq": "KQQFPKQFLQKFAKELNKDGSIIASLQQNETARFGYRVSLTLFYTQNNRQREQLQQLVQKIGAGYVFQNGQVSQFVLSQLQPLQNFLQQLQPYLEKKQRQANLVLQIIDQLPEAQQSPEQFIQVAKLVDKVNQLNNSKTRRTTSQTVQQYLAK",
+      "L": 153,
+      "q_design": 9.981,
+      "q_phys": 9.956,
+      "n_titratable_reported": 34
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2042_arm_native_target__8_charge__3_76.pdb",
+      "seq": "QQKLPEQFLQELAKQIDNNGSIIAQLKPDQTAQFQYQIELTLYLTQNAQKEQELQLLVLQLGSGRVVKNGNVCQYILSQKEPLTNLLAQLQPYLQESQQQAQLVLQILEQLPKAKNSPQEFLQVCQLVDQVARLNKSRVLKTTSKTVQQSLKK",
+      "L": 153,
+      "q_design": 3.761,
+      "q_phys": 3.997,
+      "n_titratable_reported": 35
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2043_arm_native_target__8_charge__18_86.pdb",
+      "seq": "TKQLPQSFLQQFAIELNQNGSLIATLNPNKTAKFGFRVRLRLFYTQKSKQKQQLQKLVQRIGAGYVYQNGDVCQYVLSRQGPLLAFLQQLTPYLQKLQQSAKLILRILQSLQQAQQSTSKFLQLAKLVDEVNKNNKSKNRKVTSKTVQEKLQS",
+      "L": 153,
+      "q_design": 18.863,
+      "q_phys": 18.976,
+      "n_titratable_reported": 36
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2044_arm_native_target__8_charge__8_76.pdb",
+      "seq": "AQQLPQQFLQQFARALNANGSLIASLQENTTAQFNFKIELTLYYTQKEQQRAQLQALVQQIGAGRVYQQGNVCQFVLSQTLPLQQFLQQLAPYLLKQQQQAQLILQIINSLPKAQKSPSKFLEVCKLVDLVSKYNASKVKKTTSKTVEETLKS",
+      "L": 153,
+      "q_design": 8.756,
+      "q_phys": 8.95,
+      "n_titratable_reported": 31
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2045_arm_native_target__8_charge__7_68.pdb",
+      "seq": "QQQLPTAFLRQFATELNQNGSIIAQLQRDPTSQFGYRIDLTLYYTQKCQKQAKLQALVKQLGHGYVIQNGNVCQFILQQQEPLEALLRQLVPYLKKKQTEAQLVLQIISQLPQSQKSPEEFLQVCKLVDQVAEQNRSKTRKTTSQTVQKYLSQ",
+      "L": 153,
+      "q_design": 7.683,
+      "q_phys": 8.02,
+      "n_titratable_reported": 39
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2046_arm_native_target__8_charge__11_91.pdb",
+      "seq": "KQQLPRQFLQQLAQEINKNGSIIAQLERNKTAQFGYRLQLTLFIHQNNQQKNELQQLVQQLGTGRVYENGNVSQFVLSQIRPLQNLLSQLTPYLEKSKKAAQLVLQIISELADSKASPQKFLQVCKLVDQVNQLNNSKTRKTTSKTVQQSLQR",
+      "L": 153,
+      "q_design": 11.911,
+      "q_phys": 12.017,
+      "n_titratable_reported": 34
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2047_arm_native_target__8_charge__14_98.pdb",
+      "seq": "QLQLPRAFLQELAKEINQNGSIVAQLQPNPTAQFSFQIKLTLYITQRNQKRQKLQKLVQQLGVGYVVQNGNVAQFVLTQLQPLQTLLAQLAPYLQQKQQQAQLVLQIIQSIKKSKSSPQQFLQVAKLVDQVAKLNKSQTRKTTSKTVERTLQQ",
+      "L": 153,
+      "q_design": 14.981,
+      "q_phys": 14.965,
+      "n_titratable_reported": 27
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2048_arm_native_target__8_charge__6_02.pdb",
+      "seq": "QQKLPQQFLQQLAQQLNNNGSIIAQLQPDPTAQFSYQLQLTLFYTEKVQKKQKLKRLVQQLGHGYVIENGQVAQFVLQQRQPLQAFLEQLAPYLKAQQKQAQLVLSILEQLEEAQESPQAFLRVAKLVDLVAQLNKSKTRKTTAQTVQQSLQE",
+      "L": 153,
+      "q_design": 6.023,
+      "q_phys": 6.047,
+      "n_titratable_reported": 32
+    },
+    {
+      "pdb": "output/generalization_ligand_v14_clean/ligand/3MXB_A/pH7.4/arm_native/folds/seed_2049_arm_native_target__8_charge__14_86.pdb",
+      "seq": "QKQFNQQFLKNFAKELNQNGSIVAELIPDPSAQFKFRIDLTLYITQQNEQRQKLQALVQKLGAGYVYQNGKVSQYVLSQVLPLQNFLKQLQPYLKQLQKQAQLVLQIISSLPKSKKSPQEFLQLCQLIDQVQQLNKSKTRKTTSKTVQKVLQK",
+      "L": 153,
+      "q_design": 14.862,
+      "q_phys": 16.979,
+      "n_titratable_reported": 34
+    }
+  ],
+  "q_phys_mean": 8.916,
+  "q_phys_std": 4.454,
+  "q_design_mean": 8.612,
+  "h4_dev": 0.976,
+  "h4_pass": true
+}

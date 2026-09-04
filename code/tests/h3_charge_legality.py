@@ -162,12 +162,20 @@ def main():
     ap.add_argument("--uncond-root", required=True, help="无条件基线 fasta 目录")
     ap.add_argument("--pH", type=float, default=7.4)
     ap.add_argument("--out", default="output/h3.json")
+    # 可选：validation manifest json → 用 items[].pdb 覆盖硬编码 PDBS（2026-09-04 clean 链修复）
+    ap.add_argument("--manifest", default=None, help="validation manifest json，items[].pdb 作为蛋白清单")
     args = ap.parse_args()
 
     gen_root, ref_root = Path(args.gen_root), Path(args.ref_root)
     native_root, uncond_root = Path(args.native_root), Path(args.uncond_root)
     pos_aa, neg_aa = pH_adaptive_charged_aa(args.pH)
     cfg = default_config()
+    pdbs = list(PDBS)
+    if args.manifest:
+        _man = json.load(open(args.manifest))
+        _items = _man["items"] if isinstance(_man, dict) and "items" in _man else _man
+        pdbs = [it["pdb"] for it in _items if it.get("pdb")]
+        print(f"H3 使用 manifest 蛋白清单（{len(pdbs)} 个，替代硬编码）：{pdbs}")
     print(f"H3 事后统计 | pH={args.pH} 带电集合=({','.join(pos_aa)}),({','.join(neg_aa)})")
     print(f"gen={gen_root}\nref={ref_root}\nuncond={uncond_root}")
     print(f"{'蛋白':6s} {'臂':8s} {'违规率':>8s} {'R1':>4s} {'R2':>4s} {'R3':>4s} {'R4':>4s} | {'native':>7s} {'uncond':>7s} {'基线+5pp':>9s} {'PASS':>5s}")
@@ -176,7 +184,7 @@ def main():
     result = {"pH": args.pH, "charged_aa": {"pos": list(pos_aa), "neg": list(neg_aa)},
               "proteins": {}}
     total_pass = total_arms = 0
-    for pdb in PDBS:
+    for pdb in pdbs:
         ref_pdb = ref_root / f"{pdb}_ref.pdb"
         coords = ca_coords_from_pdb(ref_pdb)
         L = coords.shape[0]

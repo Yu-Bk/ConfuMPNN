@@ -289,5 +289,35 @@ mompnn_compat_test。protein 模式 0 不动。
 - 超参 = v13 基础 + global；日志 `log/v14_ligand_train.log`。
 
 ### 9.5 验证集（v14 配体模式）
-`validation_manifest_v14_ligand.json`：保留单体 1AZM/1AS2/2FEO/5CQH/1CGE/1A65/1BJ4；删二聚体
-1C6O/1AXW/1AG0；新增 held-out 核酸结合 21KL_A/3MXB_A/4GDF_A/5ZR1_B/8DR1_A/9DWG_L（无泄漏）。
+当前测试集 = **in-10** `data/validation_pdbs/validation_manifest_v14_in.json`
+（6D2O/1AS2/2FEO/5CQH/1CGE/1BJ4/21KL_A/5O60_E/3MXB_A/9DWG_L，coverage=in 全无泄露，含 5O60_E；
+1AZM 被表外 6D2O 置换、1C6O/1AXW/1AG0 二聚体删除、2E9R_X 移入能力边界文档）+ boundary 1A65。
+外部**验证集（15% ≈805）与 per-epoch 曲线方法论见 §10（2026-09-04 定稿）**。
+
+## 10. 验证集 15% + per-epoch 前向 val-loss 曲线（2026-09-04 用户决策定稿）
+
+### 10.1 验证集规模与方法（配体 v14；蛋白沿用 CATH 15% hold-out）
+- 规模判据（用户）：**验证集 = 训练集 15%**。配体训练 5371 → **外部未见池 ≈805**，严格按训练
+  类型/电荷/长度比例（small_mol 77%/metal 10.5%/核苷酸辅因子 4.6%/RNA-DNA 7.7%）。
+- 源：6302 同源候选码（与训练同分布、未见）下载 parse QC + 本地 RNA/DNA 196 未见链取 62 + 已建
+  30 seed 并入；辅因子(NAD/ADP/FAD)重分类补 nucleotide + 少量定向补拉 metal/nucleotide（用户批准）。
+- 产物：`labels_v14_valset_805.npz`（805×8pH）+ `v14_valset_805_spec.json` + `v14_valset_pdb/`。
+  覆盖全 in/boundary、无泄露。**残余尾部缺口**（metal/RNA-DNA 长链 −3、深负 small_mol −18 等）=
+  覆盖内深负/长天然稀缺所致，**用户批准接受现状**（2026-09-04）。
+- 蛋白模式：v12.2/v12.3 验证集 = CATH 15% hold-out（labels_holdout_train 1176）+ 长/深负补充 23
+  （`labels_v12_3_valsupp.npz`）=1199，用户批准沿用。
+
+### 10.2 per-epoch 泛化曲线方法论（2026-09-04 用户裁定，推翻 30 域生成式子采样）
+- 旧法被否：30 域/epoch 生成式 valcurve——点噪声大、不覆盖、且生成式成本高于训练。
+- **新法 = 前向全量 val-loss 回放**：每个保存的 epoch checkpoint 在**全量验证集**上做 **no-grad 确定性
+  前向**（不生成、不采样），每域取 npz 的 8 个 (pH, native@pH) 自洽臂，用**与训练严格同口径**
+  的 self-arm 损失装配（CE + λ_c·电荷偏差 + λ_kl·KL + λ_keep·SeqKeep + 0.05·结构惩罚 + λ_v12·组成/GRAVY
+  + λ_target·表面电荷锚 + A1 pocket；**扰动/占位臂专属项不计**）。
+- 指标**双出**：平均电荷偏差（反映训练**结果**）+ 总 loss（反映训练**过程**，与 train-loss 同口径可比）。
+- **生成式采样只在测试集**（in-10 已 done）；用户否掉"验证集全量生成单点"（成本高 + val 已参与选型 →
+  有偏 + 冗余）。
+- 三版（v12_2/v12_3/v14_ligand）**训练参数不同，各用各的**（mode/backbone/temperature/λ/pocket 等），
+  权威配置 = `code/tests/val_replay_configs.md`（依据 train_finetune.py 行号 + 各训练 log）。
+- 脚本：`code/tests/val_loss_curve.py`（回放 + 冒烟 + 配置表）；命令见 `session/2026-09-04_val_loss_curve_build.md`。
+- 状态：实现+冒烟+审查通过；全量曲线三版 GPU6 跑动中 → `output/val_loss_curve_{v12_2,v12_3,v14_ligand}.json`；
+  train 侧每轮 loss 从各训练 log 提取 → 并 train-vs-val 图。分析报告待曲线完成后出。

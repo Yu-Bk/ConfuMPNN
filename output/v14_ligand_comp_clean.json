@@ -1,4 +1,15 @@
 {
+  "6D2O": {
+    "L": 209,
+    "native_dk": 42,
+    "native_de": 24,
+    "native_kr": 18,
+    "gen_dk": 23.6,
+    "gen_de": 14.1,
+    "gen_kr": 9.5,
+    "ratio": 0.56,
+    "n_gen": 50
+  },
   "1AS2": {
     "L": 312,
     "native_dk": 84,
@@ -52,6 +63,50 @@
     "gen_de": 23.8,
     "gen_kr": 24.3,
     "ratio": 0.46,
+    "n_gen": 50
+  },
+  "21KL_A": {
+    "L": 237,
+    "native_dk": 62,
+    "native_de": 26,
+    "native_kr": 36,
+    "gen_dk": 38.0,
+    "gen_de": 14.6,
+    "gen_kr": 23.4,
+    "ratio": 0.61,
+    "n_gen": 50
+  },
+  "5O60_E": {
+    "L": 209,
+    "native_dk": 51,
+    "native_de": 20,
+    "native_kr": 31,
+    "gen_dk": 28.6,
+    "gen_de": 9.2,
+    "gen_kr": 19.3,
+    "ratio": 0.56,
+    "n_gen": 50
+  },
+  "3MXB_A": {
+    "L": 153,
+    "native_dk": 38,
+    "native_de": 15,
+    "native_kr": 23,
+    "gen_dk": 26.2,
+    "gen_de": 8.7,
+    "gen_kr": 17.5,
+    "ratio": 0.69,
+    "n_gen": 50
+  },
+  "9DWG_L": {
+    "L": 323,
+    "native_dk": 98,
+    "native_de": 47,
+    "native_kr": 51,
+    "gen_dk": 46.3,
+    "gen_de": 21.1,
+    "gen_kr": 25.2,
+    "ratio": 0.47,
     "n_gen": 50
   }
 }
