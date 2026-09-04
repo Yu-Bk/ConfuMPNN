@@ -1,0 +1,280 @@
+    条件编码器已加载: finetune_epoch050.pt  (epoch=50, n_tokens=4, token_dim=128)
+处理 46 个蛋白（0-46），臂 ligand=['native', 'n2', 'p2'] protein=['native', 'n8', 'p8']，n=50，pH=7.4
+
+=== 7K00_L13 cat=RNA L=142 native=MKTFTAKPETVKRDWYVVDATGKTL... charge@7.4=+10.25 口袋残基=82
+  [ligand/native] target=  10 mean=+11.27 dev=1.27 rec=0.481 pkt=0.433 gravy=-0.493
+  [ligand/n2] target=   8 mean= +9.71 dev=1.71 rec=0.478 pkt=0.430 gravy=-0.487
+  [ligand/p2] target=  12 mean=+13.23 dev=1.23 rec=0.479 pkt=0.433 gravy=-0.501
+  已写 7K00_L13 结果
+
+=== 7K00_L14 cat=RNA L=123 native=MIQEQTMLNVADNSGARRVMCIKVL... charge@7.4=+11.81 口袋残基=63
+  [ligand/native] target=  12 mean=+10.37 dev=1.63 rec=0.538 pkt=0.445 gravy=-0.180
+  [ligand/n2] target=  10 mean= +8.55 dev=1.45 rec=0.534 pkt=0.442 gravy=-0.151
+  [ligand/p2] target=  14 mean=+12.11 dev=1.89 rec=0.541 pkt=0.453 gravy=-0.207
+  已写 7K00_L14 结果
+
+=== 7K00_L15 cat=RNA L=144 native=MRLNTLSPAEGSKKAGKRLGRGIGS... charge@7.4=+16.03 口袋残基=99
+  [ligand/native] target=  16 mean=+22.94 dev=6.94 rec=0.469 pkt=0.439 gravy=-0.645
+  [ligand/n2] target=  14 mean=+20.06 dev=6.06 rec=0.466 pkt=0.434 gravy=-0.589
+  [ligand/p2] target=  18 mean=+25.56 dev=7.56 rec=0.473 pkt=0.445 gravy=-0.715
+  已写 7K00_L15 结果
+
+=== 7K00_L16 cat=RNA L=134 native=MLQPKRTKFRKMHKGRNRGLAQGTD... charge@7.4=+19.02 口袋残基=82
+  [ligand/native] target=  19 mean=+20.85 dev=1.85 rec=0.469 pkt=0.439 gravy=-0.636
+  [ligand/n2] target=  17 mean=+19.07 dev=2.07 rec=0.465 pkt=0.431 gravy=-0.613
+  [ligand/p2] target=  21 mean=+22.45 dev=1.45 rec=0.473 pkt=0.447 gravy=-0.652
+  已写 7K00_L16 结果
+
+=== 7K00_L17 cat=RNA L=118 native=MRHRKSGRQLNRNSSHRQAMFRNMA... charge@7.4=+14.99 口袋残基=91
+  [ligand/native] target=  15 mean=+14.29 dev=0.71 rec=0.419 pkt=0.404 gravy=-0.483
+  [ligand/n2] target=  13 mean=+12.37 dev=0.63 rec=0.415 pkt=0.398 gravy=-0.472
+  [ligand/p2] target=  17 mean=+15.90 dev=1.10 rec=0.424 pkt=0.410 gravy=-0.512
+  已写 7K00_L17 结果
+
+=== 7K00_L18 cat=RNA L=116 native=DKKSARIRRATRARRKLQELGATRL... charge@7.4=+10.10 口袋残基=69
+  [ligand/native] target=  10 mean=+10.61 dev=0.61 rec=0.526 pkt=0.466 gravy=-0.342
+  [ligand/n2] target=   8 mean= +9.18 dev=1.18 rec=0.519 pkt=0.461 gravy=-0.330
+  [ligand/p2] target=  12 mean=+12.31 dev=0.31 rec=0.524 pkt=0.467 gravy=-0.370
+  已写 7K00_L18 结果
+
+=== 7K00_L19 cat=RNA L=114 native=SNIIKQLEQEQMKQDVPSFRPGDTV... charge@7.4=+12.07 口袋残基=46
+  [ligand/native] target=  12 mean=+17.89 dev=5.89 rec=0.395 pkt=0.422 gravy=-0.687
+  [ligand/n2] target=  10 mean=+15.31 dev=5.31 rec=0.392 pkt=0.417 gravy=-0.667
+  [ligand/p2] target=  14 mean=+20.77 dev=6.77 rec=0.392 pkt=0.426 gravy=-0.729
+  已写 7K00_L19 结果
+
+=== 7K00_L2 cat=RNA L=271 native=AVVKCKPTSPGRRHVVKVVNPELHK... charge@7.4=+32.10 口袋残基=179
+  [ligand/native] target=  32 mean=+38.49 dev=6.49 rec=0.502 pkt=0.495 gravy=-0.657
+  [ligand/n2] target=  30 mean=+38.32 dev=8.32 rec=0.503 pkt=0.495 gravy=-0.654
+  [ligand/p2] target=  34 mean=+38.17 dev=4.17 rec=0.500 pkt=0.494 gravy=-0.659
+  已写 7K00_L2 结果
+
+=== 7K00_L20 cat=RNA L=117 native=ARVKRGVIARARHKKILKQAKGYYG... charge@7.4=+24.01 口袋残基=79
+  [ligand/native] target=  24 mean=+29.45 dev=5.45 rec=0.464 pkt=0.437 gravy=-0.869
+  [ligand/n2] target=  22 mean=+27.87 dev=5.87 rec=0.461 pkt=0.434 gravy=-0.805
+  [ligand/p2] target=  26 mean=+30.81 dev=4.81 rec=0.463 pkt=0.439 gravy=-0.925
+  已写 7K00_L20 结果
+
+=== 7K00_L21 cat=RNA L=103 native=MYAVFQSGGKQHRVSEGQTVRLEKL... charge@7.4=+6.14 口袋残基=36
+  [ligand/native] target=   6 mean= +6.65 dev=0.65 rec=0.384 pkt=0.281 gravy=-0.234
+  [ligand/n2] target=   4 mean= +4.77 dev=0.77 rec=0.387 pkt=0.278 gravy=-0.237
+  [ligand/p2] target=   8 mean= +8.76 dev=0.76 rec=0.380 pkt=0.283 gravy=-0.252
+  已写 7K00_L21 结果
+
+=== 7K00_L22 cat=RNA L=110 native=METIAKHRHARSSAQKVRLVADLIR... charge@7.4=+10.14 口袋残基=67
+  [ligand/native] target=  10 mean=+10.29 dev=0.29 rec=0.441 pkt=0.438 gravy=-0.217
+  [ligand/n2] target=   8 mean= +8.65 dev=0.65 rec=0.440 pkt=0.436 gravy=-0.214
+  [ligand/p2] target=  12 mean=+12.12 dev=0.12 rec=0.444 pkt=0.442 gravy=-0.241
+  已写 7K00_L22 结果
+
+=== 7K00_L23 cat=RNA L=93 native=MIREERLLKVLRAPHVSEKASTAME... charge@7.4=+10.07 口袋残基=51
+  [ligand/native] target=  10 mean=+12.02 dev=2.02 rec=0.358 pkt=0.294 gravy=-0.702
+  [ligand/n2] target=   8 mean=+10.22 dev=2.22 rec=0.354 pkt=0.288 gravy=-0.694
+  [ligand/p2] target=  12 mean=+14.18 dev=2.18 rec=0.361 pkt=0.302 gravy=-0.728
+  已写 7K00_L23 结果
+
+=== 7K00_L24 cat=RNA L=102 native=AAKIRRDDEVIVLTGKDKGKRGKVK... charge@7.4=+10.03 口袋残基=54
+  [ligand/native] target=  10 mean= +7.15 dev=2.85 rec=0.431 pkt=0.441 gravy=-0.248
+  [ligand/n2] target=   8 mean= +5.39 dev=2.61 rec=0.422 pkt=0.429 gravy=-0.238
+  [ligand/p2] target=  12 mean= +9.45 dev=2.55 rec=0.434 pkt=0.448 gravy=-0.275
+  已写 7K00_L24 结果
+
+=== 7K00_L25 cat=RNA L=94 native=MFTINAEVRKEQGKGASRRLRAANK... charge@7.4=+5.10 口袋残基=37
+  [ligand/native] target=   5 mean= +3.10 dev=1.90 rec=0.340 pkt=0.454 gravy=-0.150
+  [ligand/n2] target=   3 mean= +2.13 dev=0.87 rec=0.340 pkt=0.452 gravy=-0.148
+  [ligand/p2] target=   7 mean= +4.28 dev=2.72 rec=0.344 pkt=0.454 gravy=-0.161
+  已写 7K00_L25 结果
+
+=== 7K00_L27 cat=RNA L=78 native=GSTRNGRDSEAKRLGVKRFGGESVL... charge@7.4=+8.96 口袋残基=62
+  [ligand/native] target=   9 mean= +5.95 dev=3.05 rec=0.433 pkt=0.415 gravy=-0.577
+  [ligand/n2] target=   7 mean= +4.99 dev=2.01 rec=0.429 pkt=0.411 gravy=-0.594
+  [ligand/p2] target=  11 mean= +7.27 dev=3.73 rec=0.436 pkt=0.419 gravy=-0.596
+  已写 7K00_L27 结果
+
+=== 7K00_L28 cat=RNA L=77 native=SRVCQVTGKRPVTGNNRSHALNATK... charge@7.4=+11.99 口袋残基=51
+  [ligand/native] target=  12 mean=+11.81 dev=0.19 rec=0.432 pkt=0.435 gravy=-0.596
+  [ligand/n2] target=  10 mean= +9.95 dev=0.05 rec=0.427 pkt=0.427 gravy=-0.570
+  [ligand/p2] target=  14 mean=+13.29 dev=0.71 rec=0.438 pkt=0.443 gravy=-0.610
+  已写 7K00_L28 结果
+
+=== 7K00_L29 cat=RNA L=62 native=KAKELREKSVEELNTELLNLLREQF... charge@7.4=+4.03 口袋残基=29
+  [ligand/native] target=   4 mean= +1.34 dev=2.66 rec=0.311 pkt=0.281 gravy=-0.936
+  [ligand/n2] target=   2 mean= +0.06 dev=1.94 rec=0.312 pkt=0.280 gravy=-0.949
+  [ligand/p2] target=   6 mean= +2.29 dev=3.71 rec=0.311 pkt=0.282 gravy=-0.920
+  已写 7K00_L29 结果
+
+=== 7K00_L3 cat=RNA L=208 native=MIGLVGKKVGMTRIFTEDGVSIPVT... charge@7.4=+10.11 口袋残基=119
+  [ligand/native] target=  10 mean=+13.35 dev=3.35 rec=0.434 pkt=0.404 gravy=-0.439
+  [ligand/n2] target=   8 mean=+11.00 dev=3.00 rec=0.431 pkt=0.402 gravy=-0.425
+  [ligand/p2] target=  12 mean=+16.54 dev=4.54 rec=0.435 pkt=0.406 gravy=-0.472
+  已写 7K00_L3 结果
+
+=== 7K00_L30 cat=RNA L=58 native=AKTIKITQTRSAIGRLPKHKATLLG... charge@7.4=+6.07 口袋残基=41
+  [ligand/native] target=   6 mean= +3.77 dev=2.23 rec=0.405 pkt=0.461 gravy=-0.339
+  [ligand/n2] target=   4 mean= +2.93 dev=1.07 rec=0.405 pkt=0.464 gravy=-0.316
+  [ligand/p2] target=   8 mean= +4.77 dev=3.23 rec=0.406 pkt=0.457 gravy=-0.353
+  已写 7K00_L30 结果
+
+=== 7K00_L31 cat=RNA L=60 native=MKKDIHPKYEEITASCSCGNVMKIR... charge@7.4=+4.66 口袋残基=7
+  [ligand/native] target=   5 mean= +3.01 dev=1.99 rec=0.246 pkt=0.226 gravy=-1.558
+  [ligand/n2] target=   3 mean= +1.73 dev=1.27 rec=0.240 pkt=0.211 gravy=-1.569
+  [ligand/p2] target=   7 mean= +4.51 dev=2.49 rec=0.249 pkt=0.243 gravy=-1.502
+  已写 7K00_L31 结果
+
+=== 7K00_L32 cat=RNA L=56 native=AVQQNKPTRSKRGMRRSHDALTAVT... charge@7.4=+9.14 口袋残基=40
+  [ligand/native] target=   9 mean= +8.79 dev=0.21 rec=0.345 pkt=0.348 gravy=-1.223
+  [ligand/n2] target=   7 mean= +7.22 dev=0.22 rec=0.341 pkt=0.344 gravy=-1.179
+  [ligand/p2] target=  11 mean=+10.32 dev=0.68 rec=0.350 pkt=0.354 gravy=-1.261
+  已写 7K00_L32 结果
+
+=== 7K00_L33 cat=RNA L=51 native=GIREKIKLVSSAGTGHFYTTTKNKR... charge@7.4=+8.06 口袋残基=33
+  [ligand/native] target=   8 mean= +3.99 dev=4.01 rec=0.392 pkt=0.409 gravy=-0.654
+  [ligand/n2] target=   6 mean= +3.11 dev=2.89 rec=0.384 pkt=0.396 gravy=-0.624
+  [ligand/p2] target=  10 mean= +4.79 dev=5.21 rec=0.402 pkt=0.419 gravy=-0.670
+  已写 7K00_L33 结果
+
+=== 7K00_L35 cat=RNA L=64 native=PKIKTVRGAAKRFKKTGKGGFKHKH... charge@7.4=+19.02 口袋残基=60
+  [ligand/native] target=  19 mean=+16.14 dev=2.86 rec=0.376 pkt=0.382 gravy=-0.985
+  [ligand/n2] target=  17 mean=+14.58 dev=2.42 rec=0.367 pkt=0.372 gravy=-0.889
+  [ligand/p2] target=  21 mean=+17.64 dev=3.36 rec=0.383 pkt=0.389 gravy=-1.088
+  已写 7K00_L35 结果
+
+=== 7K00_L4 cat=RNA L=201 native=MELVLKDAQSALTVSETTFGRDFNE... charge@7.4=+8.10 口袋残基=102
+  [ligand/native] target=   8 mean=+11.92 dev=3.92 rec=0.439 pkt=0.432 gravy=-0.407
+  [ligand/n2] target=   6 mean= +8.84 dev=2.84 rec=0.436 pkt=0.428 gravy=-0.395
+  [ligand/p2] target=  10 mean=+14.95 dev=4.95 rec=0.443 pkt=0.438 gravy=-0.414
+  已写 7K00_L4 结果
+
+=== 7K00_L5 cat=RNA L=177 native=AKLHDYYKDEVVKKLMTEFNYNSVM... charge@7.4=+5.91 口袋残基=78
+  [ligand/native] target=   6 mean= +7.77 dev=1.77 rec=0.449 pkt=0.517 gravy=-0.253
+  [ligand/n2] target=   4 mean= +6.07 dev=2.07 rec=0.448 pkt=0.514 gravy=-0.247
+  [ligand/p2] target=   8 mean=+10.09 dev=2.09 rec=0.454 pkt=0.523 gravy=-0.263
+  已写 7K00_L5 结果
+
+=== 7K00_L6 cat=RNA L=176 native=SRVAKAPVVVPAGVDVKINGQVITI... charge@7.4=+8.98 口袋残基=49
+  [ligand/native] target=   9 mean=+10.20 dev=1.20 rec=0.367 pkt=0.435 gravy=-0.267
+  [ligand/n2] target=   7 mean= +7.82 dev=0.82 rec=0.368 pkt=0.433 gravy=-0.248
+  [ligand/p2] target=  11 mean=+12.26 dev=1.26 rec=0.368 pkt=0.437 gravy=-0.289
+  已写 7K00_L6 结果
+
+=== 7K00_S10 cat=RNA L=98 native=RIRIRLKAFDHRLIDQATAEIVETA... charge@7.4=+3.11 口袋残基=43
+  [ligand/native] target=   3 mean= +3.69 dev=0.69 rec=0.360 pkt=0.351 gravy=-0.433
+  [ligand/n2] target=   1 mean= +2.37 dev=1.37 rec=0.357 pkt=0.344 gravy=-0.421
+  [ligand/p2] target=   5 mean= +5.49 dev=0.49 rec=0.362 pkt=0.355 gravy=-0.434
+  已写 7K00_S10 结果
+
+=== 7K00_S11 cat=RNA L=116 native=RKQVSDGVAHIHASFNNTIVTITDR... charge@7.4=+9.88 口袋残基=53
+  [ligand/native] target=  10 mean= +6.94 dev=3.06 rec=0.489 pkt=0.489 gravy=-0.536
+  [ligand/n2] target=   8 mean= +5.40 dev=2.60 rec=0.488 pkt=0.489 gravy=-0.531
+  [ligand/p2] target=  12 mean= +8.30 dev=3.70 rec=0.489 pkt=0.486 gravy=-0.527
+  已写 7K00_S11 结果
+
+=== 7K00_S12 cat=RNA L=122 native=ATVNQLVRKPRARKVAKSNVPALEA... charge@7.4=+21.65 口袋残基=88
+  [ligand/native] target=  22 mean=+24.09 dev=2.09 rec=0.424 pkt=0.454 gravy=-0.561
+  [ligand/n2] target=  20 mean=+22.34 dev=2.34 rec=0.421 pkt=0.448 gravy=-0.514
+  [ligand/p2] target=  24 mean=+25.31 dev=1.31 rec=0.428 pkt=0.457 gravy=-0.603
+  已写 7K00_S12 结果
+
+=== 7K00_S13 cat=RNA L=115 native=ARIAGINIPDHKHAVIALTSIYGVG... charge@7.4=+11.99 口袋残基=65
+  [ligand/native] target=  12 mean= +9.81 dev=2.19 rec=0.324 pkt=0.338 gravy=-0.598
+  [ligand/n2] target=  10 mean= +7.47 dev=2.53 rec=0.321 pkt=0.335 gravy=-0.580
+  [ligand/p2] target=  14 mean=+11.82 dev=2.18 rec=0.330 pkt=0.347 gravy=-0.639
+  已写 7K00_S13 结果
+
+=== 7K00_S14 cat=RNA L=100 native=AKQSMKAREVKRVALADKYFAKRAE... charge@7.4=+14.92 口袋残基=63
+  [ligand/native] target=  15 mean=+14.78 dev=0.22 rec=0.357 pkt=0.326 gravy=-1.116
+  [ligand/n2] target=  13 mean=+12.57 dev=0.43 rec=0.350 pkt=0.316 gravy=-1.071
+  [ligand/p2] target=  17 mean=+17.49 dev=0.49 rec=0.365 pkt=0.337 gravy=-1.191
+  已写 7K00_S14 结果
+
+=== 7K00_S15 cat=RNA L=88 native=SLSTEATAKIVSEFGRDANDTGSTE... charge@7.4=+7.18 口袋残基=58
+  [ligand/native] target=   7 mean= +8.76 dev=1.76 rec=0.409 pkt=0.477 gravy=-0.986
+  [ligand/n2] target=   5 mean= +7.18 dev=2.18 rec=0.415 pkt=0.481 gravy=-0.969
+  [ligand/p2] target=   9 mean=+10.52 dev=1.52 rec=0.409 pkt=0.479 gravy=-1.023
+  已写 7K00_S15 结果
+
+=== 7K00_S16 cat=RNA L=81 native=MVTIRLARHGAKKRPFYQVVVADSR... charge@7.4=+6.07 口袋残基=62
+  [ligand/native] target=   6 mean= +6.10 dev=0.10 rec=0.418 pkt=0.421 gravy=-0.522
+  [ligand/n2] target=   4 mean= +5.04 dev=1.04 rec=0.415 pkt=0.416 gravy=-0.528
+  [ligand/p2] target=   8 mean= +7.34 dev=0.66 rec=0.422 pkt=0.427 gravy=-0.547
+  已写 7K00_S16 结果
+
+=== 7K00_S17 cat=RNA L=79 native=KIRTLQGRVVSDKMEKSIVVAIERF... charge@7.4=+6.88 口袋残基=46
+  [ligand/native] target=   7 mean= +6.02 dev=0.98 rec=0.382 pkt=0.375 gravy=-0.370
+  [ligand/n2] target=   5 mean= +5.16 dev=0.16 rec=0.375 pkt=0.365 gravy=-0.350
+  [ligand/p2] target=   9 mean= +7.38 dev=1.62 rec=0.388 pkt=0.383 gravy=-0.402
+  已写 7K00_S17 结果
+
+=== 7K00_S18 cat=RNA L=66 native=KFCRFTAEGVQEIDYKDIATLKNYI... charge@7.4=+7.91 口袋残基=36
+  [ligand/native] target=   8 mean= +6.89 dev=1.11 rec=0.339 pkt=0.330 gravy=-0.651
+  [ligand/n2] target=   6 mean= +5.51 dev=0.49 rec=0.337 pkt=0.326 gravy=-0.660
+  [ligand/p2] target=  10 mean= +8.05 dev=1.95 rec=0.340 pkt=0.330 gravy=-0.661
+  已写 7K00_S18 结果
+
+=== 7K00_S19 cat=RNA L=84 native=PRSLKKGPFIDLHLLKKVEKAVESG... charge@7.4=+8.18 口袋残基=46
+  [ligand/native] target=   8 mean= +5.69 dev=2.31 rec=0.451 pkt=0.401 gravy=-0.318
+  [ligand/n2] target=   6 mean= +4.30 dev=1.70 rec=0.445 pkt=0.393 gravy=-0.291
+  [ligand/p2] target=  10 mean= +7.30 dev=2.70 rec=0.453 pkt=0.408 gravy=-0.311
+  已写 7K00_S19 结果
+
+=== 7K00_S2 cat=RNA L=224 native=VSMRDMLKAGVHFGHQTRYWNPKMK... charge@7.4=+4.11 口袋残基=40
+  [ligand/native] target=   4 mean= +4.25 dev=0.25 rec=0.382 pkt=0.434 gravy=-0.289
+  [ligand/n2] target=   2 mean= +2.78 dev=0.78 rec=0.380 pkt=0.428 gravy=-0.272
+  [ligand/p2] target=   6 mean= +5.91 dev=0.09 rec=0.381 pkt=0.437 gravy=-0.295
+  已写 7K00_S2 结果
+
+=== 7K00_S20 cat=RNA L=86 native=ANIKSAKKRAIQSEKARKHNASRRS... charge@7.4=+16.10 口袋残基=62
+  [ligand/native] target=  16 mean=+15.81 dev=0.19 rec=0.370 pkt=0.359 gravy=-0.633
+  [ligand/n2] target=  14 mean=+13.49 dev=0.51 rec=0.363 pkt=0.351 gravy=-0.529
+  [ligand/p2] target=  18 mean=+18.20 dev=0.20 rec=0.367 pkt=0.359 gravy=-0.752
+  已写 7K00_S20 结果
+
+=== 7K00_S21 cat=RNA L=70 native=PVIKVRENEPFDVALRRFKRSCEKA... charge@7.4=+13.92 口袋残基=26
+  [ligand/native] target=  14 mean= +1.14 dev=12.86 rec=0.209 pkt=0.169 gravy=-0.491
+  [ligand/n2] target=  12 mean= +0.38 dev=11.62 rec=0.206 pkt=0.166 gravy=-0.417
+  [ligand/p2] target=  16 mean= +2.37 dev=13.63 rec=0.213 pkt=0.176 gravy=-0.566
+  已写 7K00_S21 结果
+
+=== 7K00_S3 cat=RNA L=206 native=GQKVHPNGIRLGIVKPWNSTWFANT... charge@7.4=+14.14 口袋残基=55
+  [ligand/native] target=  14 mean=+17.49 dev=3.49 rec=0.403 pkt=0.447 gravy=-0.353
+  [ligand/n2] target=  12 mean=+15.25 dev=3.25 rec=0.397 pkt=0.440 gravy=-0.330
+  [ligand/p2] target=  16 mean=+19.57 dev=3.57 rec=0.407 pkt=0.453 gravy=-0.382
+  已写 7K00_S3 结果
+
+=== 7K00_S4 cat=RNA L=205 native=ARYLGPKLKLSRREGTDLFLKSGVR... charge@7.4=+16.98 口袋残基=93
+  [ligand/native] target=  17 mean=+15.92 dev=1.08 rec=0.401 pkt=0.429 gravy=-0.483
+  [ligand/n2] target=  15 mean=+14.21 dev=0.79 rec=0.400 pkt=0.429 gravy=-0.465
+  [ligand/p2] target=  19 mean=+17.38 dev=1.62 rec=0.402 pkt=0.428 gravy=-0.497
+  已写 7K00_S4 结果
+
+=== 7K00_S5 cat=RNA L=156 native=ELQEKLIAVNRVSKTVKGGRIFSFT... charge@7.4=+8.11 口袋残基=62
+  [ligand/native] target=   8 mean= +6.04 dev=1.96 rec=0.469 pkt=0.489 gravy=-0.112
+  [ligand/n2] target=   6 mean= +4.30 dev=1.70 rec=0.469 pkt=0.490 gravy=-0.109
+  [ligand/p2] target=  10 mean= +7.94 dev=2.06 rec=0.472 pkt=0.497 gravy=-0.135
+  已写 7K00_S5 结果
+
+=== 7K00_S6 cat=RNA L=103 native=MRHYEIVFMVHPDQSEQVPGMIERY... charge@7.4=-1.78 口袋残基=18
+  [ligand/native] target=  -2 mean= -0.10 dev=1.90 rec=0.320 pkt=0.311 gravy=-0.129
+  [ligand/n2] target=  -4 mean= -1.43 dev=2.57 rec=0.318 pkt=0.309 gravy=-0.149
+  [ligand/p2] target=   0 mean= +1.45 dev=1.45 rec=0.321 pkt=0.309 gravy=-0.130
+  已写 7K00_S6 结果
+
+=== 7K00_S7 cat=RNA L=153 native=PRRRVIGQRKILPDPKFGSELLAKF... charge@7.4=+11.07 口袋残基=54
+  [ligand/native] target=  11 mean=+10.84 dev=0.16 rec=0.369 pkt=0.336 gravy=-0.352
+  [ligand/n2] target=   9 mean= +9.06 dev=0.06 rec=0.367 pkt=0.331 gravy=-0.334
+  [ligand/p2] target=  13 mean=+12.90 dev=0.10 rec=0.372 pkt=0.344 gravy=-0.394
+  已写 7K00_S7 结果
+
+=== 7K00_S8 cat=RNA L=129 native=SMQDPIADMLTRIRNGQAANKAAVT... charge@7.4=+4.88 口袋残基=64
+  [ligand/native] target=   5 mean= +4.48 dev=0.52 rec=0.429 pkt=0.453 gravy=-0.084
+  [ligand/n2] target=   3 mean= +2.44 dev=0.56 rec=0.425 pkt=0.448 gravy=-0.089
+  [ligand/p2] target=   7 mean= +6.47 dev=0.53 rec=0.434 pkt=0.458 gravy=-0.090
+  已写 7K00_S8 结果
+
+=== 7K00_S9 cat=RNA L=127 native=NQYYGTGRRKSSAARVFIKPGNGKI... charge@7.4=+17.02 口袋残基=66
+  [ligand/native] target=  17 mean=+13.58 dev=3.42 rec=0.448 pkt=0.395 gravy=-0.468
+  [ligand/n2] target=  15 mean=+11.86 dev=3.14 rec=0.446 pkt=0.391 gravy=-0.442
+  [ligand/p2] target=  19 mean=+15.06 dev=3.94 rec=0.451 pkt=0.402 gravy=-0.503
+  已写 7K00_S9 结果
+
+=== 全部完成 ===

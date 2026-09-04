@@ -1,0 +1,40 @@
+{
+  "pdb": "7K00_L35",
+  "cat": "RNA",
+  "L": 64,
+  "mode": "ligand",
+  "native": "PKIKTVRGAAKRFKKTGKGGFKHKHANLRHILTKKATKRKRHLRPKAMVSKGDLGLVIACLPYA",
+  "native_charge": 19.02,
+  "arms": {
+    "native": {
+      "target": 19,
+      "mean_charge": 16.14,
+      "std_charge": 2.54,
+      "dev": 2.86,
+      "recovery": 0.376,
+      "pocket_recovery": 0.382,
+      "gravy_mean": -0.985,
+      "n_generated": 50
+    },
+    "n2": {
+      "target": 17,
+      "mean_charge": 14.58,
+      "std_charge": 2.81,
+      "dev": 2.42,
+      "recovery": 0.367,
+      "pocket_recovery": 0.372,
+      "gravy_mean": -0.889,
+      "n_generated": 50
+    },
+    "p2": {
+      "target": 21,
+      "mean_charge": 17.64,
+      "std_charge": 2.57,
+      "dev": 3.36,
+      "recovery": 0.383,
+      "pocket_recovery": 0.389,
+      "gravy_mean": -1.088,
+      "n_generated": 50
+    }
+  }
+}

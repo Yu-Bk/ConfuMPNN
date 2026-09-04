@@ -1,0 +1,40 @@
+{
+  "pdb": "7K00_S19",
+  "cat": "RNA",
+  "L": 84,
+  "mode": "ligand",
+  "native": "PRSLKKGPFIDLHLLKKVEKAVESGDKKPLRTWSRRSTIFPNMIGLTIAVHNGRQHVPVFVTDEMVGHKLGEFAPTRTYRGHAA",
+  "native_charge": 8.18,
+  "arms": {
+    "native": {
+      "target": 8,
+      "mean_charge": 5.69,
+      "std_charge": 2.83,
+      "dev": 2.31,
+      "recovery": 0.451,
+      "pocket_recovery": 0.401,
+      "gravy_mean": -0.318,
+      "n_generated": 50
+    },
+    "n2": {
+      "target": 6,
+      "mean_charge": 4.3,
+      "std_charge": 2.91,
+      "dev": 1.7,
+      "recovery": 0.445,
+      "pocket_recovery": 0.393,
+      "gravy_mean": -0.291,
+      "n_generated": 50
+    },
+    "p2": {
+      "target": 10,
+      "mean_charge": 7.3,
+      "std_charge": 2.94,
+      "dev": 2.7,
+      "recovery": 0.453,
+      "pocket_recovery": 0.408,
+      "gravy_mean": -0.311,
+      "n_generated": 50
+    }
+  }
+}
