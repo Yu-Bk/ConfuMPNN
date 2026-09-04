@@ -1,0 +1,4 @@
+########## v12.2 valcurve ##########
+抽样域：base=7 supp=23 合计=30
+parse 成功 30/30
+backbone 已加载: mompnn_temberture_tm_esm_6_4_4_b01.ckpt

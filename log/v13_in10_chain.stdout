@@ -1,0 +1,469 @@
+[18:23:36] ① 配体诊断启动（cuda:6）...
+[19:07:43] ① 诊断完成：18 proteins
+[19:07:43] ② 建校准表...
+已写 output/charge_calibration_v13_ligand_in10.json
+global slope=1.285  intercept=6.825  (n_point=216)
+per_protein: 18 个蛋白
+[19:07:43] ② 校准表完成
+[19:07:43] ③ 泛化采样 n50（cuda:6）...
+[19:29:03] ③ 采样完成：10/10
+[19:29:04] ④ 组成分析...
+[19:29:04] ④ 组成完成
+[19:29:04] ⑤ 回折（cuda:6，预计 3-5h）...
+[21:23:46] ⑤ ESMFold 完成（50 plddt）
+[21:23:46] ⑤ TM-score...
+[21:31:46] ⑤ TM-score 完成（50/50）
+[21:31:46] ⑥ 统计（H2/GRAVY/RMSD）...
+[21:31:48] ⑥ 统计完成
+[21:31:48] ⑦ PROPKA 复核...
+PROPKA 复核: 目录 folds（51 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge__0_42.pdb                  470    0.421    3.043
+seed_2000_arm_native_target__0_charge_-4_25.pdb 470   -4.248   -3.215
+seed_2001_arm_native_target__0_charge_-5_05.pdb 470   -5.055   -4.907
+seed_2002_arm_native_target__0_charge_-5_98.pdb 470   -5.976   -4.464
+seed_2003_arm_native_target__0_charge__9_59.pdb 470    9.595   10.139
+seed_2004_arm_native_target__0_charge__1_64.pdb 470    1.636    1.986
+seed_2005_arm_native_target__0_charge_-17_98.pdb 470  -17.977  -17.258
+seed_2006_arm_native_target__0_charge_-3_02.pdb 470   -3.019   -1.602
+seed_2007_arm_native_target__0_charge_-1_14.pdb 470   -1.142   -0.756
+seed_2008_arm_native_target__0_charge__1_76.pdb 470    1.756    3.237
+seed_2009_arm_native_target__0_charge_-2_13.pdb 470   -2.133   -1.828
+seed_2010_arm_native_target__0_charge_-5_29.pdb 470   -5.286   -4.829
+seed_2011_arm_native_target__0_charge__13_45.pdb 470   13.448   14.133
+seed_2012_arm_native_target__0_charge_-7_09.pdb 470   -7.094   -6.433
+seed_2013_arm_native_target__0_charge_-5_36.pdb 470   -5.365   -4.913
+seed_2014_arm_native_target__0_charge_-2_23.pdb 470   -2.235   -1.464
+seed_2015_arm_native_target__0_charge__4_90.pdb 470    4.904    7.018
+seed_2016_arm_native_target__0_charge__0_87.pdb 470    0.867    3.096
+seed_2017_arm_native_target__0_charge_-13_24.pdb 470   -13.24  -12.113
+seed_2018_arm_native_target__0_charge_-8_97.pdb 470   -8.971   -7.579
+seed_2019_arm_native_target__0_charge_-5_58.pdb 470   -5.583   -4.071
+seed_2020_arm_native_target__0_charge_-10_53.pdb 470  -10.532   -9.731
+seed_2021_arm_native_target__0_charge_-6_17.pdb 470   -6.165   -4.879
+seed_2022_arm_native_target__0_charge_-17_16.pdb 470  -17.158  -16.641
+seed_2023_arm_native_target__0_charge__1_86.pdb 470    1.862    2.595
+seed_2024_arm_native_target__0_charge_-3_17.pdb 470    -3.17   -2.295
+seed_2025_arm_native_target__0_charge__6_75.pdb 470    6.751    7.273
+seed_2026_arm_native_target__0_charge_-5_28.pdb 470   -5.284   -4.141
+seed_2027_arm_native_target__0_charge__3_77.pdb 470    3.774     3.93
+seed_2028_arm_native_target__0_charge__0_83.pdb 470    0.826    2.939
+seed_2029_arm_native_target__0_charge_-3_51.pdb 470   -3.508   -0.719
+seed_2030_arm_native_target__0_charge__1_89.pdb 470    1.895    3.066
+seed_2031_arm_native_target__0_charge__1_86.pdb 470    1.863    2.538
+seed_2032_arm_native_target__0_charge_-2_10.pdb 470   -2.101   -1.312
+seed_2033_arm_native_target__0_charge__0_67.pdb 470    0.673    2.014
+seed_2034_arm_native_target__0_charge_-4_17.pdb 470   -4.173   -3.718
+seed_2035_arm_native_target__0_charge__1_75.pdb 470    1.748    2.132
+seed_2036_arm_native_target__0_charge_-3_14.pdb 470   -3.136   -2.226
+seed_2037_arm_native_target__0_charge_-13_09.pdb 470   -13.09  -12.724
+seed_2038_arm_native_target__0_charge_-6_28.pdb 470   -6.283   -3.867
+seed_2039_arm_native_target__0_charge_-0_22.pdb 470   -0.216    1.125
+seed_2040_arm_native_target__0_charge__9_89.pdb 470    9.895   10.746
+seed_2041_arm_native_target__0_charge__7_94.pdb 470    7.939    8.849
+seed_2042_arm_native_target__0_charge_-6_10.pdb 470   -6.095     -5.6
+seed_2043_arm_native_target__0_charge__2_60.pdb 470    2.597    3.714
+seed_2044_arm_native_target__0_charge_-10_31.pdb 470  -10.312   -9.647
+seed_2045_arm_native_target__0_charge_-17_32.pdb 470  -17.316  -16.392
+seed_2046_arm_native_target__0_charge__1_64.pdb 470    1.639    2.076
+seed_2047_arm_native_target__0_charge__6_67.pdb 470    6.666    7.137
+seed_2048_arm_native_target__0_charge_-9_21.pdb 470   -9.209   -8.651
+seed_2049_arm_native_target__0_charge_-3_36.pdb 470   -3.357   -1.201
+
+Q_phys 均值 = -1.498 ± 6.858  (Q_design 均值 = -2.503)
+H4 判定: |Q_phys − target| = 1.918 → PASS（阈值 2.0，与 H2 一致）
+已写 output/propka_v13_ligand_in10/1BJ4_native.json
+PROPKA 复核: 目录 folds（51 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge__0_42.pdb                  470    0.421    3.043
+seed_2000_arm_n8_target_-8_charge_-8_36.pdb 470   -8.358   -7.351
+seed_2001_arm_n8_target_-8_charge_-15_04.pdb 470  -15.044  -14.893
+seed_2002_arm_n8_target_-8_charge_-11_09.pdb 470  -11.092  -11.042
+seed_2003_arm_n8_target_-8_charge_-10_28.pdb 470  -10.283   -8.806
+seed_2004_arm_n8_target_-8_charge_-7_36.pdb 470   -7.362   -6.963
+seed_2005_arm_n8_target_-8_charge_-26_97.pdb 470   -26.97  -26.175
+seed_2006_arm_n8_target_-8_charge_-18_12.pdb 470  -18.115  -16.727
+seed_2007_arm_n8_target_-8_charge_-5_25.pdb 470   -5.246   -5.021
+seed_2008_arm_n8_target_-8_charge_-7_12.pdb 470   -7.123   -4.807
+seed_2009_arm_n8_target_-8_charge_-5_24.pdb 470   -5.241   -4.852
+seed_2010_arm_n8_target_-8_charge_-7_40.pdb 470   -7.399   -5.791
+seed_2011_arm_n8_target_-8_charge__0_49.pdb 470    0.492    1.115
+seed_2012_arm_n8_target_-8_charge_-19_16.pdb 470  -19.158  -17.297
+seed_2013_arm_n8_target_-8_charge_-13_32.pdb 470  -13.321  -12.713
+seed_2014_arm_n8_target_-8_charge_-15_04.pdb 470   -15.04  -14.371
+seed_2015_arm_n8_target_-8_charge_-4_28.pdb 470   -4.277   -1.596
+seed_2016_arm_n8_target_-8_charge_-17_27.pdb 470  -17.268  -14.679
+seed_2017_arm_n8_target_-8_charge_-21_35.pdb 470  -21.346  -20.042
+seed_2018_arm_n8_target_-8_charge_-18_93.pdb 470  -18.931  -16.662
+seed_2019_arm_n8_target_-8_charge_-21_54.pdb 470  -21.539  -19.455
+seed_2020_arm_n8_target_-8_charge_-18_53.pdb 470  -18.525  -17.772
+seed_2021_arm_n8_target_-8_charge_-16_30.pdb 470  -16.305  -15.836
+seed_2022_arm_n8_target_-8_charge_-28_11.pdb 470  -28.111  -28.005
+seed_2023_arm_n8_target_-8_charge_-9_20.pdb 470   -9.205   -8.415
+seed_2024_arm_n8_target_-8_charge_-14_13.pdb 470  -14.126  -13.271
+seed_2025_arm_n8_target_-8_charge_-2_36.pdb 470   -2.357   -1.582
+seed_2026_arm_n8_target_-8_charge_-13_28.pdb 470  -13.277  -12.082
+seed_2027_arm_n8_target_-8_charge_-8_18.pdb 470    -8.18   -7.958
+seed_2028_arm_n8_target_-8_charge_-7_16.pdb 470   -7.164   -4.957
+seed_2029_arm_n8_target_-8_charge_-10_51.pdb 470  -10.506   -8.818
+seed_2030_arm_n8_target_-8_charge_-9_21.pdb 470   -9.207   -7.886
+seed_2031_arm_n8_target_-8_charge_-4_13.pdb 470   -4.135   -3.401
+seed_2032_arm_n8_target_-8_charge_-6_95.pdb 470   -6.949   -6.033
+seed_2033_arm_n8_target_-8_charge_-8_32.pdb 470    -8.32   -6.873
+seed_2034_arm_n8_target_-8_charge_-8_25.pdb 470    -8.25   -7.853
+seed_2035_arm_n8_target_-8_charge_-5_25.pdb 470   -5.248   -4.815
+seed_2036_arm_n8_target_-8_charge_-18_20.pdb 470  -18.199  -17.158
+seed_2037_arm_n8_target_-8_charge_-16_31.pdb 470  -16.311  -15.697
+seed_2038_arm_n8_target_-8_charge_-10_39.pdb 470  -10.392   -8.821
+seed_2039_arm_n8_target_-8_charge_-12_50.pdb 470  -12.503  -11.382
+seed_2040_arm_n8_target_-8_charge_-0_10.pdb 470   -0.099    1.752
+seed_2041_arm_n8_target_-8_charge__2_94.pdb 470    2.944    3.475
+seed_2042_arm_n8_target_-8_charge_-10_09.pdb 470  -10.092   -8.499
+seed_2043_arm_n8_target_-8_charge_-12_32.pdb 470  -12.319  -10.447
+seed_2044_arm_n8_target_-8_charge_-19_53.pdb 470  -19.531  -18.066
+seed_2045_arm_n8_target_-8_charge_-20_43.pdb 470  -20.426  -20.719
+seed_2046_arm_n8_target_-8_charge_-10_31.pdb 470  -10.314   -9.241
+seed_2047_arm_n8_target_-8_charge_-3_33.pdb 470   -3.327   -2.872
+seed_2048_arm_n8_target_-8_charge_-21_31.pdb 470  -21.307  -19.527
+seed_2049_arm_n8_target_-8_charge_-6_36.pdb 470   -6.357   -4.248
+
+Q_phys 均值 = -10.237 ± 7.072  (Q_design 均值 = -11.378)
+H4 判定: |Q_phys − target| = 2.237 → FAIL（阈值 2.0，与 H2 一致）
+已写 output/propka_v13_ligand_in10/1BJ4_n8.json
+PROPKA 复核: 目录 folds（51 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge__10_02.pdb                 237   10.022   10.569
+seed_2000_arm_native_target__10_charge__11_94.pdb 237   11.941   12.065
+seed_2001_arm_native_target__10_charge__12_98.pdb 237   12.976   13.023
+seed_2002_arm_native_target__10_charge__11_93.pdb 237    11.93   11.995
+seed_2003_arm_native_target__10_charge__7_86.pdb 237     7.86    8.111
+seed_2004_arm_native_target__10_charge__5_90.pdb 237    5.902    6.989
+seed_2005_arm_native_target__10_charge_-2_17.pdb 237   -2.166   -1.925
+seed_2006_arm_native_target__10_charge__9_78.pdb 237    9.785    10.08
+seed_2007_arm_native_target__10_charge__9_79.pdb 237    9.789   10.003
+seed_2008_arm_native_target__10_charge__12_89.pdb 237   12.893   13.691
+seed_2009_arm_native_target__10_charge__16_89.pdb 237   16.892   17.094
+seed_2010_arm_native_target__10_charge__5_87.pdb 237    5.874      7.2
+seed_2011_arm_native_target__10_charge__3_90.pdb 237    3.904    4.024
+seed_2012_arm_native_target__10_charge__11_90.pdb 237   11.902   12.003
+seed_2013_arm_native_target__10_charge__12_74.pdb 237   12.744   12.972
+seed_2014_arm_native_target__10_charge__4_99.pdb 237    4.986    5.036
+seed_2015_arm_native_target__10_charge_-1_23.pdb 237   -1.234   -0.743
+seed_2016_arm_native_target__10_charge__3_72.pdb 237    3.719    5.122
+seed_2017_arm_native_target__10_charge_-2_09.pdb 237   -2.089   -0.969
+seed_2018_arm_native_target__10_charge__8_94.pdb 237    8.936    9.015
+seed_2019_arm_native_target__10_charge__13_86.pdb 237   13.863   14.211
+seed_2020_arm_native_target__10_charge__5_76.pdb 237    5.758    6.075
+seed_2021_arm_native_target__10_charge_-0_27.pdb 237   -0.274    0.076
+seed_2022_arm_native_target__10_charge_-1_13.pdb 237   -1.125   -0.783
+seed_2023_arm_native_target__10_charge__4_87.pdb 237     4.87    6.424
+seed_2024_arm_native_target__10_charge__2_95.pdb 237    2.947    3.012
+seed_2025_arm_native_target__10_charge__11_75.pdb 237   11.749    11.97
+seed_2026_arm_native_target__10_charge__2_90.pdb 237    2.903    3.187
+seed_2027_arm_native_target__10_charge_-6_31.pdb 237   -6.314   -5.954
+seed_2028_arm_native_target__10_charge__4_02.pdb 237    4.021    4.271
+seed_2029_arm_native_target__10_charge_-0_09.pdb 237   -0.092    0.992
+seed_2030_arm_native_target__10_charge__7_87.pdb 237    7.869    8.142
+seed_2031_arm_native_target__10_charge__8_78.pdb 237    8.782    9.103
+seed_2032_arm_native_target__10_charge__10_75.pdb 237   10.755   11.984
+seed_2033_arm_native_target__10_charge__4_05.pdb 237    4.052     4.26
+seed_2034_arm_native_target__10_charge_-0_13.pdb 237   -0.125   -0.485
+seed_2035_arm_native_target__10_charge__9_86.pdb 237    9.858    9.952
+seed_2036_arm_native_target__10_charge__5_93.pdb 237    5.933    6.071
+seed_2037_arm_native_target__10_charge__6_90.pdb 237    6.901    7.003
+seed_2038_arm_native_target__10_charge__5_67.pdb 237    5.667    5.154
+seed_2039_arm_native_target__10_charge_-1_05.pdb 237   -1.048    1.066
+seed_2040_arm_native_target__10_charge__9_90.pdb 237    9.897   10.087
+seed_2041_arm_native_target__10_charge__8_93.pdb 237    8.933    9.099
+seed_2042_arm_native_target__10_charge__7_94.pdb 237    7.941    9.252
+seed_2043_arm_native_target__10_charge__15_93.pdb 237    15.93   16.073
+seed_2044_arm_native_target__10_charge_-10_27.pdb 237  -10.267   -8.891
+seed_2045_arm_native_target__10_charge__8_87.pdb 237    8.867   10.569
+seed_2046_arm_native_target__10_charge__8_90.pdb 237    8.902    9.046
+seed_2047_arm_native_target__10_charge__12_94.pdb 237   12.944    14.02
+seed_2048_arm_native_target__10_charge__4_84.pdb 237    4.836    6.104
+seed_2049_arm_native_target__10_charge__12_01.pdb 237   12.014   12.257
+
+Q_phys 均值 = 7.033 ± 5.547  (Q_design 均值 = 6.539)
+H4 判定: |Q_phys − target| = 2.987 → FAIL（阈值 2.0，与 H2 一致）
+已写 output/propka_v13_ligand_in10/21KL_A_native.json
+PROPKA 复核: 目录 folds（51 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge__10_02.pdb                 237   10.022   10.569
+seed_2000_arm_n8_target__2_charge_-1_05.pdb 237   -1.054   -0.912
+seed_2001_arm_n8_target__2_charge_-1_23.pdb 237   -1.235    -0.97
+seed_2002_arm_n8_target__2_charge_-0_06.pdb 237   -0.061   -0.951
+seed_2003_arm_n8_target__2_charge__4_87.pdb 237    4.866    4.988
+seed_2004_arm_n8_target__2_charge_-4_20.pdb 237   -4.202   -2.994
+seed_2005_arm_n8_target__2_charge_-6_05.pdb 237    -6.05   -4.917
+seed_2006_arm_n8_target__2_charge_-4_20.pdb 237   -4.205   -3.948
+seed_2007_arm_n8_target__2_charge__0_64.pdb 237    0.638    0.946
+seed_2008_arm_n8_target__2_charge__2_68.pdb 237    2.679    3.752
+seed_2009_arm_n8_target__2_charge__2_94.pdb 237    2.943    3.267
+seed_2010_arm_n8_target__2_charge_-9_16.pdb 237   -9.155   -8.572
+seed_2011_arm_n8_target__2_charge_-3_09.pdb 237   -3.092   -2.976
+seed_2012_arm_n8_target__2_charge__4_83.pdb 237    4.833    5.109
+seed_2013_arm_n8_target__2_charge_-0_32.pdb 237    -0.32   -0.444
+seed_2014_arm_n8_target__2_charge_-8_23.pdb 237   -8.228   -8.853
+seed_2015_arm_n8_target__2_charge_-10_34.pdb 237  -10.337    -8.68
+seed_2016_arm_n8_target__2_charge_-4_28.pdb 237   -4.276   -2.755
+seed_2017_arm_n8_target__2_charge_-7_17.pdb 237   -7.168   -6.927
+seed_2018_arm_n8_target__2_charge_-6_16.pdb 237   -6.158   -5.934
+seed_2019_arm_n8_target__2_charge__3_72.pdb 237    3.717     4.04
+seed_2020_arm_n8_target__2_charge_-5_27.pdb 237   -5.271   -3.935
+seed_2021_arm_n8_target__2_charge_-11_11.pdb 237  -11.113  -10.558
+seed_2022_arm_n8_target__2_charge_-7_16.pdb 237   -7.158   -6.848
+seed_2023_arm_n8_target__2_charge_-8_23.pdb 237   -8.235   -6.738
+seed_2024_arm_n8_target__2_charge_-9_16.pdb 237   -9.162   -8.954
+seed_2025_arm_n8_target__2_charge_-6_17.pdb 237   -6.165   -6.865
+seed_2026_arm_n8_target__2_charge_-6_13.pdb 237   -6.131   -3.988
+seed_2027_arm_n8_target__2_charge_-14_31.pdb 237  -14.306  -13.982
+seed_2028_arm_n8_target__2_charge__1_98.pdb 237    1.984    2.117
+seed_2029_arm_n8_target__2_charge_-10_24.pdb 237  -10.238   -9.937
+seed_2030_arm_n8_target__2_charge_-3_35.pdb 237   -3.349   -2.683
+seed_2031_arm_n8_target__2_charge_-3_21.pdb 237   -3.212   -1.985
+seed_2032_arm_n8_target__2_charge__0_83.pdb 237    0.833    2.059
+seed_2033_arm_n8_target__2_charge_-0_05.pdb 237   -0.052    0.669
+seed_2034_arm_n8_target__2_charge_-13_16.pdb 237  -13.156  -12.895
+seed_2035_arm_n8_target__2_charge__1_90.pdb 237    1.902    2.061
+seed_2036_arm_n8_target__2_charge_-3_28.pdb 237   -3.281   -3.691
+seed_2037_arm_n8_target__2_charge_-1_32.pdb 237   -1.319   -0.935
+seed_2038_arm_n8_target__2_charge__2_71.pdb 237    2.711    2.159
+seed_2039_arm_n8_target__2_charge_-2_09.pdb 237   -2.087     0.08
+seed_2040_arm_n8_target__2_charge__1_90.pdb 237    1.901    2.031
+seed_2041_arm_n8_target__2_charge_-1_06.pdb 237   -1.061   -0.876
+seed_2042_arm_n8_target__2_charge_-6_24.pdb 237   -6.243   -5.716
+seed_2043_arm_n8_target__2_charge_-0_18.pdb 237   -0.179    0.084
+seed_2044_arm_n8_target__2_charge_-18_48.pdb 237  -18.485  -17.814
+seed_2045_arm_n8_target__2_charge_-2_13.pdb 237   -2.127   -1.723
+seed_2046_arm_n8_target__2_charge_-7_20.pdb 237   -7.201   -6.837
+seed_2047_arm_n8_target__2_charge_-2_08.pdb 237   -2.084   -1.652
+seed_2048_arm_n8_target__2_charge_-15_26.pdb 237  -15.262  -14.587
+seed_2049_arm_n8_target__2_charge__4_02.pdb 237     4.02    6.276
+
+Q_phys 均值 = -2.997 ± 5.69  (Q_design 均值 = -3.517)
+H4 判定: |Q_phys − target| = 4.997 → FAIL（阈值 2.0，与 H2 一致）
+已写 output/propka_v13_ligand_in10/21KL_A_n8.json
+PROPKA 复核: 目录 folds（51 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge__7_94.pdb                  153    7.945    8.077
+seed_2000_arm_native_target__8_charge__9_98.pdb 153    9.981   10.988
+seed_2001_arm_native_target__8_charge__12_98.pdb 153   12.981    12.96
+seed_2002_arm_native_target__8_charge__12_98.pdb 153   12.978   12.975
+seed_2003_arm_native_target__8_charge__12_98.pdb 153   12.982   12.975
+seed_2004_arm_native_target__8_charge__0_87.pdb 153    0.875    0.993
+seed_2005_arm_native_target__8_charge__4_98.pdb 153    4.981    5.934
+seed_2006_arm_native_target__8_charge__0_88.pdb 153    0.877    1.018
+seed_2007_arm_native_target__8_charge__7_87.pdb 153    7.869    7.975
+seed_2008_arm_native_target__8_charge__10_87.pdb 153    10.87   10.987
+seed_2009_arm_native_target__8_charge__2_88.pdb 153    2.879    3.008
+seed_2010_arm_native_target__8_charge_-3_01.pdb 153   -3.009     -2.0
+seed_2011_arm_native_target__8_charge__5_99.pdb 153    5.987    5.983
+seed_2012_arm_native_target__8_charge__4_88.pdb 153    4.881    5.001
+seed_2013_arm_native_target__8_charge__9_86.pdb 153    9.859    9.978
+seed_2014_arm_native_target__8_charge__6_65.pdb 153    6.652    6.952
+seed_2015_arm_native_target__8_charge__8_87.pdb 153    8.871    10.97
+seed_2016_arm_native_target__8_charge__11_91.pdb 153   11.909   11.988
+seed_2017_arm_native_target__8_charge__9_76.pdb 153     9.76    9.932
+seed_2018_arm_native_target__8_charge__13_90.pdb 153   13.901   13.984
+seed_2019_arm_native_target__8_charge__9_91.pdb 153    9.908    9.135
+seed_2020_arm_native_target__8_charge__2_99.pdb 153    2.987    2.985
+seed_2021_arm_native_target__8_charge__6_88.pdb 153    6.876     7.98
+seed_2022_arm_native_target__8_charge_-0_12.pdb 153   -0.125   -0.001
+seed_2023_arm_native_target__8_charge__7_87.pdb 153    7.872    7.988
+seed_2024_arm_native_target__8_charge__6_02.pdb 153    6.016    5.245
+seed_2025_arm_native_target__8_charge__15_75.pdb 153   15.754   15.949
+seed_2026_arm_native_target__8_charge__4_91.pdb 153    4.911     4.23
+seed_2027_arm_native_target__8_charge__5_80.pdb 153    5.803    5.497
+seed_2028_arm_native_target__8_charge__9_99.pdb 153    9.991    9.989
+seed_2029_arm_native_target__8_charge__11_98.pdb 153   11.981    11.98
+seed_2030_arm_native_target__8_charge__13_98.pdb 153   13.978   12.969
+seed_2031_arm_native_target__8_charge__10_02.pdb 153   10.022   12.066
+seed_2032_arm_native_target__8_charge__6_87.pdb 153    6.874    7.953
+seed_2033_arm_native_target__8_charge__6_99.pdb 153    6.988    5.991
+seed_2034_arm_native_target__8_charge__11_02.pdb 153   11.018   11.048
+seed_2035_arm_native_target__8_charge__11_02.pdb 153   11.022   10.006
+seed_2036_arm_native_target__8_charge__11_02.pdb 153   11.022   11.055
+seed_2037_arm_native_target__8_charge__13_98.pdb 153   13.983   13.973
+seed_2038_arm_native_target__8_charge__5_87.pdb 153    5.867     5.98
+seed_2039_arm_native_target__8_charge__6_87.pdb 153    6.868    6.985
+seed_2040_arm_native_target__8_charge__4_02.pdb 153     4.02    4.063
+seed_2041_arm_native_target__8_charge__4_99.pdb 153    4.988    5.976
+seed_2042_arm_native_target__8_charge__9_87.pdb 153    9.869   10.985
+seed_2043_arm_native_target__8_charge__18_98.pdb 153   18.976   18.976
+seed_2044_arm_native_target__8_charge__7_76.pdb 153    7.756    7.954
+seed_2045_arm_native_target__8_charge__8_65.pdb 153    8.645    8.955
+seed_2046_arm_native_target__8_charge__5_99.pdb 153    5.986    7.002
+seed_2047_arm_native_target__8_charge__6_99.pdb 153    6.986    5.981
+seed_2048_arm_native_target__8_charge__5_02.pdb 153    5.023    5.027
+seed_2049_arm_native_target__8_charge__6_87.pdb 153    6.867    6.976
+
+Q_phys 均值 = 8.266 ± 4.137  (Q_design 均值 = 8.093)
+H4 判定: |Q_phys − target| = 0.326 → PASS（阈值 2.0，与 H2 一致）
+已写 output/propka_v13_ligand_in10/3MXB_A_native.json
+PROPKA 复核: 目录 folds（51 条结构）  pH=7.4
+pdb                                        L Q_design   Q_phys
+native_charge__7_94.pdb                  153    7.945    8.077
+seed_2000_arm_n8_target__0_charge_-2_01.pdb 153   -2.011   -1.999
+seed_2001_arm_n8_target__0_charge__4_87.pdb 153    4.871    4.989
+seed_2002_arm_n8_target__0_charge__3_80.pdb 153    3.798    6.012
+seed_2003_arm_n8_target__0_charge_-2_97.pdb 153   -2.971   -3.062
+seed_2004_arm_n8_target__0_charge_-7_34.pdb 153   -7.341   -7.022
+seed_2005_arm_n8_target__0_charge__0_87.pdb 153    0.873    0.983
+seed_2006_arm_n8_target__0_charge_-3_08.pdb 153   -3.082   -2.909
+seed_2007_arm_n8_target__0_charge_-1_35.pdb 153   -1.348     0.01
+seed_2008_arm_n8_target__0_charge_-2_12.pdb 153   -2.123   -0.006
+seed_2009_arm_n8_target__0_charge_-5_08.pdb 153   -5.075    -3.96
+seed_2010_arm_n8_target__0_charge_-8_00.pdb 153   -8.004   -6.993
+seed_2011_arm_n8_target__0_charge_-6_01.pdb 153   -6.006   -5.986
+seed_2012_arm_n8_target__0_charge_-6_11.pdb 153   -6.112   -5.965
+seed_2013_arm_n8_target__0_charge__2_64.pdb 153    2.643    3.985
+seed_2014_arm_n8_target__0_charge_-0_34.pdb 153   -0.341   -0.031
+seed_2015_arm_n8_target__0_charge__0_88.pdb 153    0.876    1.999
+seed_2016_arm_n8_target__0_charge__0_92.pdb 153    0.917    1.024
+seed_2017_arm_n8_target__0_charge__4_77.pdb 153    4.765    6.816
+seed_2018_arm_n8_target__0_charge__8_75.pdb 153    8.751    8.983
+seed_2019_arm_n8_target__0_charge__2_87.pdb 153    2.874    3.005
+seed_2020_arm_n8_target__0_charge__4_06.pdb 153    4.061    4.281
+seed_2021_arm_n8_target__0_charge__5_88.pdb 153    5.878    5.976
+seed_2022_arm_n8_target__0_charge_-18_18.pdb 153  -18.185  -17.895
+seed_2023_arm_n8_target__0_charge_-2_12.pdb 153   -2.119   -0.989
+seed_2024_arm_n8_target__0_charge_-4_05.pdb 153   -4.053   -3.931
+seed_2025_arm_n8_target__0_charge__8_76.pdb 153    8.759    8.973
+seed_2026_arm_n8_target__0_charge__1_76.pdb 153    1.763    3.054
+seed_2027_arm_n8_target__0_charge_-3_12.pdb 153   -3.118   -3.381
+seed_2028_arm_n8_target__0_charge_-4_96.pdb 153    -4.96   -3.841
+seed_2029_arm_n8_target__0_charge__7_91.pdb 153     7.91    8.055
+seed_2030_arm_n8_target__0_charge__9_98.pdb 153    9.982    9.978
+seed_2031_arm_n8_target__0_charge__2_95.pdb 153    2.951    4.062
+seed_2032_arm_n8_target__0_charge_-6_42.pdb 153   -6.416   -5.923
+seed_2033_arm_n8_target__0_charge__2_81.pdb 153    2.806    3.383
+seed_2034_arm_n8_target__0_charge__1_98.pdb 153    1.985      2.0
+seed_2035_arm_n8_target__0_charge__4_03.pdb 153    4.027    4.046
+seed_2036_arm_n8_target__0_charge__6_02.pdb 153    6.024    5.058
+seed_2037_arm_n8_target__0_charge_-0_01.pdb 153   -0.014   -0.002
+seed_2038_arm_n8_target__0_charge_-2_13.pdb 153    -2.13   -2.999
+seed_2039_arm_n8_target__0_charge__3_91.pdb 153    3.909    5.059
+seed_2040_arm_n8_target__0_charge_-3_90.pdb 153   -3.898   -3.776
+seed_2041_arm_n8_target__0_charge__0_99.pdb 153    0.991     -0.0
+seed_2042_arm_n8_target__0_charge__1_87.pdb 153    1.872    2.978
+seed_2043_arm_n8_target__0_charge__15_98.pdb 153   15.977   16.964
+seed_2044_arm_n8_target__0_charge_-7_20.pdb 153   -7.196   -6.983
+seed_2045_arm_n8_target__0_charge__8_68.pdb 153    8.681     8.96
+seed_2046_arm_n8_target__0_charge_-3_12.pdb 153   -3.121   -1.983
+seed_2047_arm_n8_target__0_charge_-3_00.pdb 153   -3.004   -2.987
+seed_2048_arm_n8_target__0_charge_-2_97.pdb 153   -2.971   -3.936
+seed_2049_arm_n8_target__0_charge__2_91.pdb 153     2.91    2.995
+
+Q_phys 均值 = 0.885 ± 5.847  (Q_design 均值 = 0.455)
+H4 判定: |Q_phys − target| = 0.885 → PASS（阈值 2.0，与 H2 一致）
+已写 output/propka_v13_ligand_in10/3MXB_A_n8.json
+[21:34:04] ⑦ PROPKA 完成（6 文件）
+[21:34:04] ⑧ ref_native 抽取...
+ref_native: 6D2O
+ref_native: 1AS2
+ref_native: 2FEO
+ref_native: 5CQH
+ref_native: 1CGE
+ref_native: 1BJ4
+ref_native: 21KL_A
+ref_native: 5O60_E
+ref_native: 3MXB_A
+ref_native: 9DWG_L
+[21:34:05] ⑧ ref_native 完成（10）
+[21:34:05] ⑧ uncond 采样（cuda:6）...
+[21:36:39] ⑧ uncond 采样完成（10）
+[21:36:39] ⑧ H3 全臂统计...
+[21:36:51] ⑧ H3 完成：{'n': 48, 'total': 50, 'rate': 0.96}
+[21:36:52] ⑨ Tm 预测（temberture，CPU，预计 1-3h）...
+[22:18:36] ⑨ temberture(seqs) 完成（50/50）
+[22:18:36] ⑨ temberture(uncond)...
+[22:24:09] ⑨ protein-sol...
+[22:30:24] ⑨ Tm/Sol 汇总...
+tm_sol 汇总使用 manifest 蛋白清单（10 个）：['6D2O', '1AS2', '2FEO', '5CQH', '1CGE', '1BJ4', '21KL_A', '5O60_E', '3MXB_A', '9DWG_L']
+蛋白     臂             Tm   TmΔu   %sol   solΔu
+  （Δu = vs 无条件基线）
+--------------------------------------------------
+6D2O   native   55.4352  -1.85 73.54976470588235   -6.39
+6D2O   n2       55.116600000000005  -2.17 76.42635294117643   -3.51
+6D2O   p2       55.81980000000001  -1.47 72.2270588235294   -7.71
+6D2O   n8        54.386   -2.9 89.09923529411762    9.16
+6D2O   p8       56.671200000000006  -0.61 72.05735294117646   -7.88
+1AS2   native    48.258  -6.84 54.079470588235274   -5.97
+1AS2   n2       48.211400000000005  -6.89 56.35417647058823   -3.69
+1AS2   p2       48.5126  -6.59 52.352333333333334    -7.7
+1AS2   n8       48.668200000000006  -6.43 66.2279803921569    6.18
+1AS2   p8       49.4404  -5.66 51.42349019607843   -8.63
+2FEO   native   53.621800000000015  -4.01 71.41803921568626    2.21
+2FEO   n2       52.238600000000005   -5.4 73.78817647058823    4.58
+2FEO   p2       54.9356   -2.7 68.84058823529412   -0.37
+2FEO   n8       51.76420000000001  -5.87 84.64862745098038   15.44
+2FEO   p8       59.9118   2.28 69.36537254901963    0.16
+5CQH   native   54.448599999999985  -8.41 67.39721568627454    0.94
+5CQH   n2       53.69559999999999  -9.16 71.9225294117647    5.46
+5CQH   p2       56.04879999999999  -6.81 65.09317647058823   -1.37
+5CQH   n8       52.009800000000006 -10.85 80.22429411764706   13.76
+5CQH   p8       61.711200000000005  -1.15 65.25917647058824    -1.2
+1CGE   native   55.7228  -1.22 76.5452156862745     8.4
+1CGE   n2       55.589000000000006  -1.35 79.29033333333332   11.15
+1CGE   p2       56.0008  -0.94 75.05182352941176    6.91
+1CGE   n8        55.376  -1.56 83.29650980392155   15.15
+1CGE   p8       56.60739999999999  -0.33 69.9751960784314    1.83
+1BJ4   native   55.260200000000005  -0.44 49.661784313725484   -6.19
+1BJ4   n2       55.29019999999998  -0.41 49.86721568627451   -5.99
+1BJ4   p2       55.18439999999999  -0.51 49.35837254901962    -6.5
+1BJ4   n8       55.02419999999999  -0.67 53.081745098039214   -2.77
+1BJ4   p8       55.44000000000001  -0.26 52.12505882352941   -3.73
+21KL_A native   48.672000000000004  -1.43 80.7257843137255   -7.08
+21KL_A n2        48.843  -1.26 79.75098039215686   -8.05
+21KL_A p2       48.75039999999999  -1.35 82.08388235294119   -5.72
+21KL_A n8       50.361399999999996   0.26 84.15407843137255   -3.65
+21KL_A p8       49.91599999999998  -0.18 85.26574509803919   -2.54
+5O60_E native   44.4556  -1.51 96.77158823529413   -1.44
+5O60_E n2       45.5138  -0.45 96.1767843137255   -2.03
+5O60_E p2       44.898599999999995  -1.07 97.04464705882357   -1.16
+5O60_E n8        49.035   3.07 100.48498039215687    2.28
+5O60_E p8       45.61679999999999  -0.35 98.73860784313729    0.53
+3MXB_A native   49.11940000000001  -0.29 88.25184313725491   -2.91
+3MXB_A n2       49.03199999999999  -0.38 86.99892156862747   -4.16
+3MXB_A p2       49.4202   0.01 89.8198431372549   -1.34
+3MXB_A n8       48.9446  -0.46 90.99925490196081   -0.16
+3MXB_A p8       49.58840000000001   0.18 91.64409803921569    0.48
+9DWG_L native   47.59380000000001  -0.53 63.48931372549021    -2.0
+9DWG_L n2       47.736999999999995  -0.38 63.28696078431372    -2.2
+9DWG_L p2       47.6916  -0.43 64.85580392156865   -0.63
+9DWG_L n8       47.83800000000001  -0.28 65.22531372549018   -0.26
+9DWG_L p8       49.47860000000001   1.36 72.21374509803923    6.72
+
+== S2 判据（vs 无条件基线）：明显恶化 = ΔTm < -5 或 Δ%sol < -10 ==
+  ⚠️ 1AS2/native: Tm Δu=-6.84（无条件 55.1）
+  ⚠️ 1AS2/n2: Tm Δu=-6.89（无条件 55.1）
+  ⚠️ 1AS2/p2: Tm Δu=-6.59（无条件 55.1）
+  ⚠️ 1AS2/n8: Tm Δu=-6.43（无条件 55.1）
+  ⚠️ 1AS2/p8: Tm Δu=-5.66（无条件 55.1）
+  ⚠️ 2FEO/n2: Tm Δu=-5.4（无条件 57.6）
+  ⚠️ 2FEO/n8: Tm Δu=-5.87（无条件 57.6）
+  ⚠️ 5CQH/native: Tm Δu=-8.41（无条件 62.9）
+  ⚠️ 5CQH/n2: Tm Δu=-9.16（无条件 62.9）
+  ⚠️ 5CQH/p2: Tm Δu=-6.81（无条件 62.9）
+  ⚠️ 5CQH/n8: Tm Δu=-10.85（无条件 62.9）
+
+明显恶化臂数：11/50
+
+== 参考：native_ref 基线 vs 无条件 ==
+  6D2O   native_ref Tm=     - uncond Tm=  57.29 | native_ref %sol=  39.99 uncond %sol=  79.94
+  1AS2   native_ref Tm=     - uncond Tm=  55.10 | native_ref %sol=  50.13 uncond %sol=  60.05
+  2FEO   native_ref Tm=     - uncond Tm=  57.64 | native_ref %sol=  72.92 uncond %sol=  69.21
+  5CQH   native_ref Tm=     - uncond Tm=  62.86 | native_ref %sol=  47.95 uncond %sol=  66.46
+  1CGE   native_ref Tm=     - uncond Tm=  56.94 | native_ref %sol=  63.39 uncond %sol=  68.14
+  1BJ4   native_ref Tm=     - uncond Tm=  55.70 | native_ref %sol=  23.67 uncond %sol=  55.86
+  21KL_A native_ref Tm=     - uncond Tm=  50.10 | native_ref %sol=  66.00 uncond %sol=  87.80
+  5O60_E native_ref Tm=     - uncond Tm=  45.97 | native_ref %sol= 100.31 uncond %sol=  98.21
+  3MXB_A native_ref Tm=     - uncond Tm=  49.41 | native_ref %sol=  82.41 uncond %sol=  91.16
+  9DWG_L native_ref Tm=     - uncond Tm=  48.12 | native_ref %sol=  55.13 uncond %sol=  65.49
+
+已写 output/tm_sol_ligand_v13_in10/tm_sol_summary.json
+[22:30:24] ⑨ Tm/Sol 完成
+[22:30:24] ★ boundary 1A65 采样（n50，cuda:6）...
+[22:34:41] ★ boundary 1A65 采样完成
+[22:34:41] == v13 in-10 链全流程完成 ==

@@ -1,0 +1,112 @@
+{
+  "6D2O": {
+    "L": 209,
+    "native_dk": 42,
+    "native_de": 24,
+    "native_kr": 18,
+    "gen_dk": 29.7,
+    "gen_de": 17.3,
+    "gen_kr": 12.4,
+    "ratio": 0.71,
+    "n_gen": 50
+  },
+  "1AS2": {
+    "L": 312,
+    "native_dk": 84,
+    "native_de": 43,
+    "native_kr": 41,
+    "gen_dk": 58.8,
+    "gen_de": 32.2,
+    "gen_kr": 26.6,
+    "ratio": 0.7,
+    "n_gen": 50
+  },
+  "2FEO": {
+    "L": 221,
+    "native_dk": 57,
+    "native_de": 32,
+    "native_kr": 25,
+    "gen_dk": 31.8,
+    "gen_de": 18.7,
+    "gen_kr": 13.1,
+    "ratio": 0.56,
+    "n_gen": 50
+  },
+  "5CQH": {
+    "L": 183,
+    "native_dk": 43,
+    "native_de": 24,
+    "native_kr": 19,
+    "gen_dk": 24.7,
+    "gen_de": 15.2,
+    "gen_kr": 9.5,
+    "ratio": 0.57,
+    "n_gen": 50
+  },
+  "1CGE": {
+    "L": 162,
+    "native_dk": 36,
+    "native_de": 24,
+    "native_kr": 12,
+    "gen_dk": 24.9,
+    "gen_de": 18.5,
+    "gen_kr": 6.4,
+    "ratio": 0.69,
+    "n_gen": 50
+  },
+  "1BJ4": {
+    "L": 470,
+    "native_dk": 105,
+    "native_de": 52,
+    "native_kr": 53,
+    "gen_dk": 63.9,
+    "gen_de": 33.1,
+    "gen_kr": 30.8,
+    "ratio": 0.61,
+    "n_gen": 50
+  },
+  "21KL_A": {
+    "L": 237,
+    "native_dk": 62,
+    "native_de": 26,
+    "native_kr": 36,
+    "gen_dk": 59.2,
+    "gen_de": 26.3,
+    "gen_kr": 32.9,
+    "ratio": 0.96,
+    "n_gen": 50
+  },
+  "5O60_E": {
+    "L": 209,
+    "native_dk": 51,
+    "native_de": 20,
+    "native_kr": 31,
+    "gen_dk": 47.3,
+    "gen_de": 18.7,
+    "gen_kr": 28.6,
+    "ratio": 0.93,
+    "n_gen": 50
+  },
+  "3MXB_A": {
+    "L": 153,
+    "native_dk": 38,
+    "native_de": 15,
+    "native_kr": 23,
+    "gen_dk": 37.7,
+    "gen_de": 14.7,
+    "gen_kr": 22.9,
+    "ratio": 0.99,
+    "n_gen": 50
+  },
+  "9DWG_L": {
+    "L": 323,
+    "native_dk": 98,
+    "native_de": 47,
+    "native_kr": 51,
+    "gen_dk": 49.1,
+    "gen_de": 23.8,
+    "gen_kr": 25.2,
+    "ratio": 0.5,
+    "n_gen": 50
+  }
+}
