@@ -1,0 +1,11 @@
+[2026-09-05 02:57:16] START prot/run_FULL
+[2026-09-05 03:34:11] DONE prot/run_FULL rc=0
+[2026-09-05 03:34:11] START prot/run_nov12comp
+[2026-09-05 03:56:24] DONE prot/run_nov12comp rc=0
+[2026-09-05 03:56:24] START prot/run_notarget
+[2026-09-05 04:25:25] DONE prot/run_notarget rc=0
+[2026-09-05 04:25:25] START prot/run_noph
+[2026-09-05 04:51:47] DONE prot/run_noph rc=0
+[2026-09-05 04:51:47] START prot/run_nokeep
+[2026-09-05 05:24:54] DONE prot/run_nokeep rc=0
+[2026-09-05 05:24:54] ALL PROT RUNS COMPLETE

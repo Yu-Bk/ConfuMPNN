@@ -1,0 +1,2614 @@
+[03:56:25] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[03:56:25] device=cuda:6  epochs=10  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[03:56:25] [v10 A] 条件解耦开：target 与 native 无关 Uniform[-12.0,12.0]
+[03:56:25] [v12] 训练侧监督开：组成双计数(floor=0.5) + GRAVY(margin=0.4)  λ_v12=0.2  λ_target=0.0  SASA θ=0.25
+[03:56:25] [v10 C] pH 自适应结构惩罚开：boost=1.5
+[03:56:25] [A1 keep] 计数锚仅 pocket：floor=0.7 ceil=1.3 λ_pocket=0.0 cutoff=8.0
+[03:56:26] backbone: MoMPNN 冻结（1.66M 参数，不更新）
+[03:56:26] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[03:56:26] 数据：1659 结构域 × 8 pH = 13272 样本（ablation/data/labels_ablate_prot.npz）
+[03:56:27]   ℹ️ 4ljyA02 resnum 对齐 183/188（5 个非标准/parse独有残基 frac=0）
+[03:56:27]   ℹ️ 4ljyA02 分区 pocket=0/188 core=87 surface=101
+[03:56:27]   ℹ️ 4g59C01 分区 pocket=0/103 core=43 surface=60
+[03:56:27]   ℹ️ 3cz8A02 分区 pocket=0/54 core=15 surface=39
+[03:56:27]   ℹ️ 2g1pA02 分区 pocket=0/100 core=38 surface=62
+[03:56:27]   ℹ️ 4i62A01 分区 pocket=0/139 core=59 surface=80
+[03:56:28]   ℹ️ 3cx5H00 分区 pocket=0/93 core=4 surface=89
+[03:56:28]   ℹ️ 3v75A01 resnum 对齐 266/270（4 个非标准/parse独有残基 frac=0）
+[03:56:28]   ℹ️ 3v75A01 分区 pocket=0/270 core=139 surface=131
+[03:56:28]   ℹ️ 5jbdA03 分区 pocket=0/402 core=224 surface=178
+[03:56:28]   ℹ️ 7koeD01 分区 pocket=0/88 core=32 surface=56
+[03:56:28]   ℹ️ 4ntqB00 resnum 对齐 141/144（3 个非标准/parse独有残基 frac=0）
+[03:56:28]   ℹ️ 4ntqB00 分区 pocket=0/144 core=63 surface=81
+[03:56:28]   ℹ️ 1d2oA02 分区 pocket=0/80 core=24 surface=56
+[03:56:28]   ℹ️ 2zjrG00 分区 pocket=0/142 core=53 surface=89
+[03:56:28]   ℹ️ 1yd0A00 分区 pocket=0/89 core=38 surface=51
+[03:56:28]   ℹ️ 1vx7200 分区 pocket=0/104 core=34 surface=70
+[03:56:29]   ℹ️ 3ojaB03 分区 pocket=0/80 core=0 surface=80
+[03:56:29]   ℹ️ 1i4dA00 分区 pocket=0/188 core=59 surface=129
+[03:56:29]   ℹ️ 2jxwA00 分区 pocket=0/75 core=8 surface=67
+[03:56:29]   ℹ️ 5m1pB00 分区 pocket=0/189 core=91 surface=98
+[03:56:29]   ℹ️ 3c7fA02 分区 pocket=0/342 core=196 surface=146
+[03:56:29]   ℹ️ 1jcjA00 分区 pocket=0/252 core=135 surface=117
+[03:56:29]   ℹ️ 3m2oA01 resnum 对齐 52/53（1 个非标准/parse独有残基 frac=0）
+[03:56:29]   ℹ️ 3m2oA01 分区 pocket=0/53 core=15 surface=38
+[03:56:29]   ℹ️ 8gtzA03 分区 pocket=0/181 core=87 surface=94
+[03:56:29]   ℹ️ 2vn4A02 分区 pocket=0/114 core=45 surface=69
+[03:56:29]   ℹ️ 3duzA02 分区 pocket=0/54 core=7 surface=47
+[03:56:30]   ℹ️ 1rv9A00 分区 pocket=0/242 core=134 surface=108
+[03:56:30]   ℹ️ 5cadA01 分区 pocket=0/193 core=81 surface=112
+[03:56:30]   ℹ️ 2hgcA00 分区 pocket=0/78 core=25 surface=53
+[03:56:30]   ℹ️ 2zoeB02 resnum 对齐 151/152（1 个非标准/parse独有残基 frac=0）
+[03:56:30]   ℹ️ 2zoeB02 分区 pocket=0/152 core=64 surface=88
+[03:56:30]   ℹ️ 2rvqC01 分区 pocket=0/76 core=13 surface=63
+[03:56:30]   ℹ️ 2cxiA01 分区 pocket=0/79 core=30 surface=49
+[03:56:30]   ℹ️ 2ouxA01 resnum 对齐 120/128（8 个非标准/parse独有残基 frac=0）
+[03:56:30]   ℹ️ 2ouxA01 分区 pocket=0/128 core=51 surface=77
+[03:56:30]   ℹ️ 3kdaA01 分区 pocket=0/280 core=161 surface=119
+[03:56:30]   ℹ️ 3rk6A00 分区 pocket=0/209 core=104 surface=105
+[03:56:30]   ℹ️ 3nzbX00 分区 pocket=0/190 core=93 surface=97
+[03:56:30]   ℹ️ 4i4tE01 分区 pocket=0/98 core=0 surface=98
+[03:56:31]   ℹ️ 3k8kA02 resnum 对齐 349/355（6 个非标准/parse独有残基 frac=0）
+[03:56:31]   ℹ️ 3k8kA02 分区 pocket=0/355 core=197 surface=158
+[03:56:31]   ℹ️ 1v2yA00 分区 pocket=0/105 core=28 surface=77
+[03:56:31]   ℹ️ 8g52B01 分区 pocket=0/272 core=138 surface=134
+[03:56:31]   ℹ️ 1u9jA01 分区 pocket=0/244 core=131 surface=113
+[03:56:31]   ℹ️ 1udlA00 分区 pocket=0/98 core=21 surface=77
+[03:56:31]   ℹ️ 3tvaA00 resnum 对齐 273/276（3 个非标准/parse独有残基 frac=0）
+[03:56:31]   ℹ️ 3tvaA00 分区 pocket=0/276 core=151 surface=125
+[03:56:31]   ℹ️ 3fd0A02 resnum 对齐 208/210（2 个非标准/parse独有残基 frac=0）
+[03:56:31]   ℹ️ 3fd0A02 分区 pocket=0/210 core=104 surface=106
+[03:56:31]   ℹ️ 5k6wA03 分区 pocket=0/94 core=38 surface=56
+[03:56:32]   ℹ️ 4oifB01 分区 pocket=0/399 core=233 surface=166
+[03:56:32]   ℹ️ 1hw7A02 分区 pocket=0/50 core=7 surface=43
+[03:56:32]   ℹ️ 1oqjA00 分区 pocket=0/90 core=32 surface=58
+[03:56:32]   ℹ️ 1sq1A00 resnum 对齐 281/287（6 个非标准/parse独有残基 frac=0）
+[03:56:32]   ℹ️ 1sq1A00 分区 pocket=0/287 core=137 surface=150
+[03:56:33]   ℹ️ 2dbdA00 分区 pocket=0/107 core=39 surface=68
+[03:56:33]   ℹ️ 2v1rA00 分区 pocket=0/67 core=20 surface=47
+[03:56:33]   ℹ️ 1x57A00 分区 pocket=0/91 core=28 surface=63
+[03:56:33]   ℹ️ 3pddA02 分区 pocket=0/96 core=37 surface=59
+[03:56:33]   ℹ️ 4yg6B00 分区 pocket=0/163 core=77 surface=86
+[03:56:33]   ℹ️ 2bcoA01 resnum 对齐 271/273（2 个非标准/parse独有残基 frac=0）
+[03:56:33]   ℹ️ 2bcoA01 分区 pocket=0/273 core=148 surface=125
+[03:56:33]   ℹ️ 1xocA02 分区 pocket=0/120 core=45 surface=75
+[03:56:33]   ℹ️ 1ti5A00 分区 pocket=0/46 core=15 surface=31
+[03:56:33]   ℹ️ 3bf7A00 分区 pocket=0/255 core=142 surface=113
+[03:56:34]   ℹ️ 2qptA01 分区 pocket=0/146 core=54 surface=92
+[03:56:34]   ℹ️ 6gs8A01 resnum 对齐 296/298（2 个非标准/parse独有残基 frac=0）
+[03:56:34]   ℹ️ 6gs8A01 分区 pocket=0/298 core=142 surface=156
+[03:56:34]   ℹ️ 4rpcA00 resnum 对齐 242/250（8 个非标准/parse独有残基 frac=0）
+[03:56:34]   ℹ️ 4rpcA00 分区 pocket=0/250 core=137 surface=113
+[03:56:34]   ℹ️ 2e70A00 分区 pocket=0/71 core=12 surface=59
+[03:56:34]   ℹ️ 1aroP03 分区 pocket=0/150 core=40 surface=110
+[03:56:34]   ℹ️ 5m59A06 分区 pocket=0/112 core=41 surface=71
+[03:56:34]   ℹ️ 2h5eA02 分区 pocket=0/187 core=94 surface=93
+[03:56:34]   ℹ️ 6pgwA03 分区 pocket=0/102 core=34 surface=68
+[03:56:34]   ℹ️ 2x24A03 分区 pocket=0/338 core=162 surface=176
+[03:56:34]   ℹ️ 6zd1A01 resnum 对齐 154/157（3 个非标准/parse独有残基 frac=0）
+[03:56:34]   ℹ️ 6zd1A01 分区 pocket=0/157 core=61 surface=96
+[03:56:35]   ℹ️ 4cvbA00 分区 pocket=0/558 core=363 surface=195
+[03:56:35]   ℹ️ 1h6vA01 分区 pocket=0/232 core=95 surface=137
+[03:56:35]   ℹ️ 1fi8C00 分区 pocket=0/78 core=6 surface=72
+[03:56:35]   ℹ️ 2f9hA00 resnum 对齐 119/121（2 个非标准/parse独有残基 frac=0）
+[03:56:35]   ℹ️ 2f9hA00 分区 pocket=0/121 core=52 surface=69
+[03:56:35]   ℹ️ 8b28A01 分区 pocket=0/323 core=179 surface=144
+[03:56:35]   ℹ️ 3lphC00 分区 pocket=0/58 core=13 surface=45
+[03:56:35]   ℹ️ 3pqvC01 分区 pocket=0/255 core=133 surface=122
+[03:56:35]   ℹ️ 4ncbA05 分区 pocket=0/147 core=68 surface=79
+[03:56:35]   ℹ️ 4ewgA01 分区 pocket=0/255 core=115 surface=140
+[03:56:36]   ℹ️ 3foeA02 分区 pocket=0/69 core=8 surface=61
+[03:56:36]   ℹ️ 3u88M00 分区 pocket=0/56 core=0 surface=56
+[03:56:36]   ℹ️ 7dukB01 分区 pocket=0/46 core=9 surface=37
+[03:56:36]   ℹ️ 4ewcA03 resnum 对齐 72/75（3 个非标准/parse独有残基 frac=0）
+[03:56:36]   ℹ️ 4ewcA03 分区 pocket=0/75 core=25 surface=50
+[03:56:36]   ℹ️ 4fqgA02 分区 pocket=0/61 core=20 surface=41
+[03:56:36]   ℹ️ 3a4mA02 分区 pocket=0/61 core=18 surface=43
+[03:56:36]   ℹ️ 6lkkA01 分区 pocket=0/137 core=68 surface=69
+[03:56:36]   ℹ️ 4hea600 分区 pocket=0/161 core=68 surface=93
+[03:56:36]   ℹ️ 1vw3C01 分区 pocket=0/131 core=40 surface=91
+[03:56:36]   ℹ️ 1m56B02 分区 pocket=0/153 core=69 surface=84
+[03:56:36]   ℹ️ 7aooB01 分区 pocket=0/161 core=75 surface=86
+[03:56:36]   ℹ️ 1t98A02 resnum 对齐 160/163（3 个非标准/parse独有残基 frac=0）
+[03:56:36]   ℹ️ 1t98A02 分区 pocket=0/163 core=64 surface=99
+[03:56:37]   ℹ️ 7fh5A01 分区 pocket=0/264 core=144 surface=120
+[03:56:37]   ℹ️ 3hveA02 resnum 对齐 106/109（3 个非标准/parse独有残基 frac=0）
+[03:56:37]   ℹ️ 3hveA02 分区 pocket=0/109 core=32 surface=77
+[03:56:37]   ℹ️ 1hr7C02 分区 pocket=0/225 core=105 surface=120
+[03:56:37]   ℹ️ 4u1eI00 分区 pocket=0/330 core=188 surface=142
+[03:56:37]   ℹ️ 1h2tC03 分区 pocket=0/242 core=117 surface=125
+[03:56:37]   ℹ️ 3gv1A00 resnum 对齐 134/139（5 个非标准/parse独有残基 frac=0）
+[03:56:37]   ℹ️ 3gv1A00 分区 pocket=0/139 core=68 surface=71
+[03:56:38]   ℹ️ 1byfA00 分区 pocket=0/123 core=57 surface=66
+[03:56:38]   ℹ️ 2kp6A00 分区 pocket=0/79 core=27 surface=52
+[03:56:38]   ℹ️ 3eywB02 分区 pocket=0/176 core=84 surface=92
+[03:56:38]   ℹ️ 7paxA01 分区 pocket=0/263 core=128 surface=135
+[03:56:38]   ℹ️ 1jiwI00 分区 pocket=0/105 core=42 surface=63
+[03:56:38]   ℹ️ 2ze3A01 分区 pocket=0/232 core=125 surface=107
+[03:56:38]   ℹ️ 3dmnA00 resnum 对齐 157/158（1 个非标准/parse独有残基 frac=0）
+[03:56:40]   ℹ️ 3dmnA00 分区 pocket=0/158 core=81 surface=77
+[03:56:40]   ℹ️ 1qruA04 分区 pocket=0/109 core=38 surface=71
+[03:56:40]   ℹ️ 3bf5A02 resnum 对齐 41/42（1 个非标准/parse独有残基 frac=0）
+[03:56:40]   ℹ️ 3bf5A02 分区 pocket=0/42 core=10 surface=32
+[03:56:41]   ℹ️ 4f3jA00 分区 pocket=0/143 core=62 surface=81
+[03:56:41]   ℹ️ 4ol8B03 resnum 对齐 89/90（1 个非标准/parse独有残基 frac=0）
+[03:56:41]   ℹ️ 4ol8B03 分区 pocket=0/90 core=32 surface=58
+[03:56:42]   ℹ️ 7jv7B01 分区 pocket=0/142 core=64 surface=78
+[03:56:42]   ℹ️ 2jepB00 分区 pocket=0/336 core=203 surface=133
+[03:56:42]   ℹ️ 4m1gA00 分区 pocket=0/83 core=26 surface=57
+[03:56:45]   ℹ️ 3okzB00 resnum 对齐 286/295（9 个非标准/parse独有残基 frac=0）
+[03:56:45]   ℹ️ 3okzB00 分区 pocket=0/295 core=140 surface=155
+[03:56:45]   ℹ️ 4ll1C02 分区 pocket=0/140 core=55 surface=85
+[03:56:45]   ℹ️ 1pyvA00 分区 pocket=0/53 core=16 surface=37
+[03:56:45]   ℹ️ 1ayoA00 分区 pocket=0/130 core=53 surface=77
+[03:56:45]   ℹ️ 1ap4A00 分区 pocket=0/89 core=29 surface=60
+[03:56:45]   ℹ️ 5wm1A05 分区 pocket=0/114 core=49 surface=65
+[03:56:46]   ℹ️ 3fruA01 分区 pocket=0/177 core=78 surface=99
+[03:56:46]   ℹ️ 1z8hA00 resnum 对齐 196/197（1 个非标准/parse独有残基 frac=0）
+[03:56:46]   ℹ️ 1z8hA00 分区 pocket=0/197 core=106 surface=91
+[03:56:46]   ℹ️ 3f7xA00 resnum 对齐 112/115（3 个非标准/parse独有残基 frac=0）
+[03:56:46]   ℹ️ 3f7xA00 分区 pocket=0/115 core=45 surface=70
+[03:56:46]   ℹ️ 1rniA01 分区 pocket=0/70 core=23 surface=47
+[03:56:46]   ℹ️ 3p5nA00 分区 pocket=0/168 core=73 surface=95
+[03:56:46]   ℹ️ 1woqA01 分区 pocket=0/112 core=47 surface=65
+[03:56:46]   ℹ️ 3otxB01 分区 pocket=0/277 core=156 surface=121
+[03:56:46]   ℹ️ 1wvkA00 分区 pocket=0/86 core=12 surface=74
+[03:56:46]   ℹ️ 2dn6A00 分区 pocket=0/115 core=44 surface=71
+[03:56:46]   ℹ️ 2qenA03 分区 pocket=0/70 core=22 surface=48
+[03:56:46]   ℹ️ 3c2qA01 resnum 对齐 86/88（2 个非标准/parse独有残基 frac=0）
+[03:56:46]   ℹ️ 3c2qA01 分区 pocket=0/88 core=34 surface=54
+[03:56:46]   ℹ️ 2a61B00 分区 pocket=0/135 core=31 surface=104
+[03:56:46]   ℹ️ 2cs7A00 分区 pocket=0/55 core=18 surface=37
+[03:56:47]   ℹ️ 2jroA01 分区 pocket=0/65 core=18 surface=47
+[03:56:47]   ℹ️ 2c2nA01 分区 pocket=0/236 core=129 surface=107
+[03:56:47]   ℹ️ 4a4aA01 分区 pocket=0/135 core=64 surface=71
+[03:56:47]   ℹ️ 5y5qC00 分区 pocket=0/139 core=50 surface=89
+[03:56:47]   ℹ️ 5n9bA01 分区 pocket=0/137 core=57 surface=80
+[03:56:47]   ℹ️ 2np2A00 分区 pocket=0/102 core=15 surface=87
+[03:56:47]   ℹ️ 3ffvA00 分区 pocket=0/181 core=87 surface=94
+[03:56:47]   ℹ️ 1xfjA00 resnum 对齐 254/256（2 个非标准/parse独有残基 frac=0）
+[03:56:47]   ℹ️ 1xfjA00 分区 pocket=0/256 core=136 surface=120
+[03:56:47]   ℹ️ 2q7nA05 分区 pocket=0/98 core=38 surface=60
+[03:56:47]   ℹ️ 4mb4A02 分区 pocket=0/77 core=21 surface=56
+[03:56:47]   ℹ️ 3bgeA01 分区 pocket=0/94 core=40 surface=54
+[03:56:47]   ℹ️ 7oc3A01 resnum 对齐 89/92（3 个非标准/parse独有残基 frac=0）
+[03:56:47]   ℹ️ 7oc3A01 分区 pocket=0/92 core=31 surface=61
+[03:56:48]   ℹ️ 1kxpD03 分区 pocket=0/88 core=28 surface=60
+[03:56:48]   ℹ️ 1wxqA01 resnum 对齐 177/181（4 个非标准/parse独有残基 frac=0）
+[03:56:48]   ℹ️ 1wxqA01 分区 pocket=0/181 core=79 surface=102
+[03:56:48]   ℹ️ 5ekaA00 分区 pocket=0/85 core=13 surface=72
+[03:56:48]   ℹ️ 3ejnA03 resnum 对齐 109/110（1 个非标准/parse独有残基 frac=0）
+[03:56:48]   ℹ️ 3ejnA03 分区 pocket=0/110 core=37 surface=73
+[03:56:48]   ℹ️ 3io3A01 分区 pocket=0/228 core=113 surface=115
+[03:56:48]   ℹ️ 3hhmA03 分区 pocket=0/141 core=50 surface=91
+[03:56:48]   ℹ️ 4lg1B00 分区 pocket=0/207 core=106 surface=101
+[03:56:49]   ℹ️ 2q8kA02 分区 pocket=0/60 core=19 surface=41
+[03:56:49]   ℹ️ 4k5yA01 分区 pocket=0/248 core=111 surface=137
+[03:56:49]   ℹ️ 3e48A01 resnum 对齐 176/183（7 个非标准/parse独有残基 frac=0）
+[03:56:49]   ℹ️ 3e48A01 分区 pocket=0/183 core=94 surface=89
+[03:56:49]   ℹ️ 1bheA00 分区 pocket=0/376 core=201 surface=175
+[03:56:49]   ℹ️ 3ihjA02 分区 pocket=0/38 core=10 surface=28
+[03:56:49]   ℹ️ 1kbhA00 分区 pocket=0/47 core=2 surface=45
+[03:56:49]   ℹ️ 3irvA01 分区 pocket=0/194 core=99 surface=95
+[03:56:49]   ℹ️ 2nqlA02 分区 pocket=0/214 core=114 surface=100
+[03:56:49]   ℹ️ 2b39A10 分区 pocket=0/116 core=46 surface=70
+[03:56:49]   ℹ️ 4ms4B02 分区 pocket=0/180 core=89 surface=91
+[03:56:50]   ℹ️ 2fpqA00 分区 pocket=0/401 core=217 surface=184
+[03:56:50]   ℹ️ 5xyiU00 分区 pocket=0/97 core=24 surface=73
+[03:56:50]   ℹ️ 1sfuA00 分区 pocket=0/70 core=23 surface=47
+[03:56:50]   ℹ️ 4q7fA01 resnum 对齐 293/297（4 个非标准/parse独有残基 frac=0）
+[03:56:50]   ℹ️ 4q7fA01 分区 pocket=0/297 core=175 surface=122
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+[03:56:50]   ⚠️ 4r7zA00 SASA/pocket 分区失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 v12 监督）
+[03:56:50]   ℹ️ 3a9zA02 分区 pocket=0/90 core=20 surface=70
+[03:56:50]   ℹ️ 2x6nD00 分区 pocket=0/178 core=79 surface=99
+[03:56:51]   ℹ️ 1ye8A00 resnum 对齐 169/171（2 个非标准/parse独有残基 frac=0）
+[03:56:51]   ℹ️ 1ye8A00 分区 pocket=0/171 core=86 surface=85
+[03:56:51]   ℹ️ 5domA00 分区 pocket=0/90 core=41 surface=49
+[03:56:51]   ℹ️ 4be9B00 分区 pocket=0/536 core=323 surface=213
+[03:56:51]   ℹ️ 3iq2A00 分区 pocket=0/119 core=37 surface=82
+[03:56:51]   ℹ️ 5x8tT00 分区 pocket=0/144 core=42 surface=102
+[03:56:51]   ℹ️ 1pyiA01 分区 pocket=0/62 core=9 surface=53
+[03:56:51]   ℹ️ 3lp5A00 分区 pocket=0/250 core=139 surface=111
+[03:56:51]   ℹ️ 4kyqA00 分区 pocket=0/197 core=107 surface=90
+[03:56:51]   ℹ️ 4iw7A02 分区 pocket=0/219 core=111 surface=108
+[03:56:52]   ℹ️ 5b08A00 分区 pocket=0/99 core=36 surface=63
+[03:56:52]   ℹ️ 4al0A00 分区 pocket=0/139 core=53 surface=86
+[03:56:52]   ℹ️ 2p0wA03 分区 pocket=0/53 core=15 surface=38
+[03:56:52]   ℹ️ 1ks9A02 分区 pocket=0/123 core=55 surface=68
+[03:56:52]   ℹ️ 1jp4A01 分区 pocket=0/173 core=74 surface=99
+[03:56:52]   ℹ️ 4y4qA00 分区 pocket=0/174 core=84 surface=90
+[03:56:52]   ℹ️ 2wuhA00 分区 pocket=0/163 core=83 surface=80
+[03:56:52]   ℹ️ 3fgbA00 resnum 对齐 347/349（2 个非标准/parse独有残基 frac=0）
+[03:56:52]   ℹ️ 3fgbA00 分区 pocket=0/349 core=210 surface=139
+[03:56:52]   ℹ️ 4iihB04 分区 pocket=0/107 core=37 surface=70
+[03:56:52]   ℹ️ 2xsgB01 分区 pocket=0/285 core=157 surface=128
+[03:56:53]   ℹ️ 1cxpC00 resnum 对齐 465/466（1 个非标准/parse独有残基 frac=0）
+[03:56:53]   ℹ️ 1cxpC00 分区 pocket=0/466 core=252 surface=214
+[03:56:53]   ℹ️ 1adnA00 分区 pocket=0/92 core=20 surface=72
+[03:56:53]   ℹ️ 2m19A00 分区 pocket=0/106 core=43 surface=63
+[03:56:53]   ℹ️ 3vk6A02 分区 pocket=0/37 core=1 surface=36
+[03:56:53]   ℹ️ 3q9dB01 分区 pocket=0/88 core=31 surface=57
+[03:56:53]   ℹ️ 7febA03 分区 pocket=0/92 core=33 surface=59
+[03:56:53]   ℹ️ 1z0xA02 resnum 对齐 142/150（8 个非标准/parse独有残基 frac=0）
+[03:56:53]   ℹ️ 1z0xA02 分区 pocket=0/150 core=43 surface=107
+[03:56:53]   ℹ️ 3i6sA04 分区 pocket=0/110 core=32 surface=78
+[03:56:54]   ℹ️ 8hk0C01 分区 pocket=0/150 core=61 surface=89
+[03:56:54]   ℹ️ 3ucqA01 分区 pocket=0/95 core=17 surface=78
+[03:56:54]   ℹ️ 4pavB00 resnum 对齐 125/131（6 个非标准/parse独有残基 frac=0）
+[03:56:54]   ℹ️ 4pavB00 分区 pocket=0/131 core=44 surface=87
+[03:56:54]   ℹ️ 4nlcA01 分区 pocket=0/262 core=139 surface=123
+[03:56:54]   ℹ️ 3gywA02 分区 pocket=0/125 core=54 surface=71
+[03:56:54]   ℹ️ 3bjnA00 resnum 对齐 144/150（6 个非标准/parse独有残基 frac=0）
+[03:56:54]   ℹ️ 3bjnA00 分区 pocket=0/150 core=69 surface=81
+[03:56:54]   ℹ️ 3m8uA02 分区 pocket=0/168 core=81 surface=87
+[03:56:54]   ℹ️ 3oymA02 分区 pocket=0/70 core=20 surface=50
+[03:56:54]   ℹ️ 4euyA00 resnum 对齐 84/86（2 个非标准/parse独有残基 frac=0）
+[03:56:54]   ℹ️ 4euyA00 分区 pocket=0/86 core=32 surface=54
+[03:56:54]   ℹ️ 3wdoA01 分区 pocket=0/392 core=223 surface=169
+[03:56:54]   ℹ️ 4ddnA00 分区 pocket=0/154 core=69 surface=85
+[03:56:54]   预解析+encode 200/1659（跳过 0）
+[03:56:54]   ℹ️ 4jd9G00 分区 pocket=0/120 core=52 surface=68
+[03:56:55]   ℹ️ 1yhpA01 分区 pocket=0/92 core=31 surface=61
+[03:56:55]   ℹ️ 2yn0A00 分区 pocket=0/245 core=137 surface=108
+[03:56:55]   ℹ️ 3qi7A02 resnum 对齐 155/162（7 个非标准/parse独有残基 frac=0）
+[03:56:55]   ℹ️ 3qi7A02 分区 pocket=0/162 core=76 surface=86
+[03:56:55]   ℹ️ 3pf7B00 分区 pocket=0/469 core=273 surface=196
+[03:56:55]   ℹ️ 2lrwA00 分区 pocket=0/78 core=19 surface=59
+[03:56:55]   ℹ️ 1zc3B00 分区 pocket=0/109 core=41 surface=68
+[03:56:55]   ℹ️ 4nsxA01 分区 pocket=0/328 core=193 surface=135
+[03:56:56]   ℹ️ 1m4zA01 分区 pocket=0/196 core=78 surface=118
+[03:56:56]   ℹ️ 5tf2A00 分区 pocket=0/336 core=185 surface=151
+[03:56:56]   ℹ️ 6kobA01 分区 pocket=0/601 core=337 surface=264
+[03:56:56]   ℹ️ 3otiA01 分区 pocket=0/220 core=108 surface=112
+[03:56:56]   ℹ️ 4efzB00 分区 pocket=0/289 core=159 surface=130
+[03:56:56]   ℹ️ 4ktpA01 分区 pocket=0/250 core=124 surface=126
+[03:56:56]   ℹ️ 1musA01 分区 pocket=0/66 core=20 surface=46
+[03:56:56]   ℹ️ 2oqrA02 分区 pocket=0/38 core=2 surface=36
+[03:56:57]   ℹ️ 1e40A01 分区 pocket=0/396 core=227 surface=169
+[03:56:57]   ℹ️ 3hf7A00 分区 pocket=0/127 core=53 surface=74
+[03:56:57]   ℹ️ 1ursA02 分区 pocket=0/179 core=87 surface=92
+[03:56:57]   ℹ️ 4hkuB00 resnum 对齐 170/173（3 个非标准/parse独有残基 frac=0）
+[03:56:57]   ℹ️ 4hkuB00 分区 pocket=0/173 core=70 surface=103
+[03:56:57]   ℹ️ 2qomB00 分区 pocket=0/268 core=127 surface=141
+[03:56:57]   ℹ️ 4ae7A00 分区 pocket=0/183 core=78 surface=105
+[03:56:57]   ℹ️ 3ah5B00 分区 pocket=0/207 core=91 surface=116
+[03:56:57]   ℹ️ 3vrhA00 分区 pocket=0/298 core=145 surface=153
+[03:56:57]   ℹ️ 3gdoA02 分区 pocket=0/197 core=86 surface=111
+[03:56:57]   ℹ️ 4a17C02 分区 pocket=0/85 core=1 surface=84
+[03:56:58]   ℹ️ 2kbbA00 分区 pocket=0/174 core=84 surface=90
+[03:56:58]   ℹ️ 1f97A02 分区 pocket=0/105 core=36 surface=69
+[03:56:58]   ℹ️ 3ew7A00 resnum 对齐 169/171（2 个非标准/parse独有残基 frac=0）
+[03:56:58]   ℹ️ 3ew7A00 分区 pocket=0/171 core=77 surface=94
+[03:56:58]   ℹ️ 1t9fA00 分区 pocket=0/178 core=93 surface=85
+[03:56:58]   ℹ️ 3e99A00 resnum 对齐 141/143（2 个非标准/parse独有残基 frac=0）
+[03:56:58]   ℹ️ 3e99A00 分区 pocket=0/143 core=60 surface=83
+[03:56:58]   ℹ️ 7fg9A02 分区 pocket=0/162 core=86 surface=76
+[03:56:58]   ℹ️ 1uhzA00 分区 pocket=0/89 core=22 surface=67
+[03:56:59]   ℹ️ 3cnwA00 resnum 对齐 139/141（2 个非标准/parse独有残基 frac=0）
+[03:56:59]   ℹ️ 3cnwA00 分区 pocket=0/141 core=56 surface=85
+[03:56:59]   ℹ️ 4u33A01 分区 pocket=0/111 core=41 surface=70
+[03:56:59]   ℹ️ 1n0uA01 分区 pocket=0/210 core=102 surface=108
+[03:56:59]   ℹ️ 1r7lA00 分区 pocket=0/103 core=36 surface=67
+[03:56:59]   ℹ️ 4b89A00 分区 pocket=0/230 core=115 surface=115
+[03:56:59]   ℹ️ 3htrA00 resnum 对齐 95/96（1 个非标准/parse独有残基 frac=0）
+[03:56:59]   ℹ️ 3htrA00 分区 pocket=0/96 core=31 surface=65
+[03:56:59]   ℹ️ 2k6xA00 分区 pocket=0/72 core=18 surface=54
+[03:56:59]   ℹ️ 6fwrA01 分区 pocket=0/200 core=97 surface=103
+[03:56:59]   ℹ️ 6i6lA02 分区 pocket=0/241 core=130 surface=111
+[03:56:59]   ℹ️ 4a4kA02 分区 pocket=0/133 core=53 surface=80
+[03:56:59]   ℹ️ 7fjlA01 分区 pocket=0/137 core=58 surface=79
+[03:56:59]   ℹ️ 3zpeA00 分区 pocket=0/138 core=55 surface=83
+[03:57:00]   ℹ️ 1fbwA01 分区 pocket=0/425 core=247 surface=178
+[03:57:00]   ℹ️ 5cr9A01 resnum 对齐 117/119（2 个非标准/parse独有残基 frac=0）
+[03:57:00]   ℹ️ 5cr9A01 分区 pocket=0/119 core=45 surface=74
+[03:57:00]   ℹ️ 2losA00 分区 pocket=0/112 core=4 surface=108
+[03:57:00]   ℹ️ 4yhxA01 分区 pocket=0/139 core=55 surface=84
+[03:57:00]   ℹ️ 2bjfA01 分区 pocket=0/310 core=162 surface=148
+[03:57:00]   ℹ️ 1winA01 分区 pocket=0/117 core=43 surface=74
+[03:57:00]   ℹ️ 2h1yB01 分区 pocket=0/243 core=134 surface=109
+[03:57:01]   ℹ️ 5b1aG00 resnum 对齐 82/83（1 个非标准/parse独有残基 frac=0）
+[03:57:01]   ℹ️ 5b1aG00 分区 pocket=0/83 core=8 surface=75
+[03:57:01]   ℹ️ 3u4tB00 resnum 对齐 254/257（3 个非标准/parse独有残基 frac=0）
+[03:57:01]   ℹ️ 3u4tB00 分区 pocket=0/257 core=115 surface=142
+[03:57:01]   ℹ️ 5ubvA02 分区 pocket=0/71 core=30 surface=41
+[03:57:01]   ℹ️ 4nleA01 分区 pocket=0/253 core=119 surface=134
+[03:57:01]   ℹ️ 3ns4A00 resnum 对齐 200/203（3 个非标准/parse独有残基 frac=0）
+[03:57:01]   ℹ️ 3ns4A00 分区 pocket=0/203 core=85 surface=118
+[03:57:01]   ℹ️ 6pfzD02 分区 pocket=0/257 core=123 surface=134
+[03:57:01]   ℹ️ 1lycA02 分区 pocket=0/163 core=72 surface=91
+[03:57:01]   ℹ️ 1oahA02 分区 pocket=0/142 core=48 surface=94
+[03:57:01]   ℹ️ 5t1dB00 分区 pocket=0/99 core=22 surface=77
+[03:57:01]   ℹ️ 3npiB00 resnum 对齐 199/209（10 个非标准/parse独有残基 frac=0）
+[03:57:01]   ℹ️ 3npiB00 分区 pocket=0/209 core=85 surface=124
+[03:57:01]   ℹ️ 6vtmB00 分区 pocket=0/96 core=35 surface=61
+[03:57:02]   ℹ️ 3e4wA02 分区 pocket=0/207 core=90 surface=117
+[03:57:02]   ℹ️ 1f0xA03 分区 pocket=0/163 core=64 surface=99
+[03:57:02]   ℹ️ 6h9jA02 分区 pocket=0/43 core=4 surface=39
+[03:57:02]   ℹ️ 3cr3A00 resnum 对齐 185/192（7 个非标准/parse独有残基 frac=0）
+[03:57:02]   ℹ️ 3cr3A00 分区 pocket=0/192 core=93 surface=99
+[03:57:02]   ℹ️ 4tquN00 分区 pocket=0/283 core=98 surface=185
+[03:57:02]   ℹ️ 3bbjA00 resnum 对齐 263/265（2 个非标准/parse独有残基 frac=0）
+[03:57:02]   ℹ️ 3bbjA00 分区 pocket=0/265 core=140 surface=125
+[03:57:02]   ℹ️ 7blz201 分区 pocket=0/140 core=34 surface=106
+[03:57:02]   ℹ️ 1rgwA00 分区 pocket=0/85 core=31 surface=54
+[03:57:02]   ℹ️ 5feyA00 分区 pocket=0/78 core=23 surface=55
+[03:57:02]   ℹ️ 3ngxA02 分区 pocket=0/84 core=28 surface=56
+[03:57:03]   ℹ️ 1ygpA02 resnum 对齐 317/343（26 个非标准/parse独有残基 frac=0）
+[03:57:03]   ℹ️ 1ygpA02 分区 pocket=0/343 core=215 surface=128
+[03:57:03]   ℹ️ 5ysqB00 分区 pocket=0/277 core=157 surface=120
+[03:57:03]   ℹ️ 5bq3A02 resnum 对齐 151/155（4 个非标准/parse独有残基 frac=0）
+[03:57:03]   ℹ️ 5bq3A02 分区 pocket=0/155 core=75 surface=80
+[03:57:03]   ℹ️ 6r3mA01 分区 pocket=0/159 core=76 surface=83
+[03:57:03]   ℹ️ 1m6yA02 resnum 对齐 103/105（2 个非标准/parse独有残基 frac=0）
+[03:57:03]   ℹ️ 1m6yA02 分区 pocket=0/105 core=49 surface=56
+[03:57:04]   ℹ️ 1vw4501 分区 pocket=0/234 core=109 surface=125
+[03:57:04]   ℹ️ 3j7yD01 分区 pocket=0/106 core=28 surface=78
+[03:57:04]   ℹ️ 1tljB00 分区 pocket=0/188 core=84 surface=104
+[03:57:04]   ℹ️ 1gakA00 分区 pocket=0/137 core=63 surface=74
+[03:57:04]   ℹ️ 2fhqA00 resnum 对齐 128/131（3 个非标准/parse独有残基 frac=0）
+[03:57:04]   ℹ️ 2fhqA00 分区 pocket=0/131 core=48 surface=83
+[03:57:04]   ℹ️ 2d5wA01 分区 pocket=0/237 core=119 surface=118
+[03:57:04]   ℹ️ 1t4yA01 分区 pocket=0/89 core=32 surface=57
+[03:57:04]   ℹ️ 3pieC05 分区 pocket=0/167 core=60 surface=107
+[03:57:04]   ℹ️ 3ns6A00 分区 pocket=0/97 core=32 surface=65
+[03:57:04]   ℹ️ 2ex3B02 分区 pocket=0/81 core=24 surface=57
+[03:57:05]   ℹ️ 1bf2A02 分区 pocket=0/474 core=279 surface=195
+[03:57:05]   ℹ️ 3k8pC01 resnum 对齐 102/105（3 个非标准/parse独有残基 frac=0）
+[03:57:05]   ℹ️ 3k8pC01 分区 pocket=0/105 core=35 surface=70
+[03:57:05]   ℹ️ 1gytL01 分区 pocket=0/180 core=88 surface=92
+[03:57:05]   ℹ️ 2okxA01 分区 pocket=0/168 core=84 surface=84
+[03:57:05]   ℹ️ 2kpnA01 分区 pocket=0/77 core=24 surface=53
+[03:57:05]   ℹ️ 1iktA00 分区 pocket=0/115 core=52 surface=63
+[03:57:05]   ℹ️ 3bkpA00 分区 pocket=0/174 core=90 surface=84
+[03:57:05]   ℹ️ 5ha4A02 分区 pocket=0/135 core=63 surface=72
+[03:57:05]   ℹ️ 1jjvA00 分区 pocket=0/194 core=81 surface=113
+[03:57:05]   ℹ️ 5grqA00 分区 pocket=0/90 core=35 surface=55
+[03:57:05]   ℹ️ 1l3eB00 分区 pocket=0/101 core=23 surface=78
+[03:57:05]   ℹ️ 1rxxC01 resnum 对齐 319/327（8 个非标准/parse独有残基 frac=0）
+[03:57:05]   ℹ️ 1rxxC01 分区 pocket=0/327 core=186 surface=141
+[03:57:06]   ℹ️ 3smzA03 分区 pocket=0/97 core=37 surface=60
+[03:57:06]   ℹ️ 4yibA01 resnum 对齐 150/157（7 个非标准/parse独有残基 frac=0）
+[03:57:06]   ℹ️ 4yibA01 分区 pocket=0/157 core=73 surface=84
+[03:57:06]   ℹ️ 2qiyA00 分区 pocket=0/134 core=49 surface=85
+[03:57:06]   ℹ️ 4rcmB00 分区 pocket=0/155 core=78 surface=77
+[03:57:06]   ℹ️ 2y8yA02 分区 pocket=0/115 core=43 surface=72
+[03:57:06]   ℹ️ 2o55A00 resnum 对齐 247/253（6 个非标准/parse独有残基 frac=0）
+[03:57:06]   ℹ️ 2o55A00 分区 pocket=0/253 core=138 surface=115
+[03:57:06]   ℹ️ 3d30A02 分区 pocket=0/88 core=32 surface=56
+[03:57:06]   ℹ️ 2qpzA00 分区 pocket=0/101 core=43 surface=58
+[03:57:06]   ℹ️ 3lmzA00 resnum 对齐 233/240（7 个非标准/parse独有残基 frac=0）
+[03:57:06]   ℹ️ 3lmzA00 分区 pocket=0/240 core=131 surface=109
+[03:57:06]   ℹ️ 6v9qH01 分区 pocket=0/133 core=37 surface=96
+[03:57:07]   ℹ️ 5zxnA01 resnum 对齐 153/158（5 个非标准/parse独有残基 frac=0）
+[03:57:07]   ℹ️ 5zxnA01 分区 pocket=0/158 core=68 surface=90
+[03:57:07]   ℹ️ 2qkpD00 分区 pocket=0/132 core=40 surface=92
+[03:57:07]   ℹ️ 5dh0A01 分区 pocket=0/117 core=46 surface=71
+[03:57:07]   ℹ️ 3s6iA02 分区 pocket=0/116 core=50 surface=66
+[03:57:07]   ℹ️ 4c0qB00 resnum 对齐 729/749（20 个非标准/parse独有残基 frac=0）
+[03:57:07]   ℹ️ 4c0qB00 分区 pocket=0/749 core=361 surface=388
+[03:57:07]   ℹ️ 2zueA01 分区 pocket=0/115 core=38 surface=77
+[03:57:07]   ℹ️ 3pl5A03 分区 pocket=0/121 core=49 surface=72
+[03:57:07]   ℹ️ 4w5uB01 分区 pocket=0/309 core=167 surface=142
+[03:57:08]   ℹ️ 2b0cA01 分区 pocket=0/133 core=58 surface=75
+[03:57:08]   ℹ️ 2n5hA00 分区 pocket=0/90 core=36 surface=54
+[03:57:08]   ℹ️ 1o4uA01 分区 pocket=0/118 core=48 surface=70
+[03:57:08]   ℹ️ 7xr9B01 分区 pocket=0/148 core=75 surface=73
+[03:57:08]   ℹ️ 1ojqA00 分区 pocket=0/212 core=99 surface=113
+[03:57:08]   ℹ️ 2d00A01 分区 pocket=0/67 core=19 surface=48
+[03:57:08]   ℹ️ 1ezvC00 分区 pocket=0/385 core=180 surface=205
+[03:57:08]   ℹ️ 3ebwA01 resnum 对齐 140/142（2 个非标准/parse独有残基 frac=0）
+[03:57:08]   ℹ️ 3ebwA01 分区 pocket=0/142 core=58 surface=84
+[03:57:08]   ℹ️ 3phsA02 分区 pocket=0/108 core=42 surface=66
+[03:57:09]   ℹ️ 5l2lF00 分区 pocket=0/75 core=21 surface=54
+[03:57:09]   ℹ️ 5a72A00 分区 pocket=0/157 core=65 surface=92
+[03:57:09]   ℹ️ 3qilB00 分区 pocket=0/97 core=15 surface=82
+[03:57:09]   ℹ️ 2r6iA01 resnum 对齐 94/96（2 个非标准/parse独有残基 frac=0）
+[03:57:09]   ℹ️ 2r6iA01 分区 pocket=0/96 core=34 surface=62
+[03:57:09]   ℹ️ 3flkA00 resnum 对齐 349/359（10 个非标准/parse独有残基 frac=0）
+[03:57:09]   ℹ️ 3flkA00 分区 pocket=0/359 core=185 surface=174
+[03:57:09]   ℹ️ 6jy1A01 分区 pocket=0/131 core=49 surface=82
+[03:57:09]   ℹ️ 2r0qC02 分区 pocket=0/55 core=15 surface=40
+[03:57:09]   ℹ️ 8ffuA01 分区 pocket=0/234 core=128 surface=106
+[03:57:09]   ℹ️ 1aq0A00 分区 pocket=0/306 core=161 surface=145
+[03:57:09]   ℹ️ 4nv0A02 分区 pocket=0/82 core=18 surface=64
+[03:57:09]   ℹ️ 1pqsA00 分区 pocket=0/77 core=26 surface=51
+[03:57:10]   ℹ️ 2i6qA01 分区 pocket=0/219 core=114 surface=105
+[03:57:10]   ℹ️ 3e38A02 resnum 对齐 75/76（1 个非标准/parse独有残基 frac=0）
+[03:57:10]   ℹ️ 3e38A02 分区 pocket=0/76 core=22 surface=54
+[03:57:10]   ℹ️ 7u6rA01 分区 pocket=0/268 core=133 surface=135
+[03:57:10]   ℹ️ 5xtsA03 分区 pocket=0/123 core=58 surface=65
+[03:57:10]   ℹ️ 3lf5A00 分区 pocket=0/78 core=27 surface=51
+[03:57:10]   ℹ️ 3vwaA01 resnum 对齐 89/90（1 个非标准/parse独有残基 frac=0）
+[03:57:10]   ℹ️ 3vwaA01 分区 pocket=0/90 core=28 surface=62
+[03:57:10]   ℹ️ 4immA00 分区 pocket=0/331 core=194 surface=137
+[03:57:10]   ℹ️ 2lnjA00 分区 pocket=0/170 core=60 surface=110
+[03:57:11]   ℹ️ 2c81A02 分区 pocket=0/153 core=56 surface=97
+[03:57:11]   ℹ️ 5g0xA00 分区 pocket=0/370 core=226 surface=144
+[03:57:11]   ℹ️ 1gycA03 分区 pocket=0/185 core=81 surface=104
+[03:57:11]   ℹ️ 3qv0A00 分区 pocket=0/179 core=68 surface=111
+[03:57:11]   ℹ️ 2eq5B01 分区 pocket=0/115 core=55 surface=60
+[03:57:11]   ℹ️ 6qe7A01 分区 pocket=0/136 core=65 surface=71
+[03:57:11]   ℹ️ 3q41A01 分区 pocket=0/191 core=101 surface=90
+[03:57:11]   ℹ️ 7asgA01 分区 pocket=0/133 core=59 surface=74
+[03:57:11]   ℹ️ 1f32A01 分区 pocket=0/67 core=19 surface=48
+[03:57:11]   ℹ️ 3q9cA00 分区 pocket=0/341 core=195 surface=146
+[03:57:12]   ℹ️ 6biqC01 分区 pocket=0/121 core=54 surface=67
+[03:57:12]   ℹ️ 3zghA00 分区 pocket=0/177 core=78 surface=99
+[03:57:12]   ℹ️ 4s1wB01 resnum 对齐 190/193（3 个非标准/parse独有残基 frac=0）
+[03:57:12]   ℹ️ 4s1wB01 分区 pocket=0/193 core=87 surface=106
+[03:57:12]   ℹ️ 1k1wA01 resnum 对齐 355/364（9 个非标准/parse独有残基 frac=0）
+[03:57:12]   ℹ️ 1k1wA01 分区 pocket=0/364 core=211 surface=153
+[03:57:12]   ℹ️ 2wbiB03 分区 pocket=0/158 core=61 surface=97
+[03:57:12]   ℹ️ 3mnfA00 resnum 对齐 232/235（3 个非标准/parse独有残基 frac=0）
+[03:57:12]   ℹ️ 3mnfA00 分区 pocket=0/235 core=108 surface=127
+[03:57:12]   ℹ️ 4h87A00 分区 pocket=0/120 core=52 surface=68
+[03:57:12]   ℹ️ 1g71A02 分区 pocket=0/108 core=47 surface=61
+[03:57:12]   ℹ️ 1gkuB08 分区 pocket=0/119 core=55 surface=64
+[03:57:13]   ℹ️ 1xeeA01 分区 pocket=0/82 core=31 surface=51
+[03:57:13]   ℹ️ 4jbfB01 resnum 对齐 85/86（1 个非标准/parse独有残基 frac=0）
+[03:57:13]   ℹ️ 4jbfB01 分区 pocket=0/86 core=24 surface=62
+[03:57:13]   ℹ️ 2vpjA00 分区 pocket=0/289 core=173 surface=116
+[03:57:13]   ℹ️ 3a8pB01 分区 pocket=0/116 core=46 surface=70
+[03:57:13]   ℹ️ 1vx7G00 分区 pocket=0/124 core=43 surface=81
+[03:57:13]   ℹ️ 4cd8A00 分区 pocket=0/307 core=180 surface=127
+[03:57:14]   ℹ️ 1k92A02 分区 pocket=0/202 core=96 surface=106
+[03:57:14]   ℹ️ 3clhA02 分区 pocket=0/149 core=69 surface=80
+[03:57:14]   ℹ️ 3oqcA02 分区 pocket=0/212 core=110 surface=102
+[03:57:14]   ℹ️ 3w3wA02 分区 pocket=0/31 core=5 surface=26
+[03:57:14]   ℹ️ 2dhmA01 分区 pocket=0/90 core=24 surface=66
+[03:57:14]   ℹ️ 1g8mA02 resnum 对齐 175/176（1 个非标准/parse独有残基 frac=0）
+[03:57:14]   ℹ️ 1g8mA02 分区 pocket=0/176 core=82 surface=94
+[03:57:14]   ℹ️ 2ok7A01 分区 pocket=0/112 core=46 surface=66
+[03:57:14]   ℹ️ 2ixtA00 分区 pocket=0/293 core=172 surface=121
+[03:57:14]   ℹ️ 1lvkA03 分区 pocket=0/60 core=10 surface=50
+[03:57:14]   ℹ️ 5ljwB01 分区 pocket=0/155 core=73 surface=82
+[03:57:14]   ℹ️ 1st6A02 分区 pocket=0/236 core=95 surface=141
+[03:57:15]   ℹ️ 3qfwB02 分区 pocket=0/250 core=131 surface=119
+[03:57:15]   ℹ️ 4r7rA00 resnum 对齐 121/122（1 个非标准/parse独有残基 frac=0）
+[03:57:15]   ℹ️ 4r7rA00 分区 pocket=0/122 core=57 surface=65
+[03:57:15]   ℹ️ 2eggB01 分区 pocket=0/150 core=68 surface=82
+[03:57:15]   ℹ️ 4bsoA00 分区 pocket=0/97 core=31 surface=66
+[03:57:15]   ℹ️ 5wy8B02 分区 pocket=0/98 core=36 surface=62
+[03:57:15]   ℹ️ 4b6lA02 分区 pocket=0/173 core=82 surface=91
+[03:57:15]   ℹ️ 2g5dA02 分区 pocket=0/133 core=61 surface=72
+[03:57:15]   ℹ️ 2m8eA00 分区 pocket=0/57 core=7 surface=50
+[03:57:15]   ℹ️ 1yvuA04 resnum 对齐 211/214（3 个非标准/parse独有残基 frac=0）
+[03:57:15]   ℹ️ 1yvuA04 分区 pocket=0/214 core=107 surface=107
+[03:57:15]   ℹ️ 1qvrC04 分区 pocket=0/113 core=22 surface=91
+[03:57:15]   ℹ️ 3hzqA00 分区 pocket=0/94 core=13 surface=81
+[03:57:15]   ℹ️ 4iy0A00 分区 pocket=0/152 core=63 surface=89
+[03:57:15]   ℹ️ 3tklB01 分区 pocket=0/62 core=12 surface=50
+[03:57:16]   ℹ️ 2x5fA02 分区 pocket=0/104 core=39 surface=65
+[03:57:16]   ℹ️ 4xsgB00 分区 pocket=0/205 core=91 surface=114
+[03:57:16]   ℹ️ 4rjzA01 resnum 对齐 184/189（5 个非标准/parse独有残基 frac=0）
+[03:57:16]   ℹ️ 4rjzA01 分区 pocket=0/189 core=86 surface=103
+[03:57:16]   ℹ️ 4dckA02 分区 pocket=0/33 core=0 surface=33
+[03:57:16]   ℹ️ 1cz1A00 分区 pocket=0/394 core=235 surface=159
+[03:57:16]   预解析+encode 400/1659（跳过 0）
+[03:57:16]   ℹ️ 1eovA01 分区 pocket=0/134 core=57 surface=77
+[03:57:16]   ℹ️ 2peeA01 分区 pocket=0/241 core=120 surface=121
+[03:57:16]   ℹ️ 7co7D03 分区 pocket=0/94 core=37 surface=57
+[03:57:16]   ℹ️ 5jv4A00 分区 pocket=0/129 core=52 surface=77
+[03:57:16]   ℹ️ 2kigA00 分区 pocket=0/161 core=59 surface=102
+[03:57:17]   ℹ️ 5vxzA01 分区 pocket=0/193 core=88 surface=105
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+[03:57:17]   ⚠️ 3jxvA02 SASA/pocket 分区失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 v12 监督）
+[03:57:17]   ℹ️ 1yhfA01 resnum 对齐 105/110（5 个非标准/parse独有残基 frac=0）
+[03:57:17]   ℹ️ 1yhfA01 分区 pocket=0/110 core=43 surface=67
+[03:57:17]   ℹ️ 7zxkB01 分区 pocket=0/79 core=28 surface=51
+[03:57:17]   ℹ️ 3eeaA00 分区 pocket=0/153 core=65 surface=88
+[03:57:17]   ℹ️ 3g9kF01 resnum 对齐 162/163（1 个非标准/parse独有残基 frac=0）
+[03:57:17]   ℹ️ 3g9kF01 分区 pocket=0/163 core=56 surface=107
+[03:57:17]   ℹ️ 2x8nA01 分区 pocket=0/97 core=33 surface=64
+[03:57:17]   ℹ️ 2bjiB02 分区 pocket=0/130 core=58 surface=72
+[03:57:17]   ℹ️ 3s8kB00 分区 pocket=0/181 core=91 surface=90
+[03:57:17]   ℹ️ 1v8wA00 分区 pocket=0/154 core=63 surface=91
+[03:57:18]   ℹ️ 4b15A00 分区 pocket=0/254 core=139 surface=115
+[03:57:18]   ℹ️ 5ixcA01 分区 pocket=0/448 core=237 surface=211
+[03:57:18]   ℹ️ 6jrpA01 分区 pocket=0/61 core=15 surface=46
+[03:57:18]   ℹ️ 3vpgA01 分区 pocket=0/141 core=64 surface=77
+[03:57:18]   ℹ️ 3i9v102 分区 pocket=0/179 core=79 surface=100
+[03:57:18]   ℹ️ 3hcwA02 分区 pocket=0/140 core=66 surface=74
+[03:57:18]   ℹ️ 3lcrB00 分区 pocket=0/278 core=145 surface=133
+[03:57:18]   ℹ️ 1ulvA01 分区 pocket=0/272 core=141 surface=131
+[03:57:19]   ℹ️ 1amuA03 分区 pocket=0/81 core=25 surface=56
+[03:57:19]   ℹ️ 1yx7A00 分区 pocket=0/83 core=25 surface=58
+[03:57:19]   ℹ️ 1fouA02 分区 pocket=0/132 core=52 surface=80
+[03:57:19]   ℹ️ 1xvsA00 resnum 对齐 120/123（3 个非标准/parse独有残基 frac=0）
+[03:57:19]   ℹ️ 1xvsA00 分区 pocket=0/123 core=44 surface=79
+[03:57:19]   ℹ️ 1fftB01 分区 pocket=0/77 core=4 surface=73
+[03:57:19]   ℹ️ 3u64A00 分区 pocket=0/271 core=135 surface=136
+[03:57:19]   ℹ️ 1k8kG00 分区 pocket=0/139 core=49 surface=90
+[03:57:19]   ℹ️ 3ckiB00 分区 pocket=0/119 core=44 surface=75
+[03:57:19]   ℹ️ 1vyhC01 分区 pocket=0/301 core=174 surface=127
+[03:57:19]   ℹ️ 3wa5B00 分区 pocket=0/124 core=53 surface=71
+[03:57:19]   ℹ️ 1bf5A02 分区 pocket=0/143 core=55 surface=88
+[03:57:19]   ℹ️ 3lcvB01 分区 pocket=0/57 core=20 surface=37
+[03:57:20]   ℹ️ 2g84A01 分区 pocket=0/166 core=87 surface=79
+[03:57:20]   ℹ️ 7u32F02 分区 pocket=0/51 core=14 surface=37
+[03:57:20]   ℹ️ 3hhsA01 分区 pocket=0/145 core=61 surface=84
+[03:57:20]   ℹ️ 1bocA00 分区 pocket=0/76 core=25 surface=51
+[03:57:20]   ℹ️ 4mycA01 分区 pocket=0/328 core=111 surface=217
+[03:57:20]   ℹ️ 1nf8A00 分区 pocket=0/207 core=107 surface=100
+[03:57:20]   ℹ️ 1ig6A00 分区 pocket=0/107 core=36 surface=71
+[03:57:20]   ℹ️ 1m9nA04 分区 pocket=0/197 core=85 surface=112
+[03:57:20]   ℹ️ 4innA00 resnum 对齐 144/146（2 个非标准/parse独有残基 frac=0）
+[03:57:20]   ℹ️ 4innA00 分区 pocket=0/146 core=62 surface=84
+[03:57:20]   ℹ️ 4xmeA00 分区 pocket=0/184 core=85 surface=99
+[03:57:20]   ℹ️ 3tshA01 分区 pocket=0/100 core=42 surface=58
+[03:57:20]   ℹ️ 4e6fA00 resnum 对齐 155/160（5 个非标准/parse独有残基 frac=0）
+[03:57:20]   ℹ️ 4e6fA00 分区 pocket=0/160 core=73 surface=87
+[03:57:21]   ℹ️ 3j7yU00 分区 pocket=0/111 core=29 surface=82
+[03:57:21]   ℹ️ 2gmhA03 分区 pocket=0/96 core=35 surface=61
+[03:57:21]   ℹ️ 7op3A01 分区 pocket=0/190 core=87 surface=103
+[03:57:21]   ℹ️ 3pp8A01 resnum 对齐 123/126（3 个非标准/parse独有残基 frac=0）
+[03:57:21]   ℹ️ 3pp8A01 分区 pocket=0/126 core=52 surface=74
+[03:57:21]   ℹ️ 1wtuA00 分区 pocket=0/99 core=12 surface=87
+[03:57:21]   ℹ️ 2gb3A01 resnum 对齐 149/155（6 个非标准/parse独有残基 frac=0）
+[03:57:21]   ℹ️ 2gb3A01 分区 pocket=0/155 core=62 surface=93
+[03:57:21]   ℹ️ 3h8uA00 resnum 对齐 113/115（2 个非标准/parse独有残基 frac=0）
+[03:57:21]   ℹ️ 3h8uA00 分区 pocket=0/115 core=48 surface=67
+[03:57:21]   ℹ️ 2fz0A00 分区 pocket=0/149 core=67 surface=82
+[03:57:21]   ℹ️ 2c00A03 分区 pocket=0/67 core=22 surface=45
+[03:57:21]   ℹ️ 7u5bJ01 分区 pocket=0/78 core=27 surface=51
+[03:57:21]   ℹ️ 2pdoA01 resnum 对齐 112/117（5 个非标准/parse独有残基 frac=0）
+[03:57:21]   ℹ️ 2pdoA01 分区 pocket=0/117 core=52 surface=65
+[03:57:21]   ℹ️ 1pfoA02 分区 pocket=0/53 core=6 surface=47
+[03:57:22]   ℹ️ 1kcvL02 分区 pocket=0/103 core=35 surface=68
+[03:57:22]   ℹ️ 2wryA00 分区 pocket=0/154 core=73 surface=81
+[03:57:22]   ℹ️ 1umhA00 分区 pocket=0/184 core=91 surface=93
+[03:57:22]   ℹ️ 2rqkA00 分区 pocket=0/109 core=35 surface=74
+[03:57:22]   ℹ️ 3lccA00 分区 pocket=0/213 core=115 surface=98
+[03:57:22]   ℹ️ 4fb9A02 resnum 对齐 102/104（2 个非标准/parse独有残基 frac=0）
+[03:57:22]   ℹ️ 4fb9A02 分区 pocket=0/104 core=24 surface=80
+[03:57:22]   ℹ️ 2oucA00 分区 pocket=0/132 core=55 surface=77
+[03:57:22]   ℹ️ 1e9rD01 分区 pocket=0/301 core=160 surface=141
+[03:57:22]   ℹ️ 5mteA00 分区 pocket=0/137 core=61 surface=76
+[03:57:22]   ℹ️ 1lfuP00 resnum 对齐 79/82（3 个非标准/parse独有残基 frac=0）
+[03:57:22]   ℹ️ 1lfuP00 分区 pocket=0/82 core=28 surface=54
+[03:57:22]   ℹ️ 2e3jA00 分区 pocket=0/346 core=208 surface=138
+[03:57:23]   ℹ️ 3obaA02 分区 pocket=0/126 core=41 surface=85
+[03:57:23]   ℹ️ 6g4bA01 分区 pocket=0/170 core=64 surface=106
+[03:57:23]   ℹ️ 1mkcA00 分区 pocket=0/43 core=14 surface=29
+[03:57:23]   ℹ️ 8bauA01 分区 pocket=0/180 core=89 surface=91
+[03:57:23]   ℹ️ 6nhsA00 resnum 对齐 236/239（3 个非标准/parse独有残基 frac=0）
+[03:57:23]   ℹ️ 6nhsA00 分区 pocket=0/239 core=129 surface=110
+[03:57:23]   ℹ️ 4a18X01 分区 pocket=0/79 core=23 surface=56
+[03:57:23]   ℹ️ 3fvvA02 分区 pocket=0/75 core=22 surface=53
+[03:57:23]   ℹ️ 2j5iA01 分区 pocket=0/207 core=110 surface=97
+[03:57:23]   ℹ️ 2lsoA00 分区 pocket=0/83 core=27 surface=56
+[03:57:23]   ℹ️ 4redB01 分区 pocket=0/84 core=31 surface=53
+[03:57:23]   ℹ️ 3n9xA01 分区 pocket=0/148 core=62 surface=86
+[03:57:24]   ℹ️ 6fokB01 分区 pocket=0/632 core=341 surface=291
+[03:57:24]   ℹ️ 1v61A00 分区 pocket=0/132 core=44 surface=88
+[03:57:24]   ℹ️ 1q7zA01 分区 pocket=0/300 core=172 surface=128
+[03:57:24]   ℹ️ 2zxeA02 分区 pocket=0/416 core=223 surface=193
+[03:57:24]   ℹ️ 2j7nA02 分区 pocket=0/80 core=33 surface=47
+[03:57:24]   ℹ️ 8e7nB02 分区 pocket=0/98 core=44 surface=54
+[03:57:25]   ℹ️ 2aboA00 分区 pocket=0/131 core=57 surface=74
+[03:57:25]   ℹ️ 4lb8A02 resnum 对齐 136/137（1 个非标准/parse独有残基 frac=0）
+[03:57:25]   ℹ️ 4lb8A02 分区 pocket=0/137 core=52 surface=85
+[03:57:25]   ℹ️ 5uj6A01 分区 pocket=0/152 core=75 surface=77
+[03:57:25]   ℹ️ 2zvbA02 分区 pocket=0/128 core=55 surface=73
+[03:57:25]   ℹ️ 5faaA00 分区 pocket=0/120 core=51 surface=69
+[03:57:25]   ℹ️ 3zsjA00 分区 pocket=0/120 core=56 surface=64
+[03:57:25]   ℹ️ 3nl6B01 分区 pocket=0/223 core=116 surface=107
+[03:57:25]   ℹ️ 1x2jA00 分区 pocket=0/290 core=165 surface=125
+[03:57:25]   ℹ️ 4c1bA02 分区 pocket=0/103 core=33 surface=70
+[03:57:25]   ℹ️ 1akqA00 分区 pocket=0/147 core=67 surface=80
+[03:57:25]   ℹ️ 2kgsA01 分区 pocket=0/110 core=36 surface=74
+[03:57:25]   ℹ️ 2nwuB01 resnum 对齐 122/126（4 个非标准/parse独有残基 frac=0）
+[03:57:25]   ℹ️ 2nwuB01 分区 pocket=0/126 core=50 surface=76
+[03:57:25]   ℹ️ 6ouvA03 分区 pocket=0/130 core=63 surface=67
+[03:57:26]   ℹ️ 2ziuA02 分区 pocket=0/83 core=28 surface=55
+[03:57:26]   ℹ️ 4ia6B01 分区 pocket=0/296 core=153 surface=143
+[03:57:26]   ℹ️ 4hizA01 分区 pocket=0/42 core=10 surface=32
+[03:57:26]   ℹ️ 2f46A00 resnum 对齐 134/135（1 个非标准/parse独有残基 frac=0）
+[03:57:26]   ℹ️ 2f46A00 分区 pocket=0/135 core=63 surface=72
+[03:57:26]   ℹ️ 2gsqA01 分区 pocket=0/94 core=34 surface=60
+[03:57:26]   ℹ️ 7v8fB01 分区 pocket=0/92 core=37 surface=55
+[03:57:26]   ℹ️ 3mvcB00 分区 pocket=0/154 core=70 surface=84
+[03:57:26]   ℹ️ 1qu3A03 分区 pocket=0/56 core=17 surface=39
+[03:57:26]   ℹ️ 1q0sA02 分区 pocket=0/95 core=40 surface=55
+[03:57:26]   ℹ️ 6pe0E01 分区 pocket=0/53 core=9 surface=44
+[03:57:26]   ℹ️ 1eotA00 分区 pocket=0/74 core=19 surface=55
+[03:57:26]   ℹ️ 7zdtD01 分区 pocket=0/326 core=140 surface=186
+[03:57:26]   ℹ️ 4zfgA02 分区 pocket=0/75 core=27 surface=48
+[03:57:26]   ℹ️ 3bs3A00 分区 pocket=0/49 core=18 surface=31
+[03:57:27]   ℹ️ 1azsA00 分区 pocket=0/190 core=90 surface=100
+[03:57:27]   ℹ️ 7r5yA01 分区 pocket=0/400 core=225 surface=175
+[03:57:27]   ℹ️ 4k2hD00 分区 pocket=0/183 core=97 surface=86
+[03:57:27]   ℹ️ 4w8bA00 分区 pocket=0/386 core=224 surface=162
+[03:57:27]   ℹ️ 1axiB02 分区 pocket=0/101 core=36 surface=65
+[03:57:27]   ℹ️ 3okyA02 分区 pocket=0/135 core=49 surface=86
+[03:57:27]   ℹ️ 1twfB06 分区 pocket=0/223 core=104 surface=119
+[03:57:27]   ℹ️ 5j98B00 分区 pocket=0/260 core=122 surface=138
+[03:57:29]   ℹ️ 3b8bA01 resnum 对齐 137/141（4 个非标准/parse独有残基 frac=0）
+[03:57:29]   ℹ️ 3b8bA01 分区 pocket=0/141 core=59 surface=82
+[03:57:29]   ℹ️ 3rq4A02 分区 pocket=0/133 core=53 surface=80
+[03:57:30]   ℹ️ 2wanA02 分区 pocket=0/103 core=40 surface=63
+[03:57:30]   ℹ️ 5ejrA01 分区 pocket=0/200 core=88 surface=112
+[03:57:30]   ℹ️ 2n54B00 分区 pocket=0/66 core=8 surface=58
+[03:57:30]   ℹ️ 4itjB01 分区 pocket=0/88 core=29 surface=59
+[03:57:30]   ℹ️ 1kmxA00 分区 pocket=0/55 core=6 surface=49
+[03:57:30]   ℹ️ 1wwvA00 分区 pocket=0/91 core=23 surface=68
+[03:57:30]   ℹ️ 1h2eA00 分区 pocket=0/185 core=105 surface=80
+[03:57:30]   ℹ️ 2cw8A03 resnum 对齐 167/169（2 个非标准/parse独有残基 frac=0）
+[03:57:30]   ℹ️ 2cw8A03 分区 pocket=0/169 core=82 surface=87
+[03:57:30]   ℹ️ 2rpbA00 分区 pocket=0/113 core=40 surface=73
+[03:57:30]   ℹ️ 2lnlA00 分区 pocket=0/296 core=141 surface=155
+[03:57:30]   ℹ️ 3fryA01 分区 pocket=0/64 core=15 surface=49
+[03:57:30]   ℹ️ 1vmgA00 resnum 对齐 80/82（2 个非标准/parse独有残基 frac=0）
+[03:57:30]   ℹ️ 1vmgA00 分区 pocket=0/82 core=22 surface=60
+[03:57:31]   ℹ️ 6tqfA01 分区 pocket=0/391 core=142 surface=249
+[03:57:31]   ℹ️ 1gh8A00 分区 pocket=0/89 core=29 surface=60
+[03:57:31]   ℹ️ 2mev400 分区 pocket=0/58 core=0 surface=58
+[03:57:31]   ℹ️ 1n00A01 分区 pocket=0/84 core=26 surface=58
+[03:57:31]   ℹ️ 2hy7A01 分区 pocket=0/217 core=118 surface=99
+[03:57:31]   ℹ️ 3bc8A03 分区 pocket=0/132 core=44 surface=88
+[03:57:31]   ℹ️ 3ry3A01 resnum 对齐 244/249（5 个非标准/parse独有残基 frac=0）
+[03:57:31]   ℹ️ 3ry3A01 分区 pocket=0/249 core=113 surface=136
+[03:57:31]   ℹ️ 4hc5D00 resnum 对齐 125/129（4 个非标准/parse独有残基 frac=0）
+[03:57:31]   ℹ️ 4hc5D00 分区 pocket=0/129 core=47 surface=82
+[03:57:31]   ℹ️ 2jz6A01 分区 pocket=0/50 core=5 surface=45
+[03:57:31]   ℹ️ 3ghaA00 分区 pocket=0/175 core=94 surface=81
+[03:57:31]   ℹ️ 2ch1A01 分区 pocket=0/139 core=54 surface=85
+[03:57:32]   ℹ️ 3bjqA00 resnum 对齐 290/296（6 个非标准/parse独有残基 frac=0）
+[03:57:32]   ℹ️ 3bjqA00 分区 pocket=0/296 core=137 surface=159
+[03:57:32]   ℹ️ 1y07B01 分区 pocket=0/36 core=6 surface=30
+[03:57:32]   ℹ️ 1zrxA00 分区 pocket=0/42 core=0 surface=42
+[03:57:32]   ℹ️ 2vvfA01 分区 pocket=0/141 core=62 surface=79
+[03:57:32]   ℹ️ 3f65G01 分区 pocket=0/109 core=37 surface=72
+[03:57:32]   ℹ️ 2ajrA01 resnum 对齐 259/264（5 个非标准/parse独有残基 frac=0）
+[03:57:32]   ℹ️ 2ajrA01 分区 pocket=0/264 core=151 surface=113
+[03:57:32]   ℹ️ 1z5hA01 分区 pocket=0/170 core=78 surface=92
+[03:57:32]   ℹ️ 6tznA01 分区 pocket=0/108 core=41 surface=67
+[03:57:32]   ℹ️ 1x6fA00 分区 pocket=0/88 core=5 surface=83
+[03:57:32]   ℹ️ 1x4wA00 分区 pocket=0/67 core=13 surface=54
+[03:57:32]   ℹ️ 5zwnQ01 分区 pocket=0/80 core=24 surface=56
+[03:57:32]   ℹ️ 2ey4D00 分区 pocket=0/75 core=29 surface=46
+[03:57:33]   ℹ️ 4k6jB00 分区 pocket=0/471 core=245 surface=226
+[03:57:33]   ℹ️ 2k4nA00 分区 pocket=0/111 core=31 surface=80
+[03:57:33]   ℹ️ 4n9jA02 分区 pocket=0/107 core=38 surface=69
+[03:57:33]   ℹ️ 3ty7A02 resnum 对齐 187/189（2 个非标准/parse独有残基 frac=0）
+[03:57:33]   ℹ️ 3ty7A02 分区 pocket=0/189 core=95 surface=94
+[03:57:33]   ℹ️ 4a17E01 分区 pocket=0/85 core=26 surface=59
+[03:57:33]   ℹ️ 2c9jA00 分区 pocket=0/213 core=104 surface=109
+[03:57:33]   ℹ️ 2gatA00 分区 pocket=0/66 core=12 surface=54
+[03:57:33]   ℹ️ 3a2yA00 分区 pocket=0/185 core=87 surface=98
+[03:57:33]   ℹ️ 4aybC02 分区 pocket=0/46 core=6 surface=40
+[03:57:33]   ℹ️ 2ys8A00 分区 pocket=0/90 core=28 surface=62
+[03:57:33]   ℹ️ 2kaaA00 分区 pocket=0/130 core=56 surface=74
+[03:57:33]   ℹ️ 4nmyA02 resnum 对齐 100/102（2 个非标准/parse独有残基 frac=0）
+[03:57:33]   ℹ️ 4nmyA02 分区 pocket=0/102 core=43 surface=59
+[03:57:33]   ℹ️ 4didB01 分区 pocket=0/114 core=39 surface=75
+[03:57:34]   ℹ️ 2obpA00 分区 pocket=0/77 core=27 surface=50
+[03:57:34]   ℹ️ 3s27B01 分区 pocket=0/133 core=40 surface=93
+[03:57:34]   ℹ️ 1ej6A02 分区 pocket=0/148 core=65 surface=83
+[03:57:34]   ℹ️ 6sk6A00 分区 pocket=0/273 core=94 surface=179
+[03:57:34]   ℹ️ 4d9uA01 分区 pocket=0/88 core=26 surface=62
+[03:57:34]   ℹ️ 3hcyA00 分区 pocket=0/145 core=60 surface=85
+[03:57:34]   ℹ️ 1ywlA00 分区 pocket=0/96 core=17 surface=79
+[03:57:34]   ℹ️ 1l5jA02 分区 pocket=0/200 core=92 surface=108
+[03:57:34]   ℹ️ 1x49A01 分区 pocket=0/70 core=22 surface=48
+[03:57:35]   ℹ️ 3uitA01 分区 pocket=0/126 core=50 surface=76
+[03:57:35]   ℹ️ 1jm7A00 分区 pocket=0/103 core=31 surface=72
+[03:57:35]   ℹ️ 5bqpD00 分区 pocket=0/176 core=77 surface=99
+[03:57:35]   ℹ️ 3uo2A01 分区 pocket=0/76 core=21 surface=55
+[03:57:35]   ℹ️ 1vs5U01 分区 pocket=0/39 core=1 surface=38
+[03:57:35]   ℹ️ 1r6xA02 分区 pocket=0/213 core=102 surface=111
+[03:57:35]   ℹ️ 1b1zA02 分区 pocket=0/136 core=57 surface=79
+[03:57:35]   ℹ️ 3bjdA02 resnum 对齐 217/219（2 个非标准/parse独有残基 frac=0）
+[03:57:35]   ℹ️ 3bjdA02 分区 pocket=0/219 core=109 surface=110
+[03:57:35]   ℹ️ 3kxeC01 分区 pocket=0/69 core=5 surface=64
+[03:57:35]   ℹ️ 1m1zA02 分区 pocket=0/277 core=144 surface=133
+[03:57:35]   ℹ️ 4akrA02 分区 pocket=0/147 core=49 surface=98
+[03:57:36]   ℹ️ 3simA00 分区 pocket=0/274 core=151 surface=123
+[03:57:36]   ℹ️ 3tuuA00 分区 pocket=0/306 core=173 surface=133
+[03:57:36]   ℹ️ 1s1eA00 分区 pocket=0/181 core=77 surface=104
+[03:57:36]   ℹ️ 2gwgA00 resnum 对齐 320/328（8 个非标准/parse独有残基 frac=0）
+[03:57:36]   ℹ️ 2gwgA00 分区 pocket=0/328 core=163 surface=165
+[03:57:36]   ℹ️ 1rqlA01 分区 pocket=0/178 core=85 surface=93
+[03:57:36]   ℹ️ 2yorA00 分区 pocket=0/324 core=177 surface=147
+[03:57:36]   ℹ️ 4mixA00 resnum 对齐 259/262（3 个非标准/parse独有残基 frac=0）
+[03:57:36]   ℹ️ 4mixA00 分区 pocket=0/262 core=132 surface=130
+[03:57:37]   ℹ️ 2ii3A01 分区 pocket=0/222 core=104 surface=118
+[03:57:37]   预解析+encode 600/1659（跳过 0）
+[03:57:37]   ℹ️ 1mzpA01 resnum 对齐 123/126（3 个非标准/parse独有残基 frac=0）
+[03:57:37]   ℹ️ 1mzpA01 分区 pocket=0/126 core=60 surface=66
+[03:57:37]   ℹ️ 2vrwB03 分区 pocket=0/53 core=17 surface=36
+[03:57:37]   ℹ️ 5ja2A01 分区 pocket=0/261 core=116 surface=145
+[03:57:37]   ℹ️ 5xtck00 分区 pocket=0/97 core=19 surface=78
+[03:57:37]   ℹ️ 1zk8A01 分区 pocket=0/46 core=12 surface=34
+[03:57:37]   ℹ️ 3akaA00 分区 pocket=0/162 core=68 surface=94
+[03:57:37]   ℹ️ 4g68A02 resnum 对齐 198/203（5 个非标准/parse独有残基 frac=0）
+[03:57:37]   ℹ️ 4g68A02 分区 pocket=0/203 core=102 surface=101
+[03:57:37]   ℹ️ 2o8qA00 resnum 对齐 114/116（2 个非标准/parse独有残基 frac=0）
+[03:57:37]   ℹ️ 2o8qA00 分区 pocket=0/116 core=44 surface=72
+[03:57:37]   ℹ️ 3ifuA01 分区 pocket=0/51 core=15 surface=36
+[03:57:37]   ℹ️ 1ah1A00 resnum 对齐 126/129（3 个非标准/parse独有残基 frac=0）
+[03:57:37]   ℹ️ 1ah1A00 分区 pocket=0/129 core=48 surface=81
+[03:57:38]   ℹ️ 2qi2A02 分区 pocket=0/114 core=45 surface=69
+[03:57:38]   ℹ️ 2qdeA02 分区 pocket=0/239 core=130 surface=109
+[03:57:38]   ℹ️ 1nnwB00 分区 pocket=0/251 core=144 surface=107
+[03:57:38]   ℹ️ 4u3aB00 分区 pocket=0/294 core=168 surface=126
+[03:57:38]   ℹ️ 1whnA01 分区 pocket=0/101 core=34 surface=67
+[03:57:38]   ℹ️ 4ecgA00 resnum 对齐 358/368（10 个非标准/parse独有残基 frac=0）
+[03:57:38]   ℹ️ 4ecgA00 分区 pocket=0/368 core=191 surface=177
+[03:57:38]   ℹ️ 3s6xA01 分区 pocket=0/69 core=0 surface=69
+[03:57:38]   ℹ️ 4l3aA05 分区 pocket=0/80 core=24 surface=56
+[03:57:38]   ℹ️ 3vb0A02 分区 pocket=0/160 core=72 surface=88
+[03:57:39]   ℹ️ 1sknP00 分区 pocket=0/74 core=19 surface=55
+[03:57:39]   ℹ️ 2a2fX02 分区 pocket=0/129 core=53 surface=76
+[03:57:39]   ℹ️ 1ln1A00 分区 pocket=0/203 core=97 surface=106
+[03:57:39]   ℹ️ 2nutA02 分区 pocket=0/61 core=19 surface=42
+[03:57:39]   ℹ️ 3p26A03 分区 pocket=0/110 core=45 surface=65
+[03:57:39]   ℹ️ 2pejA00 分区 pocket=0/109 core=27 surface=82
+[03:57:39]   ℹ️ 1c7nA01 分区 pocket=0/164 core=70 surface=94
+[03:57:39]   ℹ️ 1iowA02 分区 pocket=0/149 core=61 surface=88
+[03:57:39]   ℹ️ 2iybE00 分区 pocket=0/64 core=18 surface=46
+[03:57:39]   ℹ️ 4fxxB01 分区 pocket=0/71 core=15 surface=56
+[03:57:40]   ℹ️ 1ddqC02 分区 pocket=0/341 core=103 surface=238
+[03:57:40]   ℹ️ 4cz2B00 resnum 对齐 174/179（5 个非标准/parse独有残基 frac=0）
+[03:57:40]   ℹ️ 4cz2B00 分区 pocket=0/179 core=85 surface=94
+[03:57:40]   ℹ️ 3bdlA03 分区 pocket=0/125 core=52 surface=73
+[03:57:40]   ℹ️ 4f4oC03 分区 pocket=0/89 core=32 surface=57
+[03:57:40]   ℹ️ 1yx3A01 分区 pocket=0/41 core=7 surface=34
+[03:57:40]   ℹ️ 3u5nA02 分区 pocket=0/120 core=47 surface=73
+[03:57:40]   ℹ️ 4c7rA02 分区 pocket=0/39 core=0 surface=39
+[03:57:40]   ℹ️ 2j3lA03 分区 pocket=0/147 core=70 surface=77
+[03:57:40]   ℹ️ 3wisA00 分区 pocket=0/175 core=85 surface=90
+[03:57:40]   ℹ️ 4mndA02 分区 pocket=0/190 core=87 surface=103
+[03:57:40]   ℹ️ 2pffB01 分区 pocket=0/63 core=6 surface=57
+[03:57:40]   ℹ️ 3lucA01 分区 pocket=0/128 core=51 surface=77
+[03:57:40]   ℹ️ 2w2jA00 分区 pocket=0/256 core=137 surface=119
+[03:57:41]   ℹ️ 2ix2B00 分区 pocket=0/245 core=121 surface=124
+[03:57:41]   ℹ️ 3do8A00 分区 pocket=0/134 core=62 surface=72
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+[03:57:41]   ⚠️ 1gw5A00 SASA/pocket 分区失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 v12 监督）
+[03:57:42]   ℹ️ 4wv3B01 分区 pocket=0/412 core=241 surface=171
+[03:57:42]   ℹ️ 4z7fB00 分区 pocket=0/168 core=66 surface=102
+[03:57:42]   ℹ️ 1rwrA00 分区 pocket=0/297 core=154 surface=143
+[03:57:42]   ℹ️ 3i7jA00 resnum 对齐 269/273（4 个非标准/parse独有残基 frac=0）
+[03:57:42]   ℹ️ 3i7jA00 分区 pocket=0/273 core=160 surface=113
+[03:57:42]   ℹ️ 2js7A01 分区 pocket=0/136 core=69 surface=67
+[03:57:42]   ℹ️ 1icfI00 分区 pocket=0/65 core=14 surface=51
+[03:57:42]   ℹ️ 6q3wD01 分区 pocket=0/187 core=79 surface=108
+[03:57:42]   ℹ️ 2evrA01 分区 pocket=0/71 core=26 surface=45
+[03:57:42]   ℹ️ 3uc1A00 分区 pocket=0/296 core=147 surface=149
+[03:57:42]   ℹ️ 1p1hB02 分区 pocket=0/225 core=108 surface=117
+[03:57:43]   ℹ️ 2p7iA00 resnum 对齐 214/217（3 个非标准/parse独有残基 frac=0）
+[03:57:43]   ℹ️ 2p7iA00 分区 pocket=0/217 core=113 surface=104
+[03:57:43]   ℹ️ 3x44A01 分区 pocket=0/186 core=90 surface=96
+[03:57:43]   ℹ️ 2gttJ02 分区 pocket=0/190 core=84 surface=106
+[03:57:43]   ℹ️ 6vmsR00 分区 pocket=0/278 core=125 surface=153
+[03:57:43]   ℹ️ 4fcgA00 resnum 对齐 285/288（3 个非标准/parse独有残基 frac=0）
+[03:57:43]   ℹ️ 4fcgA00 分区 pocket=0/288 core=141 surface=147
+[03:57:43]   ℹ️ 3beyD00 resnum 对齐 93/94（1 个非标准/parse独有残基 frac=0）
+[03:57:43]   ℹ️ 3beyD00 分区 pocket=0/94 core=18 surface=76
+[03:57:43]   ℹ️ 1nu7D01 分区 pocket=0/135 core=45 surface=90
+[03:57:43]   ℹ️ 1ib8A02 分区 pocket=0/67 core=18 surface=49
+[03:57:43]   ℹ️ 4n4uB00 分区 pocket=0/293 core=162 surface=131
+[03:57:44]   ℹ️ 2q2qF00 分区 pocket=0/238 core=128 surface=110
+[03:57:44]   ℹ️ 3mdqA01 resnum 对齐 113/115（2 个非标准/parse独有残基 frac=0）
+[03:57:44]   ℹ️ 3mdqA01 分区 pocket=0/115 core=39 surface=76
+[03:57:44]   ℹ️ 3kzwA02 分区 pocket=0/329 core=181 surface=148
+[03:57:44]   ℹ️ 3erpA01 分区 pocket=0/292 core=163 surface=129
+[03:57:44]   ℹ️ 2ehwA00 resnum 对齐 114/115（1 个非标准/parse独有残基 frac=0）
+[03:57:44]   ℹ️ 2ehwA00 分区 pocket=0/115 core=33 surface=82
+[03:57:44]   ℹ️ 3c48A01 分区 pocket=0/219 core=110 surface=109
+[03:57:45]   ℹ️ 2yusA01 分区 pocket=0/53 core=15 surface=38
+[03:57:45]   ℹ️ 7r8bB01 分区 pocket=0/278 core=128 surface=150
+[03:57:45]   ℹ️ 2b97A00 分区 pocket=0/70 core=24 surface=46
+[03:57:45]   ℹ️ 5mmjb01 分区 pocket=0/141 core=63 surface=78
+[03:57:45]   ℹ️ 7pliA03 分区 pocket=0/75 core=31 surface=44
+[03:57:45]   ℹ️ 5idyA00 分区 pocket=0/255 core=122 surface=133
+[03:57:45]   ℹ️ 1mkmB01 分区 pocket=0/76 core=24 surface=52
+[03:57:45]   ℹ️ 2re7A00 resnum 对齐 130/132（2 个非标准/parse独有残基 frac=0）
+[03:57:45]   ℹ️ 2re7A00 分区 pocket=0/132 core=48 surface=84
+[03:57:45]   ℹ️ 2m2kA00 分区 pocket=0/131 core=37 surface=94
+[03:57:45]   ℹ️ 7cm3A01 分区 pocket=0/157 core=44 surface=113
+[03:57:45]   ℹ️ 1x0tA01 分区 pocket=0/61 core=16 surface=45
+[03:57:45]   ℹ️ 2pgnA01 分区 pocket=0/187 core=89 surface=98
+[03:57:45]   ℹ️ 2hr0B02 分区 pocket=0/109 core=39 surface=70
+[03:57:46]   ℹ️ 3tg9A00 分区 pocket=0/322 core=181 surface=141
+[03:57:46]   ℹ️ 3ue3A01 分区 pocket=0/97 core=28 surface=69
+[03:57:46]   ℹ️ 1eejA02 分区 pocket=0/139 core=62 surface=77
+[03:57:46]   ℹ️ 2w0nA00 分区 pocket=0/118 core=21 surface=97
+[03:57:46]   ℹ️ 3goxA02 分区 pocket=0/51 core=11 surface=40
+[03:57:46]   ℹ️ 6b10A00 分区 pocket=0/315 core=179 surface=136
+[03:57:46]   ℹ️ 2q8pA02 resnum 对齐 167/172（5 个非标准/parse独有残基 frac=0）
+[03:57:46]   ℹ️ 2q8pA02 分区 pocket=0/172 core=75 surface=97
+[03:57:46]   ℹ️ 2lefA00 分区 pocket=0/86 core=17 surface=69
+[03:57:46]   ℹ️ 8ea4D01 分区 pocket=0/159 core=77 surface=82
+[03:57:46]   ℹ️ 2vrsA03 分区 pocket=0/132 core=54 surface=78
+[03:57:46]   ℹ️ 3h31A00 分区 pocket=0/70 core=22 surface=48
+[03:57:46]   ℹ️ 4wjsA01 分区 pocket=0/377 core=226 surface=151
+[03:57:47]   ℹ️ 3gv5B01 resnum 对齐 128/132（4 个非标准/parse独有残基 frac=0）
+[03:57:47]   ℹ️ 3gv5B01 分区 pocket=0/132 core=49 surface=83
+[03:57:47]   ℹ️ 2aqeA00 分区 pocket=0/90 core=30 surface=60
+[03:57:47]   ℹ️ 4qysA01 分区 pocket=0/243 core=137 surface=106
+[03:57:47]   ℹ️ 2yhaA01 分区 pocket=0/139 core=64 surface=75
+[03:57:47]   ℹ️ 3cetB01 resnum 对齐 108/110（2 个非标准/parse独有残基 frac=0）
+[03:57:47]   ℹ️ 3cetB01 分区 pocket=0/110 core=40 surface=70
+[03:57:47]   ℹ️ 2olcA02 分区 pocket=0/277 core=147 surface=130
+[03:57:47]   ℹ️ 1ussA00 分区 pocket=0/88 core=25 surface=63
+[03:57:47]   ℹ️ 2ckiA00 resnum 对齐 256/262（6 个非标准/parse独有残基 frac=0）
+[03:57:47]   ℹ️ 2ckiA00 分区 pocket=0/262 core=137 surface=125
+[03:57:47]   ℹ️ 3besR03 分区 pocket=0/56 core=9 surface=47
+[03:57:47]   ℹ️ 2abwA00 分区 pocket=0/214 core=115 surface=99
+[03:57:48]   ℹ️ 3o2tA00 分区 pocket=0/304 core=155 surface=149
+[03:57:48]   ℹ️ 3ihpA03 分区 pocket=0/335 core=162 surface=173
+[03:57:48]   ℹ️ 3cssA00 分区 pocket=0/250 core=140 surface=110
+[03:57:48]   ℹ️ 1jwjA01 分区 pocket=0/169 core=53 surface=116
+[03:57:48]   ℹ️ 3ozxA01 分区 pocket=0/252 core=131 surface=121
+[03:57:48]   ℹ️ 3qijB03 分区 pocket=0/89 core=34 surface=55
+[03:57:48]   ℹ️ 3rrxA02 分区 pocket=0/229 core=114 surface=115
+[03:57:48]   ℹ️ 2q5wE00 分区 pocket=0/137 core=57 surface=80
+[03:57:48]   ℹ️ 1hdhA02 分区 pocket=0/77 core=28 surface=49
+[03:57:49]   ℹ️ 4kkiA01 分区 pocket=0/287 core=156 surface=131
+[03:57:49]   ℹ️ 4zrxA02 resnum 对齐 98/100（2 个非标准/parse独有残基 frac=0）
+[03:57:49]   ℹ️ 4zrxA02 分区 pocket=0/100 core=48 surface=52
+[03:57:49]   ℹ️ 3p1aA01 分区 pocket=0/108 core=41 surface=67
+[03:57:49]   ℹ️ 6ilsA00 分区 pocket=0/312 core=166 surface=146
+[03:57:49]   ℹ️ 8dkcB01 分区 pocket=0/123 core=43 surface=80
+[03:57:49]   ℹ️ 3kw8A02 分区 pocket=0/133 core=53 surface=80
+[03:57:49]   ℹ️ 3nroA00 resnum 对齐 226/235（9 个非标准/parse独有残基 frac=0）
+[03:57:49]   ℹ️ 3nroA00 分区 pocket=0/235 core=101 surface=134
+[03:57:49]   ℹ️ 2vp8B00 分区 pocket=0/236 core=122 surface=114
+[03:57:50]   ℹ️ 4xr9B01 分区 pocket=0/211 core=105 surface=106
+[03:57:50]   ℹ️ 3b8cA01 分区 pocket=0/361 core=182 surface=179
+[03:57:50]   ℹ️ 1yxrA01 分区 pocket=0/74 core=23 surface=51
+[03:57:50]   ℹ️ 2xmxA02 分区 pocket=0/121 core=44 surface=77
+[03:57:50]   ℹ️ 1i6zA00 分区 pocket=0/135 core=35 surface=100
+[03:57:50]   ℹ️ 4i9fA03 分区 pocket=0/77 core=20 surface=57
+[03:57:50]   ℹ️ 2jjsC00 分区 pocket=0/115 core=51 surface=64
+[03:57:50]   ℹ️ 3fppA02 分区 pocket=0/74 core=27 surface=47
+[03:57:50]   ℹ️ 6yttA01 分区 pocket=0/100 core=34 surface=66
+[03:57:50]   ℹ️ 1zbuB01 resnum 对齐 72/74（2 个非标准/parse独有残基 frac=0）
+[03:57:50]   ℹ️ 1zbuB01 分区 pocket=0/74 core=19 surface=55
+[03:57:51]   ℹ️ 2pftA00 分区 pocket=0/519 core=247 surface=272
+[03:57:51]   ℹ️ 7wguB01 分区 pocket=0/91 core=35 surface=56
+[03:57:51]   ℹ️ 3wmeA01 分区 pocket=0/319 core=113 surface=206
+[03:57:51]   ℹ️ 1hdiA01 分区 pocket=0/185 core=89 surface=96
+[03:57:51]   ℹ️ 1t2pA00 分区 pocket=0/145 core=63 surface=82
+[03:57:51]   ℹ️ 3vx8A01 分区 pocket=0/141 core=62 surface=79
+[03:57:51]   ℹ️ 6lumB01 分区 pocket=0/110 core=40 surface=70
+[03:57:51]   ℹ️ 2ql2B00 分区 pocket=0/59 core=6 surface=53
+[03:57:51]   ℹ️ 5ygbA02 分区 pocket=0/79 core=26 surface=53
+[03:57:51]   ℹ️ 3if9A01 分区 pocket=0/223 core=116 surface=107
+[03:57:51]   ℹ️ 7fbhB01 分区 pocket=0/238 core=122 surface=116
+[03:57:51]   ℹ️ 3ugfB02 分区 pocket=0/177 core=82 surface=95
+[03:57:52]   ℹ️ 2mahA00 分区 pocket=0/128 core=49 surface=79
+[03:57:52]   ℹ️ 1i3zA00 分区 pocket=0/103 core=38 surface=65
+[03:57:52]   ℹ️ 1txdA01 分区 pocket=0/231 core=107 surface=124
+[03:57:52]   ℹ️ 1pujA02 分区 pocket=0/93 core=33 surface=60
+[03:57:52]   ℹ️ 5u4qB00 resnum 对齐 289/298（9 个非标准/parse独有残基 frac=0）
+[03:57:52]   ℹ️ 5u4qB00 分区 pocket=0/298 core=164 surface=134
+[03:57:52]   ℹ️ 4n9wA02 分区 pocket=0/177 core=96 surface=81
+[03:57:52]   ℹ️ 4gwmA01 分区 pocket=0/229 core=115 surface=114
+[03:57:52]   ℹ️ 1djxB01 分区 pocket=0/52 core=15 surface=37
+[03:57:52]   ℹ️ 4c0rA01 分区 pocket=0/121 core=57 surface=64
+[03:57:52]   ℹ️ 3o58V00 分区 pocket=0/59 core=11 surface=48
+[03:57:52]   ℹ️ 2pptA02 分区 pocket=0/106 core=44 surface=62
+[03:57:52]   ℹ️ 3fj1A01 resnum 对齐 177/181（4 个非标准/parse独有残基 frac=0）
+[03:57:52]   ℹ️ 3fj1A01 分区 pocket=0/181 core=88 surface=93
+[03:57:53]   ℹ️ 1qhlA00 分区 pocket=0/203 core=97 surface=106
+[03:57:53]   ℹ️ 1dwuA01 分区 pocket=0/121 core=48 surface=73
+[03:57:53]   ℹ️ 3abbA00 分区 pocket=0/383 core=208 surface=175
+[03:57:53]   ℹ️ 2ccvA00 分区 pocket=0/98 core=35 surface=63
+[03:57:53]   ℹ️ 4z4qA04 分区 pocket=0/89 core=27 surface=62
+[03:57:53]   ℹ️ 1t8tA00 分区 pocket=0/267 core=127 surface=140
+[03:57:53]   ℹ️ 2f0cB01 分区 pocket=0/44 core=1 surface=43
+[03:57:53]   ℹ️ 4qakA00 resnum 对齐 168/170（2 个非标准/parse独有残基 frac=0）
+[03:57:53]   ℹ️ 4qakA00 分区 pocket=0/170 core=78 surface=92
+[03:57:53]   ℹ️ 3u5ei01 分区 pocket=0/67 core=15 surface=52
+[03:57:53]   ℹ️ 3l7iA02 分区 pocket=0/183 core=87 surface=96
+[03:57:54]   ℹ️ 1cchA00 分区 pocket=0/82 core=29 surface=53
+[03:57:54]   ℹ️ 2lkoA00 分区 pocket=0/138 core=43 surface=95
+[03:57:54]   ℹ️ 2yfkA02 分区 pocket=0/196 core=95 surface=101
+[03:57:54]   ℹ️ 4wcjA00 分区 pocket=0/233 core=124 surface=109
+[03:57:54]   ℹ️ 2bgwA02 分区 pocket=0/74 core=23 surface=51
+[03:57:54]   ℹ️ 5f8vA02 分区 pocket=0/107 core=39 surface=68
+[03:57:55]   ℹ️ 2ys4A01 分区 pocket=0/103 core=36 surface=67
+[03:57:55]   ℹ️ 2o0mA00 resnum 对齐 236/247（11 个非标准/parse独有残基 frac=0）
+[03:57:55]   ℹ️ 2o0mA00 分区 pocket=0/247 core=133 surface=114
+[03:57:55]   ℹ️ 3pmqA02 分区 pocket=0/50 core=9 surface=41
+[03:57:55]   ℹ️ 7kjhC01 分区 pocket=0/123 core=56 surface=67
+[03:57:55]   ℹ️ 3w5jA00 分区 pocket=0/194 core=89 surface=105
+[03:57:55]   ℹ️ 2z0zA00 分区 pocket=0/194 core=88 surface=106
+[03:57:55]   ℹ️ 4owkE00 分区 pocket=0/136 core=56 surface=80
+[03:57:55]   ℹ️ 1g7dA00 分区 pocket=0/106 core=43 surface=63
+[03:57:55]   ℹ️ 2z9eA02 resnum 对齐 109/112（3 个非标准/parse独有残基 frac=0）
+[03:57:55]   ℹ️ 2z9eA02 分区 pocket=0/112 core=46 surface=66
+[03:57:55]   ℹ️ 1ex0A03 分区 pocket=0/114 core=45 surface=69
+[03:57:55]   ℹ️ 1pgsA02 分区 pocket=0/175 core=78 surface=97
+[03:57:56]   ℹ️ 1tkjA00 分区 pocket=0/277 core=154 surface=123
+[03:57:56]   ℹ️ 6p58A00 分区 pocket=0/148 core=68 surface=80
+[03:57:56]   ℹ️ 2vdfA00 分区 pocket=0/225 core=91 surface=134
+[03:57:56]   ℹ️ 1vq8300 分区 pocket=0/92 core=19 surface=73
+[03:57:56]   ℹ️ 2kivA02 分区 pocket=0/60 core=16 surface=44
+[03:57:56]   ℹ️ 7s6eA01 分区 pocket=0/134 core=65 surface=69
+[03:57:56]   ℹ️ 1s7mB01 分区 pocket=0/39 core=5 surface=34
+[03:57:56]   ℹ️ 7vt9A02 分区 pocket=0/73 core=24 surface=49
+[03:57:56]   ℹ️ 8d89A01 分区 pocket=0/366 core=219 surface=147
+[03:57:56]   ℹ️ 1x9fD00 分区 pocket=0/140 core=58 surface=82
+[03:57:56]   ℹ️ 4mo1A00 resnum 对齐 142/145（3 个非标准/parse独有残基 frac=0）
+[03:57:56]   ℹ️ 4mo1A00 分区 pocket=0/145 core=55 surface=90
+[03:57:56]   ℹ️ 2hapC02 分区 pocket=0/34 core=0 surface=34
+[03:57:56]   ℹ️ 3hskA02 分区 pocket=0/181 core=75 surface=106
+[03:57:57]   ℹ️ 1zu4A02 分区 pocket=0/218 core=114 surface=104
+[03:57:57]   ℹ️ 2g9gA00 分区 pocket=0/189 core=96 surface=93
+[03:57:57]   ℹ️ 4nrjA01 分区 pocket=0/100 core=26 surface=74
+[03:57:57]   ℹ️ 3w4rA01 分区 pocket=0/303 core=174 surface=129
+[03:57:57]   预解析+encode 800/1659（跳过 0）
+[03:57:57]   ℹ️ 5uj6A03 分区 pocket=0/313 core=182 surface=131
+[03:57:57]   ℹ️ 3f5rA00 resnum 对齐 107/108（1 个非标准/parse独有残基 frac=0）
+[03:57:57]   ℹ️ 3f5rA00 分区 pocket=0/108 core=42 surface=66
+[03:57:57]   ℹ️ 1vwxG01 分区 pocket=0/185 core=64 surface=121
+[03:57:57]   ℹ️ 6tmfI00 分区 pocket=0/214 core=97 surface=117
+[03:57:58]   ℹ️ 7usrA01 分区 pocket=0/138 core=55 surface=83
+[03:57:58]   ℹ️ 2pz4A01 分区 pocket=0/122 core=48 surface=74
+[03:57:58]   ℹ️ 4atiA00 分区 pocket=0/57 core=5 surface=52
+[03:57:58]   ℹ️ 5mp7A01 分区 pocket=0/162 core=77 surface=85
+[03:57:58]   ℹ️ 6g6kC00 分区 pocket=0/87 core=7 surface=80
+[03:57:58]   ℹ️ 3vpaB00 分区 pocket=0/280 core=153 surface=127
+[03:57:58]   ℹ️ 1jphA00 分区 pocket=0/343 core=208 surface=135
+[03:57:58]   ℹ️ 3i6dA02 分区 pocket=0/192 core=85 surface=107
+[03:57:58]   ℹ️ 7bvaA01 分区 pocket=0/93 core=37 surface=56
+[03:57:58]   ℹ️ 1uc8A01 分区 pocket=0/103 core=31 surface=72
+[03:57:58]   ℹ️ 3jc2200 分区 pocket=0/62 core=1 surface=61
+[03:57:58]   ℹ️ 6dewA01 分区 pocket=0/190 core=79 surface=111
+[03:57:59]   ℹ️ 2gk6A01 分区 pocket=0/265 core=139 surface=126
+[03:57:59]   ℹ️ 2imfA00 分区 pocket=0/203 core=93 surface=110
+[03:57:59]   ℹ️ 2zgcA01 分区 pocket=0/125 core=50 surface=75
+[03:57:59]   ℹ️ 1zh8A01 resnum 对齐 142/143（1 个非标准/parse独有残基 frac=0）
+[03:57:59]   ℹ️ 1zh8A01 分区 pocket=0/143 core=64 surface=79
+[03:57:59]   ℹ️ 2c5zA00 分区 pocket=0/93 core=32 surface=61
+[03:57:59]   ℹ️ 4p3fA00 分区 pocket=0/189 core=85 surface=104
+[03:57:59]   ℹ️ 6vilA01 分区 pocket=0/145 core=59 surface=86
+[03:58:00]   ℹ️ 3io1A02 resnum 对齐 111/116（5 个非标准/parse独有残基 frac=0）
+[03:58:00]   ℹ️ 3io1A02 分区 pocket=0/116 core=42 surface=74
+[03:58:00]   ℹ️ 1x3wB01 resnum 对齐 49/51（2 个非标准/parse独有残基 frac=0）
+[03:58:00]   ℹ️ 1x3wB01 分区 pocket=0/51 core=9 surface=42
+[03:58:00]   ℹ️ 2hydA01 分区 pocket=0/323 core=122 surface=201
+[03:58:00]   ℹ️ 2h2qB01 分区 pocket=0/212 core=89 surface=123
+[03:58:00]   ℹ️ 2cxcA02 分区 pocket=0/69 core=25 surface=44
+[03:58:00]   ℹ️ 1vz8A02 resnum 对齐 111/112（1 个非标准/parse独有残基 frac=0）
+[03:58:00]   ℹ️ 1vz8A02 分区 pocket=0/112 core=44 surface=68
+[03:58:00]   ℹ️ 2ygwA02 分区 pocket=0/261 core=122 surface=139
+[03:58:00]   ℹ️ 1bw6A00 分区 pocket=0/56 core=17 surface=39
+[03:58:01]   ℹ️ 2fbiA00 分区 pocket=0/129 core=38 surface=91
+[03:58:01]   ℹ️ 4eadA03 分区 pocket=0/95 core=33 surface=62
+[03:58:01]   ℹ️ 1fnfA03 分区 pocket=0/89 core=39 surface=50
+[03:58:01]   ℹ️ 5aj3P00 分区 pocket=0/117 core=31 surface=86
+[03:58:01]   ℹ️ 1fkwA00 分区 pocket=0/349 core=215 surface=134
+[03:58:01]   ℹ️ 2bykA00 分区 pocket=0/72 core=10 surface=62
+[03:58:01]   ℹ️ 2lbfB01 分区 pocket=0/69 core=20 surface=49
+[03:58:01]   ℹ️ 3doeB00 分区 pocket=0/114 core=36 surface=78
+[03:58:01]   ℹ️ 1pg4A01 分区 pocket=0/513 core=316 surface=197
+[03:58:01]   ℹ️ 3hx3A02 resnum 对齐 178/182（4 个非标准/parse独有残基 frac=0）
+[03:58:01]   ℹ️ 3hx3A02 分区 pocket=0/182 core=86 surface=96
+[03:58:01]   ℹ️ 2f8xM00 分区 pocket=0/55 core=0 surface=55
+[03:58:02]   ℹ️ 2f7vA01 分区 pocket=0/252 core=140 surface=112
+[03:58:02]   ℹ️ 3kwrA00 resnum 对齐 80/81（1 个非标准/parse独有残基 frac=0）
+[03:58:02]   ℹ️ 3kwrA00 分区 pocket=0/81 core=26 surface=55
+[03:58:02]   ℹ️ 3klkA01 分区 pocket=0/161 core=65 surface=96
+[03:58:02]   ℹ️ 4e6zA01 resnum 对齐 102/109（7 个非标准/parse独有残基 frac=0）
+[03:58:02]   ℹ️ 4e6zA01 分区 pocket=0/109 core=31 surface=78
+[03:58:02]   ℹ️ 4pswA03 分区 pocket=0/54 core=12 surface=42
+[03:58:02]   ℹ️ 2i9uA02 分区 pocket=0/308 core=184 surface=124
+[03:58:02]   ℹ️ 2oc5A01 resnum 对齐 199/205（6 个非标准/parse独有残基 frac=0）
+[03:58:02]   ℹ️ 2oc5A01 分区 pocket=0/205 core=108 surface=97
+[03:58:02]   ℹ️ 2p4bB02 分区 pocket=0/98 core=39 surface=59
+[03:58:02]   ℹ️ 1u9lB00 分区 pocket=0/70 core=23 surface=47
+[03:58:03]   ℹ️ 2l5pA00 分区 pocket=0/175 core=77 surface=98
+[03:58:03]   ℹ️ 3ia7A01 分区 pocket=0/233 core=121 surface=112
+[03:58:03]   ℹ️ 6tmfL00 分区 pocket=0/132 core=51 surface=81
+[03:58:03]   ℹ️ 3l5aA00 resnum 对齐 366/379（13 个非标准/parse独有残基 frac=0）
+[03:58:03]   ℹ️ 3l5aA00 分区 pocket=0/379 core=215 surface=164
+[03:58:03]   ℹ️ 3i3wA02 分区 pocket=0/130 core=57 surface=73
+[03:58:04]   ℹ️ 1uz5A02 分区 pocket=0/57 core=17 surface=40
+[03:58:04]   ℹ️ 2oq3A00 分区 pocket=0/147 core=71 surface=76
+[03:58:04]   ℹ️ 3zyyX03 分区 pocket=0/86 core=29 surface=57
+[03:58:04]   ℹ️ 3mvpA02 resnum 对齐 144/145（1 个非标准/parse独有残基 frac=0）
+[03:58:04]   ℹ️ 3mvpA02 分区 pocket=0/145 core=56 surface=89
+[03:58:04]   ℹ️ 7yb9A01 分区 pocket=0/215 core=102 surface=113
+[03:58:04]   ℹ️ 1vpcA00 分区 pocket=0/45 core=0 surface=45
+[03:58:04]   ℹ️ 2aj4B01 分区 pocket=0/248 core=133 surface=115
+[03:58:04]   ℹ️ 2gzbB00 分区 pocket=0/163 core=76 surface=87
+[03:58:04]   ℹ️ 3fk5A02 分区 pocket=0/140 core=55 surface=85
+[03:58:04]   ℹ️ 2is9A02 分区 pocket=0/91 core=33 surface=58
+[03:58:05]   ℹ️ 1r6vA01 分区 pocket=0/125 core=50 surface=75
+[03:58:05]   ℹ️ 6gedA01 分区 pocket=0/282 core=148 surface=134
+[03:58:05]   ℹ️ 4py9A01 resnum 对齐 207/214（7 个非标准/parse独有残基 frac=0）
+[03:58:05]   ℹ️ 4py9A01 分区 pocket=0/214 core=110 surface=104
+[03:58:05]   ℹ️ 1bihA04 分区 pocket=0/88 core=32 surface=56
+[03:58:05]   ℹ️ 3ijlA01 分区 pocket=0/108 core=39 surface=69
+[03:58:05]   ℹ️ 2le1A00 分区 pocket=0/151 core=68 surface=83
+[03:58:05]   ℹ️ 3jr7A03 resnum 对齐 120/123（3 个非标准/parse独有残基 frac=0）
+[03:58:05]   ℹ️ 3jr7A03 分区 pocket=0/123 core=47 surface=76
+[03:58:05]   ℹ️ 1khdA01 分区 pocket=0/100 core=40 surface=60
+[03:58:05]   ℹ️ 3tc3B00 分区 pocket=0/288 core=159 surface=129
+[03:58:06]   ℹ️ 3f4rA01 分区 pocket=0/119 core=47 surface=72
+[03:58:06]   ℹ️ 5cbeE00 分区 pocket=0/64 core=15 surface=49
+[03:58:06]   ℹ️ 4abxC01 分区 pocket=0/76 core=15 surface=61
+[03:58:06]   ℹ️ 3h87D01 分区 pocket=0/59 core=5 surface=54
+[03:58:06]   ℹ️ 3wa1A01 分区 pocket=0/160 core=77 surface=83
+[03:58:06]   ℹ️ 6j8eA01 分区 pocket=0/106 core=36 surface=70
+[03:58:06]   ℹ️ 5vc2A02 分区 pocket=0/141 core=54 surface=87
+[03:58:06]   ℹ️ 1floA01 分区 pocket=0/105 core=40 surface=65
+[03:58:07]   ℹ️ 2ewfA02 分区 pocket=0/81 core=24 surface=57
+[03:58:07]   ℹ️ 1uaiA00 分区 pocket=0/223 core=119 surface=104
+[03:58:07]   ℹ️ 1ogpA01 分区 pocket=0/261 core=133 surface=128
+[03:58:07]   ℹ️ 4njcA00 resnum 对齐 58/60（2 个非标准/parse独有残基 frac=0）
+[03:58:07]   ℹ️ 4njcA00 分区 pocket=0/60 core=16 surface=44
+[03:58:07]   ℹ️ 2qz5A00 分区 pocket=0/152 core=74 surface=78
+[03:58:07]   ℹ️ 2p7sA00 分区 pocket=0/107 core=38 surface=69
+[03:58:07]   ℹ️ 1a0aA00 分区 pocket=0/63 core=10 surface=53
+[03:58:07]   ℹ️ 7lb8B01 分区 pocket=0/306 core=151 surface=155
+[03:58:07]   ℹ️ 3dnpA01 resnum 对齐 142/147（5 个非标准/parse独有残基 frac=0）
+[03:58:07]   ℹ️ 3dnpA01 分区 pocket=0/147 core=71 surface=76
+[03:58:07]   ℹ️ 6f2sH01 分区 pocket=0/215 core=97 surface=118
+[03:58:07]   ℹ️ 1a04A02 分区 pocket=0/80 core=30 surface=50
+[03:58:08]   ℹ️ 1kskA02 resnum 对齐 165/167（2 个非标准/parse独有残基 frac=0）
+[03:58:08]   ℹ️ 1kskA02 分区 pocket=0/167 core=68 surface=99
+[03:58:08]   ℹ️ 4jr7A02 分区 pocket=0/120 core=28 surface=92
+[03:58:08]   ℹ️ 2ld5A00 分区 pocket=0/67 core=15 surface=52
+[03:58:08]   ℹ️ 4c26A00 分区 pocket=0/66 core=20 surface=46
+[03:58:08]   ℹ️ 4lg3A02 resnum 对齐 42/43（1 个非标准/parse独有残基 frac=0）
+[03:58:08]   ℹ️ 4lg3A02 分区 pocket=0/43 core=10 surface=33
+[03:58:08]   ℹ️ 3rimB01 分区 pocket=0/348 core=194 surface=154
+[03:58:08]   ℹ️ 6s5xA01 分区 pocket=0/72 core=26 surface=46
+[03:58:08]   ℹ️ 1rfyB00 分区 pocket=0/88 core=25 surface=63
+[03:58:08]   ℹ️ 2cokA00 分区 pocket=0/113 core=45 surface=68
+[03:58:08]   ℹ️ 1l6eA00 分区 pocket=0/46 core=7 surface=39
+[03:58:08]   ℹ️ 3vwcA00 分区 pocket=0/143 core=65 surface=78
+[03:58:08]   ℹ️ 4ej6A01 resnum 对齐 197/200（3 个非标准/parse独有残基 frac=0）
+[03:58:08]   ℹ️ 4ej6A01 分区 pocket=0/200 core=100 surface=100
+[03:58:09]   ℹ️ 4jejA00 分区 pocket=0/241 core=128 surface=113
+[03:58:09]   ℹ️ 1c7sA03 分区 pocket=0/484 core=281 surface=203
+[03:58:09]   ℹ️ 1fkaD01 分区 pocket=0/67 core=14 surface=53
+[03:58:09]   ℹ️ 6n9gA01 分区 pocket=0/100 core=33 surface=67
+[03:58:09]   ℹ️ 2lcuA01 分区 pocket=0/185 core=72 surface=113
+[03:58:09]   ℹ️ 3mudA02 分区 pocket=0/54 core=0 surface=54
+[03:58:09]   ℹ️ 3k1zA02 分区 pocket=0/81 core=26 surface=55
+[03:58:09]   ℹ️ 1gv4A02 分区 pocket=0/166 core=74 surface=92
+[03:58:09]   ℹ️ 1gqpA00 分区 pocket=0/180 core=92 surface=88
+[03:58:10]   ℹ️ 2oq2D00 分区 pocket=0/246 core=129 surface=117
+[03:58:10]   ℹ️ 4hi0E00 分区 pocket=0/196 core=97 surface=99
+[03:58:10]   ℹ️ 7btxA01 分区 pocket=0/340 core=149 surface=191
+[03:58:10]   ℹ️ 1x9lA01 分区 pocket=0/117 core=47 surface=70
+[03:58:10]   ℹ️ 2bl0A00 分区 pocket=0/63 core=1 surface=62
+[03:58:10]   ℹ️ 1gpjA02 分区 pocket=0/150 core=74 surface=76
+[03:58:10]   ℹ️ 2byvE05 分区 pocket=0/79 core=16 surface=63
+[03:58:10]   ℹ️ 1vwxp00 分区 pocket=0/91 core=13 surface=78
+[03:58:10]   ℹ️ 4mzcA00 分区 pocket=0/99 core=42 surface=57
+[03:58:10]   ℹ️ 1m9oA00 分区 pocket=0/40 core=9 surface=31
+[03:58:11]   ℹ️ 3e58B01 resnum 对齐 136/139（3 个非标准/parse独有残基 frac=0）
+[03:58:11]   ℹ️ 3e58B01 分区 pocket=0/139 core=67 surface=72
+[03:58:11]   ℹ️ 2kjzA02 分区 pocket=0/57 core=19 surface=38
+[03:58:11]   ℹ️ 3kfvA02 resnum 对齐 139/141（2 个非标准/parse独有残基 frac=0）
+[03:58:11]   ℹ️ 3kfvA02 分区 pocket=0/141 core=61 surface=80
+[03:58:11]   ℹ️ 1vbgA04 分区 pocket=0/55 core=15 surface=40
+[03:58:11]   ℹ️ 2ahfA00 分区 pocket=0/377 core=238 surface=139
+[03:58:11]   ℹ️ 2cdqA02 分区 pocket=0/97 core=32 surface=65
+[03:58:11]   ℹ️ 4bqqA01 分区 pocket=0/138 core=58 surface=80
+[03:58:11]   ℹ️ 4mhlA00 分区 pocket=0/161 core=66 surface=95
+[03:58:11]   ℹ️ 1xb2B03 分区 pocket=0/95 core=35 surface=60
+[03:58:11]   ℹ️ 1lgyA00 分区 pocket=0/265 core=156 surface=109
+[03:58:12]   ℹ️ 1xt5A00 分区 pocket=0/132 core=58 surface=74
+[03:58:12]   ℹ️ 2l0cA00 分区 pocket=0/97 core=19 surface=78
+[03:58:12]   ℹ️ 3k1yA00 resnum 对齐 176/182（6 个非标准/parse独有残基 frac=0）
+[03:58:12]   ℹ️ 3k1yA00 分区 pocket=0/182 core=87 surface=95
+[03:58:12]   ℹ️ 2ia2A01 分区 pocket=0/68 core=22 surface=46
+[03:58:12]   ℹ️ 4hpmD00 分区 pocket=0/82 core=33 surface=49
+[03:58:12]   ℹ️ 4iapA01 分区 pocket=0/92 core=36 surface=56
+[03:58:12]   ℹ️ 2gmhA01 分区 pocket=0/261 core=132 surface=129
+[03:58:12]   ℹ️ 4bpeC01 分区 pocket=0/92 core=25 surface=67
+[03:58:12]   ℹ️ 4rnyA03 分区 pocket=0/128 core=54 surface=74
+[03:58:12]   ℹ️ 2yxlA01 分区 pocket=0/152 core=72 surface=80
+[03:58:12]   ℹ️ 3wcyA04 分区 pocket=0/86 core=26 surface=60
+[03:58:12]   ℹ️ 1htrP00 分区 pocket=0/43 core=2 surface=41
+[03:58:12]   ℹ️ 7agpA01 分区 pocket=0/61 core=23 surface=38
+[03:58:12]   ℹ️ 1zxeC02 resnum 对齐 175/181（6 个非标准/parse独有残基 frac=0）
+[03:58:12]   ℹ️ 1zxeC02 分区 pocket=0/181 core=81 surface=100
+[03:58:13]   ℹ️ 5cwkA01 分区 pocket=0/167 core=80 surface=87
+[03:58:13]   ℹ️ 4r42A01 分区 pocket=0/185 core=79 surface=106
+[03:58:13]   ℹ️ 2x3gA00 resnum 对齐 113/116（3 个非标准/parse独有残基 frac=0）
+[03:58:13]   ℹ️ 2x3gA00 分区 pocket=0/116 core=49 surface=67
+[03:58:13]   ℹ️ 2rsmA00 分区 pocket=0/115 core=21 surface=94
+[03:58:13]   ℹ️ 3pt9A02 分区 pocket=0/300 core=153 surface=147
+[03:58:13]   ℹ️ 3fggA00 resnum 对齐 133/142（9 个非标准/parse独有残基 frac=0）
+[03:58:13]   ℹ️ 3fggA00 分区 pocket=0/142 core=47 surface=95
+[03:58:13]   ℹ️ 1okcA00 分区 pocket=0/292 core=133 surface=159
+[03:58:13]   ℹ️ 3btxA00 分区 pocket=0/200 core=98 surface=102
+[03:58:13]   ℹ️ 1ji0A00 resnum 对齐 231/239（8 个非标准/parse独有残基 frac=0）
+[03:58:13]   ℹ️ 1ji0A00 分区 pocket=0/239 core=119 surface=120
+[03:58:14]   ℹ️ 7eqiB01 分区 pocket=0/173 core=75 surface=98
+[03:58:14]   ℹ️ 4y5tB00 分区 pocket=0/285 core=142 surface=143
+[03:58:14]   ℹ️ 3zdrA01 分区 pocket=0/192 core=94 surface=98
+[03:58:14]   ℹ️ 7dfqA01 分区 pocket=0/123 core=38 surface=85
+[03:58:14]   ℹ️ 5eo4A01 分区 pocket=0/139 core=54 surface=85
+[03:58:14]   ℹ️ 2ar1A00 分区 pocket=0/157 core=73 surface=84
+[03:58:14]   ℹ️ 2vouA02 分区 pocket=0/147 core=60 surface=87
+[03:58:14]   ℹ️ 3kt7A01 分区 pocket=0/239 core=115 surface=124
+[03:58:14]   ℹ️ 2cg7A02 分区 pocket=0/37 core=8 surface=29
+[03:58:15]   ℹ️ 1eqzF00 分区 pocket=0/107 core=16 surface=91
+[03:58:15]   ℹ️ 6tm3A01 分区 pocket=0/130 core=60 surface=70
+[03:58:15]   ℹ️ 6yttA02 分区 pocket=0/170 core=81 surface=89
+[03:58:15]   ℹ️ 2aw4201 分区 pocket=0/29 core=3 surface=26
+[03:58:15]   ℹ️ 1hbxA01 分区 pocket=0/71 core=14 surface=57
+[03:58:16]   ℹ️ 4en2A02 分区 pocket=0/104 core=40 surface=64
+[03:58:16]   ℹ️ 5dstA02 分区 pocket=0/177 core=71 surface=106
+[03:58:16]   ℹ️ 1b35C00 分区 pocket=0/282 core=95 surface=187
+[03:58:16]   ℹ️ 2k53A00 分区 pocket=0/70 core=23 surface=47
+[03:58:16]   ℹ️ 2m7lA01 分区 pocket=0/86 core=27 surface=59
+[03:58:16]   ℹ️ 3ec6A00 resnum 对齐 120/122（2 个非标准/parse独有残基 frac=0）
+[03:58:16]   ℹ️ 3ec6A00 分区 pocket=0/122 core=52 surface=70
+[03:58:16]   ℹ️ 4tv5A00 分区 pocket=0/230 core=111 surface=119
+[03:58:16]   ℹ️ 3vnaA00 分区 pocket=0/148 core=64 surface=84
+[03:58:16]   ℹ️ 4byfA01 分区 pocket=0/90 core=24 surface=66
+[03:58:16]   ℹ️ 4opcA00 分区 pocket=0/447 core=265 surface=182
+[03:58:17]   ℹ️ 2m6rA00 分区 pocket=0/149 core=70 surface=79
+[03:58:17]   ℹ️ 1gv4A01 分区 pocket=0/165 core=69 surface=96
+[03:58:17]   ℹ️ 4dkwA00 分区 pocket=0/194 core=96 surface=98
+[03:58:17]   ℹ️ 2zogA02 分区 pocket=0/174 core=66 surface=108
+[03:58:17]   ℹ️ 3raoB00 resnum 对齐 341/348（7 个非标准/parse独有残基 frac=0）
+[03:58:17]   ℹ️ 3raoB00 分区 pocket=0/348 core=177 surface=171
+[03:58:17]   ℹ️ 5tgzA01 分区 pocket=0/291 core=137 surface=154
+[03:58:17]   ℹ️ 3cllA00 分区 pocket=0/241 core=127 surface=114
+[03:58:17]   ℹ️ 2gloA00 分区 pocket=0/59 core=19 surface=40
+[03:58:17]   ℹ️ 1aa7A02 分区 pocket=0/78 core=29 surface=49
+[03:58:18]   ℹ️ 1rm6A05 分区 pocket=0/173 core=73 surface=100
+[03:58:18]   ℹ️ 1dpgA02 分区 pocket=0/309 core=159 surface=150
+[03:58:18]   ℹ️ 2ya0A02 分区 pocket=0/481 core=296 surface=185
+[03:58:18]   ℹ️ 2rgyA01 resnum 对齐 122/124（2 个非标准/parse独有残基 frac=0）
+[03:58:18]   ℹ️ 2rgyA01 分区 pocket=0/124 core=56 surface=68
+[03:58:18]   ℹ️ 3slkA02 分区 pocket=0/327 core=177 surface=150
+[03:58:18]   ℹ️ 7dniC02 分区 pocket=0/94 core=39 surface=55
+[03:58:18]   ℹ️ 3n4eA02 resnum 对齐 255/262（7 个非标准/parse独有残基 frac=0）
+[03:58:18]   ℹ️ 3n4eA02 分区 pocket=0/262 core=130 surface=132
+[03:58:18]   ℹ️ 1m3qA02 分区 pocket=0/80 core=29 surface=51
+[03:58:18]   ℹ️ 4i8oA04 resnum 对齐 93/98（5 个非标准/parse独有残基 frac=0）
+[03:58:18]   ℹ️ 4i8oA04 分区 pocket=0/98 core=39 surface=59
+[03:58:19]   预解析+encode 1000/1659（跳过 0）
+[03:58:19]   ℹ️ 3ibvB00 分区 pocket=0/902 core=405 surface=497
+[03:58:19]   ℹ️ 1xovA03 分区 pocket=0/72 core=21 surface=51
+[03:58:19]   ℹ️ 2h6eA01 分区 pocket=0/175 core=80 surface=95
+[03:58:19]   ℹ️ 6bekD00 分区 pocket=0/88 core=28 surface=60
+[03:58:19]   ℹ️ 1aorA03 分区 pocket=0/207 core=91 surface=116
+[03:58:19]   ℹ️ 2ensA01 分区 pocket=0/94 core=30 surface=64
+[03:58:20]   ℹ️ 3oc9A00 分区 pocket=0/390 core=201 surface=189
+[03:58:20]   ℹ️ 5bykA00 分区 pocket=0/250 core=124 surface=126
+[03:58:20]   ℹ️ 2amyA02 resnum 对齐 101/102（1 个非标准/parse独有残基 frac=0）
+[03:58:20]   ℹ️ 2amyA02 分区 pocket=0/102 core=40 surface=62
+[03:58:20]   ℹ️ 2ahmE01 分区 pocket=0/51 core=0 surface=51
+[03:58:20]   ℹ️ 5nckA01 分区 pocket=0/105 core=42 surface=63
+[03:58:20]   ℹ️ 2hdlA00 分区 pocket=0/77 core=24 surface=53
+[03:58:20]   ℹ️ 4yhbA02 分区 pocket=0/132 core=59 surface=73
+[03:58:20]   ℹ️ 3bpqD00 分区 pocket=0/85 core=25 surface=60
+[03:58:20]   ℹ️ 2c9aA02 resnum 对齐 96/97（1 个非标准/parse独有残基 frac=0）
+[03:58:20]   ℹ️ 2c9aA02 分区 pocket=0/97 core=38 surface=59
+[03:58:21]   ℹ️ 7ckaA01 分区 pocket=0/194 core=95 surface=99
+[03:58:21]   ℹ️ 4nxyA00 分区 pocket=0/173 core=82 surface=91
+[03:58:21]   ℹ️ 2fd6U02 分区 pocket=0/86 core=31 surface=55
+[03:58:21]   ℹ️ 2ix7C00 分区 pocket=0/58 core=1 surface=57
+[03:58:21]   ℹ️ 8etcb01 分区 pocket=0/146 core=55 surface=91
+[03:58:21]   ℹ️ 3vk8A02 分区 pocket=0/152 core=65 surface=87
+[03:58:21]   ℹ️ 1knxE02 分区 pocket=0/175 core=75 surface=100
+[03:58:21]   ℹ️ 2d3dA00 分区 pocket=0/82 core=32 surface=50
+[03:58:21]   ℹ️ 7dvrA01 分区 pocket=0/140 core=31 surface=109
+[03:58:21]   ℹ️ 1pp8O00 分区 pocket=0/97 core=35 surface=62
+[03:58:21]   ℹ️ 1wgvA00 分区 pocket=0/124 core=38 surface=86
+[03:58:21]   ℹ️ 4djaA01 分区 pocket=0/156 core=73 surface=83
+[03:58:21]   ℹ️ 2khxA00 分区 pocket=0/79 core=19 surface=60
+[03:58:22]   ℹ️ 2biiA01 分区 pocket=0/236 core=116 surface=120
+[03:58:22]   ℹ️ 1fjgD01 分区 pocket=0/111 core=36 surface=75
+[03:58:22]   ℹ️ 5cr4A00 分区 pocket=0/217 core=90 surface=127
+[03:58:22]   ℹ️ 1vx2I02 分区 pocket=0/113 core=33 surface=80
+[03:58:22]   ℹ️ 3on0C02 分区 pocket=0/62 core=3 surface=59
+[03:58:22]   ℹ️ 5aooC00 分区 pocket=0/220 core=84 surface=136
+[03:58:22]   ℹ️ 1ylqA00 分区 pocket=0/93 core=36 surface=57
+[03:58:22]   ℹ️ 2xkrA00 分区 pocket=0/395 core=224 surface=171
+[03:58:22]   ℹ️ 2ktaA01 分区 pocket=0/57 core=17 surface=40
+[03:58:22]   ℹ️ 1dj0A02 分区 pocket=0/107 core=46 surface=61
+[03:58:22]   ℹ️ 3o6qA02 resnum 对齐 112/114（2 个非标准/parse独有残基 frac=0）
+[03:58:22]   ℹ️ 3o6qA02 分区 pocket=0/114 core=48 surface=66
+[03:58:22]   ℹ️ 2vzbB00 分区 pocket=0/165 core=77 surface=88
+[03:58:22]   ℹ️ 6qm7M00 分区 pocket=0/214 core=101 surface=113
+[03:58:23]   ℹ️ 2n98A00 分区 pocket=0/90 core=26 surface=64
+[03:58:23]   ℹ️ 1sqeA00 分区 pocket=0/101 core=38 surface=63
+[03:58:23]   ℹ️ 4qblE00 resnum 对齐 123/126（3 个非标准/parse独有残基 frac=0）
+[03:58:23]   ℹ️ 4qblE00 分区 pocket=0/126 core=49 surface=77
+[03:58:23]   ℹ️ 1fneA01 分区 pocket=0/79 core=18 surface=61
+[03:58:23]   ℹ️ 6oziB00 分区 pocket=0/239 core=126 surface=113
+[03:58:23]   ℹ️ 2w9mB03 分区 pocket=0/81 core=26 surface=55
+[03:58:23]   ℹ️ 3ptyA02 分区 pocket=0/178 core=81 surface=97
+[03:58:23]   ℹ️ 1a36A04 分区 pocket=0/175 core=69 surface=106
+[03:58:23]   ℹ️ 2hfzA01 分区 pocket=0/89 core=35 surface=54
+[03:58:23]   ℹ️ 2r9yA01 分区 pocket=0/219 core=108 surface=111
+[03:58:23]   ℹ️ 2jd4A02 分区 pocket=0/176 core=87 surface=89
+[03:58:23]   ℹ️ 6byoA01 分区 pocket=0/120 core=29 surface=91
+[03:58:24]   ℹ️ 7xv3R01 分区 pocket=0/271 core=102 surface=169
+[03:58:24]   ℹ️ 2pvuA01 分区 pocket=0/122 core=58 surface=64
+[03:58:24]   ℹ️ 3t37A01 分区 pocket=0/246 core=130 surface=116
+[03:58:24]   ℹ️ 4rmoA00 resnum 对齐 150/154（4 个非标准/parse独有残基 frac=0）
+[03:58:24]   ℹ️ 4rmoA00 分区 pocket=0/154 core=70 surface=84
+[03:58:24]   ℹ️ 5w36B01 分区 pocket=0/134 core=61 surface=73
+[03:58:24]   ℹ️ 1ba2A01 分区 pocket=0/125 core=55 surface=70
+[03:58:24]   ℹ️ 3o8lA03 分区 pocket=0/216 core=124 surface=92
+[03:58:24]   ℹ️ 2fq3A00 分区 pocket=0/85 core=30 surface=55
+[03:58:24]   ℹ️ 2fbkA00 分区 pocket=0/156 core=40 surface=116
+[03:58:24]   ℹ️ 3ddjA02 resnum 对齐 132/137（5 个非标准/parse独有残基 frac=0）
+[03:58:24]   ℹ️ 3ddjA02 分区 pocket=0/137 core=56 surface=81
+[03:58:24]   ℹ️ 3kcpA03 分区 pocket=0/58 core=15 surface=43
+[03:58:25]   ℹ️ 5iaiA02 resnum 对齐 203/207（4 个非标准/parse独有残基 frac=0）
+[03:58:25]   ℹ️ 5iaiA02 分区 pocket=0/207 core=105 surface=102
+[03:58:25]   ℹ️ 5u81A01 分区 pocket=0/257 core=142 surface=115
+[03:58:25]   ℹ️ 1mi1A02 resnum 对齐 284/289（5 个非标准/parse独有残基 frac=0）
+[03:58:25]   ℹ️ 1mi1A02 分区 pocket=0/289 core=144 surface=145
+[03:58:26]   ℹ️ 3nkqA03 分区 pocket=0/387 core=211 surface=176
+[03:58:26]   ℹ️ 2g3mA02 分区 pocket=0/376 core=214 surface=162
+[03:58:26]   ℹ️ 3kbtA00 分区 pocket=0/284 core=97 surface=187
+[03:58:26]   ℹ️ 2vpzA05 分区 pocket=0/159 core=64 surface=95
+[03:58:26]   ℹ️ 2ymsB00 分区 pocket=0/74 core=28 surface=46
+[03:58:27]   ℹ️ 1yduA01 分区 pocket=0/139 core=48 surface=91
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  N  ' unknown, guessing element is ' N', and radius 1.550 A
+FreeSASA: warning: atom 'UNK  CA ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  C  ' unknown, guessing element is ' C', and radius 1.700 A
+FreeSASA: warning: atom 'UNK  O  ' unknown, guessing element is ' O', and radius 1.520 A
+FreeSASA: warning: atom 'UNK  CB ' unknown, guessing element is ' C', and radius 1.700 A
+[03:58:27]   ⚠️ 2gnxA01 SASA/pocket 分区失败: freesasa 计算失败: Error: Radius is <= 0 (-1.0) for the residue: UNK, atom:  N  （跳过 v12 监督）
+[03:58:27]   ℹ️ 7ylrA01 分区 pocket=0/105 core=42 surface=63
+[03:58:27]   ℹ️ 1wkiA01 分区 pocket=0/109 core=38 surface=71
+[03:58:27]   ℹ️ 1s7eA02 分区 pocket=0/74 core=15 surface=59
+[03:58:27]   ℹ️ 1f0lA02 分区 pocket=0/176 core=86 surface=90
+[03:58:27]   ℹ️ 3l4gC03 分区 pocket=0/53 core=15 surface=38
+[03:58:27]   ℹ️ 7lb8B02 分区 pocket=0/306 core=160 surface=146
+[03:58:27]   ℹ️ 2hjhB01 resnum 对齐 198/202（4 个非标准/parse独有残基 frac=0）
+[03:58:27]   ℹ️ 2hjhB01 分区 pocket=0/202 core=99 surface=103
+[03:58:28]   ℹ️ 2i5hA02 分区 pocket=0/96 core=32 surface=64
+[03:58:28]   ℹ️ 5xb6A01 分区 pocket=0/215 core=116 surface=99
+[03:58:28]   ℹ️ 2ii7H00 分区 pocket=0/106 core=35 surface=71
+[03:58:28]   ℹ️ 6nsjA00 分区 pocket=0/182 core=76 surface=106
+[03:58:28]   ℹ️ 1qtoA00 分区 pocket=0/122 core=46 surface=76
+[03:58:28]   ℹ️ 4dn9B00 resnum 对齐 92/95（3 个非标准/parse独有残基 frac=0）
+[03:58:28]   ℹ️ 4dn9B00 分区 pocket=0/95 core=32 surface=63
+[03:58:28]   ℹ️ 2w5yA01 分区 pocket=0/154 core=61 surface=93
+[03:58:28]   ℹ️ 5ijgA01 分区 pocket=0/213 core=107 surface=106
+[03:58:28]   ℹ️ 3q2iA01 分区 pocket=0/162 core=74 surface=88
+[03:58:28]   ℹ️ 4ykiA02 分区 pocket=0/98 core=43 surface=55
+[03:58:28]   ℹ️ 2qjjD02 分区 pocket=0/247 core=131 surface=116
+[03:58:29]   ℹ️ 1ouvA00 分区 pocket=0/265 core=117 surface=148
+[03:58:29]   ℹ️ 1bakA00 分区 pocket=0/119 core=32 surface=87
+[03:58:29]   ℹ️ 2yx1A03 resnum 对齐 177/180（3 个非标准/parse独有残基 frac=0）
+[03:58:29]   ℹ️ 2yx1A03 分区 pocket=0/180 core=92 surface=88
+[03:58:29]   ℹ️ 1gn4A02 分区 pocket=0/115 core=44 surface=71
+[03:58:29]   ℹ️ 3oc4B03 resnum 对齐 119/121（2 个非标准/parse独有残基 frac=0）
+[03:58:29]   ℹ️ 3oc4B03 分区 pocket=0/121 core=51 surface=70
+[03:58:29]   ℹ️ 1dmrA04 分区 pocket=0/163 core=70 surface=93
+[03:58:29]   ℹ️ 2g3bA00 resnum 对齐 184/185（1 个非标准/parse独有残基 frac=0）
+[03:58:29]   ℹ️ 2g3bA00 分区 pocket=0/185 core=85 surface=100
+[03:58:29]   ℹ️ 3gkeA02 分区 pocket=0/210 core=93 surface=117
+[03:58:29]   ℹ️ 1vrsD00 分区 pocket=0/118 core=51 surface=67
+[03:58:29]   ℹ️ 1rr7A02 分区 pocket=0/48 core=12 surface=36
+[03:58:29]   ℹ️ 7rsfA01 分区 pocket=0/121 core=42 surface=79
+[03:58:30]   ℹ️ 3dg6A01 分区 pocket=0/114 core=39 surface=75
+[03:58:30]   ℹ️ 3dtnA01 分区 pocket=0/187 core=96 surface=91
+[03:58:30]   ℹ️ 2x4gA00 分区 pocket=0/302 core=154 surface=148
+[03:58:30]   ℹ️ 1yxmC00 分区 pocket=0/264 core=137 surface=127
+[03:58:30]   ℹ️ 3fdqA01 分区 pocket=0/122 core=53 surface=69
+[03:58:30]   ℹ️ 1njgB01 分区 pocket=0/73 core=23 surface=50
+[03:58:31]   ℹ️ 4lctB00 分区 pocket=0/348 core=170 surface=178
+[03:58:31]   ℹ️ 2fckA00 resnum 对齐 165/167（2 个非标准/parse独有残基 frac=0）
+[03:58:31]   ℹ️ 2fckA00 分区 pocket=0/167 core=78 surface=89
+[03:58:31]   ℹ️ 1cfeA00 分区 pocket=0/135 core=60 surface=75
+[03:58:31]   ℹ️ 1qs0A00 resnum 对齐 395/407（12 个非标准/parse独有残基 frac=0）
+[03:58:31]   ℹ️ 1qs0A00 分区 pocket=0/407 core=212 surface=195
+[03:58:31]   ℹ️ 4b1zM01 分区 pocket=0/66 core=1 surface=65
+[03:58:31]   ℹ️ 2byoA00 分区 pocket=0/183 core=76 surface=107
+[03:58:31]   ℹ️ 4ekfA00 分区 pocket=0/191 core=97 surface=94
+[03:58:31]   ℹ️ 3ix3A00 分区 pocket=0/163 core=77 surface=86
+[03:58:31]   ℹ️ 3lkdA02 resnum 对齐 274/282（8 个非标准/parse独有残基 frac=0）
+[03:58:31]   ℹ️ 3lkdA02 分区 pocket=0/282 core=159 surface=123
+[03:58:31]   ℹ️ 2ysiA01 分区 pocket=0/33 core=5 surface=28
+[03:58:32]   ℹ️ 2qp2A02 分区 pocket=0/149 core=61 surface=88
+[03:58:32]   ℹ️ 1wgfA01 分区 pocket=0/53 core=13 surface=40
+[03:58:32]   ℹ️ 3ll7A02 resnum 对齐 181/183（2 个非标准/parse独有残基 frac=0）
+[03:58:32]   ℹ️ 3ll7A02 分区 pocket=0/183 core=83 surface=100
+[03:58:32]   ℹ️ 3r75B01 分区 pocket=0/387 core=229 surface=158
+[03:58:32]   ℹ️ 5uznA00 分区 pocket=0/80 core=32 surface=48
+[03:58:32]   ℹ️ 4jotA01 resnum 对齐 207/212（5 个非标准/parse独有残基 frac=0）
+[03:58:32]   ℹ️ 4jotA01 分区 pocket=0/212 core=101 surface=111
+[03:58:32]   ℹ️ 1yisA02 resnum 对齐 310/318（8 个非标准/parse独有残基 frac=0）
+[03:58:32]   ℹ️ 1yisA02 分区 pocket=0/318 core=148 surface=170
+[03:58:32]   ℹ️ 1vwxZ00 分区 pocket=0/135 core=48 surface=87
+[03:58:32]   ℹ️ 1imxA00 分区 pocket=0/56 core=14 surface=42
+[03:58:33]   ℹ️ 1j3jB00 分区 pocket=0/216 core=102 surface=114
+[03:58:33]   ℹ️ 2mizA00 分区 pocket=0/156 core=67 surface=89
+[03:58:33]   ℹ️ 4nfnA01 分区 pocket=0/64 core=12 surface=52
+[03:58:33]   ℹ️ 3u80A00 分区 pocket=0/122 core=50 surface=72
+[03:58:33]   ℹ️ 1vq3B00 分区 pocket=0/84 core=19 surface=65
+[03:58:33]   ℹ️ 6iakC00 分区 pocket=0/61 core=1 surface=60
+[03:58:33]   ℹ️ 2v43A01 分区 pocket=0/183 core=83 surface=100
+[03:58:33]   ℹ️ 2i3bA00 分区 pocket=0/189 core=81 surface=108
+[03:58:33]   ℹ️ 1y1fX00 resnum 对齐 271/272（1 个非标准/parse独有残基 frac=0）
+[03:58:33]   ℹ️ 1y1fX00 分区 pocket=0/272 core=156 surface=116
+[03:58:33]   ℹ️ 7pbkA01 分区 pocket=0/222 core=106 surface=116
+[03:58:33]   ℹ️ 3tupA02 分区 pocket=0/96 core=34 surface=62
+[03:58:33]   ℹ️ 1w07A01 分区 pocket=0/114 core=31 surface=83
+[03:58:34]   ℹ️ 2cklA00 分区 pocket=0/98 core=29 surface=69
+[03:58:34]   ℹ️ 2ednA00 分区 pocket=0/118 core=35 surface=83
+[03:58:34]   ℹ️ 4qbnA00 分区 pocket=0/93 core=33 surface=60
+[03:58:34]   ℹ️ 2bi7A01 分区 pocket=0/201 core=93 surface=108
+[03:58:34]   ℹ️ 2a7rD00 分区 pocket=0/317 core=175 surface=142
+[03:58:34]   ℹ️ 1kv3A03 分区 pocket=0/117 core=44 surface=73
+[03:58:34]   ℹ️ 1yq2A04 分区 pocket=0/115 core=39 surface=76
+[03:58:34]   ℹ️ 2uvfA01 分区 pocket=0/116 core=42 surface=74
+[03:58:34]   ℹ️ 4k47A00 分区 pocket=0/183 core=82 surface=101
+[03:58:34]   ℹ️ 2mobA00 分区 pocket=0/94 core=30 surface=64
+[03:58:34]   ℹ️ 2qu7A02 分区 pocket=0/137 core=62 surface=75
+[03:58:34]   ℹ️ 3broD00 resnum 对齐 116/122（6 个非标准/parse独有残基 frac=0）
+[03:58:34]   ℹ️ 3broD00 分区 pocket=0/122 core=40 surface=82
+[03:58:34]   ℹ️ 8d8lE01 分区 pocket=0/86 core=26 surface=60
+[03:58:35]   ℹ️ 6torA01 分区 pocket=0/144 core=68 surface=76
+[03:58:35]   ℹ️ 2cmzA03 分区 pocket=0/93 core=36 surface=57
+[03:58:35]   ℹ️ 1ztmB04 分区 pocket=0/57 core=0 surface=57
+[03:58:35]   ℹ️ 1pe4A00 分区 pocket=0/67 core=22 surface=45
+[03:58:35]   ℹ️ 1ux8A00 分区 pocket=0/118 core=49 surface=69
+[03:58:35]   ℹ️ 5i7iA00 分区 pocket=0/315 core=170 surface=145
+[03:58:35]   ℹ️ 8d7eC01 分区 pocket=0/81 core=18 surface=63
+[03:58:35]   ℹ️ 6dgbA01 分区 pocket=0/94 core=37 surface=57
+[03:58:35]   ℹ️ 2f4iA01 resnum 对齐 53/56（3 个非标准/parse独有残基 frac=0）
+[03:58:35]   ℹ️ 2f4iA01 分区 pocket=0/56 core=17 surface=39
+[03:58:36]   ℹ️ 3orgA01 分区 pocket=0/408 core=218 surface=190
+[03:58:36]   ℹ️ 3hz6A01 resnum 对齐 247/250（3 个非标准/parse独有残基 frac=0）
+[03:58:36]   ℹ️ 3hz6A01 分区 pocket=0/250 core=124 surface=126
+[03:58:36]   ℹ️ 2pmiB00 分区 pocket=0/213 core=98 surface=115
+[03:58:36]   ℹ️ 1sb2B00 分区 pocket=0/124 core=47 surface=77
+[03:58:36]   ℹ️ 3k44B00 分区 pocket=0/136 core=58 surface=78
+[03:58:36]   ℹ️ 5lw5A00 分区 pocket=0/143 core=68 surface=75
+[03:58:36]   ℹ️ 2w9hA00 分区 pocket=0/151 core=73 surface=78
+[03:58:36]   ℹ️ 3feoB02 分区 pocket=0/83 core=28 surface=55
+[03:58:36]   ℹ️ 4lhxE00 分区 pocket=0/76 core=3 surface=73
+[03:58:36]   ℹ️ 6jsjA01 分区 pocket=0/277 core=139 surface=138
+[03:58:36]   ℹ️ 1dceA02 分区 pocket=0/103 core=42 surface=61
+[03:58:37]   ℹ️ 2pi0A01 分区 pocket=0/96 core=33 surface=63
+[03:58:37]   ℹ️ 6qp7A01 分区 pocket=0/480 core=263 surface=217
+[03:58:37]   ℹ️ 2jh1A02 分区 pocket=0/107 core=45 surface=62
+[03:58:37]   ℹ️ 1t95A02 resnum 对齐 74/75（1 个非标准/parse独有残基 frac=0）
+[03:58:37]   ℹ️ 1t95A02 分区 pocket=0/75 core=25 surface=50
+[03:58:37]   ℹ️ 3q9oA03 分区 pocket=0/208 core=101 surface=107
+[03:58:37]   ℹ️ 8gz3B01 分区 pocket=0/93 core=35 surface=58
+[03:58:37]   ℹ️ 3mpxA01 resnum 对齐 202/206（4 个非标准/parse独有残基 frac=0）
+[03:58:37]   ℹ️ 3mpxA01 分区 pocket=0/206 core=96 surface=110
+[03:58:37]   ℹ️ 2xi5A00 分区 pocket=0/184 core=80 surface=104
+[03:58:37]   ℹ️ 2jo7A00 分区 pocket=0/224 core=84 surface=140
+[03:58:38]   ℹ️ 5bwjD02 分区 pocket=0/90 core=39 surface=51
+[03:58:38]   ℹ️ 1vx7F02 分区 pocket=0/75 core=2 surface=73
+[03:58:38]   ℹ️ 4joqA01 resnum 对齐 137/140（3 个非标准/parse独有残基 frac=0）
+[03:58:38]   ℹ️ 4joqA01 分区 pocket=0/140 core=61 surface=79
+[03:58:38]   ℹ️ 3go6A00 分区 pocket=0/287 core=149 surface=138
+[03:58:38]   ℹ️ 2ymuA02 分区 pocket=0/270 core=167 surface=103
+[03:58:38]   ℹ️ 2d2sA02 分区 pocket=0/101 core=32 surface=69
+[03:58:38]   ℹ️ 3cdkB00 分区 pocket=0/211 core=103 surface=108
+[03:58:38]   ℹ️ 4at7B02 分区 pocket=0/190 core=78 surface=112
+[03:58:38]   ℹ️ 1repC02 分区 pocket=0/91 core=35 surface=56
+[03:58:38]   ℹ️ 2d0iA02 分区 pocket=0/192 core=93 surface=99
+[03:58:38]   ℹ️ 1ja1A03 分区 pocket=0/126 core=53 surface=73
+[03:58:38]   ℹ️ 2h41A00 分区 pocket=0/95 core=28 surface=67
+[03:58:38]   ℹ️ 2a7kE02 分区 pocket=0/39 core=1 surface=38
+[03:58:39]   ℹ️ 1pfjA00 分区 pocket=0/108 core=38 surface=70
+[03:58:39]   ℹ️ 1wdcA00 分区 pocket=0/64 core=1 surface=63
+[03:58:39]   ℹ️ 1lk5A02 分区 pocket=0/79 core=27 surface=52
+[03:58:39]   ℹ️ 3eypA02 分区 pocket=0/132 core=65 surface=67
+[03:58:39]   ℹ️ 3kv0A01 分区 pocket=0/155 core=65 surface=90
+[03:58:39]   预解析+encode 1200/1659（跳过 0）
+[03:58:39]   ℹ️ 4j87A00 分区 pocket=0/316 core=177 surface=139
+[03:58:39]   ℹ️ 1p5tA00 resnum 对齐 104/105（1 个非标准/parse独有残基 frac=0）
+[03:58:39]   ℹ️ 1p5tA00 分区 pocket=0/105 core=43 surface=62
+[03:58:39]   ℹ️ 1wwuA01 分区 pocket=0/64 core=19 surface=45
+[03:58:39]   ℹ️ 2vmhA00 分区 pocket=0/147 core=70 surface=77
+[03:58:39]   ℹ️ 4cczA01 分区 pocket=0/314 core=161 surface=153
+[03:58:39]   ℹ️ 3rt0C00 分区 pocket=0/171 core=67 surface=104
+[03:58:40]   ℹ️ 1kqrA00 分区 pocket=0/156 core=77 surface=79
+[03:58:40]   ℹ️ 3qokA01 resnum 对齐 292/297（5 个非标准/parse独有残基 frac=0）
+[03:58:40]   ℹ️ 3qokA01 分区 pocket=0/297 core=159 surface=138
+[03:58:40]   ℹ️ 3sngA00 分区 pocket=0/267 core=142 surface=125
+[03:58:40]   ℹ️ 1c1kA01 分区 pocket=0/102 core=43 surface=59
+[03:58:40]   ℹ️ 5kivA01 分区 pocket=0/188 core=91 surface=97
+[03:58:41]   ℹ️ 3p3yA01 分区 pocket=0/100 core=40 surface=60
+[03:58:41]   ℹ️ 3wv4A00 分区 pocket=0/392 core=225 surface=167
+[03:58:41]   ℹ️ 2yadA00 resnum 对齐 74/77（3 个非标准/parse独有残基 frac=0）
+[03:58:41]   ℹ️ 2yadA00 分区 pocket=0/77 core=26 surface=51
+[03:58:41]   ℹ️ 2j8zA01 分区 pocket=0/186 core=89 surface=97
+[03:58:41]   ℹ️ 3axgK00 分区 pocket=0/342 core=181 surface=161
+[03:58:41]   ℹ️ 3ikoC02 分区 pocket=0/149 core=53 surface=96
+[03:58:41]   ℹ️ 4umoA00 分区 pocket=0/75 core=3 surface=72
+[03:58:42]   ℹ️ 2q01A01 分区 pocket=0/368 core=201 surface=167
+[03:58:42]   ℹ️ 5a29A01 分区 pocket=0/421 core=242 surface=179
+[03:58:42]   ℹ️ 3amlA02 分区 pocket=0/109 core=42 surface=67
+[03:58:42]   ℹ️ 3hp7A01 resnum 对齐 62/64（2 个非标准/parse独有残基 frac=0）
+[03:58:42]   ℹ️ 3hp7A01 分区 pocket=0/64 core=22 surface=42
+[03:58:42]   ℹ️ 3g2mA02 resnum 对齐 159/163（4 个非标准/parse独有残基 frac=0）
+[03:58:42]   ℹ️ 3g2mA02 分区 pocket=0/163 core=80 surface=83
+[03:58:42]   ℹ️ 4labA00 分区 pocket=0/187 core=88 surface=99
+[03:58:42]   ℹ️ 1dj0A01 分区 pocket=0/138 core=64 surface=74
+[03:58:42]   ℹ️ 3h2sA00 resnum 对齐 211/215（4 个非标准/parse独有残基 frac=0）
+[03:58:42]   ℹ️ 3h2sA00 分区 pocket=0/215 core=110 surface=105
+[03:58:43]   ℹ️ 4ak1A01 分区 pocket=0/94 core=34 surface=60
+[03:58:43]   ℹ️ 1bxvA00 分区 pocket=0/91 core=35 surface=56
+[03:58:43]   ℹ️ 6njyA01 分区 pocket=0/121 core=50 surface=71
+[03:58:43]   ℹ️ 2xzmK00 分区 pocket=0/140 core=49 surface=91
+[03:58:43]   ℹ️ 1tj7A03 分区 pocket=0/71 core=25 surface=46
+[03:58:43]   ℹ️ 2cjaA02 resnum 对齐 315/324（9 个非标准/parse独有残基 frac=0）
+[03:58:43]   ℹ️ 2cjaA02 分区 pocket=0/324 core=159 surface=165
+[03:58:43]   ℹ️ 4aqtA01 分区 pocket=0/265 core=125 surface=140
+[03:58:43]   ℹ️ 3lygA00 resnum 对齐 110/114（4 个非标准/parse独有残基 frac=0）
+[03:58:43]   ℹ️ 3lygA00 分区 pocket=0/114 core=50 surface=64
+[03:58:43]   ℹ️ 1vjxA00 resnum 对齐 145/148（3 个非标准/parse独有残基 frac=0）
+[03:58:43]   ℹ️ 1vjxA00 分区 pocket=0/148 core=63 surface=85
+[03:58:43]   ℹ️ 3bmxA02 分区 pocket=0/220 core=111 surface=109
+[03:58:43]   ℹ️ 4pcwC00 分区 pocket=0/91 core=21 surface=70
+[03:58:43]   ℹ️ 4dzoB01 分区 pocket=0/42 core=0 surface=42
+[03:58:44]   ℹ️ 2qjcA00 resnum 对齐 219/222（3 个非标准/parse独有残基 frac=0）
+[03:58:44]   ℹ️ 2qjcA00 分区 pocket=0/222 core=121 surface=101
+[03:58:44]   ℹ️ 2pokA02 分区 pocket=0/169 core=63 surface=106
+[03:58:44]   ℹ️ 3x1lB02 分区 pocket=0/63 core=17 surface=46
+[03:58:44]   ℹ️ 2ebfX01 分区 pocket=0/193 core=88 surface=105
+[03:58:44]   ℹ️ 2fhdA01 resnum 对齐 58/61（3 个非标准/parse独有残基 frac=0）
+[03:58:44]   ℹ️ 2fhdA01 分区 pocket=0/61 core=15 surface=46
+[03:58:44]   ℹ️ 5ggiB01 分区 pocket=0/230 core=119 surface=111
+[03:58:44]   ℹ️ 3piwA00 分区 pocket=0/153 core=66 surface=87
+[03:58:44]   ℹ️ 2z86D02 分区 pocket=0/260 core=136 surface=124
+[03:58:44]   ℹ️ 8g59R01 分区 pocket=0/264 core=103 surface=161
+[03:58:44]   ℹ️ 3ch0A00 resnum 对齐 252/258（6 个非标准/parse独有残基 frac=0）
+[03:58:44]   ℹ️ 3ch0A00 分区 pocket=0/258 core=145 surface=113
+[03:58:45]   ℹ️ 1sumB01 分区 pocket=0/107 core=36 surface=71
+[03:58:45]   ℹ️ 4dz6A00 分区 pocket=0/166 core=78 surface=88
+[03:58:45]   ℹ️ 3tnuB00 分区 pocket=0/95 core=0 surface=95
+[03:58:45]   ℹ️ 6ks6A02 分区 pocket=0/108 core=38 surface=70
+[03:58:45]   ℹ️ 4aybP00 分区 pocket=0/44 core=5 surface=39
+[03:58:45]   ℹ️ 3a76A01 分区 pocket=0/139 core=57 surface=82
+[03:58:45]   ℹ️ 2zdsB00 resnum 对齐 318/322（4 个非标准/parse独有残基 frac=0）
+[03:58:45]   ℹ️ 2zdsB00 分区 pocket=0/322 core=179 surface=143
+[03:58:45]   ℹ️ 2istA01 分区 pocket=0/72 core=27 surface=45
+[03:58:46]   ℹ️ 2d3yA00 分区 pocket=0/219 core=114 surface=105
+[03:58:46]   ℹ️ 2mlgA00 分区 pocket=0/77 core=22 surface=55
+[03:58:46]   ℹ️ 3ue3A02 分区 pocket=0/142 core=56 surface=86
+[03:58:46]   ℹ️ 3o2zF00 分区 pocket=0/77 core=20 surface=57
+[03:58:46]   ℹ️ 2rdlA01 resnum 对齐 109/118（9 个非标准/parse独有残基 frac=0）
+[03:58:46]   ℹ️ 2rdlA01 分区 pocket=0/118 core=52 surface=66
+[03:58:46]   ℹ️ 3trgA00 resnum 对齐 93/94（1 个非标准/parse独有残基 frac=0）
+[03:58:46]   ℹ️ 3trgA00 分区 pocket=0/94 core=39 surface=55
+[03:58:46]   ℹ️ 1ba5A00 分区 pocket=0/53 core=13 surface=40
+[03:58:46]   ℹ️ 3vprA02 resnum 对齐 140/145（5 个非标准/parse独有残基 frac=0）
+[03:58:46]   ℹ️ 3vprA02 分区 pocket=0/145 core=56 surface=89
+[03:58:46]   ℹ️ 4kb2A01 分区 pocket=0/109 core=38 surface=71
+[03:58:46]   ℹ️ 1r89A04 分区 pocket=0/44 core=10 surface=34
+[03:58:46]   ℹ️ 1b89A00 resnum 对齐 311/319（8 个非标准/parse独有残基 frac=0）
+[03:58:46]   ℹ️ 1b89A00 分区 pocket=0/319 core=139 surface=180
+[03:58:47]   ℹ️ 1dmlA00 分区 pocket=0/267 core=131 surface=136
+[03:58:47]   ℹ️ 4ckmB00 分区 pocket=0/143 core=56 surface=87
+[03:58:47]   ℹ️ 3v0dA02 分区 pocket=0/142 core=67 surface=75
+[03:58:47]   ℹ️ 1bw5A00 分区 pocket=0/66 core=14 surface=52
+[03:58:47]   ℹ️ 2hf9B00 分区 pocket=0/209 core=112 surface=97
+[03:58:47]   ℹ️ 2jxxA00 分区 pocket=0/78 core=28 surface=50
+[03:58:47]   ℹ️ 2vxbA02 分区 pocket=0/81 core=29 surface=52
+[03:58:47]   ℹ️ 3pieC02 分区 pocket=0/102 core=36 surface=66
+[03:58:47]   ℹ️ 3pvsA02 分区 pocket=0/76 core=27 surface=49
+[03:58:47]   ℹ️ 4q5tA01 resnum 对齐 143/145（2 个非标准/parse独有残基 frac=0）
+[03:58:47]   ℹ️ 4q5tA01 分区 pocket=0/145 core=61 surface=84
+[03:58:47]   ℹ️ 5g5gC03 分区 pocket=0/91 core=37 surface=54
+[03:58:47]   ℹ️ 2oczA00 resnum 对齐 205/214（9 个非标准/parse独有残基 frac=0）
+[03:58:47]   ℹ️ 2oczA00 分区 pocket=0/214 core=110 surface=104
+[03:58:47]   ℹ️ 3v98B01 分区 pocket=0/117 core=49 surface=68
+[03:58:47]   ℹ️ 3jqyC00 分区 pocket=0/213 core=99 surface=114
+[03:58:48]   ℹ️ 3qkbA00 resnum 对齐 90/93（3 个非标准/parse独有残基 frac=0）
+[03:58:48]   ℹ️ 3qkbA00 分区 pocket=0/93 core=26 surface=67
+[03:58:48]   ℹ️ 3qz0A00 resnum 对齐 76/77（1 个非标准/parse独有残基 frac=0）
+[03:58:48]   ℹ️ 3qz0A00 分区 pocket=0/77 core=26 surface=51
+[03:58:48]   ℹ️ 5c5uB00 分区 pocket=0/190 core=90 surface=100
+[03:58:48]   ℹ️ 2a8eA00 resnum 对齐 205/210（5 个非标准/parse独有残基 frac=0）
+[03:58:48]   ℹ️ 2a8eA00 分区 pocket=0/210 core=103 surface=107
+[03:58:48]   ℹ️ 2oayA02 分区 pocket=0/180 core=76 surface=104
+[03:58:48]   ℹ️ 3rrrG02 分区 pocket=0/32 core=0 surface=32
+[03:58:48]   ℹ️ 1dmhA00 分区 pocket=0/309 core=137 surface=172
+[03:58:48]   ℹ️ 1a66A00 分区 pocket=0/178 core=66 surface=112
+[03:58:49]   ℹ️ 3i4uA01 分区 pocket=0/95 core=29 surface=66
+[03:58:49]   ℹ️ 1nunA00 分区 pocket=0/139 core=67 surface=72
+[03:58:49]   ℹ️ 1t9zA00 resnum 对齐 176/180（4 个非标准/parse独有残基 frac=0）
+[03:58:49]   ℹ️ 1t9zA00 分区 pocket=0/180 core=88 surface=92
+[03:58:49]   ℹ️ 2e5eA00 分区 pocket=0/101 core=27 surface=74
+[03:58:49]   ℹ️ 1s6lA01 分区 pocket=0/52 core=10 surface=42
+[03:58:49]   ℹ️ 2l2nA00 分区 pocket=0/71 core=20 surface=51
+[03:58:49]   ℹ️ 3vh8G01 分区 pocket=0/93 core=33 surface=60
+[03:58:49]   ℹ️ 2wsiA00 分区 pocket=0/285 core=152 surface=133
+[03:58:49]   ℹ️ 7wqxA01 分区 pocket=0/106 core=45 surface=61
+[03:58:49]   ℹ️ 7z0sF01 分区 pocket=0/161 core=49 surface=112
+[03:58:49]   ℹ️ 1rz1A00 resnum 对齐 147/152（5 个非标准/parse独有残基 frac=0）
+[03:58:49]   ℹ️ 1rz1A00 分区 pocket=0/152 core=60 surface=92
+[03:58:49]   ℹ️ 2csxA03 分区 pocket=0/163 core=68 surface=95
+[03:58:50]   ℹ️ 1pp0B00 分区 pocket=0/194 core=88 surface=106
+[03:58:50]   ℹ️ 2vhaA02 分区 pocket=0/95 core=41 surface=54
+[03:58:50]   ℹ️ 3wlvA00 分区 pocket=0/302 core=126 surface=176
+[03:58:50]   ℹ️ 1iz0A02 resnum 对齐 152/154（2 个非标准/parse独有残基 frac=0）
+[03:58:50]   ℹ️ 1iz0A02 分区 pocket=0/154 core=73 surface=81
+[03:58:50]   ℹ️ 3oz2A02 分区 pocket=0/142 core=63 surface=79
+[03:58:50]   ℹ️ 2y69F00 分区 pocket=0/93 core=19 surface=74
+[03:58:50]   ℹ️ 1f81A00 分区 pocket=0/87 core=29 surface=58
+[03:58:50]   ℹ️ 7dmkA02 分区 pocket=0/299 core=158 surface=141
+[03:58:50]   ℹ️ 4c5fA02 分区 pocket=0/168 core=79 surface=89
+[03:58:51]   ℹ️ 4xqkB01 分区 pocket=0/223 core=96 surface=127
+[03:58:51]   ℹ️ 3ru6B00 分区 pocket=0/214 core=107 surface=107
+[03:58:51]   ℹ️ 1devB00 分区 pocket=0/41 core=2 surface=39
+[03:58:51]   ℹ️ 1bbyA00 分区 pocket=0/69 core=19 surface=50
+[03:58:51]   ℹ️ 2vzcB00 分区 pocket=0/116 core=55 surface=61
+[03:58:51]   ℹ️ 1vw4900 分区 pocket=0/195 core=79 surface=116
+[03:58:51]   ℹ️ 3buxB01 分区 pocket=0/129 core=56 surface=73
+[03:58:52]   ℹ️ 3dewA01 resnum 对齐 45/47（2 个非标准/parse独有残基 frac=0）
+[03:58:52]   ℹ️ 3dewA01 分区 pocket=0/47 core=17 surface=30
+[03:58:52]   ℹ️ 2uubT00 分区 pocket=0/99 core=23 surface=76
+[03:58:52]   ℹ️ 2xzmO02 分区 pocket=0/70 core=22 surface=48
+[03:58:52]   ℹ️ 2dt8A02 分区 pocket=0/130 core=53 surface=77
+[03:58:52]   ℹ️ 1c07A00 分区 pocket=0/95 core=42 surface=53
+[03:58:52]   ℹ️ 1b6gA00 resnum 对齐 307/309（2 个非标准/parse独有残基 frac=0）
+[03:58:52]   ℹ️ 1b6gA00 分区 pocket=0/309 core=184 surface=125
+[03:58:52]   ℹ️ 6hyyA02 分区 pocket=0/63 core=21 surface=42
+[03:58:52]   ℹ️ 2d3jA00 分区 pocket=0/157 core=68 surface=89
+[03:58:52]   ℹ️ 2jvuA00 分区 pocket=0/98 core=30 surface=68
+[03:58:52]   ℹ️ 2bzlA00 分区 pocket=0/278 core=144 surface=134
+[03:58:52]   ℹ️ 3r7wC02 resnum 对齐 103/107（4 个非标准/parse独有残基 frac=0）
+[03:58:52]   ℹ️ 3r7wC02 分区 pocket=0/107 core=40 surface=67
+[03:58:52]   ℹ️ 6lfnA02 分区 pocket=0/167 core=82 surface=85
+[03:58:53]   ℹ️ 6d3kC02 分区 pocket=0/170 core=75 surface=95
+[03:58:53]   ℹ️ 4ehiA01 resnum 对齐 166/172（6 个非标准/parse独有残基 frac=0）
+[03:58:53]   ℹ️ 4ehiA01 分区 pocket=0/172 core=73 surface=99
+[03:58:53]   ℹ️ 7twaC00 resnum 对齐 216/221（5 个非标准/parse独有残基 frac=0）
+[03:58:53]   ℹ️ 7twaC00 分区 pocket=0/221 core=107 surface=114
+[03:58:53]   ℹ️ 6xxvC00 分区 pocket=0/111 core=35 surface=76
+[03:58:53]   ℹ️ 4l8oA00 分区 pocket=0/160 core=58 surface=102
+[03:58:53]   ℹ️ 3bemB00 resnum 对齐 193/200（7 个非标准/parse独有残基 frac=0）
+[03:58:53]   ℹ️ 3bemB00 分区 pocket=0/200 core=77 surface=123
+[03:58:53]   ℹ️ 1bhpA00 分区 pocket=0/45 core=12 surface=33
+[03:58:53]   ℹ️ 5fq0A00 分区 pocket=0/110 core=38 surface=72
+[03:58:53]   ℹ️ 2a2fX01 分区 pocket=0/167 core=59 surface=108
+[03:58:53]   ℹ️ 7sbeA01 分区 pocket=0/223 core=102 surface=121
+[03:58:54]   ℹ️ 4ibnA01 分区 pocket=0/188 core=87 surface=101
+[03:58:54]   ℹ️ 3n6xA02 resnum 对齐 93/96（3 个非标准/parse独有残基 frac=0）
+[03:58:54]   ℹ️ 3n6xA02 分区 pocket=0/96 core=35 surface=61
+[03:58:54]   ℹ️ 4dk0A01 分区 pocket=0/70 core=23 surface=47
+[03:58:54]   ℹ️ 1y9bA00 resnum 对齐 78/80（2 个非标准/parse独有残基 frac=0）
+[03:58:54]   ℹ️ 1y9bA00 分区 pocket=0/80 core=5 surface=75
+[03:58:54]   ℹ️ 1vliA01 resnum 对齐 285/293（8 个非标准/parse独有残基 frac=0）
+[03:58:54]   ℹ️ 1vliA01 分区 pocket=0/293 core=146 surface=147
+[03:58:54]   ℹ️ 1yhuB00 分区 pocket=0/144 core=58 surface=86
+[03:58:54]   ℹ️ 2zy2A02 分区 pocket=0/147 core=55 surface=92
+[03:58:54]   ℹ️ 1u3dA01 分区 pocket=0/159 core=69 surface=90
+[03:58:54]   ℹ️ 7wd3A01 分区 pocket=0/167 core=68 surface=99
+[03:58:55]   ℹ️ 1uhvA02 分区 pocket=0/344 core=198 surface=146
+[03:58:55]   ℹ️ 2pyyA02 分区 pocket=0/92 core=38 surface=54
+[03:58:55]   ℹ️ 1fznD00 分区 pocket=0/116 core=27 surface=89
+[03:58:55]   ℹ️ 2l25A00 分区 pocket=0/141 core=48 surface=93
+[03:58:55]   ℹ️ 4pf6A00 resnum 对齐 295/302（7 个非标准/parse独有残基 frac=0）
+[03:58:55]   ℹ️ 4pf6A00 分区 pocket=0/302 core=165 surface=137
+[03:58:55]   ℹ️ 5o3zL00 分区 pocket=0/256 core=123 surface=133
+[03:58:55]   ℹ️ 4u6bA00 分区 pocket=0/341 core=186 surface=155
+[03:58:55]   ℹ️ 1mabA02 分区 pocket=0/286 core=159 surface=127
+[03:58:56]   ℹ️ 5o6uB00 分区 pocket=0/182 core=73 surface=109
+[03:58:56]   ℹ️ 3qs2A00 分区 pocket=0/167 core=71 surface=96
+[03:58:56]   ℹ️ 1ciaA00 分区 pocket=0/213 core=100 surface=113
+[03:58:56]   ℹ️ 2auwA01 分区 pocket=0/77 core=31 surface=46
+[03:58:56]   ℹ️ 1qexA01 分区 pocket=0/35 core=1 surface=34
+[03:58:57]   ℹ️ 7by6B04 分区 pocket=0/231 core=112 surface=119
+[03:58:57]   ℹ️ 2l3bA00 分区 pocket=0/130 core=39 surface=91
+[03:58:57]   ℹ️ 2uvaG04 分区 pocket=0/289 core=149 surface=140
+[03:58:57]   ℹ️ 3q7yA00 resnum 对齐 118/122（4 个非标准/parse独有残基 frac=0）
+[03:58:57]   ℹ️ 3q7yA00 分区 pocket=0/122 core=65 surface=57
+[03:58:57]   ℹ️ 5f1yA02 resnum 对齐 173/177（4 个非标准/parse独有残基 frac=0）
+[03:58:57]   ℹ️ 5f1yA02 分区 pocket=0/177 core=86 surface=91
+[03:58:57]   ℹ️ 3kihC01 分区 pocket=0/34 core=5 surface=29
+[03:58:57]   ℹ️ 1xrhA02 resnum 对齐 227/239（12 个非标准/parse独有残基 frac=0）
+[03:58:57]   ℹ️ 1xrhA02 分区 pocket=0/239 core=106 surface=133
+[03:58:57]   ℹ️ 2i45D00 resnum 对齐 96/99（3 个非标准/parse独有残基 frac=0）
+[03:58:57]   ℹ️ 2i45D00 分区 pocket=0/99 core=37 surface=62
+[03:58:57]   ℹ️ 7r7jA01 分区 pocket=0/186 core=87 surface=99
+[03:58:57]   ℹ️ 5ze3A02 分区 pocket=0/110 core=49 surface=61
+[03:58:57]   ℹ️ 152lA00 分区 pocket=0/164 core=75 surface=89
+[03:58:58]   ℹ️ 1b7gO02 分区 pocket=0/184 core=86 surface=98
+[03:58:58]   ℹ️ 5mmjm02 分区 pocket=0/41 core=6 surface=35
+[03:58:58]   ℹ️ 2cpiA01 分区 pocket=0/81 core=22 surface=59
+[03:58:58]   ℹ️ 5hx0A00 resnum 对齐 357/362（5 个非标准/parse独有残基 frac=0）
+[03:58:58]   ℹ️ 5hx0A00 分区 pocket=0/362 core=207 surface=155
+[03:58:58]   ℹ️ 4on1A02 分区 pocket=0/195 core=98 surface=97
+[03:58:58]   ℹ️ 4yrdA02 分区 pocket=0/119 core=45 surface=74
+[03:58:58]   ℹ️ 4ndhB00 分区 pocket=0/172 core=83 surface=89
+[03:58:58]   ℹ️ 3nycA02 分区 pocket=0/145 core=66 surface=79
+[03:58:58]   ℹ️ 4d6wA03 分区 pocket=0/95 core=38 surface=57
+[03:58:59]   ℹ️ 3v89A02 分区 pocket=0/598 core=236 surface=362
+[03:58:59]   ℹ️ 1umdB02 分区 pocket=0/128 core=60 surface=68
+[03:58:59]   ℹ️ 4m1bA00 分区 pocket=0/200 core=105 surface=95
+[03:58:59]   ℹ️ 1e8oD00 分区 pocket=0/76 core=25 surface=51
+[03:58:59]   ℹ️ 1y8cA01 resnum 对齐 185/186（1 个非标准/parse独有残基 frac=0）
+[03:58:59]   ℹ️ 1y8cA01 分区 pocket=0/186 core=99 surface=87
+[03:58:59]   ℹ️ 1wkrA01 分区 pocket=0/170 core=84 surface=86
+[03:58:59]   ℹ️ 6vgwA01 resnum 对齐 134/137（3 个非标准/parse独有残基 frac=0）
+[03:58:59]   ℹ️ 6vgwA01 分区 pocket=0/137 core=57 surface=80
+[03:58:59]   ℹ️ 2rttA00 分区 pocket=0/105 core=37 surface=68
+[03:58:59]   ℹ️ 2w9xB01 分区 pocket=0/100 core=37 surface=63
+[03:58:59]   ℹ️ 1kvnA00 分区 pocket=0/104 core=31 surface=73
+[03:58:59]   ℹ️ 2jllA02 分区 pocket=0/95 core=34 surface=61
+[03:58:59]   ℹ️ 1xovA02 分区 pocket=0/66 core=25 surface=41
+[03:59:00]   ℹ️ 6ko5A02 分区 pocket=0/292 core=130 surface=162
+[03:59:00]   ℹ️ 2dgkA02 分区 pocket=0/107 core=37 surface=70
+[03:59:00]   ℹ️ 3tdgA01 分区 pocket=0/66 core=17 surface=49
+[03:59:00]   ℹ️ 3a2eA00 分区 pocket=0/108 core=43 surface=65
+[03:59:00]   ℹ️ 2o8rB02 resnum 对齐 151/155（4 个非标准/parse独有残基 frac=0）
+[03:59:00]   ℹ️ 2o8rB02 分区 pocket=0/155 core=63 surface=92
+[03:59:00]   ℹ️ 3e4wA01 分区 pocket=0/96 core=26 surface=70
+[03:59:00]   ℹ️ 2sliA03 分区 pocket=0/100 core=31 surface=69
+[03:59:00]   预解析+encode 1400/1659（跳过 0）
+[03:59:00]   ℹ️ 3l5zA01 resnum 对齐 132/136（4 个非标准/parse独有残基 frac=0）
+[03:59:00]   ℹ️ 3l5zA01 分区 pocket=0/136 core=53 surface=83
+[03:59:00]   ℹ️ 4bzaA02 分区 pocket=0/84 core=32 surface=52
+[03:59:00]   ℹ️ 1aalB00 分区 pocket=0/57 core=15 surface=42
+[03:59:00]   ℹ️ 3nwsA02 分区 pocket=0/54 core=6 surface=48
+[03:59:00]   ℹ️ 7x0hC01 分区 pocket=0/137 core=63 surface=74
+[03:59:00]   ℹ️ 3qhbA00 分区 pocket=0/173 core=80 surface=93
+[03:59:01]   ℹ️ 2cxhA01 resnum 对齐 172/174（2 个非标准/parse独有残基 frac=0）
+[03:59:01]   ℹ️ 2cxhA01 分区 pocket=0/174 core=82 surface=92
+[03:59:01]   ℹ️ 3e0jB00 分区 pocket=0/143 core=49 surface=94
+[03:59:01]   ℹ️ 1uglA00 分区 pocket=0/50 core=14 surface=36
+[03:59:01]   ℹ️ 1fs0G02 分区 pocket=0/89 core=20 surface=69
+[03:59:01]   ℹ️ 3ulkA02 分区 pocket=0/276 core=148 surface=128
+[03:59:01]   ℹ️ 1yt8A01 分区 pocket=0/97 core=35 surface=62
+[03:59:01]   ℹ️ 3u8zD02 分区 pocket=0/70 core=24 surface=46
+[03:59:01]   ℹ️ 2lhrA00 分区 pocket=0/78 core=16 surface=62
+[03:59:01]   ℹ️ 4x7rA01 分区 pocket=0/204 core=97 surface=107
+[03:59:02]   ℹ️ 2qyuA04 分区 pocket=0/193 core=90 surface=103
+[03:59:02]   ℹ️ 3pxxD00 分区 pocket=0/273 core=157 surface=116
+[03:59:02]   ℹ️ 2fnoA02 resnum 对齐 143/145（2 个非标准/parse独有残基 frac=0）
+[03:59:02]   ℹ️ 2fnoA02 分区 pocket=0/145 core=57 surface=88
+[03:59:02]   ℹ️ 2qyzA01 分区 pocket=0/53 core=7 surface=46
+[03:59:02]   ℹ️ 1sr8A03 分区 pocket=0/90 core=38 surface=52
+[03:59:02]   ℹ️ 3eb8B01 分区 pocket=0/61 core=15 surface=46
+[03:59:02]   ℹ️ 1mknA00 分区 pocket=0/59 core=9 surface=50
+[03:59:02]   ℹ️ 3tnyA02 分区 pocket=0/171 core=74 surface=97
+[03:59:02]   ℹ️ 7vhqU01 分区 pocket=0/110 core=42 surface=68
+[03:59:02]   ℹ️ 3cnyA00 resnum 对齐 288/293（5 个非标准/parse独有残基 frac=0）
+[03:59:02]   ℹ️ 3cnyA00 分区 pocket=0/293 core=175 surface=118
+[03:59:03]   ℹ️ 5lohB01 分区 pocket=0/74 core=18 surface=56
+[03:59:03]   ℹ️ 2dqlA00 分区 pocket=0/115 core=39 surface=76
+[03:59:03]   ℹ️ 1pujA01 分区 pocket=0/156 core=77 surface=79
+[03:59:03]   ℹ️ 4me7E00 resnum 对齐 73/78（5 个非标准/parse独有残基 frac=0）
+[03:59:03]   ℹ️ 4me7E00 分区 pocket=0/78 core=9 surface=69
+[03:59:03]   ℹ️ 3zzoA00 分区 pocket=0/93 core=32 surface=61
+[03:59:03]   ℹ️ 2iu1A00 分区 pocket=0/164 core=84 surface=80
+[03:59:03]   ℹ️ 2vngA00 分区 pocket=0/166 core=87 surface=79
+[03:59:03]   ℹ️ 2rblA01 分区 pocket=0/28 core=1 surface=27
+[03:59:03]   ℹ️ 2knrA00 分区 pocket=0/118 core=46 surface=72
+[03:59:04]   ℹ️ 5ilnA01 resnum 对齐 195/196（1 个非标准/parse独有残基 frac=0）
+[03:59:04]   ℹ️ 5ilnA01 分区 pocket=0/196 core=99 surface=97
+[03:59:04]   ℹ️ 2plcA00 分区 pocket=0/274 core=149 surface=125
+[03:59:04]   ℹ️ 2kl3A01 分区 pocket=0/106 core=44 surface=62
+[03:59:04]   ℹ️ 2vpkA00 分区 pocket=0/115 core=47 surface=68
+[03:59:04]   ℹ️ 3h75A02 resnum 对齐 136/139（3 个非标准/parse独有残基 frac=0）
+[03:59:04]   ℹ️ 3h75A02 分区 pocket=0/139 core=68 surface=71
+[03:59:04]   ℹ️ 1s7mA02 分区 pocket=0/90 core=23 surface=67
+[03:59:04]   ℹ️ 7xrjA01 分区 pocket=0/115 core=48 surface=67
+[03:59:04]   ℹ️ 1ug2A01 分区 pocket=0/52 core=14 surface=38
+[03:59:04]   ℹ️ 1ztuA01 分区 pocket=0/151 core=64 surface=87
+[03:59:04]   ℹ️ 2nabA01 分区 pocket=0/32 core=6 surface=26
+[03:59:04]   ℹ️ 4anjA06 分区 pocket=0/113 core=30 surface=83
+[03:59:04]   ℹ️ 3eb7A02 分区 pocket=0/164 core=78 surface=86
+[03:59:04]   ℹ️ 3um7A02 分区 pocket=0/51 core=7 surface=44
+[03:59:04]   ℹ️ 1sezA02 resnum 对齐 182/185（3 个非标准/parse独有残基 frac=0）
+[03:59:04]   ℹ️ 1sezA02 分区 pocket=0/185 core=81 surface=104
+[03:59:05]   ℹ️ 8oosG01 分区 pocket=0/209 core=109 surface=100
+[03:59:05]   ℹ️ 6nqbP00 分区 pocket=0/79 core=23 surface=56
+[03:59:05]   ℹ️ 2xfvA00 分区 pocket=0/107 core=39 surface=68
+[03:59:05]   ℹ️ 4u6uA00 分区 pocket=0/67 core=8 surface=59
+[03:59:05]   ℹ️ 4z32C02 分区 pocket=0/99 core=29 surface=70
+[03:59:05]   ℹ️ 8hw4A01 分区 pocket=0/235 core=107 surface=128
+[03:59:05]   ℹ️ 3p42A01 resnum 对齐 89/90（1 个非标准/parse独有残基 frac=0）
+[03:59:05]   ℹ️ 3p42A01 分区 pocket=0/90 core=30 surface=60
+[03:59:05]   ℹ️ 3tmaA02 分区 pocket=0/172 core=90 surface=82
+[03:59:05]   ℹ️ 7nz1G01 分区 pocket=0/96 core=38 surface=58
+[03:59:05]   ℹ️ 8agyA01 分区 pocket=0/242 core=127 surface=115
+[03:59:05]   ℹ️ 4meaA00 分区 pocket=0/323 core=181 surface=142
+[03:59:06]   ℹ️ 2fsxA00 分区 pocket=0/130 core=60 surface=70
+[03:59:06]   ℹ️ 3cnlA01 分区 pocket=0/138 core=64 surface=74
+[03:59:06]   ℹ️ 3rhtA00 resnum 对齐 246/251（5 个非标准/parse独有残基 frac=0）
+[03:59:06]   ℹ️ 3rhtA00 分区 pocket=0/251 core=131 surface=120
+[03:59:06]   ℹ️ 3kezA02 分区 pocket=0/42 core=3 surface=39
+[03:59:06]   ℹ️ 7f8eA01 resnum 对齐 213/219（6 个非标准/parse独有残基 frac=0）
+[03:59:06]   ℹ️ 7f8eA01 分区 pocket=0/219 core=111 surface=108
+[03:59:07]   ℹ️ 2hgsA02 分区 pocket=0/111 core=33 surface=78
+[03:59:07]   ℹ️ 5azsC01 分区 pocket=0/358 core=161 surface=197
+[03:59:07]   ℹ️ 4z9eA00 分区 pocket=0/85 core=31 surface=54
+[03:59:07]   ℹ️ 3i2dA01 分区 pocket=0/155 core=60 surface=95
+[03:59:07]   ℹ️ 3p8cF01 分区 pocket=0/105 core=16 surface=89
+[03:59:07]   ℹ️ 1nz0D00 resnum 对齐 110/111（1 个非标准/parse独有残基 frac=0）
+[03:59:07]   ℹ️ 1nz0D00 分区 pocket=0/111 core=51 surface=60
+[03:59:07]   ℹ️ 4fxeC00 分区 pocket=0/47 core=0 surface=47
+[03:59:07]   ℹ️ 4avrA00 分区 pocket=0/93 core=36 surface=57
+[03:59:07]   ℹ️ 1v5kA00 分区 pocket=0/115 core=48 surface=67
+[03:59:07]   ℹ️ 2ebbA00 分区 pocket=0/96 core=39 surface=57
+[03:59:07]   ℹ️ 3fhlA02 分区 pocket=0/175 core=83 surface=92
+[03:59:07]   ℹ️ 6hrdA01 分区 pocket=0/191 core=93 surface=98
+[03:59:07]   ℹ️ 2bl2A00 分区 pocket=0/156 core=65 surface=91
+[03:59:08]   ℹ️ 1xzpB00 分区 pocket=0/131 core=52 surface=79
+[03:59:08]   ℹ️ 1u04A03 resnum 对齐 175/178（3 个非标准/parse独有残基 frac=0）
+[03:59:08]   ℹ️ 1u04A03 分区 pocket=0/178 core=75 surface=103
+[03:59:08]   ℹ️ 3e8tA00 分区 pocket=0/200 core=92 surface=108
+[03:59:08]   ℹ️ 2gwlA00 分区 pocket=0/200 core=87 surface=113
+[03:59:08]   ℹ️ 5uayA02 分区 pocket=0/83 core=29 surface=54
+[03:59:08]   ℹ️ 1a9xA06 分区 pocket=0/203 core=98 surface=105
+[03:59:08]   ℹ️ 1t6cA01 分区 pocket=0/125 core=40 surface=85
+[03:59:08]   ℹ️ 3oxnB02 resnum 对齐 97/100（3 个非标准/parse独有残基 frac=0）
+[03:59:08]   ℹ️ 3oxnB02 分区 pocket=0/100 core=44 surface=56
+[03:59:08]   ℹ️ 2oqbA00 分区 pocket=0/108 core=38 surface=70
+[03:59:08]   ℹ️ 1i7dA02 分区 pocket=0/180 core=78 surface=102
+[03:59:09]   ℹ️ 5f7cA02 分区 pocket=0/315 core=170 surface=145
+[03:59:09]   ℹ️ 1ah7A00 分区 pocket=0/245 core=136 surface=109
+[03:59:09]   ℹ️ 2ll3A00 分区 pocket=0/70 core=26 surface=44
+[03:59:09]   ℹ️ 1aorA02 分区 pocket=0/186 core=93 surface=93
+[03:59:09]   ℹ️ 6ea2A01 分区 pocket=0/187 core=91 surface=96
+[03:59:09]   ℹ️ 6teyA01 分区 pocket=0/73 core=24 surface=49
+[03:59:09]   ℹ️ 2f9aA01 分区 pocket=0/404 core=235 surface=169
+[03:59:09]   ℹ️ 2kwbA00 分区 pocket=0/183 core=68 surface=115
+[03:59:09]   ℹ️ 3f2bA07 分区 pocket=0/86 core=34 surface=52
+[03:59:09]   ℹ️ 2a7oA00 分区 pocket=0/100 core=36 surface=64
+[03:59:09]   ℹ️ 8bk6A01 分区 pocket=0/110 core=48 surface=62
+[03:59:10]   ℹ️ 2vpnA00 分区 pocket=0/291 core=164 surface=127
+[03:59:10]   ℹ️ 2i00A02 分区 pocket=0/159 core=80 surface=79
+[03:59:10]   ℹ️ 4qgrA02 分区 pocket=0/120 core=42 surface=78
+[03:59:10]   ℹ️ 3deoA02 分区 pocket=0/137 core=66 surface=71
+[03:59:10]   ℹ️ 2ks1B01 分区 pocket=0/23 core=0 surface=23
+[03:59:10]   ℹ️ 3kw3B01 分区 pocket=0/146 core=63 surface=83
+[03:59:10]   ℹ️ 3htkC01 分区 pocket=0/200 core=64 surface=136
+[03:59:10]   ℹ️ 3zs3A00 分区 pocket=0/219 core=100 surface=119
+[03:59:10]   ℹ️ 1x6gA00 分区 pocket=0/81 core=16 surface=65
+[03:59:10]   ℹ️ 1dxlA03 分区 pocket=0/121 core=57 surface=64
+[03:59:10]   ℹ️ 4cyuA00 分区 pocket=0/154 core=66 surface=88
+[03:59:11]   ℹ️ 1z1dB00 分区 pocket=0/131 core=57 surface=74
+[03:59:11]   ℹ️ 3auxA00 分区 pocket=0/348 core=166 surface=182
+[03:59:11]   ℹ️ 1jxhA00 分区 pocket=0/248 core=132 surface=116
+[03:59:11]   ℹ️ 1hnaA01 分区 pocket=0/112 core=46 surface=66
+[03:59:11]   ℹ️ 1z24A00 分区 pocket=0/189 core=87 surface=102
+[03:59:11]   ℹ️ 4hfsA00 resnum 对齐 193/196（3 个非标准/parse独有残基 frac=0）
+[03:59:11]   ℹ️ 4hfsA00 分区 pocket=0/196 core=101 surface=95
+[03:59:12]   ℹ️ 7eptR01 分区 pocket=0/254 core=113 surface=141
+[03:59:12]   ℹ️ 2d4xA00 分区 pocket=0/214 core=89 surface=125
+[03:59:12]   ℹ️ 3cs5A00 分区 pocket=0/48 core=2 surface=46
+[03:59:12]   ℹ️ 3c0kA01 resnum 对齐 70/71（1 个非标准/parse独有残基 frac=0）
+[03:59:12]   ℹ️ 3c0kA01 分区 pocket=0/71 core=26 surface=45
+[03:59:12]   ℹ️ 6vbkB02 分区 pocket=0/77 core=31 surface=46
+[03:59:12]   ℹ️ 4pypA00 分区 pocket=0/447 core=253 surface=194
+[03:59:12]   ℹ️ 4rr9A01 分区 pocket=0/134 core=64 surface=70
+[03:59:12]   ℹ️ 1lvfB00 分区 pocket=0/104 core=31 surface=73
+[03:59:12]   ℹ️ 1kv4A00 分区 pocket=0/42 core=0 surface=42
+[03:59:13]   ℹ️ 2uvaG02 分区 pocket=0/306 core=170 surface=136
+[03:59:13]   ℹ️ 6e20A00 分区 pocket=0/129 core=59 surface=70
+[03:59:13]   ℹ️ 1vwxP00 分区 pocket=0/153 core=60 surface=93
+[03:59:13]   ℹ️ 4ccdA01 分区 pocket=0/264 core=143 surface=121
+[03:59:13]   ℹ️ 1vw4L01 分区 pocket=0/135 core=50 surface=85
+[03:59:13]   ℹ️ 5g5gB02 分区 pocket=0/93 core=30 surface=63
+[03:59:13]   ℹ️ 2w20A02 分区 pocket=0/80 core=32 surface=48
+[03:59:14]   ℹ️ 1y5lA02 分区 pocket=0/1202 core=845 surface=357
+[03:59:14]   ℹ️ 1u6gC00 分区 pocket=0/1146 core=608 surface=538
+[03:59:15]   ℹ️ 1qbkB00 resnum 对齐 856/880（24 个非标准/parse独有残基 frac=0）
+[03:59:15]   ℹ️ 1qbkB00 分区 pocket=0/880 core=439 surface=441
+[03:59:15]   ℹ️ 3ea5D00 分区 pocket=0/849 core=436 surface=413
+[03:59:16]   ℹ️ 5ymrC00 分区 pocket=0/797 core=529 surface=268
+[03:59:16]   ℹ️ 3syjA02 分区 pocket=0/630 core=326 surface=304
+[03:59:17]   ℹ️ 8p97A01 分区 pocket=0/610 core=282 surface=328
+[03:59:17]   ℹ️ 4epaA00 resnum 对齐 616/631（15 个非标准/parse独有残基 frac=0）
+[03:59:17]   ℹ️ 4epaA00 分区 pocket=0/631 core=331 surface=300
+[03:59:17]   ℹ️ 1ziwA00 分区 pocket=0/629 core=329 surface=300
+[03:59:18]   ℹ️ 2uv8A05 分区 pocket=0/617 core=358 surface=259
+[03:59:18]   ℹ️ 1h4iA00 分区 pocket=0/595 core=401 surface=194
+[03:59:18]   ℹ️ 3rg1E00 分区 pocket=0/592 core=307 surface=285
+[03:59:18]   ℹ️ 2b7mA00 resnum 对齐 500/513（13 个非标准/parse独有残基 frac=0）
+[03:59:18]   ℹ️ 2b7mA00 分区 pocket=0/513 core=239 surface=274
+[03:59:19]   ℹ️ 3ayfA01 分区 pocket=0/564 core=327 surface=237
+[03:59:19]   ℹ️ 1b8bA00 分区 pocket=0/533 core=303 surface=230
+[03:59:19]   ℹ️ 4r0zA00 分区 pocket=0/549 core=301 surface=248
+[03:59:20]   ℹ️ 2xpiD00 分区 pocket=0/518 core=259 surface=259
+[03:59:20]   ℹ️ 3c2gB01 resnum 对齐 533/546（13 个非标准/parse独有残基 frac=0）
+[03:59:20]   ℹ️ 3c2gB01 分区 pocket=0/546 core=297 surface=249
+[03:59:20]   ℹ️ 1c8dA00 分区 pocket=0/548 core=216 surface=332
+[03:59:20]   ℹ️ 4bq2D02 分区 pocket=0/527 core=315 surface=212
+[03:59:21]   ℹ️ 1thgA00 分区 pocket=0/543 core=337 surface=206
+[03:59:21]   ℹ️ 2w16A03 分区 pocket=0/543 core=218 surface=325
+[03:59:21]   ℹ️ 5lx8A00 分区 pocket=0/524 core=324 surface=200
+[03:59:22]   ℹ️ 1s58A00 分区 pocket=0/523 core=223 surface=300
+[03:59:22]   ℹ️ 6eotD01 分区 pocket=0/523 core=268 surface=255
+[03:59:22]   ℹ️ 4ui9J00 分区 pocket=0/504 core=250 surface=254
+[03:59:23]   ℹ️ 1aqlA00 分区 pocket=0/532 core=306 surface=226
+[03:59:23]   ℹ️ 2p1mB02 分区 pocket=0/531 core=303 surface=228
+[03:59:23]   ℹ️ 7sl9A01 分区 pocket=0/488 core=282 surface=206
+[03:59:23]   ℹ️ 3q7aB00 分区 pocket=0/484 core=287 surface=197
+[03:59:24]   ℹ️ 5cwaA00 分区 pocket=0/500 core=288 surface=212
+[03:59:24]   ℹ️ 1mukA02 分区 pocket=0/510 core=237 surface=273
+[03:59:24]   ℹ️ 1peqA02 分区 pocket=0/478 core=274 surface=204
+[03:59:24]   ℹ️ 4kvmA01 分区 pocket=0/502 core=227 surface=275
+[03:59:25]   ℹ️ 1m22A00 分区 pocket=0/487 core=310 surface=177
+[03:59:25]   ℹ️ 2hdiA02 分区 pocket=0/461 core=157 surface=304
+[03:59:25]   ℹ️ 4yj6A00 resnum 对齐 477/490（13 个非标准/parse独有残基 frac=0）
+[03:59:25]   ℹ️ 4yj6A00 分区 pocket=0/490 core=302 surface=188
+[03:59:25]   ℹ️ 4upiA01 分区 pocket=0/495 core=306 surface=189
+[03:59:26]   ℹ️ 3b6hA00 分区 pocket=0/468 core=259 surface=209
+[03:59:26]   ℹ️ 4cb8A00 分区 pocket=0/488 core=250 surface=238
+[03:59:26]   ℹ️ 1q47A00 分区 pocket=0/484 core=273 surface=211
+[03:59:26]   ℹ️ 3gzsA00 resnum 对齐 479/492（13 个非标准/parse独有残基 frac=0）
+[03:59:26]   ℹ️ 3gzsA00 分区 pocket=0/492 core=293 surface=199
+[03:59:27]   ℹ️ 5gxdA01 分区 pocket=0/494 core=303 surface=191
+[03:59:27]   ℹ️ 4nkwA00 分区 pocket=0/464 core=266 surface=198
+[03:59:27]   ℹ️ 3jq0A00 resnum 对齐 456/469（13 个非标准/parse独有残基 frac=0）
+[03:59:27]   ℹ️ 3jq0A00 分区 pocket=0/469 core=272 surface=197
+[03:59:28]   ℹ️ 2fbaA00 分区 pocket=0/492 core=300 surface=192
+[03:59:28]   ℹ️ 1shyB01 分区 pocket=0/450 core=253 surface=197
+[03:59:28]   ℹ️ 2xhyD00 分区 pocket=0/464 core=284 surface=180
+[03:59:28]   ℹ️ 1nxcA00 分区 pocket=0/467 core=299 surface=168
+[03:59:28]   ℹ️ 3h0lA00 分区 pocket=0/478 core=298 surface=180
+[03:59:29]   ℹ️ 3tw6C01 分区 pocket=0/450 core=257 surface=193
+[03:59:29]   ℹ️ 3wa7A00 resnum 对齐 461/467（6 个非标准/parse独有残基 frac=0）
+[03:59:29]   ℹ️ 3wa7A00 分区 pocket=0/467 core=262 surface=205
+[03:59:29]   ℹ️ 2jlnA00 分区 pocket=0/463 core=270 surface=193
+[03:59:30]   ℹ️ 3amlA01 分区 pocket=0/437 core=266 surface=171
+[03:59:30]   ℹ️ 5vakA00 分区 pocket=0/439 core=273 surface=166
+[03:59:30]   ℹ️ 2vqrA01 分区 pocket=0/465 core=281 surface=184
+[03:59:30]   ℹ️ 1pbgA00 分区 pocket=0/454 core=276 surface=178
+[03:59:30]   ℹ️ 2qneA01 resnum 对齐 447/465（18 个非标准/parse独有残基 frac=0）
+[03:59:30]   ℹ️ 2qneA01 分区 pocket=0/465 core=253 surface=212
+[03:59:31]   ℹ️ 7pthC01 分区 pocket=0/465 core=284 surface=181
+[03:59:31]   ℹ️ 3a1iA02 分区 pocket=0/454 core=279 surface=175
+[03:59:31]   ℹ️ 5tl8A00 resnum 对齐 446/448（2 个非标准/parse独有残基 frac=0）
+[03:59:31]   ℹ️ 5tl8A00 分区 pocket=0/448 core=249 surface=199
+[03:59:32]   ℹ️ 3wfdB00 分区 pocket=0/449 core=271 surface=178
+[03:59:32]   ℹ️ 1h80B00 分区 pocket=0/430 core=252 surface=178
+[03:59:32]   ℹ️ 4n0hA00 分区 pocket=0/439 core=260 surface=179
+[03:59:33]   ℹ️ 3pm0A00 分区 pocket=0/459 core=255 surface=204
+[03:59:33]   ℹ️ 3snxA00 resnum 对齐 439/450（11 个非标准/parse独有残基 frac=0）
+[03:59:33]   ℹ️ 3snxA00 分区 pocket=0/450 core=263 surface=187
+[03:59:33]   ℹ️ 3s79A00 分区 pocket=0/452 core=260 surface=192
+[03:59:33]   ℹ️ 2uvfB02 分区 pocket=0/451 core=267 surface=184
+[03:59:34]   ℹ️ 2rjbA00 resnum 对齐 408/418（10 个非标准/parse独有残基 frac=0）
+[03:59:34]   ℹ️ 2rjbA00 分区 pocket=0/418 core=217 surface=201
+[03:59:34]   预解析+encode 1600/1659（跳过 0）
+[03:59:34]   ℹ️ 2jieA00 分区 pocket=0/445 core=274 surface=171
+[03:59:34]   ℹ️ 5aexJ00 分区 pocket=0/426 core=258 surface=168
+[03:59:34]   ℹ️ 1k0eB00 分区 pocket=0/414 core=235 surface=179
+[03:59:35]   ℹ️ 7b00A01 分区 pocket=0/453 core=243 surface=210
+[03:59:35]   ℹ️ 1ivyB00 分区 pocket=0/450 core=260 surface=190
+[03:59:35]   ℹ️ 1vm8B01 resnum 对齐 421/434（13 个非标准/parse独有残基 frac=0）
+[03:59:35]   ℹ️ 1vm8B01 分区 pocket=0/434 core=216 surface=218
+[03:59:35]   ℹ️ 3hhdA01 分区 pocket=0/445 core=267 surface=178
+[03:59:35]   ℹ️ 2c61A00 分区 pocket=0/431 core=249 surface=182
+[03:59:36]   ℹ️ 3hd6A00 分区 pocket=0/403 core=224 surface=179
+[03:59:36]   ℹ️ 3jurA00 分区 pocket=0/443 core=271 surface=172
+[03:59:36]   ℹ️ 3i3lA01 分区 pocket=0/425 core=234 surface=191
+[03:59:36]   ℹ️ 3l6xA01 分区 pocket=0/420 core=231 surface=189
+[03:59:37]   ℹ️ 1wkbA01 分区 pocket=0/443 core=251 surface=192
+[03:59:37]   ℹ️ 2ve3B00 分区 pocket=0/427 core=234 surface=193
+[03:59:37]   ℹ️ 6wbvA01 分区 pocket=0/428 core=226 surface=202
+[03:59:37]   ℹ️ 1f59A00 分区 pocket=0/440 core=222 surface=218
+[03:59:38]   ℹ️ 1a2vA03 分区 pocket=0/438 core=206 surface=232
+[03:59:40]   ℹ️ 2wskA02 分区 pocket=0/439 core=257 surface=182
+[03:59:40]   ℹ️ 1a0cA00 分区 pocket=0/437 core=222 surface=215
+[03:59:40]   ℹ️ 3g7sA01 resnum 对齐 417/433（16 个非标准/parse独有残基 frac=0）
+[03:59:40]   ℹ️ 3g7sA01 分区 pocket=0/433 core=252 surface=181
+[03:59:41]   ℹ️ 1loxA01 分区 pocket=0/420 core=229 surface=191
+[03:59:41]   ℹ️ 4ka7A01 分区 pocket=0/407 core=217 surface=190
+[03:59:41]   ℹ️ 2dc0A00 resnum 对齐 432/434（2 个非标准/parse独有残基 frac=0）
+[03:59:41]   ℹ️ 2dc0A00 分区 pocket=0/434 core=252 surface=182
+[03:59:41]   ℹ️ 5tj3A01 resnum 对齐 399/400（1 个非标准/parse独有残基 frac=0）
+[03:59:41]   ℹ️ 5tj3A01 分区 pocket=0/400 core=252 surface=148
+[03:59:42]   ℹ️ 1ultB01 分区 pocket=0/425 core=253 surface=172
+[03:59:42]   ℹ️ 3zbgA00 分区 pocket=0/423 core=257 surface=166
+[03:59:42]   ℹ️ 6w0pA02 分区 pocket=0/429 core=251 surface=178
+[03:59:43]   ℹ️ 5dl5A00 分区 pocket=0/416 core=197 surface=219
+[03:59:43]   ℹ️ 4citA00 分区 pocket=0/403 core=242 surface=161
+[03:59:43]   ℹ️ 5h41A01 分区 pocket=0/428 core=244 surface=184
+[03:59:43]   ℹ️ 1ek9A00 resnum 对齐 423/428（5 个非标准/parse独有残基 frac=0）
+[03:59:43]   ℹ️ 1ek9A00 分区 pocket=0/428 core=158 surface=270
+[03:59:43]   ℹ️ 5m0nA00 分区 pocket=0/423 core=237 surface=186
+[03:59:44]   ℹ️ 6t8qA00 分区 pocket=0/424 core=230 surface=194
+[03:59:44]   ℹ️ 1t16A00 分区 pocket=0/427 core=228 surface=199
+[03:59:44]   ℹ️ 7upvA01 分区 pocket=0/419 core=244 surface=175
+[03:59:44]   ℹ️ 7vu0A01 分区 pocket=0/425 core=206 surface=219
+[03:59:45]   ℹ️ 1av4A03 分区 pocket=0/411 core=196 surface=215
+[03:59:45]   ℹ️ 2pe4A00 分区 pocket=0/417 core=217 surface=200
+[03:59:45]   ℹ️ 4nk6A00 分区 pocket=0/407 core=235 surface=172
+[03:59:45]   ℹ️ 1ea0A01 分区 pocket=0/419 core=238 surface=181
+[03:59:45]   ℹ️ 3iteB01 resnum 对齐 401/409（8 个非标准/parse独有残基 frac=0）
+[03:59:45]   ℹ️ 3iteB01 分区 pocket=0/409 core=231 surface=178
+[03:59:46]   ℹ️ 3wecA00 分区 pocket=0/400 core=222 surface=178
+[03:59:46]   ℹ️ 1cw1A00 分区 pocket=0/415 core=220 surface=195
+[03:59:46]   ℹ️ 1vblA00 分区 pocket=0/416 core=244 surface=172
+[03:59:46]   ℹ️ 3n98A01 分区 pocket=0/416 core=248 surface=168
+[03:59:46]   ℹ️ 7y3eA01 分区 pocket=0/416 core=241 surface=175
+[03:59:47]   ℹ️ 1l8aA01 分区 pocket=0/402 core=225 surface=177
+[03:59:47]   ℹ️ 4d47A00 分区 pocket=0/411 core=239 surface=172
+[03:59:47]   ℹ️ 1ea0B03 分区 pocket=0/405 core=230 surface=175
+[03:59:48]   ℹ️ 2o4vA00 分区 pocket=0/411 core=208 surface=203
+[03:59:48]   ℹ️ 5fi9A01 分区 pocket=0/409 core=247 surface=162
+[03:59:48]   ℹ️ 3nv6A00 分区 pocket=0/404 core=219 surface=185
+[03:59:48]   ℹ️ 3tjlA00 分区 pocket=0/397 core=236 surface=161
+[03:59:48]   ℹ️ 5ab4A00 分区 pocket=0/400 core=244 surface=156
+[03:59:49]   ℹ️ 4mfiA00 分区 pocket=0/403 core=234 surface=169
+[03:59:49]   ℹ️ 1h12A00 分区 pocket=0/395 core=240 surface=155
+[03:59:49]   ℹ️ 5xjnA00 分区 pocket=0/399 core=225 surface=174
+[03:59:49]   ℹ️ 4dg8A01 分区 pocket=0/403 core=234 surface=169
+[03:59:50]   ℹ️ 1qhoA01 分区 pocket=0/401 core=243 surface=158
+[03:59:50] 预解析完成，缓存 encode 特征 ~7.52GB
+[03:59:50] 开始训练：10 epochs × 1659 域/epoch = 16590 steps
+[04:02:28] epoch 1/10  total=4.4389  ce=1.8037  charge=4.5171  kl=0.0483  keep=0.7006  [cd self=4.308  mild=4.373  extreme=5.436]  elapsed=2.6min
+[04:05:05] epoch 2/10  total=4.0860  ce=1.8251  charge=3.6962  kl=0.0842  keep=0.7650  [cd self=3.464  mild=3.866  extreme=4.509]  elapsed=5.3min
+[04:07:20] epoch 3/10  total=3.9676  ce=1.8289  charge=3.4244  kl=0.0902  keep=0.7931  [cd self=3.221  mild=3.510  extreme=4.207]  elapsed=7.5min
+[04:09:55] epoch 4/10  total=3.9226  ce=1.8368  charge=3.3238  kl=0.0995  keep=0.7903  [cd self=3.140  mild=3.251  extreme=4.082]  elapsed=10.1min
+[04:12:29] epoch 5/10  total=3.8896  ce=1.8384  charge=3.2346  kl=0.1020  keep=0.8078  [cd self=3.036  mild=3.333  extreme=3.963]  elapsed=12.7min
+[04:14:59] epoch 6/10  total=3.8483  ce=1.8444  charge=3.1329  kl=0.1079  keep=0.8162  [cd self=2.971  mild=3.064  extreme=3.852]  elapsed=15.1min
+[04:17:33] epoch 7/10  total=3.8762  ce=1.8454  charge=3.1924  kl=0.1098  keep=0.8088  [cd self=2.984  mild=3.276  extreme=3.946]  elapsed=17.7min
+[04:20:10] epoch 8/10  total=3.8233  ce=1.8418  charge=3.1010  kl=0.1057  keep=0.8104  [cd self=2.947  mild=2.925  extreme=3.849]  elapsed=20.3min
+[04:22:47] epoch 9/10  total=3.7874  ce=1.8476  charge=2.9997  kl=0.1132  keep=0.8241  [cd self=2.836  mild=2.928  extreme=3.700]  elapsed=23.0min
+[04:25:24] epoch 10/10  total=3.7963  ce=1.8501  charge=3.0214  kl=0.1152  keep=0.8154  [cd self=2.874  mild=3.075  extreme=3.547]  elapsed=25.6min
+[04:25:24] 训练完成。总耗时 25.6min。checkpoint 在 /data/nfs/IC/baokun_yu/ConfuMPNN/ablation/runs/prot/run_notarget/

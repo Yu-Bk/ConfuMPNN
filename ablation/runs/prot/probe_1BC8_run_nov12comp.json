@@ -1,0 +1,36 @@
+{
+  "mode": "protein",
+  "pdb": "code/input/1BC8_chainC.pdb",
+  "L": 93,
+  "native_charge": 8.9,
+  "n_charged_native": 21,
+  "arms": {
+    "native": {
+      "target": 9.0,
+      "mean_charge": 11.36,
+      "std_charge": 2.86,
+      "dev": 2.36,
+      "h2": false,
+      "retention_native_arm": 1.0301587301587303,
+      "mean_charged_count": 21.63
+    },
+    "n2": {
+      "target": 7.0,
+      "mean_charge": 8.4,
+      "std_charge": 2.95,
+      "dev": 1.4,
+      "h2": true,
+      "retention_native_arm": null,
+      "mean_charged_count": 19.4
+    },
+    "p2": {
+      "target": 11.0,
+      "mean_charge": 13.79,
+      "std_charge": 2.48,
+      "dev": 2.79,
+      "h2": false,
+      "retention_native_arm": null,
+      "mean_charged_count": 23.27
+    }
+  }
+}

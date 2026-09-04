@@ -1,0 +1,157 @@
+{
+  "family": "prot",
+  "final_epoch": "10",
+  "runs": {
+    "run_FULL": {
+      "loss": {
+        "abs": {
+          "ce": 1.8648,
+          "cd": 2.6831,
+          "kl": 0.1249,
+          "keep": 1.2276,
+          "v12_comp": 0.0161,
+          "v12_gravy": 0.1027,
+          "v12_ct": 2.7989,
+          "struct": 0.0,
+          "pocket": 0.0,
+          "total": 4.4099
+        },
+        "n_dom": 1104,
+        "n_arm": 8832,
+        "rel_vs_full": {
+          "ce": 0.0,
+          "cd": 0.0,
+          "kl": 0.0,
+          "keep": 0.0,
+          "v12_comp": 0.0,
+          "v12_gravy": 0.0,
+          "v12_ct": 0.0,
+          "struct": null,
+          "pocket": null,
+          "total": 0.0
+        }
+      }
+    },
+    "run_nov12comp": {
+      "loss": {
+        "abs": {
+          "ce": 1.8674,
+          "cd": 2.7268,
+          "kl": 0.1218,
+          "keep": 1.1921,
+          "v12_comp": 0.0742,
+          "v12_gravy": 0.2569,
+          "v12_ct": 3.2713,
+          "struct": 0.0,
+          "pocket": 0.0,
+          "total": 4.5534
+        },
+        "n_dom": 1104,
+        "n_arm": 8832,
+        "rel_vs_full": {
+          "ce": 0.0014,
+          "cd": 0.0163,
+          "kl": -0.0248,
+          "keep": -0.0289,
+          "v12_comp": 3.6087,
+          "v12_gravy": 1.5015,
+          "v12_ct": 0.1688,
+          "struct": null,
+          "pocket": null,
+          "total": 0.0325
+        }
+      }
+    },
+    "run_notarget": {
+      "loss": {
+        "abs": {
+          "ce": 1.8471,
+          "cd": 2.8285,
+          "kl": 0.1019,
+          "keep": 1.1643,
+          "v12_comp": 0.0081,
+          "v12_gravy": 0.0981,
+          "v12_ct": 3.1018,
+          "struct": 0.0,
+          "pocket": 0.0,
+          "total": 4.4902
+        },
+        "n_dom": 1104,
+        "n_arm": 8832,
+        "rel_vs_full": {
+          "ce": -0.0095,
+          "cd": 0.0542,
+          "kl": -0.1841,
+          "keep": -0.0516,
+          "v12_comp": -0.4969,
+          "v12_gravy": -0.0448,
+          "v12_ct": 0.1082,
+          "struct": null,
+          "pocket": null,
+          "total": 0.0182
+        }
+      }
+    },
+    "run_noph": {
+      "loss": {
+        "abs": {
+          "ce": 1.8657,
+          "cd": 2.688,
+          "kl": 0.1253,
+          "keep": 1.2267,
+          "v12_comp": 0.0142,
+          "v12_gravy": 0.0991,
+          "v12_ct": 2.6195,
+          "struct": 0.0,
+          "pocket": 0.0,
+          "total": 4.3759
+        },
+        "n_dom": 1104,
+        "n_arm": 8832,
+        "rel_vs_full": {
+          "ce": 0.0005,
+          "cd": 0.0018,
+          "kl": 0.0032,
+          "keep": -0.0007,
+          "v12_comp": -0.118,
+          "v12_gravy": -0.0351,
+          "v12_ct": -0.0641,
+          "struct": null,
+          "pocket": null,
+          "total": -0.0077
+        }
+      }
+    },
+    "run_nokeep": {
+      "loss": {
+        "abs": {
+          "ce": 1.9273,
+          "cd": 2.4661,
+          "kl": 0.2027,
+          "keep": 1.4179,
+          "v12_comp": 0.027,
+          "v12_gravy": 0.0858,
+          "v12_ct": 2.6811,
+          "struct": 0.0,
+          "pocket": 0.0,
+          "total": 4.4382
+        },
+        "n_dom": 1104,
+        "n_arm": 8832,
+        "rel_vs_full": {
+          "ce": 0.0335,
+          "cd": -0.0809,
+          "kl": 0.6229,
+          "keep": 0.155,
+          "v12_comp": 0.677,
+          "v12_gravy": -0.1646,
+          "v12_ct": -0.0421,
+          "struct": null,
+          "pocket": null,
+          "total": 0.0064
+        }
+      }
+    }
+  },
+  "probes": {}
+}

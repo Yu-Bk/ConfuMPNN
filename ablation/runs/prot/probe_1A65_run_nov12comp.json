@@ -1,0 +1,36 @@
+{
+  "mode": "protein",
+  "pdb": "data/validation_pdbs/1A65.pdb",
+  "L": 504,
+  "native_charge": -26.85,
+  "n_charged_native": 79,
+  "arms": {
+    "native": {
+      "target": -27.0,
+      "mean_charge": -44.58,
+      "std_charge": 6.65,
+      "dev": 17.58,
+      "h2": false,
+      "retention_native_arm": 1.032067510548523,
+      "mean_charged_count": 81.53
+    },
+    "n2": {
+      "target": -29.0,
+      "mean_charge": -47.25,
+      "std_charge": 6.9,
+      "dev": 18.25,
+      "h2": false,
+      "retention_native_arm": null,
+      "mean_charged_count": 81.53
+    },
+    "p2": {
+      "target": -25.0,
+      "mean_charge": -41.5,
+      "std_charge": 6.58,
+      "dev": 16.5,
+      "h2": false,
+      "retention_native_arm": null,
+      "mean_charged_count": 81.27
+    }
+  }
+}

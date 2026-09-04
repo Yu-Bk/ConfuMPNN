@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "tag": "v12_2",
+    "mode": "protein",
+    "labels": "data/cath/labels_holdout_train.npz",
+    "supp_labels": "data/cath/labels_v12_3_valsupp.npz",
+    "dompdb": "data/cath/S40/dompdb_pdb",
+    "seed": 42,
+    "epochs": [
+      10
+    ],
+    "lambda_c": 0.5,
+    "lambda_kl": 0.05,
+    "lambda_keep": 0.5,
+    "charge_temp": 0.5,
+    "v12_supervision": true,
+    "frac_floor": 0.5,
+    "gravy_margin": 0.4,
+    "lambda_v12": 0.2,
+    "lambda_target": 0.2,
+    "sasa_threshold": 0.25,
+    "ph_aware_filter": true,
+    "pocket_mode": "keep",
+    "lambda_pocket": 0.0,
+    "pocket_floor": 0.7,
+    "pocket_ceil": 1.3,
+    "n_domains": 1104,
+    "note": "\u5168\u81ea\u6d3d\u81c2 no-grad \u524d\u5411\u56de\u653e\uff1bper-epoch \u914d\u7f6e\u4f9d\u636e\u89c1 code/tests/val_replay_configs.md"
+  },
+  "epochs": {
+    "10": {
+      "ce": 1.8674348597077355,
+      "cd": 2.7267737407827806,
+      "rec": 0.4193651638520153,
+      "kl": 0.12183922565663638,
+      "keep": 1.192113221609506,
+      "v12_comp": 0.07418559621209683,
+      "v12_gravy": 0.2568548111771436,
+      "v12_ct": 3.271281725323786,
+      "struct": 0.0,
+      "pocket": 0.0,
+      "total": 4.553434728729316,
+      "n_dom": 1104,
+      "n_arm": 8832
+    }
+  }
+}
