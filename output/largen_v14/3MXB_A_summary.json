@@ -1,0 +1,506 @@
+{
+  "pdb": "3MXB_A",
+  "cat": "DNA",
+  "L": 153,
+  "pH": 7.4,
+  "native": "NTKYNKKFLLYLAGFVDGDGSIIAQINPNQSSKFKHRLRLTFYVTQKTQRRWFLDKLVDEIGVGYVRDSGSVSQYVLSEIKPLHNFLTQLQPFLKLKQKQANLVLKIIEQLPSAKESPDKFLEVCTWVDQIAALNDSKTRKTTSETVRAVLDS",
+  "native_charge": 7.945,
+  "native_dk": 38,
+  "native_de": 15,
+  "native_kr": 23,
+  "native_h3_full_viol": 38,
+  "native_h3_rate": 0.2484,
+  "calibration": {
+    "mode": "per-protein(3MXB_A)",
+    "slope": 1.238,
+    "intercept": 0.744
+  },
+  "arms": {
+    "native": {
+      "arm": "native",
+      "target": 8,
+      "tgt_eff": 5.861,
+      "n": 200,
+      "charge": {
+        "pass": 83,
+        "fail": 117,
+        "dev_min": 0.015,
+        "dev_mean": 3.283,
+        "dev_max": 14.008
+      },
+      "deletion": {
+        "pass": 75,
+        "fail": 125,
+        "ratio_min": 0.3947,
+        "ratio_mean": 0.6667,
+        "ratio_max": 0.9474
+      },
+      "h3": {
+        "pass": 200,
+        "fail": 0,
+        "full_viol_mean": 25.3,
+        "local_viol_mean": 0.09,
+        "native_rate": 0.2484
+      },
+      "triple_pass": 29,
+      "triple_rate": 0.145,
+      "prefix": {
+        "p10": 3,
+        "p25": 5,
+        "p50": 9,
+        "p100": 16,
+        "p200": 29
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "fail_breakdown": {
+        "CD": 71,
+        "C": 46,
+        "D": 54
+      },
+      "pareto_examples": [
+        {
+          "k": 151,
+          "dev": 0.019,
+          "del_ratio": 0.6842,
+          "triple": false,
+          "seq": "QLQLPEQFLQAFATELDKNGSVIASLQKNPTARFGYRIRLTLYYTQNNQKKKKLQNLVKKLGVGYVIQNGQVSQYVLQQTQPLQNFLRQLQPYLQKSQEQAQLVLTIIDSLPQAEQSPQQFLQLAKLVDEVNQLNESQNRQTTSQTVRRLLQA"
+        },
+        {
+          "k": 12,
+          "dev": 0.084,
+          "del_ratio": 0.7368,
+          "triple": true,
+          "seq": "AKQLPTQFLQELAQLIDQNGSIIAQLQPDPEAQFGYRIELTLFVHQKNRKRARLQRLVQQLGAGYVFQNGNVCQYVLSQQRPLQNFLRQLAPFLKAQRRQAQLVLTMIAALPQARQSPQAFLQLARLVDEVNKLNNSKTLKTTAETVEEQLQS"
+        },
+        {
+          "k": 55,
+          "dev": 0.015,
+          "del_ratio": 0.5789,
+          "triple": false,
+          "seq": "EQQFPEQFLQQLAQQLNNNGSIIAQLQKDQSAQFGYRLALTLFITQNTKKQKQLQQLVEQLGAGYVIENGQISQFVLSQISPLQNFLRQLQPYLKKQQQQAQLVLQIIQSLPQAKQSPQSFLQLAELVDQVSQLNKSKNRKTTAQTVQKSLQR"
+        },
+        {
+          "k": 150,
+          "dev": 0.797,
+          "del_ratio": 0.8684,
+          "triple": true,
+          "seq": "QKKYQKQFLKELAEEVNQNGSIVATLQPNPSAQFAFRIDLSLFISQNNKKRSKLEQLVQQIGNGYVVQKGDVCQYVLQQTRPLFNFLKQLVPYLKQKQEEAQLVLQIIRALPQAQESPSQFLQVCKLVDQVAKHNKSKTRKTTSETVAQVLSE"
+        },
+        {
+          "k": 64,
+          "dev": 2.127,
+          "del_ratio": 0.8947,
+          "triple": false,
+          "seq": "QKKLPKQFLQQLAKLVNENGSIIASLKRDKSAQFSYQIELSLFITQNTQKKKELEELVQQLGEGYVVNQGEVSQFILTQTDPLETFLSQLQPYLRKQQQQAKLVLQIIKQLPEAKKSPEAFINVCKLVDQVAQNNNSQTRKTTSQTVQETLKN"
+        },
+        {
+          "k": 130,
+          "dev": 4.122,
+          "del_ratio": 0.9474,
+          "triple": false,
+          "seq": "PLKLPKQFLQELAQQVDRNGSIIAELKEDKTAQFSFEVELTLYLTQNNQKKSELQKLVRQLGAGRVFQNGEVSQFVLSQTQPLEQLLQQLQPYLTQSQEQAKLVLEIISQLPNAQKSPEEFLKVCKLVDKVAQLNKSKTRKTTSETVQKVLQS"
+        }
+      ],
+      "best": {
+        "k": 12,
+        "seq": "AKQLPTQFLQELAQLIDQNGSIIAQLQPDPEAQFGYRIELTLFVHQKNRKRARLQRLVQQLGAGYVFQNGNVCQYVLSQQRPLQNFLRQLAPFLKAQRRQAQLVLTMIAALPQARQSPQAFLQLARLVDEVNKLNNSKTLKTTAETVEEQLQS",
+        "charge": 7.916,
+        "dev": 0.084,
+        "dk": 28,
+        "de": 10,
+        "kr": 18,
+        "del_ratio": 0.7368,
+        "h3_full": 28,
+        "h3_local": 2
+      }
+    },
+    "n2": {
+      "arm": "n2",
+      "target": 6,
+      "tgt_eff": 4.246,
+      "n": 200,
+      "charge": {
+        "pass": 82,
+        "fail": 118,
+        "dev_min": 0.016,
+        "dev_mean": 3.278,
+        "dev_max": 12.008
+      },
+      "deletion": {
+        "pass": 33,
+        "fail": 167,
+        "ratio_min": 0.3158,
+        "ratio_mean": 0.6053,
+        "ratio_max": 0.8947
+      },
+      "h3": {
+        "pass": 200,
+        "fail": 0,
+        "full_viol_mean": 22.96,
+        "local_viol_mean": 0.02,
+        "native_rate": 0.2484
+      },
+      "triple_pass": 12,
+      "triple_rate": 0.06,
+      "prefix": {
+        "p10": 1,
+        "p25": 1,
+        "p50": 4,
+        "p100": 8,
+        "p200": 12
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "fail_breakdown": {
+        "CD": 97,
+        "C": 21,
+        "D": 70
+      },
+      "pareto_examples": [
+        {
+          "k": 6,
+          "dev": 0.127,
+          "del_ratio": 0.7368,
+          "triple": true,
+          "seq": "AQQYPRQFLQQLANEINNNGSIIAQLQPNKEAKFNYQISLVLYVTQNTEQQEELQQLVEQLGAGRVFRNGKVAQFILSQTQPLENFLAQLTPYLKTKQKQAQLVLQIIQSLKQSKESPEAFLNVCQLVDQVAKMNASKTRKTTSETVAKTLNK"
+        },
+        {
+          "k": 82,
+          "dev": 0.096,
+          "del_ratio": 0.5789,
+          "triple": false,
+          "seq": "QQQFNRQFLQQFAQQLNANGSIIAQLQQSASAKFQYKIQLTLYYTQNNQKKQELLQLVQQIGHGYVYQNGRVSQYVLSQTEPLQDFLKQLQPYLQKLQDQALLVLTIISNLPKANESPTEFLQVCRLVDQVNKLNNSKNLKTTSETVQSQLQK"
+        },
+        {
+          "k": 159,
+          "dev": 0.016,
+          "del_ratio": 0.4737,
+          "triple": false,
+          "seq": "KKQLPQQFLQQLAQQVNANGSIVAELQPNSSAQFQYQLELSLYLTQNSEQQKQLQKLVQQLGAGYVYQNGNVSQFVLNQLKPLQNFLQQLVPYLQRSQQQAQLVLQIIENLPRAQQSPQQFLQVAKLVDQVANLNRSQTRKTTSETVQQSLRQ"
+        },
+        {
+          "k": 150,
+          "dev": 0.798,
+          "del_ratio": 0.7632,
+          "triple": true,
+          "seq": "QLKYQKQFLKELAEEVNQNGSIVATLQPNPSAQFAFRIDLSLFISQNNKKQSKLQQLVQQIGNGYVVQNGDVCQYVLQQTRPLFNFLKQLVPYLKQKQEEAQLVLQIIRALPQAQESPSQFLQVCKLVDQVAKHNKSKNRKTTSETVAQVLSE"
+        },
+        {
+          "k": 36,
+          "dev": 0.904,
+          "del_ratio": 0.8158,
+          "triple": true,
+          "seq": "QKKYPEQFLQKLAQQIDKDGSIIASLSPDPTAQFGYRIQLTLFITQKVNEQKRLQELVKQIGAGYVFKNGEVAQYVLQQSQPLQNFLKQLQPYLKKQQEQAQLVLQILASLPQAQQSAAEFLRVCKYVDEVNKLNESKTQKTTSKTVAQHLQS"
+        },
+        {
+          "k": 130,
+          "dev": 4.119,
+          "del_ratio": 0.8947,
+          "triple": false,
+          "seq": "PLKLPQQFLRELAQQVDRNGSIIAELKEDKTAQFSFEVELTLYLTQNNQQRSELQNLVRQLGAGRVFQNGEVSQFVLSQTQPLEQLLQQLQPYLTQSQEQAKLVLEIISQLPNAQKSPEEFLKVCKLVDKVAQLNKSKTRKTTSETVQKVLQS"
+        }
+      ],
+      "best": {
+        "k": 6,
+        "seq": "AQQYPRQFLQQLANEINNNGSIIAQLQPNKEAKFNYQISLVLYVTQNTEQQEELQQLVEQLGAGRVFRNGKVAQFILSQTQPLENFLAQLTPYLKTKQKQAQLVLQIIQSLKQSKESPEAFLNVCQLVDQVAKMNASKTRKTTSETVAKTLNK",
+        "charge": 5.873,
+        "dev": 0.127,
+        "dk": 28,
+        "de": 11,
+        "kr": 17,
+        "del_ratio": 0.7368,
+        "h3_full": 28,
+        "h3_local": 0
+      }
+    },
+    "p2": {
+      "arm": "p2",
+      "target": 10,
+      "tgt_eff": 7.477,
+      "n": 200,
+      "charge": {
+        "pass": 74,
+        "fail": 126,
+        "dev_min": 0.015,
+        "dev_mean": 3.275,
+        "dev_max": 14.01
+      },
+      "deletion": {
+        "pass": 129,
+        "fail": 71,
+        "ratio_min": 0.4474,
+        "ratio_mean": 0.7341,
+        "ratio_max": 1.1316
+      },
+      "h3": {
+        "pass": 200,
+        "fail": 0,
+        "full_viol_mean": 27.86,
+        "local_viol_mean": 0.24,
+        "native_rate": 0.2484
+      },
+      "triple_pass": 46,
+      "triple_rate": 0.23,
+      "prefix": {
+        "p10": 1,
+        "p25": 6,
+        "p50": 13,
+        "p100": 27,
+        "p200": 46
+      },
+      "main_cause_if_none": [
+        "charge"
+      ],
+      "fail_breakdown": {
+        "C": 83,
+        "CD": 43,
+        "D": 28
+      },
+      "pareto_examples": [
+        {
+          "k": 137,
+          "dev": 0.02,
+          "del_ratio": 0.8421,
+          "triple": true,
+          "seq": "EKQLNQQFLKQFAEELDRNGSIIATLQPDPTAQFKFRITLTLYYTQNNAKKNRLQNLVQELGVGYVYEVGEVSQFVLSQKLPLQNFLSQLTPYLKEQQQQAKLVLQIIRQLPKASNSPSEFLQVAKLVDKVQQLNNSKTRKTTSQTVKKVLKQ"
+        },
+        {
+          "k": 66,
+          "dev": 0.018,
+          "del_ratio": 0.7368,
+          "triple": true,
+          "seq": "SPKYNREFLQEFAQELNANGSIIAQLQPNPSAQFGYRIELTLFYTQKTKKQKKLQKLVEQIGAGLVVQNGKVSQFILSQFGPLQNFLKQLTPYLTKSQKQAQLVLQIIEQLPQAQRSPQEFLQVARLVDQVAALNKSKTQKTTSETVQKSLQA"
+        },
+        {
+          "k": 52,
+          "dev": 0.015,
+          "del_ratio": 0.6316,
+          "triple": false,
+          "seq": "QLKLPTKFLQELAQQINDNGSIIASLQTNPTAQFGYQIQLTLFITQKVQKKARLEKLVQSLGAGYVVQNGKVAQFVLQQTQPLQNFLQQLAPYLKRQQQQAQLVLQIIEQLPQAQQSPKQFLLVAQLVDQVARLNSSKNRKTTSETVRESLSR"
+        },
+        {
+          "k": 186,
+          "dev": 0.982,
+          "del_ratio": 0.8684,
+          "triple": true,
+          "seq": "QLEYNKKFLKTLSEEINNNGSIIAQLRPSPTARFGYALKLSLYITKKLEKQQELLKLVQQIGDGFVFQRGSVAQFVLTQTLPLQNFLKQLTPYLKKLQEQALLVLQIIDSLPRAQRSPQKFLEVAKLVDQVAKLNNSKTRKTTSQTVQQSLQE"
+        },
+        {
+          "k": 79,
+          "dev": 1.873,
+          "del_ratio": 0.9474,
+          "triple": true,
+          "seq": "QRELPRQFLRAFAKQINENGSIIAQLVPDKTAQFAYRIKLTLYYTQKLQKKKELEELVQQLGAGRVFQQGQVAQFVLQETRPLQAFLSQLQPFLEKKQEQAALVLQIIASLQRAQQSPQEFLQVCKLVDQVQKLNKSKTTKTTSKTVKEVLRQ"
+        },
+        {
+          "k": 130,
+          "dev": 3.015,
+          "del_ratio": 1.1316,
+          "triple": false,
+          "seq": "PLKLNKKFLKELAQQVDRDGSIIAELKEDKTAQFSYELELTLYLTKNNQKKSELQKLVRQIGAGRVFQNGEVSQFVLSQTQPLEQLLQQLQPYLTQSQEQAKLVLEIIEQLPNAQKSPEEFLKVAKLVDKVAKLNKSKTRKTTSETVQKVLQK"
+        }
+      ],
+      "best": {
+        "k": 66,
+        "seq": "SPKYNREFLQEFAQELNANGSIIAQLQPNPSAQFGYRIELTLFYTQKTKKQKKLQKLVEQIGAGLVVQNGKVSQFILSQFGPLQNFLKQLTPYLTKSQKQAQLVLQIIEQLPQAQRSPQEFLQVARLVDQVAALNKSKTQKTTSETVQKSLQA",
+        "charge": 9.982,
+        "dev": 0.018,
+        "dk": 28,
+        "de": 9,
+        "kr": 19,
+        "del_ratio": 0.7368,
+        "h3_full": 28,
+        "h3_local": 2
+      }
+    },
+    "n8": {
+      "arm": "n8",
+      "target": 0,
+      "tgt_eff": -0.601,
+      "n": 200,
+      "charge": {
+        "pass": 80,
+        "fail": 120,
+        "dev_min": 0.012,
+        "dev_mean": 3.154,
+        "dev_max": 14.863
+      },
+      "deletion": {
+        "pass": 20,
+        "fail": 180,
+        "ratio_min": 0.2632,
+        "ratio_mean": 0.5588,
+        "ratio_max": 0.8421
+      },
+      "h3": {
+        "pass": 200,
+        "fail": 0,
+        "full_viol_mean": 21.22,
+        "local_viol_mean": 0.01,
+        "native_rate": 0.2484
+      },
+      "triple_pass": 7,
+      "triple_rate": 0.035,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 1,
+        "p100": 4,
+        "p200": 7
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "fail_breakdown": {
+        "CD": 107,
+        "C": 13,
+        "D": 73
+      },
+      "pareto_examples": [
+        {
+          "k": 186,
+          "dev": 0.012,
+          "del_ratio": 0.7895,
+          "triple": true,
+          "seq": "QQEYNESFLKTLSEEINNNGSIIAQLRPSNDAQFGYALKLSLYITKNAEKQEELEKLVQQLGDGFVFQNGSVAQFVLTQTLPLQNFLKQLTPYLEKKQEQALLVLQIINSLPQAQESPQKFLEVAKLVNQVQKLNNSKNRKTTSQTVQQSLSE"
+        },
+        {
+          "k": 130,
+          "dev": 1.766,
+          "del_ratio": 0.8421,
+          "triple": true,
+          "seq": "PLKLPQQFLQELAQQVDRNGSIIAQLKEDQTAQFSFELQLTLYLTKNNQERSELENLVRQLGAGRVYQNGEVCQFVLSQTQPLEQLLQQLQPYLTQSQEQAKLVLQIISQLPNAQKSPEEFLKVCKLVDKVNQLNKSKNRKTTSETVQKVLSS"
+        }
+      ],
+      "best": {
+        "k": 186,
+        "seq": "QQEYNESFLKTLSEEINNNGSIIAQLRPSNDAQFGYALKLSLYITKNAEKQEELEKLVQQLGDGFVFQNGSVAQFVLTQTLPLQNFLKQLTPYLEKKQEQALLVLQIINSLPQAQESPQKFLEVAKLVNQVQKLNNSKNRKTTSQTVQQSLSE",
+        "charge": -0.012,
+        "dev": 0.012,
+        "dk": 30,
+        "de": 15,
+        "kr": 15,
+        "del_ratio": 0.7895,
+        "h3_full": 30,
+        "h3_local": 0
+      }
+    },
+    "p8": {
+      "arm": "p8",
+      "target": 16,
+      "tgt_eff": 12.323,
+      "n": 200,
+      "charge": {
+        "pass": 65,
+        "fail": 135,
+        "dev_min": 0.016,
+        "dev_mean": 3.737,
+        "dev_max": 14.969
+      },
+      "deletion": {
+        "pass": 200,
+        "fail": 0,
+        "ratio_min": 0.7368,
+        "ratio_mean": 1.0299,
+        "ratio_max": 1.3684
+      },
+      "h3": {
+        "pass": 186,
+        "fail": 14,
+        "full_viol_mean": 39.13,
+        "local_viol_mean": 2.25,
+        "native_rate": 0.2484
+      },
+      "triple_pass": 62,
+      "triple_rate": 0.31,
+      "prefix": {
+        "p10": 2,
+        "p25": 6,
+        "p50": 14,
+        "p100": 29,
+        "p200": 62
+      },
+      "main_cause_if_none": [
+        "charge"
+      ],
+      "fail_breakdown": {
+        "CH": 11,
+        "C": 124,
+        "H": 3
+      },
+      "pareto_examples": [
+        {
+          "k": 33,
+          "dev": 0.02,
+          "del_ratio": 1.1053,
+          "triple": true,
+          "seq": "SRKLNKKFLQQLAIQVDEDGSIIAELQKDKTAQFSYRIRLSLFITKKNTKKELLKKLVKEIGTGFVYNNGNTSQFVLSQTIPLSNFLSQLQPFLKKSKQQAELVLKIINSLKKSKKSPQEFIETAELVDQVAELNNSKNRKTTSKTIQKVLQK"
+        },
+        {
+          "k": 13,
+          "dev": 0.024,
+          "del_ratio": 1.1579,
+          "triple": true,
+          "seq": "SLKLPKAFLKQLAEKIDENGSIVASLKKNKSSQFSFDIDLSLFITQNNKKKKELKKLVQELGVGYVYNRGNVAQFVLTQLQPLQNLLQQLTPYLKKKQESAKLVLEIIQNLPKSKKSPDEFLKIAKLVDKVAEQNKSKTRKTTAKTVQESLQK"
+        },
+        {
+          "k": 152,
+          "dev": 0.019,
+          "del_ratio": 0.9474,
+          "triple": true,
+          "seq": "KKKLPKQFLQQFAILLNDNGSIVASLQPSKTAQFSFQLTLTLFVTQQLRKKQELLELVRLIGAGYVVEQGRVAQFVLSKLEPLANFLSQLQPYLKKKQKSAQLVLEIIESLPESKKSPQKFLQIAKLVDRVAKANKSKVRKTTSQTVEKALQQ"
+        },
+        {
+          "k": 58,
+          "dev": 0.016,
+          "del_ratio": 0.8947,
+          "triple": true,
+          "seq": "SKKFKQRFLQQLATQVDNDGSIVAQLQPAKWAQFEYRLRLTLFYTQKTSQKSELQALVQQIGHGYVFKNGKSAQFVLQQKGPLLNFLKQLQPYLKKSQKQAKLVLQILDSLQESRQSPEAFLRVAKLVDQVNKLNASKVRKTTAQTMRDSLQQ"
+        },
+        {
+          "k": 57,
+          "dev": 0.751,
+          "del_ratio": 1.2368,
+          "triple": false,
+          "seq": "EKEFNRKFLQKLAKIINNDGSIIAQLQEDETAQFGYEFSLTLYITRKRKRRKELEKLVKQIGCGYVYENGNTCQFVLSKLAPLQYFLRQLQPYLKKKKNQAQLVLEIIEQLESSQKSPKAFLAAAKLVDQVNKLNKSKTRKTTSKTLKRSLEK"
+        },
+        {
+          "k": 196,
+          "dev": 1.248,
+          "del_ratio": 1.2895,
+          "triple": false,
+          "seq": "KKQLNRAFLKQFAQELDENGSIIASLQPDKSARFSFKLKLTLYYTQKNAKRKELQKLVEELGCGYVYKRGKVSQYVLSETKPLQNLLKQLTPYLNRLREQAKLVLKIIELLDEANESAQRFIEVCKLVDKVAKLNASKTRKTTSETVKKKLES"
+        },
+        {
+          "k": 163,
+          "dev": 2.356,
+          "del_ratio": 1.3158,
+          "triple": false,
+          "seq": "QKILNERFLQRFAEELDEDGSIIGQLIPDPTAKFSFRITLTLFITRKCKQREKLLKLVKEIGTGYVYKNGKVCQFVLSQTEPLDNLLKQLTPYLKKSKKQAKLVLKIIEELPQANKSPKKFLEVCKLIDKINKLNKSKNRKTTSETVEDVLQK"
+        },
+        {
+          "k": 25,
+          "dev": 9.97,
+          "del_ratio": 1.3684,
+          "triple": false,
+          "seq": "QKTLKEKFLKQFAEILDDDGSIIAQLEPDKTAKFKYRITLTLYITQKTKKKKRLKRLVKEIGSGRVYQKGKVAQFVLTQTTPLKNFLQQLQPYLKRKQKEAELVLKIIKELKTSKKSSQQFLKVAKLIDRVNQLNRSQTRKTTSETVKKTLKS"
+        }
+      ],
+      "best": {
+        "k": 58,
+        "seq": "SKKFKQRFLQQLATQVDNDGSIVAQLQPAKWAQFEYRLRLTLFYTQKTSQKSELQALVQQIGHGYVFKNGKSAQFVLQQKGPLLNFLKQLQPYLKKSQKQAKLVLQILDSLQESRQSPEAFLRVAKLVDQVNKLNASKVRKTTAQTMRDSLQQ",
+        "charge": 16.016,
+        "dev": 0.016,
+        "dk": 34,
+        "de": 9,
+        "kr": 25,
+        "del_ratio": 0.8947,
+        "h3_full": 34,
+        "h3_local": 0
+      }
+    }
+  }
+}

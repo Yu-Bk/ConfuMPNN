@@ -1,0 +1,1569 @@
+{
+  "total_arms": 50,
+  "arms_with_triple": 30,
+  "arms_with_triple_rate": 0.6,
+  "proteins_with_any_triple": 9,
+  "per_arm_exist_rate": {
+    "native": 0.5,
+    "n2": 0.7,
+    "p2": 0.5,
+    "n8": 0.7,
+    "p8": 0.6
+  },
+  "rows": [
+    {
+      "pdb": "6D2O",
+      "cat": "small_mol",
+      "L": 209,
+      "arm": "native",
+      "target": -6,
+      "n": 200,
+      "triple_pass": 6,
+      "triple_rate": 0.03,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 1,
+        "p50": 1,
+        "p100": 3,
+        "p200": 6
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 69,
+        "deletion": 29,
+        "h3": 200
+      },
+      "del_mean": 0.5652,
+      "dev_mean": 3.797,
+      "native_dk": 42,
+      "native_charge": -6.223,
+      "native_h3_rate": 0.201
+    },
+    {
+      "pdb": "6D2O",
+      "cat": "small_mol",
+      "L": 209,
+      "arm": "n2",
+      "target": -8,
+      "n": 200,
+      "triple_pass": 9,
+      "triple_rate": 0.045,
+      "exists": true,
+      "prefix": {
+        "p10": 1,
+        "p25": 1,
+        "p50": 2,
+        "p100": 6,
+        "p200": 9
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 55,
+        "deletion": 44,
+        "h3": 200
+      },
+      "del_mean": 0.6068,
+      "dev_mean": 3.996,
+      "native_dk": 42,
+      "native_charge": -6.223,
+      "native_h3_rate": 0.201
+    },
+    {
+      "pdb": "6D2O",
+      "cat": "small_mol",
+      "L": 209,
+      "arm": "p2",
+      "target": -4,
+      "n": 200,
+      "triple_pass": 3,
+      "triple_rate": 0.015,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 1,
+        "p50": 1,
+        "p100": 1,
+        "p200": 3
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 55,
+        "deletion": 21,
+        "h3": 200
+      },
+      "del_mean": 0.5417,
+      "dev_mean": 3.853,
+      "native_dk": 42,
+      "native_charge": -6.223,
+      "native_h3_rate": 0.201
+    },
+    {
+      "pdb": "6D2O",
+      "cat": "small_mol",
+      "L": 209,
+      "arm": "n8",
+      "target": -14,
+      "n": 200,
+      "triple_pass": 46,
+      "triple_rate": 0.23,
+      "exists": true,
+      "prefix": {
+        "p10": 3,
+        "p25": 5,
+        "p50": 10,
+        "p100": 22,
+        "p200": 46
+      },
+      "main_cause_if_none": [
+        "charge"
+      ],
+      "pass": {
+        "charge": 63,
+        "deletion": 152,
+        "h3": 200
+      },
+      "del_mean": 0.8,
+      "dev_mean": 4.511,
+      "native_dk": 42,
+      "native_charge": -6.223,
+      "native_h3_rate": 0.201
+    },
+    {
+      "pdb": "6D2O",
+      "cat": "small_mol",
+      "L": 209,
+      "arm": "p8",
+      "target": 2,
+      "n": 200,
+      "triple_pass": 3,
+      "triple_rate": 0.015,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 1,
+        "p50": 1,
+        "p100": 1,
+        "p200": 3
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 72,
+        "deletion": 11,
+        "h3": 200
+      },
+      "del_mean": 0.5331,
+      "dev_mean": 3.579,
+      "native_dk": 42,
+      "native_charge": -6.223,
+      "native_h3_rate": 0.201
+    },
+    {
+      "pdb": "1AS2",
+      "cat": "nucleotide",
+      "L": 312,
+      "arm": "native",
+      "target": -3,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 65,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4607,
+      "dev_mean": 4.018,
+      "native_dk": 84,
+      "native_charge": -2.692,
+      "native_h3_rate": 0.2692
+    },
+    {
+      "pdb": "1AS2",
+      "cat": "nucleotide",
+      "L": 312,
+      "arm": "n2",
+      "target": -5,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 67,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4807,
+      "dev_mean": 3.88,
+      "native_dk": 84,
+      "native_charge": -2.692,
+      "native_h3_rate": 0.2692
+    },
+    {
+      "pdb": "1AS2",
+      "cat": "nucleotide",
+      "L": 312,
+      "arm": "p2",
+      "target": -1,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 67,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4476,
+      "dev_mean": 3.955,
+      "native_dk": 84,
+      "native_charge": -2.692,
+      "native_h3_rate": 0.2692
+    },
+    {
+      "pdb": "1AS2",
+      "cat": "nucleotide",
+      "L": 312,
+      "arm": "n8",
+      "target": -11,
+      "n": 200,
+      "triple_pass": 2,
+      "triple_rate": 0.01,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 1,
+        "p100": 2,
+        "p200": 2
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 63,
+        "deletion": 5,
+        "h3": 200
+      },
+      "del_mean": 0.5762,
+      "dev_mean": 3.858,
+      "native_dk": 84,
+      "native_charge": -2.692,
+      "native_h3_rate": 0.2692
+    },
+    {
+      "pdb": "1AS2",
+      "cat": "nucleotide",
+      "L": 312,
+      "arm": "p8",
+      "target": 5,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 66,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4752,
+      "dev_mean": 4.477,
+      "native_dk": 84,
+      "native_charge": -2.692,
+      "native_h3_rate": 0.2692
+    },
+    {
+      "pdb": "2FEO",
+      "cat": "nucleotide",
+      "L": 221,
+      "arm": "native",
+      "target": -7,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 59,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4718,
+      "dev_mean": 4.197,
+      "native_dk": 57,
+      "native_charge": -6.879,
+      "native_h3_rate": 0.2579
+    },
+    {
+      "pdb": "2FEO",
+      "cat": "nucleotide",
+      "L": 221,
+      "arm": "n2",
+      "target": -9,
+      "n": 200,
+      "triple_pass": 1,
+      "triple_rate": 0.005,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 1,
+        "p200": 1
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 53,
+        "deletion": 2,
+        "h3": 200
+      },
+      "del_mean": 0.503,
+      "dev_mean": 4.199,
+      "native_dk": 57,
+      "native_charge": -6.879,
+      "native_h3_rate": 0.2579
+    },
+    {
+      "pdb": "2FEO",
+      "cat": "nucleotide",
+      "L": 221,
+      "arm": "p2",
+      "target": -5,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 61,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4599,
+      "dev_mean": 4.147,
+      "native_dk": 57,
+      "native_charge": -6.879,
+      "native_h3_rate": 0.2579
+    },
+    {
+      "pdb": "2FEO",
+      "cat": "nucleotide",
+      "L": 221,
+      "arm": "n8",
+      "target": -15,
+      "n": 200,
+      "triple_pass": 19,
+      "triple_rate": 0.095,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 1,
+        "p100": 9,
+        "p200": 19
+      },
+      "main_cause_if_none": [
+        "charge"
+      ],
+      "pass": {
+        "charge": 49,
+        "deletion": 95,
+        "h3": 200
+      },
+      "del_mean": 0.6868,
+      "dev_mean": 4.679,
+      "native_dk": 57,
+      "native_charge": -6.879,
+      "native_h3_rate": 0.2579
+    },
+    {
+      "pdb": "2FEO",
+      "cat": "nucleotide",
+      "L": 221,
+      "arm": "p8",
+      "target": 1,
+      "n": 200,
+      "triple_pass": 8,
+      "triple_rate": 0.04,
+      "exists": true,
+      "prefix": {
+        "p10": 1,
+        "p25": 1,
+        "p50": 2,
+        "p100": 6,
+        "p200": 8
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 64,
+        "deletion": 29,
+        "h3": 200
+      },
+      "del_mean": 0.5965,
+      "dev_mean": 4.534,
+      "native_dk": 57,
+      "native_charge": -6.879,
+      "native_h3_rate": 0.2579
+    },
+    {
+      "pdb": "5CQH",
+      "cat": "nucleotide",
+      "L": 183,
+      "arm": "native",
+      "target": -6,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 88,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4328,
+      "dev_mean": 2.96,
+      "native_dk": 43,
+      "native_charge": -5.532,
+      "native_h3_rate": 0.235
+    },
+    {
+      "pdb": "5CQH",
+      "cat": "nucleotide",
+      "L": 183,
+      "arm": "n2",
+      "target": -8,
+      "n": 200,
+      "triple_pass": 1,
+      "triple_rate": 0.005,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 1
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 83,
+        "deletion": 4,
+        "h3": 200
+      },
+      "del_mean": 0.4913,
+      "dev_mean": 3.175,
+      "native_dk": 43,
+      "native_charge": -5.532,
+      "native_h3_rate": 0.235
+    },
+    {
+      "pdb": "5CQH",
+      "cat": "nucleotide",
+      "L": 183,
+      "arm": "p2",
+      "target": -4,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 101,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.3967,
+      "dev_mean": 2.637,
+      "native_dk": 43,
+      "native_charge": -5.532,
+      "native_h3_rate": 0.235
+    },
+    {
+      "pdb": "5CQH",
+      "cat": "nucleotide",
+      "L": 183,
+      "arm": "n8",
+      "target": -14,
+      "n": 200,
+      "triple_pass": 24,
+      "triple_rate": 0.12,
+      "exists": true,
+      "prefix": {
+        "p10": 2,
+        "p25": 5,
+        "p50": 8,
+        "p100": 13,
+        "p200": 24
+      },
+      "main_cause_if_none": [
+        "charge"
+      ],
+      "pass": {
+        "charge": 57,
+        "deletion": 105,
+        "h3": 200
+      },
+      "del_mean": 0.7191,
+      "dev_mean": 3.96,
+      "native_dk": 43,
+      "native_charge": -5.532,
+      "native_h3_rate": 0.235
+    },
+    {
+      "pdb": "5CQH",
+      "cat": "nucleotide",
+      "L": 183,
+      "arm": "p8",
+      "target": 2,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 92,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.422,
+      "dev_mean": 2.668,
+      "native_dk": 43,
+      "native_charge": -5.532,
+      "native_h3_rate": 0.235
+    },
+    {
+      "pdb": "1CGE",
+      "cat": "metal",
+      "L": 162,
+      "arm": "native",
+      "target": -12,
+      "n": 200,
+      "triple_pass": 14,
+      "triple_rate": 0.07,
+      "exists": true,
+      "prefix": {
+        "p10": 1,
+        "p25": 1,
+        "p50": 1,
+        "p100": 7,
+        "p200": 14
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 79,
+        "deletion": 33,
+        "h3": 200
+      },
+      "del_mean": 0.5953,
+      "dev_mean": 2.843,
+      "native_dk": 36,
+      "native_charge": -11.662,
+      "native_h3_rate": 0.2222
+    },
+    {
+      "pdb": "1CGE",
+      "cat": "metal",
+      "L": 162,
+      "arm": "n2",
+      "target": -14,
+      "n": 200,
+      "triple_pass": 38,
+      "triple_rate": 0.19,
+      "exists": true,
+      "prefix": {
+        "p10": 1,
+        "p25": 4,
+        "p50": 9,
+        "p100": 23,
+        "p200": 38
+      },
+      "main_cause_if_none": [
+        "charge",
+        "deletion"
+      ],
+      "pass": {
+        "charge": 84,
+        "deletion": 84,
+        "h3": 200
+      },
+      "del_mean": 0.6821,
+      "dev_mean": 2.858,
+      "native_dk": 36,
+      "native_charge": -11.662,
+      "native_h3_rate": 0.2222
+    },
+    {
+      "pdb": "1CGE",
+      "cat": "metal",
+      "L": 162,
+      "arm": "p2",
+      "target": -10,
+      "n": 200,
+      "triple_pass": 1,
+      "triple_rate": 0.005,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 1
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 95,
+        "deletion": 7,
+        "h3": 200
+      },
+      "del_mean": 0.5211,
+      "dev_mean": 2.669,
+      "native_dk": 36,
+      "native_charge": -11.662,
+      "native_h3_rate": 0.2222
+    },
+    {
+      "pdb": "1CGE",
+      "cat": "metal",
+      "L": 162,
+      "arm": "n8",
+      "target": -20,
+      "n": 200,
+      "triple_pass": 64,
+      "triple_rate": 0.32,
+      "exists": true,
+      "prefix": {
+        "p10": 2,
+        "p25": 9,
+        "p50": 17,
+        "p100": 33,
+        "p200": 64
+      },
+      "main_cause_if_none": [
+        "charge"
+      ],
+      "pass": {
+        "charge": 66,
+        "deletion": 193,
+        "h3": 199
+      },
+      "del_mean": 0.9189,
+      "dev_mean": 3.527,
+      "native_dk": 36,
+      "native_charge": -11.662,
+      "native_h3_rate": 0.2222
+    },
+    {
+      "pdb": "1CGE",
+      "cat": "metal",
+      "L": 162,
+      "arm": "p8",
+      "target": -4,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 96,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.3511,
+      "dev_mean": 2.493,
+      "native_dk": 36,
+      "native_charge": -11.662,
+      "native_h3_rate": 0.2222
+    },
+    {
+      "pdb": "1BJ4",
+      "cat": "long",
+      "L": 470,
+      "arm": "native",
+      "target": 0,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 47,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4576,
+      "dev_mean": 4.858,
+      "native_dk": 105,
+      "native_charge": 0.421,
+      "native_h3_rate": 0.2234
+    },
+    {
+      "pdb": "1BJ4",
+      "cat": "long",
+      "L": 470,
+      "arm": "n2",
+      "target": -2,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 51,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4546,
+      "dev_mean": 4.861,
+      "native_dk": 105,
+      "native_charge": 0.421,
+      "native_h3_rate": 0.2234
+    },
+    {
+      "pdb": "1BJ4",
+      "cat": "long",
+      "L": 470,
+      "arm": "p2",
+      "target": 2,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 48,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4691,
+      "dev_mean": 5.036,
+      "native_dk": 105,
+      "native_charge": 0.421,
+      "native_h3_rate": 0.2234
+    },
+    {
+      "pdb": "1BJ4",
+      "cat": "long",
+      "L": 470,
+      "arm": "n8",
+      "target": -8,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 46,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4731,
+      "dev_mean": 5.103,
+      "native_dk": 105,
+      "native_charge": 0.421,
+      "native_h3_rate": 0.2234
+    },
+    {
+      "pdb": "1BJ4",
+      "cat": "long",
+      "L": 470,
+      "arm": "p8",
+      "target": 8,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 50,
+        "deletion": 2,
+        "h3": 200
+      },
+      "del_mean": 0.5362,
+      "dev_mean": 5.305,
+      "native_dk": 105,
+      "native_charge": 0.421,
+      "native_h3_rate": 0.2234
+    },
+    {
+      "pdb": "21KL_A",
+      "cat": "RNA",
+      "L": 237,
+      "arm": "native",
+      "target": 10,
+      "n": 200,
+      "triple_pass": 8,
+      "triple_rate": 0.04,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 2,
+        "p100": 4,
+        "p200": 8
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 48,
+        "deletion": 28,
+        "h3": 200
+      },
+      "del_mean": 0.6024,
+      "dev_mean": 4.608,
+      "native_dk": 62,
+      "native_charge": 10.022,
+      "native_h3_rate": 0.2616
+    },
+    {
+      "pdb": "21KL_A",
+      "cat": "RNA",
+      "L": 237,
+      "arm": "n2",
+      "target": 8,
+      "n": 200,
+      "triple_pass": 4,
+      "triple_rate": 0.02,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 1,
+        "p100": 2,
+        "p200": 4
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 48,
+        "deletion": 14,
+        "h3": 200
+      },
+      "del_mean": 0.5789,
+      "dev_mean": 4.573,
+      "native_dk": 62,
+      "native_charge": 10.022,
+      "native_h3_rate": 0.2616
+    },
+    {
+      "pdb": "21KL_A",
+      "cat": "RNA",
+      "L": 237,
+      "arm": "p2",
+      "target": 12,
+      "n": 200,
+      "triple_pass": 7,
+      "triple_rate": 0.035,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 1,
+        "p200": 7
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 52,
+        "deletion": 39,
+        "h3": 200
+      },
+      "del_mean": 0.6323,
+      "dev_mean": 4.514,
+      "native_dk": 62,
+      "native_charge": 10.022,
+      "native_h3_rate": 0.2616
+    },
+    {
+      "pdb": "21KL_A",
+      "cat": "RNA",
+      "L": 237,
+      "arm": "n8",
+      "target": 2,
+      "n": 200,
+      "triple_pass": 1,
+      "triple_rate": 0.005,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 1
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 42,
+        "deletion": 12,
+        "h3": 200
+      },
+      "del_mean": 0.5719,
+      "dev_mean": 4.573,
+      "native_dk": 62,
+      "native_charge": 10.022,
+      "native_h3_rate": 0.2616
+    },
+    {
+      "pdb": "21KL_A",
+      "cat": "RNA",
+      "L": 237,
+      "arm": "p8",
+      "target": 18,
+      "n": 200,
+      "triple_pass": 39,
+      "triple_rate": 0.195,
+      "exists": true,
+      "prefix": {
+        "p10": 4,
+        "p25": 5,
+        "p50": 8,
+        "p100": 15,
+        "p200": 39
+      },
+      "main_cause_if_none": [
+        "charge"
+      ],
+      "pass": {
+        "charge": 47,
+        "deletion": 153,
+        "h3": 200
+      },
+      "del_mean": 0.7675,
+      "dev_mean": 4.597,
+      "native_dk": 62,
+      "native_charge": 10.022,
+      "native_h3_rate": 0.2616
+    },
+    {
+      "pdb": "5O60_E",
+      "cat": "RNA",
+      "L": 209,
+      "arm": "native",
+      "target": 11,
+      "n": 200,
+      "triple_pass": 4,
+      "triple_rate": 0.02,
+      "exists": true,
+      "prefix": {
+        "p10": 1,
+        "p25": 1,
+        "p50": 2,
+        "p100": 3,
+        "p200": 4
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 64,
+        "deletion": 13,
+        "h3": 200
+      },
+      "del_mean": 0.5504,
+      "dev_mean": 3.737,
+      "native_dk": 51,
+      "native_charge": 11.176,
+      "native_h3_rate": 0.244
+    },
+    {
+      "pdb": "5O60_E",
+      "cat": "RNA",
+      "L": 209,
+      "arm": "n2",
+      "target": 9,
+      "n": 200,
+      "triple_pass": 1,
+      "triple_rate": 0.005,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 1,
+        "p200": 1
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 61,
+        "deletion": 4,
+        "h3": 200
+      },
+      "del_mean": 0.5158,
+      "dev_mean": 3.642,
+      "native_dk": 51,
+      "native_charge": 11.176,
+      "native_h3_rate": 0.244
+    },
+    {
+      "pdb": "5O60_E",
+      "cat": "RNA",
+      "L": 209,
+      "arm": "p2",
+      "target": 13,
+      "n": 200,
+      "triple_pass": 8,
+      "triple_rate": 0.04,
+      "exists": true,
+      "prefix": {
+        "p10": 1,
+        "p25": 1,
+        "p50": 5,
+        "p100": 6,
+        "p200": 8
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 65,
+        "deletion": 32,
+        "h3": 200
+      },
+      "del_mean": 0.5934,
+      "dev_mean": 3.764,
+      "native_dk": 51,
+      "native_charge": 11.176,
+      "native_h3_rate": 0.244
+    },
+    {
+      "pdb": "5O60_E",
+      "cat": "RNA",
+      "L": 209,
+      "arm": "n8",
+      "target": 3,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 69,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4568,
+      "dev_mean": 3.252,
+      "native_dk": 51,
+      "native_charge": 11.176,
+      "native_h3_rate": 0.244
+    },
+    {
+      "pdb": "5O60_E",
+      "cat": "RNA",
+      "L": 209,
+      "arm": "p8",
+      "target": 19,
+      "n": 200,
+      "triple_pass": 48,
+      "triple_rate": 0.24,
+      "exists": true,
+      "prefix": {
+        "p10": 4,
+        "p25": 8,
+        "p50": 13,
+        "p100": 25,
+        "p200": 48
+      },
+      "main_cause_if_none": [
+        "charge"
+      ],
+      "pass": {
+        "charge": 61,
+        "deletion": 152,
+        "h3": 200
+      },
+      "del_mean": 0.7617,
+      "dev_mean": 3.89,
+      "native_dk": 51,
+      "native_charge": 11.176,
+      "native_h3_rate": 0.244
+    },
+    {
+      "pdb": "3MXB_A",
+      "cat": "DNA",
+      "L": 153,
+      "arm": "native",
+      "target": 8,
+      "n": 200,
+      "triple_pass": 29,
+      "triple_rate": 0.145,
+      "exists": true,
+      "prefix": {
+        "p10": 3,
+        "p25": 5,
+        "p50": 9,
+        "p100": 16,
+        "p200": 29
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 83,
+        "deletion": 75,
+        "h3": 200
+      },
+      "del_mean": 0.6667,
+      "dev_mean": 3.283,
+      "native_dk": 38,
+      "native_charge": 7.945,
+      "native_h3_rate": 0.2484
+    },
+    {
+      "pdb": "3MXB_A",
+      "cat": "DNA",
+      "L": 153,
+      "arm": "n2",
+      "target": 6,
+      "n": 200,
+      "triple_pass": 12,
+      "triple_rate": 0.06,
+      "exists": true,
+      "prefix": {
+        "p10": 1,
+        "p25": 1,
+        "p50": 4,
+        "p100": 8,
+        "p200": 12
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 82,
+        "deletion": 33,
+        "h3": 200
+      },
+      "del_mean": 0.6053,
+      "dev_mean": 3.278,
+      "native_dk": 38,
+      "native_charge": 7.945,
+      "native_h3_rate": 0.2484
+    },
+    {
+      "pdb": "3MXB_A",
+      "cat": "DNA",
+      "L": 153,
+      "arm": "p2",
+      "target": 10,
+      "n": 200,
+      "triple_pass": 46,
+      "triple_rate": 0.23,
+      "exists": true,
+      "prefix": {
+        "p10": 1,
+        "p25": 6,
+        "p50": 13,
+        "p100": 27,
+        "p200": 46
+      },
+      "main_cause_if_none": [
+        "charge"
+      ],
+      "pass": {
+        "charge": 74,
+        "deletion": 129,
+        "h3": 200
+      },
+      "del_mean": 0.7341,
+      "dev_mean": 3.275,
+      "native_dk": 38,
+      "native_charge": 7.945,
+      "native_h3_rate": 0.2484
+    },
+    {
+      "pdb": "3MXB_A",
+      "cat": "DNA",
+      "L": 153,
+      "arm": "n8",
+      "target": 0,
+      "n": 200,
+      "triple_pass": 7,
+      "triple_rate": 0.035,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 1,
+        "p100": 4,
+        "p200": 7
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 80,
+        "deletion": 20,
+        "h3": 200
+      },
+      "del_mean": 0.5588,
+      "dev_mean": 3.154,
+      "native_dk": 38,
+      "native_charge": 7.945,
+      "native_h3_rate": 0.2484
+    },
+    {
+      "pdb": "3MXB_A",
+      "cat": "DNA",
+      "L": 153,
+      "arm": "p8",
+      "target": 16,
+      "n": 200,
+      "triple_pass": 62,
+      "triple_rate": 0.31,
+      "exists": true,
+      "prefix": {
+        "p10": 2,
+        "p25": 6,
+        "p50": 14,
+        "p100": 29,
+        "p200": 62
+      },
+      "main_cause_if_none": [
+        "charge"
+      ],
+      "pass": {
+        "charge": 65,
+        "deletion": 200,
+        "h3": 186
+      },
+      "del_mean": 1.0299,
+      "dev_mean": 3.737,
+      "native_dk": 38,
+      "native_charge": 7.945,
+      "native_h3_rate": 0.2484
+    },
+    {
+      "pdb": "9DWG_L",
+      "cat": "DNA",
+      "L": 323,
+      "arm": "native",
+      "target": 4,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 50,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4707,
+      "dev_mean": 4.729,
+      "native_dk": 98,
+      "native_charge": 3.981,
+      "native_h3_rate": 0.3034
+    },
+    {
+      "pdb": "9DWG_L",
+      "cat": "DNA",
+      "L": 323,
+      "arm": "n2",
+      "target": 2,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 56,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4467,
+      "dev_mean": 4.598,
+      "native_dk": 98,
+      "native_charge": 3.981,
+      "native_h3_rate": 0.3034
+    },
+    {
+      "pdb": "9DWG_L",
+      "cat": "DNA",
+      "L": 323,
+      "arm": "p2",
+      "target": 6,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 50,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.5019,
+      "dev_mean": 4.861,
+      "native_dk": 98,
+      "native_charge": 3.981,
+      "native_h3_rate": 0.3034
+    },
+    {
+      "pdb": "9DWG_L",
+      "cat": "DNA",
+      "L": 323,
+      "arm": "n8",
+      "target": -4,
+      "n": 200,
+      "triple_pass": 0,
+      "triple_rate": 0.0,
+      "exists": false,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 0,
+        "p100": 0,
+        "p200": 0
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 50,
+        "deletion": 0,
+        "h3": 200
+      },
+      "del_mean": 0.4135,
+      "dev_mean": 4.696,
+      "native_dk": 98,
+      "native_charge": 3.981,
+      "native_h3_rate": 0.3034
+    },
+    {
+      "pdb": "9DWG_L",
+      "cat": "DNA",
+      "L": 323,
+      "arm": "p8",
+      "target": 12,
+      "n": 200,
+      "triple_pass": 8,
+      "triple_rate": 0.04,
+      "exists": true,
+      "prefix": {
+        "p10": 0,
+        "p25": 0,
+        "p50": 1,
+        "p100": 2,
+        "p200": 8
+      },
+      "main_cause_if_none": [
+        "deletion"
+      ],
+      "pass": {
+        "charge": 48,
+        "deletion": 29,
+        "h3": 200
+      },
+      "del_mean": 0.6359,
+      "dev_mean": 5.228,
+      "native_dk": 98,
+      "native_charge": 3.981,
+      "native_h3_rate": 0.3034
+    }
+  ],
+  "main_cause_among_no_triple_arms": {
+    "deletion": 20
+  }
+}
