@@ -4,3 +4,19 @@
 global slope=1.492  intercept=-1.260  (n_point=216)
 per_protein: 18 个蛋白
 [10:44:24] ③ 泛化采样 n50（cuda:6）...
+[11:05:16] ③ 采样完成：10/10
+[11:05:16] ④ 组成分析...
+name       L native_DK   gen_DK    倍率  native_DE/KR    gen_DE/KR
+  !! 1C6O 无 native 臂 seqs.fa
+  !! 1AZM 无 native 臂 seqs.fa
+1AS2     312        84     38.6  0.46 43/    41    20.4/  18.1
+  !! 1AXW 无 native 臂 seqs.fa
+2FEO     221        57     26.2  0.46 32/    25    14.9/  11.3
+5CQH     183        43     18.5  0.43 24/    19    11.3/   7.2
+1CGE     162        36     21.6  0.60 24/    12    16.5/   5.1
+  !! 1AG0 无 native 臂 seqs.fa
+  !! 1A65 无 native 臂 seqs.fa
+1BJ4     470       105     48.2  0.46 52/    53    23.8/  24.3
+
+已写 output/v14_ligand_comp_clean.json
+[11:05:16] ⑤ 回折（cuda:6，预计 3-5h）...

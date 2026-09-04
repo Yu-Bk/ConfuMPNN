@@ -23,8 +23,8 @@
 |---|---|---|---|---|
 | ① | 配体诊断 slope | `output/v14_ligand_diag_response_clean.json` | ✅ | valid n=10 slope 均值 **1.473**（6D2O1.63/1AS2 1.45/2FEO0.93/5CQH1.05/1CGE0.98/1BJ42.18/21KL_A1.74/5O60_E1.78/3MXB_A1.24/9DWG_L1.75）+ trainish 8 | 
 | ② | 校准表 | `output/charge_calibration_v14_ligand_clean.json` | ✅ | global slope **1.492**/intercept −1.260；per_protein 18 条（10 valid + 8 trainish） |
-| ③ | 泛化采样 n50（in10×5） | `output/generalization_ligand_v14_clean/ligand/*/validation.json` ≥10 | ⏳ | — |
-| ④ | 组成 | `output/v14_ligand_comp_clean.json` | ⏳ | — |
+| ③ | 泛化采样 n50（in10×5） | `output/generalization_ligand_v14_clean/ligand/*/validation.json` ≥10 | ✅ | **10/10** 蛋白完成（每蛋白 51 条 seqs = 50 gen + native ref） |
+| ④ | 组成 | `output/v14_ligand_comp_clean.json` | ⚠️ 部分 | 产物仅 **5/10**（1AS2 0.46/2FEO 0.46/5CQH 0.43/1CGE 0.60/1BJ4 0.46）；缺 6D2O/21KL_A/5O60_E/3MXB_A/9DWG_L → **终局前需重跑 compare_comp_ligand 补全**（10 蛋白 native 臂序列均在，非数据缺失） |
 | ⑤ | ESMFold H1 + TM | plddt.csv≥50 + tm.csv≥50 | ⏳ | — |
 | ⑥ | H2 统计 | `output/v14_ligand_gen_stats_clean.json` | ⏳ | — |
 | ⑦ | PROPKA H4 | `output/propka_v14_ligand_clean/*.json` ≥6 | ⏳ | — |
@@ -34,8 +34,10 @@
 | 终 | DONE | `log/v14_ligand_validation_clean.DONE` | ⏳ | — |
 
 ## 四、检查点时间戳记录
-> 归档游标：`archived_stage = 2`（每归档完成一个阶段就 +1；检查点据此判断"是否有新阶段完成、要不要 push"）
+> 归档游标：`archived_stage = 4`（每归档完成一个阶段就 +1；检查点据此判断"是否有新阶段完成、要不要 push"）
 
 （仅在某阶段完成时追加一行：时间 / 阶段 / 关键数值 / 观测；阶段进行中不写不 push）
 - 10:57 ①完成：valid n=10 slope 均值 1.473（未校准响应增益，与 §4.2 旧值 1.49±0.40 一致）
 - 10:57 ②完成：校准表 global slope 1.492 / intercept −1.260；per_protein 18 条
+- 11:1x ③完成：泛化采样 10/10 蛋白（各 51 条 seqs = 50 gen + native）
+- 11:1x ④⚠️：comp_clean 仅 5/10 蛋白（1AS2 0.46/2FEO 0.46/5CQH 0.43/1CGE 0.60/1BJ4 0.46）→ 部分，终局前需重跑 compare_comp_ligand 补全 6D2O/21KL_A/5O60_E/3MXB_A/9DWG_L；随后进入 ⑤ ESMFold（预计 3-5h）
