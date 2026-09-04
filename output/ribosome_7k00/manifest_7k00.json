@@ -1,0 +1,374 @@
+{
+ "note": "7K00 E.coli MRE600 70S ribosome (1.98A EM) - native ribosomal protein designability test (v14 ligand). 49 protein chains in complex; split single-chain+local rRNA (15A) like 5O60_E; length filter 50-500 dropped L9(41,partial)/L34(46)/L36(38). No 100% seq duplicates. native_charge at pH7.4.",
+ "source": "PDB 7K00",
+ "items": [
+  {
+   "pdb": "7K00_L13",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L13.pdb",
+   "cat": "RNA",
+   "name": "L13",
+   "L": 142,
+   "native_charge": 10.25
+  },
+  {
+   "pdb": "7K00_L14",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L14.pdb",
+   "cat": "RNA",
+   "name": "L14",
+   "L": 123,
+   "native_charge": 11.81
+  },
+  {
+   "pdb": "7K00_L15",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L15.pdb",
+   "cat": "RNA",
+   "name": "L15",
+   "L": 144,
+   "native_charge": 16.03
+  },
+  {
+   "pdb": "7K00_L16",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L16.pdb",
+   "cat": "RNA",
+   "name": "L16",
+   "L": 134,
+   "native_charge": 19.02
+  },
+  {
+   "pdb": "7K00_L17",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L17.pdb",
+   "cat": "RNA",
+   "name": "L17",
+   "L": 118,
+   "native_charge": 14.99
+  },
+  {
+   "pdb": "7K00_L18",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L18.pdb",
+   "cat": "RNA",
+   "name": "L18",
+   "L": 116,
+   "native_charge": 10.1
+  },
+  {
+   "pdb": "7K00_L19",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L19.pdb",
+   "cat": "RNA",
+   "name": "L19",
+   "L": 114,
+   "native_charge": 12.07
+  },
+  {
+   "pdb": "7K00_L2",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L2.pdb",
+   "cat": "RNA",
+   "name": "L2",
+   "L": 271,
+   "native_charge": 32.1
+  },
+  {
+   "pdb": "7K00_L20",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L20.pdb",
+   "cat": "RNA",
+   "name": "L20",
+   "L": 117,
+   "native_charge": 24.01
+  },
+  {
+   "pdb": "7K00_L21",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L21.pdb",
+   "cat": "RNA",
+   "name": "L21",
+   "L": 103,
+   "native_charge": 6.14
+  },
+  {
+   "pdb": "7K00_L22",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L22.pdb",
+   "cat": "RNA",
+   "name": "L22",
+   "L": 110,
+   "native_charge": 10.14
+  },
+  {
+   "pdb": "7K00_L23",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L23.pdb",
+   "cat": "RNA",
+   "name": "L23",
+   "L": 93,
+   "native_charge": 10.07
+  },
+  {
+   "pdb": "7K00_L24",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L24.pdb",
+   "cat": "RNA",
+   "name": "L24",
+   "L": 102,
+   "native_charge": 10.03
+  },
+  {
+   "pdb": "7K00_L25",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L25.pdb",
+   "cat": "RNA",
+   "name": "L25",
+   "L": 94,
+   "native_charge": 5.1
+  },
+  {
+   "pdb": "7K00_L27",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L27.pdb",
+   "cat": "RNA",
+   "name": "L27",
+   "L": 78,
+   "native_charge": 8.96
+  },
+  {
+   "pdb": "7K00_L28",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L28.pdb",
+   "cat": "RNA",
+   "name": "L28",
+   "L": 77,
+   "native_charge": 11.99
+  },
+  {
+   "pdb": "7K00_L29",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L29.pdb",
+   "cat": "RNA",
+   "name": "L29",
+   "L": 62,
+   "native_charge": 4.03
+  },
+  {
+   "pdb": "7K00_L3",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L3.pdb",
+   "cat": "RNA",
+   "name": "L3",
+   "L": 208,
+   "native_charge": 10.11
+  },
+  {
+   "pdb": "7K00_L30",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L30.pdb",
+   "cat": "RNA",
+   "name": "L30",
+   "L": 58,
+   "native_charge": 6.07
+  },
+  {
+   "pdb": "7K00_L31",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L31.pdb",
+   "cat": "RNA",
+   "name": "L31",
+   "L": 60,
+   "native_charge": 4.66
+  },
+  {
+   "pdb": "7K00_L32",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L32.pdb",
+   "cat": "RNA",
+   "name": "L32",
+   "L": 56,
+   "native_charge": 9.14
+  },
+  {
+   "pdb": "7K00_L33",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L33.pdb",
+   "cat": "RNA",
+   "name": "L33",
+   "L": 51,
+   "native_charge": 8.06
+  },
+  {
+   "pdb": "7K00_L35",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L35.pdb",
+   "cat": "RNA",
+   "name": "L35",
+   "L": 64,
+   "native_charge": 19.02
+  },
+  {
+   "pdb": "7K00_L4",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L4.pdb",
+   "cat": "RNA",
+   "name": "L4",
+   "L": 201,
+   "native_charge": 8.1
+  },
+  {
+   "pdb": "7K00_L5",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L5.pdb",
+   "cat": "RNA",
+   "name": "L5",
+   "L": 177,
+   "native_charge": 5.91
+  },
+  {
+   "pdb": "7K00_L6",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_L6.pdb",
+   "cat": "RNA",
+   "name": "L6",
+   "L": 176,
+   "native_charge": 8.98
+  },
+  {
+   "pdb": "7K00_S10",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S10.pdb",
+   "cat": "RNA",
+   "name": "S10",
+   "L": 98,
+   "native_charge": 3.11
+  },
+  {
+   "pdb": "7K00_S11",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S11.pdb",
+   "cat": "RNA",
+   "name": "S11",
+   "L": 116,
+   "native_charge": 9.88
+  },
+  {
+   "pdb": "7K00_S12",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S12.pdb",
+   "cat": "RNA",
+   "name": "S12",
+   "L": 122,
+   "native_charge": 21.65
+  },
+  {
+   "pdb": "7K00_S13",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S13.pdb",
+   "cat": "RNA",
+   "name": "S13",
+   "L": 115,
+   "native_charge": 11.99
+  },
+  {
+   "pdb": "7K00_S14",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S14.pdb",
+   "cat": "RNA",
+   "name": "S14",
+   "L": 100,
+   "native_charge": 14.92
+  },
+  {
+   "pdb": "7K00_S15",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S15.pdb",
+   "cat": "RNA",
+   "name": "S15",
+   "L": 88,
+   "native_charge": 7.18
+  },
+  {
+   "pdb": "7K00_S16",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S16.pdb",
+   "cat": "RNA",
+   "name": "S16",
+   "L": 81,
+   "native_charge": 6.07
+  },
+  {
+   "pdb": "7K00_S17",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S17.pdb",
+   "cat": "RNA",
+   "name": "S17",
+   "L": 79,
+   "native_charge": 6.88
+  },
+  {
+   "pdb": "7K00_S18",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S18.pdb",
+   "cat": "RNA",
+   "name": "S18",
+   "L": 66,
+   "native_charge": 7.91
+  },
+  {
+   "pdb": "7K00_S19",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S19.pdb",
+   "cat": "RNA",
+   "name": "S19",
+   "L": 84,
+   "native_charge": 8.18
+  },
+  {
+   "pdb": "7K00_S2",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S2.pdb",
+   "cat": "RNA",
+   "name": "S2",
+   "L": 224,
+   "native_charge": 4.11
+  },
+  {
+   "pdb": "7K00_S20",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S20.pdb",
+   "cat": "RNA",
+   "name": "S20",
+   "L": 86,
+   "native_charge": 16.1
+  },
+  {
+   "pdb": "7K00_S21",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S21.pdb",
+   "cat": "RNA",
+   "name": "S21",
+   "L": 70,
+   "native_charge": 13.92
+  },
+  {
+   "pdb": "7K00_S3",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S3.pdb",
+   "cat": "RNA",
+   "name": "S3",
+   "L": 206,
+   "native_charge": 14.14
+  },
+  {
+   "pdb": "7K00_S4",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S4.pdb",
+   "cat": "RNA",
+   "name": "S4",
+   "L": 205,
+   "native_charge": 16.98
+  },
+  {
+   "pdb": "7K00_S5",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S5.pdb",
+   "cat": "RNA",
+   "name": "S5",
+   "L": 156,
+   "native_charge": 8.11
+  },
+  {
+   "pdb": "7K00_S6",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S6.pdb",
+   "cat": "RNA",
+   "name": "S6",
+   "L": 103,
+   "native_charge": -1.78
+  },
+  {
+   "pdb": "7K00_S7",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S7.pdb",
+   "cat": "RNA",
+   "name": "S7",
+   "L": 153,
+   "native_charge": 11.07
+  },
+  {
+   "pdb": "7K00_S8",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S8.pdb",
+   "cat": "RNA",
+   "name": "S8",
+   "L": 129,
+   "native_charge": 4.88
+  },
+  {
+   "pdb": "7K00_S9",
+   "path": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/ribosome_7k00/pdbs/7K00_S9.pdb",
+   "cat": "RNA",
+   "name": "S9",
+   "L": 127,
+   "native_charge": 17.02
+  }
+ ]
+}

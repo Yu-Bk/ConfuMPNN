@@ -1,0 +1,1690 @@
+{
+ "n_prot": 46,
+ "arms": {
+  "native": {
+   "n": 46,
+   "h2_pass": 26,
+   "h2_frac": 0.565,
+   "mean_dev": 2.312,
+   "median_dev": 1.9,
+   "max_dev": 12.86,
+   "mean_charged_retention": 0.645
+  },
+  "n2": {
+   "n": 46,
+   "h2_pass": 25,
+   "h2_frac": 0.543,
+   "mean_dev": 2.177,
+   "median_dev": 1.705,
+   "max_dev": 11.62,
+   "mean_charged_retention": null
+  },
+  "p2": {
+   "n": 46,
+   "h2_pass": 23,
+   "h2_frac": 0.5,
+   "mean_dev": 2.552,
+   "median_dev": 2.005,
+   "max_dev": 13.63,
+   "mean_charged_retention": null
+  }
+ },
+ "rows": [
+  {
+   "pdb": "7K00_L13",
+   "name": "L13",
+   "L": 142,
+   "native_charge": 10.25,
+   "arms": {
+    "native": {
+     "target": 10,
+     "mean_charge": 11.27,
+     "std_charge": 3.42,
+     "dev": 1.27,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.562
+    },
+    "n2": {
+     "target": 8,
+     "mean_charge": 9.71,
+     "std_charge": 3.11,
+     "dev": 1.71,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 12,
+     "mean_charge": 13.23,
+     "std_charge": 3.44,
+     "dev": 1.23,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 40
+  },
+  {
+   "pdb": "7K00_L14",
+   "name": "L14",
+   "L": 123,
+   "native_charge": 11.81,
+   "arms": {
+    "native": {
+     "target": 12,
+     "mean_charge": 10.37,
+     "std_charge": 4.1,
+     "dev": 1.63,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.699
+    },
+    "n2": {
+     "target": 10,
+     "mean_charge": 8.55,
+     "std_charge": 4.01,
+     "dev": 1.45,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 14,
+     "mean_charge": 12.11,
+     "std_charge": 4.04,
+     "dev": 1.89,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 34
+  },
+  {
+   "pdb": "7K00_L15",
+   "name": "L15",
+   "L": 144,
+   "native_charge": 16.03,
+   "arms": {
+    "native": {
+     "target": 16,
+     "mean_charge": 22.94,
+     "std_charge": 4.07,
+     "dev": 6.94,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.857
+    },
+    "n2": {
+     "target": 14,
+     "mean_charge": 20.06,
+     "std_charge": 3.8,
+     "dev": 6.06,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 18,
+     "mean_charge": 25.56,
+     "std_charge": 3.65,
+     "dev": 7.56,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 38
+  },
+  {
+   "pdb": "7K00_L16",
+   "name": "L16",
+   "L": 134,
+   "native_charge": 19.02,
+   "arms": {
+    "native": {
+     "target": 19,
+     "mean_charge": 20.85,
+     "std_charge": 4.13,
+     "dev": 1.85,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.813
+    },
+    "n2": {
+     "target": 17,
+     "mean_charge": 19.07,
+     "std_charge": 4.62,
+     "dev": 2.07,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 21,
+     "mean_charge": 22.45,
+     "std_charge": 4.06,
+     "dev": 1.45,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 39
+  },
+  {
+   "pdb": "7K00_L17",
+   "name": "L17",
+   "L": 118,
+   "native_charge": 14.99,
+   "arms": {
+    "native": {
+     "target": 15,
+     "mean_charge": 14.29,
+     "std_charge": 3.02,
+     "dev": 0.71,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.699
+    },
+    "n2": {
+     "target": 13,
+     "mean_charge": 12.37,
+     "std_charge": 2.73,
+     "dev": 0.63,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 17,
+     "mean_charge": 15.9,
+     "std_charge": 3.18,
+     "dev": 1.1,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 35
+  },
+  {
+   "pdb": "7K00_L18",
+   "name": "L18",
+   "L": 116,
+   "native_charge": 10.1,
+   "arms": {
+    "native": {
+     "target": 10,
+     "mean_charge": 10.61,
+     "std_charge": 3.12,
+     "dev": 0.61,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.565
+    },
+    "n2": {
+     "target": 8,
+     "mean_charge": 9.18,
+     "std_charge": 3.23,
+     "dev": 1.18,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 12,
+     "mean_charge": 12.31,
+     "std_charge": 3.1,
+     "dev": 0.31,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 34
+  },
+  {
+   "pdb": "7K00_L19",
+   "name": "L19",
+   "L": 114,
+   "native_charge": 12.07,
+   "arms": {
+    "native": {
+     "target": 12,
+     "mean_charge": 17.89,
+     "std_charge": 4.61,
+     "dev": 5.89,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.875
+    },
+    "n2": {
+     "target": 10,
+     "mean_charge": 15.31,
+     "std_charge": 4.47,
+     "dev": 5.31,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 14,
+     "mean_charge": 20.77,
+     "std_charge": 4.63,
+     "dev": 6.77,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 36
+  },
+  {
+   "pdb": "7K00_L2",
+   "name": "L2",
+   "L": 271,
+   "native_charge": 32.1,
+   "arms": {
+    "native": {
+     "target": 32,
+     "mean_charge": 38.49,
+     "std_charge": 4.13,
+     "dev": 6.49,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.971
+    },
+    "n2": {
+     "target": 30,
+     "mean_charge": 38.32,
+     "std_charge": 4.46,
+     "dev": 8.32,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 34,
+     "mean_charge": 38.17,
+     "std_charge": 4.15,
+     "dev": 4.17,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 74
+  },
+  {
+   "pdb": "7K00_L20",
+   "name": "L20",
+   "L": 117,
+   "native_charge": 24.01,
+   "arms": {
+    "native": {
+     "target": 24,
+     "mean_charge": 29.45,
+     "std_charge": 4.19,
+     "dev": 5.45,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 1.183
+    },
+    "n2": {
+     "target": 22,
+     "mean_charge": 27.87,
+     "std_charge": 4.36,
+     "dev": 5.87,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 26,
+     "mean_charge": 30.81,
+     "std_charge": 4.0,
+     "dev": 4.81,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 36
+  },
+  {
+   "pdb": "7K00_L21",
+   "name": "L21",
+   "L": 103,
+   "native_charge": 6.14,
+   "arms": {
+    "native": {
+     "target": 6,
+     "mean_charge": 6.65,
+     "std_charge": 3.17,
+     "dev": 0.65,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.546
+    },
+    "n2": {
+     "target": 4,
+     "mean_charge": 4.77,
+     "std_charge": 3.19,
+     "dev": 0.77,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 8,
+     "mean_charge": 8.76,
+     "std_charge": 3.47,
+     "dev": 0.76,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 30
+  },
+  {
+   "pdb": "7K00_L22",
+   "name": "L22",
+   "L": 110,
+   "native_charge": 10.14,
+   "arms": {
+    "native": {
+     "target": 10,
+     "mean_charge": 10.29,
+     "std_charge": 2.99,
+     "dev": 0.29,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.631
+    },
+    "n2": {
+     "target": 8,
+     "mean_charge": 8.65,
+     "std_charge": 3.27,
+     "dev": 0.65,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 12,
+     "mean_charge": 12.12,
+     "std_charge": 3.36,
+     "dev": 0.12,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 36
+  },
+  {
+   "pdb": "7K00_L23",
+   "name": "L23",
+   "L": 93,
+   "native_charge": 10.07,
+   "arms": {
+    "native": {
+     "target": 10,
+     "mean_charge": 12.02,
+     "std_charge": 3.8,
+     "dev": 2.02,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.671
+    },
+    "n2": {
+     "target": 8,
+     "mean_charge": 10.22,
+     "std_charge": 3.53,
+     "dev": 2.22,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 12,
+     "mean_charge": 14.18,
+     "std_charge": 3.66,
+     "dev": 2.18,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 32
+  },
+  {
+   "pdb": "7K00_L24",
+   "name": "L24",
+   "L": 102,
+   "native_charge": 10.03,
+   "arms": {
+    "native": {
+     "target": 10,
+     "mean_charge": 7.15,
+     "std_charge": 3.47,
+     "dev": 2.85,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.573
+    },
+    "n2": {
+     "target": 8,
+     "mean_charge": 5.39,
+     "std_charge": 3.01,
+     "dev": 2.61,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 12,
+     "mean_charge": 9.45,
+     "std_charge": 3.47,
+     "dev": 2.55,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 32
+  },
+  {
+   "pdb": "7K00_L25",
+   "name": "L25",
+   "L": 94,
+   "native_charge": 5.1,
+   "arms": {
+    "native": {
+     "target": 5,
+     "mean_charge": 3.1,
+     "std_charge": 3.66,
+     "dev": 1.9,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.421
+    },
+    "n2": {
+     "target": 3,
+     "mean_charge": 2.13,
+     "std_charge": 3.64,
+     "dev": 0.87,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 7,
+     "mean_charge": 4.28,
+     "std_charge": 3.6,
+     "dev": 2.72,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 29
+  },
+  {
+   "pdb": "7K00_L27",
+   "name": "L27",
+   "L": 78,
+   "native_charge": 8.96,
+   "arms": {
+    "native": {
+     "target": 9,
+     "mean_charge": 5.95,
+     "std_charge": 3.0,
+     "dev": 3.05,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.475
+    },
+    "n2": {
+     "target": 7,
+     "mean_charge": 4.99,
+     "std_charge": 2.84,
+     "dev": 2.01,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 11,
+     "mean_charge": 7.27,
+     "std_charge": 2.73,
+     "dev": 3.73,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 25
+  },
+  {
+   "pdb": "7K00_L28",
+   "name": "L28",
+   "L": 77,
+   "native_charge": 11.99,
+   "arms": {
+    "native": {
+     "target": 12,
+     "mean_charge": 11.81,
+     "std_charge": 3.4,
+     "dev": 0.19,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.786
+    },
+    "n2": {
+     "target": 10,
+     "mean_charge": 9.95,
+     "std_charge": 3.43,
+     "dev": 0.05,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 14,
+     "mean_charge": 13.29,
+     "std_charge": 3.65,
+     "dev": 0.71,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 24
+  },
+  {
+   "pdb": "7K00_L29",
+   "name": "L29",
+   "L": 62,
+   "native_charge": 4.03,
+   "arms": {
+    "native": {
+     "target": 4,
+     "mean_charge": 1.34,
+     "std_charge": 2.83,
+     "dev": 2.66,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.586
+    },
+    "n2": {
+     "target": 2,
+     "mean_charge": 0.06,
+     "std_charge": 2.71,
+     "dev": 1.94,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 6,
+     "mean_charge": 2.29,
+     "std_charge": 3.05,
+     "dev": 3.71,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 20
+  },
+  {
+   "pdb": "7K00_L3",
+   "name": "L3",
+   "L": 208,
+   "native_charge": 10.11,
+   "arms": {
+    "native": {
+     "target": 10,
+     "mean_charge": 13.35,
+     "std_charge": 4.39,
+     "dev": 3.35,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.58
+    },
+    "n2": {
+     "target": 8,
+     "mean_charge": 11.0,
+     "std_charge": 4.24,
+     "dev": 3.0,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 12,
+     "mean_charge": 16.54,
+     "std_charge": 4.74,
+     "dev": 4.54,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 52
+  },
+  {
+   "pdb": "7K00_L30",
+   "name": "L30",
+   "L": 58,
+   "native_charge": 6.07,
+   "arms": {
+    "native": {
+     "target": 6,
+     "mean_charge": 3.77,
+     "std_charge": 2.62,
+     "dev": 2.23,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.566
+    },
+    "n2": {
+     "target": 4,
+     "mean_charge": 2.93,
+     "std_charge": 2.55,
+     "dev": 1.07,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 8,
+     "mean_charge": 4.77,
+     "std_charge": 2.65,
+     "dev": 3.23,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 16
+  },
+  {
+   "pdb": "7K00_L31",
+   "name": "L31",
+   "L": 60,
+   "native_charge": 4.66,
+   "arms": {
+    "native": {
+     "target": 5,
+     "mean_charge": 3.01,
+     "std_charge": 3.07,
+     "dev": 1.99,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.698
+    },
+    "n2": {
+     "target": 3,
+     "mean_charge": 1.73,
+     "std_charge": 3.26,
+     "dev": 1.27,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 7,
+     "mean_charge": 4.51,
+     "std_charge": 3.11,
+     "dev": 2.49,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 17
+  },
+  {
+   "pdb": "7K00_L32",
+   "name": "L32",
+   "L": 56,
+   "native_charge": 9.14,
+   "arms": {
+    "native": {
+     "target": 9,
+     "mean_charge": 8.79,
+     "std_charge": 2.7,
+     "dev": 0.21,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.719
+    },
+    "n2": {
+     "target": 7,
+     "mean_charge": 7.22,
+     "std_charge": 2.92,
+     "dev": 0.22,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 11,
+     "mean_charge": 10.32,
+     "std_charge": 3.28,
+     "dev": 0.68,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 17
+  },
+  {
+   "pdb": "7K00_L33",
+   "name": "L33",
+   "L": 51,
+   "native_charge": 8.06,
+   "arms": {
+    "native": {
+     "target": 8,
+     "mean_charge": 3.99,
+     "std_charge": 1.86,
+     "dev": 4.01,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.413
+    },
+    "n2": {
+     "target": 6,
+     "mean_charge": 3.11,
+     "std_charge": 1.91,
+     "dev": 2.89,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 10,
+     "mean_charge": 4.79,
+     "std_charge": 1.91,
+     "dev": 5.21,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 18
+  },
+  {
+   "pdb": "7K00_L35",
+   "name": "L35",
+   "L": 64,
+   "native_charge": 19.02,
+   "arms": {
+    "native": {
+     "target": 19,
+     "mean_charge": 16.14,
+     "std_charge": 2.54,
+     "dev": 2.86,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.87
+    },
+    "n2": {
+     "target": 17,
+     "mean_charge": 14.58,
+     "std_charge": 2.81,
+     "dev": 2.42,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 21,
+     "mean_charge": 17.64,
+     "std_charge": 2.57,
+     "dev": 3.36,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 21
+  },
+  {
+   "pdb": "7K00_L4",
+   "name": "L4",
+   "L": 201,
+   "native_charge": 8.1,
+   "arms": {
+    "native": {
+     "target": 8,
+     "mean_charge": 11.92,
+     "std_charge": 4.26,
+     "dev": 3.92,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.504
+    },
+    "n2": {
+     "target": 6,
+     "mean_charge": 8.84,
+     "std_charge": 4.33,
+     "dev": 2.84,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 10,
+     "mean_charge": 14.95,
+     "std_charge": 4.57,
+     "dev": 4.95,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 56
+  },
+  {
+   "pdb": "7K00_L5",
+   "name": "L5",
+   "L": 177,
+   "native_charge": 5.91,
+   "arms": {
+    "native": {
+     "target": 6,
+     "mean_charge": 7.77,
+     "std_charge": 3.67,
+     "dev": 1.77,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.387
+    },
+    "n2": {
+     "target": 4,
+     "mean_charge": 6.07,
+     "std_charge": 3.46,
+     "dev": 2.07,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 8,
+     "mean_charge": 10.09,
+     "std_charge": 4.11,
+     "dev": 2.09,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 54
+  },
+  {
+   "pdb": "7K00_L6",
+   "name": "L6",
+   "L": 176,
+   "native_charge": 8.98,
+   "arms": {
+    "native": {
+     "target": 9,
+     "mean_charge": 10.2,
+     "std_charge": 4.61,
+     "dev": 1.2,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.603
+    },
+    "n2": {
+     "target": 7,
+     "mean_charge": 7.82,
+     "std_charge": 4.12,
+     "dev": 0.82,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 11,
+     "mean_charge": 12.26,
+     "std_charge": 4.8,
+     "dev": 1.26,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 43
+  },
+  {
+   "pdb": "7K00_S10",
+   "name": "S10",
+   "L": 98,
+   "native_charge": 3.11,
+   "arms": {
+    "native": {
+     "target": 3,
+     "mean_charge": 3.69,
+     "std_charge": 3.62,
+     "dev": 0.69,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.507
+    },
+    "n2": {
+     "target": 1,
+     "mean_charge": 2.37,
+     "std_charge": 3.33,
+     "dev": 1.37,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 5,
+     "mean_charge": 5.49,
+     "std_charge": 3.75,
+     "dev": 0.49,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 31
+  },
+  {
+   "pdb": "7K00_S11",
+   "name": "S11",
+   "L": 116,
+   "native_charge": 9.88,
+   "arms": {
+    "native": {
+     "target": 10,
+     "mean_charge": 6.94,
+     "std_charge": 3.28,
+     "dev": 3.06,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.727
+    },
+    "n2": {
+     "target": 8,
+     "mean_charge": 5.4,
+     "std_charge": 3.42,
+     "dev": 2.6,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 12,
+     "mean_charge": 8.3,
+     "std_charge": 3.21,
+     "dev": 3.7,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 26
+  },
+  {
+   "pdb": "7K00_S12",
+   "name": "S12",
+   "L": 122,
+   "native_charge": 21.65,
+   "arms": {
+    "native": {
+     "target": 22,
+     "mean_charge": 24.09,
+     "std_charge": 3.19,
+     "dev": 2.09,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.912
+    },
+    "n2": {
+     "target": 20,
+     "mean_charge": 22.34,
+     "std_charge": 3.67,
+     "dev": 2.34,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 24,
+     "mean_charge": 25.31,
+     "std_charge": 3.47,
+     "dev": 1.31,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 34
+  },
+  {
+   "pdb": "7K00_S13",
+   "name": "S13",
+   "L": 115,
+   "native_charge": 11.99,
+   "arms": {
+    "native": {
+     "target": 12,
+     "mean_charge": 9.81,
+     "std_charge": 3.28,
+     "dev": 2.19,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.574
+    },
+    "n2": {
+     "target": 10,
+     "mean_charge": 7.47,
+     "std_charge": 3.3,
+     "dev": 2.53,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 14,
+     "mean_charge": 11.82,
+     "std_charge": 3.16,
+     "dev": 2.18,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 36
+  },
+  {
+   "pdb": "7K00_S14",
+   "name": "S14",
+   "L": 100,
+   "native_charge": 14.92,
+   "arms": {
+    "native": {
+     "target": 15,
+     "mean_charge": 14.78,
+     "std_charge": 4.32,
+     "dev": 0.22,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.839
+    },
+    "n2": {
+     "target": 13,
+     "mean_charge": 12.57,
+     "std_charge": 4.16,
+     "dev": 0.43,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 17,
+     "mean_charge": 17.49,
+     "std_charge": 4.8,
+     "dev": 0.49,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 35
+  },
+  {
+   "pdb": "7K00_S15",
+   "name": "S15",
+   "L": 88,
+   "native_charge": 7.18,
+   "arms": {
+    "native": {
+     "target": 7,
+     "mean_charge": 8.76,
+     "std_charge": 3.23,
+     "dev": 1.76,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.691
+    },
+    "n2": {
+     "target": 5,
+     "mean_charge": 7.18,
+     "std_charge": 3.11,
+     "dev": 2.18,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 9,
+     "mean_charge": 10.52,
+     "std_charge": 2.88,
+     "dev": 1.52,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 27
+  },
+  {
+   "pdb": "7K00_S16",
+   "name": "S16",
+   "L": 81,
+   "native_charge": 6.07,
+   "arms": {
+    "native": {
+     "target": 6,
+     "mean_charge": 6.1,
+     "std_charge": 2.56,
+     "dev": 0.1,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.549
+    },
+    "n2": {
+     "target": 4,
+     "mean_charge": 5.04,
+     "std_charge": 3.11,
+     "dev": 1.04,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 8,
+     "mean_charge": 7.34,
+     "std_charge": 2.66,
+     "dev": 0.66,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 24
+  },
+  {
+   "pdb": "7K00_S17",
+   "name": "S17",
+   "L": 79,
+   "native_charge": 6.88,
+   "arms": {
+    "native": {
+     "target": 7,
+     "mean_charge": 6.02,
+     "std_charge": 3.28,
+     "dev": 0.98,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.439
+    },
+    "n2": {
+     "target": 5,
+     "mean_charge": 5.16,
+     "std_charge": 3.2,
+     "dev": 0.16,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 9,
+     "mean_charge": 7.38,
+     "std_charge": 3.25,
+     "dev": 1.62,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 27
+  },
+  {
+   "pdb": "7K00_S18",
+   "name": "S18",
+   "L": 66,
+   "native_charge": 7.91,
+   "arms": {
+    "native": {
+     "target": 8,
+     "mean_charge": 6.89,
+     "std_charge": 2.86,
+     "dev": 1.11,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.617
+    },
+    "n2": {
+     "target": 6,
+     "mean_charge": 5.51,
+     "std_charge": 3.08,
+     "dev": 0.49,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 10,
+     "mean_charge": 8.05,
+     "std_charge": 2.77,
+     "dev": 1.95,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 20
+  },
+  {
+   "pdb": "7K00_S19",
+   "name": "S19",
+   "L": 84,
+   "native_charge": 8.18,
+   "arms": {
+    "native": {
+     "target": 8,
+     "mean_charge": 5.69,
+     "std_charge": 2.83,
+     "dev": 2.31,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.496
+    },
+    "n2": {
+     "target": 6,
+     "mean_charge": 4.3,
+     "std_charge": 2.91,
+     "dev": 1.7,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 10,
+     "mean_charge": 7.3,
+     "std_charge": 2.94,
+     "dev": 2.7,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 22
+  },
+  {
+   "pdb": "7K00_S2",
+   "name": "S2",
+   "L": 224,
+   "native_charge": 4.11,
+   "arms": {
+    "native": {
+     "target": 4,
+     "mean_charge": 4.25,
+     "std_charge": 3.82,
+     "dev": 0.25,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.428
+    },
+    "n2": {
+     "target": 2,
+     "mean_charge": 2.78,
+     "std_charge": 3.74,
+     "dev": 0.78,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 6,
+     "mean_charge": 5.91,
+     "std_charge": 4.14,
+     "dev": 0.09,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 60
+  },
+  {
+   "pdb": "7K00_S20",
+   "name": "S20",
+   "L": 86,
+   "native_charge": 16.1,
+   "arms": {
+    "native": {
+     "target": 16,
+     "mean_charge": 15.81,
+     "std_charge": 2.97,
+     "dev": 0.19,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.943
+    },
+    "n2": {
+     "target": 14,
+     "mean_charge": 13.49,
+     "std_charge": 3.48,
+     "dev": 0.51,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 18,
+     "mean_charge": 18.2,
+     "std_charge": 3.28,
+     "dev": 0.2,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 26
+  },
+  {
+   "pdb": "7K00_S21",
+   "name": "S21",
+   "L": 70,
+   "native_charge": 13.92,
+   "arms": {
+    "native": {
+     "target": 14,
+     "mean_charge": 1.14,
+     "std_charge": 3.75,
+     "dev": 12.86,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.621
+    },
+    "n2": {
+     "target": 12,
+     "mean_charge": 0.38,
+     "std_charge": 3.52,
+     "dev": 11.62,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 16,
+     "mean_charge": 2.37,
+     "std_charge": 3.53,
+     "dev": 13.63,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 32
+  },
+  {
+   "pdb": "7K00_S3",
+   "name": "S3",
+   "L": 206,
+   "native_charge": 14.14,
+   "arms": {
+    "native": {
+     "target": 14,
+     "mean_charge": 17.49,
+     "std_charge": 4.98,
+     "dev": 3.49,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.755
+    },
+    "n2": {
+     "target": 12,
+     "mean_charge": 15.25,
+     "std_charge": 5.53,
+     "dev": 3.25,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 16,
+     "mean_charge": 19.57,
+     "std_charge": 4.45,
+     "dev": 3.57,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 60
+  },
+  {
+   "pdb": "7K00_S4",
+   "name": "S4",
+   "L": 205,
+   "native_charge": 16.98,
+   "arms": {
+    "native": {
+     "target": 17,
+     "mean_charge": 15.92,
+     "std_charge": 5.25,
+     "dev": 1.08,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.601
+    },
+    "n2": {
+     "target": 15,
+     "mean_charge": 14.21,
+     "std_charge": 5.19,
+     "dev": 0.79,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 19,
+     "mean_charge": 17.38,
+     "std_charge": 5.25,
+     "dev": 1.62,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 67
+  },
+  {
+   "pdb": "7K00_S5",
+   "name": "S5",
+   "L": 156,
+   "native_charge": 8.11,
+   "arms": {
+    "native": {
+     "target": 8,
+     "mean_charge": 6.04,
+     "std_charge": 3.66,
+     "dev": 1.96,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.601
+    },
+    "n2": {
+     "target": 6,
+     "mean_charge": 4.3,
+     "std_charge": 3.32,
+     "dev": 1.7,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 10,
+     "mean_charge": 7.94,
+     "std_charge": 3.9,
+     "dev": 2.06,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 32
+  },
+  {
+   "pdb": "7K00_S6",
+   "name": "S6",
+   "L": 103,
+   "native_charge": -1.78,
+   "arms": {
+    "native": {
+     "target": -2,
+     "mean_charge": -0.1,
+     "std_charge": 3.21,
+     "dev": 1.9,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.513
+    },
+    "n2": {
+     "target": -4,
+     "mean_charge": -1.43,
+     "std_charge": 3.44,
+     "dev": 2.57,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 0,
+     "mean_charge": 1.45,
+     "std_charge": 3.4,
+     "dev": 1.45,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 26
+  },
+  {
+   "pdb": "7K00_S7",
+   "name": "S7",
+   "L": 153,
+   "native_charge": 11.07,
+   "arms": {
+    "native": {
+     "target": 11,
+     "mean_charge": 10.84,
+     "std_charge": 4.45,
+     "dev": 0.16,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.564
+    },
+    "n2": {
+     "target": 9,
+     "mean_charge": 9.06,
+     "std_charge": 4.32,
+     "dev": 0.06,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 13,
+     "mean_charge": 12.9,
+     "std_charge": 4.77,
+     "dev": 0.1,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 49
+  },
+  {
+   "pdb": "7K00_S8",
+   "name": "S8",
+   "L": 129,
+   "native_charge": 4.88,
+   "arms": {
+    "native": {
+     "target": 5,
+     "mean_charge": 4.48,
+     "std_charge": 3.31,
+     "dev": 0.52,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": 0.415
+    },
+    "n2": {
+     "target": 3,
+     "mean_charge": 2.44,
+     "std_charge": 3.14,
+     "dev": 0.56,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 7,
+     "mean_charge": 6.47,
+     "std_charge": 3.34,
+     "dev": 0.53,
+     "h2_pass": true,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 35
+  },
+  {
+   "pdb": "7K00_S9",
+   "name": "S9",
+   "L": 127,
+   "native_charge": 17.02,
+   "arms": {
+    "native": {
+     "target": 17,
+     "mean_charge": 13.58,
+     "std_charge": 3.68,
+     "dev": 3.42,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": 0.627
+    },
+    "n2": {
+     "target": 15,
+     "mean_charge": 11.86,
+     "std_charge": 3.7,
+     "dev": 3.14,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    },
+    "p2": {
+     "target": 19,
+     "mean_charge": 15.06,
+     "std_charge": 3.93,
+     "dev": 3.94,
+     "h2_pass": false,
+     "n_generated": 50,
+     "charged_retention": null
+    }
+   },
+   "n_charged_native": 41
+  }
+ ]
+}
