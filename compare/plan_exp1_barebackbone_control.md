@@ -17,7 +17,7 @@
 - 蛋白/配体各 6 组（3 蛋白×A/B），配体含 RNA 结合（"好"）。
 
 ## 3 指标与输出
-mean 口径 H2 + per-sequence 命中效率 + dev；数据 `output/exp_control_{prot,lig}/`；报告 `analysis/report/2026-09-06_{prot,lig}_barebackbone_control.md`；session `session/2026-09-06_exp_{prot,lig}_control.md`。
+mean 口径 H2 + per-sequence 命中效率 + dev；数据 `output/exp_control_{prot,lig}/`；报告 `compare/report_2026-09-06_exp1_{prot,lig}_barebackbone.md`；session `session/2026-09-06_exp_{prot,lig}_control.md`。
 
 ## 4 后处理
 完成后 → **exp5 Wilcoxon 配对检验**（见 `compare/plan_exp5_wilcoxon.md`）以 per-protein 配对。

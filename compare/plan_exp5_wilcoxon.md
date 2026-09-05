@@ -9,4 +9,4 @@
 - 小样本警示：配对 n=3 蛋白时 Wilcoxon 功效极低——会一并给"描述性 + 逐蛋白表"，仅当样本足够（含多蛋白扩展）才下显著性结论；CI 用 `code/tests/hitrate_ci.py`。
 
 ## 输出
-`output/wilcoxon_exp15.json` + `analysis/report/2026-09-06_exp15_stats.md`；脚本 `code/tests/wilcoxon_exp15.py`（复用 scipy.stats.wilcoxon）。
+`output/wilcoxon_exp15.json` + `compare/report_2026-09-06_exp15_stats.md`；脚本 `code/tests/wilcoxon_exp15.py`（复用 scipy.stats.wilcoxon）。

@@ -14,7 +14,7 @@
 - 若 C 某臂命中很差 → 记录并给原因（bias 是"推理侧每步修正"、encoder 是"训练学到的整体条件"的本质差异）。
 
 ## 3 输出
-并入 `output/exp_control_{prot,lig}/`；报告含 exp2 小节；`analysis/report/2026-09-06_{prot,lig}_barebackbone_control.md`。
+并入 `output/exp_control_{prot,lig}/`；报告含 exp2 小节；`ablation/report/2026-09-06_exp2_{prot,lig}_bias_vs_encoder.md`。
 
 ## 4 后处理
 数据到位 → exp5 Wilcoxon（B vs C 与 B vs A 都配对检验）。

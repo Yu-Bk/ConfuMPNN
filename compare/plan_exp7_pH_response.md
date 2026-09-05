@@ -13,4 +13,4 @@
 - n≈50-100/臂；校准按各模式（表内 per-protein，表外 global/小样本）。
 
 ## 输出
-`output/exp_pH_{prot,lig}/` + `analysis/report/2026-09-06_pH_response_{prot,lig}.md`；接 exp5 配对（跨 pH 配对可选）。
+`output/exp_pH_{prot,lig}/` + `compare/report_2026-09-06_exp7_pH_{prot,lig}.md`；接 exp5 配对（跨 pH 配对可选）。
