@@ -148,7 +148,7 @@ def main():
                     help="从 manifest 第几个蛋白开始（断点续跑）")
     ap.add_argument("--calibrate", default="off", choices=["off", "auto", "global"],
                     help="电荷校准（v12 7.1）：auto=读校准表 per-protein+全局回退；global=强制全局；off=不校准")
-    ap.add_argument("--calibration_file", default="output/charge_calibration.json",
+    ap.add_argument("--calibration_file", default="output/charge_calibration_v12_2.json",
                     help="校准表 JSON（index/v10_repair/build_calibration.py 生成）")
     ap.add_argument("--end", type=int, default=None,
                     help="到第几个蛋白结束（None=全部）")
