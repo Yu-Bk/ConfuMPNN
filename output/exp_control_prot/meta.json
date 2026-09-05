@@ -1,0 +1,19 @@
+{
+  "pH": 7.4,
+  "temperature": 0.3,
+  "bias_strength": 0.5,
+  "backbone": "/data/nfs/IC/baokun_yu/ConfuMPNN/MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt",
+  "cond_encoder": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_v12_2/finetune_epoch030.pt",
+  "calibration_table": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/charge_calibration_v12_2.json",
+  "arms": {
+    "native": 0,
+    "n2": -2,
+    "p2": 2,
+    "n8": -8,
+    "p8": 8
+  },
+  "seed_scheme": "seed(p_idx,arm_idx,k)=SEED_BASE+p_idx*1e6+arm_idx*1e4+k",
+  "proteins": [
+    "1BJ4"
+  ]
+}
