@@ -2,8 +2,8 @@
 
 给定一个蛋白的**骨架结构**（PDB）和一个**工作环境 pH**（可选目标净电荷），生成一段**在该 pH 下净电荷符合目标、能折叠回原骨架、且空间上电荷分布合理**的蛋白序列。
 
-> 核心创新：在结构逆折叠模型（LigandMPNN）上首次加入 **pH 感知的电荷条件控制**。
-> 当前进度：**v7/v9 为阶段性成果（2026-08-19 暂停训练），v10 演进中（2026-08-27）**——两个条件编码器（v7 MoMPNN / v9 LigandMPNN）当前可用，v10 方案（A/B/C）见 [v3 论文导向方案](index/PROJECT_LOCAL.md)。当前版本使用边界见 [电荷限制指南](analysis/report/2026-08-18_model_charge_limits.md)。
+> 核心创新：在结构逆折叠模型（LigandMPNN / MoMPNN）上首次加入 **pH 感知的电荷条件控制**。
+> 当前进度（2026-09-05）：**蛋白模式最优 = v12.2**（MoMPNN，完整验证链达标，校准后泛化 H2 72%+、小样本 74%）；**配体模式最优 = v14**（LigandMPNN RNA/DNA 扩充 + A1 全局化，clean 测试链 H2 90%）。系统性已知局限 = **"删带电残基"捷径**（组成 0.43–0.69×，跨版本未愈，机制与配方见 [论文子结论草稿](analysis/report/2026-09-04_paper_subconclusions.md)）。v10 早期方案见 [v3 方案](index/PROJECT_LOCAL.md)。**完整状态/版本史/目录见 [索引](index/DOCUMENT_INDEX.md)。**
 
 ---
 
@@ -27,9 +27,11 @@
 
 **我们的方法（主线：条件微调，模型 pH 感知）**：训练一个小型 **ConditionEncoder**（0.08M 参数），把 (pH, 目标净电荷) 编码成 soft prompt，通过 cross-attention 注入冻结的 backbone（MoMPNN 无配体 / LigandMPNN 配体模式），让模型**自身**学会按条件生成序列。备用的**引导采样路线**（不改模型，解码时注入电荷前瞻 logit bias）用于对照与快速原型。
 
-**两个当前可用编码器**（v10 演进中）：
-- **v7**（MoMPNN backbone，无配体/小蛋白）：负电可靠，正电弱
-- **v9**（LigandMPNN backbone，配体/大蛋白）：正电可靠，负电弱
+**模型版本速览**（详见 [蛋白模式史](analysis/report/2026-09-05_protein_history_vs_ligand_deletion.md) 与 [配体模式史](analysis/report/2026-09-05_ligand_history_v13_v14.md)）：
+- **蛋白线**（MoMPNN，无配体/小蛋白）：v7（早期）→ … → **v12.2（当前交付）** → v12.3（长蛋白外推增强，覆盖内略退，按需选用）
+- **配体线**（LigandMPNN，配体原子上下文）：v9（早期）→ v12.2-ligand → v13（A1 口袋保护，未达标）→ **v14（RNA/DNA+A1 全局化，当前交付）**
+
+**重要：使用前先做电荷校准（三口径）**：per-protein 表内 / 表外小样本现场标定（采 ~50 条拟合）/ 不标定 global（固有上限 40-44%）。见 [v12.2 总结](analysis/report/2026-08-31_v12_2_summary.md) 与 [判据口径](analysis/report/2026-09-03_validation_standards.md)。
 
 理解原理请看 [WORKFLOW_GUIDE.md](WORKFLOW_GUIDE.md)（面向新人的完整指南，含框架/数据流/参数/损失/为什么）。
 
@@ -110,20 +112,23 @@ python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 \
 ## 三、快速上手（条件采样）
 
 ```bash
-cd /data/nfs/IC/baokun_yu/ConfuMPNN/code
+cd /data/nfs/IC/baokun_yu/ConfuMPNN          # 仓库根目录（脚本在 code/ 下，路径从根写）
 conda activate confumpnn
+PYTHONPATH=code
 
-# 无配体/小蛋白 → 用 v7 编码器（MoMPNN backbone）
-python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 \
-  --cond_encoder output/finetune_v7/condition_encoder_last.pt \
+# 蛋白模式（无配体/小蛋白）→ v12.2 编码器（MoMPNN backbone；本地 output/finetune_v12_2）
+python code/run_guided.py --pdb code/input/1BC8.pdb --pH 7.4 --target_charge 0 \
+  --cond_encoder output/finetune_v12_2/condition_encoder_last.pt \
+  --weights MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt \
   --num_samples 10
 
-# 配体模式 → 用 v9 编码器（LigandMPNN backbone + 配体原子上下文）
-python run_guided.py --pdb ../data/validation_pdbs/1AZM.pdb --pH 7.4 --target_charge 0 \
-  --cond_encoder output/finetune_ligand_v9/finetune_epoch030.pt \
-  --weights ../LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt \
+# 配体模式 → v14 编码器（LigandMPNN backbone + 配体原子上下文）
+python code/run_guided.py --pdb data/validation_pdbs/1AZM.pdb --pH 7.4 --target_charge 0 \
+  --cond_encoder output/finetune_ligand_v14_rna/finetune_epoch050.pt \
+  --weights LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt \
   --num_samples 10
 ```
+> 旧版 v7/v9 编码器示例（`output/finetune_v7/condition_encoder_last.pt`、`output/finetune_ligand_v9/finetune_epoch030.pt`）同法；各版本最终编码器均本地于 `output/finetune_*/`（不入 git，确认件经 GitHub Release / NAS 分发，见 `docs/MIGRATION_GIT_POLICY.md`）。
 
 **预期输出**（终端）：
 ```
@@ -162,7 +167,9 @@ python run_guided.py --pdb ../data/validation_pdbs/1AZM.pdb --pH 7.4 --target_ch
 | `--fixed_residues` | 固定残基（如 `'A12 C15'`），保留结合位点 |
 | `--seed` | 固定随机种子，可复现 |
 
-### 4.2 电荷边界速查（完整版见 `analysis/report/2026-08-18_model_charge_limits.md`）
+### 4.2 电荷边界速查
+
+> 下表为 **v7/v9 历史边界**（早期实证）；**当前交付 v12.2/v14 已升级**：蛋白 v12.2 校准后全臂响应 slope≈1.00、配体 v14 clean 测试链校准后 H2=45/50(90%)、H1 折叠 50/50。完整版见 `analysis/report/2026-08-18_model_charge_limits.md`、`2026-08-31_v12_2_summary.md`、`2026-09-04_v14_clean_validation.md`。
 
 | 条件 | v7（MoMPNN） | v9（配体模式） |
 |------|-------------|---------------|
@@ -170,18 +177,18 @@ python run_guided.py --pdb ../data/validation_pdbs/1AZM.pdb --pH 7.4 --target_ch
 | 极端负电 native−8 | **95% ✅** | **40% ⚠️ 欠冲** |
 | 极端正电 native+8 | **40% ❌ 过冲** | **100% ✅** |
 
-**使用规则（v9 配体模式）**：正电可用到 native+8；负电保守到 native−5；长序列（L≥470）需检查。
+**历史规则（v9 配体）**：正电可用到 native+8；负电保守到 native−5；长序列（L≥470）需检查。校准自动启用见 `run_guided.py --calibrate auto`（默认表内 per-protein、表外回退 global）。
 
-### 4.3 其他命令
+### 4.3 其他命令（均在仓库根运行）
 
 ```bash
-# 固定结合位点（保留配体口袋）
-python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 \
-  --cond_encoder output/finetune_v7/condition_encoder_last.pt \
+# 固定结合位点（保留配体口袋/关键残基）
+python code/run_guided.py --pdb code/input/1BC8.pdb --pH 7.4 --target_charge 0 \
+  --cond_encoder output/finetune_v12_2/condition_encoder_last.pt \
   --fixed_residues "A12 C15"
 
-# 引导采样路线（Phase 1，不改模型，对照用）
-python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 --preset default
+# 引导采样路线（早期对照路线，不改模型）
+python code/run_guided.py --pdb code/input/1BC8.pdb --pH 7.4 --target_charge 0 --preset default
 ```
 
 ---
@@ -224,21 +231,27 @@ MSTPQGRLYLFFSTCPELYYF...
 
 **计划/判据**（`index/`）：`PROJECT_PLAN.md`、`PROJECT_EXTEND.md`、`DESIGN_CRITERIA.md`（判断标准 v2）、`DOCUMENT_INDEX.md`（文档索引）
 
-**实验报告**（`analysis/report/`）：从 E1 到 v9 泛化验证的完整报告链。最新：
-- `2026-08-19_v9_generalization_validation.md` — v9 泛化验证（10 未见蛋白）
-- `2026-08-18_model_charge_limits.md` — 电荷边界 + 根因分析（使用前必读）
-- `2026-08-18_v9_ligand_training.md` — v9 训练
+**实验报告**（`analysis/report/`，59 份全表见 `index/DOCUMENT_INDEX.md` §2）。**最新权威**：
+- `2026-09-04_v14_clean_validation.md` — v14 配体干净测试链权威（H2 90% / H1·H3 50/50 / S2 0/50）
+- `2026-09-04_v13_in10_validation.md` — v13-vs-v14 同协议对照
+- `2026-08-31_v12_2_summary.md` — 蛋白 v12.2 完整验证链 + 校准三口径（交付必读）
+- `2026-09-03_validation_standards.md` — 判据与口径
+- `2026-09-04_paper_subconclusions.md` — 论文子结论（删减局限 + 术语表）
+- 消融/对比/核糖体：`ablation/report/2026-09-05_ablation_{prot,lig}.md`、`compare/README.md`、`analysis/report/2026-09-05_7k00_ribosome_design.md`
 
 ---
 
 ## 七、项目结构
 
-文件分类存放遵循 `index/FILE_MANAGEMENT.md`：
+文件分类存放遵循 `logical_chain.md` / `index/FILE_MANAGEMENT.md`：
 
-- `code/` — 代码（`src/` 核心模块 + `configs/` 配置 + `tests/` 测试 + `run_guided.py`/`train_finetune.py`）
-- `docs/` — 技术/配置/使用/新机配置文档
-- `analysis/` — 实验报告（`report/`、`archieved/`、`accident/`、`ablation/`）
-- `index/` — 规划、文件管理规范、文档索引、判断标准
-- `data/` — 外部数据集（CATH/配体/验证集，git 不跟踪，见 `data/README.md`）
-- `output/` — 训练产物（v7/v9 当前编码器 + 验证结果，git 不跟踪）
-- `LigandMPNN/`、`MoMPNN/` — 外部源码/权重（git 不跟踪）
+- `code/` — 代码（`src/` 核心模块 + `configs/` + `tests/` 验证脚本 + `run_guided.py`/`train_finetune.py`）
+- `output/` — 训练与验证产物（**顶层 `*.json` = 论文关键数字，入库**；权重/采样重型 git 不跟踪 → Release/NAS）
+- `log/` — 训练/验证日志（入库）
+- `data/` — 输入大数据（CATH/配体/验证/核糖体，git 不跟踪，见 `data/README.md`）
+- `analysis/` — 报告（`report/` + `archieved/`/`accident/`）
+- `ablation/` — 受控消融；`compare/` — 版本对比；`figure/` — 论文图计划与成品
+- `index/` — 文档索引 / 计划 / 判据 / 规则
+- `docs/` — 技术/配置/使用/新机部署/迁移归档策略
+- `LigandMPNN/`、`MoMPNN/`、`foundry/`、`protein_sol_mcp/`、`TemBERTure/` — 外部源码/权重（git 不跟踪）
+- `weights_release/` — 已确认最终编码器（Release 中转）

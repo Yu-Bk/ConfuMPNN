@@ -1,8 +1,16 @@
 # ConfuMPNN 完整使用指南（从零理解 pH 感知的蛋白序列生成）
 
-> 版本：v9 版（2026-08-19，v10 演进中）　适用对象：**计算机新人**（也适合生物背景读者）
+> 版本：v9 版（2026-08-19，框架本体至今稳定）　适用对象：**计算机新人**（也适合生物背景读者）
 > 定位：本指南是**全项目唯一权威入口**——讲清楚「整个框架长什么样、数据怎么流动、每个参数/函数/损失是什么、**为什么**要用它们」。
 > 配套文档：新机配置 → `docs/SETUP_NEW_MACHINE.md`；数据组织 → `data/README.md`；判断标准 → `index/DESIGN_CRITERIA.md`；电荷边界 → `analysis/report/2026-08-18_model_charge_limits.md`。
+
+> ### ⚠️ 版本状态更新（2026-09-05）
+> 本指南讲的是**框架原理**（冻结 backbone + ConditionEncoder soft-prompt + 复合损失 + 校准），这部分到 v14 未变，仍准确。
+> **版本特异性内容请以最新报告为准**，不要用本指南里的旧版本号做交付判断：
+> - 当前交付：**蛋白 v12.2**（MoMPNN）、**配体 v14**（LigandMPNN RNA/DNA+A1 全局化）——最终编码器在 `output/finetune_{v12_2,ligand_v14_rna}/`。
+> - 电荷**使用前必须校准**（per-protein 表内 / 表外小样本现场标定 / global 40-44%），见 `analysis/report/2026-08-31_v12_2_summary.md`。
+> - 已知局限：**"删带电残基"捷径**（组成 0.43-0.69×，跨版本未愈；机制+配方见 `analysis/report/2026-09-04_paper_subconclusions.md`）。
+> - 状态/版本史/全部报告索引：`index/DOCUMENT_INDEX.md`；图计划：`figure/plan_01.md`。
 
 ---
 

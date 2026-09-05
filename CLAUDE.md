@@ -3,8 +3,9 @@
 ## 项目概述
 将蛋白质在特定 pH 环境下的理化性质（净电荷、局部电荷分布）作为条件约束，整合到基于结构的蛋白序列生成流程（LigandMPNN 逆折叠）中。核心创新：**在显式建模配体原子上下文的结构条件逆折叠模型上，首次加入 pH 感知的电荷条件控制**。
 
-**当前状态（2026-08-31）**：
-- **v12.2 是当前最优模型**（MoMPNN backbone，无配体/小蛋白）：v12.1 + λ_target 表面电荷锚（治过度添加 + 正向弱）。**完整验证链达标**：诊断 slope 1.00、泛化 per-protein H2 72%、小样本现场标定 74%、Tm/Sol 无恶化（S2 0/50）、无过拟合。训练 `output/finetune_v12_2/finetune_epoch030.pt`
+**当前状态（2026-09-05）**：状态/版本史/报告全表以 **`index/DOCUMENT_INDEX.md`** 与 `README.md` 为准；模型版本史见 `analysis/report/2026-09-05_{protein_history_vs_ligand_deletion,ligand_history_v13_v14}.md`。
+- **蛋白模式当前最优 = v12.2**（MoMPNN backbone，无配体/小蛋白；v12.1 + λ_target 表面电荷锚）：**完整验证链达标**（slope 1.00、泛化 per-protein H2 72%、小样本 74%、S2 0/50、无过拟合）。训练 `output/finetune_v12_2/finetune_epoch030.pt`。v12.3 = 长蛋白/深负外推增强（覆盖内略退，按需选用）。
+- **配体模式当前最优 = v14**（LigandMPNN RNA/DNA 扩充 414 + A1 全局化，`output/finetune_ligand_v14_rna/finetune_epoch050.pt`）：clean 测试链校准后 **H2 45/50(90%)、H1·H3 50/50、S2 0/50**；**⚠️ 已知局限=组成删减 0.43-0.69×（未愈，机制+配方见 `analysis/report/2026-09-04_paper_subconclusions.md`）**。v13（A1 口袋 keep）未达标被取代。
 - **校准三口径（使用前必读，2026-08-31 定稿）**：① per-protein（17 蛋白校准表 `charge_calibration_v12_2.json` 内）→ 72%；② **表外蛋白先小样本现场标定**（`build_calibration_small.py`，**默认 n_per=10 采 50 条**拟合自身 slope，带 LOOCV 稳定性校验）→ 74%；③ 不标定用 global → 40-44%（固有上限）。**校准自动启用**：`run_guided.py` 默认校准表已改为 `charge_calibration_v12_2.json`，`--calibrate auto`（默认）表内 per-protein、表外回退 global；无需手动 `--calibration_file`。**⚠️ 小样本 n_per 不要加大到 20**（n20 对高方差蛋白 1BJ4/2FEO 反而退化——更接近诊断真值但校准反推落到响应弯曲段→命中率降；n10 的"过度拟合"碰巧补偿弯曲）。**响应弯曲蛋白**（长蛋白极端负电区，LOOCV 大）→ 自动标记 unreliable 回退 global，不是加大 n_per
 - **v9 迁移待定**（用户暂缓）：LigandMPNN 配体模式重训（`--ligand --v12_supervision` + λ_target 配体适配 + 配体校准表）未启动。v9（配体模式）仍用旧边界：正电到 +8、负电保守到 −5、长序列需检查
 - 验证链报告：`analysis/report/2026-08-31_v12_2_{training,diag,tm_sol,summary}.md`；计划 `index/PROJECT_LOCAL_V12_2.md`（§6 自动执行流程 + §6E 无泄露补跑）
