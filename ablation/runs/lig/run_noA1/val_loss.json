@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "tag": "v14_ligand",
+    "mode": "ligand",
+    "labels": "data/ligand_train/labels_v14_valset_805.npz",
+    "supp_labels": null,
+    "dompdb": "data/ligand_train/v14_valset_pdb",
+    "seed": 42,
+    "epochs": [
+      16
+    ],
+    "lambda_c": 0.5,
+    "lambda_kl": 0.05,
+    "lambda_keep": 0.5,
+    "charge_temp": 0.5,
+    "v12_supervision": true,
+    "frac_floor": 0.5,
+    "gravy_margin": 0.4,
+    "lambda_v12": 0.2,
+    "lambda_target": 0.2,
+    "sasa_threshold": 0.25,
+    "ph_aware_filter": true,
+    "pocket_mode": "global",
+    "lambda_pocket": 0.3,
+    "pocket_floor": 0.8,
+    "pocket_ceil": 1.3,
+    "n_domains": 805,
+    "note": "\u5168\u81ea\u6d3d\u81c2 no-grad \u524d\u5411\u56de\u653e\uff1bper-epoch \u914d\u7f6e\u4f9d\u636e\u89c1 code/tests/val_replay_configs.md"
+  },
+  "epochs": {
+    "16": {
+      "ce": 1.6362749327783999,
+      "cd": 3.0233904358323502,
+      "rec": 0.4907264061410975,
+      "kl": 0.19168332207091845,
+      "keep": 1.2577359704219777,
+      "v12_comp": 0.06225486519914236,
+      "v12_gravy": 0.06092648132709983,
+      "v12_ct": 4.161811644655669,
+      "struct": 0.0,
+      "pocket": 0.26165492673468144,
+      "total": 4.721917378265896,
+      "n_dom": 805,
+      "n_arm": 6440
+    }
+  }
+}

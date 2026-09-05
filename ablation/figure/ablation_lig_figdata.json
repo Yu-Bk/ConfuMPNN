@@ -1,0 +1,114 @@
+{
+  "family": "lig",
+  "final_epoch": 16,
+  "runs": {
+    "run_FULL": {
+      "val": {
+        "ce": 1.6277,
+        "cd": 3.1568,
+        "total": 4.7929,
+        "v12_ct": 4.3302,
+        "v12_comp": 0.036,
+        "pocket": 0.2351,
+        "rel_cd": 0.0,
+        "rel_total": 0.0
+      },
+      "probe_5O60E": {
+        "h2": 0,
+        "native_dev": 11.97,
+        "retention": 0.7869281045751635,
+        "mean_q_native": 22.97
+      }
+    },
+    "run_nov12comp": {
+      "val": {
+        "ce": 1.6632,
+        "cd": 2.753,
+        "total": 5.5057,
+        "v12_ct": 4.6818,
+        "v12_comp": 3.2188,
+        "pocket": 0.6223,
+        "rel_cd": -0.1279,
+        "rel_total": 0.1487
+      },
+      "probe_5O60E": {
+        "h2": 0,
+        "native_dev": 9.05,
+        "retention": 0.5032679738562091,
+        "mean_q_native": 20.05
+      }
+    },
+    "run_notarget": {
+      "val": {
+        "ce": 1.5773,
+        "cd": 3.1772,
+        "total": 4.8562,
+        "v12_ct": 5.1464,
+        "v12_comp": 0.0301,
+        "pocket": 0.2124,
+        "rel_cd": 0.0065,
+        "rel_total": 0.0132
+      },
+      "probe_5O60E": {
+        "h2": 0,
+        "native_dev": 11.88,
+        "retention": 0.8000000000000002,
+        "mean_q_native": 22.88
+      }
+    },
+    "run_noA1": {
+      "val": {
+        "ce": 1.6363,
+        "cd": 3.0234,
+        "total": 4.7219,
+        "v12_ct": 4.1618,
+        "v12_comp": 0.0623,
+        "pocket": 0.2617,
+        "rel_cd": -0.0423,
+        "rel_total": -0.0148
+      },
+      "probe_5O60E": {
+        "h2": 0,
+        "native_dev": 12.35,
+        "retention": 0.7718954248366015,
+        "mean_q_native": 23.35
+      }
+    },
+    "run_noph": {
+      "val": {
+        "ce": 1.6246,
+        "cd": 3.1319,
+        "total": 4.737,
+        "v12_ct": 4.1525,
+        "v12_comp": 0.0344,
+        "pocket": 0.2329,
+        "rel_cd": -0.0079,
+        "rel_total": -0.0117
+      },
+      "probe_5O60E": {
+        "h2": 0,
+        "native_dev": 12.41,
+        "retention": 0.7915032679738563,
+        "mean_q_native": 23.41
+      }
+    },
+    "run_nokeep": {
+      "val": {
+        "ce": 1.7225,
+        "cd": 2.7744,
+        "total": 4.6857,
+        "v12_ct": 3.842,
+        "v12_comp": 0.0301,
+        "pocket": 0.233,
+        "rel_cd": -0.1211,
+        "rel_total": -0.0224
+      },
+      "probe_5O60E": {
+        "h2": 0,
+        "native_dev": 13.23,
+        "retention": 0.7941176470588238,
+        "mean_q_native": 24.23
+      }
+    }
+  }
+}

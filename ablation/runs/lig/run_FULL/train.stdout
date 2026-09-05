@@ -1496,3 +1496,13 @@ FreeSASA: warning: atom 'UNK  OXT' unknown, guessing element is ' O', and radius
 [05:52:33] epoch 5/16  total=5.7573  ce=1.4939  charge=5.0946  kl=0.1553  keep=0.7569  [cd self=4.499  mild=4.022  extreme=6.948]  elapsed=16.1min
 [05:55:50] epoch 6/16  total=5.6925  ce=1.5053  charge=4.9675  kl=0.1663  keep=0.7742  [cd self=4.392  mild=4.228  extreme=6.751]  elapsed=19.4min
 [05:58:52] epoch 7/16  total=5.5688  ce=1.5244  charge=4.7310  kl=0.1821  keep=0.8065  [cd self=4.257  mild=4.069  extreme=6.239]  elapsed=22.4min
+[06:01:50] epoch 8/16  total=5.5048  ce=1.5249  charge=4.6283  kl=0.1817  keep=0.7926  [cd self=4.115  mild=4.031  extreme=6.166]  elapsed=25.4min
+[06:04:51] epoch 9/16  total=5.5363  ce=1.5369  charge=4.6618  kl=0.1917  keep=0.8021  [cd self=4.092  mild=4.043  extreme=6.354]  elapsed=28.4min
+[06:07:53] epoch 10/16  total=5.4732  ce=1.5380  charge=4.5579  kl=0.1915  keep=0.8162  [cd self=4.116  mild=4.166  extreme=5.897]  elapsed=31.4min
+[06:10:33] epoch 11/16  total=5.4279  ce=1.5469  charge=4.4910  kl=0.1996  keep=0.8218  [cd self=3.986  mild=3.820  extreme=6.027]  elapsed=34.1min
+[06:13:34] epoch 12/16  total=5.4185  ce=1.5469  charge=4.4856  kl=0.1996  keep=0.8131  [cd self=4.013  mild=4.074  extreme=5.826]  elapsed=37.1min
+[06:16:34] epoch 13/16  total=5.3359  ce=1.5536  charge=4.3327  kl=0.2053  keep=0.8333  [cd self=3.828  mild=3.939  extreme=5.824]  elapsed=40.1min
+[06:19:35] epoch 14/16  total=5.3702  ce=1.5613  charge=4.3949  kl=0.2123  keep=0.8328  [cd self=3.891  mild=3.856  extreme=5.886]  elapsed=43.1min
+[06:22:37] epoch 15/16  total=5.3596  ce=1.5582  charge=4.3794  kl=0.2090  keep=0.8327  [cd self=3.865  mild=3.391  extreme=5.989]  elapsed=46.2min
+[06:25:39] epoch 16/16  total=5.3271  ce=1.5607  charge=4.3339  kl=0.2110  keep=0.8354  [cd self=3.872  mild=3.810  extreme=5.725]  elapsed=49.2min
+[06:25:39] 训练完成。总耗时 49.2min。checkpoint 在 /data/nfs/IC/baokun_yu/ConfuMPNN/ablation/runs/lig/run_FULL/

@@ -1,0 +1,187 @@
+{
+  "family": "lig",
+  "final_epoch": "16",
+  "runs": {
+    "run_FULL": {
+      "loss": {
+        "abs": {
+          "ce": 1.6277,
+          "cd": 3.1568,
+          "kl": 0.1846,
+          "keep": 1.2461,
+          "v12_comp": 0.036,
+          "v12_gravy": 0.0535,
+          "v12_ct": 4.3302,
+          "struct": 0.0,
+          "pocket": 0.2351,
+          "total": 4.7929
+        },
+        "n_dom": 805,
+        "n_arm": 6440,
+        "rel_vs_full": {
+          "ce": 0.0,
+          "cd": 0.0,
+          "kl": 0.0,
+          "keep": 0.0,
+          "v12_comp": 0.0,
+          "v12_gravy": 0.0,
+          "v12_ct": 0.0,
+          "struct": null,
+          "pocket": 0.0,
+          "total": 0.0
+        }
+      }
+    },
+    "run_nov12comp": {
+      "loss": {
+        "abs": {
+          "ce": 1.6632,
+          "cd": 2.753,
+          "kl": 0.2167,
+          "keep": 1.232,
+          "v12_comp": 3.2188,
+          "v12_gravy": 0.3615,
+          "v12_ct": 4.6818,
+          "struct": 0.0,
+          "pocket": 0.6223,
+          "total": 5.5057
+        },
+        "n_dom": 805,
+        "n_arm": 6440,
+        "rel_vs_full": {
+          "ce": 0.0218,
+          "cd": -0.1279,
+          "kl": 0.1739,
+          "keep": -0.0113,
+          "v12_comp": 88.4111,
+          "v12_gravy": 5.757,
+          "v12_ct": 0.0812,
+          "struct": null,
+          "pocket": 1.647,
+          "total": 0.1487
+        }
+      }
+    },
+    "run_notarget": {
+      "loss": {
+        "abs": {
+          "ce": 1.5773,
+          "cd": 3.1772,
+          "kl": 0.1416,
+          "keep": 1.1481,
+          "v12_comp": 0.0301,
+          "v12_gravy": 0.0507,
+          "v12_ct": 5.1464,
+          "struct": 0.0,
+          "pocket": 0.2124,
+          "total": 4.8562
+        },
+        "n_dom": 805,
+        "n_arm": 6440,
+        "rel_vs_full": {
+          "ce": -0.031,
+          "cd": 0.0065,
+          "kl": -0.2329,
+          "keep": -0.0786,
+          "v12_comp": -0.1639,
+          "v12_gravy": -0.0523,
+          "v12_ct": 0.1885,
+          "struct": null,
+          "pocket": -0.0966,
+          "total": 0.0132
+        }
+      }
+    },
+    "run_noA1": {
+      "loss": {
+        "abs": {
+          "ce": 1.6363,
+          "cd": 3.0234,
+          "kl": 0.1917,
+          "keep": 1.2577,
+          "v12_comp": 0.0623,
+          "v12_gravy": 0.0609,
+          "v12_ct": 4.1618,
+          "struct": 0.0,
+          "pocket": 0.2617,
+          "total": 4.7219
+        },
+        "n_dom": 805,
+        "n_arm": 6440,
+        "rel_vs_full": {
+          "ce": 0.0053,
+          "cd": -0.0423,
+          "kl": 0.0385,
+          "keep": 0.0093,
+          "v12_comp": 0.7306,
+          "v12_gravy": 0.1383,
+          "v12_ct": -0.0389,
+          "struct": null,
+          "pocket": 0.1131,
+          "total": -0.0148
+        }
+      }
+    },
+    "run_noph": {
+      "loss": {
+        "abs": {
+          "ce": 1.6246,
+          "cd": 3.1319,
+          "kl": 0.1817,
+          "keep": 1.2399,
+          "v12_comp": 0.0344,
+          "v12_gravy": 0.0512,
+          "v12_ct": 4.1525,
+          "struct": 0.0,
+          "pocket": 0.2329,
+          "total": 4.737
+        },
+        "n_dom": 805,
+        "n_arm": 6440,
+        "rel_vs_full": {
+          "ce": -0.0019,
+          "cd": -0.0079,
+          "kl": -0.0157,
+          "keep": -0.005,
+          "v12_comp": -0.0444,
+          "v12_gravy": -0.043,
+          "v12_ct": -0.041,
+          "struct": null,
+          "pocket": -0.0094,
+          "total": -0.0117
+        }
+      }
+    },
+    "run_nokeep": {
+      "loss": {
+        "abs": {
+          "ce": 1.7225,
+          "cd": 2.7744,
+          "kl": 0.2651,
+          "keep": 1.4183,
+          "v12_comp": 0.0301,
+          "v12_gravy": 0.0464,
+          "v12_ct": 3.842,
+          "struct": 0.0,
+          "pocket": 0.233,
+          "total": 4.6857
+        },
+        "n_dom": 805,
+        "n_arm": 6440,
+        "rel_vs_full": {
+          "ce": 0.0582,
+          "cd": -0.1211,
+          "kl": 0.4361,
+          "keep": 0.1382,
+          "v12_comp": -0.1639,
+          "v12_gravy": -0.1327,
+          "v12_ct": -0.1127,
+          "struct": null,
+          "pocket": -0.0089,
+          "total": -0.0224
+        }
+      }
+    }
+  },
+  "probes": {}
+}

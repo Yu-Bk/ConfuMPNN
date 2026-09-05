@@ -1,0 +1,35 @@
+[06:25:41] === ConfuMPNN Phase 2 条件微调启动（v10）===
+[06:25:41] device=cuda:6  epochs=16  lr=0.001  λ_c=0.5  λ_kl=0.05  λ_keep=0.5  perturb_prob=0.3  perturb_scale=4.0  placeholder_prob=0.15  charge_temp=0.5
+[06:25:41] [v11 A-fix] 绝对 target 采样开：target ∈ Uniform[-35.0, 20.0]，与 native 无关（覆盖验证深负靶区）
+[06:25:41] [v10 C] pH 自适应结构惩罚开：boost=1.5
+[06:25:41] [A1 global] 计数锚覆盖 surface∪pocket：floor=0.8 ceil=1.3 λ_pocket=0.3 cutoff=8.0
+[06:25:42] backbone: MoMPNN 冻结（2.62M 参数，不更新）
+[06:25:42] ConditionEncoder 可训练（74880 参数，唯一更新对象）
+[06:25:43] 数据：1364 结构域 × 8 pH = 10912 样本（ablation/data/labels_ablate_lig.npz）
+[06:25:52]   预解析+encode 200/1364（跳过 0）
+[06:25:59]   ⚠️ 跳过坏域 1OBP.pdb: index 0 is out of bounds for dimension 1 with size 0
+[06:26:01]   预解析+encode 399/1364（跳过 1）
+[06:26:10]   预解析+encode 599/1364（跳过 1）
+[06:26:19]   预解析+encode 799/1364（跳过 1）
+[06:26:28]   预解析+encode 999/1364（跳过 1）
+[06:26:37]   预解析+encode 1199/1364（跳过 1）
+[06:26:47] ⚠️ 共跳过 1 个坏域（prody 无法解析），实际训练 1363 域
+[06:26:47] 预解析完成，缓存 encode 特征 ~6.30GB
+[06:26:47] 开始训练：16 epochs × 1363 域/epoch = 21808 steps
+[06:28:51] epoch 1/16  total=4.9553  ce=1.4390  charge=6.3717  kl=0.1082  keep=0.6500  [cd self=5.736  mild=5.900  extreme=8.245]  elapsed=2.1min
+[06:30:51] epoch 2/16  total=4.4725  ce=1.5161  charge=5.1530  kl=0.1768  keep=0.7421  [cd self=4.551  mild=4.529  extreme=6.977]  elapsed=4.1min
+[06:32:47] epoch 3/16  total=4.3520  ce=1.5396  charge=4.8234  kl=0.1957  keep=0.7819  [cd self=4.318  mild=4.431  extreme=6.435]  elapsed=6.0min
+[06:34:42] epoch 4/16  total=4.2740  ce=1.5495  charge=4.6557  kl=0.2034  keep=0.7729  [cd self=4.081  mild=4.071  extreme=6.394]  elapsed=7.9min
+[06:36:44] epoch 5/16  total=4.2221  ce=1.5670  charge=4.4983  kl=0.2185  keep=0.7901  [cd self=3.888  mild=3.531  extreme=6.370]  elapsed=10.0min
+[06:38:46] epoch 6/16  total=4.1749  ce=1.5798  charge=4.3584  kl=0.2294  keep=0.8090  [cd self=3.744  mild=3.574  extreme=6.263]  elapsed=12.0min
+[06:40:47] epoch 7/16  total=4.1057  ce=1.5886  charge=4.1784  kl=0.2358  keep=0.8322  [cd self=3.645  mild=3.528  extreme=5.857]  elapsed=14.0min
+[06:42:47] epoch 8/16  total=4.0365  ce=1.5832  charge=4.0748  kl=0.2307  keep=0.8088  [cd self=3.578  mild=3.516  extreme=5.559]  elapsed=16.0min
+[06:44:47] epoch 9/16  total=4.0749  ce=1.5833  charge=4.1548  kl=0.2313  keep=0.8053  [cd self=3.563  mild=3.635  extreme=5.885]  elapsed=18.0min
+[06:46:47] epoch 10/16  total=4.0323  ce=1.5843  charge=4.0532  kl=0.2317  keep=0.8197  [cd self=3.564  mild=3.627  extreme=5.534]  elapsed=20.0min
+[06:48:47] epoch 11/16  total=4.0256  ce=1.5864  charge=4.0358  kl=0.2333  keep=0.8191  [cd self=3.529  mild=3.376  extreme=5.576]  elapsed=22.0min
+[06:50:48] epoch 12/16  total=4.0119  ce=1.5826  charge=4.0295  kl=0.2293  keep=0.8062  [cd self=3.493  mild=3.966  extreme=5.472]  elapsed=24.0min
+[06:52:49] epoch 13/16  total=4.0071  ce=1.5868  charge=3.9961  kl=0.2338  keep=0.8211  [cd self=3.459  mild=3.599  extreme=5.580]  elapsed=26.0min
+[06:54:49] epoch 14/16  total=3.9869  ce=1.5937  charge=3.9432  kl=0.2404  keep=0.8193  [cd self=3.424  mild=3.448  extreme=5.470]  elapsed=28.0min
+[06:56:49] epoch 15/16  total=3.9782  ce=1.5859  charge=3.9431  kl=0.2330  keep=0.8181  [cd self=3.399  mild=3.124  extreme=5.603]  elapsed=30.0min
+[06:58:50] epoch 16/16  total=3.9436  ce=1.5872  charge=3.8683  kl=0.2339  keep=0.8212  [cd self=3.369  mild=3.358  extreme=5.361]  elapsed=32.0min
+[06:58:50] 训练完成。总耗时 32.0min。checkpoint 在 /data/nfs/IC/baokun_yu/ConfuMPNN/ablation/runs/lig/run_nov12comp/

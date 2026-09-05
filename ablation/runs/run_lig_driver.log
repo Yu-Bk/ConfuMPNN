@@ -1,1 +1,13 @@
 [2026-09-05 05:26:43] START lig/run_FULL
+[2026-09-05 06:25:40] DONE lig/run_FULL rc=0
+[2026-09-05 06:25:40] START lig/run_nov12comp
+[2026-09-05 06:58:51] DONE lig/run_nov12comp rc=0
+[2026-09-05 06:58:51] START lig/run_notarget
+[2026-09-05 07:46:54] DONE lig/run_notarget rc=0
+[2026-09-05 07:46:54] START lig/run_noA1
+[2026-09-05 08:37:02] DONE lig/run_noA1 rc=0
+[2026-09-05 08:37:03] START lig/run_noph
+[2026-09-05 09:18:37] DONE lig/run_noph rc=0
+[2026-09-05 09:18:37] START lig/run_nokeep
+[2026-09-05 10:11:14] DONE lig/run_nokeep rc=0
+[2026-09-05 10:11:14] ALL LIG RUNS COMPLETE

@@ -1,0 +1,36 @@
+{
+  "mode": "ligand",
+  "pdb": "data/validation_pdbs/5O60_E.pdb",
+  "L": 209,
+  "native_charge": 11.18,
+  "n_charged_native": 51,
+  "arms": {
+    "native": {
+      "target": 11.0,
+      "mean_charge": 20.05,
+      "std_charge": 2.56,
+      "dev": 9.05,
+      "h2": false,
+      "retention_native_arm": 0.5032679738562091,
+      "mean_charged_count": 25.67
+    },
+    "n2": {
+      "target": 9.0,
+      "mean_charge": 15.15,
+      "std_charge": 2.69,
+      "dev": 6.15,
+      "h2": false,
+      "retention_native_arm": null,
+      "mean_charged_count": 21.33
+    },
+    "p2": {
+      "target": 13.0,
+      "mean_charge": 23.28,
+      "std_charge": 2.97,
+      "dev": 10.28,
+      "h2": false,
+      "retention_native_arm": null,
+      "mean_charged_count": 29.47
+    }
+  }
+}
