@@ -18,4 +18,5 @@
 | `plan_exp2_bias_vs_encoder.md`(在 ablation/) | encoder vs bias-only 消融 | 🔄 并入 bundle |
 | `plan_exp5_wilcoxon.md` | exp1/2 数据后 Wilcoxon 配对 | ⏳ 依赖数据 |
 | `plan_exp7_pH_response.md` | pH=5/9 两 class pH 敏感性 | ⏳ 等 GPU 空 |
-| （已完成）命中率 CI `code/tests/hitrate_ci.py`；RMSD 矩阵 `code/tests/aggregate_rmsd_matrix.py` | — | ✅ a6b7334 |
+| `report_2026-09-06_exp3_hitrate_ci.md` | 命中率 95%CI(Wilson+精确) 工具与结果 | ✅ a6b7334 |
+| `report_2026-09-06_exp4_rmsd_matrix.md` | RMSD 矩阵聚合(蛋白×臂, rmsd/tm/plddt) | ✅ a6b7334 |
