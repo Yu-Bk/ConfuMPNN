@@ -1,0 +1,460 @@
+{
+  "meta": {
+    "note": "exp5 Wilcoxon 配对（exp1/2 数据，2026-09-06）。diff=后项−前项，正=后项优。小样本(15)仅描述性。",
+    "prot_summary": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_prot/_analysis_summary.json",
+    "lig_summary": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig/summary.json",
+    "supp_v13": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/v13_ligand_gen_stats_in10.json",
+    "supp_v14": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/v14_ligand_gen_stats_clean.json"
+  },
+  "pairs": {
+    "prot/A_vs_B/hit/all": {
+      "n_pairs": 15,
+      "label": "prot/A_vs_B/hit/all",
+      "mean_diff": 0.0924,
+      "median_diff": 0.078,
+      "median_ci95": [
+        0.024,
+        0.158
+      ],
+      "wilcoxon_stat": 12.0,
+      "p_value": 0.0042724609375,
+      "n_nonzero": 15,
+      "effect_r": 0.8,
+      "n_pos": 12,
+      "n_neg": 3,
+      "n_zero": 0,
+      "n_arms": 15
+    },
+    "prot/A_vs_B/hit/moderate": {
+      "n_pairs": 9,
+      "label": "prot/A_vs_B/hit/moderate",
+      "mean_diff": 0.0504,
+      "median_diff": 0.045,
+      "median_ci95": [
+        0.0165,
+        0.093
+      ],
+      "wilcoxon_stat": 3.0,
+      "p_value": 0.01953125,
+      "n_nonzero": 9,
+      "effect_r": 0.8667,
+      "n_pos": 7,
+      "n_neg": 2,
+      "n_zero": 0,
+      "n_arms": 9
+    },
+    "prot/A_vs_B/hit/extreme": {
+      "n_pairs": 6,
+      "label": "prot/A_vs_B/hit/extreme",
+      "mean_diff": 0.1553,
+      "median_diff": 0.2025,
+      "median_ci95": [
+        0.0045,
+        0.259
+      ],
+      "wilcoxon_stat": 1.0,
+      "p_value": 0.0625,
+      "n_nonzero": 6,
+      "effect_r": 0.9048,
+      "n_pos": 5,
+      "n_neg": 1,
+      "n_zero": 0,
+      "n_arms": 6
+    },
+    "prot/A_vs_B/dev/all": {
+      "n_pairs": 15,
+      "label": "prot/A_vs_B/dev/all",
+      "mean_diff": 3.1981,
+      "median_diff": 2.5201,
+      "median_ci95": [
+        0.2022,
+        5.6469
+      ],
+      "wilcoxon_stat": 15.0,
+      "p_value": 0.00836181640625,
+      "n_nonzero": 15,
+      "effect_r": 0.75,
+      "n_pos": 12,
+      "n_neg": 3,
+      "n_zero": 0,
+      "n_arms": 15
+    },
+    "prot/A_vs_B/dev/moderate": {
+      "n_pairs": 9,
+      "label": "prot/A_vs_B/dev/moderate",
+      "mean_diff": 1.4082,
+      "median_diff": 1.4907,
+      "median_ci95": [
+        -0.8869,
+        3.7427
+      ],
+      "wilcoxon_stat": 7.0,
+      "p_value": 0.07421875,
+      "n_nonzero": 9,
+      "effect_r": 0.6889,
+      "n_pos": 7,
+      "n_neg": 2,
+      "n_zero": 0,
+      "n_arms": 9
+    },
+    "prot/A_vs_B/dev/extreme": {
+      "n_pairs": 6,
+      "label": "prot/A_vs_B/dev/extreme",
+      "mean_diff": 5.883,
+      "median_diff": 7.119,
+      "median_ci95": [
+        0.552,
+        9.978
+      ],
+      "wilcoxon_stat": 1.0,
+      "p_value": 0.0625,
+      "n_nonzero": 6,
+      "effect_r": 0.9048,
+      "n_pos": 5,
+      "n_neg": 1,
+      "n_zero": 0,
+      "n_arms": 6
+    },
+    "prot/B_vs_C/hit/all": {
+      "n_pairs": 15,
+      "label": "prot/B_vs_C/hit/all",
+      "mean_diff": 0.606,
+      "median_diff": 0.599,
+      "median_ci95": [
+        0.5623,
+        0.6503
+      ],
+      "wilcoxon_stat": 0.0,
+      "p_value": 6.103515625e-05,
+      "n_nonzero": 15,
+      "effect_r": 1.0,
+      "n_pos": 15,
+      "n_neg": 0,
+      "n_zero": 0,
+      "n_arms": 15
+    },
+    "prot/B_vs_C/hit/moderate": {
+      "n_pairs": 9,
+      "label": "prot/B_vs_C/hit/moderate",
+      "mean_diff": 0.6046,
+      "median_diff": 0.599,
+      "median_ci95": [
+        0.5157,
+        0.696
+      ],
+      "wilcoxon_stat": 0.0,
+      "p_value": 0.00390625,
+      "n_nonzero": 9,
+      "effect_r": 1.0,
+      "n_pos": 9,
+      "n_neg": 0,
+      "n_zero": 0,
+      "n_arms": 9
+    },
+    "prot/B_vs_C/hit/extreme": {
+      "n_pairs": 6,
+      "label": "prot/B_vs_C/hit/extreme",
+      "mean_diff": 0.608,
+      "median_diff": 0.604,
+      "median_ci95": [
+        0.5305,
+        0.6895
+      ],
+      "wilcoxon_stat": 0.0,
+      "p_value": 0.03125,
+      "n_nonzero": 6,
+      "effect_r": 1.0,
+      "n_pos": 6,
+      "n_neg": 0,
+      "n_zero": 0,
+      "n_arms": 6
+    },
+    "prot/B_vs_C/dev/all": {
+      "n_pairs": 15,
+      "label": "prot/B_vs_C/dev/all",
+      "mean_diff": 1.8989,
+      "median_diff": 1.163,
+      "median_ci95": [
+        0.666,
+        4.213
+      ],
+      "wilcoxon_stat": 7.0,
+      "p_value": 0.00115966796875,
+      "n_nonzero": 15,
+      "effect_r": 0.8833,
+      "n_pos": 12,
+      "n_neg": 3,
+      "n_zero": 0,
+      "n_arms": 15
+    },
+    "prot/B_vs_C/dev/moderate": {
+      "n_pairs": 9,
+      "label": "prot/B_vs_C/dev/moderate",
+      "mean_diff": 1.887,
+      "median_diff": 1.229,
+      "median_ci95": [
+        -0.165,
+        4.57
+      ],
+      "wilcoxon_stat": 6.0,
+      "p_value": 0.0546875,
+      "n_nonzero": 9,
+      "effect_r": 0.7333,
+      "n_pos": 6,
+      "n_neg": 3,
+      "n_zero": 0,
+      "n_arms": 9
+    },
+    "prot/B_vs_C/dev/extreme": {
+      "n_pairs": 6,
+      "label": "prot/B_vs_C/dev/extreme",
+      "mean_diff": 1.9168,
+      "median_diff": 0.9495,
+      "median_ci95": [
+        0.439,
+        4.362
+      ],
+      "wilcoxon_stat": 0.0,
+      "p_value": 0.03125,
+      "n_nonzero": 6,
+      "effect_r": 1.0,
+      "n_pos": 6,
+      "n_neg": 0,
+      "n_zero": 0,
+      "n_arms": 6
+    },
+    "lig/A_vs_B/hit/all": {
+      "n_pairs": 15,
+      "label": "lig/A_vs_B/hit/all",
+      "mean_diff": 0.1616,
+      "median_diff": 0.265,
+      "median_ci95": [
+        -0.063,
+        0.298
+      ],
+      "wilcoxon_stat": 17.0,
+      "p_value": 0.012451171875,
+      "n_nonzero": 15,
+      "effect_r": 0.7167,
+      "n_pos": 11,
+      "n_neg": 4,
+      "n_zero": 0,
+      "n_arms": 15
+    },
+    "lig/A_vs_B/hit/moderate": {
+      "n_pairs": 9,
+      "label": "lig/A_vs_B/hit/moderate",
+      "mean_diff": 0.0733,
+      "median_diff": 0.067,
+      "median_ci95": [
+        -0.091,
+        0.296
+      ],
+      "wilcoxon_stat": 14.0,
+      "p_value": 0.359375,
+      "n_nonzero": 9,
+      "effect_r": 0.3778,
+      "n_pos": 5,
+      "n_neg": 4,
+      "n_zero": 0,
+      "n_arms": 9
+    },
+    "lig/A_vs_B/hit/extreme": {
+      "n_pairs": 6,
+      "label": "lig/A_vs_B/hit/extreme",
+      "mean_diff": 0.294,
+      "median_diff": 0.3125,
+      "median_ci95": [
+        0.1735,
+        0.396
+      ],
+      "wilcoxon_stat": 0.0,
+      "p_value": 0.03125,
+      "n_nonzero": 6,
+      "effect_r": 1.0,
+      "n_pos": 6,
+      "n_neg": 0,
+      "n_zero": 0,
+      "n_arms": 6
+    },
+    "lig/A_vs_B/dev/all": {
+      "n_pairs": 15,
+      "label": "lig/A_vs_B/dev/all",
+      "mean_diff": 6.9728,
+      "median_diff": 6.4321,
+      "median_ci95": [
+        1.6665,
+        11.6481
+      ],
+      "wilcoxon_stat": 3.0,
+      "p_value": 0.00030517578125,
+      "n_nonzero": 15,
+      "effect_r": 0.95,
+      "n_pos": 13,
+      "n_neg": 2,
+      "n_zero": 0,
+      "n_arms": 15
+    },
+    "lig/A_vs_B/dev/moderate": {
+      "n_pairs": 9,
+      "label": "lig/A_vs_B/dev/moderate",
+      "mean_diff": 5.3826,
+      "median_diff": 1.6665,
+      "median_ci95": [
+        -0.1535,
+        13.6001
+      ],
+      "wilcoxon_stat": 3.0,
+      "p_value": 0.01953125,
+      "n_nonzero": 9,
+      "effect_r": 0.8667,
+      "n_pos": 7,
+      "n_neg": 2,
+      "n_zero": 0,
+      "n_arms": 9
+    },
+    "lig/A_vs_B/dev/extreme": {
+      "n_pairs": 6,
+      "label": "lig/A_vs_B/dev/extreme",
+      "mean_diff": 9.358,
+      "median_diff": 7.3095,
+      "median_ci95": [
+        4.405,
+        16.3596
+      ],
+      "wilcoxon_stat": 0.0,
+      "p_value": 0.03125,
+      "n_nonzero": 6,
+      "effect_r": 1.0,
+      "n_pos": 6,
+      "n_neg": 0,
+      "n_zero": 0,
+      "n_arms": 6
+    },
+    "lig/B_vs_C/hit/all": {
+      "n_pairs": 15,
+      "label": "lig/B_vs_C/hit/all",
+      "mean_diff": 0.4512,
+      "median_diff": 0.491,
+      "median_ci95": [
+        0.324,
+        0.575
+      ],
+      "wilcoxon_stat": 0.0,
+      "p_value": 6.103515625e-05,
+      "n_nonzero": 15,
+      "effect_r": 1.0,
+      "n_pos": 15,
+      "n_neg": 0,
+      "n_zero": 0,
+      "n_arms": 15
+    },
+    "lig/B_vs_C/hit/moderate": {
+      "n_pairs": 9,
+      "label": "lig/B_vs_C/hit/moderate",
+      "mean_diff": 0.4568,
+      "median_diff": 0.491,
+      "median_ci95": [
+        0.294,
+        0.582
+      ],
+      "wilcoxon_stat": 0.0,
+      "p_value": 0.00390625,
+      "n_nonzero": 9,
+      "effect_r": 1.0,
+      "n_pos": 9,
+      "n_neg": 0,
+      "n_zero": 0,
+      "n_arms": 9
+    },
+    "lig/B_vs_C/hit/extreme": {
+      "n_pairs": 6,
+      "label": "lig/B_vs_C/hit/extreme",
+      "mean_diff": 0.4428,
+      "median_diff": 0.473,
+      "median_ci95": [
+        0.2515,
+        0.604
+      ],
+      "wilcoxon_stat": 0.0,
+      "p_value": 0.03125,
+      "n_nonzero": 6,
+      "effect_r": 1.0,
+      "n_pos": 6,
+      "n_neg": 0,
+      "n_zero": 0,
+      "n_arms": 6
+    },
+    "lig/B_vs_C/dev/all": {
+      "n_pairs": 15,
+      "label": "lig/B_vs_C/dev/all",
+      "mean_diff": 0.3705,
+      "median_diff": 0.029,
+      "median_ci95": [
+        -0.194,
+        1.435
+      ],
+      "wilcoxon_stat": 42.0,
+      "p_value": 0.33026123046875,
+      "n_nonzero": 15,
+      "effect_r": 0.3,
+      "n_pos": 9,
+      "n_neg": 6,
+      "n_zero": 0,
+      "n_arms": 15
+    },
+    "lig/B_vs_C/dev/moderate": {
+      "n_pairs": 9,
+      "label": "lig/B_vs_C/dev/moderate",
+      "mean_diff": 0.5248,
+      "median_diff": 0.314,
+      "median_ci95": [
+        -0.496,
+        1.896
+      ],
+      "wilcoxon_stat": 13.0,
+      "p_value": 0.30078125,
+      "n_nonzero": 9,
+      "effect_r": 0.4222,
+      "n_pos": 6,
+      "n_neg": 3,
+      "n_zero": 0,
+      "n_arms": 9
+    },
+    "lig/B_vs_C/dev/extreme": {
+      "n_pairs": 6,
+      "label": "lig/B_vs_C/dev/extreme",
+      "mean_diff": 0.139,
+      "median_diff": -0.0915,
+      "median_ci95": [
+        -1.1275,
+        1.636
+      ],
+      "wilcoxon_stat": 10.0,
+      "p_value": 1.0,
+      "n_nonzero": 6,
+      "effect_r": 0.0476,
+      "n_pos": 3,
+      "n_neg": 3,
+      "n_zero": 0,
+      "n_arms": 6
+    }
+  },
+  "supplement_v13_v14": {
+    "n_pairs": 50,
+    "label": "supp/v13_vs_v14",
+    "mean_diff": -0.4528,
+    "median_diff": -0.13,
+    "median_ci95": [
+      -1.27,
+      0.4
+    ],
+    "wilcoxon_stat": 469.0,
+    "p_value": 0.10525460779046192,
+    "n_nonzero": 50,
+    "effect_r": -0.2643,
+    "n_pos": 23,
+    "n_neg": 27,
+    "n_zero": 0
+  }
+}
