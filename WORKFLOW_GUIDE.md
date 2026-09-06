@@ -10,7 +10,8 @@
 > - 当前交付：**蛋白 v12.2**（MoMPNN）、**配体 v14**（LigandMPNN RNA/DNA+A1 全局化）——最终编码器在 `output/finetune_{v12_2,ligand_v14_rna}/`。
 > - 电荷**使用前必须校准**（per-protein 表内 / 表外小样本现场标定 / global 40-44%），见 `analysis/report/2026-08-31_v12_2_summary.md`。
 > - 已知局限：**"删带电残基"捷径**（组成 0.43-0.69×，跨版本未愈；机制+配方见 `analysis/report/2026-09-04_paper_subconclusions.md`）。
-> - 状态/版本史/全部报告索引：`index/DOCUMENT_INDEX.md`；图计划：`figure/plan_01.md`。
+> - 状态/版本史/全部报告索引：`index/DOCUMENT_INDEX.md`；图计划+文章板块：`figure/plan_01.md` §I/§J。
+> - **09-06 补充对照结论**（报告在 `compare/`、`ablation/report/`）：①裸 backbone 无条件重设计的天然电荷分布只在蛋白固有电荷区；条件化把均值搬到 target、增益集中在极端臂；②**逐序列电荷命中 bias(逐步电荷前瞻)>learned encoder**（bias≈0.83-0.94 vs encoder≈0.2-0.4），但 encoder 提供 pH 敏感全局条件；③encoder 靠**同号对称删减**(cr≈0.6)、bias 靠**同号对称膨胀**(cr≈1.4) 达靶，对侧置换极少 → 两者分别偏离 native 组成；④**pH 4-10 逐 pH 现场标定后可达 87-88%**，旧"pH5/9 边界"主要是 7.4 校准外推假象，须逐 pH 标定。
 
 ---
 

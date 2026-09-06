@@ -238,6 +238,7 @@ MSTPQGRLYLFFSTCPELYYF...
 - `2026-09-03_validation_standards.md` — 判据与口径
 - `2026-09-04_paper_subconclusions.md` — 论文子结论（删减局限 + 术语表）
 - 消融/对比/核糖体：`ablation/report/2026-09-05_ablation_{prot,lig}.md`、`compare/README.md`、`analysis/report/2026-09-05_7k00_ribosome_design.md`
+- **09-06 补充对照实验**（报告在 `compare/` 与 `ablation/report/`，图规划见 `figure/plan_01.md` §I/§J）：exp1 裸 backbone vs 条件（v1+v2 三类均衡）、exp2 bias-vs-encoder、exp2b 组成分解（删减/膨胀/置换）、exp3 命中率 CI、exp4 RMSD 矩阵、exp5 Wilcoxon、exp7b pH 细网格校准分离。要点：**bias 逐序列电荷命中强于 encoder、encoder 具 pH 敏感全局条件；pH 4-10 逐 pH 现场标定后 87-88% 可达（7.4 外推才是假边界）**。
 
 ---
 

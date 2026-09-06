@@ -72,3 +72,27 @@
 - **目标**：测 RNA 结合（含核糖体/核内）蛋白在 **native 与温和(native±2)** 条件下的可设计性（H2/dev + 删减 + 折叠）；暂不做极端。
 - **待定**：目标集规模与构成（多少条、是否需外部 RCSB 下载、是否 coverage-in 去重 vs 训练 414 RNA/DNA）；协议（n、pH7.4、per-protein 校准）。
 - 确认后再采样（GPU6 现空）。
+
+---
+
+## I. 补充对照与机制实验（2026-09-06 追加，报告在 compare//ablation/，数据路径可作图）
+| 图 | 内容 | 数据文件（作图源） | 状态 |
+|---|---|---|---|
+| Fig I-1 | **裸 backbone vs 条件生成增益**（三类均衡集 v2，酸/中/碱；v1 偏酸子集并排） | `output/exp_control_{prot,lig}_v2/_report_tables.md`；报告 `compare/report_2026-09-06_exp1_{prot,lig}_barebackbone_v2.md` | ✅ 待画 |
+| Fig I-2 | **bias-only vs encoder** 逐序列命中/mean dev/回收 | `output/exp_control_{prot,lig}/_report_tables.md`；`ablation/report/2026-09-06_exp2_{prot,lig}_bias_vs_encoder.md` | ✅ 待画 |
+| Fig I-3 | **组成分解**：加/删/同号删·膨胀/对侧置换 占比 | `output/exp2_comp_decomposition_tables.md`；`ablation/report/2026-09-06_exp2b_comp_decomposition.md` | ✅ 待画 |
+| Fig I-4 | **pH 包络 T1原始/T2-7.4外推/T3逐pH标定** + 校准外推误差 | `figure/exp7b_{prot}_*_pHgrid.png`(已生成) + `output/exp_pH2_{prot,lig}/_report_tables.md` | 🟡 蛋白/配体各 3-4 张已出 |
+| Fig I-5 | **命中率 95%CI**（Wilson/精确） | `output/hitrate_ci_summary.json` | ✅ 待画 |
+| Fig I-6 | **Wilcoxon 配对**（A-B, B-C；v13-vs-v14） | `output/wilcoxon_exp15.json`；`compare/report_2026-09-06_exp5_wilcoxon.md` | ✅ 待画 |
+
+## J. 文章板块清单（manuscript 映射，2026-09-06）
+> 把补充实验分配到论文板块；每个板块给"结论 + 主报告 + 图"。
+
+1. **Intro/Method 背景**：pH-感知电荷条件化（LigandMPNN/MoMPNN 首例）、删减捷径现象。
+2. **Results·基线对照**：Fig I-1/7 —— 条件化增益集中在极端电荷臂、近 native 靠裸分布覆盖（exp1 v2 三类均衡 + v1）。
+3. **Results·机制（关键双刃）**：Fig I-2/I-3 —— 逐序列命中 bias>encoder，但 encoder=同号对称删减 vs bias=同号对称膨胀、对侧置换极少 → 引出"需组成保真/置换监督"。
+4. **Results·pH 敏感性**：Fig I-4/7 —— pH 非边界、逐 pH 现场标定后 87-88% 可达；7.4 外推才是假边界；极端 pH 抽查 H1/H3/H4 不破坏折叠。
+5. **Results·校准与统计**：Fig I-5/6 + 校准三口径 —— CI + Wilcoxon 配对。
+6. **Results·应用验证**：7K00 核糖体 RNA 蛋白 native/±2 可设计性（对照 in-10 90%）；RNA 结合蛋白图。
+7. **Discussion**：global bias 局限（2025 论点 + 删减/膨胀）+ encoder 差异化价值（learned 全局 pH 条件）→ 下一步"encoder+bias+置换监督"。
+8. **Limitation**：组成删减未愈、逐序列弥散、bias 膨胀物理代价未测（需 Tm/Sol/H1 补验）、小样本校准依赖。
