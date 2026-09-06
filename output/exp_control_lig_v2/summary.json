@@ -1,0 +1,976 @@
+{
+  "root_data": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2",
+  "proteins": [
+    {
+      "pdb": "1BJ4",
+      "rank": "中性(长,PLP)",
+      "native_charge": 0.421,
+      "round_target_int": 0,
+      "arms": {},
+      "routeA": {
+        "n": 1000,
+        "mean_q": -11.1409333422184,
+        "std_q": 5.494553075313643,
+        "mean_rec": 0.5065127659574469,
+        "mean_pos": 60.306,
+        "mean_neg": 71.378,
+        "mean_charged": 131.684,
+        "pos_ratio": 1.138,
+        "neg_ratio": 1.373,
+        "charged_ratio": 1.254,
+        "frac_native_pm1": 0.019,
+        "frac_by_arm_pm1": {
+          "native": 0.018,
+          "n2": 0.038,
+          "p2": 0.006,
+          "n8": 0.139,
+          "p8": 0.0
+        },
+        "frac_by_arm_pm2": {
+          "native": 0.037,
+          "n2": 0.068,
+          "p2": 0.017,
+          "n8": 0.262,
+          "p8": 0.0
+        },
+        "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1BJ4/routeA/sequences.json",
+        "q_p5_p95": [
+          -20.22,
+          -2.12
+        ]
+      },
+      "routeB": {
+        "native": {
+          "n": 1000,
+          "target": 0,
+          "mean_q": -0.5314492205381394,
+          "std_q": 6.009574450217007,
+          "mean_dev": -0.531,
+          "per_seq_hit_2": 0.282,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.4257106382978723,
+          "mean_pos": 24.104,
+          "mean_neg": 24.349,
+          "pos_ratio": 0.455,
+          "neg_ratio": 0.468,
+          "charged_ratio": 0.461,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1BJ4/routeB/arm_native/sequences.json"
+        },
+        "n2": {
+          "n": 1000,
+          "target": -2,
+          "mean_q": -2.30032647639513,
+          "std_q": 6.065086530544229,
+          "mean_dev": -0.3,
+          "per_seq_hit_2": 0.272,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.42567872340425533,
+          "mean_pos": 22.994,
+          "mean_neg": 25.0,
+          "pos_ratio": 0.434,
+          "neg_ratio": 0.481,
+          "charged_ratio": 0.457,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1BJ4/routeB/arm_n2/sequences.json"
+        },
+        "p2": {
+          "n": 1000,
+          "target": 2,
+          "mean_q": 1.305212817966938,
+          "std_q": 6.1511856368694815,
+          "mean_dev": -0.695,
+          "per_seq_hit_2": 0.246,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.4258553191489362,
+          "mean_pos": 25.515,
+          "mean_neg": 23.931,
+          "pos_ratio": 0.481,
+          "neg_ratio": 0.46,
+          "charged_ratio": 0.471,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1BJ4/routeB/arm_p2/sequences.json"
+        },
+        "n8": {
+          "n": 1000,
+          "target": -8,
+          "mean_q": -7.461961879789829,
+          "std_q": 6.368067128642321,
+          "mean_dev": 0.538,
+          "per_seq_hit_2": 0.237,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.42641702127659575,
+          "mean_pos": 21.519,
+          "mean_neg": 28.68,
+          "pos_ratio": 0.406,
+          "neg_ratio": 0.552,
+          "charged_ratio": 0.478,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1BJ4/routeB/arm_n8/sequences.json"
+        },
+        "p8": {
+          "n": 1000,
+          "target": 8,
+          "mean_q": 7.320403888702392,
+          "std_q": 6.707236506323073,
+          "mean_dev": -0.68,
+          "per_seq_hit_2": 0.24,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.4270340425531915,
+          "mean_pos": 31.924,
+          "mean_neg": 24.35,
+          "pos_ratio": 0.602,
+          "neg_ratio": 0.468,
+          "charged_ratio": 0.536,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1BJ4/routeB/arm_p8/sequences.json"
+        }
+      },
+      "routeB_cal": {},
+      "routeC": {
+        "native": {
+          "n": 300,
+          "target": 0,
+          "mean_q": -0.3437644863128662,
+          "std_q": 1.1915299400825767,
+          "mean_dev": -0.344,
+          "per_seq_hit_2": 0.89,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.5025177304964539,
+          "mean_pos": 71.09333333333333,
+          "mean_neg": 71.36333333333333,
+          "pos_ratio": 1.341,
+          "neg_ratio": 1.372,
+          "charged_ratio": 1.357,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1BJ4/routeC/arm_native/sequences.json"
+        },
+        "n2": {
+          "n": 300,
+          "target": -2,
+          "mean_q": -2.3516633490721386,
+          "std_q": 1.2781582887047398,
+          "mean_dev": -0.352,
+          "per_seq_hit_2": 0.85,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.5028794326241135,
+          "mean_pos": 70.01333333333334,
+          "mean_neg": 72.29666666666667,
+          "pos_ratio": 1.321,
+          "neg_ratio": 1.39,
+          "charged_ratio": 1.355,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1BJ4/routeC/arm_n2/sequences.json"
+        },
+        "p2": {
+          "n": 300,
+          "target": 2,
+          "mean_q": 1.5707619146505991,
+          "std_q": 1.2034254540266622,
+          "mean_dev": -0.429,
+          "per_seq_hit_2": 0.86,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.5030141843971632,
+          "mean_pos": 72.28333333333333,
+          "mean_neg": 70.64,
+          "pos_ratio": 1.364,
+          "neg_ratio": 1.358,
+          "charged_ratio": 1.361,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1BJ4/routeC/arm_p2/sequences.json"
+        },
+        "n8": {
+          "n": 300,
+          "target": -8,
+          "mean_q": -8.141197463671366,
+          "std_q": 1.1525256506724473,
+          "mean_dev": -0.141,
+          "per_seq_hit_2": 0.8967,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.5014680851063831,
+          "mean_pos": 67.99333333333334,
+          "mean_neg": 76.06,
+          "pos_ratio": 1.283,
+          "neg_ratio": 1.463,
+          "charged_ratio": 1.372,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1BJ4/routeC/arm_n8/sequences.json"
+        },
+        "p8": {
+          "n": 300,
+          "target": 8,
+          "mean_q": 7.46379062016805,
+          "std_q": 1.2273350438774933,
+          "mean_dev": -0.536,
+          "per_seq_hit_2": 0.8433,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.4994964539007091,
+          "mean_pos": 77.16,
+          "mean_neg": 69.62,
+          "pos_ratio": 1.456,
+          "neg_ratio": 1.339,
+          "charged_ratio": 1.398,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1BJ4/routeC/arm_p8/sequences.json"
+        }
+      },
+      "gains": {
+        "routeB": {
+          "native": {
+            "B_hit_minus_A_pm1": 0.264,
+            "B_hit_minus_A_pm2": 0.245,
+            "A_pm1": 0.018,
+            "A_pm2": 0.037
+          },
+          "n2": {
+            "B_hit_minus_A_pm1": 0.234,
+            "B_hit_minus_A_pm2": 0.204,
+            "A_pm1": 0.038,
+            "A_pm2": 0.068
+          },
+          "p2": {
+            "B_hit_minus_A_pm1": 0.24,
+            "B_hit_minus_A_pm2": 0.229,
+            "A_pm1": 0.006,
+            "A_pm2": 0.017
+          },
+          "n8": {
+            "B_hit_minus_A_pm1": 0.098,
+            "B_hit_minus_A_pm2": -0.025,
+            "A_pm1": 0.139,
+            "A_pm2": 0.262
+          },
+          "p8": {
+            "B_hit_minus_A_pm1": 0.24,
+            "B_hit_minus_A_pm2": 0.24,
+            "A_pm1": 0.0,
+            "A_pm2": 0.0
+          }
+        },
+        "routeC": {
+          "native": {
+            "B_hit_minus_A_pm1": 0.872,
+            "B_hit_minus_A_pm2": 0.853,
+            "A_pm1": 0.018,
+            "A_pm2": 0.037
+          },
+          "n2": {
+            "B_hit_minus_A_pm1": 0.812,
+            "B_hit_minus_A_pm2": 0.782,
+            "A_pm1": 0.038,
+            "A_pm2": 0.068
+          },
+          "p2": {
+            "B_hit_minus_A_pm1": 0.854,
+            "B_hit_minus_A_pm2": 0.843,
+            "A_pm1": 0.006,
+            "A_pm2": 0.017
+          },
+          "n8": {
+            "B_hit_minus_A_pm1": 0.7577,
+            "B_hit_minus_A_pm2": 0.6347,
+            "A_pm1": 0.139,
+            "A_pm2": 0.262
+          },
+          "p8": {
+            "B_hit_minus_A_pm1": 0.8433,
+            "B_hit_minus_A_pm2": 0.8433,
+            "A_pm1": 0.0,
+            "A_pm2": 0.0
+          }
+        }
+      }
+    },
+    {
+      "pdb": "1CGE",
+      "rank": "中(金属)",
+      "native_charge": -11.662,
+      "round_target_int": -12,
+      "arms": {},
+      "routeA": {
+        "n": 1000,
+        "mean_q": -12.302536699771881,
+        "std_q": 2.3994209749023505,
+        "mean_rec": 0.619783950617284,
+        "mean_pos": 9.468,
+        "mean_neg": 22.066,
+        "mean_charged": 31.534,
+        "pos_ratio": 0.789,
+        "neg_ratio": 0.919,
+        "charged_ratio": 0.876,
+        "frac_native_pm1": 0.307,
+        "frac_by_arm_pm1": {
+          "native": 0.333,
+          "n2": 0.213,
+          "p2": 0.23,
+          "n8": 0.001,
+          "p8": 0.001
+        },
+        "frac_by_arm_pm2": {
+          "native": 0.6,
+          "n2": 0.456,
+          "p2": 0.458,
+          "n8": 0.012,
+          "p8": 0.003
+        },
+        "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1CGE/routeA/sequences.json",
+        "q_p5_p95": [
+          -15.82,
+          -8.67
+        ]
+      },
+      "routeB": {
+        "native": {
+          "n": 1000,
+          "target": -12,
+          "mean_q": -11.544489841282367,
+          "std_q": 3.8849179918686163,
+          "mean_dev": 0.456,
+          "per_seq_hit_2": 0.375,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.5342222222222222,
+          "mean_pos": 5.18,
+          "mean_neg": 16.939,
+          "pos_ratio": 0.432,
+          "neg_ratio": 0.706,
+          "charged_ratio": 0.614,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1CGE/routeB/arm_native/sequences.json"
+        },
+        "n2": {
+          "n": 1000,
+          "target": -14,
+          "mean_q": -13.969476456284523,
+          "std_q": 4.087980135134084,
+          "mean_dev": 0.031,
+          "per_seq_hit_2": 0.365,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.5338456790123457,
+          "mean_pos": 5.545,
+          "mean_neg": 19.727,
+          "pos_ratio": 0.462,
+          "neg_ratio": 0.822,
+          "charged_ratio": 0.702,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1CGE/routeB/arm_n2/sequences.json"
+        },
+        "p2": {
+          "n": 1000,
+          "target": -10,
+          "mean_q": -9.114537306427955,
+          "std_q": 3.5960747708677108,
+          "mean_dev": 0.885,
+          "per_seq_hit_2": 0.395,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.5332716049382716,
+          "mean_pos": 4.854,
+          "mean_neg": 14.184,
+          "pos_ratio": 0.405,
+          "neg_ratio": 0.591,
+          "charged_ratio": 0.529,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1CGE/routeB/arm_p2/sequences.json"
+        },
+        "n8": {
+          "n": 1000,
+          "target": -20,
+          "mean_q": -20.690856337070464,
+          "std_q": 4.414736930172695,
+          "mean_dev": -0.691,
+          "per_seq_hit_2": 0.339,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.5248641975308642,
+          "mean_pos": 6.425,
+          "mean_neg": 27.314,
+          "pos_ratio": 0.535,
+          "neg_ratio": 1.138,
+          "charged_ratio": 0.937,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1CGE/routeB/arm_n8/sequences.json"
+        },
+        "p8": {
+          "n": 1000,
+          "target": -4,
+          "mean_q": -3.3099148602485657,
+          "std_q": 3.2018823135730217,
+          "mean_dev": 0.69,
+          "per_seq_hit_2": 0.451,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.5264814814814814,
+          "mean_pos": 4.763,
+          "mean_neg": 8.287,
+          "pos_ratio": 0.397,
+          "neg_ratio": 0.345,
+          "charged_ratio": 0.363,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1CGE/routeB/arm_p8/sequences.json"
+        }
+      },
+      "routeB_cal": {},
+      "routeC": {
+        "native": {
+          "n": 300,
+          "target": -12,
+          "mean_q": -12.978760782877604,
+          "std_q": 1.1314087051121224,
+          "mean_dev": -0.979,
+          "per_seq_hit_2": 0.8733,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.5976543209876544,
+          "mean_pos": 14.513333333333334,
+          "mean_neg": 27.766666666666666,
+          "pos_ratio": 1.209,
+          "neg_ratio": 1.157,
+          "charged_ratio": 1.174,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1CGE/routeC/arm_native/sequences.json"
+        },
+        "n2": {
+          "n": 300,
+          "target": -14,
+          "mean_q": -14.948460079828898,
+          "std_q": 1.1693005366524627,
+          "mean_dev": -0.948,
+          "per_seq_hit_2": 0.8633,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.5901028806584362,
+          "mean_pos": 14.423333333333334,
+          "mean_neg": 29.643333333333334,
+          "pos_ratio": 1.202,
+          "neg_ratio": 1.235,
+          "charged_ratio": 1.224,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1CGE/routeC/arm_n2/sequences.json"
+        },
+        "p2": {
+          "n": 300,
+          "target": -10,
+          "mean_q": -11.144341688156128,
+          "std_q": 1.1396791628031329,
+          "mean_dev": -1.144,
+          "per_seq_hit_2": 0.8267,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.6040534979423868,
+          "mean_pos": 14.466666666666667,
+          "mean_neg": 25.886666666666667,
+          "pos_ratio": 1.206,
+          "neg_ratio": 1.079,
+          "charged_ratio": 1.121,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1CGE/routeC/arm_p2/sequences.json"
+        },
+        "n8": {
+          "n": 300,
+          "target": -20,
+          "mean_q": -20.6850493367513,
+          "std_q": 1.1567993332807807,
+          "mean_dev": -0.685,
+          "per_seq_hit_2": 0.9033,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.567962962962963,
+          "mean_pos": 14.29,
+          "mean_neg": 35.236666666666665,
+          "pos_ratio": 1.191,
+          "neg_ratio": 1.468,
+          "charged_ratio": 1.376,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1CGE/routeC/arm_n8/sequences.json"
+        },
+        "p8": {
+          "n": 300,
+          "target": -4,
+          "mean_q": -5.402884448369344,
+          "std_q": 1.122062244554726,
+          "mean_dev": -1.403,
+          "per_seq_hit_2": 0.7567,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.6125514403292182,
+          "mean_pos": 14.986666666666666,
+          "mean_neg": 20.67,
+          "pos_ratio": 1.249,
+          "neg_ratio": 0.861,
+          "charged_ratio": 0.99,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/1CGE/routeC/arm_p8/sequences.json"
+        }
+      },
+      "gains": {
+        "routeB": {
+          "native": {
+            "B_hit_minus_A_pm1": 0.042,
+            "B_hit_minus_A_pm2": -0.225,
+            "A_pm1": 0.333,
+            "A_pm2": 0.6
+          },
+          "n2": {
+            "B_hit_minus_A_pm1": 0.152,
+            "B_hit_minus_A_pm2": -0.091,
+            "A_pm1": 0.213,
+            "A_pm2": 0.456
+          },
+          "p2": {
+            "B_hit_minus_A_pm1": 0.165,
+            "B_hit_minus_A_pm2": -0.063,
+            "A_pm1": 0.23,
+            "A_pm2": 0.458
+          },
+          "n8": {
+            "B_hit_minus_A_pm1": 0.338,
+            "B_hit_minus_A_pm2": 0.327,
+            "A_pm1": 0.001,
+            "A_pm2": 0.012
+          },
+          "p8": {
+            "B_hit_minus_A_pm1": 0.45,
+            "B_hit_minus_A_pm2": 0.448,
+            "A_pm1": 0.001,
+            "A_pm2": 0.003
+          }
+        },
+        "routeC": {
+          "native": {
+            "B_hit_minus_A_pm1": 0.5403,
+            "B_hit_minus_A_pm2": 0.2733,
+            "A_pm1": 0.333,
+            "A_pm2": 0.6
+          },
+          "n2": {
+            "B_hit_minus_A_pm1": 0.6503,
+            "B_hit_minus_A_pm2": 0.4073,
+            "A_pm1": 0.213,
+            "A_pm2": 0.456
+          },
+          "p2": {
+            "B_hit_minus_A_pm1": 0.5967,
+            "B_hit_minus_A_pm2": 0.3687,
+            "A_pm1": 0.23,
+            "A_pm2": 0.458
+          },
+          "n8": {
+            "B_hit_minus_A_pm1": 0.9023,
+            "B_hit_minus_A_pm2": 0.8913,
+            "A_pm1": 0.001,
+            "A_pm2": 0.012
+          },
+          "p8": {
+            "B_hit_minus_A_pm1": 0.7557,
+            "B_hit_minus_A_pm2": 0.7537,
+            "A_pm1": 0.001,
+            "A_pm2": 0.003
+          }
+        }
+      }
+    },
+    {
+      "pdb": "5O60_E",
+      "rank": "好(RNA结合)",
+      "native_charge": 11.176,
+      "round_target_int": 11,
+      "arms": {},
+      "routeA": {
+        "n": 1000,
+        "mean_q": 26.72210490989685,
+        "std_q": 3.392101344115248,
+        "mean_rec": 0.44802870813397133,
+        "mean_pos": 47.815,
+        "mean_neg": 21.041,
+        "mean_charged": 68.856,
+        "pos_ratio": 1.542,
+        "neg_ratio": 1.052,
+        "charged_ratio": 1.35,
+        "frac_native_pm1": 0.0,
+        "frac_by_arm_pm1": {
+          "native": 0.0,
+          "n2": 0.0,
+          "p2": 0.0,
+          "n8": 0.0,
+          "p8": 0.022
+        },
+        "frac_by_arm_pm2": {
+          "native": 0.0,
+          "n2": 0.0,
+          "p2": 0.0,
+          "n8": 0.0,
+          "p8": 0.048
+        },
+        "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/5O60_E/routeA/sequences.json",
+        "q_p5_p95": [
+          21.02,
+          32.01
+        ]
+      },
+      "routeB": {
+        "native": {
+          "n": 1000,
+          "target": 11,
+          "mean_q": 8.878390919446945,
+          "std_q": 4.428724981586187,
+          "mean_dev": -2.122,
+          "per_seq_hit_2": 0.292,
+          "arm_mean_hit_2": false,
+          "mean_rec": 0.38808133971291864,
+          "mean_pos": 18.305,
+          "mean_neg": 9.339,
+          "pos_ratio": 0.59,
+          "neg_ratio": 0.467,
+          "charged_ratio": 0.542,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/5O60_E/routeB/arm_native/sequences.json"
+        },
+        "n2": {
+          "n": 1000,
+          "target": 9,
+          "mean_q": 7.0830772110819815,
+          "std_q": 4.327320231014287,
+          "mean_dev": -1.917,
+          "per_seq_hit_2": 0.314,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.38487559808612437,
+          "mean_pos": 16.454,
+          "mean_neg": 9.283,
+          "pos_ratio": 0.531,
+          "neg_ratio": 0.464,
+          "charged_ratio": 0.505,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/5O60_E/routeB/arm_n2/sequences.json"
+        },
+        "p2": {
+          "n": 1000,
+          "target": 13,
+          "mean_q": 10.925846134722233,
+          "std_q": 4.566214841176321,
+          "mean_dev": -2.074,
+          "per_seq_hit_2": 0.296,
+          "arm_mean_hit_2": false,
+          "mean_rec": 0.3916411483253588,
+          "mean_pos": 20.512,
+          "mean_neg": 9.5,
+          "pos_ratio": 0.662,
+          "neg_ratio": 0.475,
+          "charged_ratio": 0.588,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/5O60_E/routeB/arm_p2/sequences.json"
+        },
+        "n8": {
+          "n": 1000,
+          "target": 3,
+          "mean_q": 2.5238295106291773,
+          "std_q": 4.20769778348176,
+          "mean_dev": -0.476,
+          "per_seq_hit_2": 0.344,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.3748947368421053,
+          "mean_pos": 12.659,
+          "mean_neg": 10.044,
+          "pos_ratio": 0.408,
+          "neg_ratio": 0.502,
+          "charged_ratio": 0.445,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/5O60_E/routeB/arm_n8/sequences.json"
+        },
+        "p8": {
+          "n": 1000,
+          "target": 19,
+          "mean_q": 17.71037261247635,
+          "std_q": 4.807764906756723,
+          "mean_dev": -1.29,
+          "per_seq_hit_2": 0.313,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.40202392344497606,
+          "mean_pos": 28.438,
+          "mean_neg": 10.634,
+          "pos_ratio": 0.917,
+          "neg_ratio": 0.532,
+          "charged_ratio": 0.766,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/5O60_E/routeB/arm_p8/sequences.json"
+        }
+      },
+      "routeB_cal": {},
+      "routeC": {
+        "native": {
+          "n": 300,
+          "target": 11,
+          "mean_q": 12.850220200220743,
+          "std_q": 1.1399944294598625,
+          "mean_dev": 1.85,
+          "per_seq_hit_2": 0.6,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.43341307814992025,
+          "mean_pos": 44.376666666666665,
+          "mean_neg": 31.493333333333332,
+          "pos_ratio": 1.432,
+          "neg_ratio": 1.575,
+          "charged_ratio": 1.488,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/5O60_E/routeC/arm_native/sequences.json"
+        },
+        "n2": {
+          "n": 300,
+          "target": 9,
+          "mean_q": 10.907269314130147,
+          "std_q": 1.1653772622273204,
+          "mean_dev": 1.907,
+          "per_seq_hit_2": 0.6067,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.4384848484848484,
+          "mean_pos": 42.67,
+          "mean_neg": 31.73,
+          "pos_ratio": 1.376,
+          "neg_ratio": 1.587,
+          "charged_ratio": 1.459,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/5O60_E/routeC/arm_n2/sequences.json"
+        },
+        "p2": {
+          "n": 300,
+          "target": 13,
+          "mean_q": 14.750874481201173,
+          "std_q": 1.218158820171962,
+          "mean_dev": 1.751,
+          "per_seq_hit_2": 0.6167,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.4293460925039872,
+          "mean_pos": 45.903333333333336,
+          "mean_neg": 31.116666666666667,
+          "pos_ratio": 1.481,
+          "neg_ratio": 1.556,
+          "charged_ratio": 1.51,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/5O60_E/routeC/arm_p2/sequences.json"
+        },
+        "n8": {
+          "n": 300,
+          "target": 3,
+          "mean_q": 5.0753531881173455,
+          "std_q": 1.1019419671774464,
+          "mean_dev": 2.075,
+          "per_seq_hit_2": 0.54,
+          "arm_mean_hit_2": false,
+          "mean_rec": 0.44767145135566183,
+          "mean_pos": 38.07,
+          "mean_neg": 32.973333333333336,
+          "pos_ratio": 1.228,
+          "neg_ratio": 1.649,
+          "charged_ratio": 1.393,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/5O60_E/routeC/arm_n8/sequences.json"
+        },
+        "p8": {
+          "n": 300,
+          "target": 19,
+          "mean_q": 20.459531949361164,
+          "std_q": 1.2101194320558502,
+          "mean_dev": 1.46,
+          "per_seq_hit_2": 0.71,
+          "arm_mean_hit_2": true,
+          "mean_rec": 0.4162360446570973,
+          "mean_pos": 51.013333333333335,
+          "mean_neg": 30.516666666666666,
+          "pos_ratio": 1.646,
+          "neg_ratio": 1.526,
+          "charged_ratio": 1.599,
+          "file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_control_lig_v2/5O60_E/routeC/arm_p8/sequences.json"
+        }
+      },
+      "gains": {
+        "routeB": {
+          "native": {
+            "B_hit_minus_A_pm1": 0.292,
+            "B_hit_minus_A_pm2": 0.292,
+            "A_pm1": 0.0,
+            "A_pm2": 0.0
+          },
+          "n2": {
+            "B_hit_minus_A_pm1": 0.314,
+            "B_hit_minus_A_pm2": 0.314,
+            "A_pm1": 0.0,
+            "A_pm2": 0.0
+          },
+          "p2": {
+            "B_hit_minus_A_pm1": 0.296,
+            "B_hit_minus_A_pm2": 0.296,
+            "A_pm1": 0.0,
+            "A_pm2": 0.0
+          },
+          "n8": {
+            "B_hit_minus_A_pm1": 0.344,
+            "B_hit_minus_A_pm2": 0.344,
+            "A_pm1": 0.0,
+            "A_pm2": 0.0
+          },
+          "p8": {
+            "B_hit_minus_A_pm1": 0.291,
+            "B_hit_minus_A_pm2": 0.265,
+            "A_pm1": 0.022,
+            "A_pm2": 0.048
+          }
+        },
+        "routeC": {
+          "native": {
+            "B_hit_minus_A_pm1": 0.6,
+            "B_hit_minus_A_pm2": 0.6,
+            "A_pm1": 0.0,
+            "A_pm2": 0.0
+          },
+          "n2": {
+            "B_hit_minus_A_pm1": 0.6067,
+            "B_hit_minus_A_pm2": 0.6067,
+            "A_pm1": 0.0,
+            "A_pm2": 0.0
+          },
+          "p2": {
+            "B_hit_minus_A_pm1": 0.6167,
+            "B_hit_minus_A_pm2": 0.6167,
+            "A_pm1": 0.0,
+            "A_pm2": 0.0
+          },
+          "n8": {
+            "B_hit_minus_A_pm1": 0.54,
+            "B_hit_minus_A_pm2": 0.54,
+            "A_pm1": 0.0,
+            "A_pm2": 0.0
+          },
+          "p8": {
+            "B_hit_minus_A_pm1": 0.688,
+            "B_hit_minus_A_pm2": 0.662,
+            "A_pm1": 0.022,
+            "A_pm2": 0.048
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "task": "ligand exp1+exp2 control (bare vs conditioned vs bias)",
+    "date": "2026-09-06",
+    "backbone": "/data/nfs/IC/baokun_yu/ConfuMPNN/LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt",
+    "cond_encoder": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_ligand_v14_rna/finetune_epoch050.pt",
+    "calibration_file": "/data/nfs/IC/baokun_yu/ConfuMPNN/output/charge_calibration_v14_ligand_clean.json",
+    "pH": 7.4,
+    "temperature": 0.3,
+    "num_ligand_atoms": 25,
+    "seed_base0": 3000,
+    "routeC_strength": 0.5,
+    "calibrate_B": true,
+    "nA": 1000,
+    "nB": 1000,
+    "nC": 300,
+    "proteins": [
+      {
+        "pdb": "5O60_E",
+        "seed_base": 3000,
+        "L": 209,
+        "native_charge": 11.176
+      },
+      {
+        "pdb": "1CGE",
+        "seed_base": 103000,
+        "L": 162,
+        "native_charge": -11.662
+      },
+      {
+        "pdb": "1BJ4",
+        "seed_base": 303000,
+        "L": 470,
+        "native_charge": 0.421
+      }
+    ],
+    "git": "no-push (main archives)"
+  },
+  "aggregate": {
+    "arm_levels": {
+      "routeB:native": {
+        "mean_B_hit": 0.3163,
+        "mean_A_pm1": 0.117,
+        "mean_A_pm2": 0.2123,
+        "gain_B_minus_A_pm1": 0.1993,
+        "gain_B_minus_A_pm2": 0.104,
+        "n_prot": 3
+      },
+      "routeB:n2": {
+        "mean_B_hit": 0.317,
+        "mean_A_pm1": 0.0837,
+        "mean_A_pm2": 0.1747,
+        "gain_B_minus_A_pm1": 0.2333,
+        "gain_B_minus_A_pm2": 0.1423,
+        "n_prot": 3
+      },
+      "routeB:p2": {
+        "mean_B_hit": 0.3123,
+        "mean_A_pm1": 0.0787,
+        "mean_A_pm2": 0.1583,
+        "gain_B_minus_A_pm1": 0.2337,
+        "gain_B_minus_A_pm2": 0.154,
+        "n_prot": 3
+      },
+      "routeB:n8": {
+        "mean_B_hit": 0.3067,
+        "mean_A_pm1": 0.0467,
+        "mean_A_pm2": 0.0913,
+        "gain_B_minus_A_pm1": 0.26,
+        "gain_B_minus_A_pm2": 0.2153,
+        "n_prot": 3
+      },
+      "routeB:p8": {
+        "mean_B_hit": 0.3347,
+        "mean_A_pm1": 0.0077,
+        "mean_A_pm2": 0.017,
+        "gain_B_minus_A_pm1": 0.327,
+        "gain_B_minus_A_pm2": 0.3177,
+        "n_prot": 3
+      },
+      "routeB_cal:native": {
+        "mean_B_hit": null,
+        "mean_A_pm1": 0.117,
+        "mean_A_pm2": 0.2123,
+        "gain_B_minus_A_pm1": null,
+        "gain_B_minus_A_pm2": null,
+        "n_prot": 0
+      },
+      "routeB_cal:n2": {
+        "mean_B_hit": null,
+        "mean_A_pm1": 0.0837,
+        "mean_A_pm2": 0.1747,
+        "gain_B_minus_A_pm1": null,
+        "gain_B_minus_A_pm2": null,
+        "n_prot": 0
+      },
+      "routeB_cal:p2": {
+        "mean_B_hit": null,
+        "mean_A_pm1": 0.0787,
+        "mean_A_pm2": 0.1583,
+        "gain_B_minus_A_pm1": null,
+        "gain_B_minus_A_pm2": null,
+        "n_prot": 0
+      },
+      "routeB_cal:n8": {
+        "mean_B_hit": null,
+        "mean_A_pm1": 0.0467,
+        "mean_A_pm2": 0.0913,
+        "gain_B_minus_A_pm1": null,
+        "gain_B_minus_A_pm2": null,
+        "n_prot": 0
+      },
+      "routeB_cal:p8": {
+        "mean_B_hit": null,
+        "mean_A_pm1": 0.0077,
+        "mean_A_pm2": 0.017,
+        "gain_B_minus_A_pm1": null,
+        "gain_B_minus_A_pm2": null,
+        "n_prot": 0
+      },
+      "routeC:native": {
+        "mean_B_hit": 0.7878,
+        "mean_A_pm1": 0.117,
+        "mean_A_pm2": 0.2123,
+        "gain_B_minus_A_pm1": 0.6708,
+        "gain_B_minus_A_pm2": 0.5754,
+        "n_prot": 3
+      },
+      "routeC:n2": {
+        "mean_B_hit": 0.7733,
+        "mean_A_pm1": 0.0837,
+        "mean_A_pm2": 0.1747,
+        "gain_B_minus_A_pm1": 0.6897,
+        "gain_B_minus_A_pm2": 0.5987,
+        "n_prot": 3
+      },
+      "routeC:p2": {
+        "mean_B_hit": 0.7678,
+        "mean_A_pm1": 0.0787,
+        "mean_A_pm2": 0.1583,
+        "gain_B_minus_A_pm1": 0.6891,
+        "gain_B_minus_A_pm2": 0.6095,
+        "n_prot": 3
+      },
+      "routeC:n8": {
+        "mean_B_hit": 0.78,
+        "mean_A_pm1": 0.0467,
+        "mean_A_pm2": 0.0913,
+        "gain_B_minus_A_pm1": 0.7333,
+        "gain_B_minus_A_pm2": 0.6887,
+        "n_prot": 3
+      },
+      "routeC:p8": {
+        "mean_B_hit": 0.77,
+        "mean_A_pm1": 0.0077,
+        "mean_A_pm2": 0.017,
+        "gain_B_minus_A_pm1": 0.7623,
+        "gain_B_minus_A_pm2": 0.753,
+        "n_prot": 3
+      }
+    }
+  }
+}
