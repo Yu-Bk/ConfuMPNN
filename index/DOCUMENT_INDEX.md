@@ -40,7 +40,18 @@
 **09-05（版本史/核糖体/审计）**：★`2026-09-05_protein_history_vs_ligand_deletion.md`、★`2026-09-05_ligand_history_v13_v14.md`、`2026-09-05_taskA_timeline.md`、★`2026-09-05_7k00_ribosome_design.md`、`2026-09-05_repo_audit.md`。
 **消融/对比（独立目录）**：`ablation/report/2026-09-05_ablation_{prot,lig}.md`(★受控消融，顶层 `ablation/`)；`compare/README.md`(对比登记)。
 
-## 3. 关键会话（`session/`，37 份；★决策类）
+### 2b 补充对照/消融实验报告（2026-09-06，`compare/` 与 `ablation/report/`）
+| 实验 | 报告（compare/）| 消融版（ablation/report/）| 数据(可作图) |
+|---|---|---|---|
+| exp1 裸 backbone vs 条件 | `report_2026-09-06_exp1_{prot,lig}_barebackbone{,_v2}.md`(v2=三类均衡) | — | `output/exp_control_{prot,lig}(_v2)/_report_tables.md` |
+| exp2 bias vs encoder | — | `2026-09-06_exp2_{prot,lig}_bias_vs_encoder.md` | `output/exp_control_{prot,lig}/` |
+| exp2b 组成分解 | — | `2026-09-06_exp2b_comp_decomposition.md` | `output/exp2_comp_decomposition{,_tables}` |
+| exp3 CI / exp4 RMSD | `report_2026-09-06_exp3_hitrate_ci.md` / `_exp4_rmsd_matrix.md` | — | `output/hitrate_ci_summary.json` / `rmsd_matrix_v14_v13.json` |
+| exp5 Wilcoxon | `report_2026-09-06_exp5_wilcoxon.md` | — | `output/wilcoxon_exp15.json` |
+| exp7 / exp7b pH | `report_2026-09-06_exp7_pH_{prot,lig}.md` / `_exp7b_pHgrid_{prot,lig}.md` | — | `output/exp_pH{2}_{prot,lig}/` + `figure/exp7b_*_pHgrid.png` |
+| 数值出表规范 | `analysis/report/2026-09-06_number_reporting.md` | — | 主指标 CI 表 |
+
+## 3. 关键会话（`session/`，41 份；★决策类）
 ★`2026-09-04_decision_log.md`(验证集方法定稿)、`2026-09-04_v14_clean_chain_autolog.md`(clean 链检查点)、`2026-09-04_valset_build.md`(805 验证集构建)、`2026-09-04_val_loss_curve_build.md`、`2026-09-04_task{1_deletion_location,2_fixbinding,3_largen}.md`、`2026-09-04_v13_in10_chain.md`、`2026-09-05_{taskA_protein_history,taskB_ligand_history,7k00_ribosome,ablation_run}.md`、早期 `2026-08-17_validation_plan_v2.md`、`2026-09-02_v14_rna_data_a1_global.md`、`2026-09-02_v12_3_long_retrain.md` 等。
 
 ## 4. 技术/使用/部署（`docs/`，均 09-05 待随新状态刷新或已注明）
