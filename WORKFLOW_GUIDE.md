@@ -181,7 +181,8 @@ probs = softmax((logits + bias) / temperature)
 
 | | **v7 编码器** | **v9 编码器** |
 |---|---|---|
-| 权重文件 | `output/finetune_v7/condition_encoder_last.pt` | `output/finetune_ligand_v9/finetune_epoch030.pt` |
+| 权重文件 | `output/finetune_v7/condition_encoder_last.pt`（历史） | `output/finetune_ligand_v9/finetune_epoch030.pt`（历史） |
+| 当前交付权重 | `output/finetune_v12_2/finetune_epoch030.pt`（蛋白/MoMPNN） | `output/finetune_ligand_v14_rna/finetune_epoch050.pt`（配体/LigandMPNN） |
 | backbone | **MoMPNN**（纯骨架 ProteinMPNN） | **LigandMPNN**（含配体原子上下文） |
 | 训练数据 | CATH 结构域（`data/cath/labels_balanced_v7.npz`，7,886 域） | 配体复合物（`data/ligand_train/labels.npz`，4,972 × 8pH） |
 | 适用场景 | **无配体 / 小蛋白**（单体，L≤~300） | **有配体 / 大蛋白**（配体口袋、L 可达 500） |

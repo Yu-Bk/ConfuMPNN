@@ -123,4 +123,4 @@ PYTHONPATH=code python code/tests/ligand_v9/validate_generalization.py \
 固定 `--seed` + 相同参数 → 相同序列。
 
 **Q6：编码器从哪来？**
-v7/v9 编码器不在仓库（git 忽略权重），从 GitHub Releases 下载（`gh release download preview1.0.0`，见 `README.md` §二 步骤 3）。
+自训编码器不在仓库（git 忽略权重），从 GitHub Releases 下载。**当前交付 = v12.2（蛋白）/ v14（配体），历史 v7/v9 在 `preview1.0.0`**；发布清单见 `weights_release/README.md`、步骤见 `README.md` §二/§三、部署见 `docs/SETUP_NEW_MACHINE.md`。本文件示例用 v7/v9 为历史演示，把 `--cond_encoder` 换成当前权重即可。

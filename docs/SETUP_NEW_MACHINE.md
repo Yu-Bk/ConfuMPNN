@@ -1,8 +1,9 @@
 # ConfuMPNN 新机器配置指南（从零复现）
 
-> 目标：在一台全新 Linux + NVIDIA GPU 机器上，完整复现 ConfuMPNN（含 v7/v9 电荷微调），并验证能生成电荷受控的序列。
+> 目标：在一台全新 Linux + NVIDIA GPU 机器上，完整复现 ConfuMPNN（含自训条件编码器），并验证能生成电荷受控的序列。
 > 前置阅读：`WORKFLOW_GUIDE.md`（理解框架）；本文只讲"怎么搭起来"。
-> 更新时间：2026-08-19（v9 节点，v10 演进中）。
+> 更新时间：2026-09-06（v12.2 蛋白 / v14 配体 = 当前交付；v7/v9 = 历史）。
+> ⚠️ 当前交付编码器 = **v12.2（蛋白/MoMPNN）、v14（配体/LigandMPNN RNA-DNA）**；v7/v9 仅历史可选项。发布说明与校验见 `weights_release/README.md`。
 
 ---
 
@@ -20,11 +21,11 @@
 |---|----------|------|------|------|
 | 1 | LigandMPNN 权重（15 个 .pt）| `git clone` 自带 | ~120MB | `LigandMPNN/model_params/` |
 | 2 | MoMPNN 权重（8 个 .ckpt）| `git clone` 自带 | ~52MB | `MoMPNN/mompnn_paper_checkpoints/` |
-| 3 | **v7/v9 自训编码器** | **GitHub Releases 下载** | ~1.2MB | `code/weights/` |
+| 3 | **自训条件编码器（v12.2/v12.3 蛋白 + v14 配体，历史 v7/v9）** | **GitHub Releases 下载** | ~3MB | `code/weights/` |
 | 4 | ESMFold 权重 | 首次运行自动下载 | ~数 GB | `~/.cache/`（自动）|
-| 5 | 训练/验证数据 | NAS 恢复 或 重建脚本 | 8GB | `data/` |
+| 5 | 训练/验证数据 | NAS/网盘 恢复 或 重建脚本 | ~13GB(+final_extend) | `data/` |
 
-> 🔑 **关键理解**：`ConfuMPNN` 仓库（git clone 得到）里**没有**权重文件（`.pt`/`.ckpt` 被 `.gitignore` 排除）。其中 1、2 号权重随"外部源码 clone"一起拿到；**3 号（v7/v9 自训编码器）是项目自己的训练产物，必须从 GitHub Releases 单独下载**。
+> 🔑 **关键理解**：`ConfuMPNN` 仓库（git clone 得到）里**没有**权重文件（`.pt`/`.ckpt` 被 `.gitignore` 排除）。其中 1、2 号权重随"外部源码 clone"一起拿到；**3 号（自训编码器）是项目自己的训练产物，必须从 GitHub Releases 单独下载**。发布清单 = `weights_release/`（README + SHA256SUMS）。
 
 ---
 
@@ -54,26 +55,28 @@ ls MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt  # �
 
 ---
 
-## 2. 下载 v7/v9 自训编码器（3 号权重，GitHub Releases）
+## 2. 下载自训编码器（3 号权重，GitHub Releases）
 
-两个编码器是 ConfuMPNN 微调训练的核心交付物：
-- **v7**（`condition_encoder_v7_last.pt`，296K）：MoMPNN backbone，无配体/小蛋白
-- **v9**（`condition_encoder_v9_epoch030.pt`，887K）：LigandMPNN backbone，配体模式
+**当前交付**（推荐，release 名以 `weights_release/README.md` 为准，发布时用 `gh release view` 确认最新 tag）：
+- `condition_encoder_v12_2_last.pt`（296K）— **蛋白模式（MoMPNN）当前最优**
+- `condition_encoder_v12_3_last.pt`（296K）— 蛋白长蛋白外推版（可选）
+- `condition_encoder_v14_ligand_epoch050.pt`（887K）— **配体模式（LigandMPNN，RNA/DNA）当前最优**
+
+**历史可选项**（如复现 v9 报告，tag `preview1.0.0`）：`condition_encoder_v7_last.pt`、`condition_encoder_v9_epoch030.pt`。
 
 ```bash
 # 确保 gh 已登录（gh auth login）
 gh auth status
+gh release view <当前tag>            # 例如 confumpnn-2026-09（见 weights_release/README）
 
-# 查看 release 附件
-gh release view preview1.0.0
-
-# 下载两个编码器权重到 code/weights/
+# 下载当前编码器到 code/weights/
 mkdir -p code/weights
-gh release download preview1.0.0 --pattern "condition_encoder*.pt" -D code/weights/
+gh release download <当前tag> --pattern "condition_encoder*.pt" -D code/weights/
+# 若只需当前最优：--pattern "condition_encoder_v12_2_last.pt|condition_encoder_v14_ligand_epoch050.pt"
 
 # 校验完整性（SHA256）
 cd code/weights
-sha256sum -c SHA256SUMS.txt
+sha256sum -c ../SHA256SUMS.txt        # 或 weights_release/SHA256SUMS.txt
 ```
 
 **如果不用 gh**（无 GitHub CLI），也可直接浏览器访问仓库页面的 Releases 下载。
@@ -116,23 +119,25 @@ conda activate confumpnn
 # 4.1 单元测试（36 项，全部通过）
 python tests/test_all.py
 
-# 4.2 冒烟：v7 编码器加载 + 电荷控制（1BC8，target 0）
+# 4.2 冒烟：v12.2 编码器（蛋白模式）+ 电荷控制（1BC8，target 0；需 MoMPNN backbone 权重）
 python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 \
-  --cond_encoder ../code/weights/condition_encoder_v7_last.pt \
+  --cond_encoder ../code/weights/condition_encoder_v12_2_last.pt \
+  --weights ../MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt \
   --num_samples 3
 ```
 
 **预期**：终端输出每条序列的 charge ≈ 0（|dev| ≤ 2.0 为达标）、pI 合理；`output/guided_1BC8_pH7.4/seqs.fa` 生成。
 
 ```bash
-# 4.3 冒烟：v9 编码器 + 配体模式（用任意含配体的 PDB，如 data/validation_pdbs/1AZM.pdb）
-python run_guided.py --pdb ../data/validation_pdbs/1AZM.pdb --pH 7.4 --target_charge 0 \
-  --cond_encoder ../code/weights/condition_encoder_v9_epoch030.pt \
+# 4.3 冒烟：v14 编码器 + 配体模式（用任意含配体的 PDB，如 data/validation_pdbs/5O60_E.pdb）
+python run_guided.py --pdb ../data/validation_pdbs/5O60_E.pdb --pH 7.4 --target_charge 0 \
+  --cond_encoder ../code/weights/condition_encoder_v14_ligand_epoch050.pt \
   --weights ../LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt \
   --num_samples 3
 ```
 
-> 若 `data/validation_pdbs/` 还没恢复，4.3 可跳过（它需要配体 PDB）。仅验证 v7 即可确认安装成功。
+> 若 `data/validation_pdbs/` 还没恢复，4.3 可跳过（它需要配体 PDB）。仅验证 4.2 即可确认安装成功。
+> 历史 v7/v9 用法只需把 `--cond_encoder` 换成 `condition_encoder_v7_last.pt` / `v9_epoch030.pt`。
 
 ---
 
@@ -144,12 +149,12 @@ python run_guided.py --pdb ../data/validation_pdbs/1AZM.pdb --pH 7.4 --target_ch
 
 ### 5.1 从组内 NAS 恢复（最快，推荐）
 
-本项目 8GB 数据已打包备份在组内 NAS（路径见 `data/README.md` 或与项目负责人确认）。恢复：
+本项目数据（当前约 13GB + final_extend 补充）已打包在备份目录（NAS/网盘，路径见 `data/README.md` 或与项目负责人确认；2026-09-05 起打包为 `ConfuMPNN_data_2026-09-05.tar.gz` + `ConfuMPNN_output_heavy_*.tar.gz` + `ConfuMPNN_final_extend_2026-09-06.tar.gz`）。恢复：
 
 ```bash
 # 下载 tar 包到项目旁，解压到 data/
-tar -xzf confumpnn_data_v1.tar.gz -C /data/nfs/IC/baokun_yu/ConfuMPNN/
-sha256sum -c data/SHA256SUMS.txt    # 校验
+tar -xzf ConfuMPNN_data_2026-09-05.tar.gz -C /data/nfs/IC/baokun_yu/ConfuMPNN/
+sha256sum -c data/SHA256SUMS.txt    # 校验（SHA 已随 git 入库）
 ```
 
 ### 5.2 重建训练数据（无备份时）
@@ -220,13 +225,14 @@ python train_finetune.py --device cuda:0 --epochs 30 --ligand \
 ## 7. 完整验证管线（ESMFold 回折 + TM-score）
 
 ```bash
-# 1) ESMFold 回折（confumpnn-esmfold 环境，首次运行自动下载 ESMFold 权重）
+# 1) ESMFold 回折（confumpnn-esmfold 环境；批量目录模式，输出回折 PDB 到 folds/）
 conda activate confumpnn-esmfold
-python code/tests/esmfold_score.py --fasta <seqs.fa> --out output/fold --device cuda:0
+python code/tests/esmfold_score.py --input-dir output/<gen>/ligand/<pdb>/pH7.4/arm_native --outdir <folds> --device cuda:0
+#    （单文件模式：--fasta <seqs.fa> --out <csv>）
 
-# 2) US-align TM-score（对照参考骨架）
+# 2) US-align TM-score（对照参考骨架）——tm_score 用命名参数，不是位置参数
 conda activate confumpnn
-python code/tests/tm_score.py <ref.pdb> <pred.pdb>
+python code/tests/tm_score.py --folds <folds> --ref <ref骨架.pdb> --out <tm.csv>
 
 # 3) 判定：H1 TM≥0.70、H2 |电荷-target|≤2.0（见 index/DESIGN_CRITERIA.md）
 ```
@@ -240,7 +246,7 @@ python code/tests/tm_score.py <ref.pdb> <pred.pdb>
 | `import tree` 报错 | 装 `dm-tree`（`pip install dm-tree`）|
 | `import dgl` 报错 | 主环境**不要**装 dgl |
 | MoMPNN 权重加载报错 | `--model_type auto` 会自动识别；确认权重路径正确 |
-| `gh release download` 找不到附件 | 先 `gh auth login`；确认 release 名 `preview1.0.0` |
+| `gh release download` 找不到附件 | 先 `gh auth login`；用最新 release 名（见 `weights_release/README.md`；历史 v7/v9 在 `preview1.0.0`） |
 | ESMFold 编译 openfold 失败 | 见 §3.2 的 nvcc/cuda-toolkit 要点 |
 | 没 GPU | 自动回退 CPU，能跑但很慢 |
 
@@ -249,7 +255,7 @@ python code/tests/tm_score.py <ref.pdb> <pred.pdb>
 ## 9. 配置核对清单
 
 - [ ] `git clone` 三个仓库（ConfuMPNN / LigandMPNN / MoMPNN）
-- [ ] v7/v9 编码器下载到 `code/weights/` 且 SHA256 校验通过
+- [ ] 当前编码器（v12.2 蛋白 / v14 配体，历史 v7/v9 可选）下载到 `code/weights/` 且 SHA256 校验通过
 - [ ] conda 环境 `confumpnn` 创建 + 依赖装齐
 - [ ] `python tests/test_all.py` 36/36 通过
 - [ ] v7 冒烟生成电荷 ≈ target
