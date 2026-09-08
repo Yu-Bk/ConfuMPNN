@@ -62,6 +62,7 @@ DEFAULT_ENC = str(_ROOT / "output" / "finetune_ligand_v14_rna" / "finetune_epoch
 DEFAULT_CAL = str(_ROOT / "output" / "charge_calibration_v14_ligand_clean.json")
 
 # 配体模式 in-10 中选取的好/中/难 3 测试蛋白（依据 2026-09-04 v14 clean 验证 H2/recovery）
+# 1BJ4 为 v2 均衡集"中性"补入成员（native +0.42，配体 PLP）。
 PROTEINS = [
     {"pdb": "5O60_E", "path": "data/validation_pdbs/5O60_E.pdb",
      "rank": "好(RNA结合)", "note": "核糖体蛋白E，天然正电；v14 clean H2 5/5 rec 0.39 slope1.78"},
@@ -69,6 +70,8 @@ PROTEINS = [
      "rank": "中(金属)", "note": "CA+ZN 金属蛋白；v14 clean H2 5/5 rec 0.54 slope0.98"},
     {"pdb": "2FEO",   "path": "data/validation_pdbs/2FEO.pdb",
      "rank": "难(DNA结合)", "note": "DC 核苷酸蛋白；v14 clean H2 0/5 rec 0.32 slope0.93 电荷最弱"},
+    {"pdb": "1BJ4",   "path": "data/validation_pdbs/1BJ4.pdb",
+     "rank": "中性(长,PLP)", "note": "native_q≈+0.42；v14 clean 5臂 dev<1 rec 0.43 slope2.18；v2 均衡集中性代表"},
 ]
 
 # 电荷臂（Δ 相对 native 电荷，target = round(native_q) + Δ，与既往一致）
@@ -205,6 +208,9 @@ def main():
                     help="对哪些蛋白（逗号分隔 pdb 名）额外补 routeB_cal 全 5 臂"
                          "（某臂直接生成很差时的现场标定附加组；用 v14 clean per-protein 表）")
     ap.add_argument("--proteins", default="5O60_E,1CGE,2FEO")
+    ap.add_argument("--calibrate_B", action="store_true",
+                    help="route B 注入前用 per-protein 校准表（(tgt-off)/slope）校正（v2 主口径；"
+                         "等价旧 routeB_cal，直接把结果写为 routeB）")
     ap.add_argument("--log_every", type=int, default=50)
     args = ap.parse_args()
 
@@ -229,6 +235,7 @@ def main():
             "calibration_file": args.calibration_file, "pH": args.pH,
             "temperature": 0.3, "num_ligand_atoms": 25,
             "seed_base0": args.seed_base0, "routeC_strength": args.strength,
+            "calibrate_B": bool(args.calibrate_B),
             "nA": args.nA, "nB": args.nB, "nC": args.nC,
             "proteins": [], "git": "no-push (main archives)"}
 
@@ -266,19 +273,32 @@ def main():
                 log(f"  [A] 完成 mean_q={np.mean(resA['charges']):+.2f} "
                     f"std={np.std(resA['charges']):.2f}")
 
-        # ---- route B：条件编码器，5 臂直接生成 ----
+        # ---- route B：条件编码器，5 臂（v2 可 per-protein 校准注入；旧=v1 direct）----
         if "B" in run_routes:
+            cal_slope = cal_off = None
+            use_cal = False
+            if args.calibrate_B:
+                cal_slope, cal_off, cal_mode, cal_label = load_calibration(
+                    args.calibration_file, pdb)
+                if cal_slope is None:
+                    log(f"  !! {pdb} 无 per-protein 校准项，route B 回退 direct(未校准)")
+                else:
+                    use_cal = True
+                    log(f"  route B 用 per-protein 校准: {cal_label} {cal_mode} "
+                        f"slope={cal_slope:.3f} off={cal_off:.3f}")
             for arm_tag, dq in ARMS:
                 tgt = tgt_int + dq
                 adir = pout / "routeB" / f"arm_{arm_tag}"
                 if (adir / "sequences.json").exists():
                     log(f"  [B/{arm_tag}] 已存在，跳过")
                     continue
-                log(f"  [B/{arm_tag}] target={tgt:+d} 条件生成 n={args.nB} ...")
+                log(f"  [B/{arm_tag}] target={tgt:+d} 条件生成 n={args.nB} "
+                    f"(calibrate={use_cal}) ...")
                 t0 = time.time()
                 resB = sample_routeB(model, enc, fd, device, args.pH,
                                      (tgt, arm_tag), args.nB, seed_base,
-                                     calibrate=False)
+                                     calibrate=use_cal, cal_slope=cal_slope,
+                                     cal_off=cal_off)
                 write_seqs(resB["seqs"], resB["charges"], tgt, native, q_nat, adir)
                 with open(adir / "sequences.json", "w") as f:
                     json.dump({k: resB[k] for k in
