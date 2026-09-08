@@ -1,0 +1,30 @@
+{
+  "pdb": "../L11design/input/L11.pdb",
+  "pH": 7.4,
+  "target_charge": 6.87,
+  "auto_target": false,
+  "mode": "global",
+  "cond_encoder": "../output/finetune_v12_2/finetune_epoch030.pt",
+  "calibrated": true,
+  "preset": "default",
+  "temperature": 0.3,
+  "strength": 0.5,
+  "seed": 1,
+  "num_samples": 2,
+  "native_charge": 6.873946189880371,
+  "native_pI": 10.101512908935547,
+  "mean_charge": 10.485499620437622,
+  "std_charge": 2.498619794845581,
+  "sequences": [
+    {
+      "seq": "KPKPQNYKKLLPPVGYELPLPPLGKLLTGSGQPIMFLEKVGTALAKTYLTGLTIPLDLSISKSRTVPVKPTPPTAEELLLKALGTPKASGNLRRGWVGSVTLENALRAATQLFSNYRGRNPLRMAWRLLETARSMGFRLEP",
+      "charge": 12.984119415283203,
+      "pI": 10.973655700683594
+    },
+    {
+      "seq": "RIKPQNYTKRTPSLGYRLPRKREGKLLRGNQFPIMTFERLYTVLGLKNRTGLTVPLELLLTSSYTVRVTPTPPSAETILLIELGSKRSSGNPETAVVGPVTLANVVKAALSLFDNYVGENPEEMVWGLAGTASSMGFALRP",
+      "charge": 7.986879825592041,
+      "pI": 10.493003845214844
+    }
+  ]
+}

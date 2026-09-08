@@ -1,0 +1,13 @@
+=== [1/2] TemBERTure Tm ===
+  Tm done (log/exp2_temberture.log)
+=== [2/2] Protein-Sol ===
+  sol: L11design/data/exp2/ligand_q10
+  sol: L11design/data/exp2/ligand_q12
+  sol: L11design/data/exp2/ligand_q6.87
+  sol: L11design/data/exp2/ligand_q8
+  sol: L11design/data/exp2/_native
+  sol: L11design/data/exp2/protein_q10
+  sol: L11design/data/exp2/protein_q12
+  sol: L11design/data/exp2/protein_q6.87
+  sol: L11design/data/exp2/protein_q8
+ALL CPU SCORES DONE

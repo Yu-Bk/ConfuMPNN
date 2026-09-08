@@ -1,0 +1,10 @@
+  TM: L11design/data/exp2/ligand_q10/
+  TM: L11design/data/exp2/ligand_q12/
+  TM: L11design/data/exp2/ligand_q6.87/
+  skip L11design/data/exp2/ligand_q8/（无 folds）
+  TM: L11design/data/exp2/_native/
+  skip L11design/data/exp2/protein_q10/（无 folds）
+  skip L11design/data/exp2/protein_q12/（无 folds）
+  skip L11design/data/exp2/protein_q6.87/（无 folds）
+  skip L11design/data/exp2/protein_q8/（无 folds）
+TM SCORES DONE

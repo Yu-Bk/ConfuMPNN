@@ -1,0 +1,18 @@
+待采样 8 组: ['protein_q6.87', 'protein_q8', 'protein_q10', 'protein_q12', 'ligand_q6.87', 'ligand_q8', 'ligand_q10', 'ligand_q12']
+[01:13:33] 启动 protein_q6.87 (CPU, OMP=12)
+[01:13:33] 启动 protein_q8 (CPU, OMP=12)
+[01:13:33] 启动 protein_q10 (CPU, OMP=12)
+[01:13:33] 启动 protein_q12 (CPU, OMP=12)
+[01:13:33] 启动 ligand_q6.87 (CPU, OMP=12)
+[01:13:33] 启动 ligand_q8 (CPU, OMP=12)
+[01:13:33] 启动 ligand_q10 (CPU, OMP=12)
+[01:13:33] 启动 ligand_q12 (CPU, OMP=12)
+[01:15:48] 完成 protein_q10 (rc=0) elapsed=2.3min
+[01:15:53] 完成 protein_q6.87 (rc=0) elapsed=2.3min
+[01:15:53] 完成 protein_q8 (rc=0) elapsed=2.3min
+[01:15:58] 完成 protein_q12 (rc=0) elapsed=2.4min
+[01:16:28] 完成 ligand_q10 (rc=0) elapsed=2.9min
+[01:16:28] 完成 ligand_q12 (rc=0) elapsed=2.9min
+[01:16:33] 完成 ligand_q8 (rc=0) elapsed=3.0min
+[01:16:38] 完成 ligand_q6.87 (rc=0) elapsed=3.1min
+CPU 采样全部结束，总用时 3.1 min

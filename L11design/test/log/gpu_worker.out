@@ -1,0 +1,86 @@
+[gpu-worker] picked GPU 7 at Wed Sep  9 02:14:35 AM CST 2026
+[gpu-worker] waiting data for prot_C1 at Wed Sep  9 02:14:35 AM CST 2026
+== ESMFold prot_C1 ==
+  rc=0 (tail:)
+  sample_100                       L= 141  mean_pLDDT= 57.24
+  native                           L= 141  mean_pLDDT= 76.85
+  已写入 /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/prot_C1/plddt.csv
+== TMscore prot_C1 ==
+  rc=0 (tail:)
+  sample_98                                TM-score=0.696  RMSD=3.06
+  sample_99                                TM-score=0.68869  RMSD=3.52
+已写入 /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/prot_C1/tm.csv
+FOLD+TM DONE
+== TemBERTure prot_C1 ==
+  rc=0 tail:
+  native                                     Tm=52.87  replicas=[52.0, 58.6, 48.0]
+  [/data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/prot_C1/seqs.fa] 已写 /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/prot_C1/seqs.fa.tm.csv
+== Protein-Sol prot_C1 ==
+  rc=0 tail:
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+CPU SCORES DONE
+[gpu-worker] waiting data for prot_C2 at Wed Sep  9 02:39:16 AM CST 2026
+== ESMFold prot_C2 ==
+  rc=0 (tail:)
+  sample_100                       L= 141  mean_pLDDT= 57.28
+  native                           L= 141  mean_pLDDT= 76.85
+  已写入 /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/prot_C2/plddt.csv
+== TMscore prot_C2 ==
+  rc=0 (tail:)
+  sample_98                                TM-score=0.63141  RMSD=3.64
+  sample_99                                TM-score=0.71924  RMSD=2.96
+已写入 /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/prot_C2/tm.csv
+FOLD+TM DONE
+== TemBERTure prot_C2 ==
+  rc=0 tail:
+  native                                     Tm=52.87  replicas=[52.0, 58.6, 48.0]
+  [/data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/prot_C2/seqs.fa] 已写 /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/prot_C2/seqs.fa.tm.csv
+== Protein-Sol prot_C2 ==
+  rc=0 tail:
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+CPU SCORES DONE
+[gpu-worker] waiting data for lig_C1 at Wed Sep  9 02:46:26 AM CST 2026
+== ESMFold lig_C1 ==
+  rc=0 (tail:)
+  sample_100                       L= 141  mean_pLDDT= 59.43
+  native                           L= 141  mean_pLDDT= 76.85
+  已写入 /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/lig_C1/plddt.csv
+== TMscore lig_C1 ==
+  rc=0 (tail:)
+  sample_98                                TM-score=0.57646  RMSD=3.98
+  sample_99                                TM-score=0.6496  RMSD=3.55
+已写入 /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/lig_C1/tm.csv
+FOLD+TM DONE
+== TemBERTure lig_C1 ==
+  rc=0 tail:
+  native                                     Tm=52.87  replicas=[52.0, 58.6, 48.0]
+  [/data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/lig_C1/seqs.fa] 已写 /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/lig_C1/seqs.fa.tm.csv
+== Protein-Sol lig_C1 ==
+  rc=0 tail:
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+CPU SCORES DONE
+[gpu-worker] waiting data for lig_C2 at Wed Sep  9 02:53:11 AM CST 2026
+== ESMFold lig_C2 ==
+  rc=0 (tail:)
+  sample_100                       L= 141  mean_pLDDT= 58.78
+  native                           L= 141  mean_pLDDT= 76.85
+  已写入 /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/lig_C2/plddt.csv
+== TMscore lig_C2 ==
+  rc=0 (tail:)
+  sample_98                                TM-score=0.59008  RMSD=4.01
+  sample_99                                TM-score=0.61473  RMSD=3.88
+已写入 /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/lig_C2/tm.csv
+FOLD+TM DONE
+== TemBERTure lig_C2 ==
+  rc=0 tail:
+  native                                     Tm=52.87  replicas=[52.0, 58.6, 48.0]
+  [/data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/lig_C2/seqs.fa] 已写 /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/lig_C2/seqs.fa.tm.csv
+== Protein-Sol lig_C2 ==
+  rc=0 tail:
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
+CPU SCORES DONE
+[gpu-worker] FOLD+CPU SCORES DONE Wed Sep  9 03:00:20 AM CST 2026

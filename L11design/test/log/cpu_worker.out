@@ -1,0 +1,52 @@
+[cpu-worker] start Wed Sep  9 01:27:32 AM CST 2026 threads=48
+[skip] prot_C1 already has seqs.fa
+== rawdiag/prot_C1 (mode=protein pH=7.4 target=6.87 n=30 calib='off') ==
+CMD: /home/baokun_yu/miniconda3/envs/confumpnn/bin/python /data/nfs/IC/baokun_yu/ConfuMPNN/code/run_guided.py --pdb /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/input/L11.pdb --pH 7.4 --target_charge 6.87        --weights /data/nfs/IC/baokun_yu/ConfuMPNN/MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt --cond_encoder /data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_v12_2/finetune_epoch030.pt        --fixed_residues "I3 I5 I9 I34 I35 I89 I124 I131 I134 I135" --num_samples 30 --seed 111        --out_dir /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/output/exp1/rawdiag/prot_C1 --calibrate off
+tail: cannot open '/data/nfs/IC/baokun_yu/ConfuMPNN/L11design/test/log/sample_rawdiag/prot_C1.log' for reading: No such file or directory
+[done] rawdiag/prot_C1
+== prot_C2 (mode=protein pH=8.0 target=6.59 n=100 calib='') ==
+CMD: /home/baokun_yu/miniconda3/envs/confumpnn/bin/python /data/nfs/IC/baokun_yu/ConfuMPNN/code/run_guided.py --pdb /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/input/L11.pdb --pH 8.0 --target_charge 6.59        --weights /data/nfs/IC/baokun_yu/ConfuMPNN/MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt --cond_encoder /data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_v12_2/finetune_epoch030.pt        --fixed_residues "I3 I5 I9 I34 I35 I89 I124 I131 I134 I135" --num_samples 100 --seed 222        --out_dir /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/output/exp1/prot_C2 --calibration_file /data/nfs/IC/baokun_yu/ConfuMPNN/output/charge_calibration_v12_2.json
+    [99] charge=+13.95  pI=11.80  TKKTQLNVKLTPSVSHSLPKPIYGPILSGKGVPIMFFTKLFNELAKRIGTGLKVPLNLSF
+    [100] charge= +7.97  pI=11.82  ERKPQLFTKLTPSLGLRLPMPPLGPFLAGTGFPIMVFFSLGTRLAREFEEGLTRPLLLLV
+[5] native   : charge= +6.59  pI=10.10  AKKVQAYVKLQVAAGMANPSPPVGPALGQQGVNIMEFCKAFNAKTDSIEKGLPIPVVITV
+    平均净电荷 = +10.53 ± 4.54  (目标 6.59)
+[6] 输出已保存: /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/output/exp1/prot_C2/seqs.fa
+完成 ✅
+[done] prot_C2
+== rawdiag/prot_C2 (mode=protein pH=8.0 target=6.59 n=30 calib='off') ==
+CMD: /home/baokun_yu/miniconda3/envs/confumpnn/bin/python /data/nfs/IC/baokun_yu/ConfuMPNN/code/run_guided.py --pdb /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/input/L11.pdb --pH 8.0 --target_charge 6.59        --weights /data/nfs/IC/baokun_yu/ConfuMPNN/MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt --cond_encoder /data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_v12_2/finetune_epoch030.pt        --fixed_residues "I3 I5 I9 I34 I35 I89 I124 I131 I134 I135" --num_samples 30 --seed 222        --out_dir /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/output/exp1/rawdiag/prot_C2 --calibrate off
+tail: cannot open '/data/nfs/IC/baokun_yu/ConfuMPNN/L11design/test/log/sample_rawdiag/prot_C2.log' for reading: No such file or directory
+[done] rawdiag/prot_C2
+== lig_C1 (mode=ligand pH=7.4 target=6.87 n=100 calib='') ==
+CMD: /home/baokun_yu/miniconda3/envs/confumpnn/bin/python /data/nfs/IC/baokun_yu/ConfuMPNN/code/run_guided.py --pdb /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/input/L11_RNA.pdb --pH 7.4 --target_charge 6.87        --weights /data/nfs/IC/baokun_yu/ConfuMPNN/LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt --cond_encoder /data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_ligand_v14_rna/finetune_epoch050.pt        --fixed_residues "I3 I5 I9 I34 I35 I89 I124 I131 I134 I135" --num_samples 100 --seed 333        --out_dir /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/output/exp1/lig_C1 --calibration_file /data/nfs/IC/baokun_yu/ConfuMPNN/output/charge_calibration_v14_ligand_clean.json
+    [99] charge=+11.98  pI=10.81  PLKQQKYSKQSPSVSQSLPQEPFGGLLSGTSQSIMVYKRRYQSWAKQNNQGVQIAISLQY
+    [100] charge= +7.98  pI=10.26  SLKQQQSSKSTPSVSARVLPQPGGQLLSGSQVPIMTYEELFSELSKKTQSGLQVPVNLQY
+[5] native   : charge= +6.87  pI=10.10  AKKVQAYVKLQVAAGMANPSPPVGPALGQQGVNIMEFCKAFNAKTDSIEKGLPIPVVITV
+    平均净电荷 = +10.19 ± 4.04  (目标 6.87)
+[6] 输出已保存: /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/output/exp1/lig_C1/seqs.fa
+完成 ✅
+[done] lig_C1
+== rawdiag/lig_C1 (mode=ligand pH=7.4 target=6.87 n=30 calib='off') ==
+CMD: /home/baokun_yu/miniconda3/envs/confumpnn/bin/python /data/nfs/IC/baokun_yu/ConfuMPNN/code/run_guided.py --pdb /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/input/L11_RNA.pdb --pH 7.4 --target_charge 6.87        --weights /data/nfs/IC/baokun_yu/ConfuMPNN/LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt --cond_encoder /data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_ligand_v14_rna/finetune_epoch050.pt        --fixed_residues "I3 I5 I9 I34 I35 I89 I124 I131 I134 I135" --num_samples 30 --seed 333        --out_dir /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/output/exp1/rawdiag/lig_C1 --calibrate off
+tail: cannot open '/data/nfs/IC/baokun_yu/ConfuMPNN/L11design/test/log/sample_rawdiag/lig_C1.log' for reading: No such file or directory
+[done] rawdiag/lig_C1
+== lig_C2 (mode=ligand pH=8.0 target=6.59 n=100 calib='') ==
+CMD: /home/baokun_yu/miniconda3/envs/confumpnn/bin/python /data/nfs/IC/baokun_yu/ConfuMPNN/code/run_guided.py --pdb /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/input/L11_RNA.pdb --pH 8.0 --target_charge 6.59        --weights /data/nfs/IC/baokun_yu/ConfuMPNN/LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt --cond_encoder /data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_ligand_v14_rna/finetune_epoch050.pt        --fixed_residues "I3 I5 I9 I34 I35 I89 I124 I131 I134 I135" --num_samples 100 --seed 444        --out_dir /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/output/exp1/lig_C2 --calibration_file /data/nfs/IC/baokun_yu/ConfuMPNN/output/charge_calibration_v14_ligand_clean.json
+    [99] charge=+11.61  pI=11.04  ELKQQRATKALPRVSRRVNRPQGGQLMSGEDQPIMVYERQFAELAKRTAEGLQISLNLKY
+    [100] charge=+12.95  pI=10.90  KRKQQNNRKSVPSISDEIKPKPHGSLLTGTNVPIMVYQKQFGQEAKQFSTGITRPLDLAY
+[5] native   : charge= +6.59  pI=10.10  AKKVQAYVKLQVAAGMANPSPPVGPALGQQGVNIMEFCKAFNAKTDSIEKGLPIPVVITV
+    平均净电荷 = +11.93 ± 4.54  (目标 6.59)
+[6] 输出已保存: /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/output/exp1/lig_C2/seqs.fa
+完成 ✅
+[done] lig_C2
+== rawdiag/lig_C2 (mode=ligand pH=8.0 target=6.59 n=30 calib='off') ==
+CMD: /home/baokun_yu/miniconda3/envs/confumpnn/bin/python /data/nfs/IC/baokun_yu/ConfuMPNN/code/run_guided.py --pdb /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/input/L11_RNA.pdb --pH 8.0 --target_charge 6.59        --weights /data/nfs/IC/baokun_yu/ConfuMPNN/LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt --cond_encoder /data/nfs/IC/baokun_yu/ConfuMPNN/output/finetune_ligand_v14_rna/finetune_epoch050.pt        --fixed_residues "I3 I5 I9 I34 I35 I89 I124 I131 I134 I135" --num_samples 30 --seed 444        --out_dir /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/output/exp1/rawdiag/lig_C2 --calibrate off
+tail: cannot open '/data/nfs/IC/baokun_yu/ConfuMPNN/L11design/test/log/sample_rawdiag/lig_C2.log' for reading: No such file or directory
+[done] rawdiag/lig_C2
+ALL SAMPLING DONE
+[prot_C1] n_sample=100 fixed_mismatch=0
+[prot_C2] n_sample=100 fixed_mismatch=0
+[lig_C1] n_sample=100 fixed_mismatch=0
+[lig_C2] n_sample=100 fixed_mismatch=0
+POSTPROCESS DONE
+[cpu-worker] DONE Wed Sep  9 01:59:00 AM CST 2026

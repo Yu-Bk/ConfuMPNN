@@ -1,0 +1,30 @@
+{
+  "pdb": "../L11design/input/L11_RNA.pdb",
+  "pH": 7.4,
+  "target_charge": 6.87,
+  "auto_target": false,
+  "mode": "global",
+  "cond_encoder": "../output/finetune_ligand_v14_rna/finetune_epoch050.pt",
+  "calibrated": true,
+  "preset": "default",
+  "temperature": 0.3,
+  "strength": 0.5,
+  "seed": 1,
+  "num_samples": 2,
+  "native_charge": 6.873946189880371,
+  "native_pI": 10.101512908935547,
+  "mean_charge": 8.981091022491455,
+  "std_charge": 1.997572422027588,
+  "sequences": [
+    {
+      "seq": "SKKQQNSSKKTPSLSSQIPEKPAGQLLSQPSVPIMYLQQSYTEYAKQTQLGIKQSIDLRYSKDSKVKIQPTVPSASQVLVRALGSQRGSGSPQQSSVGSVSRSVALRSLKNLLKDQQSRDPKKMLEGQFGTAQSMGYELDP",
+      "charge": 10.978663444519043,
+      "pI": 10.454071044921875
+    },
+    {
+      "seq": "RVKRQNSSKQLPSLSSEVQQPPVGSLLSDSSVPIMIYSKDFLKYTKQTSSGLTIPVDIEYSSEKSFQIQPTVPSASQVLLQALGSQKGSGKPQQETVGKVSGAVITRAGRQLLQTLQSQTPQKMIRGDFGTAQSMGFIYQP",
+      "charge": 6.983518600463867,
+      "pI": 10.281196594238281
+    }
+  ]
+}

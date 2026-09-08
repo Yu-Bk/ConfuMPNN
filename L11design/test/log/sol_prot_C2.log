@@ -1,0 +1,155 @@
+
+============================================================
+Starting Protein-Sol Prediction Pipeline
+Input: /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/prot_C2/seqs.fa
+Working directory: /data/nfs/IC/baokun_yu/ConfuMPNN/protein_sol_mcp/scripts/protein-sol
+============================================================
+
+Step 1: Reformatting FASTA file...
+Running fasta_seq_reformat_export.pl...
+✓ fasta_seq_reformat_export.pl completed successfully
+✓ Original file backed up to input.fasta_ORIGINAL
+
+Step 2: Calculating sequence composition...
+Running seq_compositions_perc_pipeline_export.pl...
+✓ seq_compositions_perc_pipeline_export.pl completed successfully
+✓ Composition data saved to seq_composition.txt
+
+Step 3: Making solubility predictions...
+Running server_prediction_seq_export.pl...
+✓ server_prediction_seq_export.pl completed successfully
+✓ Predictions generated
+
+Step 4: Calculating sequence properties...
+Running seq_props_ALL_export.pl...
+✓ seq_props_ALL_export.pl completed successfully
+✓ Sequence properties calculated
+
+Step 5: Gathering profiles...
+Running profiles_gather_export.pl...
+✓ profiles_gather_export.pl completed successfully
+✓ Profiles gathered
+
+Step 6: Creating CSV output...
+✓ CSV output saved to seqs.fa-protein_sol.csv
+
+Step 7: Cleaning up intermediate files...
+✓ Cleanup completed
+
+============================================================
+Prediction Results:
+============================================================
+ID                   percent-sol     scaled-sol      population-sol  pI        
+--------------------------------------------------------------------------------
+>sample_1            67.738          0.579           0.446           6.000     
+>sample_2            86.231          0.750           0.446           10.120    
+>sample_3            95.446          0.835           0.446           10.640    
+>sample_4            75.141          0.647           0.446           11.600    
+>sample_5            75.392          0.650           0.446           10.640    
+>sample_6            88.029          0.767           0.446           11.490    
+>sample_7            78.955          0.683           0.446           9.860     
+>sample_8            82.405          0.715           0.446           12.120    
+>sample_9            88.029          0.767           0.446           10.400    
+>sample_10           86.414          0.752           0.446           11.290    
+>sample_11           76.608          0.661           0.446           11.660    
+>sample_12           89.043          0.776           0.446           9.950     
+>sample_13           78.567          0.679           0.446           11.640    
+>sample_14           69.420          0.594           0.446           11.280    
+>sample_15           71.497          0.614           0.446           11.300    
+>sample_16           64.477          0.549           0.446           10.660    
+>sample_17           81.891          0.710           0.446           11.380    
+>sample_18           81.276          0.704           0.446           11.750    
+>sample_19           61.038          0.517           0.446           10.480    
+>sample_20           83.146          0.721           0.446           10.770    
+>sample_21           76.837          0.663           0.446           10.700    
+>sample_22           92.632          0.809           0.446           11.240    
+>sample_23           75.141          0.647           0.446           11.830    
+>sample_24           69.002          0.591           0.446           11.790    
+>sample_25           73.494          0.632           0.446           9.970     
+>sample_26           68.621          0.587           0.446           11.120    
+>sample_27           82.999          0.720           0.446           10.190    
+>sample_28           87.907          0.766           0.446           11.090    
+>sample_29           82.999          0.720           0.446           10.190    
+>sample_30           88.709          0.773           0.446           10.920    
+>sample_31           81.891          0.710           0.446           10.740    
+>sample_32           79.457          0.687           0.446           11.370    
+>sample_33           80.214          0.694           0.446           10.040    
+>sample_34           93.541          0.818           0.446           10.460    
+>sample_35           62.147          0.527           0.446           9.950     
+>sample_36           61.000          0.516           0.446           9.990     
+>sample_37           75.141          0.647           0.446           11.040    
+>sample_38           78.889          0.682           0.446           10.880    
+>sample_39           83.985          0.729           0.446           11.790    
+>sample_40           88.440          0.770           0.446           10.800    
+>sample_41           67.326          0.575           0.446           11.300    
+>sample_42           82.147          0.712           0.446           11.580    
+>sample_43           83.205          0.722           0.446           10.480    
+>sample_44           83.228          0.722           0.446           12.300    
+>sample_45           90.633          0.791           0.446           10.780    
+>sample_46           72.596          0.624           0.446           11.100    
+>sample_47           82.787          0.718           0.446           10.750    
+>sample_48           77.870          0.673           0.446           11.200    
+>sample_49           75.019          0.646           0.446           11.760    
+>sample_50           86.825          0.755           0.446           10.820    
+>sample_51           69.002          0.591           0.446           10.930    
+>sample_52           95.110          0.832           0.446           11.710    
+>sample_53           87.907          0.766           0.446           11.670    
+>sample_54           83.502          0.725           0.446           11.820    
+>sample_55           70.066          0.600           0.446           11.180    
+>sample_56           94.150          0.823           0.446           11.720    
+>sample_57           87.075          0.758           0.446           11.260    
+>sample_58           75.019          0.646           0.446           11.790    
+>sample_59           85.073          0.739           0.446           10.710    
+>sample_60           69.040          0.591           0.446           9.540     
+>sample_61           77.363          0.668           0.446           11.280    
+>sample_62           87.403          0.761           0.446           10.370    
+>sample_63           63.132          0.536           0.446           10.530    
+>sample_64           86.615          0.754           0.446           11.390    
+>sample_65           88.029          0.767           0.446           10.970    
+>sample_66           75.415          0.650           0.446           11.310    
+>sample_67           89.953          0.784           0.446           11.220    
+>sample_68           78.172          0.675           0.446           11.430    
+>sample_69           96.390          0.844           0.446           11.170    
+>sample_70           81.891          0.710           0.446           10.330    
+>sample_71           75.033          0.646           0.446           11.830    
+>sample_72           90.252          0.787           0.446           10.570    
+>sample_73           73.343          0.631           0.446           10.870    
+>sample_74           76.837          0.663           0.446           10.970    
+>sample_75           71.096          0.610           0.446           11.270    
+>sample_76           70.991          0.609           0.446           7.920     
+>sample_77           77.363          0.668           0.446           11.790    
+>sample_78           75.141          0.647           0.446           11.900    
+>sample_79           90.252          0.787           0.446           10.660    
+>sample_80           77.363          0.668           0.446           12.160    
+>sample_81           96.390          0.844           0.446           10.910    
+>sample_82           77.363          0.668           0.446           11.860    
+>sample_83           90.252          0.787           0.446           11.120    
+>sample_84           69.002          0.591           0.446           12.020    
+>sample_85           90.290          0.788           0.446           10.650    
+>sample_86           60.136          0.508           0.446           10.960    
+>sample_87           73.949          0.636           0.446           9.800     
+>sample_88           81.793          0.709           0.446           11.550    
+>sample_89           73.876          0.636           0.446           9.610     
+>sample_90           85.320          0.742           0.446           10.730    
+>sample_91           83.261          0.722           0.446           10.620    
+>sample_92           83.502          0.725           0.446           12.120    
+>sample_93           81.111          0.703           0.446           11.050    
+>sample_94           84.257          0.732           0.446           10.480    
+>sample_95           67.326          0.575           0.446           10.770    
+>sample_96           83.985          0.729           0.446           11.050    
+>sample_97           81.793          0.709           0.446           10.730    
+>sample_98           82.165          0.712           0.446           11.140    
+>sample_99           83.380          0.724           0.446           11.520    
+>sample_100          69.002          0.591           0.446           11.530    
+>native              94.579          0.827           0.446           10.190    
+
+============================================================
+Pipeline completed successfully!
+============================================================
+
+Output files in /data/nfs/IC/baokun_yu/ConfuMPNN/L11design/data/exp1/prot_C2:
+  - seqs.fa-protein_sol.csv              : CSV with ID, sequence, and metrics
+  - seqs.fa-protein_sol_prediction.txt : Main prediction results
+  - seqs.fa-protein_sol_composition.txt: Sequence composition data
+  - seqs.fa-protein_sol.log        : Detailed execution log
+
