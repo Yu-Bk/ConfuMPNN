@@ -8,6 +8,8 @@
 | 文档 | 说明 | 更新 |
 |---|---|---|
 | ★`analysis/report/2026-09-05_repo_audit.md` | 全仓盘点+缺口审计（本索引的事实来源，含逐文件清单） | 09-05 |
+| ★`paper/OUTLINE.md` | **论文框架唯一正本**（claim→evidence→图→草稿状态） | 09-06 |
+| `analysis/report/2026-09-06_number_reporting.md` | 数值出表规范（有效位+CI）+ 主指标带 CI 汇总 | 09-06 |
 | `README.md` | 项目入口/复现/目录/状态 | 09-05 刷新 |
 | ★`WORKFLOW_GUIDE.md` | 唯一权威使用指南（面向新人，原理/数据流/参数/损失/命令） | 09-05 刷新 |
 | ★`logical_chain.md` + `index/FILE_MANAGEMENT.md` | 文件分类唯一规则（09-05 修订：顶层 output/log/data/ablation/compare） | 09-05 |
