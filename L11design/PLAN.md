@@ -8,14 +8,15 @@
 ## 固定位点（两种模式一律）
 `--fixed_residues "I3 I5 I9 I34 I35 I89 I124 I131 I134 I135"`（链 I，native 保留）。
 
-## 实验一：native 电荷下两模式两输入设计能力（2 模式 × 2 输入 × 2 pH-电荷，n=100/组 = 8 组×100）
+## 实验一：native 电荷下两模式设计能力（2026-09-09 更正：模式绑定输入，2 模式 × 2 pH-电荷，n=100/组 = 4 组×100）
+> 蛋白模式只用 `L11.pdb`；配体模式只用 `L11_RNA.pdb`（不做跨输入交叉）。
 - 条件：C1 = pH7.4 / Q+6.87；C2 = pH8 / Q+6.59。
-- 组合（4 组/条件）：
-  1. 蛋白模式 × L11.pdb（蛋白-only）
-  2. 蛋白模式 × L11_RNA.pdb（取其链 I，RNA 忽略 → 检验"输入含配体文件对蛋白模式是否有影响"）
-  3. 配体模式 × L11_RNA.pdb（链 I + RNA 上下文）
-  4. 配体模式 × L11.pdb（无 RNA 配体 → 配体模式无配体对照）
-- 比较：净电荷@该pH、回收、Tm、RMSD(回折vs native 链 I)、Sol、pLDDT；判定"同模式不同输入 / 同输入不同模式"是否有影响。
+- 4 组：
+  1. 蛋白模式(MoMPNN+v12.2) × L11.pdb × C1
+  2. 蛋白模式 × L11.pdb × C2
+  3. 配体模式(LigandMPNN+v14) × L11_RNA.pdb × C1
+  4. 配体模式 × L11_RNA.pdb × C2
+- 比较：净电荷@该pH、回收、Tm、RMSD(回折 vs native 链 I)、Sol、pLDDT；结论 = 同 native target 下**蛋白 vs 配体模式**差异 + **pH7.4 vs pH8** 条件差异。
 - 产物：seqs.fa+csv → output/exp1/；逐序列折叠+指标 → data/exp1/；分析 → test/report_exp1.md。
 
 ## 实验二：多目标电荷可设计性（pH7.4 × 4 target × 2 模式 × n=300）
