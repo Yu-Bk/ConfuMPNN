@@ -116,7 +116,7 @@ pip install fair-esm==2.0.0 openfold==2.0.0 fairscale einops pytorch_lightning
 cd /data/nfs/IC/baokun_yu/ConfuMPNN/code
 conda activate confumpnn
 
-# 4.1 单元测试（36 项，全部通过）
+# 4.1 单元测试（test_all.py，全部通过）
 python tests/test_all.py
 
 # 4.2 冒烟：v12.2 编码器（蛋白模式）+ 电荷控制（1BC8，target 0；需 MoMPNN backbone 权重）

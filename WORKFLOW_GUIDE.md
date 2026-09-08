@@ -208,7 +208,7 @@ labels.npz  = { domain_ids, seqs, coords, pH[8], charge[8], pI[8] }
 train_finetune.py ──> 冻结 backbone  +  训练 ConditionEncoder
    │
    ▼
-condition_encoder_last.pt（v7）/ finetune_epoch030.pt（v9）── 当前交付权重（v10 演进中）
+condition_encoder_last.pt（v7 历史）/ finetune_epoch030.pt（v9 历史）── 当前交付 = v12.2（蛋白）/v14（配体），见 README/weights_release
 
 【推理侧】
 用户 PDB（骨架 ± 配体）
@@ -281,7 +281,7 @@ DESIGN_CRITERIA v2 判定：H1 折叠 / H2 电荷 / H3 电荷分布
 
 | | 无配体（v7） | 配体模式（v9） |
 |---|---|---|
-| 特征化 | `use_atom_context=False` | `use_atom_context=True, number_of_ligand_atoms=16` |
+| 特征化 | `use_atom_context=False` | `use_atom_context=True, number_of_ligand_atoms=25` |
 | parse_PDB 输出 | 蛋白原子 X | + 配体原子 **Y/Y_t/Y_m** |
 | backbone | ProteinMPNN（MoMPNN 权重） | ProteinMPNN 实例 + LigandMPNN 权重（含配体上下文层） |
 | 口袋残基 | 无 | 距配体原子 < 8Å 的残基（`pocket_residues`） |
@@ -577,7 +577,7 @@ condition_defaults:
 
 **历史**：Phase 3 早期发现过冲 ~2.9 倍 → 用**推理侧线性校准** `target_eff = (desired − offset) / gain` 补偿（早期 gain=2.57）。
 
-**现状**：v9 起改用 **训练侧温度化**（`charge_temp=0.5`，§5.3）根治过冲 → 推理侧校准已**不再需要**，`enabled: false`。
+**现状（2026-09 更新）**：训练侧 `charge_temp=0.5` 曾把响应增益压到 ~1.0；**v12.2/v14 起推理侧校准表再次启用**（`run_guided.py --calibrate auto`：表内 per-protein、表外回退 global；默认表 `charge_calibration_v12_2.json`，配体用 `charge_calibration_v14_ligand_clean.json`）。`condition_defaults.yaml` 里 `enabled:false` 为旧默认，运行时代码以 `--calibrate auto` 覆盖。校准三口径见 §8.2。
 
 > ⚠️ 注意：如果你看到 `run_guided.py` 的文档字符串还写旧值 gain=2.57/默认开，那是历史残留文字；实际代码读 yaml，行为是"默认不校准"。
 

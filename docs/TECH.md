@@ -1,7 +1,7 @@
 # ConfuMPNN 技术原理（参考）
 
 > **权威完整指南**：`WORKFLOW_GUIDE.md`（根目录）。本文档保留技术公式与机制，供快速查阅。
-> 更新至 v9 节点（2026-08-19，v10 演进中）。
+> 更新：2026-09-06。原理性内容与版本无关；**版本状态/当前交付见 `README.md` 与 `index/DOCUMENT_INDEX.md`（v12.2 蛋白 / v14 配体）**。
 
 ---
 
@@ -109,7 +109,7 @@ L = CE + λ_c·charge_deviation + λ_kl·KL_anchor + λ_keep·seq_keep
 
 | | 无配体（v7） | 配体模式（v9） |
 |---|---|---|
-| 特征化 | `use_atom_context=False` | `use_atom_context=True, number_of_ligand_atoms=16` |
+| 特征化 | `use_atom_context=False` | `use_atom_context=True, number_of_ligand_atoms=25`（LigandMPNN 权重即 25）|
 | 配体原子 | 无 | `parse_PDB` 输出 Y/Y_t/Y_m |
 | backbone | MoMPNN（纯骨架）| LigandMPNN 权重（配体上下文层）|
 | 消融 | — | `strip_ligands` 去 HETATM → 同一模型无配体 |

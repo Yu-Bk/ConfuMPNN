@@ -148,7 +148,7 @@ python code/run_guided.py --pdb data/validation_pdbs/1AZM.pdb --pH 7.4 --target_
 
 **结果文件**：`code/output/guided_<pdb>_pH<pH>/` 下 `seqs.fa`（候选序列 + native 对照）+ `summary.json`（结构化结果）。
 
-> 💡 **选 v7 还是 v9**：无配体 / 小蛋白（L≤300）用 v7；配体口袋 / 大蛋白用 v9。电荷边界（v7 负电强、v9 正电强）见第四节速查。
+> 💡 **选哪个编码器**：无配体/小蛋白 → 蛋白模式用 **v12.2（MoMPNN）**；配体口袋/大蛋白/RNA-DNA → 配体模式用 **v14（LigandMPNN）**（v7/v9 历史，用法同、边界旧见 §4.2）。
 
 ---
 

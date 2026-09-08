@@ -1,7 +1,8 @@
 # ConfuMPNN 配置文档（参考）
 
 > **权威完整指南**：`WORKFLOW_GUIDE.md`（根目录 §6 参数全表）。本文档为配置速查。
-> 更新至 v9 节点（2026-08-19，v10 演进中）。
+> 更新：2026-09-06 —— **当前交付 = v12.2（蛋白/MoMPNN）、v14（配体/LigandMPNN RNA-DNA）**；v7/v9 = 历史。
+> ⚠️ §二"校准 enabled=false"为 v9 时代旧况：**v12.2/v14 使用侧默认启用校准**（`run_guided.py --calibrate auto`，默认表 `charge_calibration_v12_2.json`）。
 
 ---
 
@@ -38,26 +39,63 @@
 
 ## 三、训练参数（`train_finetune.py`）
 
-### 3.1 通用（v7/v9 共用）
+### 3.1 通用（蛋白/配体共用）
 
 | 参数 | 默认 | 含义 |
 |------|------|------|
 | `--weights` | MoMPNN 权重 | backbone 权重 |
-| `--ligand` | 关 | v9：LigandMPNN 权重 + 配体上下文 |
+| `--ligand` | 关 | 配体模式：LigandMPNN 权重 + 配体上下文（atom_context=25）|
 | `--lr` | 1e-3 | 学习率 |
-| `--epochs` | 30 | 训练轮数 |
+| `--epochs` | 30 | 训练轮数（v14 用 50）|
 | `--lambda_c` | 0.5 | 电荷损失权重 |
 | `--lambda_kl` | 0.05 | KL 锚权重 |
 | `--lambda_keep` | 0.5 | 序列保持权重（用户固定）|
 | `--perturb_prob` | 0.3 | 扰动样本比例（70/30 混合目标）|
 | `--perturb_scale` | 4.0 | 扰动幅度上限 |
-| `--curriculum` | 关 | 课程学习（v7 用 2.0→8.0）|
 | `--placeholder_prob` | 0.15 | 占位符样本比例 |
 | `--charge_temp` | 0.5 | 电荷损失温度（根治过冲）|
-| `--loss_reweight` | 关 | 逆密度加权（治高正电外推）|
 | `--max_domains` | 0 | 冒烟测试用（前 N 域）|
 
-### 3.2 v7 / v9 实际训练命令
+### 3.1b v12 系监督参数（**当前配方 v12.2/v12.3/v14 必用**；v7/v9 无）
+
+| 参数 | v12.2/v12.3 蛋白值 | v14 配体值 | 含义 |
+|------|---|---|---|
+| `--v12_supervision` | on | on | 组成双计数 + 表面 GRAVY 监督（防删减）|
+| `--frac_floor` | 0.5 | 0.5 | 表面 D/E/K/R 保留下限 |
+| `--gravy_margin` | 0.4 | 0.4 | 表面疏水 margin |
+| `--lambda_v12` | 0.2 | 0.2 | 组成/GRAVY 权重 |
+| `--lambda_target` | 0.2 | 0.2 | 表面电荷锚（target−核心电荷）|
+| `--sasa_threshold` | 0.25 | 0.25 | 表面定义 frac_sasa 阈值 |
+| `--ph_aware_filter` / `--structure_boost` | on / 1.5 | on / 1.5 | pH 自适应结构惩罚 |
+| `--decouple_perturb` + `--decouple_range 12.0` | v12.3 用 | — | 蛋白：扰动解耦 |
+| `--decouple_absolute` | — | v14 用 | 配体：绝对解耦 |
+| `--pocket_mode` | —(蛋白无配体=不启) | `global`（floor0.8/ceil1.3/λ_pocket 0.3）| A1 双向计数（护带电残基总数）|
+
+### 3.2 当前实际训练命令（v12.2 蛋白 / v14 配体）
+
+```bash
+# v12.2 蛋白（MoMPNN；更全命令见 log/v12_2_train_mompnn.log）
+python code/train_finetune.py --device cuda:0 --epochs 30 \
+  --labels data/cath/labels_v12_2_train.npz --dompdb data/cath/S40/dompdb \
+  --v12_supervision --frac_floor 0.5 --gravy_margin 0.4 --lambda_v12 0.2 --lambda_target 0.2 \
+  --sasa_threshold 0.25 --ph_aware_filter --structure_boost 1.5 \
+  --lambda_c 0.5 --lambda_kl 0.05 --lambda_keep 0.5 \
+  --charge_temp 0.5 --perturb_prob 0.3 --placeholder_prob 0.15 \
+  --out_dir output/finetune_v12_2
+
+# v14 配体（LigandMPNN RNA/DNA+A1-global；atom25）
+python code/train_finetune.py --device cuda:0 --epochs 50 --ligand \
+  --weights LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt \
+  --labels data/ligand_train/labels_v14_final.npz --dompdb data/ligand_train/all_pdb \
+  --v12_supervision --frac_floor 0.5 --gravy_margin 0.4 --lambda_v12 0.2 --lambda_target 0.2 \
+  --sasa_threshold 0.25 --ph_aware_filter --structure_boost 1.5 \
+  --pocket_mode global --pocket_floor 0.8 --pocket_ceil 1.3 --lambda_pocket 0.3 \
+  --lambda_c 0.5 --lambda_kl 0.05 --lambda_keep 0.5 \
+  --charge_temp 0.5 --perturb_prob 0.3 --placeholder_prob 0.15 \
+  --out_dir output/finetune_ligand_v14_rna
+```
+
+（历史 v7/v9 训练命令保留于 SETUP_NEW_MACHINE.md §6 或 git 历史；不再作当前推荐。）
 
 ```bash
 # v7（MoMPNN，无配体）
@@ -86,7 +124,7 @@ python train_finetune.py --device cuda:0 --epochs 30 --ligand \
 | `--pdb` | 必填 | 输入 PDB |
 | `--pH` | 必填 | 工作环境 pH |
 | `--target_charge` | None | 目标净电荷（None=只结构过滤）|
-| `--cond_encoder` | None | **v7/v9 编码器权重**（给了走条件注入）|
+| `--cond_encoder` | None | **自训编码器权重**（蛋白 v12.2 / 配体 v14；给了走条件注入）|
 | `--cond_mode` | conditioned | conditioned=注入 / baseline=加载不注入（对照）|
 | `--weights` | MoMPNN | backbone 权重（配体模式用 LigandMPNN 权重）|
 | `--temperature` | 0.3 | 采样温度 |
@@ -95,8 +133,12 @@ python train_finetune.py --device cuda:0 --epochs 30 --ligand \
 | `--preset` | default | 结构过滤器预设 |
 | `--seed` | 111 | 随机种子 |
 | `--out_dir` | 自动 | 输出目录 |
+| `--calibrate` | auto | **off/auto/global**：auto=表内 per-protein、表外回退 global |
+| `--calibration_file` | 表 | 校准表（蛋白 `charge_calibration_v12_2.json`；配体用对应 `charge_calibration_v14_ligand_clean.json`）|
+| `--num_ligand_atoms` | 25 | 配体原子上下文（配体模式；权重为 25，勿改 16）|
 
 **权重自动检测**：ckpt 含 `atom_context_num`(>0) → ligand_mpnn；否则 protein_mpnn（MoMPNN）。
+> 配体模式采样/验证请显式给 `--calibration_file`（见各 clean 链命令，勿用默认蛋白表）。
 
 ---
 
