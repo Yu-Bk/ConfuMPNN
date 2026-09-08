@@ -33,5 +33,12 @@
 - 校准：L11 不在校准表 → 用 global 校准（蛋白 `charge_calibration_v12_2.json` global；配体 `charge_calibration_v14_ligand_clean.json` global）；记录 raw 与校准后。
 
 ## GPU/时序
-- 采样+回折量大（~3200 条 ESMFold）；GPU 先做 CPU 准备，再在空卡跑（暂 GPU 全 99% 占用，等空或轮询）；两子代理各领一卡（Exp1=GPU2、Exp2=GPU6，若空）。
+- 采样+回折量大（Exp1 400 + Exp2 2400 条 ESMFold）；GPU 先做 CPU 准备，再在空卡跑（暂 GPU 全 99% 占用，等空或轮询）。
 - 回折可分批 resume；完成打包 `backup/`。
+
+## 复现 / 统计 / 校验补充（2026-09-09）
+- **种子**：每组固定 seed（`seed=42 起 + 组号`），可复现。
+- **native 参考与编号**：native 序列 = `L11.pdb` 链 I（protein_only 与 RNA 文件的链 I 一致）；RMSD/TM/回收都以它为参考；先核对两文件的链 I 残基编号/长度一致，并确认固定位 3,5,9,34,35,89,124,131,134,135 落在链 I 且都 = native（报告里列这 10 位 native AA）。
+- **统计**：Exp1 比较（模式间 / pH7.4-vs-8）样本小（每指标 n=100 均值），给 mean±SD + 差异方向 + Wilson/自助 CI，不下强显著性结论（n=4 组×100）；Exp2 给 target 递增的电荷-性质趋势。
+- **校准**：L11 表外 → global（蛋白 v12_2 表、配体 v14 clean 表），报告同时给 raw 电荷分布。
+- **后续（湿实验候选，另起）**：uL11 已定为湿实验蛋白；Exp2 高正电 target(+8~+12) 序列作为结合增强候选池，候选挑选（电荷+回收+折叠+稳定多判据）待本组完成后按用户指示做。
