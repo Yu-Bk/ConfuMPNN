@@ -1,0 +1,33 @@
+[07:08:29] 加载 backbone: /data/nfs/IC/baokun_yu/ConfuMPNN/LigandMPNN/model_params/ligandmpnn_v_32_010_25.pt
+[07:08:30] 
+===== 5O60_E (好(RNA结合)) seed_base=3000 =====
+[07:08:30]   L=209 native_q=+11.18 round_target=+11
+[07:08:30]   [C/native] 已存在，跳过
+[07:08:30]   [C/n2] 已存在，跳过
+[07:08:30]   [C/p2] 已存在，跳过
+[07:08:30]   [C/n8] target=+3 bias-only n=1000 ...
+[07:17:04]   [C/n8] 完成 (514s) mean_q=+5.05 dev=+2.05
+[07:17:04]   [C/p8] target=+19 bias-only n=1000 ...
+[07:25:40]   [C/p8] 完成 (516s) mean_q=+20.48 dev=+1.48
+[07:25:40] 
+===== 1CGE (中(金属)) seed_base=103000 =====
+[07:25:40]   L=162 native_q=-11.66 round_target=-12
+[07:25:40]   [C/native] 已存在，跳过
+[07:25:40]   [C/n2] 已存在，跳过
+[07:25:40]   [C/p2] 已存在，跳过
+[07:25:40]   [C/n8] target=-20 bias-only n=1000 ...
+[07:32:12]   [C/n8] 完成 (392s) mean_q=-20.69 dev=-0.69
+[07:32:12]   [C/p8] target=-4 bias-only n=1000 ...
+[07:38:40]   [C/p8] 完成 (388s) mean_q=-5.37 dev=-1.37
+[07:38:40] 
+===== 2FEO (难(DNA结合)) seed_base=203000 =====
+[07:38:40]   L=221 native_q=-6.88 round_target=-7
+[07:38:40]   [C/native] 已存在，跳过
+[07:38:40]   [C/n2] 已存在，跳过
+[07:38:40]   [C/p2] 已存在，跳过
+[07:38:40]   [C/n8] target=-15 bias-only n=1000 ...
+[07:47:26]   [C/n8] 完成 (526s) mean_q=-15.00 dev=+0.00
+[07:47:26]   [C/p8] target=+1 bias-only n=1000 ...
+[07:56:14]   [C/p8] 完成 (527s) mean_q=+0.12 dev=-0.88
+[07:56:14] 
+=== 采样全部完成 ===
