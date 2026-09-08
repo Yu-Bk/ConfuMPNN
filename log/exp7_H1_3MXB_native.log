@@ -1,0 +1,11 @@
+ESMFold 加载完成（cuda:6）
+[/data/nfs/IC/baokun_yu/ConfuMPNN/output/exp7_H1/prot/3MXB_A/pH5.0_native.fa] 共 8 条序列
+  pH5.0_native_seq0 seed=3700000   L= 153  mean_pLDDT= 83.88
+  pH5.0_native_seq1 seed=3700000   L= 153  mean_pLDDT= 83.96
+  pH5.0_native_seq2 seed=3700000   L= 153  mean_pLDDT= 84.72
+  pH5.0_native_seq3 seed=3700000   L= 153  mean_pLDDT= 83.78
+  pH5.0_native_seq4 seed=3700000   L= 153  mean_pLDDT= 82.25
+  pH5.0_native_seq5 seed=3700000   L= 153  mean_pLDDT= 86.43
+  pH5.0_native_seq6 seed=3700000   L= 153  mean_pLDDT= 83.95
+  pH5.0_native_seq7 seed=3700000   L= 153  mean_pLDDT= 84.01
+  已写入 /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp7_H1/prot/3MXB_A/pH5.0_native_plddt.csv

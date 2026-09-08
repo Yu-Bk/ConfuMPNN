@@ -1,0 +1,110 @@
+[08:12:13] == exp7 prot mode | device=cuda:6 n=60 pH=[5.0, 7.4, 9.0] ==
+[08:12:13] backbone=mompnn_temberture_tm_esm_6_4_4_b01.ckpt enc=finetune_epoch030.pt
+    条件编码器已加载: finetune_epoch030.pt  (epoch=30, n_tokens=4, token_dim=128)
+[08:12:14] 
+=== 1AZM L=258 q5=+11.19 q74=-1.71 q9=-4.13 round74=-2 ===
+[08:12:14]   classA cal source: per-protein(1AZM)@table slope=1.245 inter=-2.419
+[08:12:44]     [A 1AZM pH5.0 native] tgt=+11 n=60
+[08:13:14]     [A 1AZM pH5.0 n2] tgt=+9 n=60
+[08:13:43]     [A 1AZM pH5.0 p2] tgt=+13 n=60
+[08:14:12]     [A 1AZM pH5.0 n8] tgt=+3 n=60
+[08:14:42]     [A 1AZM pH5.0 p8] tgt=+19 n=60
+[08:15:11]     [A 1AZM pH7.4 native] tgt=-2 n=60
+[08:15:40]     [A 1AZM pH7.4 n2] tgt=-4 n=60
+[08:16:09]     [A 1AZM pH7.4 p2] tgt=+0 n=60
+[08:16:39]     [A 1AZM pH7.4 n8] tgt=-10 n=60
+[08:17:08]     [A 1AZM pH7.4 p8] tgt=+6 n=60
+[08:17:37]     [A 1AZM pH9.0 native] tgt=-4 n=60
+[08:18:06]     [A 1AZM pH9.0 n2] tgt=-6 n=60
+[08:18:36]     [A 1AZM pH9.0 p2] tgt=-2 n=60
+[08:19:05]     [A 1AZM pH9.0 n8] tgt=-12 n=60
+[08:19:34]     [A 1AZM pH9.0 p8] tgt=+4 n=60
+[08:19:34]   classA → /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_pH_prot/1AZM/classA.json (441s)
+[08:20:04]     [B 1AZM T_native74(tgt=-2) pH5.0] n=60
+[08:20:33]     [B 1AZM T_native74(tgt=-2) pH7.4] n=60
+[08:21:02]     [B 1AZM T_native74(tgt=-2) pH9.0] n=60
+[08:21:31]     [B 1AZM T_zero(tgt=+0) pH5.0] n=60
+[08:22:01]     [B 1AZM T_zero(tgt=+0) pH7.4] n=60
+[08:22:30]     [B 1AZM T_zero(tgt=+0) pH9.0] n=60
+[08:22:30]   classB → /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_pH_prot/1AZM/classB.json (616s)
+[08:22:30] 
+=== 1AS2 L=312 q5=+8.66 q74=-2.69 q9=-10.59 round74=-3 ===
+[08:22:30]   classA cal source: per-protein(1AS2)@table slope=2.087 inter=-3.600
+[08:23:06]     [A 1AS2 pH5.0 native] tgt=+9 n=60
+[08:23:41]     [A 1AS2 pH5.0 n2] tgt=+7 n=60
+[08:24:16]     [A 1AS2 pH5.0 p2] tgt=+11 n=60
+[08:24:52]     [A 1AS2 pH5.0 n8] tgt=+1 n=60
+[08:25:28]     [A 1AS2 pH5.0 p8] tgt=+17 n=60
+[08:26:03]     [A 1AS2 pH7.4 native] tgt=-3 n=60
+[08:26:39]     [A 1AS2 pH7.4 n2] tgt=-5 n=60
+[08:27:14]     [A 1AS2 pH7.4 p2] tgt=-1 n=60
+[08:27:50]     [A 1AS2 pH7.4 n8] tgt=-11 n=60
+[08:28:25]     [A 1AS2 pH7.4 p8] tgt=+5 n=60
+[08:29:00]     [A 1AS2 pH9.0 native] tgt=-11 n=60
+[08:29:36]     [A 1AS2 pH9.0 n2] tgt=-13 n=60
+[08:30:11]     [A 1AS2 pH9.0 p2] tgt=-9 n=60
+[08:30:46]     [A 1AS2 pH9.0 n8] tgt=-19 n=60
+[08:31:21]     [A 1AS2 pH9.0 p8] tgt=-3 n=60
+[08:31:22]   classA → /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_pH_prot/1AS2/classA.json (532s)
+[08:31:57]     [B 1AS2 T_native74(tgt=-3) pH5.0] n=60
+[08:32:32]     [B 1AS2 T_native74(tgt=-3) pH7.4] n=60
+[08:33:08]     [B 1AS2 T_native74(tgt=-3) pH9.0] n=60
+[08:33:43]     [B 1AS2 T_zero(tgt=+0) pH5.0] n=60
+[08:34:18]     [B 1AS2 T_zero(tgt=+0) pH7.4] n=60
+[08:34:53]     [B 1AS2 T_zero(tgt=+0) pH9.0] n=60
+[08:34:54]   classB → /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_pH_prot/1AS2/classB.json (744s)
+[08:34:54] 
+=== 1BJ4 L=470 q5=+21.24 q74=+0.42 q9=-9.78 round74=+0 ===
+[08:34:54]   classA cal source: exp1 route_Bsmall onsite cal @7.4 slope=2.422 inter=1.729
+[08:35:47]     [A 1BJ4 pH5.0 native] tgt=+21 n=60
+[08:36:41]     [A 1BJ4 pH5.0 n2] tgt=+19 n=60
+[08:37:34]     [A 1BJ4 pH5.0 p2] tgt=+23 n=60
+[08:38:28]     [A 1BJ4 pH5.0 n8] tgt=+13 n=60
+[08:39:21]     [A 1BJ4 pH5.0 p8] tgt=+29 n=60
+[08:40:15]     [A 1BJ4 pH7.4 native] tgt=+0 n=60
+[08:41:09]     [A 1BJ4 pH7.4 n2] tgt=-2 n=60
+[08:42:03]     [A 1BJ4 pH7.4 p2] tgt=+2 n=60
+[08:42:57]     [A 1BJ4 pH7.4 n8] tgt=-8 n=60
+[08:43:51]     [A 1BJ4 pH7.4 p8] tgt=+8 n=60
+[08:44:45]     [A 1BJ4 pH9.0 native] tgt=-10 n=60
+[08:45:38]     [A 1BJ4 pH9.0 n2] tgt=-12 n=60
+[08:46:33]     [A 1BJ4 pH9.0 p2] tgt=-8 n=60
+[08:47:28]     [A 1BJ4 pH9.0 n8] tgt=-18 n=60
+[08:48:21]     [A 1BJ4 pH9.0 p8] tgt=-2 n=60
+[08:48:21]   classA → /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_pH_prot/1BJ4/classA.json (808s)
+[08:49:15]     [B 1BJ4 T_native74(tgt=+0) pH5.0] n=60
+[08:50:09]     [B 1BJ4 T_native74(tgt=+0) pH7.4] n=60
+[08:51:02]     [B 1BJ4 T_native74(tgt=+0) pH9.0] n=60
+[08:51:56]     [B 1BJ4 T_zero(tgt=+0) pH5.0] n=60
+[08:52:49]     [B 1BJ4 T_zero(tgt=+0) pH7.4] n=60
+[08:53:43]     [B 1BJ4 T_zero(tgt=+0) pH9.0] n=60
+[08:53:43]   classB → /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_pH_prot/1BJ4/classB.json (1129s)
+[08:53:43] 
+=== 3MXB_A L=153 q5=+11.48 q74=+7.94 q9=+6.14 round74=+8 ===
+[08:53:58]   [cal] 现场小样本标定 smallcal74.json slope=1.475 inter=-1.36 LOOCV=1.76
+[08:53:58]   classA cal source: per-protein(small-sample@7.4) slope=1.475 inter=-1.361
+[08:54:16]     [A 3MXB_A pH5.0 native] tgt=+11 n=60
+[08:54:33]     [A 3MXB_A pH5.0 n2] tgt=+9 n=60
+[08:54:51]     [A 3MXB_A pH5.0 p2] tgt=+13 n=60
+[08:55:08]     [A 3MXB_A pH5.0 n8] tgt=+3 n=60
+[08:55:26]     [A 3MXB_A pH5.0 p8] tgt=+19 n=60
+[08:55:44]     [A 3MXB_A pH7.4 native] tgt=+8 n=60
+[08:56:01]     [A 3MXB_A pH7.4 n2] tgt=+6 n=60
+[08:56:19]     [A 3MXB_A pH7.4 p2] tgt=+10 n=60
+[08:56:37]     [A 3MXB_A pH7.4 n8] tgt=+0 n=60
+[08:56:54]     [A 3MXB_A pH7.4 p8] tgt=+16 n=60
+[08:57:12]     [A 3MXB_A pH9.0 native] tgt=+6 n=60
+[08:57:30]     [A 3MXB_A pH9.0 n2] tgt=+4 n=60
+[08:57:48]     [A 3MXB_A pH9.0 p2] tgt=+8 n=60
+[08:58:05]     [A 3MXB_A pH9.0 n8] tgt=-2 n=60
+[08:58:23]     [A 3MXB_A pH9.0 p8] tgt=+14 n=60
+[08:58:23]   classA → /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_pH_prot/3MXB_A/classA.json (280s)
+[08:58:41]     [B 3MXB_A T_native74(tgt=+8) pH5.0] n=60
+[08:58:59]     [B 3MXB_A T_native74(tgt=+8) pH7.4] n=60
+[08:59:17]     [B 3MXB_A T_native74(tgt=+8) pH9.0] n=60
+[08:59:34]     [B 3MXB_A T_zero(tgt=+0) pH5.0] n=60
+[08:59:52]     [B 3MXB_A T_zero(tgt=+0) pH7.4] n=60
+[09:00:09]     [B 3MXB_A T_zero(tgt=+0) pH9.0] n=60
+[09:00:10]   classB → /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_pH_prot/3MXB_A/classB.json (387s)
+[09:00:10] 
+=== exp7 采样完成 ===

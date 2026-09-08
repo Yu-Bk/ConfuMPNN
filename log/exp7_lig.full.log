@@ -1,0 +1,83 @@
+[09:00:48] == exp7 lig mode | device=cuda:6 n=60 pH=[5.0, 7.4, 9.0] ==
+[09:00:48] backbone=ligandmpnn_v_32_010_25.pt enc=finetune_epoch050.pt
+    条件编码器已加载: finetune_epoch050.pt  (epoch=50, n_tokens=4, token_dim=128)
+[09:00:49] 
+=== 5O60_E L=209 q5=+17.85 q74=+11.18 q9=+10.02 round74=+11 ===
+[09:00:49]   classA cal source: per-protein(5O60_E)@table slope=1.780 inter=-0.705
+[09:01:13]     [A 5O60_E pH5.0 native] tgt=+18 n=60
+[09:01:37]     [A 5O60_E pH5.0 n2] tgt=+16 n=60
+[09:02:01]     [A 5O60_E pH5.0 p2] tgt=+20 n=60
+[09:02:24]     [A 5O60_E pH5.0 n8] tgt=+10 n=60
+[09:02:48]     [A 5O60_E pH5.0 p8] tgt=+26 n=60
+[09:03:12]     [A 5O60_E pH7.4 native] tgt=+11 n=60
+[09:03:36]     [A 5O60_E pH7.4 n2] tgt=+9 n=60
+[09:04:00]     [A 5O60_E pH7.4 p2] tgt=+13 n=60
+[09:04:24]     [A 5O60_E pH7.4 n8] tgt=+3 n=60
+[09:04:48]     [A 5O60_E pH7.4 p8] tgt=+19 n=60
+[09:05:11]     [A 5O60_E pH9.0 native] tgt=+10 n=60
+[09:05:35]     [A 5O60_E pH9.0 n2] tgt=+8 n=60
+[09:05:59]     [A 5O60_E pH9.0 p2] tgt=+12 n=60
+[09:06:23]     [A 5O60_E pH9.0 n8] tgt=+2 n=60
+[09:06:46]     [A 5O60_E pH9.0 p8] tgt=+18 n=60
+[09:06:47]   classA → /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_pH_lig/5O60_E/classA.json (358s)
+[09:07:10]     [B 5O60_E T_native74(tgt=+11) pH5.0] n=60
+[09:07:34]     [B 5O60_E T_native74(tgt=+11) pH7.4] n=60
+[09:07:58]     [B 5O60_E T_native74(tgt=+11) pH9.0] n=60
+[09:08:22]     [B 5O60_E T_zero(tgt=+0) pH5.0] n=60
+[09:08:46]     [B 5O60_E T_zero(tgt=+0) pH7.4] n=60
+[09:09:09]     [B 5O60_E T_zero(tgt=+0) pH9.0] n=60
+[09:09:10]   classB → /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_pH_lig/5O60_E/classB.json (501s)
+[09:09:10] 
+=== 1CGE L=162 q5=-1.22 q74=-11.66 q9=-12.66 round74=-12 ===
+[09:09:10]   classA cal source: per-protein(1CGE)@table slope=0.983 inter=-2.349
+[09:09:29]     [A 1CGE pH5.0 native] tgt=-1 n=60
+[09:09:47]     [A 1CGE pH5.0 n2] tgt=-3 n=60
+[09:10:06]     [A 1CGE pH5.0 p2] tgt=+1 n=60
+[09:10:25]     [A 1CGE pH5.0 n8] tgt=-9 n=60
+[09:10:43]     [A 1CGE pH5.0 p8] tgt=+7 n=60
+[09:11:02]     [A 1CGE pH7.4 native] tgt=-12 n=60
+[09:11:21]     [A 1CGE pH7.4 n2] tgt=-14 n=60
+[09:11:39]     [A 1CGE pH7.4 p2] tgt=-10 n=60
+[09:11:58]     [A 1CGE pH7.4 n8] tgt=-20 n=60
+[09:12:17]     [A 1CGE pH7.4 p8] tgt=-4 n=60
+[09:12:35]     [A 1CGE pH9.0 native] tgt=-13 n=60
+[09:12:54]     [A 1CGE pH9.0 n2] tgt=-15 n=60
+[09:13:13]     [A 1CGE pH9.0 p2] tgt=-11 n=60
+[09:13:31]     [A 1CGE pH9.0 n8] tgt=-21 n=60
+[09:13:50]     [A 1CGE pH9.0 p8] tgt=-5 n=60
+[09:13:50]   classA → /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_pH_lig/1CGE/classA.json (280s)
+[09:14:09]     [B 1CGE T_native74(tgt=-12) pH5.0] n=60
+[09:14:27]     [B 1CGE T_native74(tgt=-12) pH7.4] n=60
+[09:14:46]     [B 1CGE T_native74(tgt=-12) pH9.0] n=60
+[09:15:05]     [B 1CGE T_zero(tgt=+0) pH5.0] n=60
+[09:15:23]     [B 1CGE T_zero(tgt=+0) pH7.4] n=60
+[09:15:42]     [B 1CGE T_zero(tgt=+0) pH9.0] n=60
+[09:15:42]   classB → /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_pH_lig/1CGE/classB.json (392s)
+[09:15:42] 
+=== 2FEO L=221 q5=+2.39 q74=-6.88 q9=-8.36 round74=-7 ===
+[09:15:42]   classA cal source: per-protein(2FEO)@table slope=0.935 inter=-5.082
+[09:16:08]     [A 2FEO pH5.0 native] tgt=+2 n=60
+[09:16:33]     [A 2FEO pH5.0 n2] tgt=+0 n=60
+[09:16:58]     [A 2FEO pH5.0 p2] tgt=+4 n=60
+[09:17:23]     [A 2FEO pH5.0 n8] tgt=-6 n=60
+[09:17:48]     [A 2FEO pH5.0 p8] tgt=+10 n=60
+[09:18:13]     [A 2FEO pH7.4 native] tgt=-7 n=60
+[09:18:39]     [A 2FEO pH7.4 n2] tgt=-9 n=60
+[09:19:04]     [A 2FEO pH7.4 p2] tgt=-5 n=60
+[09:19:29]     [A 2FEO pH7.4 n8] tgt=-15 n=60
+[09:19:54]     [A 2FEO pH7.4 p8] tgt=+1 n=60
+[09:20:19]     [A 2FEO pH9.0 native] tgt=-8 n=60
+[09:20:44]     [A 2FEO pH9.0 n2] tgt=-10 n=60
+[09:21:10]     [A 2FEO pH9.0 p2] tgt=-6 n=60
+[09:21:35]     [A 2FEO pH9.0 n8] tgt=-16 n=60
+[09:22:00]     [A 2FEO pH9.0 p8] tgt=+0 n=60
+[09:22:00]   classA → /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_pH_lig/2FEO/classA.json (378s)
+[09:22:25]     [B 2FEO T_native74(tgt=-7) pH5.0] n=60
+[09:22:51]     [B 2FEO T_native74(tgt=-7) pH7.4] n=60
+[09:23:16]     [B 2FEO T_native74(tgt=-7) pH9.0] n=60
+[09:23:41]     [B 2FEO T_zero(tgt=+0) pH5.0] n=60
+[09:24:06]     [B 2FEO T_zero(tgt=+0) pH7.4] n=60
+[09:24:31]     [B 2FEO T_zero(tgt=+0) pH9.0] n=60
+[09:24:31]   classB → /data/nfs/IC/baokun_yu/ConfuMPNN/output/exp_pH_lig/2FEO/classB.json (529s)
+[09:24:31] 
+=== exp7 采样完成 ===

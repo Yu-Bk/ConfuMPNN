@@ -1,0 +1,63 @@
+[11:25:38] == exp7b lig | device=cuda:6 n=60 pH=[5.0, 5.5, 6.0, 6.5, 7.0, 7.4, 8.0, 8.5, 9.0] T=['T1', 'T2', 'T3'] ==
+[11:25:38] backbone=ligandmpnn_v_32_010_25.pt enc=finetune_epoch050.pt
+    条件编码器已加载: finetune_epoch050.pt  (epoch=50, n_tokens=4, token_dim=128)
+[11:25:42] 
+=== 2FEO L=221 q@pH: 5.0:+2.39 6.0:-3.55 7.4:-6.88 8.0:-7.33 9.0:-8.36 ===
+[11:25:42]   [T2 cal] source=per-protein(2FEO) slope=0.935 inter=-5.082
+[11:26:37]   [T3 cal 5.0] slope=0.9648 inter=-4.3457 LOOCV=1.51
+[11:27:31]   [T3 cal 5.5] slope=0.9655 inter=-3.816 LOOCV=1.99
+[11:28:25]   [T3 cal 6.0] slope=1.0331 inter=-3.2807 LOOCV=1.79
+[11:29:20]   [T3 cal 6.5] slope=0.9281 inter=-4.8516 LOOCV=1.84
+[11:30:14]   [T3 cal 7.0] slope=0.8303 inter=-4.2676 LOOCV=2.36
+[11:31:08]   [T3 cal 7.4] slope=0.9729 inter=-1.6773 LOOCV=1.47
+[11:32:02]   [T3 cal 8.0] slope=1.1876 inter=-1.1655 LOOCV=1.12
+[11:32:56]   [T3 cal 8.5] slope=0.7805 inter=-2.1595 LOOCV=1.51
+[11:33:51]   [T3 cal 9.0] slope=0.9136 inter=-1.5386 LOOCV=1.07
+[11:34:56]     [T1 2FEO pH5.0 native] target=+2 eff=+2.000 n=60 (65s)
+[11:36:02]     [T1 2FEO pH5.0 n2] target=+0 eff=+0.000 n=60 (66s)
+[11:37:07]     [T1 2FEO pH5.0 p2] target=+4 eff=+4.000 n=60 (65s)
+[11:38:12]     [T1 2FEO pH5.0 n8] target=-6 eff=-6.000 n=60 (65s)
+[11:39:17]     [T1 2FEO pH5.0 p8] target=+10 eff=+10.000 n=60 (65s)
+[11:40:22]     [T1 2FEO pH5.5 native] target=-1 eff=-1.000 n=60 (65s)
+[11:41:27]     [T1 2FEO pH5.5 n2] target=-3 eff=-3.000 n=60 (65s)
+[11:42:32]     [T1 2FEO pH5.5 p2] target=+1 eff=+1.000 n=60 (65s)
+[11:43:37]     [T1 2FEO pH5.5 n8] target=-9 eff=-9.000 n=60 (65s)
+[11:44:42]     [T1 2FEO pH5.5 p8] target=+7 eff=+7.000 n=60 (65s)
+[11:45:47]     [T1 2FEO pH6.0 native] target=-4 eff=-4.000 n=60 (65s)
+[11:46:52]     [T1 2FEO pH6.0 n2] target=-6 eff=-6.000 n=60 (65s)
+[11:47:57]     [T1 2FEO pH6.0 p2] target=-2 eff=-2.000 n=60 (65s)
+[11:49:02]     [T1 2FEO pH6.0 n8] target=-12 eff=-12.000 n=60 (65s)
+[11:50:07]     [T1 2FEO pH6.0 p8] target=+4 eff=+4.000 n=60 (65s)
+[11:51:12]     [T1 2FEO pH6.5 native] target=-5 eff=-5.000 n=60 (65s)
+[11:52:17]     [T1 2FEO pH6.5 n2] target=-7 eff=-7.000 n=60 (65s)
+[11:53:22]     [T1 2FEO pH6.5 p2] target=-3 eff=-3.000 n=60 (65s)
+[11:54:27]     [T1 2FEO pH6.5 n8] target=-13 eff=-13.000 n=60 (65s)
+[11:55:32]     [T1 2FEO pH6.5 p8] target=+3 eff=+3.000 n=60 (65s)
+[11:56:37]     [T1 2FEO pH7.0 native] target=-6 eff=-6.000 n=60 (65s)
+[11:57:42]     [T1 2FEO pH7.0 n2] target=-8 eff=-8.000 n=60 (65s)
+[11:58:47]     [T1 2FEO pH7.0 p2] target=-4 eff=-4.000 n=60 (65s)
+[11:59:52]     [T1 2FEO pH7.0 n8] target=-14 eff=-14.000 n=60 (65s)
+[12:00:57]     [T1 2FEO pH7.0 p8] target=+2 eff=+2.000 n=60 (65s)
+[12:02:02]     [T1 2FEO pH7.4 native] target=-7 eff=-7.000 n=60 (65s)
+[12:03:07]     [T1 2FEO pH7.4 n2] target=-9 eff=-9.000 n=60 (65s)
+[12:04:12]     [T1 2FEO pH7.4 p2] target=-5 eff=-5.000 n=60 (65s)
+[12:05:17]     [T1 2FEO pH7.4 n8] target=-15 eff=-15.000 n=60 (65s)
+[12:06:22]     [T1 2FEO pH7.4 p8] target=+1 eff=+1.000 n=60 (65s)
+[12:07:27]     [T1 2FEO pH8.0 native] target=-7 eff=-7.000 n=60 (65s)
+[12:08:32]     [T1 2FEO pH8.0 n2] target=-9 eff=-9.000 n=60 (65s)
+[12:09:37]     [T1 2FEO pH8.0 p2] target=-5 eff=-5.000 n=60 (65s)
+[12:10:42]     [T1 2FEO pH8.0 n8] target=-15 eff=-15.000 n=60 (65s)
+[12:11:47]     [T1 2FEO pH8.0 p8] target=+1 eff=+1.000 n=60 (65s)
+[12:12:52]     [T1 2FEO pH8.5 native] target=-8 eff=-8.000 n=60 (65s)
+[12:13:57]     [T1 2FEO pH8.5 n2] target=-10 eff=-10.000 n=60 (65s)
+[12:15:01]     [T1 2FEO pH8.5 p2] target=-6 eff=-6.000 n=60 (65s)
+[12:16:06]     [T1 2FEO pH8.5 n8] target=-16 eff=-16.000 n=60 (65s)
+[12:17:11]     [T1 2FEO pH8.5 p8] target=+0 eff=+0.000 n=60 (65s)
+[12:18:16]     [T1 2FEO pH9.0 native] target=-8 eff=-8.000 n=60 (65s)
+[12:19:21]     [T1 2FEO pH9.0 n2] target=-10 eff=-10.000 n=60 (65s)
+[12:20:26]     [T1 2FEO pH9.0 p2] target=-6 eff=-6.000 n=60 (65s)
+[12:21:31]     [T1 2FEO pH9.0 n8] target=-16 eff=-16.000 n=60 (65s)
+[12:22:36]     [T1 2FEO pH9.0 p8] target=+0 eff=+0.000 n=60 (65s)
+[12:23:41]     [T2 2FEO pH5.0 native] target=+2 eff=+7.574 n=60 (65s)
+[12:24:46]     [T2 2FEO pH5.0 n2] target=+0 eff=+5.435 n=60 (65s)
+[12:25:51]     [T2 2FEO pH5.0 p2] target=+4 eff=+9.713 n=60 (65s)
