@@ -41,3 +41,7 @@ data/validation_pdbs/*
 .DS_Store
 .idea/
 .vscode/
+# L11design 大输出（本地+backup，不 push）
+L11design/output/
+L11design/data/
+L11design/backup/
