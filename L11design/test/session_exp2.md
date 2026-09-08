@@ -42,3 +42,20 @@
 
 ## 产物
 - seqs/csv → `output/exp2/<mode>_q<t>/`；折叠+指标 → `data/exp2/`；报告 `test/report_exp2.md`。
+
+## 执行结果（完成）
+- **采样**：CPU 并行 8 组 × 300 全部完成（~3 min；OMP_NUM_THREADS=12 是关键，默认 192 线程反慢 ~13×）。
+- **Tm/Sol**：TemBERTure + Protein-Sol 全部 2400+native 完成。
+- **ESMFold**：GPU 分窗完成全部 9 目录（native+8 组；GPU1/GPU7 时隙），pLDDT 全部。
+- **TM/RMSD**：US-align 全部完成（native TM 0.794 对照）。
+- 报告 `test/report_exp2.md`；逐序列 `data/exp2/*/metrics.csv`；组级 `data/exp2/_per_group_summary.csv`。
+
+### 最终结果速览（target 6.87→12）
+| mode | 电荷均值范围 | dev均值 | 达标率(|dev|≤2) | pLDDT | TM | Tm(°C) | Sol(%) |
+|---|---|---|---|---|---|---|---|
+| protein | +9.36 → +15.56 | +2.3~+3.6 | 29→23% | ~55 | 0.66 | 55→59 | 79→82 |
+| ligand | +10.02 → +17.00 | +3.2~+5.0 | 28→18% | ~54-56 | 0.60-0.63 | ~54 | 94-95 |
+- 响应斜率 蛋白 1.27 / 配体 1.32（>1 → 过冲）；固定位 2400/2400 全对；回收 ~27%。
+
+### 结论一句话
+方向可控、单调、界面固定位保留、结构未崩（TM 0.6+，pLDDT~55）；但表外 L11 用 global 校准每 target 过冲 2-5 个电荷 → 命中率仅 18-29%，精确控制需现场小样本标定。
