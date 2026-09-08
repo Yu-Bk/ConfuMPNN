@@ -85,7 +85,7 @@
 | Fig I-5 | **命中率 95%CI**（Wilson/精确） | `output/hitrate_ci_summary.json` | ✅ 待画 |
 | Fig I-6 | **Wilcoxon 配对**（A-B, B-C；v13-vs-v14） | `output/wilcoxon_exp15.json`；`compare/report_2026-09-06_exp5_wilcoxon.md` | ✅ 待画 |
 
-## J. 文章板块清单（manuscript 映射，2026-09-06）
+## J. 文章板块清单（manuscript 映射，2026-09-06）— 论文框架唯一正本见 `paper/OUTLINE.md`（本表为其轻量映射）
 > 把补充实验分配到论文板块；每个板块给"结论 + 主报告 + 图"。
 
 1. **Intro/Method 背景**：pH-感知电荷条件化（LigandMPNN/MoMPNN 首例）、删减捷径现象。
