@@ -1,0 +1,19 @@
+=== [1] TemBERTure Tm exp3 (串行) ===
+  exp3 Tm done rc=0
+=== [2] TemBERTure Tm exp4 (串行) ===
+  exp4 Tm done rc=0
+=== [3] Protein-Sol ===
+  sol: L11design/data/exp3/ligand_q10
+  sol: L11design/data/exp3/ligand_q12
+  sol: L11design/data/exp3/ligand_q6.87
+  sol: L11design/data/exp3/ligand_q8
+  sol: L11design/data/exp3/_native
+  sol: L11design/data/exp3/protein_q10
+  sol: L11design/data/exp3/protein_q12
+  sol: L11design/data/exp3/protein_q6.87
+  sol: L11design/data/exp3/protein_q8
+  sol: L11design/data/exp4/lig_C1
+  sol: L11design/data/exp4/lig_C2
+  sol: L11design/data/exp4/prot_C1
+  sol: L11design/data/exp4/prot_C2
+ALL CPU SCORES DONE
