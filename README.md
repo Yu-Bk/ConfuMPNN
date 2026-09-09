@@ -224,6 +224,8 @@ MSTPQGRLYLFFSTCPELYYF...
 
 **权威指南**：`WORKFLOW_GUIDE.md`（根目录）——框架/数据流/参数/损失/为什么，面向计算机新人。
 
+**备份/迁移**：`docs/BACKUP_CHECKLIST.md`（git 之外需手动保存/下载的唯一清单：权重 Release + 大文件网盘）＋ `docs/MIGRATION_GIT_POLICY.md`（归档唯一规则）。
+
 **新机配置**：`docs/SETUP_NEW_MACHINE.md`（权重下载、环境、数据重建、验证）
 
 **数据组织**：`data/README.md`（数据划分、重建命令、SHA256 清单）

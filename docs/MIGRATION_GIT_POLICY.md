@@ -35,3 +35,14 @@
 | 日期 | 内容 | 位置/链接 |
 |---|---|---|
 | （待项目收尾填写） | data/ 大文件 + output 重型产物 | |
+
+### 网盘备份记录（2026-09-09 更新；传完在此填日期/位置）
+| 日期 | 内容 | tar/位置 | 状态 |
+|---|---|---|---|
+| 09-05 | data 全量 | `~/data/nfs/IC/baokun_yu/ConfuMPNN_backup/ConfuMPNN_data_2026-09-05.tar.gz` | ☐ 待传网盘 |
+| 09-05 | output 重型(finetune/generalization/tm_sol/propka/…) | `ConfuMPNN_output_heavy_2026-09-05.tar.gz` | ☐ 待传 |
+| 09-06 | 补充实验序列(exp_control/exp_pH/…) | `ConfuMPNN_final_extend_2026-09-06.tar.gz` | ☐ 待传 |
+| 08-19 | 历史 data/artifacts/TemBERTure | `confumpnn_{data_v1,artifacts_v1,tools_temberture_v1}_20260819.tar.gz` | ☐ 待传 |
+| 09-09 | L11 Exp1/2/Exp34 | `L11design/backup/L11_exp1_2026-09-09.tar.gz`、`exp2_output_data_*.tar.gz`、`L11_exp34_2026-09-09.tar.gz` | ☐ 待传 |
+| 09-09 | 模型权重 v12.2/v12.3/v14(+v7/v9) | `weights_release/*.pt` → GitHub Release | ☐ 待传/核对 |
+> 完整清单见 `docs/BACKUP_CHECKLIST.md`。
