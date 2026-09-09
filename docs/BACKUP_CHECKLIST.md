@@ -23,6 +23,7 @@
 | `L11design/backup/L11_exp1_2026-09-09.tar.gz` | 9M | L11 Exp1（4 组×100 采样+折叠） |
 | `L11design/backup/exp2_output_data_20260909_0434.tar.gz` | 55M | L11 Exp2 |
 | `L11design/backup/L11_exp34_2026-09-09.tar.gz` | 62M | L11 Exp3+Exp4（标定重做全量） |
+| `ConfuMPNN_output_remaining_2026-09-09.tar.gz` | ~14M | output 剩余小实验(ph_scan/transfer/pocket/propka_prep 等) |
 
 **状态：tar 已生成但都还在同一台机器 → 需你下载并传到网盘/异机（异地才算备份）。**
 
@@ -32,7 +33,7 @@
 - conda 环境：按 `docs/SETUP_NEW_MACHINE.md` 重建；ESMFold 权重首次运行自动下。
 - data 重建脚本在 git；`ablation/data/*.npz`（小）在 git。
 
-## D. 可选
-- `output/` 若有未覆盖小目录需全量保留 → 可再打 `ConfuMPNN_output_full_<date>.tar.gz`（~5.4G，一般不必）。
+## D. 说明
+- `output/` **已全量覆盖**：heavy(09-05, finetune_*/generalization_*/tm_sol/propka/ribosome/largen/fixbinding) + final_extend(09-06, exp_control/exp_pH/exp7_H1/exp2_comp) + remaining(09-09, ph_scan/transfer/pocket/paper_gap/propka_prep 等) + L11(exp1/exp2/exp34)。根 `output/*.json`=论文关键数字已在 git。无需另打全量 5.4G 包。
 
 ## 登记（传完在 `docs/MIGRATION_GIT_POLICY.md` 底表填写日期/位置）
