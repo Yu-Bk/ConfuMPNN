@@ -41,7 +41,6 @@ def main():
     ap.add_argument("--n_per", type=int, default=10)
     ap.add_argument("--fixed_residues", default=None, help='如 "I3 I5 ..."')
     ap.add_argument("--out", required=True)
-    ap.add_argument("--num_ligand_atoms", type=int, default=25)
     ap.add_argument("--pname", default=None, help="per_protein 键名（默认 pdb 文件名去扩展）")
     ap.add_argument("--run_guided", default="code/run_guided.py")
     ap.add_argument("--seed", type=int, default=777)
@@ -57,8 +56,7 @@ def main():
             cmd = [a.python, a.run_guided, "--pdb", a.pdb, "--pH", str(a.pH),
                    "--target_charge", str(tgt), "--cond_encoder", a.enc,
                    "--weights", a.weights, "--num_samples", str(a.n_per),
-                   "--seed", str(a.seed), "--num_ligand_atoms", str(a.num_ligand_atoms),
-                   "--calibrate", "off", "--out_dir", str(outdir)]
+                   "--seed", str(a.seed), "--calibrate", "off", "--out_dir", str(outdir)]
             if a.fixed_residues:
                 cmd += ["--fixed_residues", a.fixed_residues]
             if a.dry:

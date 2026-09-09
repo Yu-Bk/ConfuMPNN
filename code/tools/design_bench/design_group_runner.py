@@ -32,8 +32,6 @@ def main():
                 "--calib_cache", g.get("calib_cache", f"output/charge_calibration_{Path(g['pdb']).stem}.small.json")]
         if g.get("fixed"):
             cmd += ["--fixed_residues", g["fixed"]]
-        if g.get("num_ligand_atoms") is not None:
-            cmd += ["--num_ligand_atoms", str(g["num_ligand_atoms"])]
         cmd += ["--out_dir", str(outdir)]
         print(">>", " ".join(cmd)); subprocess.run(cmd, check=True)
 

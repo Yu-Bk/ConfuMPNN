@@ -22,7 +22,6 @@ def main():
     ap.add_argument("--num_samples", type=int, default=100)
     ap.add_argument("--n_per", type=int, default=10, help="探针每档条数（勿>20）")
     ap.add_argument("--fixed_residues", default=None)
-    ap.add_argument("--num_ligand_atoms", type=int, default=None)
     ap.add_argument("--calib_cache", default=None, help="校准缓存 json（默认 output/charge_calibration_<pdb>.small.json）")
     ap.add_argument("--seed", type=int, default=42)
     args, extra = ap.parse_known_args()
@@ -54,8 +53,6 @@ def main():
            "--calibrate", "auto", "--calibration_file", cache, "--seed", str(args.seed)]
     if args.fixed_residues:
         cmd += ["--fixed_residues", args.fixed_residues]
-    if args.num_ligand_atoms is not None:
-        cmd += ["--num_ligand_atoms", str(args.num_ligand_atoms)]
     cmd += extra
     print("[auto_calib] run:", " ".join(cmd))
     subprocess.run(cmd, check=True)
