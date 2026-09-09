@@ -578,6 +578,7 @@ condition_defaults:
 **历史**：Phase 3 早期发现过冲 ~2.9 倍 → 用**推理侧线性校准** `target_eff = (desired − offset) / gain` 补偿（早期 gain=2.57）。
 
 **现状（2026-09 更新）**：训练侧 `charge_temp=0.5` 曾把响应增益压到 ~1.0；**v12.2/v14 起推理侧校准表再次启用**（`run_guided.py --calibrate auto`：表内 per-protein、表外回退 global；默认表 `charge_calibration_v12_2.json`，配体用 `charge_calibration_v14_ligand_clean.json`）。`condition_defaults.yaml` 里 `enabled:false` 为旧默认，运行时代码以 `--calibrate auto` 覆盖。校准三口径见 §8.2。
+> **表外/新蛋白的一键现场标定（2026-09-09）**：无需手动逐点拟合重跑——用 `code/tools/design_bench/auto_calib_guided.py --autofit`（自动探针批 native±[8,4,0,4,8]×n10 拟合自身 slope 入缓存 → `--calibrate auto` 采样）；opt-in、不改模型/现有流程。通用批跑与打分见 `code/tools/design_bench/README.md`。
 
 > ⚠️ 注意：如果你看到 `run_guided.py` 的文档字符串还写旧值 gain=2.57/默认开，那是历史残留文字；实际代码读 yaml，行为是"默认不校准"。
 

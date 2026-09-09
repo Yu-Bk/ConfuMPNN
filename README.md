@@ -179,6 +179,10 @@ python code/run_guided.py --pdb data/validation_pdbs/1AZM.pdb --pH 7.4 --target_
 
 **历史规则（v9 配体）**：正电可用到 native+8；负电保守到 native−5；长序列（L≥470）需检查。校准自动启用见 `run_guided.py --calibrate auto`（默认表内 per-protein、表外回退 global）。
 
+> **表外蛋白"一键现场标定"**（2026-09-09 新增，`code/tools/design_bench/auto_calib_guided.py`）：不想手动"探针→拟合→重跑"时，用 `--autofit` 一次完成：
+> `python code/tools/design_bench/auto_calib_guided.py --autofit --enc <v12.2|v14> --weights <backbone> --pdb <X.pdb> --pH 7.4 --native_q <HH电荷> --target_charge <目标> --num_samples N`
+> 逻辑：缓存无该蛋白 → 自动采探针批(native±[8,4,0,4,8]×n10)拟合自身 slope → `--calibrate auto` 采样（表内用它、表外回退 global）。首次多 50 条、缓存可复用；opt-in，不改模型/现有流程。详见 `code/tools/design_bench/README.md`。
+
 ### 4.3 其他命令（均在仓库根运行）
 
 ```bash
