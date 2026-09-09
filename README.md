@@ -7,6 +7,23 @@
 
 ---
 
+## 🧭 新读者导航（先读哪、别走弯路）
+
+> 一句话路线：**先 README（是什么）→ 想懂原理读 WORKFLOW_GUIDE（为什么）→ 想干具体事按下表跳**。别一上来读 `docs/`（是速查非入门）、也别从旧报告（analysis/report 老日期）读起。
+
+| 你的目的 | 去读 |
+|---|---|
+| 项目概览/当前交付/最小例子 | 本文件（README） |
+| 理解框架/数据流/参数/损失（"为什么"） | `WORKFLOW_GUIDE.md`（面向新人，长） |
+| 复现/新机部署/跑命令 | `docs/SETUP_NEW_MACHINE.md` → `docs/CONFIG.md` |
+| 备份/迁移（git 之外的保存） | `docs/BACKUP_CHECKLIST.md` + `docs/MIGRATION_GIT_POLICY.md` |
+| 写论文/做图 | `paper/OUTLINE.md` → `figure/plan_01.md` |
+| 找某份报告/判据/历史 | `index/DOCUMENT_INDEX.md`（全文档定位，★=权威） |
+| 验证方法与口径/术语 | `analysis/report/2026-09-03_validation_standards.md`、`2026-09-04_paper_subconclusions.md` |
+| 用哪个模型/怎么定 pH 电荷 | 本文件 §三/§四 + `analysis/report/2026-08-31_v12_2_summary.md` |
+
+---
+
 ## 📑 目录
 
 1. [项目简介](#一项目简介)
