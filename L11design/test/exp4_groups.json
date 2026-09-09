@@ -1,0 +1,13 @@
+{
+  "_comment": "L11 Exp4 = Exp1 全量重做（现场小样本标定 Bsmall）。2 模式 × (pH7.4/+6.87, pH8/+6.59) × n=100。固定 I3..I135。",
+  "exp": "exp4",
+  "fixed_residues": "I3 I5 I9 I34 I35 I89 I124 I131 I134 I135",
+  "ref_pdb": "L11design/input/L11.pdb",
+  "cal_root": "L11design/output/exp3/cal",
+  "groups": {
+    "prot_C1": {"mode": "protein", "dir": "prot_C1", "pH": 7.4, "target": 6.87, "seed": 4101, "calib": "L11_small_prot_pH74.json"},
+    "prot_C2": {"mode": "protein", "dir": "prot_C2", "pH": 8.0, "target": 6.59, "seed": 4102, "calib": "L11_small_prot_pH80.json"},
+    "lig_C1":  {"mode": "ligand",  "dir": "lig_C1",  "pH": 7.4, "target": 6.87, "seed": 4201, "calib": "L11_small_lig_pH74.json"},
+    "lig_C2":  {"mode": "ligand",  "dir": "lig_C2",  "pH": 8.0, "target": 6.59, "seed": 4202, "calib": "L11_small_lig_pH80.json"}
+  }
+}

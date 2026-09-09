@@ -1,0 +1,18 @@
+{
+  "_comment": "L11 Exp3 = Exp2 全量重做（现场小样本标定 Bsmall）。pH7.4 × target{+6.87,+8,+10,+12} × 2 模式 × n=300。固定 I3..I135。",
+  "exp": "exp3",
+  "fixed_residues": "I3 I5 I9 I34 I35 I89 I124 I131 I134 I135",
+  "ref_pdb": "L11design/input/L11.pdb",
+  "cal_root": "L11design/output/exp3/cal",
+  "pH": 7.4,
+  "groups": {
+    "protein_q6.87": {"mode": "protein", "dir": "protein_q6.87", "target": 6.87, "seed": 3101, "calib": "L11_small_prot_pH74.json"},
+    "protein_q8":    {"mode": "protein", "dir": "protein_q8",    "target": 8.0,  "seed": 3102, "calib": "L11_small_prot_pH74.json"},
+    "protein_q10":   {"mode": "protein", "dir": "protein_q10",   "target": 10.0, "seed": 3103, "calib": "L11_small_prot_pH74.json"},
+    "protein_q12":   {"mode": "protein", "dir": "protein_q12",   "target": 12.0, "seed": 3104, "calib": "L11_small_prot_pH74.json"},
+    "ligand_q6.87":  {"mode": "ligand",  "dir": "ligand_q6.87",  "target": 6.87, "seed": 3201, "calib": "L11_small_lig_pH74.json"},
+    "ligand_q8":     {"mode": "ligand",  "dir": "ligand_q8",     "target": 8.0,  "seed": 3202, "calib": "L11_small_lig_pH74.json"},
+    "ligand_q10":    {"mode": "ligand",  "dir": "ligand_q10",    "target": 10.0, "seed": 3203, "calib": "L11_small_lig_pH74.json"},
+    "ligand_q12":    {"mode": "ligand",  "dir": "ligand_q12",    "target": 12.0, "seed": 3204, "calib": "L11_small_lig_pH74.json"}
+  }
+}
