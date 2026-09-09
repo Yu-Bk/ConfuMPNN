@@ -25,3 +25,29 @@
   - `fold_scheduler`（ESMFold 分批/GPU 轮询，可 resume）
   - `score_aggregator`（合并 plddt/tm/tm/seqtm/sol → merged.csv）
   - `per_protein_small_cal`（单蛋白探针 → per_protein json）
+
+---
+
+## 本目录脚本（参数化，可直接用）
+| 脚本 | 作用 |
+|---|---|
+| `per_protein_small_cal.py` | 单表外蛋白探针拟合：native±[8,4,0,4,8]×n_per(=10) → `per_protein.<pdb>` slope/intercept json |
+| `auto_calib_guided.py` | **一键现场标定开关**：缓存无该蛋白 → 自动探针拟合 → `--calibrate auto` 正式采样（见下） |
+| `design_group_runner.py` | 组表 json → 逐组调用 auto_calib_guided 采样 |
+| `fold_scheduler.py` | 对每组 seqs.fa 批量 ESMFold+TM(+可选 Tm/Sol)，resume 友好 |
+| `score_aggregator.py` | 组级电荷/折叠/Tm 汇总 → json |
+| `per_protein_small_cal` 扩展 | 如需按 pH 分档拟合，给 --pH/--native_q 分别跑即可（L11 Exp4 即每 pH 各建一表） |
+
+## 一键现场标定开关（如何做到"不用手动逐点拟合再重跑"）
+`auto_calib_guided.py` 把三步合成一步（**opt-in：默认关闭、不影响现有 run_guided/模型/训练**）：
+```bash
+# 普通用 run_guided；想自动现场标定时：
+python code/tools/design_bench/auto_calib_guided.py --autofit \
+  --enc output/finetune_v12_2/finetune_epoch030.pt \
+  --weights MoMPNN/mompnn_paper_checkpoints/mompnn_temberture_tm_esm_6_4_4_b01.ckpt \
+  --pdb code/input/1BC8.pdb --pH 7.4 --native_q 0.0 --target_charge 0.0 --num_samples 300
+```
+- 逻辑：查 `output/charge_calibration_<pdb>.small.json`；无该蛋白且 `--autofit` → 自动采探针批(5档×n_per=10)拟 slope 写入缓存 → 再 `--calibrate auto --calibration_file 缓存` 正式采样（表内用它、表外回退 global）。
+- 成本：首次 +50 条探针；缓存可复用。
+- 不改 run_guided/train/任何采样逻辑（只做编排+表格入缓存），故**不影响现有实验与模型**。
+- 局限：仍是"建表后用表"；未做采样时自动自拟合以覆盖 100%（需要的话可再加 `--autofit_always`，但对在表蛋白无意义）。
