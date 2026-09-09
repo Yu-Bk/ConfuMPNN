@@ -45,9 +45,11 @@
 
 ---
 
-## 实验三（规划，2026-09-09）：L11 现场小样本标定精度补充（Bsmall）——待执行
-> 目的：验证"表外高 pI 蛋白用现场小样本标定后，电荷命中是否明显提升"（Exp1/2 仅用 global 校准，过冲 +2~+5）。
-> **方法澄清**：标定样本 = 在 L11 骨架上**新采的探针批**（建议 5 target ≈ native−2, native, native+2, +6, +10 × 每档 n10 = 50 条），拟合 L11 自身 响应 slope/intercept；**不是用 Exp1 里"设计得好"的序列**。"设计得好"的序列用于湿实验候选挑选，不用于标定。
-> 范围：蛋白模式（×L11.pdb）与配体模式（×L11_RNA.pdb），各拟合后对 target {+6.87, +8, +10, +12}(pH7.4) 重采样（n 可 100-300，与 Exp2 同构以便对比）。
-> 判据：标定后 mean dev / |dev|≤2 命中率 vs Exp2（global）提升幅度；给"治增益不治散布"的定量结论。
-> 目录（与 Exp1/2 分开子文件夹）：采样 `output/exp3/<mode>/`；折叠/打分 `data/exp3/<mode>/`；报告 `test/report_exp3.md`；脚本 `test/exp3_*.py`；大件打包 `backup/L11_exp3_*.tar.gz`。
+## 实验三 & 实验四（2026-09-09）：现场小样本标定后**完整重做 Exp2 与 Exp1**（非只做部分）
+> 目的：验证"表外高 pI 蛋白(L11)用现场小样本标定后，各指标是否整体变好"。**Exp1/2 只用了 global 校准**；本组用 L11 自身拟合的 slope 校准后**把两个实验各完整重跑一遍**，逐组对比（电荷 dev/达标率/TM/RMSD/pLDDT/Tm/Sol/回收）。
+> **方法澄清（关键）**：现场标定样本 = 在 L11 骨架上**新采探针批**（按既往协议：**native ±[8,4,0,4,8] 5 档 × 每档 n_per=10 = 50 条/蛋白**，代码 `code/tests/build_calibration_small.py` 同法），拟合 L11 自身 target→生成电荷 的 slope/intercept；**不是用 Exp1 里"设计得好"的序列拟合**（那些用于湿实验候选挑选，不用于标定）。蛋白/配体两模式各拟合一个 slope（配体用 v14 编码器同法）。用拟合表 → `--calibrate auto --calibration_file <L11_small.json>` 重采。
+> **Exp3 = Exp2 全量重做（Bsmall）**：pH7.4 × target{+6.87,+8,+10,+12} × 蛋白/配体模式 × n=300 = 2400 条，逐指标对比 Exp2(global)。
+> **Exp4 = Exp1 全量重做（Bsmall）**：2 模式 × 2 pH-电荷(pH7.4/+6.87, pH8/+6.59) × n=100 = 400 条，逐指标对比 Exp1(global)。
+> 固定位 I3..135 全程照旧（校验必须 0 错配）。
+> 判据：标定后 mean dev/命中率 vs global 提升幅度；同时看折叠/稳定/可溶是否因校准改变——定量回答"治增益、不治散布"。
+> 目录（与 Exp1/2 分开）：采样 `output/exp3/`(重做 Exp2)、`output/exp4/`(重做 Exp1)；折叠 `data/exp3|exp4/<mode>/`；报告 `test/report_exp3.md`、`test/report_exp4.md`；脚本 `test/exp3_*.py`、`test/exp4_*.py`；大件打包 `backup/L11_exp{3,4}_*.tar.gz`。
