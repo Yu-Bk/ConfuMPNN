@@ -1,0 +1,41 @@
+# Scenario presets for the structure-aware filter
+# Usage: from structure_aware_filter import load_preset
+#       config = load_preset("default")
+#       filt = StructureAwareFilter(coords, config=config)
+#
+# Field descriptions:
+#   radius          : Spatial radius (Å) used to define the neighborhood.
+#   threshold       : Count threshold for triggering suppression.
+#   strength        : Suppression strength (negative bias added to logits).
+#   burial_threshold: Burial ratio threshold (Cα count within 10 Å / maximum).
+#   charge_count    : Charged-residue count threshold within 8 Å.
+
+presets:
+  default:
+    desc: "General-purpose default preset."
+    charge_cluster:  {radius: 10.0, threshold: 6, strength: -1.0}
+    salt_bridge:     {radius: 10.0, threshold: 4, strength: -1.0}
+    core_charge:     {burial_radius: 10.0, charge_radius: 8.0, burial_threshold: 0.8, charge_count: 6, strength: -1.0}
+    same_sign_cluster: {radius: 8.0, threshold: 4, strength: -1.0}
+
+  nucleic_acid_binding:
+    desc: "Nucleic-acid-binding preset with more tolerance for positive surface-charge clusters."
+    charge_cluster:  {radius: 10.0, threshold: 8, strength: -1.0}
+    salt_bridge:     {radius: 10.0, threshold: 6, strength: -1.0}
+    core_charge:     {burial_radius: 10.0, charge_radius: 8.0, burial_threshold: 0.8, charge_count: 4, strength: -1.0}
+    same_sign_cluster: {radius: 8.0, threshold: 5, strength: -1.0}
+
+  membrane:
+    desc: "Membrane-protein preset with stricter suppression of charged residues in the hydrophobic core."
+    charge_cluster:  {radius: 10.0, threshold: 6, strength: -1.0}
+    salt_bridge:     {radius: 10.0, threshold: 5, strength: -1.0}
+    core_charge:     {burial_radius: 10.0, charge_radius: 8.0, burial_threshold: 0.8, charge_count: 2, strength: -2.0}
+    same_sign_cluster: {radius: 8.0, threshold: 4, strength: -1.0}
+
+  acidic:
+    desc: "Acidic-pH preset: histidine is more likely to be positively charged; the core-charge rule is retained."
+    ph_hint: 5.0
+    charge_cluster:  {radius: 10.0, threshold: 6, strength: -1.0}
+    salt_bridge:     {radius: 10.0, threshold: 5, strength: -1.0}
+    core_charge:     {burial_radius: 10.0, charge_radius: 8.0, burial_threshold: 0.8, charge_count: 4, strength: -1.0}
+    same_sign_cluster: {radius: 8.0, threshold: 4, strength: -1.0}

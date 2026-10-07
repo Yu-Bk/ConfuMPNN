@@ -1,0 +1,60 @@
+# Experimental data and generated outputs
+data/
+dataset/
+datasets/
+input/
+inputs/
+output/
+outputs/
+result/
+results/
+run/
+runs/
+log/
+logs/
+*.log
+*.csv
+*.tsv
+*.json
+*.jsonl
+*.parquet
+
+# Model weights and checkpoints
+weights/
+checkpoints/
+model_params/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Caches and compiled files
+__pycache__/
+*.py[cod]
+.cache/
+cache/
+caches/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+conda_env/
+.conda/
+conda-meta/
+site-packages/
+
+# Secrets and credentials
+.env
+.env.*
+secrets/
+credentials/
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*

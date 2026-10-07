@@ -1,0 +1,32 @@
+condition_defaults:
+  cond_dim: 7
+  pH_min: 4.0
+  pH_max: 10.0
+  default_net_charge: null
+  default_local_pos_limit: 6
+  default_local_neg_limit: 6
+  normalization:
+    mean:
+    - 6.9982
+    - 1.0
+    - 1.4243
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    std:
+    - 1.7299
+    - 0.0
+    - 9.5259
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+  encoder:
+    hidden_dim: 64
+    token_dim: 128
+    n_tokens: 4
+  charge_calibration:
+    gain: 1.289
+    offset: 0.74
+    enabled: false
