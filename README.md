@@ -45,7 +45,7 @@ gh release download conditionencoder --repo Yu-Bk/ConfuMPNN --pattern "condition
 
 Pass the selected file with `--cond_encoder` during inference.
 
-Training defaults expect `data/cath/labels.npz` and `data/cath/S40/dompdb`. These CATH inputs are not included. Provide the required data and checkpoint paths before training. The upstream projects may have additional setup requirements; consult their documentation and licenses as well.
+Training defaults expect `data/labels.npz` and `data/S40/dompdb`. These CATH inputs are not included. Provide the required data and checkpoint paths before training. The upstream projects may have additional setup requirements; consult their documentation and licenses as well.
 
 ## Environment setup
 
