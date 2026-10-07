@@ -58,3 +58,7 @@ credentials/
 *.pfx
 id_rsa*
 id_ed25519*
+
+# External upstream source and checkpoint repositories
+/LigandMPNN/
+/MoMPNN/

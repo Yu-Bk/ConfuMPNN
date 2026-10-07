@@ -1,0 +1,2 @@
+# Optional add-on for SASA-dependent training losses; install after requirements.txt.
+freesasa==2.2.1

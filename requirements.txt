@@ -1,0 +1,8 @@
+# Audited core runtime versions from Python 3.11.16.
+numpy==1.23.5
+scipy==1.12.0
+PyYAML==6.0.3
+ProDy==2.4.1
+biopython==1.79
+
+# Install PyTorch separately with a wheel appropriate for the host and accelerator.

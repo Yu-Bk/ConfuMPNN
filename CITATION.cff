@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated paper once it is published."
+title: ConfuMPNN
+type: software
+authors:
+  - name: Yu-Bk
+repository-code: "https://github.com/Yu-Bk/ConfuMPNN"
+license: BSD-3-Clause
