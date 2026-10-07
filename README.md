@@ -52,6 +52,14 @@ Run the read-only environment check from the repository root with:
 python scripts/check_environment.py
 ```
 
+## Tests
+
+These standard-library tests cover `scripts/check_environment.py` only; they do not cover model training or inference. Run them from the repository root with:
+
+```bash
+python -m unittest discover -s tests
+```
+
 ## Example commands
 
 Run inference from the repository root and replace the PDB placeholder with an input structure:
