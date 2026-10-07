@@ -2,8 +2,6 @@
 
 ConfuMPNN is a research-code framework for condition-aware protein sequence design with pH and charge objectives. It includes guided-sampling and condition-encoder fine-tuning entry points.
 
-This is a framework repository, not a full rerun package. It does not include the datasets, input structures, model weights, evaluation outputs, or generated results needed to reproduce a complete run, and it makes no claim of end-to-end result reproducibility.
-
 ## Repository contents
 
 - `code/run_guided.py` runs guided sequence sampling.
