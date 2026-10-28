@@ -1,8 +1,10 @@
 """Read-only checks for the ConfuMPNN public repository's runtime setup."""
 
 from importlib import metadata, util
+import argparse
 from pathlib import Path
 import platform
+import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,7 +36,7 @@ def module_available(module):
         return False
 
 
-def check_environment(root=ROOT):
+def check_environment(root=ROOT, sasa_pdb=None, sasa_threshold=0.25, sasa_json=None):
     root = Path(root)
     failures = []
     print(f"Python: {platform.python_version()} (audited environment: 3.11.16)")
@@ -83,6 +85,26 @@ def check_environment(root=ROOT):
     else:
         print("Bio.PDB: [missing] SASA structure parsing is unavailable")
 
+    if sasa_pdb is not None:
+        sys.path.insert(0, str(root))
+        try:
+            from scripts.preflight_sasa import preflight_sasa
+
+            report = preflight_sasa(sasa_pdb, sasa_threshold)
+            print("SASA structure preflight: [passed]")
+            print(
+                f"  Chain {report['protein_chain']}: "
+                f"{report['mapped_residues']}/{report['standard_residues']} residues mapped; "
+                f"surface={report['surface_residues']}, core={report['core_residues']}"
+            )
+            if sasa_json:
+                import json
+                Path(sasa_json).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+                print(f"  JSON report: {sasa_json}")
+        except Exception as exc:
+            failures.append("SASA structure preflight")
+            print(f"SASA structure preflight: [FAILED] {exc}")
+
     if failures:
         print("Environment check failed: install the missing core dependencies/source above.")
         return 1
@@ -91,4 +113,17 @@ def check_environment(root=ROOT):
 
 
 if __name__ == "__main__":
-    raise SystemExit(check_environment())
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--sasa-pdb", help="run a real SASA calculation on a PDB")
+    parser.add_argument("--sasa-threshold", type=float, default=0.25)
+    parser.add_argument("--sasa-json", help="optional JSON report path (requires --sasa-pdb)")
+    args = parser.parse_args()
+    if args.sasa_json and not args.sasa_pdb:
+        parser.error("--sasa-json requires --sasa-pdb")
+    raise SystemExit(
+        check_environment(
+            sasa_pdb=args.sasa_pdb,
+            sasa_threshold=args.sasa_threshold,
+            sasa_json=args.sasa_json,
+        )
+    )

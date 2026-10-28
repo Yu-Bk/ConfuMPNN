@@ -29,15 +29,16 @@ def inject_prompt(h_V, prompt_tokens):
     return h_V + attn @ prompt_tokens
 
 
-def conditioned_sample(model, condition_encoder, feature_dict, cond_vec, device="cpu"):
+def conditioned_sample(model, condition_encoder, feature_dict, cond_vec, device="cpu",
+                       bias_callback=None):
     """Generate with condition injection (batch=1).
 
     Workflow:
         1. model.encode → h_V, h_E, E_idx
         2. condition_encoder(cond_vec) → prompt tokens [1, 4, 128]
         3. h_V = inject_prompt(h_V, prompt)          # condition injection
-        4. Reuse guided_sample's decoding loop (without bias_callback there is no logit bias;
-           the model's own pH awareness → a clean Phase 3 evaluation)
+        4. Reuse guided_sample's decoding loop; an optional bias_callback can
+           combine condition injection with ChargeLookahead or another logit bias.
 
     Parameters:
         model: MoMPNN/ProteinMPNN backbone
@@ -46,6 +47,7 @@ def conditioned_sample(model, condition_encoder, feature_dict, cond_vec, device=
         feature_dict: dictionary returned by featurize (includes bias and other keys)
         cond_vec: [7] condition vector (unnormalized; the encoder standardizes it internally using training μ/σ)
         device: compute device
+        bias_callback: optional per-position logit-bias callback passed to guided_sample
 
     Returns:
         output dict from guided_sample: {S, sampling_probs, log_probs, decoding_order}
@@ -60,7 +62,8 @@ def conditioned_sample(model, condition_encoder, feature_dict, cond_vec, device=
         c = cond_vec.unsqueeze(0).to(device)          # [1, 7]
         prompt = condition_encoder(c)                 # [1, 4, 128]
         h_V = inject_prompt(h_V, prompt)
-    return guided_sample(model, fd, device=device, encoded=(h_V, h_E, E_idx))
+    return guided_sample(model, fd, bias_callback=bias_callback, device=device,
+                         encoded=(h_V, h_E, E_idx))
 
 
 if __name__ == "__main__":

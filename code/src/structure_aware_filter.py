@@ -9,8 +9,8 @@ at affected undecoded positions. The rules are:
    of positive-negative pairs within 10 Å reaches the threshold.
 3. **Core charge penetration:** suppress charged candidates at buried positions
    when the number of nearby charged residues within 8 Å reaches the threshold.
-4. **Same-sign spatial clustering:** suppress same-sign charged candidates in a
-   connected component within 8 Å when its decoded charge count reaches the threshold.
+4. **Same-sign local clustering:** suppress same-sign charged candidates at an
+   undecoded position when its decoded same-sign count within 8 Å reaches the threshold.
 
 Coordinates use Cα atoms as approximate residue positions. Distances and other
 thresholds can be configured with YAML presets. Charge counts include decoded
@@ -22,13 +22,11 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from scipy.sparse import csr_matrix
-from scipy.sparse.csgraph import connected_components
-
 from .pka import AA_TO_IDX, PKA_SIDECHAIN, STRONG_NEGATIVE, STRONG_POSITIVE
 
 # Undecoded marker (consistent with LigandMPNN restype: 20 = X/unknown).
 UNDECODED = 20
+FILTER_RULE_VERSION = "local_density_v2_2026-09-16"
 
 # Amino acid indices in the [L, 21] bias tensor: 20 standard residues followed by X.
 POS_AA_IDX = [AA_TO_IDX[a] for a in STRONG_POSITIVE]  # K, R
@@ -233,22 +231,21 @@ class StructureAwareFilter:
         self._apply_bias(bias, core, charged_idx, cfg["strength"])
         info["core_charge"] = {"core": int(core.sum())}
 
-        # Rule 4: same-sign spatial clustering in the connected-component graph.
+        # Rule 4: same-sign charge density in each residue's local neighborhood.
+        # Use the validity mask for both neighbor counts and target positions.
+        # Connected components over an 8 Å Cα graph can join an entire chain
+        # through adjacent residues and turn this local rule into a global count.
         cfg = self.config["same_sign_cluster"]
-        adj = csr_matrix(
-            (self._dist <= cfg["radius"]).astype(int)
-        )  # Connectivity is based on structure and does not use the mask.
-        n_comp, labels = connected_components(adj, directed=False)
-        for c in range(n_comp):
-            members = labels == c
-            n_pos = int((members & pos).sum())
-            n_neg = int((members & neg).sum())
-            tgt = members & undecoded
-            if n_pos >= cfg["threshold"]:
-                self._apply_bias(bias, tgt, pos_idx, cfg["strength"])
-            if n_neg >= cfg["threshold"]:
-                self._apply_bias(bias, tgt, neg_idx, cfg["strength"])
-        info["same_sign_cluster"] = {"n_components": int(n_comp)}
+        nb_local = self._masked(self._dist <= cfg["radius"])
+        local_pos_count = (nb_local & pos[None, :]).sum(axis=1)
+        local_neg_count = (nb_local & neg[None, :]).sum(axis=1)
+        over_pos = undecoded & (local_pos_count >= cfg["threshold"])
+        over_neg = undecoded & (local_neg_count >= cfg["threshold"])
+        self._apply_bias(bias, over_pos, pos_idx, cfg["strength"])
+        self._apply_bias(bias, over_neg, neg_idx, cfg["strength"])
+        info["same_sign_cluster"] = {
+            "pos_over": int(over_pos.sum()), "neg_over": int(over_neg.sum()),
+        }
 
         return bias, info
 

@@ -19,10 +19,16 @@ Condition-injection mode (Phase 3, using a fine-tuned ConditionEncoder; the mode
         [--cond_mode conditioned|baseline] [--no_calibration]
     # conditioned: inject the condition vector (default), without logit bias — test the model's learned pH awareness
     # baseline: load the encoder without injection (equivalent to the honest Phase 1 boundary control)
-    # Charge calibration (disabled by default): charge_calibration.enabled=false in configs/condition_defaults.yaml.
+    # Charge calibration: no default table is bundled; YAML fallback is disabled in configs/condition_defaults.yaml.
     #   Training uses charge_temp=0.5; inference-side calibration remains configurable.
     #   For legacy linear calibration, set enabled to true in YAML (target_eff=(desired-offset)/gain);
-    #   --no_calibration forces calibration off.
+    #   --no_calibration or --calibrate off disables calibration.
+
+Hybrid mode (ConditionEncoder + ChargeLookahead + StructureAwareFilter):
+    python run_guided.py --pdb input/1BC8.pdb --pH 7.4 --target_charge 0 \
+        --cond_encoder output/finetune/condition_encoder_last.pt --hybrid
+    # Hybrid requires --cond_mode conditioned; the baseline mode never injects the encoder condition.
+    # ChargeLookahead uses the requested target, while ConditionEncoder receives target_eff after calibration.
 
     # pH-only auto-completion: when --target_charge is omitted, it is completed automatically by default
     #   target = the native sequence's net charge at the given pH ("preserve native charge behavior", within the training distribution),
@@ -58,9 +64,10 @@ _DEFAULT_WEIGHTS = (
 # Charge calibration table: stores a linear fit to the model's charge response.
 # (generated charge ≈ slope·target + intercept). At inference, target_eff=(desired−intercept)/slope
 # offsets the response gain learned by the encoder.
-# Calibration is enabled automatically and supports per-protein entries with a global fallback.
-# Proteins without a per-protein entry use the global fit when available.
+# When a table is provided, auto prefers a per-protein fit and falls back to the global fit.
+# The optional default path may be absent; in that case calibration is skipped unless YAML fallback is enabled.
 _DEFAULT_CALIBRATION = _CODE_DIR.parent / "output" / "charge_calibration_v12_2.json"
+_MIN_CALIBRATION_SLOPE = 1e-8
 
 import yaml  # noqa: E402
 
@@ -72,10 +79,12 @@ from src.conditioned_sampler import conditioned_sample  # noqa: E402
 from src.differentiable_charge import net_charge  # noqa: E402
 from src.guided_sampler import GuidedSampler, extract_calpha_coords  # noqa: E402
 from src.isoelectric_point import find_pI  # noqa: E402
-from src.structure_aware_filter import StructureAwareFilter, load_preset  # noqa: E402
+from src.structure_aware_filter import (  # noqa: E402
+    FILTER_RULE_VERSION, StructureAwareFilter, load_preset,
+)
 
 
-def parse_args():
+def parse_args(argv=None):
     p = argparse.ArgumentParser(description="ConfuMPNN Phase 1 guided sampling")
     p.add_argument("--pdb", required=True, help="Input PDB path")
     p.add_argument("--pH", type=float, required=True, help="Operating pH")
@@ -102,15 +111,18 @@ def parse_args():
                    choices=["conditioned", "baseline"],
                    help="Condition-injection mode: conditioned=inject the condition vector (default; test model pH awareness); "
                         "baseline=load encoder without injection (equivalent to the honest Phase 1 boundary control)")
+    p.add_argument("--hybrid", action="store_true",
+                   help="Combine conditioned ConditionEncoder sampling with ChargeLookahead and the structure filter; "
+                        "requires --cond_encoder and --cond_mode conditioned")
     p.add_argument("--no_calibration", action="store_true",
-                   help="Disable charge calibration (enabled by default: apply linear calibration using gain/offset from condition_defaults.yaml, "
-                        "target_eff=(desired-offset)/gain, to compensate for the configured response gain)")
+                   help="Disable charge calibration; this and --calibrate off both disable table and YAML calibration")
     p.add_argument("--calibrate", default="auto", choices=["auto", "global", "off"],
-                   help="Charge-calibration mode (takes precedence over --no_calibration): auto=read the calibration table, "
-                        "match per-protein and fall back globally if unmatched; global=force global calibration; off=disable calibration. "
-                        "Default table: output/charge_calibration.json")
-    p.add_argument("--calibration_file", default=str(_DEFAULT_CALIBRATION),
-                   help="Path to calibration-table JSON (default: charge_calibration_v12_2.json, enabled automatically)")
+                   help="Calibration lookup: auto=per-protein then global table fit; global=global table fit only; "
+                        "off=disable calibration. --no_calibration also disables calibration. "
+                        "If no table fit is available, the YAML fallback applies only when enabled")
+    p.add_argument("--calibration_file", default=None,
+                   help="Path to a calibration-table JSON; if omitted, use the optional default at "
+                        "output/charge_calibration_v12_2.json when present")
     p.add_argument("--no_auto_target_charge", action="store_true",
                    help="Disable pH-only auto-completion. By default, if --target_charge is omitted, auto-complete "
                         "target=native_charge@pH (preserve native charge behavior); this switch restores the old flag=0 semantics")
@@ -120,7 +132,12 @@ def parse_args():
                         "Reuses the native LigandMPNN mechanism (positions with chain_mask=0 are forced to retain their original amino acids during decoding).")
     p.add_argument("--out_dir", default=None,
                    help="Output directory (default: code/output/guided_<pdb>_pH<pH>)")
-    return p.parse_args()
+    args = p.parse_args(argv)
+    if args.hybrid and not args.cond_encoder:
+        p.error("--hybrid requires --cond_encoder")
+    if args.hybrid and args.cond_mode != "conditioned":
+        p.error("--hybrid requires --cond_mode conditioned; the baseline mode does not inject conditions")
+    return args
 
 
 def load_calibration(path, pdb_stem, force_global=False):
@@ -128,7 +145,8 @@ def load_calibration(path, pdb_stem, force_global=False):
 
     - Prefer per-protein: use that protein's (slope, intercept) from the table (auto mode);
     - Fall back to global: use the linear fit across proteins (forced by --calibrate global);
-    - If the table is missing or unreadable: return (None, None, None, None) (the caller falls back to legacy YAML calibration or no calibration).
+    - If the table is missing or contains no applicable fit: return (None, None, None, None).
+      Malformed tables raise ValueError rather than silently disabling calibration.
     """
     import json as _json
 
@@ -136,30 +154,171 @@ def load_calibration(path, pdb_stem, force_global=False):
     if not path.is_file():
         return None, None, None, None
     try:
-        cal = _json.load(open(path))
-    except Exception:
-        return None, None, None, None
+        with path.open(encoding="utf-8") as f:
+            cal = _json.load(f)
+    except (OSError, _json.JSONDecodeError) as exc:
+        raise ValueError(f"Could not read calibration table {path}: {exc}") from exc
+    if not isinstance(cal, dict):
+        raise ValueError(f"Calibration table root must be a JSON object: {path}")
+    if not any(key in cal for key in ("global", "per_protein")):
+        raise ValueError(f"Calibration table must contain 'global' or 'per_protein': {path}")
     per = cal.get("per_protein", {})
     g = cal.get("global", {})
-    slope = off = None
+    if not isinstance(per, dict) or not isinstance(g, dict):
+        raise ValueError("Calibration table 'per_protein' and 'global' entries must be objects")
+    global_fit = _validated_fit(g, "global", path) if g else None
+    valid_per_protein = {}
+    for protein, fit in per.items():
+        if fit is None:
+            continue
+        if not isinstance(fit, dict):
+            raise ValueError(f"Per-protein calibration entry must be an object: {protein}")
+        if not fit.get("unreliable", False):
+            valid_per_protein[protein] = _validated_fit(fit, f"per-protein {protein}", path)
+    if global_fit is None and not valid_per_protein:
+        raise ValueError(f"Calibration table contains no usable global or per-protein fit: {path}")
+
+    selected = None
     mode = None
     if not force_global and pdb_stem in per and per[pdb_stem] is not None:
         pp = per[pdb_stem]
         # Check the per-protein calibration entry before using its slope and intercept.
         if not pp.get("unreliable", False):
-            slope, off = pp.get("slope"), pp.get("intercept")
+            selected = valid_per_protein[pdb_stem]
             mode = f"per-protein({pdb_stem})"
         else:
             # Use the global fit when the per-protein entry is flagged; --calibrate global also forces global selection.
-            if g:
-                slope, off = g.get("slope"), g.get("intercept")
+            if global_fit is not None:
+                selected = global_fit
                 mode = f"global(fallback: {pdb_stem})"
-    elif g:
-        slope, off = g.get("slope"), g.get("intercept")
+    elif global_fit is not None:
+        selected = global_fit
         mode = "global"
-    if slope is None or off is None:
+    if selected is None:
         return None, None, None, None
-    return float(slope), float(off), mode, cal.get("label", "?")
+    slope, off = selected
+    return slope, off, mode, cal.get("label", "?")
+
+
+def _validated_fit(entry, name, path):
+    if not isinstance(entry, dict) or not {"slope", "intercept"}.issubset(entry):
+        raise ValueError(f"{name} calibration entry requires slope and intercept: {path}")
+    try:
+        slope, intercept = float(entry["slope"]), float(entry["intercept"])
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"Calibration coefficients must be numeric in {path}") from exc
+    if (not np.isfinite(slope) or not np.isfinite(intercept)
+            or slope <= _MIN_CALIBRATION_SLOPE):
+        raise ValueError(f"Calibration slope must be finite and positive and intercept finite in {path}")
+    return slope, intercept
+
+
+def resolve_charge_calibration(
+    target_charge,
+    pdb_stem,
+    *,
+    condition_injected,
+    auto_target,
+    no_calibration,
+    calibration_mode,
+    calibration_file,
+    calibration_file_explicit,
+    yaml_settings,
+):
+    """Resolve the effective target and report which calibration was applied."""
+    table_path = Path(calibration_file) if calibration_file is not None else None
+    result = {
+        "target_eff": target_charge if condition_injected else None,
+        "requested": False,
+        "applied": False,
+        "source": None,
+        "fit_mode": None,
+        "label": None,
+        "slope": None,
+        "intercept": None,
+        "table_path": str(table_path) if table_path is not None else None,
+        "status": "not_applicable",
+    }
+    if not condition_injected:
+        result["status"] = "condition_not_injected"
+        return result
+    if calibration_file_explicit and (table_path is None or not table_path.is_file()):
+        raise FileNotFoundError(f"Explicit calibration table does not exist: {calibration_file}")
+    if auto_target:
+        result["status"] = "auto_target_skipped"
+        return result
+    if target_charge is None:
+        result["status"] = "target_unspecified"
+        return result
+    if no_calibration or calibration_mode == "off":
+        result["status"] = "disabled"
+        return result
+
+    result["requested"] = True
+    if table_path is not None and table_path.is_file():
+        slope, intercept, fit_mode, label = load_calibration(
+            table_path, pdb_stem, force_global=(calibration_mode == "global"))
+        if slope is not None:
+            result.update({
+                "target_eff": (target_charge - intercept) / slope,
+                "applied": True,
+                "source": "table",
+                "fit_mode": fit_mode,
+                "label": label,
+                "slope": slope,
+                "intercept": intercept,
+                "status": "table_applied",
+            })
+            return result
+        result["status"] = "table_fit_unavailable"
+    else:
+        result["status"] = "default_table_missing"
+
+    if yaml_settings.get("enabled", False):
+        try:
+            gain = float(yaml_settings["gain"])
+            offset = float(yaml_settings["offset"])
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError("Enabled YAML calibration requires numeric gain and offset") from exc
+        if not np.isfinite(gain) or not np.isfinite(offset) or gain <= _MIN_CALIBRATION_SLOPE:
+            raise ValueError("Enabled YAML calibration requires finite values and a positive, nonzero gain")
+        result.update({
+            "target_eff": (target_charge - offset) / gain,
+            "applied": True,
+            "source": "yaml",
+            "fit_mode": "yaml_linear",
+            "slope": gain,
+            "intercept": offset,
+            "status": "yaml_applied",
+        })
+    else:
+        result["status"] = f"{result['status']}_yaml_disabled"
+    return result
+
+
+def build_mode_metadata(sampling_mode, calibration, calibration_mode,
+                        filter_applied):
+    """Return stable sampling and actual-calibration fields for summary.json."""
+    return {
+        "mode": sampling_mode,
+        "sampling_mode": sampling_mode,
+        "calibrated": bool(calibration["applied"]),
+        "calibration_requested": bool(calibration["requested"]),
+        "calibration_applied": bool(calibration["applied"]),
+        "calibration_mode": calibration_mode,
+        "calibration_source": calibration["source"],
+        "calibration_fit_mode": calibration["fit_mode"],
+        "calibration_slope": calibration["slope"],
+        "calibration_intercept": calibration["intercept"],
+        "calibration_label": calibration["label"],
+        "calibration_table": calibration["table_path"],
+        "calibration_table_used": (calibration["table_path"]
+                                   if calibration["source"] == "table" else None),
+        "calibration_status": calibration["status"],
+        "target_eff": calibration["target_eff"],
+        "filter_applied": bool(filter_applied),
+        "filter_rule_version": FILTER_RULE_VERSION if filter_applied else None,
+    }
 
 
 def load_model(weights, device, model_type="auto"):
@@ -302,42 +461,61 @@ def main():
     elif args.target_charge is None:
         print("    [pH-only manually disabled] --no_auto_target_charge: condition flag=0; no target charge specified")
 
-    # 3. Mode branch: condition injection (Phase 3) vs guided sampling (Phase 1)
-    mode = "phase1_guided"
+    # 3. Mode branch: condition injection, optional hybrid, or Phase 1 guided sampling.
+    sampling_mode = "phase1_guided"
     cond_encoder = None
+    filter_callback = None
+    filter_applied = False
+    calibration_path = (
+        Path(args.calibration_file).expanduser()
+        if args.calibration_file else _DEFAULT_CALIBRATION
+    )
+    calibration_info = {
+        "target_eff": None,
+        "requested": False,
+        "applied": False,
+        "source": None,
+        "fit_mode": None,
+        "label": None,
+        "slope": None,
+        "intercept": None,
+        "table_path": None,
+        "status": "not_applicable",
+    }
     if args.cond_encoder:
-        mode = "phase3_conditioned" if args.cond_mode == "conditioned" else "phase3_baseline"
+        sampling_mode = "phase3_conditioned" if args.cond_mode == "conditioned" else "phase3_baseline"
+        if args.hybrid:
+            sampling_mode = "phase3_hybrid"
         cond_encoder = load_condition_encoder(args.cond_encoder, device)
 
-        # Charge calibration: target_eff = (desired − intercept) / slope
-        # offsets the response gain learned by ConditionEncoder.
-        # Prefer the calibration table (per-protein with global fallback);
-        # if unavailable, fall back to legacy YAML gain/offset; do not calibrate auto targets (native charge is already within the training distribution).
-        target_eff = args.target_charge
-        calib_note = "(No target specified; no calibration)"
-        if auto_target:
-            calib_note = f"(Auto-completed target={native_charge:+.2f}; calibration skipped)"
-        elif args.target_charge is not None and not args.no_calibration and args.calibrate != "off":
-            pname = Path(args.pdb).stem
-            slope, offset, mode, label = load_calibration(
-                args.calibration_file, pname, force_global=(args.calibrate == "global"))
-            if slope is not None:
-                target_eff = (args.target_charge - offset) / slope
-                calib_note = (f"target {args.target_charge} → calibrated target_eff "
-                              f"{target_eff:.2f} ({label} {mode}: slope={slope:.3f} off={offset:.3f})")
-            else:
-                # Calibration table unavailable → fall back to legacy YAML linear calibration
-                with open(_CODE_DIR / "configs" / "condition_defaults.yaml") as f:
-                    cc = yaml.safe_load(f)["condition_defaults"].get("charge_calibration", {})
-                gain, offset = cc.get("gain", 2.57), cc.get("offset", 0.16)
-                if cc.get("enabled", True):
-                    target_eff = (args.target_charge - offset) / gain
-                    calib_note = (f"target {args.target_charge} → calibrated target_eff "
-                                  f"{target_eff:.2f} (yaml gain={gain}, offset={offset})")
-                else:
-                    calib_note = f"(Calibration table {args.calibration_file} unavailable and yaml enabled=false; not calibrated)"
-        elif args.target_charge is not None:
-            calib_note = "(--no_calibration / --calibrate off; not calibrated)"
+        with open(_CODE_DIR / "configs" / "condition_defaults.yaml", encoding="utf-8") as f:
+            condition_cfg = yaml.safe_load(f)["condition_defaults"]
+        calibration_info = resolve_charge_calibration(
+            args.target_charge,
+            Path(args.pdb).stem,
+            condition_injected=(args.cond_mode == "conditioned"),
+            auto_target=auto_target,
+            no_calibration=args.no_calibration,
+            calibration_mode=args.calibrate,
+            calibration_file=calibration_path,
+            calibration_file_explicit=(args.calibration_file is not None),
+            yaml_settings=condition_cfg.get("charge_calibration", {}),
+        )
+        target_eff = calibration_info["target_eff"]
+        if calibration_info["applied"]:
+            calib_note = (f"target {args.target_charge} → target_eff {target_eff:.2f} "
+                          f"({calibration_info['source']} {calibration_info['fit_mode']})")
+        else:
+            calib_note = f"calibration not applied ({calibration_info['status']})"
+
+        if args.hybrid:
+            coords = extract_calpha_coords(protein_dict)
+            structure_filter = StructureAwareFilter(coords, config=load_preset(args.preset))
+            filter_callback = make_dynamic_callback(
+                pH=args.pH, target_charge=args.target_charge,
+                structure_filter=structure_filter, strength=args.strength,
+            )
+            filter_applied = True
 
         cond_vec = make_condition_vector(args.pH, net_charge=target_eff).to(device)
         print(f"[3] Condition-injection mode: cond_mode={args.cond_mode}, "
@@ -351,6 +529,7 @@ def main():
             enc_inject = None if args.cond_mode == "baseline" else cond_encoder
             out = conditioned_sample(
                 model, enc_inject, feature_dict, cond_vec, device=device,
+                bias_callback=filter_callback,
             )
             seq = seq_to_string(out["S"][0].cpu().numpy())
             sequences.append(seq)
@@ -363,16 +542,17 @@ def main():
               f"preset={args.preset}, strength={args.strength}")
         coords = extract_calpha_coords(protein_dict)
         structure_filter = StructureAwareFilter(coords, config=load_preset(args.preset))
-        bias_callback = make_dynamic_callback(
+        filter_callback = make_dynamic_callback(
             pH=args.pH, target_charge=args.target_charge,
             structure_filter=structure_filter, strength=args.strength,
         )
+        filter_applied = True
         print(f"[4] Sampling {args.num_samples} candidate sequences with guidance...")
         sampler = GuidedSampler(model, device=device)
         sequences, charges, pIs = [], [], []
         for i in range(args.num_samples):
             feature_dict["randn"] = torch.randn(1, L)
-            out = sampler.sample(feature_dict, bias_callback=bias_callback)
+            out = sampler.sample(feature_dict, bias_callback=filter_callback)
             seq = seq_to_string(out["S"][0].cpu().numpy())
             sequences.append(seq)
             charges.append(net_charge(seq, args.pH))
@@ -403,9 +583,7 @@ def main():
     summary = {
         "pdb": args.pdb, "pH": args.pH, "target_charge": args.target_charge,
         "auto_target": auto_target,  # True = target was auto-completed from pH only
-        "mode": mode,
         "cond_encoder": str(args.cond_encoder) if args.cond_encoder else None,
-        "calibrated": bool(args.cond_encoder and not args.no_calibration),
         "preset": args.preset, "temperature": args.temperature,
         "strength": args.strength, "seed": args.seed, "num_samples": args.num_samples,
         "native_charge": native_charge, "native_pI": native_pI,
@@ -414,6 +592,10 @@ def main():
             {"seq": s, "charge": c, "pI": p} for s, c, p in zip(sequences, charges, pIs)
         ],
     }
+    summary.update(build_mode_metadata(
+        sampling_mode, calibration_info, args.calibrate, filter_applied))
+    summary["hybrid"] = bool(args.hybrid)
+    summary["filter_preset"] = args.preset if filter_applied else None
     with open(out_dir / "summary.json", "w", encoding="utf-8") as f:
         json.dump(summary, f, ensure_ascii=False, indent=2)
     print(f"[6] Output saved: {fasta_path}")

@@ -48,6 +48,27 @@ class CheckEnvironmentTests(unittest.TestCase):
             self.assertIn("[MISSING] NumPy", output.getvalue())
             self.assertIn("LigandMPNN source: [MISSING]", output.getvalue())
 
+    def test_explicit_sasa_preflight_failure_fails_check(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            ligand = root / "LigandMPNN"
+            ligand.mkdir()
+            for name in check_environment.LIGANDMPNN_FILES:
+                (ligand / name).touch()
+
+            def version(distribution):
+                return "1.0"
+
+            output = io.StringIO()
+            with patch.object(check_environment, "package_version", side_effect=version), \
+                    patch.object(check_environment, "module_available", return_value=True), \
+                    patch("scripts.preflight_sasa.preflight_sasa", side_effect=RuntimeError("coverage missing")), \
+                    contextlib.redirect_stdout(output):
+                status = check_environment.check_environment(root, sasa_pdb="sample.pdb")
+
+            self.assertEqual(status, 1)
+            self.assertIn("SASA structure preflight: [FAILED] coverage missing", output.getvalue())
+
 
 if __name__ == "__main__":
     unittest.main()
